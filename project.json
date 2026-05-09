@@ -1,32 +1,25 @@
 {
-  "overview": "A premium, frontend-only CRM for homeopathy clinics worldwide. Features patient management, appointment scheduling, prescription tracking, billing, AI assistant with demo responses, and a full Pro Features tier with voice-to-text case taking, advanced remedy finder, clinical templates, patient timeline, remedy comparison, case repository, and materia medica browser. Built with React, TypeScript, Tailwind CSS, and Framer Motion.",
+  "overview": "HomeoPath CRM is a professional frontend-only CRM for homeopathy clinics worldwide. It features multi-clinic management, role-based access for 6 clinic roles, a full registration and login flow, staff account creation, permission management, and dedicated dashboards per role — all with a premium glassmorphism design.",
   "features": [
-    "Dashboard with live charts and stats",
-    "Patient management with detailed profiles",
-    "Appointment calendar and booking",
-    "Prescription and remedy management",
-    "AI assistant with demo responses",
-    "Pro: Voice-to-text case taking with waveform UI",
-    "Pro: Advanced remedy finder with repertorization",
-    "Pro: Clinical template library",
-    "Pro: Patient health timeline",
-    "Pro: Remedy comparison tool",
-    "Pro: Case repository archive",
-    "Pro: Materia medica browser with 300+ remedies",
-    "Dark/light mode toggle",
-    "Premium glassmorphism design"
+    "Professional Main Admin registration with clinic details",
+    "Email and password login for all staff accounts",
+    "Multi-clinic support — Admin sees clinic count and can switch between clinics",
+    "Staff account creation — Admin creates Doctor, Receptionist, Pharmacist, Nurse, Billing Staff accounts",
+    "Permission granting — Admin can allow staff to create new accounts",
+    "Role-based dashboards for 6 roles: Main Admin, Doctor, Receptionist, Pharmacist, Nurse, Billing Staff",
+    "Pro features gated for admin/doctor: Voice-to-text, Remedy Finder, Clinical Templates, Patient Timeline, Remedy Comparison, Case Repository, Materia Medica Browser",
+    "All data persisted in localStorage — no backend required"
   ],
   "category": "healthcare",
   "tags": [
     "crm",
     "homeopathy",
-    "healthcare",
     "clinic",
-    "pro-features",
-    "remedy-finder",
-    "case-management",
-    "dark-mode",
-    "glassmorphism"
+    "healthcare",
+    "role-based-access",
+    "multi-clinic",
+    "registration",
+    "login"
   ],
-  "last_updated": "2026-04-11T07:31:32.604Z"
+  "last_updated": "2026-05-09T08:44:51.787Z"
 }

@@ -39,7 +39,7 @@ import { Route as proRoute } from "./pro";
 
 export const Route = createRoute({
   getParentRoute: () => proRoute,
-  path: "/voice-recorder",
+  path: "voice-recorder",
   component: VoiceRecorderPage,
 });
 

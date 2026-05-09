@@ -41,7 +41,7 @@ import { Route as proRoute } from "./pro";
 
 export const Route = createRoute({
   getParentRoute: () => proRoute,
-  path: "/remedy-finder",
+  path: "remedy-finder",
   component: RemedyFinderPage,
 });
 

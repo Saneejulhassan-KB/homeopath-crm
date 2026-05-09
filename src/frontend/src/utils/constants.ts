@@ -10,6 +10,8 @@ export const ROUTES = {
   BILLING: "/billing",
   REPORTS: "/reports",
   SETTINGS: "/settings",
+  STAFF: "/staff",
+  REGISTER: "/register",
   PRO: "/pro",
   PRO_VOICE: "/pro/voice-recorder",
   PRO_REMEDY_FINDER: "/pro/remedy-finder",
@@ -27,17 +29,90 @@ export const LANGUAGES = [
   { code: "fr", label: "Français", flag: "🇫🇷" },
 ] as const;
 
-export const ROLES = ["Admin", "Doctor", "Receptionist"] as const;
+export const ROLES = [
+  "main-admin",
+  "doctor",
+  "receptionist",
+  "pharmacist",
+  "nurse",
+  "billing",
+] as const;
 
 export const NAV_ITEMS = [
-  { path: ROUTES.DASHBOARD, label: "Dashboard", icon: "LayoutDashboard" },
-  { path: ROUTES.PATIENTS, label: "Patients", icon: "Users" },
-  { path: ROUTES.APPOINTMENTS, label: "Appointments", icon: "Calendar" },
-  { path: ROUTES.PRESCRIPTIONS, label: "Prescriptions", icon: "Pill" },
-  { path: ROUTES.AI_ASSISTANT, label: "AI Assistant", icon: "Brain" },
-  { path: ROUTES.BILLING, label: "Billing", icon: "CreditCard" },
-  { path: ROUTES.REPORTS, label: "Reports", icon: "BarChart3" },
-  { path: ROUTES.SETTINGS, label: "Settings", icon: "Settings" },
+  {
+    path: ROUTES.DASHBOARD,
+    label: "Dashboard",
+    icon: "LayoutDashboard",
+    roles: [
+      "main-admin",
+      "doctor",
+      "receptionist",
+      "pharmacist",
+      "nurse",
+      "billing",
+    ] as const,
+  },
+  {
+    path: ROUTES.PATIENTS,
+    label: "Patients",
+    icon: "Users",
+    roles: ["main-admin", "doctor", "receptionist"] as const,
+  },
+  {
+    path: ROUTES.APPOINTMENTS,
+    label: "Appointments",
+    icon: "Calendar",
+    roles: ["main-admin", "doctor", "receptionist", "nurse"] as const,
+  },
+  {
+    path: ROUTES.PRESCRIPTIONS,
+    label: "Prescriptions",
+    icon: "Pill",
+    roles: ["main-admin", "doctor", "pharmacist", "nurse", "billing"] as const,
+  },
+  {
+    path: ROUTES.AI_ASSISTANT,
+    label: "AI Assistant",
+    icon: "Brain",
+    roles: ["main-admin", "doctor"] as const,
+  },
+  {
+    path: ROUTES.BILLING,
+    label: "Billing",
+    icon: "CreditCard",
+    roles: ["main-admin", "billing"] as const,
+  },
+  {
+    path: ROUTES.REPORTS,
+    label: "Reports",
+    icon: "BarChart3",
+    roles: ["main-admin", "doctor", "billing"] as const,
+  },
+  {
+    path: ROUTES.SETTINGS,
+    label: "Settings",
+    icon: "Settings",
+    roles: [
+      "main-admin",
+      "doctor",
+      "receptionist",
+      "pharmacist",
+      "nurse",
+      "billing",
+    ] as const,
+  },
+  {
+    path: ROUTES.STAFF,
+    label: "Staff",
+    icon: "UserCog",
+    roles: ["main-admin"] as const,
+  },
+  {
+    path: ROUTES.PRO,
+    label: "Pro Features",
+    icon: "Crown",
+    roles: ["main-admin", "doctor"] as const,
+  },
 ] as const;
 
 export const STATUS_COLORS = {

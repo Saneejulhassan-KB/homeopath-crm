@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { useAppStore } from "@/store";
+import { ACCENT_COLORS, ACCENT_COLOR_MAP } from "@/utils/accentColors";
 import { LANGUAGES } from "@/utils/constants";
 import { createRoute } from "@tanstack/react-router";
 import {
@@ -302,16 +303,34 @@ function DoctorProfileTab() {
 }
 
 // ─── Appearance ───────────────────────────────────────────────────
-const ACCENT_COLORS = [
-  { id: "teal", label: "Teal", cls: "bg-teal-500" },
-  { id: "blue", label: "Sky Blue", cls: "bg-blue-500" },
-  { id: "purple", label: "Violet", cls: "bg-violet-500" },
-];
-
 function AppearanceTab() {
-  const { theme, toggleTheme } = useAppStore();
-  const [accent, setAccent] = useState("teal");
+  const { theme, toggleTheme, accentColor, setAccentColor } = useAppStore();
   const [fontSize, setFontSize] = useState("medium");
+
+  const handleAccentChange = (id: string) => {
+    const palette = ACCENT_COLOR_MAP[id];
+    if (palette) {
+      const isDark = document.documentElement.classList.contains("dark");
+      const primary = isDark ? palette.primaryDark : palette.primary;
+      const primaryFg = isDark
+        ? palette.primaryForegroundDark
+        : palette.primaryForeground;
+
+      const root = document.documentElement;
+      root.style.setProperty("--accent", palette.light);
+      root.style.setProperty("--accent-dark", palette.dark);
+      root.style.setProperty("--primary", primary);
+      root.style.setProperty("--primary-foreground", primaryFg);
+      root.style.setProperty("--sidebar-primary", primary);
+      root.style.setProperty("--sidebar-primary-foreground", primaryFg);
+      root.style.setProperty("--ring", primary);
+      root.style.setProperty("--chart-1", primary);
+    }
+    setAccentColor(id);
+    toast.success(
+      `Theme colour changed to ${ACCENT_COLORS.find((c) => c.id === id)?.label ?? id}`,
+    );
+  };
 
   const apply = () => toast.success("Appearance settings saved!");
 
@@ -411,27 +430,39 @@ function AppearanceTab() {
 
       {/* Accent colors */}
       <div className="glass-card p-6">
-        <h3 className="text-sm font-display font-semibold text-foreground mb-4">
+        <h3 className="text-sm font-display font-semibold text-foreground mb-1">
           Accent Color
         </h3>
-        <div className="flex gap-3 flex-wrap">
+        <p className="text-xs text-muted-foreground mb-4">
+          Applies instantly across the entire app.
+        </p>
+        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-3">
           {ACCENT_COLORS.map((c) => (
             <button
               key={c.id}
               type="button"
-              onClick={() => setAccent(c.id)}
+              onClick={() => handleAccentChange(c.id)}
               aria-label={`Select ${c.label} accent`}
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-medium transition-smooth",
-                accent === c.id
-                  ? "border-primary bg-primary/10 text-primary"
-                  : "border-border/40 text-muted-foreground hover:border-border",
-              )}
+              title={c.label}
+              className="group flex flex-col items-center gap-1.5 focus:outline-none"
               data-ocid={`accent-${c.id}`}
             >
-              <span className={cn("w-4 h-4 rounded-full", c.cls)} />
-              {c.label}
-              {accent === c.id && <Check className="w-3 h-3 ml-1" />}
+              <span
+                className={cn(
+                  "w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 ring-2 ring-offset-2 ring-offset-background",
+                  accentColor === c.id
+                    ? "ring-foreground scale-110 shadow-elevated"
+                    : "ring-transparent hover:scale-105 hover:ring-border",
+                )}
+                style={{ backgroundColor: c.hex }}
+              >
+                {accentColor === c.id && (
+                  <Check className="w-4 h-4 text-white drop-shadow" />
+                )}
+              </span>
+              <span className="text-[10px] text-muted-foreground leading-tight text-center">
+                {c.label}
+              </span>
             </button>
           ))}
         </div>

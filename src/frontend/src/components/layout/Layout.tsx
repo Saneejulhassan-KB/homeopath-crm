@@ -1,8 +1,14 @@
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { useAppStore } from "@/store";
+import { ACCENT_COLOR_MAP, applyPersistedAccent } from "@/utils/accentColors";
+
+// Apply the persisted accent immediately (before first render) to avoid flash
+applyPersistedAccent();
+import { getCurrentUser, seedDemoDataIfEmpty } from "@/utils/auth";
+import { useNavigate } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { ThemeProvider } from "next-themes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import { Toaster } from "sonner";
 import { Sidebar } from "./Sidebar";
@@ -14,6 +20,50 @@ interface LayoutProps {
 
 function LayoutInner({ children }: LayoutProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { currentRole, currentUser, setCurrentUser, setRole, accentColor } =
+    useAppStore();
+  const navigate = useNavigate();
+
+  // Apply saved accent + primary colour on mount and whenever it changes
+  useEffect(() => {
+    const palette = ACCENT_COLOR_MAP[accentColor];
+    if (!palette) return;
+
+    const isDark = document.documentElement.classList.contains("dark");
+    const primary = isDark ? palette.primaryDark : palette.primary;
+    const primaryFg = isDark
+      ? palette.primaryForegroundDark
+      : palette.primaryForeground;
+
+    const root = document.documentElement;
+    root.style.setProperty("--accent", palette.light);
+    root.style.setProperty("--accent-dark", palette.dark);
+    root.style.setProperty("--primary", primary);
+    root.style.setProperty("--primary-foreground", primaryFg);
+    root.style.setProperty("--sidebar-primary", primary);
+    root.style.setProperty("--sidebar-primary-foreground", primaryFg);
+    root.style.setProperty("--ring", primary);
+    root.style.setProperty("--chart-1", primary);
+  }, [accentColor]);
+
+  useEffect(() => {
+    // Ensure demo seed exists
+    seedDemoDataIfEmpty();
+
+    // Hydrate current user from localStorage if not in store
+    if (!currentUser) {
+      const stored = getCurrentUser();
+      if (stored) {
+        setCurrentUser(stored);
+        setRole(stored.role);
+      } else if (!currentRole) {
+        navigate({ to: "/login" });
+      }
+    }
+  }, [currentUser, currentRole, navigate, setCurrentUser, setRole]);
+
+  const isAuthenticated = currentUser || currentRole;
+  if (!isAuthenticated) return null;
 
   return (
     <div className="flex h-screen overflow-hidden bg-background">
@@ -68,7 +118,7 @@ function LayoutInner({ children }: LayoutProps) {
 
 export function Layout({ children }: LayoutProps) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
       <LayoutInner>{children}</LayoutInner>
       <Toaster
         richColors

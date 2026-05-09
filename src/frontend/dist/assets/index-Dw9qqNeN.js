@@ -22981,7 +22981,7 @@ const Link = reactExports.forwardRef(
 function isCtrlEvent(e3) {
   return !!(e3.metaKey || e3.altKey || e3.ctrlKey || e3.shiftKey);
 }
-let Route$j = class Route extends BaseRoute {
+let Route$k = class Route extends BaseRoute {
   /**
    * @deprecated Use the `createRoute` function instead.
    */
@@ -23033,7 +23033,7 @@ let Route$j = class Route extends BaseRoute {
   }
 };
 function createRoute(options) {
-  return new Route$j(options);
+  return new Route$k(options);
 }
 class RootRoute extends BaseRootRoute {
   /**
@@ -25723,7 +25723,7 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1s = [
+const __iconNode$1E = [
   [
     "path",
     {
@@ -25732,48 +25732,48 @@ const __iconNode$1s = [
     }
   ]
 ];
-const Activity = createLucideIcon("activity", __iconNode$1s);
+const Activity = createLucideIcon("activity", __iconNode$1E);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1r = [
+const __iconNode$1D = [
   ["rect", { width: "20", height: "5", x: "2", y: "3", rx: "1", key: "1wp1u1" }],
   ["path", { d: "M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8", key: "1s80jp" }],
   ["path", { d: "M10 12h4", key: "a56b0p" }]
 ];
-const Archive = createLucideIcon("archive", __iconNode$1r);
+const Archive = createLucideIcon("archive", __iconNode$1D);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1q = [
+const __iconNode$1C = [
   ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
   ["path", { d: "M19 12H5", key: "x3x0zl" }]
 ];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$1q);
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$1C);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1p = [
+const __iconNode$1B = [
   ["path", { d: "M5 12h14", key: "1ays0h" }],
   ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
 ];
-const ArrowRight = createLucideIcon("arrow-right", __iconNode$1p);
+const ArrowRight = createLucideIcon("arrow-right", __iconNode$1B);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1o = [
+const __iconNode$1A = [
   ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
   [
     "path",
@@ -25790,14 +25790,14 @@ const __iconNode$1o = [
     }
   ]
 ];
-const Atom = createLucideIcon("atom", __iconNode$1o);
+const Atom = createLucideIcon("atom", __iconNode$1A);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1n = [
+const __iconNode$1z = [
   ["path", { d: "M10.268 21a2 2 0 0 0 3.464 0", key: "vwvbt9" }],
   [
     "path",
@@ -25807,14 +25807,14 @@ const __iconNode$1n = [
     }
   ]
 ];
-const Bell = createLucideIcon("bell", __iconNode$1n);
+const Bell = createLucideIcon("bell", __iconNode$1z);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1m = [
+const __iconNode$1y = [
   [
     "path",
     {
@@ -25823,14 +25823,14 @@ const __iconNode$1m = [
     }
   ]
 ];
-const Bone = createLucideIcon("bone", __iconNode$1m);
+const Bone = createLucideIcon("bone", __iconNode$1y);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1l = [
+const __iconNode$1x = [
   ["path", { d: "M12 7v14", key: "1akyts" }],
   [
     "path",
@@ -25840,14 +25840,14 @@ const __iconNode$1l = [
     }
   ]
 ];
-const BookOpen = createLucideIcon("book-open", __iconNode$1l);
+const BookOpen = createLucideIcon("book-open", __iconNode$1x);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1k = [
+const __iconNode$1w = [
   ["path", { d: "M12 8V4H8", key: "hb8ula" }],
   ["rect", { width: "16", height: "12", x: "4", y: "8", rx: "2", key: "enze0r" }],
   ["path", { d: "M2 14h2", key: "vft8re" }],
@@ -25855,14 +25855,14 @@ const __iconNode$1k = [
   ["path", { d: "M15 13v2", key: "1xurst" }],
   ["path", { d: "M9 13v2", key: "rq6x2g" }]
 ];
-const Bot = createLucideIcon("bot", __iconNode$1k);
+const Bot = createLucideIcon("bot", __iconNode$1w);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1j = [
+const __iconNode$1v = [
   [
     "path",
     {
@@ -25885,14 +25885,29 @@ const __iconNode$1j = [
   ["path", { d: "M6 18a4 4 0 0 1-1.967-.516", key: "2e4loj" }],
   ["path", { d: "M19.967 17.484A4 4 0 0 1 18 18", key: "159ez6" }]
 ];
-const Brain = createLucideIcon("brain", __iconNode$1j);
+const Brain = createLucideIcon("brain", __iconNode$1v);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1i = [
+const __iconNode$1u = [
+  ["path", { d: "M12 11v4", key: "a6ujw6" }],
+  ["path", { d: "M14 13h-4", key: "1pl8zg" }],
+  ["path", { d: "M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2", key: "1ksdt3" }],
+  ["path", { d: "M18 6v14", key: "1mu4gy" }],
+  ["path", { d: "M6 6v14", key: "1s15cj" }],
+  ["rect", { width: "20", height: "14", x: "2", y: "6", rx: "2", key: "i6l2r4" }]
+];
+const BriefcaseMedical = createLucideIcon("briefcase-medical", __iconNode$1u);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1t = [
   ["path", { d: "M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z", key: "1b4qmf" }],
   ["path", { d: "M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2", key: "i71pzd" }],
   ["path", { d: "M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2", key: "10jefs" }],
@@ -25901,14 +25916,28 @@ const __iconNode$1i = [
   ["path", { d: "M10 14h4", key: "kelpxr" }],
   ["path", { d: "M10 18h4", key: "1ulq68" }]
 ];
-const Building2 = createLucideIcon("building-2", __iconNode$1i);
+const Building2 = createLucideIcon("building-2", __iconNode$1t);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1h = [
+const __iconNode$1s = [
+  ["path", { d: "M8 2v4", key: "1cmpym" }],
+  ["path", { d: "M16 2v4", key: "4m81vk" }],
+  ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
+  ["path", { d: "M3 10h18", key: "8toen8" }],
+  ["path", { d: "m9 16 2 2 4-4", key: "19s6y9" }]
+];
+const CalendarCheck = createLucideIcon("calendar-check", __iconNode$1s);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1r = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
@@ -25920,27 +25949,27 @@ const __iconNode$1h = [
   ["path", { d: "M12 18h.01", key: "mhygvu" }],
   ["path", { d: "M16 18h.01", key: "kzsmim" }]
 ];
-const CalendarDays = createLucideIcon("calendar-days", __iconNode$1h);
+const CalendarDays = createLucideIcon("calendar-days", __iconNode$1r);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1g = [
+const __iconNode$1q = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M3 10h18", key: "8toen8" }]
 ];
-const Calendar = createLucideIcon("calendar", __iconNode$1g);
+const Calendar = createLucideIcon("calendar", __iconNode$1q);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1f = [
+const __iconNode$1p = [
   [
     "path",
     {
@@ -25950,7 +25979,105 @@ const __iconNode$1f = [
   ],
   ["circle", { cx: "12", cy: "13", r: "3", key: "1vg3eu" }]
 ];
-const Camera = createLucideIcon("camera", __iconNode$1f);
+const Camera = createLucideIcon("camera", __iconNode$1p);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1o = [
+  ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
+  ["path", { d: "M18 17V9", key: "2bz60n" }],
+  ["path", { d: "M13 17V5", key: "1frdt8" }],
+  ["path", { d: "M8 17v-3", key: "17ska0" }]
+];
+const ChartColumn = createLucideIcon("chart-column", __iconNode$1o);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1n = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+const Check = createLucideIcon("check", __iconNode$1n);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1m = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$1m);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1l = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$1l);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1k = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$1k);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1j = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+const ChevronUp = createLucideIcon("chevron-up", __iconNode$1j);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1i = [
+  ["path", { d: "m7 15 5 5 5-5", key: "1hf1tw" }],
+  ["path", { d: "m7 9 5-5 5 5", key: "sgt6xg" }]
+];
+const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$1i);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1h = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+];
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$1h);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1g = [
+  ["path", { d: "M21.801 10A10 10 0 1 1 17 3.335", key: "yps3ct" }],
+  ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
+];
+const CircleCheckBig = createLucideIcon("circle-check-big", __iconNode$1g);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1f = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const CircleCheck = createLucideIcon("circle-check", __iconNode$1f);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -25958,93 +26085,6 @@ const Camera = createLucideIcon("camera", __iconNode$1f);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1e = [
-  ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
-  ["path", { d: "M18 17V9", key: "2bz60n" }],
-  ["path", { d: "M13 17V5", key: "1frdt8" }],
-  ["path", { d: "M8 17v-3", key: "17ska0" }]
-];
-const ChartColumn = createLucideIcon("chart-column", __iconNode$1e);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1d = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-const Check = createLucideIcon("check", __iconNode$1d);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1c = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$1c);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1b = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$1b);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1a = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$1a);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$19 = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
-const ChevronUp = createLucideIcon("chevron-up", __iconNode$19);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$18 = [
-  ["path", { d: "m7 15 5 5 5-5", key: "1hf1tw" }],
-  ["path", { d: "m7 9 5-5 5 5", key: "sgt6xg" }]
-];
-const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$18);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$17 = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
-];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$17);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$16 = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$16);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$15 = [
   ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
   [
     "path",
@@ -26055,14 +26095,14 @@ const __iconNode$15 = [
   ],
   ["path", { d: "m9 14 2 2 4-4", key: "df797q" }]
 ];
-const ClipboardCheck = createLucideIcon("clipboard-check", __iconNode$15);
+const ClipboardCheck = createLucideIcon("clipboard-check", __iconNode$1e);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$14 = [
+const __iconNode$1d = [
   ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
   [
     "path",
@@ -26076,47 +26116,47 @@ const __iconNode$14 = [
   ["path", { d: "M8 11h.01", key: "1dfujw" }],
   ["path", { d: "M8 16h.01", key: "18s6g9" }]
 ];
-const ClipboardList = createLucideIcon("clipboard-list", __iconNode$14);
+const ClipboardList = createLucideIcon("clipboard-list", __iconNode$1d);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$13 = [
+const __iconNode$1c = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
 ];
-const Clock = createLucideIcon("clock", __iconNode$13);
+const Clock = createLucideIcon("clock", __iconNode$1c);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$12 = [
+const __iconNode$1b = [
   ["rect", { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2", key: "17jyea" }],
   ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
 ];
-const Copy = createLucideIcon("copy", __iconNode$12);
+const Copy = createLucideIcon("copy", __iconNode$1b);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$11 = [
+const __iconNode$1a = [
   ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "2", key: "ynyp8z" }],
   ["line", { x1: "2", x2: "22", y1: "10", y2: "10", key: "1b3vmo" }]
 ];
-const CreditCard = createLucideIcon("credit-card", __iconNode$11);
+const CreditCard = createLucideIcon("credit-card", __iconNode$1a);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$10 = [
+const __iconNode$19 = [
   [
     "path",
     {
@@ -26126,26 +26166,37 @@ const __iconNode$10 = [
   ],
   ["path", { d: "M5 21h14", key: "11awu3" }]
 ];
-const Crown = createLucideIcon("crown", __iconNode$10);
+const Crown = createLucideIcon("crown", __iconNode$19);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$$ = [
+const __iconNode$18 = [
+  ["line", { x1: "12", x2: "12", y1: "2", y2: "22", key: "7eqyqh" }],
+  ["path", { d: "M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6", key: "1b0p4s" }]
+];
+const DollarSign = createLucideIcon("dollar-sign", __iconNode$18);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$17 = [
   ["path", { d: "M12 15V3", key: "m9g1x1" }],
   ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
   ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
 ];
-const Download = createLucideIcon("download", __iconNode$$);
+const Download = createLucideIcon("download", __iconNode$17);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$_ = [
+const __iconNode$16 = [
   [
     "path",
     {
@@ -26161,14 +26212,39 @@ const __iconNode$_ = [
     }
   ]
 ];
-const Droplets = createLucideIcon("droplets", __iconNode$_);
+const Droplets = createLucideIcon("droplets", __iconNode$16);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$Z = [
+const __iconNode$15 = [
+  [
+    "path",
+    {
+      d: "M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49",
+      key: "ct8e1f"
+    }
+  ],
+  ["path", { d: "M14.084 14.158a3 3 0 0 1-4.242-4.242", key: "151rxh" }],
+  [
+    "path",
+    {
+      d: "M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143",
+      key: "13bj9a"
+    }
+  ],
+  ["path", { d: "m2 2 20 20", key: "1ooewy" }]
+];
+const EyeOff = createLucideIcon("eye-off", __iconNode$15);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$14 = [
   [
     "path",
     {
@@ -26178,28 +26254,28 @@ const __iconNode$Z = [
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Eye = createLucideIcon("eye", __iconNode$Z);
+const Eye = createLucideIcon("eye", __iconNode$14);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$Y = [
+const __iconNode$13 = [
   ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
   ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
   ["path", { d: "M8 18v-2", key: "qcmpov" }],
   ["path", { d: "M12 18v-4", key: "q1q25u" }],
   ["path", { d: "M16 18v-6", key: "15y0np" }]
 ];
-const FileChartColumnIncreasing = createLucideIcon("file-chart-column-increasing", __iconNode$Y);
+const FileChartColumnIncreasing = createLucideIcon("file-chart-column-increasing", __iconNode$13);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$X = [
+const __iconNode$12 = [
   ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
   ["path", { d: "M16 22h2a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3.5", key: "13ddob" }],
   ["path", { d: "M4.017 11.512a6 6 0 1 0 8.466 8.475", key: "s6vs5t" }],
@@ -26211,41 +26287,41 @@ const __iconNode$X = [
     }
   ]
 ];
-const FileChartPie = createLucideIcon("file-chart-pie", __iconNode$X);
+const FileChartPie = createLucideIcon("file-chart-pie", __iconNode$12);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$W = [
+const __iconNode$11 = [
   ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
   ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
   ["path", { d: "M9 15h6", key: "cctwl0" }],
   ["path", { d: "M12 18v-6", key: "17g6i2" }]
 ];
-const FilePlus = createLucideIcon("file-plus", __iconNode$W);
+const FilePlus = createLucideIcon("file-plus", __iconNode$11);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$V = [
+const __iconNode$10 = [
   ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
   ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
   ["path", { d: "M10 9H8", key: "b1mrlr" }],
   ["path", { d: "M16 13H8", key: "t4e002" }],
   ["path", { d: "M16 17H8", key: "z1uh3a" }]
 ];
-const FileText = createLucideIcon("file-text", __iconNode$V);
+const FileText = createLucideIcon("file-text", __iconNode$10);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$U = [
+const __iconNode$$ = [
   [
     "path",
     {
@@ -26256,14 +26332,14 @@ const __iconNode$U = [
   ["path", { d: "M6.453 15h11.094", key: "3shlmq" }],
   ["path", { d: "M8.5 2h7", key: "csnxdl" }]
 ];
-const FlaskConical = createLucideIcon("flask-conical", __iconNode$U);
+const FlaskConical = createLucideIcon("flask-conical", __iconNode$$);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$T = [
+const __iconNode$_ = [
   [
     "path",
     {
@@ -26272,53 +26348,70 @@ const __iconNode$T = [
     }
   ]
 ];
-const Funnel = createLucideIcon("funnel", __iconNode$T);
+const Funnel = createLucideIcon("funnel", __iconNode$_);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$S = [
+const __iconNode$Z = [
   ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }],
   ["circle", { cx: "6", cy: "6", r: "3", key: "1lh9wr" }],
   ["path", { d: "M13 6h3a2 2 0 0 1 2 2v7", key: "1yeb86" }],
   ["path", { d: "M11 18H8a2 2 0 0 1-2-2V9", key: "19pyzm" }]
 ];
-const GitCompare = createLucideIcon("git-compare", __iconNode$S);
+const GitCompare = createLucideIcon("git-compare", __iconNode$Z);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$R = [
+const __iconNode$Y = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
   ["path", { d: "M2 12h20", key: "9i4pu4" }]
 ];
-const Globe = createLucideIcon("globe", __iconNode$R);
+const Globe = createLucideIcon("globe", __iconNode$Y);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$Q = [
+const __iconNode$X = [
   ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
   ["path", { d: "M3 9h18", key: "1pudct" }],
   ["path", { d: "M3 15h18", key: "5xshup" }],
   ["path", { d: "M9 3v18", key: "fh3hqa" }],
   ["path", { d: "M15 3v18", key: "14nvp0" }]
 ];
-const Grid3x3 = createLucideIcon("grid-3x3", __iconNode$Q);
+const Grid3x3 = createLucideIcon("grid-3x3", __iconNode$X);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$P = [
+const __iconNode$W = [
+  [
+    "path",
+    {
+      d: "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
+      key: "c3ymky"
+    }
+  ],
+  ["path", { d: "M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27", key: "1uw2ng" }]
+];
+const HeartPulse = createLucideIcon("heart-pulse", __iconNode$W);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$V = [
   [
     "path",
     {
@@ -26327,26 +26420,26 @@ const __iconNode$P = [
     }
   ]
 ];
-const Heart = createLucideIcon("heart", __iconNode$P);
+const Heart = createLucideIcon("heart", __iconNode$V);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$O = [
+const __iconNode$U = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M12 16v-4", key: "1dtifu" }],
   ["path", { d: "M12 8h.01", key: "e9boi3" }]
 ];
-const Info = createLucideIcon("info", __iconNode$O);
+const Info = createLucideIcon("info", __iconNode$U);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$N = [
+const __iconNode$T = [
   [
     "path",
     {
@@ -26369,40 +26462,40 @@ const __iconNode$N = [
     }
   ]
 ];
-const Layers = createLucideIcon("layers", __iconNode$N);
+const Layers = createLucideIcon("layers", __iconNode$T);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$M = [
+const __iconNode$S = [
   ["rect", { width: "7", height: "9", x: "3", y: "3", rx: "1", key: "10lvy0" }],
   ["rect", { width: "7", height: "5", x: "14", y: "3", rx: "1", key: "16une8" }],
   ["rect", { width: "7", height: "9", x: "14", y: "12", rx: "1", key: "1hutg5" }],
   ["rect", { width: "7", height: "5", x: "3", y: "16", rx: "1", key: "ldoo1y" }]
 ];
-const LayoutDashboard = createLucideIcon("layout-dashboard", __iconNode$M);
+const LayoutDashboard = createLucideIcon("layout-dashboard", __iconNode$S);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$L = [
+const __iconNode$R = [
   ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
   ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
   ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }],
   ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }]
 ];
-const LayoutGrid = createLucideIcon("layout-grid", __iconNode$L);
+const LayoutGrid = createLucideIcon("layout-grid", __iconNode$R);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$K = [
+const __iconNode$Q = [
   [
     "path",
     {
@@ -26412,14 +26505,14 @@ const __iconNode$K = [
   ],
   ["path", { d: "M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12", key: "mt58a7" }]
 ];
-const Leaf = createLucideIcon("leaf", __iconNode$K);
+const Leaf = createLucideIcon("leaf", __iconNode$Q);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$J = [
+const __iconNode$P = [
   ["path", { d: "M3 12h.01", key: "nlz23k" }],
   ["path", { d: "M3 18h.01", key: "1tta3j" }],
   ["path", { d: "M3 6h.01", key: "1rqtza" }],
@@ -26427,56 +26520,68 @@ const __iconNode$J = [
   ["path", { d: "M8 18h13", key: "1lx6n3" }],
   ["path", { d: "M8 6h13", key: "ik3vkj" }]
 ];
-const List$1 = createLucideIcon("list", __iconNode$J);
+const List$1 = createLucideIcon("list", __iconNode$P);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$I = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("loader-circle", __iconNode$I);
+const __iconNode$O = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("loader-circle", __iconNode$O);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$H = [
+const __iconNode$N = [
   ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
   ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
 ];
-const Lock = createLucideIcon("lock", __iconNode$H);
+const Lock = createLucideIcon("lock", __iconNode$N);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$G = [
+const __iconNode$M = [
+  ["path", { d: "m10 17 5-5-5-5", key: "1bsop3" }],
+  ["path", { d: "M15 12H3", key: "6jk70r" }],
+  ["path", { d: "M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4", key: "u53s6r" }]
+];
+const LogIn = createLucideIcon("log-in", __iconNode$M);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$L = [
   ["path", { d: "m16 17 5-5-5-5", key: "1bji2h" }],
   ["path", { d: "M21 12H9", key: "dn1m92" }],
   ["path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1uf3rs" }]
 ];
-const LogOut = createLucideIcon("log-out", __iconNode$G);
+const LogOut = createLucideIcon("log-out", __iconNode$L);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$F = [
+const __iconNode$K = [
   ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
   ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
 ];
-const Mail = createLucideIcon("mail", __iconNode$F);
+const Mail = createLucideIcon("mail", __iconNode$K);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$E = [
+const __iconNode$J = [
   [
     "path",
     {
@@ -26486,26 +26591,26 @@ const __iconNode$E = [
   ],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
 ];
-const MapPin = createLucideIcon("map-pin", __iconNode$E);
+const MapPin = createLucideIcon("map-pin", __iconNode$J);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$D = [
+const __iconNode$I = [
   ["path", { d: "M4 12h16", key: "1lakjw" }],
   ["path", { d: "M4 18h16", key: "19g7jn" }],
   ["path", { d: "M4 6h16", key: "1o0s65" }]
 ];
-const Menu$1 = createLucideIcon("menu", __iconNode$D);
+const Menu$1 = createLucideIcon("menu", __iconNode$I);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$C = [
+const __iconNode$H = [
   ["line", { x1: "2", x2: "22", y1: "2", y2: "22", key: "a6p6uj" }],
   ["path", { d: "M18.89 13.23A7.12 7.12 0 0 0 19 12v-2", key: "80xlxr" }],
   ["path", { d: "M5 10v2a7 7 0 0 0 12 5", key: "p2k8kg" }],
@@ -26513,14 +26618,14 @@ const __iconNode$C = [
   ["path", { d: "M9 9v3a3 3 0 0 0 5.12 2.12", key: "r2i35w" }],
   ["line", { x1: "12", x2: "12", y1: "19", y2: "22", key: "x3vr5v" }]
 ];
-const MicOff = createLucideIcon("mic-off", __iconNode$C);
+const MicOff = createLucideIcon("mic-off", __iconNode$H);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$B = [
+const __iconNode$G = [
   [
     "path",
     {
@@ -26537,26 +26642,26 @@ const __iconNode$B = [
   ],
   ["circle", { cx: "16", cy: "7", r: "5", key: "d08jfb" }]
 ];
-const MicVocal = createLucideIcon("mic-vocal", __iconNode$B);
+const MicVocal = createLucideIcon("mic-vocal", __iconNode$G);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$A = [
+const __iconNode$F = [
   ["path", { d: "M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z", key: "131961" }],
   ["path", { d: "M19 10v2a7 7 0 0 1-14 0v-2", key: "1vc78b" }],
   ["line", { x1: "12", x2: "12", y1: "19", y2: "22", key: "x3vr5v" }]
 ];
-const Mic = createLucideIcon("mic", __iconNode$A);
+const Mic = createLucideIcon("mic", __iconNode$F);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$z = [
+const __iconNode$E = [
   ["path", { d: "M6 18h8", key: "1borvv" }],
   ["path", { d: "M3 22h18", key: "8prr45" }],
   ["path", { d: "M14 22a7 7 0 1 0 0-14h-1", key: "1jwaiy" }],
@@ -26564,24 +26669,43 @@ const __iconNode$z = [
   ["path", { d: "M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z", key: "1bmzmy" }],
   ["path", { d: "M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3", key: "1drr47" }]
 ];
-const Microscope = createLucideIcon("microscope", __iconNode$z);
+const Microscope = createLucideIcon("microscope", __iconNode$E);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$y = [
+const __iconNode$D = [
   ["path", { d: "M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z", key: "a7tn18" }]
 ];
-const Moon = createLucideIcon("moon", __iconNode$y);
+const Moon = createLucideIcon("moon", __iconNode$D);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$x = [
+const __iconNode$C = [
+  [
+    "path",
+    {
+      d: "M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z",
+      key: "1a0edw"
+    }
+  ],
+  ["path", { d: "M12 22V12", key: "d0xqtd" }],
+  ["polyline", { points: "3.29 7 12 12 20.71 7", key: "ousv84" }],
+  ["path", { d: "m7.5 4.27 9 5.15", key: "1c824w" }]
+];
+const Package = createLucideIcon("package", __iconNode$C);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$B = [
   [
     "path",
     {
@@ -26594,14 +26718,14 @@ const __iconNode$x = [
   ["circle", { cx: "6.5", cy: "12.5", r: ".5", fill: "currentColor", key: "qy21gx" }],
   ["circle", { cx: "8.5", cy: "7.5", r: ".5", fill: "currentColor", key: "fotxhn" }]
 ];
-const Palette = createLucideIcon("palette", __iconNode$x);
+const Palette = createLucideIcon("palette", __iconNode$B);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$w = [
+const __iconNode$A = [
   ["path", { d: "M12 20h9", key: "t2du7b" }],
   [
     "path",
@@ -26611,14 +26735,14 @@ const __iconNode$w = [
     }
   ]
 ];
-const PenLine = createLucideIcon("pen-line", __iconNode$w);
+const PenLine = createLucideIcon("pen-line", __iconNode$A);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$v = [
+const __iconNode$z = [
   [
     "path",
     {
@@ -26628,7 +26752,56 @@ const __iconNode$v = [
   ],
   ["path", { d: "m15 5 4 4", key: "1mk7zo" }]
 ];
-const Pencil = createLucideIcon("pencil", __iconNode$v);
+const Pencil = createLucideIcon("pencil", __iconNode$z);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$y = [
+  [
+    "path",
+    {
+      d: "M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384",
+      key: "9njp5v"
+    }
+  ]
+];
+const Phone = createLucideIcon("phone", __iconNode$y);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$x = [
+  [
+    "path",
+    { d: "m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z", key: "wa1lgi" }
+  ],
+  ["path", { d: "m8.5 8.5 7 7", key: "rvfmvr" }]
+];
+const Pill = createLucideIcon("pill", __iconNode$x);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$w = [["polygon", { points: "6 3 20 12 6 21 6 3", key: "1oa8hb" }]];
+const Play = createLucideIcon("play", __iconNode$w);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$v = [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "M12 5v14", key: "s699le" }]
+];
+const Plus = createLucideIcon("plus", __iconNode$v);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26639,12 +26812,14 @@ const __iconNode$u = [
   [
     "path",
     {
-      d: "M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384",
-      key: "9njp5v"
+      d: "M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2",
+      key: "143wyd"
     }
-  ]
+  ],
+  ["path", { d: "M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6", key: "1itne7" }],
+  ["rect", { x: "6", y: "14", width: "12", height: "8", rx: "1", key: "1ue0tg" }]
 ];
-const Phone = createLucideIcon("phone", __iconNode$u);
+const Printer = createLucideIcon("printer", __iconNode$u);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26654,19 +26829,25 @@ const Phone = createLucideIcon("phone", __iconNode$u);
 const __iconNode$t = [
   [
     "path",
-    { d: "m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z", key: "wa1lgi" }
+    { d: "M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z", key: "q3az6g" }
   ],
-  ["path", { d: "m8.5 8.5 7 7", key: "rvfmvr" }]
+  ["path", { d: "M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8", key: "1h4pet" }],
+  ["path", { d: "M12 17.5v-11", key: "1jc1ny" }]
 ];
-const Pill = createLucideIcon("pill", __iconNode$t);
+const Receipt = createLucideIcon("receipt", __iconNode$t);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$s = [["polygon", { points: "6 3 20 12 6 21 6 3", key: "1oa8hb" }]];
-const Play = createLucideIcon("play", __iconNode$s);
+const __iconNode$s = [
+  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
+  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
+  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
+  ["path", { d: "M8 16H3v5", key: "1cv678" }]
+];
+const RefreshCw = createLucideIcon("refresh-cw", __iconNode$s);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26674,50 +26855,6 @@ const Play = createLucideIcon("play", __iconNode$s);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$r = [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "M12 5v14", key: "s699le" }]
-];
-const Plus = createLucideIcon("plus", __iconNode$r);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$q = [
-  [
-    "path",
-    {
-      d: "M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2",
-      key: "143wyd"
-    }
-  ],
-  ["path", { d: "M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6", key: "1itne7" }],
-  ["rect", { x: "6", y: "14", width: "12", height: "8", rx: "1", key: "1ue0tg" }]
-];
-const Printer = createLucideIcon("printer", __iconNode$q);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$p = [
-  [
-    "path",
-    { d: "M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z", key: "q3az6g" }
-  ],
-  ["path", { d: "M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8", key: "1h4pet" }],
-  ["path", { d: "M12 17.5v-11", key: "1jc1ny" }]
-];
-const Receipt = createLucideIcon("receipt", __iconNode$p);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$o = [
   [
     "path",
     {
@@ -26728,25 +26865,25 @@ const __iconNode$o = [
   ["path", { d: "M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7", key: "1ydtos" }],
   ["path", { d: "M7 3v4a1 1 0 0 0 1 1h7", key: "t51u73" }]
 ];
-const Save = createLucideIcon("save", __iconNode$o);
+const Save = createLucideIcon("save", __iconNode$r);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$n = [
+const __iconNode$q = [
   ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
   ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
 ];
-const Search = createLucideIcon("search", __iconNode$n);
+const Search = createLucideIcon("search", __iconNode$q);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$m = [
+const __iconNode$p = [
   [
     "path",
     {
@@ -26756,14 +26893,14 @@ const __iconNode$m = [
   ],
   ["path", { d: "m21.854 2.147-10.94 10.939", key: "12cjpa" }]
 ];
-const Send = createLucideIcon("send", __iconNode$m);
+const Send = createLucideIcon("send", __iconNode$p);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$l = [
+const __iconNode$o = [
   [
     "path",
     {
@@ -26773,14 +26910,30 @@ const __iconNode$l = [
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Settings = createLucideIcon("settings", __iconNode$l);
+const Settings = createLucideIcon("settings", __iconNode$o);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$k = [
+const __iconNode$n = [
+  [
+    "path",
+    {
+      d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+      key: "oel41y"
+    }
+  ]
+];
+const Shield = createLucideIcon("shield", __iconNode$n);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$m = [
   ["line", { x1: "21", x2: "14", y1: "4", y2: "4", key: "obuewd" }],
   ["line", { x1: "10", x2: "3", y1: "4", y2: "4", key: "1q6298" }],
   ["line", { x1: "21", x2: "12", y1: "12", y2: "12", key: "1iu8h1" }],
@@ -26791,14 +26944,14 @@ const __iconNode$k = [
   ["line", { x1: "8", x2: "8", y1: "10", y2: "14", key: "1i6ji0" }],
   ["line", { x1: "16", x2: "16", y1: "18", y2: "22", key: "1lctlv" }]
 ];
-const SlidersHorizontal = createLucideIcon("sliders-horizontal", __iconNode$k);
+const SlidersHorizontal = createLucideIcon("sliders-horizontal", __iconNode$m);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$j = [
+const __iconNode$l = [
   [
     "path",
     {
@@ -26811,14 +26964,25 @@ const __iconNode$j = [
   ["path", { d: "M4 17v2", key: "vumght" }],
   ["path", { d: "M5 18H3", key: "zchphs" }]
 ];
-const Sparkles = createLucideIcon("sparkles", __iconNode$j);
+const Sparkles = createLucideIcon("sparkles", __iconNode$l);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$i = [
+const __iconNode$k = [
+  ["path", { d: "M21 10.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.5", key: "1uzm8b" }],
+  ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
+];
+const SquareCheckBig = createLucideIcon("square-check-big", __iconNode$k);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$j = [
   ["path", { d: "M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7", key: "1m0v6g" }],
   [
     "path",
@@ -26828,7 +26992,17 @@ const __iconNode$i = [
     }
   ]
 ];
-const SquarePen = createLucideIcon("square-pen", __iconNode$i);
+const SquarePen = createLucideIcon("square-pen", __iconNode$j);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$i = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }]
+];
+const Square = createLucideIcon("square", __iconNode$i);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26836,16 +27010,6 @@ const SquarePen = createLucideIcon("square-pen", __iconNode$i);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$h = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }]
-];
-const Square = createLucideIcon("square", __iconNode$h);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$g = [
   [
     "path",
     {
@@ -26854,7 +27018,21 @@ const __iconNode$g = [
     }
   ]
 ];
-const Star = createLucideIcon("star", __iconNode$g);
+const Star = createLucideIcon("star", __iconNode$h);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$g = [
+  ["path", { d: "M11 2v2", key: "1539x4" }],
+  ["path", { d: "M5 2v2", key: "1yf1q8" }],
+  ["path", { d: "M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1", key: "rb5t3r" }],
+  ["path", { d: "M8 15a6 6 0 0 0 12 0v-3", key: "x18d4x" }],
+  ["circle", { cx: "20", cy: "10", r: "2", key: "ts1r5v" }]
+];
+const Stethoscope = createLucideIcon("stethoscope", __iconNode$g);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26862,20 +27040,6 @@ const Star = createLucideIcon("star", __iconNode$g);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$f = [
-  ["path", { d: "M11 2v2", key: "1539x4" }],
-  ["path", { d: "M5 2v2", key: "1yf1q8" }],
-  ["path", { d: "M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1", key: "rb5t3r" }],
-  ["path", { d: "M8 15a6 6 0 0 0 12 0v-3", key: "x18d4x" }],
-  ["circle", { cx: "20", cy: "10", r: "2", key: "ts1r5v" }]
-];
-const Stethoscope = createLucideIcon("stethoscope", __iconNode$f);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$e = [
   ["circle", { cx: "12", cy: "12", r: "4", key: "4exip2" }],
   ["path", { d: "M12 2v2", key: "tus03m" }],
   ["path", { d: "M12 20v2", key: "1lh1kg" }],
@@ -26886,14 +27050,14 @@ const __iconNode$e = [
   ["path", { d: "m6.34 17.66-1.41 1.41", key: "1m8zz5" }],
   ["path", { d: "m19.07 4.93-1.41 1.41", key: "1shlcs" }]
 ];
-const Sun = createLucideIcon("sun", __iconNode$e);
+const Sun = createLucideIcon("sun", __iconNode$f);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$d = [
+const __iconNode$e = [
   [
     "path",
     {
@@ -26902,14 +27066,14 @@ const __iconNode$d = [
     }
   ]
 ];
-const Table2 = createLucideIcon("table-2", __iconNode$d);
+const Table2 = createLucideIcon("table-2", __iconNode$e);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$c = [
+const __iconNode$d = [
   ["path", { d: "M17 14V2", key: "8ymqnk" }],
   [
     "path",
@@ -26919,14 +27083,14 @@ const __iconNode$c = [
     }
   ]
 ];
-const ThumbsDown = createLucideIcon("thumbs-down", __iconNode$c);
+const ThumbsDown = createLucideIcon("thumbs-down", __iconNode$d);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$b = [
+const __iconNode$c = [
   ["path", { d: "M7 10v12", key: "1qc93n" }],
   [
     "path",
@@ -26936,7 +27100,21 @@ const __iconNode$b = [
     }
   ]
 ];
-const ThumbsUp = createLucideIcon("thumbs-up", __iconNode$b);
+const ThumbsUp = createLucideIcon("thumbs-up", __iconNode$c);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$b = [
+  ["path", { d: "M3 6h18", key: "d0wm0j" }],
+  ["path", { d: "M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6", key: "4alrt4" }],
+  ["path", { d: "M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2", key: "v07s0e" }],
+  ["line", { x1: "10", x2: "10", y1: "11", y2: "17", key: "1uufr5" }],
+  ["line", { x1: "14", x2: "14", y1: "11", y2: "17", key: "xtxkd" }]
+];
+const Trash2 = createLucideIcon("trash-2", __iconNode$b);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26944,13 +27122,10 @@ const ThumbsUp = createLucideIcon("thumbs-up", __iconNode$b);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$a = [
-  ["path", { d: "M3 6h18", key: "d0wm0j" }],
-  ["path", { d: "M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6", key: "4alrt4" }],
-  ["path", { d: "M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2", key: "v07s0e" }],
-  ["line", { x1: "10", x2: "10", y1: "11", y2: "17", key: "1uufr5" }],
-  ["line", { x1: "14", x2: "14", y1: "11", y2: "17", key: "xtxkd" }]
+  ["path", { d: "M16 17h6v-6", key: "t6n2it" }],
+  ["path", { d: "m22 17-8.5-8.5-5 5L2 7", key: "x473p" }]
 ];
-const Trash2 = createLucideIcon("trash-2", __iconNode$a);
+const TrendingDown = createLucideIcon("trending-down", __iconNode$a);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26958,10 +27133,10 @@ const Trash2 = createLucideIcon("trash-2", __iconNode$a);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$9 = [
-  ["path", { d: "M16 17h6v-6", key: "t6n2it" }],
-  ["path", { d: "m22 17-8.5-8.5-5 5L2 7", key: "x473p" }]
+  ["path", { d: "M16 7h6v6", key: "box55l" }],
+  ["path", { d: "m22 7-8.5 8.5-5-5L2 17", key: "1t1m79" }]
 ];
-const TrendingDown = createLucideIcon("trending-down", __iconNode$9);
+const TrendingUp = createLucideIcon("trending-up", __iconNode$9);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26969,17 +27144,6 @@ const TrendingDown = createLucideIcon("trending-down", __iconNode$9);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$8 = [
-  ["path", { d: "M16 7h6v6", key: "box55l" }],
-  ["path", { d: "m22 7-8.5 8.5-5-5L2 17", key: "1t1m79" }]
-];
-const TrendingUp = createLucideIcon("trending-up", __iconNode$8);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$7 = [
   [
     "path",
     {
@@ -26990,7 +27154,19 @@ const __iconNode$7 = [
   ["path", { d: "M12 9v4", key: "juzpu7" }],
   ["path", { d: "M12 17h.01", key: "p32p05" }]
 ];
-const TriangleAlert = createLucideIcon("triangle-alert", __iconNode$7);
+const TriangleAlert = createLucideIcon("triangle-alert", __iconNode$8);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$7 = [
+  ["path", { d: "M12 3v12", key: "1x0j5s" }],
+  ["path", { d: "m17 8-5-5-5 5", key: "7q97r8" }],
+  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }]
+];
+const Upload = createLucideIcon("upload", __iconNode$7);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26998,11 +27174,19 @@ const TriangleAlert = createLucideIcon("triangle-alert", __iconNode$7);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$6 = [
-  ["path", { d: "M12 3v12", key: "1x0j5s" }],
-  ["path", { d: "m17 8-5-5-5 5", key: "7q97r8" }],
-  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }]
+  ["path", { d: "M10 15H6a4 4 0 0 0-4 4v2", key: "1nfge6" }],
+  ["path", { d: "m14.305 16.53.923-.382", key: "1itpsq" }],
+  ["path", { d: "m15.228 13.852-.923-.383", key: "eplpkm" }],
+  ["path", { d: "m16.852 12.228-.383-.923", key: "13v3q0" }],
+  ["path", { d: "m16.852 17.772-.383.924", key: "1i8mnm" }],
+  ["path", { d: "m19.148 12.228.383-.923", key: "1q8j1v" }],
+  ["path", { d: "m19.53 18.696-.382-.924", key: "vk1qj3" }],
+  ["path", { d: "m20.772 13.852.924-.383", key: "n880s0" }],
+  ["path", { d: "m20.772 16.148.924.383", key: "1g6xey" }],
+  ["circle", { cx: "18", cy: "15", r: "3", key: "gjjjvw" }],
+  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }]
 ];
-const Upload = createLucideIcon("upload", __iconNode$6);
+const UserCog = createLucideIcon("user-cog", __iconNode$6);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -29614,6 +29798,395 @@ function SheetContent({
       }
     )
   ] });
+}
+const createStoreImpl = (createState2) => {
+  let state;
+  const listeners = /* @__PURE__ */ new Set();
+  const setState = (partial, replace) => {
+    const nextState = typeof partial === "function" ? partial(state) : partial;
+    if (!Object.is(nextState, state)) {
+      const previousState = state;
+      state = (replace != null ? replace : typeof nextState !== "object" || nextState === null) ? nextState : Object.assign({}, state, nextState);
+      listeners.forEach((listener) => listener(state, previousState));
+    }
+  };
+  const getState2 = () => state;
+  const getInitialState = () => initialState;
+  const subscribe2 = (listener) => {
+    listeners.add(listener);
+    return () => listeners.delete(listener);
+  };
+  const api = { setState, getState: getState2, getInitialState, subscribe: subscribe2 };
+  const initialState = state = createState2(setState, getState2, api);
+  return api;
+};
+const createStore = (createState2) => createState2 ? createStoreImpl(createState2) : createStoreImpl;
+const identity$c = (arg) => arg;
+function useStore(api, selector = identity$c) {
+  const slice = React$4.useSyncExternalStore(
+    api.subscribe,
+    React$4.useCallback(() => selector(api.getState()), [api, selector]),
+    React$4.useCallback(() => selector(api.getInitialState()), [api, selector])
+  );
+  React$4.useDebugValue(slice);
+  return slice;
+}
+const createImpl = (createState2) => {
+  const api = createStore(createState2);
+  const useBoundStore = (selector) => useStore(api, selector);
+  Object.assign(useBoundStore, api);
+  return useBoundStore;
+};
+const create = (createState2) => createState2 ? createImpl(createState2) : createImpl;
+const notifications = [
+  {
+    id: "n001",
+    title: "Appointment in 30 minutes",
+    message: "Arjun Sharma — Follow-up consultation at 09:00 AM",
+    time: "8:30 AM",
+    read: false,
+    type: "appointment"
+  },
+  {
+    id: "n002",
+    title: "Payment overdue",
+    message: "Elena Kozlov — Invoice #inv006 of ₹1,900 is overdue since Mar 15",
+    time: "9:15 AM",
+    read: false,
+    type: "payment"
+  },
+  {
+    id: "n003",
+    title: "New patient registered",
+    message: "Fatima Al-Zahra has been added to the system by Dr. Anand Verma",
+    time: "Yesterday",
+    read: false,
+    type: "system"
+  },
+  {
+    id: "n004",
+    title: "Prescription renewal reminder",
+    message: "Hans Mueller — Sabal Serrulata Q runs out in 7 days. Renew prescription.",
+    time: "2 days ago",
+    read: true,
+    type: "reminder"
+  },
+  {
+    id: "n005",
+    title: "System maintenance scheduled",
+    message: "System backup and maintenance on Apr 20, 2026 from 2:00–4:00 AM IST.",
+    time: "3 days ago",
+    read: true,
+    type: "alert"
+  }
+];
+const KEYS = {
+  USERS: "HCRM_USERS",
+  CLINICS: "HCRM_CLINICS",
+  CURRENT_USER: "HCRM_CURRENT_USER",
+  SESSIONS: "HCRM_SESSIONS"
+};
+function hashPassword(password) {
+  return btoa(`${password}_hcrm_salt`);
+}
+function checkPassword(password, hash) {
+  return hashPassword(password) === hash;
+}
+function uuid() {
+  return `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+}
+function getUsers() {
+  try {
+    return JSON.parse(localStorage.getItem(KEYS.USERS) ?? "[]");
+  } catch {
+    return [];
+  }
+}
+function setUsers(users) {
+  localStorage.setItem(KEYS.USERS, JSON.stringify(users));
+}
+function getClinics() {
+  try {
+    return JSON.parse(localStorage.getItem(KEYS.CLINICS) ?? "[]");
+  } catch {
+    return [];
+  }
+}
+function setClinics(clinics) {
+  localStorage.setItem(KEYS.CLINICS, JSON.stringify(clinics));
+}
+function seedDemoDataIfEmpty() {
+  const existing = getUsers();
+  if (existing.length > 0) return;
+  const clinicId = uuid();
+  const adminId = uuid();
+  const demoClinic = {
+    id: clinicId,
+    name: "HomeoPath Wellness Clinic",
+    address: "42 Healing Grove, MG Road",
+    city: "Bangalore",
+    state: "Karnataka",
+    country: "India",
+    phone: "+91-80-4567-8901",
+    email: "admin@homeopath.com",
+    registrationNumber: "HCRM-2024-001",
+    createdAt: (/* @__PURE__ */ new Date()).toISOString(),
+    ownerId: adminId
+  };
+  const demoAdmin = {
+    id: adminId,
+    email: "admin@homeopath.com",
+    passwordHash: hashPassword("Admin@123"),
+    role: "main-admin",
+    name: "Dr. Arjun Mehta",
+    phone: "+91-98765-43210",
+    clinicIds: [clinicId],
+    permissions: { canCreateAccounts: true },
+    createdAt: (/* @__PURE__ */ new Date()).toISOString(),
+    isActive: true
+  };
+  setClinics([demoClinic]);
+  setUsers([demoAdmin]);
+}
+function loginUser(email, password) {
+  seedDemoDataIfEmpty();
+  const users = getUsers();
+  const user = users.find((u2) => u2.email.toLowerCase() === email.toLowerCase());
+  if (!user)
+    return { success: false, error: "No account found with this email." };
+  if (!user.isActive)
+    return { success: false, error: "This account has been deactivated." };
+  if (!checkPassword(password, user.passwordHash))
+    return { success: false, error: "Incorrect password." };
+  localStorage.setItem(KEYS.CURRENT_USER, JSON.stringify(user));
+  return { success: true, user };
+}
+function logoutUser() {
+  localStorage.removeItem(KEYS.CURRENT_USER);
+  localStorage.removeItem("hcrm_role");
+}
+function getCurrentUser() {
+  try {
+    const raw = localStorage.getItem(KEYS.CURRENT_USER);
+    if (!raw) return null;
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+function addClinic(data) {
+  const clinic = {
+    id: uuid(),
+    ...data,
+    createdAt: (/* @__PURE__ */ new Date()).toISOString()
+  };
+  const clinics = getClinics();
+  setClinics([...clinics, clinic]);
+  const users = getUsers();
+  setUsers(
+    users.map(
+      (u2) => u2.id === data.ownerId ? { ...u2, clinicIds: [...u2.clinicIds, clinic.id] } : u2
+    )
+  );
+  return clinic;
+}
+function getUserClinics(userId) {
+  const users = getUsers();
+  const user = users.find((u2) => u2.id === userId);
+  if (!user) return [];
+  const all = getClinics();
+  return all.filter((c2) => user.clinicIds.includes(c2.id));
+}
+const _storedUser = getCurrentUser();
+const _storedRole = _storedUser ? _storedUser.role : localStorage.getItem("hcrm_role");
+const _storedAccent = typeof localStorage !== "undefined" ? localStorage.getItem("accent-color") ?? "teal" : "teal";
+const useAppStore = create((set) => ({
+  theme: "light",
+  accentColor: _storedAccent,
+  sidebarOpen: true,
+  currentRole: _storedRole,
+  currentUser: _storedUser,
+  isLoggedIn: !!_storedUser || !!_storedRole,
+  language: "en",
+  searchQuery: "",
+  notifications,
+  toggleTheme: () => set((state) => {
+    const newTheme = state.theme === "dark" ? "light" : "dark";
+    if (newTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    return { theme: newTheme };
+  }),
+  setAccentColor: (accent) => {
+    localStorage.setItem("accent-color", accent);
+    set({ accentColor: accent });
+  },
+  toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
+  setSidebarOpen: (open) => set({ sidebarOpen: open }),
+  setRole: (roleId) => {
+    if (roleId === null) {
+      localStorage.removeItem("hcrm_role");
+    } else {
+      localStorage.setItem("hcrm_role", roleId);
+    }
+    set({ currentRole: roleId, isLoggedIn: roleId !== null });
+  },
+  setCurrentUser: (user) => {
+    if (user) {
+      localStorage.setItem("hcrm_role", user.role);
+    }
+    set({
+      currentUser: user,
+      currentRole: (user == null ? void 0 : user.role) ?? null,
+      isLoggedIn: !!user
+    });
+  },
+  logout: () => {
+    logoutUser();
+    set({ currentUser: null, currentRole: null, isLoggedIn: false });
+  },
+  setLanguage: (lang) => set({ language: lang }),
+  setSearchQuery: (query) => set({ searchQuery: query }),
+  markNotificationRead: (id2) => set((state) => ({
+    notifications: state.notifications.map(
+      (n2) => n2.id === id2 ? { ...n2, read: true } : n2
+    )
+  })),
+  markAllNotificationsRead: () => set((state) => ({
+    notifications: state.notifications.map((n2) => ({ ...n2, read: true }))
+  }))
+}));
+const ACCENT_COLOR_MAP = {
+  teal: {
+    light: "0.65 0.14 185",
+    dark: "0.72 0.16 185",
+    primary: "0.62 0.15 180",
+    primaryForeground: "0.98 0 0",
+    primaryDark: "0.65 0.18 180",
+    primaryForegroundDark: "0.12 0 0"
+  },
+  skyblue: {
+    light: "0.62 0.15 230",
+    dark: "0.70 0.17 230",
+    primary: "0.62 0.15 220",
+    primaryForeground: "0.98 0 0",
+    primaryDark: "0.65 0.18 220",
+    primaryForegroundDark: "0.12 0 0"
+  },
+  violet: {
+    light: "0.58 0.20 290",
+    dark: "0.68 0.22 290",
+    primary: "0.55 0.22 280",
+    primaryForeground: "0.98 0 0",
+    primaryDark: "0.58 0.24 280",
+    primaryForegroundDark: "0.98 0 0"
+  },
+  emerald: {
+    light: "0.60 0.16 155",
+    dark: "0.68 0.18 155",
+    primary: "0.62 0.15 145",
+    primaryForeground: "0.98 0 0",
+    primaryDark: "0.65 0.18 145",
+    primaryForegroundDark: "0.12 0 0"
+  },
+  amber: {
+    light: "0.72 0.16 75",
+    dark: "0.78 0.18 75",
+    primary: "0.72 0.18 85",
+    primaryForeground: "0.10 0 0",
+    primaryDark: "0.75 0.20 85",
+    primaryForegroundDark: "0.10 0 0"
+  },
+  pink: {
+    light: "0.60 0.20 340",
+    dark: "0.68 0.22 340",
+    primary: "0.62 0.20 350",
+    primaryForeground: "0.98 0 0",
+    primaryDark: "0.65 0.22 350",
+    primaryForegroundDark: "0.98 0 0"
+  },
+  cyan: {
+    light: "0.65 0.15 200",
+    dark: "0.72 0.17 200",
+    primary: "0.65 0.15 195",
+    primaryForeground: "0.10 0 0",
+    primaryDark: "0.68 0.18 195",
+    primaryForegroundDark: "0.10 0 0"
+  },
+  indigo: {
+    light: "0.55 0.22 265",
+    dark: "0.65 0.24 265",
+    primary: "0.50 0.22 260",
+    primaryForeground: "0.98 0 0",
+    primaryDark: "0.55 0.24 260",
+    primaryForegroundDark: "0.98 0 0"
+  },
+  rose: {
+    light: "0.62 0.22 10",
+    dark: "0.70 0.24 10",
+    primary: "0.62 0.20 10",
+    primaryForeground: "0.98 0 0",
+    primaryDark: "0.65 0.22 10",
+    primaryForegroundDark: "0.98 0 0"
+  },
+  green: {
+    light: "0.60 0.18 140",
+    dark: "0.68 0.20 140",
+    primary: "0.62 0.16 145",
+    primaryForeground: "0.98 0 0",
+    primaryDark: "0.65 0.18 145",
+    primaryForegroundDark: "0.12 0 0"
+  },
+  orange: {
+    light: "0.68 0.18 50",
+    dark: "0.74 0.20 50",
+    primary: "0.68 0.18 55",
+    primaryForeground: "0.10 0 0",
+    primaryDark: "0.70 0.20 55",
+    primaryForegroundDark: "0.10 0 0"
+  },
+  purple: {
+    light: "0.58 0.19 310",
+    dark: "0.67 0.21 310",
+    primary: "0.55 0.22 290",
+    primaryForeground: "0.98 0 0",
+    primaryDark: "0.58 0.24 290",
+    primaryForegroundDark: "0.98 0 0"
+  }
+};
+const ACCENT_COLORS = [
+  { id: "teal", label: "Teal", hex: "#14b8a6" },
+  { id: "skyblue", label: "Sky Blue", hex: "#38bdf8" },
+  { id: "violet", label: "Violet", hex: "#8b5cf6" },
+  { id: "emerald", label: "Emerald", hex: "#10b981" },
+  { id: "amber", label: "Amber", hex: "#f59e0b" },
+  { id: "pink", label: "Pink", hex: "#ec4899" },
+  { id: "cyan", label: "Cyan", hex: "#06b6d4" },
+  { id: "indigo", label: "Indigo", hex: "#6366f1" },
+  { id: "rose", label: "Rose", hex: "#f43f5e" },
+  { id: "green", label: "Green", hex: "#22c55e" },
+  { id: "orange", label: "Orange", hex: "#f97316" },
+  { id: "purple", label: "Purple", hex: "#a855f7" }
+];
+function applyPersistedAccent() {
+  if (typeof window === "undefined") return;
+  const saved = localStorage.getItem("accent-color") ?? "teal";
+  const palette = ACCENT_COLOR_MAP[saved];
+  if (!palette) return;
+  const isDark = document.documentElement.classList.contains("dark");
+  const primary = isDark ? palette.primaryDark : palette.primary;
+  const primaryFg = isDark ? palette.primaryForegroundDark : palette.primaryForeground;
+  const root2 = document.documentElement;
+  root2.style.setProperty("--accent", palette.light);
+  root2.style.setProperty("--accent-dark", palette.dark);
+  root2.style.setProperty("--primary", primary);
+  root2.style.setProperty("--primary-foreground", primaryFg);
+  root2.style.setProperty("--sidebar-primary", primary);
+  root2.style.setProperty("--sidebar-primary-foreground", primaryFg);
+  root2.style.setProperty("--ring", primary);
+  root2.style.setProperty("--chart-1", primary);
 }
 const LayoutGroupContext = reactExports.createContext({});
 function useConstant(init) {
@@ -40993,117 +41566,6 @@ function TooltipContent({
     }
   ) });
 }
-const createStoreImpl = (createState2) => {
-  let state;
-  const listeners = /* @__PURE__ */ new Set();
-  const setState = (partial, replace) => {
-    const nextState = typeof partial === "function" ? partial(state) : partial;
-    if (!Object.is(nextState, state)) {
-      const previousState = state;
-      state = (replace != null ? replace : typeof nextState !== "object" || nextState === null) ? nextState : Object.assign({}, state, nextState);
-      listeners.forEach((listener) => listener(state, previousState));
-    }
-  };
-  const getState2 = () => state;
-  const getInitialState = () => initialState;
-  const subscribe2 = (listener) => {
-    listeners.add(listener);
-    return () => listeners.delete(listener);
-  };
-  const api = { setState, getState: getState2, getInitialState, subscribe: subscribe2 };
-  const initialState = state = createState2(setState, getState2, api);
-  return api;
-};
-const createStore = (createState2) => createState2 ? createStoreImpl(createState2) : createStoreImpl;
-const identity$c = (arg) => arg;
-function useStore(api, selector = identity$c) {
-  const slice = React$4.useSyncExternalStore(
-    api.subscribe,
-    React$4.useCallback(() => selector(api.getState()), [api, selector]),
-    React$4.useCallback(() => selector(api.getInitialState()), [api, selector])
-  );
-  React$4.useDebugValue(slice);
-  return slice;
-}
-const createImpl = (createState2) => {
-  const api = createStore(createState2);
-  const useBoundStore = (selector) => useStore(api, selector);
-  Object.assign(useBoundStore, api);
-  return useBoundStore;
-};
-const create = (createState2) => createState2 ? createImpl(createState2) : createImpl;
-const notifications = [
-  {
-    id: "n001",
-    title: "Appointment in 30 minutes",
-    message: "Arjun Sharma — Follow-up consultation at 09:00 AM",
-    time: "8:30 AM",
-    read: false,
-    type: "appointment"
-  },
-  {
-    id: "n002",
-    title: "Payment overdue",
-    message: "Elena Kozlov — Invoice #inv006 of ₹1,900 is overdue since Mar 15",
-    time: "9:15 AM",
-    read: false,
-    type: "payment"
-  },
-  {
-    id: "n003",
-    title: "New patient registered",
-    message: "Fatima Al-Zahra has been added to the system by Dr. Anand Verma",
-    time: "Yesterday",
-    read: false,
-    type: "system"
-  },
-  {
-    id: "n004",
-    title: "Prescription renewal reminder",
-    message: "Hans Mueller — Sabal Serrulata Q runs out in 7 days. Renew prescription.",
-    time: "2 days ago",
-    read: true,
-    type: "reminder"
-  },
-  {
-    id: "n005",
-    title: "System maintenance scheduled",
-    message: "System backup and maintenance on Apr 20, 2026 from 2:00–4:00 AM IST.",
-    time: "3 days ago",
-    read: true,
-    type: "alert"
-  }
-];
-const useAppStore = create((set) => ({
-  theme: "dark",
-  sidebarOpen: true,
-  currentRole: "Admin",
-  language: "en",
-  searchQuery: "",
-  notifications,
-  toggleTheme: () => set((state) => {
-    const newTheme = state.theme === "dark" ? "light" : "dark";
-    if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    return { theme: newTheme };
-  }),
-  toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
-  setSidebarOpen: (open) => set({ sidebarOpen: open }),
-  setRole: (role) => set({ currentRole: role }),
-  setLanguage: (lang) => set({ language: lang }),
-  setSearchQuery: (query) => set({ searchQuery: query }),
-  markNotificationRead: (id2) => set((state) => ({
-    notifications: state.notifications.map(
-      (n2) => n2.id === id2 ? { ...n2, read: true } : n2
-    )
-  })),
-  markAllNotificationsRead: () => set((state) => ({
-    notifications: state.notifications.map((n2) => ({ ...n2, read: true }))
-  }))
-}));
 const ROUTES = {
   DASHBOARD: "/",
   PATIENTS: "/patients",
@@ -41113,6 +41575,7 @@ const ROUTES = {
   BILLING: "/billing",
   REPORTS: "/reports",
   SETTINGS: "/settings",
+  STAFF: "/staff",
   PRO: "/pro",
   PRO_VOICE: "/pro/voice-recorder",
   PRO_REMEDY_FINDER: "/pro/remedy-finder",
@@ -41128,7 +41591,82 @@ const LANGUAGES$1 = [
   { code: "es", label: "Español", flag: "🇪🇸" },
   { code: "fr", label: "Français", flag: "🇫🇷" }
 ];
-const ROLES = ["Admin", "Doctor", "Receptionist"];
+const NAV_ITEMS = [
+  {
+    path: ROUTES.DASHBOARD,
+    label: "Dashboard",
+    icon: "LayoutDashboard",
+    roles: [
+      "main-admin",
+      "doctor",
+      "receptionist",
+      "pharmacist",
+      "nurse",
+      "billing"
+    ]
+  },
+  {
+    path: ROUTES.PATIENTS,
+    label: "Patients",
+    icon: "Users",
+    roles: ["main-admin", "doctor", "receptionist"]
+  },
+  {
+    path: ROUTES.APPOINTMENTS,
+    label: "Appointments",
+    icon: "Calendar",
+    roles: ["main-admin", "doctor", "receptionist", "nurse"]
+  },
+  {
+    path: ROUTES.PRESCRIPTIONS,
+    label: "Prescriptions",
+    icon: "Pill",
+    roles: ["main-admin", "doctor", "pharmacist", "nurse", "billing"]
+  },
+  {
+    path: ROUTES.AI_ASSISTANT,
+    label: "AI Assistant",
+    icon: "Brain",
+    roles: ["main-admin", "doctor"]
+  },
+  {
+    path: ROUTES.BILLING,
+    label: "Billing",
+    icon: "CreditCard",
+    roles: ["main-admin", "billing"]
+  },
+  {
+    path: ROUTES.REPORTS,
+    label: "Reports",
+    icon: "BarChart3",
+    roles: ["main-admin", "doctor", "billing"]
+  },
+  {
+    path: ROUTES.SETTINGS,
+    label: "Settings",
+    icon: "Settings",
+    roles: [
+      "main-admin",
+      "doctor",
+      "receptionist",
+      "pharmacist",
+      "nurse",
+      "billing"
+    ]
+  },
+  {
+    path: ROUTES.STAFF,
+    label: "Staff",
+    icon: "UserCog",
+    roles: ["main-admin"]
+  },
+  {
+    path: ROUTES.PRO,
+    label: "Pro Features",
+    icon: "Crown",
+    roles: ["main-admin", "doctor"]
+  }
+];
 const STATUS_COLORS = {
   confirmed: "bg-primary/20 text-primary border-primary/30",
   pending: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
@@ -41140,98 +41678,132 @@ const STATUS_COLORS = {
   inactive: "bg-muted text-muted-foreground border-muted-foreground/30",
   stopped: "bg-destructive/20 text-destructive border-destructive/30"
 };
-function formatDate$2(dateStr) {
-  const date2 = new Date(dateStr);
-  return date2.toLocaleDateString("en-IN", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric"
-  });
-}
-function formatCurrency(amount, currency = "₹") {
-  return `${currency}${amount.toLocaleString("en-IN")}`;
-}
-function getInitials$1(name) {
-  return name.split(" ").slice(0, 2).map((n2) => n2[0]).join("").toUpperCase();
-}
-function truncate$1(str, maxLength = 40) {
-  if (str.length <= maxLength) return str;
-  return `${str.slice(0, maxLength)}…`;
-}
-function formatTime(timeStr) {
-  const [hours, minutes] = timeStr.split(":").map(Number);
-  const ampm = hours >= 12 ? "PM" : "AM";
-  const h2 = hours % 12 || 12;
-  return `${h2}:${String(minutes).padStart(2, "0")} ${ampm}`;
-}
-function relativeTime(dateStr) {
-  const date2 = new Date(dateStr);
-  const now2 = /* @__PURE__ */ new Date();
-  const diffMs = now2.getTime() - date2.getTime();
-  const diffDays = Math.floor(diffMs / (1e3 * 60 * 60 * 24));
-  if (diffDays === 0) return "Today";
-  if (diffDays === 1) return "Yesterday";
-  if (diffDays < 7) return `${diffDays} days ago`;
-  return formatDate$2(dateStr);
-}
-const navItems = [
-  { path: ROUTES.DASHBOARD, label: "Dashboard", Icon: LayoutDashboard },
-  { path: ROUTES.PATIENTS, label: "Patients", Icon: Users, badge: 3 },
+const ROLE_CONFIGS = [
   {
-    path: ROUTES.APPOINTMENTS,
-    label: "Appointments",
-    Icon: Calendar,
-    badge: 5
+    id: "main-admin",
+    displayName: "Main Admin",
+    icon: "Shield",
+    color: "violet",
+    gradient: "from-violet-500/20 to-purple-600/10",
+    description: "Full clinic oversight, staff management, analytics & settings"
   },
-  { path: ROUTES.PRESCRIPTIONS, label: "Prescriptions", Icon: Pill },
-  { path: ROUTES.AI_ASSISTANT, label: "AI Assistant", Icon: Brain },
-  { path: ROUTES.BILLING, label: "Billing", Icon: CreditCard, badge: 2 },
-  { path: ROUTES.REPORTS, label: "Reports", Icon: ChartColumn },
-  { path: ROUTES.SETTINGS, label: "Settings", Icon: Settings }
+  {
+    id: "doctor",
+    displayName: "Doctor",
+    icon: "Stethoscope",
+    color: "sky",
+    gradient: "from-sky-500/20 to-blue-600/10",
+    description: "Consultations, prescriptions, patient case history & follow-ups"
+  },
+  {
+    id: "receptionist",
+    displayName: "Receptionist",
+    icon: "CalendarCheck",
+    color: "emerald",
+    gradient: "from-emerald-500/20 to-green-600/10",
+    description: "Appointment booking, patient registration & front-desk ops"
+  },
+  {
+    id: "pharmacist",
+    displayName: "Pharmacist",
+    icon: "FlaskConical",
+    color: "amber",
+    gradient: "from-amber-500/20 to-orange-600/10",
+    description: "Remedy dispensing, inventory management & prescription review"
+  },
+  {
+    id: "nurse",
+    displayName: "Nurse / Compounder",
+    icon: "HeartPulse",
+    color: "rose",
+    gradient: "from-rose-500/20 to-pink-600/10",
+    description: "Vital recording, treatment assistance & patient care support"
+  },
+  {
+    id: "billing",
+    displayName: "Billing Staff",
+    icon: "Receipt",
+    color: "cyan",
+    gradient: "from-cyan-500/20 to-teal-600/10",
+    description: "Invoice generation, payment collection & financial reports"
+  }
 ];
+function getRoleConfig(roleId) {
+  return ROLE_CONFIGS.find((r2) => r2.id === roleId);
+}
+const COLOR_HEX$1 = {
+  violet: "#7C3AED",
+  sky: "#0EA5E9",
+  emerald: "#10B981",
+  amber: "#F59E0B",
+  pink: "#EC4899",
+  cyan: "#06B6D4"
+};
+const ICON_MAP$1 = {
+  LayoutDashboard,
+  Users,
+  UserCog,
+  Calendar,
+  Pill,
+  Brain,
+  CreditCard,
+  BarChart3: ChartColumn,
+  Settings,
+  Crown,
+  Mic2: MicVocal,
+  Search,
+  FileText,
+  Activity,
+  GitCompare,
+  Archive,
+  BookOpen
+};
+const ROLE_ICON_MAP$1 = {
+  Shield,
+  Stethoscope,
+  CalendarCheck,
+  FlaskConical,
+  HeartPulse,
+  Receipt
+};
+const navBadges = {
+  "/patients": 3,
+  "/appointments": 5,
+  "/billing": 2
+};
 const proSubItems = [
   { path: ROUTES.PRO_VOICE, label: "Voice Recorder", Icon: MicVocal },
   { path: ROUTES.PRO_REMEDY_FINDER, label: "Remedy Finder", Icon: Search },
   { path: ROUTES.PRO_TEMPLATES, label: "Case Templates", Icon: FileText },
   { path: ROUTES.PRO_TIMELINE, label: "Patient Timeline", Icon: Activity },
-  {
-    path: ROUTES.PRO_COMPARISON,
-    label: "Remedy Comparison",
-    Icon: GitCompare
-  },
+  { path: ROUTES.PRO_COMPARISON, label: "Remedy Comparison", Icon: GitCompare },
   { path: ROUTES.PRO_REPOSITORY, label: "Case Repository", Icon: Archive },
-  {
-    path: ROUTES.PRO_MATERIA_MEDICA,
-    label: "Materia Medica",
-    Icon: BookOpen
-  }
+  { path: ROUTES.PRO_MATERIA_MEDICA, label: "Materia Medica", Icon: BookOpen }
 ];
 function Sidebar({ mobile = false, onClose }) {
-  const { sidebarOpen, toggleSidebar, currentRole } = useAppStore();
+  const { sidebarOpen, toggleSidebar, currentRole, currentUser } = useAppStore();
   const routerState = useRouterState();
+  const navigate = useNavigate();
   const currentPath = routerState.location.pathname;
   const collapsed = !mobile && !sidebarOpen;
   const isProActive = currentPath === ROUTES.PRO || currentPath.startsWith("/pro/");
   const [proExpanded, setProExpanded] = reactExports.useState(isProActive);
-  const userInfo = {
-    Admin: {
-      name: "Dr. Meera Joshi",
-      email: "meera@homeopath.clinic",
-      color: "bg-primary"
-    },
-    Doctor: {
-      name: "Dr. Anand Verma",
-      email: "anand@homeopath.clinic",
-      color: "bg-accent"
-    },
-    Receptionist: {
-      name: "Priya Sharma",
-      email: "priya@homeopath.clinic",
-      color: "bg-purple-500"
-    }
-  };
-  const user = userInfo[currentRole];
-  const initials = getInitials$1(user.name);
+  const roleConfig = currentRole ? getRoleConfig(currentRole) : null;
+  const RoleIcon = roleConfig ? ROLE_ICON_MAP$1[roleConfig.icon] ?? Shield : Shield;
+  const visibleNavItems = currentRole ? NAV_ITEMS.filter(
+    (item) => item.label !== "Pro Features" && item.roles.includes(currentRole)
+  ).map((item) => ({
+    path: item.path,
+    label: item.label,
+    Icon: ICON_MAP$1[item.icon] ?? LayoutDashboard,
+    badge: navBadges[item.path]
+  })) : [];
+  const showPro = currentRole === "main-admin" || currentRole === "doctor";
+  function handleLogout() {
+    const { logout } = useAppStore.getState();
+    logout();
+    navigate({ to: "/login" });
+  }
   return /* @__PURE__ */ jsxRuntimeExports.jsx(TooltipProvider, { delayDuration: 0, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
     motion.aside,
     {
@@ -41284,7 +41856,7 @@ function Sidebar({ mobile = false, onClose }) {
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("nav", { className: "flex-1 overflow-y-auto overflow-x-hidden py-3 px-2 space-y-0.5", children: [
-          navItems.map(({ path, label, Icon: Icon2, badge }) => {
+          visibleNavItems.map(({ path, label, Icon: Icon2, badge }) => {
             const isActive = currentPath === path || path !== "/" && currentPath.startsWith(path);
             const item = /* @__PURE__ */ jsxRuntimeExports.jsxs(
               Link,
@@ -41331,13 +41903,13 @@ function Sidebar({ mobile = false, onClose }) {
             }
             return item;
           }),
-          !collapsed && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pt-3 pb-1 px-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+          showPro && !collapsed && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pt-3 pb-1 px-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px flex-1 bg-white/8" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] font-semibold uppercase tracking-widest text-[var(--premium,hsl(60_80%_60%))] opacity-80", children: "Pro" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px flex-1 bg-white/8" })
           ] }) }),
-          collapsed && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pt-3 pb-1 px-0 border-t border-white/8 mx-2" }),
-          (() => {
+          showPro && collapsed && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pt-3 pb-1 px-0 border-t border-white/8 mx-2" }),
+          showPro && (() => {
             const proItem = /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -41352,14 +41924,7 @@ function Sidebar({ mobile = false, onClose }) {
                     ),
                     "data-ocid": "nav-pro-features",
                     children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        Crown,
-                        {
-                          className: cn(
-                            "w-5 h-5 shrink-0 text-[var(--premium,hsl(60_80%_60%))]"
-                          )
-                        }
-                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Crown, { className: "w-5 h-5 shrink-0 text-[var(--premium,hsl(60_80%_60%))]" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: !collapsed && /* @__PURE__ */ jsxRuntimeExports.jsx(
                         motion.span,
                         {
@@ -41457,47 +42022,66 @@ function Sidebar({ mobile = false, onClose }) {
               "border-t border-white/8 p-3 shrink-0",
               collapsed ? "flex justify-center" : ""
             ),
-            children: collapsed ? /* @__PURE__ */ jsxRuntimeExports.jsxs(Tooltip$1, { children: [
+            children: roleConfig ? collapsed ? /* @__PURE__ */ jsxRuntimeExports.jsxs(Tooltip$1, { children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(TooltipTrigger, { asChild: true, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "div",
                 {
-                  className: cn(
-                    "w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-primary-foreground cursor-default",
-                    user.color
-                  ),
-                  children: initials
+                  className: "w-9 h-9 rounded-full flex items-center justify-center cursor-default",
+                  style: {
+                    background: `${COLOR_HEX$1[roleConfig.color] ?? roleConfig.color}22`,
+                    border: `1px solid ${COLOR_HEX$1[roleConfig.color] ?? roleConfig.color}44`
+                  },
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    RoleIcon,
+                    {
+                      className: "w-4 h-4",
+                      style: {
+                        color: COLOR_HEX$1[roleConfig.color] ?? roleConfig.color
+                      }
+                    }
+                  )
                 }
               ) }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs(TooltipContent, { side: "right", className: "text-xs", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-medium", children: user.name }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground", children: currentRole })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-medium", children: roleConfig.displayName }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground capitalize", children: currentRole })
               ] })
             ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "div",
                 {
-                  className: cn(
-                    "w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-primary-foreground shrink-0",
-                    user.color
-                  ),
-                  children: initials
+                  className: "w-9 h-9 rounded-full flex items-center justify-center shrink-0",
+                  style: {
+                    background: `${roleConfig.color}22`,
+                    border: `1px solid ${roleConfig.color}44`
+                  },
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    RoleIcon,
+                    {
+                      className: "w-4 h-4",
+                      style: {
+                        color: COLOR_HEX$1[roleConfig.color] ?? roleConfig.color
+                      }
+                    }
+                  )
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-foreground truncate", children: user.name }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground truncate", children: currentRole })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-foreground truncate", children: (currentUser == null ? void 0 : currentUser.name) ?? roleConfig.displayName }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground truncate capitalize", children: roleConfig.displayName })
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "button",
                 {
                   type: "button",
+                  onClick: handleLogout,
                   className: "p-1 rounded hover:bg-white/10 text-muted-foreground hover:text-foreground transition-colors shrink-0",
                   "aria-label": "Logout",
                   "data-ocid": "sidebar-logout",
                   children: /* @__PURE__ */ jsxRuntimeExports.jsx(LogOut, { className: "w-4 h-4" })
                 }
               )
-            ] })
+            ] }) : null
           }
         )
       ]
@@ -42960,6 +43544,22 @@ function useIsMobile(breakpoint = 768) {
   }, [breakpoint]);
   return isMobile;
 }
+const COLOR_HEX = {
+  violet: "#7C3AED",
+  sky: "#0EA5E9",
+  emerald: "#10B981",
+  amber: "#F59E0B",
+  pink: "#EC4899",
+  cyan: "#06B6D4"
+};
+const ROLE_ICON_MAP = {
+  Shield,
+  Stethoscope,
+  CalendarCheck,
+  FlaskConical,
+  HeartPulse,
+  Receipt
+};
 const PAGE_TITLES = {
   "/": "Dashboard",
   "/patients": "Patient Management",
@@ -42980,7 +43580,9 @@ function Topbar({
     language,
     setLanguage,
     currentRole,
+    currentUser,
     setRole,
+    logout,
     searchQuery,
     setSearchQuery,
     notifications: notifications2,
@@ -42989,17 +43591,13 @@ function Topbar({
   } = useAppStore();
   const isMobile = useIsMobile();
   const routerState = useRouterState();
+  const navigate = useNavigate();
   const currentPath = routerState.location.pathname;
   const pageTitle = PAGE_TITLES[currentPath] ?? "HomeoPath CRM";
   const unreadCount = notifications2.filter((n2) => !n2.read).length;
   const [notifOpen, setNotifOpen] = reactExports.useState(false);
-  const userInfo = {
-    Admin: { name: "Dr. Meera Joshi", color: "bg-primary" },
-    Doctor: { name: "Dr. Anand Verma", color: "bg-accent" },
-    Receptionist: { name: "Priya Sharma", color: "bg-purple-500" }
-  };
-  const user = userInfo[currentRole];
-  const initials = getInitials$1(user.name);
+  const roleConfig = currentRole ? getRoleConfig(currentRole) : null;
+  const RoleIcon = roleConfig ? ROLE_ICON_MAP[roleConfig.icon] ?? Shield : Shield;
   const notifTypeColors = {
     appointment: "text-primary",
     payment: "text-amber-400",
@@ -43231,16 +43829,23 @@ function Topbar({
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
                     "div",
                     {
-                      className: cn(
-                        "w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-primary-foreground",
-                        user.color
-                      ),
-                      children: initials
+                      className: "w-8 h-8 rounded-full flex items-center justify-center shrink-0",
+                      style: roleConfig ? {
+                        background: `${roleConfig.color}22`,
+                        border: `1px solid ${roleConfig.color}44`
+                      } : {},
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        RoleIcon,
+                        {
+                          className: "w-4 h-4",
+                          style: roleConfig ? { color: roleConfig.color } : {}
+                        }
+                      )
                     }
                   ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden md:block text-left", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium text-foreground leading-tight", children: user.name }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground", children: currentRole })
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden md:block text-left min-w-0", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium text-foreground leading-tight", children: (currentUser == null ? void 0 : currentUser.name) ?? (roleConfig == null ? void 0 : roleConfig.displayName) ?? "Guest" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground capitalize", children: (roleConfig == null ? void 0 : roleConfig.displayName) ?? currentRole ?? "—" })
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronDown, { className: "w-3 h-3 text-muted-foreground hidden md:block" })
                 ]
@@ -43250,23 +43855,62 @@ function Topbar({
               DropdownMenuContent,
               {
                 align: "end",
-                className: "w-48 glass border-white/10 bg-card/90 backdrop-blur-xl",
+                className: "w-56 glass border-white/10 bg-card/90 backdrop-blur-xl",
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(DropdownMenuLabel, { className: "text-xs text-muted-foreground", children: "Switch Role" }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(DropdownMenuSeparator, { className: "bg-white/10" }),
-                  ROLES.map((role) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  ROLE_CONFIGS.map((config2) => {
+                    const Icon2 = ROLE_ICON_MAP[config2.icon] ?? Shield;
+                    const isActive = currentRole === config2.id;
+                    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      DropdownMenuItem,
+                      {
+                        onClick: () => {
+                          setRole(config2.id);
+                          navigate({ to: "/" });
+                        },
+                        className: "gap-2 cursor-pointer",
+                        "data-ocid": `role-${config2.id}`,
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "div",
+                            {
+                              className: "w-5 h-5 rounded-md flex items-center justify-center shrink-0",
+                              style: {
+                                background: `${COLOR_HEX[config2.color] ?? config2.color}22`
+                              },
+                              children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                Icon2,
+                                {
+                                  className: "w-3 h-3",
+                                  style: { color: COLOR_HEX[config2.color] ?? config2.color }
+                                }
+                              )
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "flex-1 text-xs", children: config2.displayName }),
+                          isActive && /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "w-3.5 h-3.5 text-primary" })
+                        ]
+                      },
+                      config2.id
+                    );
+                  }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(DropdownMenuSeparator, { className: "bg-white/10" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
                     DropdownMenuItem,
                     {
-                      onClick: () => setRole(role),
-                      className: "gap-2 cursor-pointer",
-                      "data-ocid": `role-${role.toLowerCase()}`,
+                      onClick: () => {
+                        logout();
+                        navigate({ to: "/login" });
+                      },
+                      className: "gap-2 cursor-pointer text-muted-foreground hover:text-foreground",
+                      "data-ocid": "topbar-change-role",
                       children: [
-                        role,
-                        currentRole === role && /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "w-3.5 h-3.5 ml-auto text-primary" })
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(LogOut, { className: "w-3.5 h-3.5" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "Sign Out" })
                       ]
-                    },
-                    role
-                  ))
+                    }
+                  )
                 ]
               }
             )
@@ -43276,8 +43920,41 @@ function Topbar({
     }
   );
 }
+applyPersistedAccent();
 function LayoutInner({ children }) {
   const [mobileOpen, setMobileOpen] = reactExports.useState(false);
+  const { currentRole, currentUser, setCurrentUser, setRole, accentColor } = useAppStore();
+  const navigate = useNavigate();
+  reactExports.useEffect(() => {
+    const palette = ACCENT_COLOR_MAP[accentColor];
+    if (!palette) return;
+    const isDark = document.documentElement.classList.contains("dark");
+    const primary = isDark ? palette.primaryDark : palette.primary;
+    const primaryFg = isDark ? palette.primaryForegroundDark : palette.primaryForeground;
+    const root2 = document.documentElement;
+    root2.style.setProperty("--accent", palette.light);
+    root2.style.setProperty("--accent-dark", palette.dark);
+    root2.style.setProperty("--primary", primary);
+    root2.style.setProperty("--primary-foreground", primaryFg);
+    root2.style.setProperty("--sidebar-primary", primary);
+    root2.style.setProperty("--sidebar-primary-foreground", primaryFg);
+    root2.style.setProperty("--ring", primary);
+    root2.style.setProperty("--chart-1", primary);
+  }, [accentColor]);
+  reactExports.useEffect(() => {
+    seedDemoDataIfEmpty();
+    if (!currentUser) {
+      const stored = getCurrentUser();
+      if (stored) {
+        setCurrentUser(stored);
+        setRole(stored.role);
+      } else if (!currentRole) {
+        navigate({ to: "/login" });
+      }
+    }
+  }, [currentUser, currentRole, navigate, setCurrentUser, setRole]);
+  const isAuthenticated = currentUser || currentRole;
+  if (!isAuthenticated) return null;
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex h-screen overflow-hidden bg-background", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hidden md:flex flex-col h-full shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Sidebar, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Sheet, { open: mobileOpen, onOpenChange: setMobileOpen, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -43321,7 +43998,7 @@ function LayoutInner({ children }) {
   ] });
 }
 function Layout({ children }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(J, { attribute: "class", defaultTheme: "dark", enableSystem: false, children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(J, { attribute: "class", defaultTheme: "light", enableSystem: false, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(LayoutInner, { children }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       $e,
@@ -43335,10 +44012,15 @@ function Layout({ children }) {
     )
   ] });
 }
-const Route$i = createRootRoute({
+const Route$j = createRootRoute({
   component: RootComponent
 });
 function RootComponent() {
+  const location2 = useRouterState({ select: (s2) => s2.location });
+  const isStandalonePage = location2.pathname === "/login" || location2.pathname === "/register";
+  if (isStandalonePage) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {});
+  }
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Layout, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) });
 }
 function clamp(value, [min2, max2]) {
@@ -44116,8 +44798,8 @@ function Textarea({ className, ...props }) {
     }
   );
 }
-const Route$h = createRoute({
-  getParentRoute: () => Route$i,
+const Route$i = createRoute({
+  getParentRoute: () => Route$j,
   path: "/ai-assistant",
   component: AIAssistantPage
 });
@@ -46571,6 +47253,40 @@ function useAppointments() {
     getTodaysAppointments
   };
 }
+function formatDate$2(dateStr) {
+  const date2 = new Date(dateStr);
+  return date2.toLocaleDateString("en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric"
+  });
+}
+function formatCurrency(amount, currency = "₹") {
+  return `${currency}${amount.toLocaleString("en-IN")}`;
+}
+function getInitials$1(name) {
+  return name.split(" ").slice(0, 2).map((n2) => n2[0]).join("").toUpperCase();
+}
+function truncate$1(str, maxLength = 40) {
+  if (str.length <= maxLength) return str;
+  return `${str.slice(0, maxLength)}…`;
+}
+function formatTime(timeStr) {
+  const [hours, minutes] = timeStr.split(":").map(Number);
+  const ampm = hours >= 12 ? "PM" : "AM";
+  const h2 = hours % 12 || 12;
+  return `${h2}:${String(minutes).padStart(2, "0")} ${ampm}`;
+}
+function relativeTime(dateStr) {
+  const date2 = new Date(dateStr);
+  const now2 = /* @__PURE__ */ new Date();
+  const diffMs = now2.getTime() - date2.getTime();
+  const diffDays = Math.floor(diffMs / (1e3 * 60 * 60 * 24));
+  if (diffDays === 0) return "Today";
+  if (diffDays === 1) return "Yesterday";
+  if (diffDays < 7) return `${diffDays} days ago`;
+  return formatDate$2(dateStr);
+}
 function toDate(argument) {
   const argStr = Object.prototype.toString.call(argument);
   if (argument instanceof Date || typeof argument === "object" && argStr === "[object Date]") {
@@ -48073,8 +48789,8 @@ function isToday(date2) {
 function subMonths(date2, amount) {
   return addMonths(date2, -1);
 }
-const Route$g = createRoute({
-  getParentRoute: () => Route$i,
+const Route$h = createRoute({
+  getParentRoute: () => Route$j,
   path: "/appointments",
   component: AppointmentsPage
 });
@@ -49395,8 +50111,8 @@ const invoices = [
     paymentMethod: "Cash"
   }
 ];
-const Route$f = createRoute({
-  getParentRoute: () => Route$i,
+const Route$g = createRoute({
+  getParentRoute: () => Route$j,
   path: "/billing",
   component: BillingPage
 });
@@ -50056,1064 +50772,6 @@ function StatCard({
     }
   );
 }
-const prescriptions = [
-  {
-    id: "rx001",
-    patientId: "p001",
-    patientName: "Arjun Sharma",
-    date: "2026-04-05",
-    remedy: "Natrum Muriaticum",
-    potency: "1M",
-    dosage: "2 pills",
-    frequency: "Single dose",
-    duration: "4 weeks",
-    caseNotes: "Classic Nat-Mur picture — grief held inward, migraines with zigzag aura, worse from consolation. Thirst for large quantities of water. Craving for salty foods.",
-    symptoms: [
-      "Migraine with visual aura",
-      "Grief suppressed",
-      "Craving salt",
-      "Thirst increased",
-      "Consolation aggravates"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx002",
-    patientId: "p002",
-    patientName: "Priya Nair",
-    date: "2026-04-08",
-    remedy: "Apis Mellifica",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "TDS (thrice daily)",
-    duration: "2 weeks",
-    caseNotes: "Urticaria with burning-stinging sensation, better cold application. Puffiness of eyelids. Absence of thirst. Worse heat and pressure.",
-    symptoms: [
-      "Urticaria with stinging",
-      "Better cold",
-      "Absence of thirst",
-      "Puffiness",
-      "Worse heat"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx003",
-    patientId: "p003",
-    patientName: "Mohammed Al-Rashid",
-    date: "2026-03-28",
-    remedy: "Aurum Metallicum",
-    potency: "200C",
-    dosage: "2 pills",
-    frequency: "Weekly",
-    duration: "8 weeks",
-    caseNotes: "Hypertension with anticipatory anxiety. Perfectionist personality, guilt-ridden. Heart feels heavy. Worse at night, better motion.",
-    symptoms: [
-      "Hypertension",
-      "Anticipatory anxiety",
-      "Depression",
-      "Insomnia",
-      "Guilt complex"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx004",
-    patientId: "p004",
-    patientName: "Sarah Thompson",
-    date: "2026-04-01",
-    remedy: "Sepia",
-    potency: "200C",
-    dosage: "2 pills",
-    frequency: "Weekly",
-    duration: "6 weeks",
-    caseNotes: "Endometriosis with bearing-down sensation. Indifference to loved ones during pain. Worse standing, better vigorous exercise. Chilly patient, craves sour.",
-    symptoms: [
-      "Dysmenorrhea",
-      "Bearing-down sensation",
-      "Indifference",
-      "Worse standing",
-      "Craving sour"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx005",
-    patientId: "p005",
-    patientName: "Rahul Gupta",
-    date: "2026-04-09",
-    remedy: "Stramonium",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "BD (twice daily)",
-    duration: "4 weeks",
-    caseNotes: "ADHD with restlessness, violent behavior. Fear of darkness. Night terrors. Loquacity. Tonsillitis with membrane formation. Thirstless.",
-    symptoms: [
-      "ADHD",
-      "Restlessness",
-      "Fear of dark",
-      "Night terrors",
-      "Tonsillitis"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx006",
-    patientId: "p006",
-    patientName: "Elena Kozlov",
-    date: "2026-03-15",
-    remedy: "Rhus Toxicodendron",
-    potency: "200C",
-    dosage: "2 pills",
-    frequency: "Every 3 days",
-    duration: "6 weeks",
-    caseNotes: "Rheumatoid arthritis — initial stiffness on first motion, better continued motion. Worse cold damp. Restless — must keep moving. Red triangular tip of tongue.",
-    symptoms: [
-      "Joint stiffness",
-      "Better continued motion",
-      "Worse cold damp",
-      "Restlessness",
-      "Initial motion aggravation"
-    ],
-    status: "completed"
-  },
-  {
-    id: "rx007",
-    patientId: "p007",
-    patientName: "Vijay Krishnamurthy",
-    date: "2026-04-07",
-    remedy: "Syzygium Jambolanum",
-    potency: "Q (Mother Tincture)",
-    dosage: "10 drops in water",
-    frequency: "BD (twice daily)",
-    duration: "3 months",
-    caseNotes: "Diabetic neuropathy with burning pains in extremities. Strong anti-diabetic action at Q potency. Complement: Uranium Nitricum 3X for polydipsia.",
-    symptoms: [
-      "Hyperglycemia",
-      "Burning extremities",
-      "Polydipsia",
-      "Polyuria",
-      "Fatigue"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx008",
-    patientId: "p008",
-    patientName: "Amelia Johnson",
-    date: "2026-04-02",
-    remedy: "Thyroidinum",
-    potency: "3X",
-    dosage: "4 pills",
-    frequency: "TDS (thrice daily)",
-    duration: "2 months",
-    caseNotes: "Hashimoto hypothyroid — goitrous tendency, obesity, hair loss, mental dullness. Supports thyroid gland organopathically. Combined with Calc Carb 200C weekly.",
-    symptoms: [
-      "Hypothyroidism",
-      "Hair loss",
-      "Weight gain",
-      "Mental dullness",
-      "Cold sensitivity"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx009",
-    patientId: "p009",
-    patientName: "Kavitha Reddy",
-    date: "2026-04-10",
-    remedy: "Pulsatilla",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "OD (once daily)",
-    duration: "4 weeks",
-    caseNotes: "PCOS with delayed, scanty, clotted menses. Mild, yielding, weeping disposition. Worse warmth, better fresh air. Thirstless. Changeable symptoms.",
-    symptoms: [
-      "Irregular menses",
-      "PCOS",
-      "Weeping disposition",
-      "Thirstless",
-      "Worse heat"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx010",
-    patientId: "p010",
-    patientName: "Hans Mueller",
-    date: "2026-03-22",
-    remedy: "Sabal Serrulata",
-    potency: "Q (Mother Tincture)",
-    dosage: "15 drops in water",
-    frequency: "BD (twice daily)",
-    duration: "3 months",
-    caseNotes: "BPH with weak stream, dribbling, frequency. Cold sensation in genitals. Specific remedy for prostate. Adjunct: Thuja 200C for UTI prevention.",
-    symptoms: [
-      "BPH symptoms",
-      "Weak urinary stream",
-      "Frequency",
-      "Dribbling",
-      "Cold genitals"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx011",
-    patientId: "p011",
-    patientName: "Sunita Patel",
-    date: "2026-04-06",
-    remedy: "Lachesis",
-    potency: "200C",
-    dosage: "2 pills",
-    frequency: "Weekly",
-    duration: "8 weeks",
-    caseNotes: "Menopausal — hot flushes predominantly left-sided, worse on waking, worse tight clothing. Loquacious, jealous, suspicious. Excellent Lachesis constitutional.",
-    symptoms: [
-      "Hot flushes",
-      "Worse tight clothing",
-      "Worse on waking",
-      "Left-sided",
-      "Loquacity"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx012",
-    patientId: "p013",
-    patientName: "Fatima Al-Zahra",
-    date: "2026-04-03",
-    remedy: "Arnica Montana",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "TDS (thrice daily)",
-    duration: "3 weeks",
-    caseNotes: 'Fibromyalgia with bruised, sore sensation throughout body. Worse slightest touch. Bed feels too hard. Says "nothing is wrong" despite evident pain.',
-    symptoms: [
-      "Fibromyalgia",
-      "Bruised soreness",
-      "Worse touch",
-      "Bed too hard",
-      "Denies illness"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx013",
-    patientId: "p014",
-    patientName: "Rajan Menon",
-    date: "2026-04-04",
-    remedy: "Sulphur",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "OD (once daily)",
-    duration: "4 weeks",
-    caseNotes: "Acne — oily skin, pustular, worse exam stress. Untidy in habit, philosophical. Burning heat of eruptions. Worse washing. Sinking feeling at 11am.",
-    symptoms: [
-      "Acne vulgaris",
-      "Oily skin",
-      "Worse stress",
-      "Burning eruptions",
-      "11am hunger"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx014",
-    patientId: "p015",
-    patientName: "Isabella Rossi",
-    date: "2026-03-18",
-    remedy: "Lycopodium",
-    potency: "200C",
-    dosage: "2 pills",
-    frequency: "Weekly",
-    duration: "6 weeks",
-    caseNotes: "IBS — alternating bowel habit, bloating worse 4-8pm, rumbling flatulence. Anticipatory anxiety. Craving sweets. Right-sided complaints. Intellectual but cowardly.",
-    symptoms: [
-      "IBS",
-      "Bloating 4-8pm",
-      "Flatulence",
-      "Alternating bowels",
-      "Craving sweets"
-    ],
-    status: "stopped"
-  },
-  {
-    id: "rx015",
-    patientId: "p001",
-    patientName: "Arjun Sharma",
-    date: "2026-02-10",
-    remedy: "Belladonna",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "TDS (thrice daily)",
-    duration: "2 weeks",
-    caseNotes: "Acute migraine management — sudden, violent, throbbing headache. Face hot and red. Dilated pupils. Worse light, noise, jarring. Better in dark quiet room.",
-    symptoms: [
-      "Acute migraine",
-      "Throbbing headache",
-      "Face red and hot",
-      "Worse light",
-      "Worse noise"
-    ],
-    status: "completed"
-  }
-];
-const remedies = [
-  {
-    id: "r001",
-    name: "Aconitum Napellus",
-    commonName: "Monkshood",
-    keynotes: [
-      "Sudden acute onset",
-      "Intense fear of death",
-      "After exposure to cold dry wind",
-      "Restlessness and anxiety"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r002",
-    name: "Allium Cepa",
-    commonName: "Red Onion",
-    keynotes: [
-      "Profuse watery nasal discharge",
-      "Acrid lachrymation",
-      "Sneezing",
-      "Better open air"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r003",
-    name: "Apis Mellifica",
-    commonName: "Honey Bee",
-    keynotes: [
-      "Stinging burning pains",
-      "Oedema",
-      "Thirstlessness",
-      "Better cold application"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r004",
-    name: "Argentum Nitricum",
-    commonName: "Silver Nitrate",
-    keynotes: [
-      "Anticipatory anxiety",
-      "Desire for sweets",
-      "Diarrhea before events",
-      "Hurried and impulsive"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r005",
-    name: "Arnica Montana",
-    commonName: "Leopard's Bane",
-    keynotes: [
-      "Bruised sore sensation",
-      "Denies illness",
-      "Worse touch",
-      "Bed too hard"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r006",
-    name: "Arsenicum Album",
-    commonName: "White Arsenic",
-    keynotes: [
-      "Restlessness",
-      "Burning pains better heat",
-      "Anxiety about health",
-      "Fastidiousness"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r007",
-    name: "Aurum Metallicum",
-    commonName: "Gold",
-    keynotes: [
-      "Depression",
-      "Suicidal tendency",
-      "Hypertension",
-      "Duty-bound perfectionist"
-    ],
-    potencies: ["30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r008",
-    name: "Belladonna",
-    commonName: "Deadly Nightshade",
-    keynotes: [
-      "Sudden violent onset",
-      "Burning heat",
-      "Throbbing pains",
-      "Delirium"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r009",
-    name: "Bryonia Alba",
-    commonName: "White Bryony",
-    keynotes: [
-      "Worse any motion",
-      "Better pressure",
-      "Dryness of mucous membranes",
-      "Irritable wants to be alone"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r010",
-    name: "Calcarea Carbonica",
-    commonName: "Calcium Carbonate",
-    keynotes: [
-      "Slow plodding",
-      "Sweating on head",
-      "Worse cold damp",
-      "Craving eggs"
-    ],
-    potencies: ["30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r011",
-    name: "Cantharis",
-    commonName: "Spanish Fly",
-    keynotes: [
-      "Burning cutting urination",
-      "Cystitis",
-      "Great tenesmus",
-      "Rawness of parts"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r012",
-    name: "Carbo Vegetabilis",
-    commonName: "Vegetable Charcoal",
-    keynotes: [
-      "Flatulence and bloating",
-      "Desire for air",
-      "Sluggish vital force",
-      "Coldness"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r013",
-    name: "Causticum",
-    commonName: "Potassium Hydrate",
-    keynotes: [
-      "Paralytic conditions",
-      "Rawness and burning",
-      "Worse dry cold",
-      "Sympathy for others"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r014",
-    name: "Chamomilla",
-    commonName: "German Chamomile",
-    keynotes: [
-      "Extreme irritability",
-      "Teething children",
-      "One cheek red",
-      "Nothing satisfies"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r015",
-    name: "China Officinalis",
-    commonName: "Peruvian Bark",
-    keynotes: [
-      "Debility from loss of fluids",
-      "Periodicity",
-      "Tympanic abdomen",
-      "Better hard pressure"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r016",
-    name: "Colocynthis",
-    commonName: "Bitter Cucumber",
-    keynotes: [
-      "Cramping colic better bending double",
-      "After indignation",
-      "Dysentery",
-      "Worse straightening"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r017",
-    name: "Drosera",
-    commonName: "Sundew",
-    keynotes: [
-      "Whooping cough",
-      "Spasmodic cough",
-      "Worse after midnight",
-      "Vomiting after cough"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r018",
-    name: "Euphrasia",
-    commonName: "Eyebright",
-    keynotes: [
-      "Profuse acrid lachrymation",
-      "Bland nasal discharge",
-      "Eye inflammation",
-      "Better open air"
-    ],
-    potencies: ["6C", "30C", "200C", "Q"]
-  },
-  {
-    id: "r019",
-    name: "Ferrum Phosphoricum",
-    commonName: "Iron Phosphate",
-    keynotes: [
-      "First stage inflammation",
-      "Gradual onset fever",
-      "Anemia",
-      "Better slow motion"
-    ],
-    potencies: ["6X", "6C", "30C", "200C"]
-  },
-  {
-    id: "r020",
-    name: "Gelsemium",
-    commonName: "Yellow Jasmine",
-    keynotes: [
-      "Dullness drowsiness dizziness",
-      "Anticipatory anxiety with diarrhea",
-      "Muscle weakness",
-      "Wants to be held"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r021",
-    name: "Graphites",
-    commonName: "Black Lead (Graphite)",
-    keynotes: [
-      "Oozing sticky discharge",
-      "Eczema in folds",
-      "Constipation with hard knots",
-      "Obesity"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r022",
-    name: "Hepar Sulphuris",
-    commonName: "Calcium Sulphide",
-    keynotes: [
-      "Extreme sensitivity to pain",
-      "Suppuration",
-      "Chilly patient",
-      "Irritable when ill"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r023",
-    name: "Hyoscyamus",
-    commonName: "Henbane",
-    keynotes: [
-      "Jealousy",
-      "Lascivious behavior",
-      "Muttering delirium",
-      "Picks at bedclothes"
-    ],
-    potencies: ["30C", "200C", "1M"]
-  },
-  {
-    id: "r024",
-    name: "Ignatia Amara",
-    commonName: "St. Ignatius Bean",
-    keynotes: [
-      "Grief and disappointment",
-      "Contradictory symptoms",
-      "Sighing",
-      "Hysterical tendencies"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r025",
-    name: "Ipecacuanha",
-    commonName: "Ipecac Root",
-    keynotes: [
-      "Persistent nausea",
-      "Bright red hemorrhage",
-      "No relief from vomiting",
-      "Moist clean tongue"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r026",
-    name: "Kali Bichromicum",
-    commonName: "Potassium Dichromate",
-    keynotes: [
-      "Thick stringy tenacious discharges",
-      "Sinusitis",
-      "Ulcers with sharp punched-out edges",
-      "Worse cold"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r027",
-    name: "Kali Carbonicum",
-    commonName: "Potassium Carbonate",
-    keynotes: [
-      "Weakness",
-      "Bag-like swelling above eyelids",
-      "Worse 2-4am",
-      "Stitching pains"
-    ],
-    potencies: ["30C", "200C", "1M"]
-  },
-  {
-    id: "r028",
-    name: "Lachesis",
-    commonName: "Bushmaster Snake Venom",
-    keynotes: ["Left-sided", "Worse tight clothing", "Loquacious", "Jealousy"],
-    potencies: ["30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r029",
-    name: "Ledum Palustre",
-    commonName: "Marsh Tea",
-    keynotes: [
-      "Puncture wounds",
-      "Insect bites",
-      "Rheumatism from below upward",
-      "Better cold application"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r030",
-    name: "Lycopodium",
-    commonName: "Club Moss",
-    keynotes: [
-      "4-8pm aggravation",
-      "Right-sided",
-      "Anticipatory anxiety",
-      "Flatulence bloating"
-    ],
-    potencies: ["30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r031",
-    name: "Magnesia Phosphorica",
-    commonName: "Magnesium Phosphate",
-    keynotes: [
-      "Cramping pains better heat and pressure",
-      "Neuralgic pains",
-      "Better bending double",
-      "Worse cold"
-    ],
-    potencies: ["6X", "6C", "30C", "200C"]
-  },
-  {
-    id: "r032",
-    name: "Mercurius Solubilis",
-    commonName: "Quicksilver",
-    keynotes: [
-      "Worse night",
-      "Profuse offensive perspiration",
-      "Trembling",
-      "Creeping chilliness"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r033",
-    name: "Natrum Muriaticum",
-    commonName: "Table Salt",
-    keynotes: [
-      "Grief held inward",
-      "Worse consolation",
-      "Craving salt",
-      "Migraine with zigzag aura"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r034",
-    name: "Nux Vomica",
-    commonName: "Poison Nut",
-    keynotes: [
-      "Over-indulgence",
-      "Chilly irritable",
-      "Hypersensitive to stimuli",
-      "Sedentary lifestyle"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r035",
-    name: "Phosphorus",
-    commonName: "Phosphorus",
-    keynotes: [
-      "Burning pains",
-      "Tall slender build",
-      "Craves cold drinks",
-      "Fear of being alone in dark"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r036",
-    name: "Phytolacca",
-    commonName: "Pokeweed",
-    keynotes: [
-      "Throat inflammation radiating to ears",
-      "Mastitis",
-      "Rheumatic nodules",
-      "Indifference"
-    ],
-    potencies: ["6C", "30C", "200C", "Q"]
-  },
-  {
-    id: "r037",
-    name: "Pulsatilla",
-    commonName: "Windflower",
-    keynotes: [
-      "Changeable symptoms",
-      "Mild yielding",
-      "Thirstless",
-      "Better open air and cool"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r038",
-    name: "Rhus Toxicodendron",
-    commonName: "Poison Ivy",
-    keynotes: [
-      "Worse initial motion better continued",
-      "Restlessness",
-      "Worse cold damp",
-      "Red triangular tongue tip"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r039",
-    name: "Ruta Graveolens",
-    commonName: "Rue",
-    keynotes: [
-      "Injury to tendons and periosteum",
-      "Eye strain",
-      "Prolapse",
-      "Lame bruised feeling"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r040",
-    name: "Sabal Serrulata",
-    commonName: "Saw Palmetto",
-    keynotes: [
-      "Prostate enlargement",
-      "Weak urinary stream",
-      "Cold sensation in genitals",
-      "Dribbling"
-    ],
-    potencies: ["Q", "6C", "30C"]
-  },
-  {
-    id: "r041",
-    name: "Sepia",
-    commonName: "Ink of Cuttlefish",
-    keynotes: [
-      "Bearing-down sensation",
-      "Indifference",
-      "Worse standing",
-      "Better vigorous exercise"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r042",
-    name: "Silicea",
-    commonName: "Pure Flint",
-    keynotes: [
-      "Lack of confidence",
-      "Suppuration",
-      "Chilly obstinate",
-      "Expels foreign bodies"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r043",
-    name: "Spigelia",
-    commonName: "Pink Root",
-    keynotes: [
-      "Left-sided neuralgias",
-      "Violent palpitation",
-      "Worse motion",
-      "Worm affections"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r044",
-    name: "Spongia Tosta",
-    commonName: "Roasted Sea Sponge",
-    keynotes: [
-      "Dry barking croup",
-      "Anxiety and palpitation",
-      "Worse before midnight",
-      "Better eating and drinking"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r045",
-    name: "Staphysagria",
-    commonName: "Stavesacre",
-    keynotes: [
-      "Suppressed indignation",
-      "After surgical wounds",
-      "Honeymoon cystitis",
-      "Wounded pride"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r046",
-    name: "Stramonium",
-    commonName: "Jimsonweed",
-    keynotes: [
-      "Fear of darkness",
-      "Violent behavior",
-      "Delirium",
-      "Night terrors"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r047",
-    name: "Sulphur",
-    commonName: "Brimstone",
-    keynotes: [
-      "Burning heat",
-      "Aversion to bathing",
-      "Philosophical",
-      "11am sinking feeling"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r048",
-    name: "Syzygium Jambolanum",
-    commonName: "Jamun / Java Plum",
-    keynotes: [
-      "Diabetes mellitus",
-      "Reduces blood sugar",
-      "Burning in feet",
-      "Polyuria"
-    ],
-    potencies: ["Q", "3X", "6X", "30C"]
-  },
-  {
-    id: "r049",
-    name: "Thuja Occidentalis",
-    commonName: "Arborvitae",
-    keynotes: [
-      "Warts and condylomata",
-      "Fixed ideas",
-      "Worse cold damp",
-      "Oily skin"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r050",
-    name: "Thyroidinum",
-    commonName: "Thyroid Gland",
-    keynotes: [
-      "Hypothyroidism",
-      "Obesity",
-      "Hair loss",
-      "Mental dullness and fatigue"
-    ],
-    potencies: ["3X", "6X", "30C", "200C"]
-  },
-  {
-    id: "r051",
-    name: "Tuberculinum",
-    commonName: "Tuberculous Nosode",
-    keynotes: [
-      "Never well since tuberculosis",
-      "Wanderlust",
-      "Dissatisfied",
-      "Recurrent respiratory infections"
-    ],
-    potencies: ["200C", "1M", "10M"]
-  },
-  {
-    id: "r052",
-    name: "Urtica Urens",
-    commonName: "Stinging Nettle",
-    keynotes: ["Burns with intense itching", "Urticaria", "Gout", "Agalactia"],
-    potencies: ["6C", "30C", "200C", "Q"]
-  },
-  {
-    id: "r053",
-    name: "Veratrum Album",
-    commonName: "White Hellebore",
-    keynotes: [
-      "Collapse with cold sweat",
-      "Profuse vomiting and diarrhea",
-      "Cold extremities",
-      "Craves cold drinks"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r054",
-    name: "Zincum Metallicum",
-    commonName: "Zinc",
-    keynotes: [
-      "Brain fag",
-      "Restless legs",
-      "Suppressed eruptions",
-      "Twitching"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r055",
-    name: "Calc Phosphorica",
-    commonName: "Calcium Phosphate",
-    keynotes: [
-      "Teething problems",
-      "Bone weakness",
-      "Craves smoked meat",
-      "Dissatisfied restless"
-    ],
-    potencies: ["6X", "6C", "30C", "200C"]
-  },
-  {
-    id: "r056",
-    name: "Cimicifuga",
-    commonName: "Black Cohosh",
-    keynotes: [
-      "Menstrual irregularity",
-      "Rheumatic affections",
-      "Depression alternating",
-      "Worse cold damp"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r057",
-    name: "Hypericum Perforatum",
-    commonName: "St. John's Wort",
-    keynotes: [
-      "Nerve injuries",
-      "Puncture wounds",
-      "Spinal injuries",
-      "Shooting pains"
-    ],
-    potencies: ["6C", "30C", "200C", "Q"]
-  },
-  {
-    id: "r058",
-    name: "Medhorrhinum",
-    commonName: "Gonorrheal Nosode",
-    keynotes: [
-      "Intense sexuality",
-      "Hurried restless",
-      "Better at seashore",
-      "History of gonorrhea"
-    ],
-    potencies: ["200C", "1M", "10M"]
-  },
-  {
-    id: "r059",
-    name: "Platina",
-    commonName: "Platinum",
-    keynotes: [
-      "Pride arrogance",
-      "Nymphomania",
-      "Numbness and coldness",
-      "Cramping pains"
-    ],
-    potencies: ["30C", "200C", "1M"]
-  },
-  {
-    id: "r060",
-    name: "Petroleum",
-    commonName: "Crude Rock Oil",
-    keynotes: [
-      "Motion sickness",
-      "Eczema with deep cracks",
-      "Hunger at night",
-      "Worse winter"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  }
-];
-const analytics = {
-  patientGrowth: [
-    { month: "May 2025", value: 48 },
-    { month: "Jun 2025", value: 54 },
-    { month: "Jul 2025", value: 61 },
-    { month: "Aug 2025", value: 58 },
-    { month: "Sep 2025", value: 67 },
-    { month: "Oct 2025", value: 74 },
-    { month: "Nov 2025", value: 81 },
-    { month: "Dec 2025", value: 79 },
-    { month: "Jan 2026", value: 88 },
-    { month: "Feb 2026", value: 95 },
-    { month: "Mar 2026", value: 102 },
-    { month: "Apr 2026", value: 115 }
-  ],
-  revenue: [
-    { month: "May 2025", value: 42e3 },
-    { month: "Jun 2025", value: 49500 },
-    { month: "Jul 2025", value: 55800 },
-    { month: "Aug 2025", value: 51200 },
-    { month: "Sep 2025", value: 63400 },
-    { month: "Oct 2025", value: 71e3 },
-    { month: "Nov 2025", value: 78500 },
-    { month: "Dec 2025", value: 82e3 },
-    { month: "Jan 2026", value: 86500 },
-    { month: "Feb 2026", value: 91e3 },
-    { month: "Mar 2026", value: 98400 },
-    { month: "Apr 2026", value: 104200 }
-  ],
-  appointmentStats: {
-    confirmed: 45,
-    pending: 18,
-    completed: 87,
-    cancelled: 9
-  }
-};
-const topRemedies = [
-  { name: "Lycopodium", count: 23 },
-  { name: "Sulphur", count: 19 },
-  { name: "Natrum Mur", count: 17 },
-  { name: "Pulsatilla", count: 15 },
-  { name: "Sepia", count: 13 },
-  { name: "Calc Carb", count: 11 }
-];
 var isArray$e = Array.isArray;
 var isArray_1 = isArray$e;
 var freeGlobal$1 = typeof commonjsGlobal == "object" && commonjsGlobal && commonjsGlobal.Object === Object && commonjsGlobal;
@@ -75495,82 +75153,6 @@ var AreaChart = generateCategoricalChart({
   }],
   formatAxisMap: formatAxisMap2
 });
-const Route$e = createRoute({
-  getParentRoute: () => Route$i,
-  path: "/",
-  component: DashboardPage
-});
-function shortMonth(label) {
-  return label.split(" ")[0];
-}
-const apptBarData = [
-  { month: "Nov", confirmed: 14, pending: 6, completed: 22 },
-  { month: "Dec", confirmed: 17, pending: 8, completed: 26 },
-  { month: "Jan", confirmed: 13, pending: 5, completed: 19 },
-  { month: "Feb", confirmed: 19, pending: 7, completed: 28 },
-  { month: "Mar", confirmed: 21, pending: 9, completed: 31 },
-  { month: "Apr", confirmed: 16, pending: 5, completed: 24 }
-];
-const activityItems = [
-  {
-    id: "act1",
-    icon: UserPlus,
-    color: "text-primary bg-primary/10 border-primary/20",
-    dot: "bg-primary",
-    title: "New patient registered",
-    detail: "Fatima Al-Zahra added to system",
-    time: "2h ago"
-  },
-  {
-    id: "act2",
-    icon: Calendar,
-    color: "text-blue-400 bg-blue-500/10 border-blue-500/20",
-    dot: "bg-blue-400",
-    title: "Appointment booked",
-    detail: "Hans Mueller — Apr 16, 11:00 AM",
-    time: "3h ago"
-  },
-  {
-    id: "act3",
-    icon: Pill,
-    color: "text-purple-400 bg-purple-500/10 border-purple-500/20",
-    dot: "bg-purple-400",
-    title: "Prescription created",
-    detail: "Arjun Sharma — Natrum Mur 1M",
-    time: "5h ago"
-  },
-  {
-    id: "act4",
-    icon: TrendingUp,
-    color: "text-green-400 bg-green-500/10 border-green-500/20",
-    dot: "bg-green-400",
-    title: "Payment received",
-    detail: "Priya Nair — ₹1,800 for INV-002",
-    time: "7h ago"
-  },
-  {
-    id: "act5",
-    icon: UserPlus,
-    color: "text-primary bg-primary/10 border-primary/20",
-    dot: "bg-primary",
-    title: "New patient registered",
-    detail: "Isabella Rossi — IBS consultation",
-    time: "Yesterday"
-  },
-  {
-    id: "act6",
-    icon: Pill,
-    color: "text-purple-400 bg-purple-500/10 border-purple-500/20",
-    dot: "bg-purple-400",
-    title: "Prescription renewed",
-    detail: "Kavitha Reddy — Pulsatilla 200C",
-    time: "Yesterday"
-  }
-];
-const patientGrowthData = analytics.patientGrowth.map((d2) => ({
-  month: shortMonth(d2.month),
-  patients: d2.value
-}));
 function GlassTooltip({
   active,
   payload,
@@ -75587,37 +75169,113 @@ function GlassTooltip({
     ] }, entry.name))
   ] });
 }
-function DashboardPage() {
-  const todayAppts = appointments.filter((a2) => a2.date === "2026-04-14");
-  const activeCases = patients.filter(
-    (p2) => p2.status === "active" || p2.status === "inactive"
-  ).length;
-  const containerVariants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.1 } }
-  };
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] }
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } }
+};
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut" }
+  }
+};
+const revenueTrend = [
+  { month: "Nov", revenue: 198e3 },
+  { month: "Dec", revenue: 224e3 },
+  { month: "Jan", revenue: 211e3 },
+  { month: "Feb", revenue: 248e3 },
+  { month: "Mar", revenue: 267e3 },
+  { month: "Apr", revenue: 284500 }
+];
+const apptVolume = [
+  { day: "Mon", appointments: 28 },
+  { day: "Tue", appointments: 35 },
+  { day: "Wed", appointments: 31 },
+  { day: "Thu", appointments: 40 },
+  { day: "Fri", appointments: 34 },
+  { day: "Sat", appointments: 22 },
+  { day: "Sun", appointments: 8 }
+];
+const staffPerformance = [
+  { name: "Dr. Anjali Sharma", patients: 14, openCases: 3, rating: 4.9 },
+  { name: "Dr. Rohan Mehta", patients: 11, openCases: 2, rating: 4.7 },
+  { name: "Dr. Priya Nair", patients: 9, openCases: 4, rating: 4.8 },
+  { name: "Dr. Vikram Patel", patients: 8, openCases: 1, rating: 4.6 },
+  { name: "Dr. Sunita Joshi", patients: 7, openCases: 2, rating: 4.5 }
+];
+const CLINIC_STATS = {
+  0: { patients: "1,247", revenue: "₹2,84,500", appts: 34, doctors: 6 },
+  1: { patients: "873", revenue: "₹1,94,200", appts: 21, doctors: 4 },
+  2: { patients: "512", revenue: "₹98,700", appts: 14, doctors: 3 }
+};
+function AdminDashboard() {
+  var _a2;
+  const [clinics, setClinics2] = reactExports.useState([]);
+  const [activeIdx, setActiveIdx] = reactExports.useState(0);
+  const [addOpen, setAddOpen] = reactExports.useState(false);
+  const [newClinic, setNewClinic] = reactExports.useState({
+    name: "",
+    address: "",
+    city: "",
+    state: "",
+    country: "India",
+    phone: "",
+    email: "",
+    registrationNumber: ""
+  });
+  const [adding, setAdding] = reactExports.useState(false);
+  reactExports.useEffect(() => {
+    const user = getCurrentUser();
+    if (!user) return;
+    setClinics2(getUserClinics(user.id));
+  }, []);
+  function refreshClinics() {
+    const user = getCurrentUser();
+    if (!user) return;
+    setClinics2(getUserClinics(user.id));
+  }
+  async function handleAddClinic() {
+    if (!newClinic.name.trim()) {
+      ue.error("Clinic name is required.");
+      return;
     }
-  };
+    const user = getCurrentUser();
+    if (!user) return;
+    setAdding(true);
+    await new Promise((r2) => setTimeout(r2, 400));
+    addClinic({ ...newClinic, ownerId: user.id });
+    setAdding(false);
+    setAddOpen(false);
+    setNewClinic({
+      name: "",
+      address: "",
+      city: "",
+      state: "",
+      country: "India",
+      phone: "",
+      email: "",
+      registrationNumber: ""
+    });
+    refreshClinics();
+    ue.success("New clinic added!");
+  }
+  const stats = CLINIC_STATS[activeIdx] ?? CLINIC_STATS[0];
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     motion.div,
     {
       className: "space-y-6",
-      variants: containerVariants,
       initial: "hidden",
       animate: "visible",
-      "data-ocid": "dashboard-page",
+      variants: containerVariants,
+      "data-ocid": "admin-dashboard",
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
           PageHeader,
           {
-            title: "Dashboard",
-            description: "Good morning, Dr. Joshi. Here's your clinic overview for today.",
+            title: "Admin Dashboard",
+            description: "Clinic-wide overview — all operations at a glance.",
             breadcrumb: [{ label: "Dashboard" }]
           }
         ) }),
@@ -75625,14 +75283,75 @@ function DashboardPage() {
           motion.div,
           {
             variants: itemVariants,
+            className: "flex flex-wrap items-center gap-3",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Building2, { className: "w-4 h-4" }),
+                "Managing ",
+                clinics.length,
+                " Clinic",
+                clinics.length !== 1 ? "s" : ""
+              ] }),
+              clinics.length > 1 && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "flex gap-2 overflow-x-auto pb-1",
+                  "data-ocid": "admin.clinic_switcher",
+                  children: clinics.map((c2, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "button",
+                    {
+                      type: "button",
+                      onClick: () => setActiveIdx(i),
+                      className: `text-xs px-3 py-1.5 rounded-full border transition-all whitespace-nowrap ${activeIdx === i ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30 shadow-sm" : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground"}`,
+                      "data-ocid": `admin.clinic_tab.${i + 1}`,
+                      children: c2.name
+                    },
+                    c2.id
+                  ))
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => setAddOpen(true),
+                  className: "ml-auto flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border border-white/15 text-muted-foreground hover:text-foreground hover:border-white/30 transition-all",
+                  "data-ocid": "admin.add_clinic_button",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "w-3.5 h-3.5" }),
+                    " Add Clinic"
+                  ]
+                }
+              )
+            ]
+          }
+        ),
+        clinics[activeIdx] && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            variants: itemVariants,
+            className: "flex items-center gap-2 text-xs text-muted-foreground",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "w-3.5 h-3.5" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+                "Showing stats for",
+                " ",
+                /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-foreground", children: (_a2 = clinics[activeIdx]) == null ? void 0 : _a2.name })
+              ] })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            variants: itemVariants,
             className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4",
-            "data-ocid": "stat-cards-row",
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 StatCard,
                 {
                   title: "Total Patients",
-                  value: 248,
+                  value: stats.patients,
                   change: 12,
                   icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Users, { className: "w-5 h-5" }),
                   color: "teal"
@@ -75641,9 +75360,9 @@ function DashboardPage() {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 StatCard,
                 {
-                  title: "Today's Appointments",
-                  value: todayAppts.length,
-                  change: 3,
+                  title: "Appointments Today",
+                  value: stats.appts,
+                  change: 5,
                   icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-5 h-5" }),
                   color: "purple"
                 }
@@ -75651,20 +75370,20 @@ function DashboardPage() {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 StatCard,
                 {
-                  title: "Monthly Revenue",
-                  value: "₹1,24,500",
+                  title: "Total Revenue",
+                  value: stats.revenue,
                   change: 8,
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(TrendingUp, { className: "w-5 h-5" }),
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DollarSign, { className: "w-5 h-5" }),
                   color: "green"
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 StatCard,
                 {
-                  title: "Active Cases",
-                  value: activeCases,
-                  change: -2,
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-5 h-5" }),
+                  title: "Active Doctors",
+                  value: stats.doctors,
+                  change: 0,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(BriefcaseMedical, { className: "w-5 h-5" }),
                   color: "amber"
                 }
               )
@@ -75675,22 +75394,61 @@ function DashboardPage() {
           motion.div,
           {
             variants: itemVariants,
-            className: "grid grid-cols-1 lg:grid-cols-2 gap-4",
-            "data-ocid": "charts-row",
+            className: "grid grid-cols-1 sm:grid-cols-2 gap-4",
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "patient-growth-chart", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "admin-occupancy", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-3", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Clinic Occupancy Rate" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-2xl font-bold text-primary", children: "78%" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-3 rounded-full bg-white/10 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  motion.div,
+                  {
+                    className: "h-full rounded-full bg-gradient-to-r from-primary to-primary/70",
+                    initial: { width: 0 },
+                    animate: { width: "78%" },
+                    transition: { duration: 1.2, ease: "easeOut", delay: 0.3 }
+                  }
+                ) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-2", children: "78 of 100 slots filled today" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "glass-card p-5 flex items-center gap-4",
+                  "data-ocid": "admin-pending-cases",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-3 rounded-xl bg-amber-500/15 border border-amber-500/20", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "w-6 h-6 text-amber-400" }) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-3xl font-bold font-display text-foreground", children: "23" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Pending Cases" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-amber-400 mt-1", children: "Needs follow-up this week" })
+                    ] })
+                  ]
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            variants: itemVariants,
+            className: "grid grid-cols-1 lg:grid-cols-2 gap-4",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "admin-revenue-chart", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Patient Growth" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: "Last 12 months" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Revenue Trend" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: "Last 6 months" })
                   ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20", children: "+139%" })
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium px-2.5 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20", children: "+43%" })
                 ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 280, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 240, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
                   LineChart,
                   {
-                    data: patientGrowthData,
-                    margin: { top: 5, right: 10, left: -20, bottom: 5 },
+                    data: revenueTrend,
+                    margin: { top: 5, right: 10, left: -10, bottom: 5 },
                     children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
                         CartesianGrid,
@@ -75711,9 +75469,10 @@ function DashboardPage() {
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
                         YAxis,
                         {
-                          tick: { fontSize: 11, fill: "hsl(var(--muted-foreground))" },
+                          tick: { fontSize: 10, fill: "hsl(var(--muted-foreground))" },
                           axisLine: false,
-                          tickLine: false
+                          tickLine: false,
+                          tickFormatter: (v2) => `₹${(v2 / 1e3).toFixed(0)}k`
                         }
                       ),
                       /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { content: /* @__PURE__ */ jsxRuntimeExports.jsx(GlassTooltip, {}) }),
@@ -75721,14 +75480,14 @@ function DashboardPage() {
                         Line,
                         {
                           type: "monotone",
-                          dataKey: "patients",
-                          name: "Patients",
-                          stroke: "oklch(0.65 0.18 190)",
+                          dataKey: "revenue",
+                          name: "Revenue",
+                          stroke: "oklch(0.65 0.18 150)",
                           strokeWidth: 2.5,
-                          dot: { fill: "oklch(0.65 0.18 190)", r: 3, strokeWidth: 0 },
+                          dot: { fill: "oklch(0.65 0.18 150)", r: 3, strokeWidth: 0 },
                           activeDot: {
                             r: 5,
-                            fill: "oklch(0.65 0.18 190)",
+                            fill: "oklch(0.65 0.18 150)",
                             strokeWidth: 0
                           }
                         }
@@ -75737,18 +75496,18 @@ function DashboardPage() {
                   }
                 ) })
               ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "appointments-chart", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "admin-appt-chart", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Appointments" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: "Last 6 months" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Appointment Volume" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: "This week" })
                   ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium px-2.5 py-1 rounded-full bg-accent/10 text-accent border border-accent/20", children: "6-month view" })
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20", children: "Weekly" })
                 ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 280, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 240, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
                   BarChart,
                   {
-                    data: apptBarData,
+                    data: apptVolume,
                     margin: { top: 5, right: 10, left: -20, bottom: 5 },
                     children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -75761,7 +75520,7 @@ function DashboardPage() {
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
                         XAxis,
                         {
-                          dataKey: "month",
+                          dataKey: "day",
                           tick: { fontSize: 11, fill: "hsl(var(--muted-foreground))" },
                           axisLine: { stroke: "rgba(255,255,255,0.08)" },
                           tickLine: false
@@ -75777,37 +75536,12 @@ function DashboardPage() {
                       ),
                       /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { content: /* @__PURE__ */ jsxRuntimeExports.jsx(GlassTooltip, {}) }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        Legend,
-                        {
-                          wrapperStyle: { fontSize: "11px", paddingTop: "8px" },
-                          formatter: (value) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { color: "hsl(var(--muted-foreground))" }, children: value })
-                        }
-                      ),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(
                         Bar,
                         {
-                          dataKey: "confirmed",
-                          name: "Confirmed",
+                          dataKey: "appointments",
+                          name: "Appointments",
                           fill: "oklch(0.65 0.18 190)",
-                          radius: [3, 3, 0, 0]
-                        }
-                      ),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        Bar,
-                        {
-                          dataKey: "pending",
-                          name: "Pending",
-                          fill: "oklch(0.75 0.15 120)",
-                          radius: [3, 3, 0, 0]
-                        }
-                      ),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        Bar,
-                        {
-                          dataKey: "completed",
-                          name: "Completed",
-                          fill: "oklch(0.60 0.20 130)",
-                          radius: [3, 3, 0, 0]
+                          radius: [4, 4, 0, 0]
                         }
                       )
                     ]
@@ -75817,81 +75551,1511 @@ function DashboardPage() {
             ]
           }
         ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "admin-staff-table", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Staff Performance" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground", children: "Today" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-sm", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { className: "border-b border-white/10", children: [
+              "Doctor Name",
+              "Patients Today",
+              "Cases Open",
+              "Avg Rating"
+            ].map((h2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "th",
+              {
+                className: "text-left text-xs font-semibold text-muted-foreground py-2 pr-4 last:pr-0",
+                children: h2
+              },
+              h2
+            )) }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: staffPerformance.map((row, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "tr",
+              {
+                className: "border-b border-white/5 hover:bg-white/[0.03] transition-colors",
+                "data-ocid": `admin-staff.item.${i + 1}`,
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 font-medium text-foreground", children: row.name }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 text-muted-foreground tabular-nums", children: row.patients }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "span",
+                    {
+                      className: `text-xs font-medium px-2 py-0.5 rounded-full ${row.openCases > 3 ? "bg-amber-500/15 text-amber-400" : "bg-green-500/15 text-green-400"}`,
+                      children: row.openCases
+                    }
+                  ) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 text-right", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-primary", children: [
+                    "⭐ ",
+                    row.rating
+                  ] }) })
+                ]
+              },
+              row.name
+            )) })
+          ] }) })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Dialog, { open: addOpen, onOpenChange: setAddOpen, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          DialogContent,
+          {
+            className: "glass border-white/10 bg-card/95 backdrop-blur-xl",
+            "data-ocid": "admin.add_clinic.dialog",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(DialogHeader, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(DialogTitle, { className: "flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Building2, { className: "w-5 h-5 text-primary" }),
+                " Add New Clinic"
+              ] }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1 block", children: "Clinic Name *" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    Input,
+                    {
+                      value: newClinic.name,
+                      onChange: (e3) => setNewClinic((c2) => ({ ...c2, name: e3.target.value })),
+                      placeholder: "Healing Roots Clinic",
+                      className: "glass border-white/10 bg-white/5",
+                      "data-ocid": "admin.add_clinic.name_input"
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-3", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1 block", children: "City" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      Input,
+                      {
+                        value: newClinic.city,
+                        onChange: (e3) => setNewClinic((c2) => ({ ...c2, city: e3.target.value })),
+                        placeholder: "Mumbai",
+                        className: "glass border-white/10 bg-white/5"
+                      }
+                    )
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1 block", children: "Country" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      Input,
+                      {
+                        value: newClinic.country,
+                        onChange: (e3) => setNewClinic((c2) => ({ ...c2, country: e3.target.value })),
+                        placeholder: "India",
+                        className: "glass border-white/10 bg-white/5"
+                      }
+                    )
+                  ] })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1 block", children: "Address" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    Input,
+                    {
+                      value: newClinic.address,
+                      onChange: (e3) => setNewClinic((c2) => ({ ...c2, address: e3.target.value })),
+                      placeholder: "Street address",
+                      className: "glass border-white/10 bg-white/5"
+                    }
+                  )
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2 mt-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    type: "button",
+                    variant: "ghost",
+                    onClick: () => setAddOpen(false),
+                    className: "flex-1",
+                    "data-ocid": "admin.add_clinic.cancel_button",
+                    children: "Cancel"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    type: "button",
+                    onClick: handleAddClinic,
+                    disabled: adding,
+                    className: "flex-1 bg-primary hover:bg-primary/90",
+                    "data-ocid": "admin.add_clinic.confirm_button",
+                    children: adding ? "Adding..." : "Add Clinic"
+                  }
+                )
+              ] })
+            ]
+          }
+        ) })
+      ]
+    }
+  );
+}
+const revenueData$1 = [
+  { month: "Nov", revenue: 182e3 },
+  { month: "Dec", revenue: 214e3 },
+  { month: "Jan", revenue: 196e3 },
+  { month: "Feb", revenue: 238e3 },
+  { month: "Mar", revenue: 251e3 },
+  { month: "Apr", revenue: 284500 }
+];
+const unpaidInvoices = [
+  {
+    patient: "Hans Mueller",
+    amount: "₹3,200",
+    invoiceDate: "Apr 20",
+    dueDate: "May 5",
+    status: "overdue"
+  },
+  {
+    patient: "Fatima Al-Zahra",
+    amount: "₹2,800",
+    invoiceDate: "Apr 25",
+    dueDate: "May 10",
+    status: "pending"
+  },
+  {
+    patient: "Isabella Rossi",
+    amount: "₹4,500",
+    invoiceDate: "Apr 28",
+    dueDate: "May 13",
+    status: "pending"
+  },
+  {
+    patient: "Ravi Krishnan",
+    amount: "₹1,900",
+    invoiceDate: "Apr 15",
+    dueDate: "Apr 30",
+    status: "overdue"
+  },
+  {
+    patient: "Aditya Gupta",
+    amount: "₹3,600",
+    invoiceDate: "May 1",
+    dueDate: "May 16",
+    status: "pending"
+  }
+];
+const overdueAccounts = [
+  { patient: "Sunita Verma", amount: "₹7,400", days: 42 },
+  { patient: "Hans Mueller", amount: "₹3,200", days: 34 },
+  { patient: "Ravi Krishnan", amount: "₹1,900", days: 39 },
+  { patient: "Meera Iyer", amount: "₹5,100", days: 51 },
+  { patient: "Rahul Das", amount: "₹2,600", days: 33 },
+  { patient: "Ananya Singh", amount: "₹4,800", days: 38 },
+  { patient: "Lakshmi Patel", amount: "₹3,900", days: 44 }
+];
+const invoiceStatusStyle = {
+  overdue: "bg-rose-500/15 text-rose-400 border-rose-500/25",
+  pending: "bg-amber-500/15 text-amber-400 border-amber-500/25",
+  paid: "bg-green-500/15 text-green-400 border-green-500/25"
+};
+function BillingDashboard() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      className: "space-y-6",
+      initial: "hidden",
+      animate: "visible",
+      variants: containerVariants,
+      "data-ocid": "billing-dashboard",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          PageHeader,
+          {
+            title: "Billing Dashboard",
+            description: "Track invoices, collections, overdue accounts, and revenue.",
+            breadcrumb: [{ label: "Dashboard" }]
+          }
+        ) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           motion.div,
           {
             variants: itemVariants,
-            className: "grid grid-cols-1 lg:grid-cols-2 gap-4",
-            "data-ocid": "activity-schedule-row",
+            className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4",
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "recent-activity", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Recent Activity" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground", children: "Today" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Unpaid Invoices",
+                  value: 23,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DollarSign, { className: "w-5 h-5" }),
+                  color: "amber"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Collected Today",
+                  value: "₹12,400",
+                  change: 18,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CreditCard, { className: "w-5 h-5" }),
+                  color: "green"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Overdue (30+ days)",
+                  value: 7,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "w-5 h-5" }),
+                  color: "rose"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Renewals Due",
+                  value: 4,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-5 h-5" }),
+                  color: "purple"
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            variants: itemVariants,
+            className: "grid grid-cols-1 lg:grid-cols-3 gap-4",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "lg:col-span-2 glass-card p-5",
+                  "data-ocid": "billing-invoices-table",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Unpaid Invoices" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20", children: "₹48,200 total" })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-sm", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { className: "border-b border-white/10", children: [
+                        "Patient",
+                        "Amount",
+                        "Invoice Date",
+                        "Due Date",
+                        "Status"
+                      ].map((h2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "th",
+                        {
+                          className: "text-left text-xs font-semibold text-muted-foreground py-2 pr-4 last:pr-0",
+                          children: h2
+                        },
+                        h2
+                      )) }) }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: unpaidInvoices.map((row) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "tr",
+                        {
+                          className: "border-b border-white/5 hover:bg-white/[0.03] transition-colors",
+                          "data-ocid": `billing-invoice.item.${unpaidInvoices.indexOf(row) + 1}`,
+                          children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 font-medium text-foreground", children: row.patient }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 text-sm font-bold text-foreground tabular-nums", children: row.amount }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 text-xs text-muted-foreground", children: row.invoiceDate }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 text-xs text-muted-foreground", children: row.dueDate }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "span",
+                              {
+                                className: `text-xs font-medium px-2.5 py-0.5 rounded-full border capitalize ${invoiceStatusStyle[row.status]}`,
+                                children: row.status
+                              }
+                            ) })
+                          ]
+                        },
+                        row.patient
+                      )) })
+                    ] }) })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "billing-overdue-accounts", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "w-4 h-4 text-rose-400" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Overdue Accounts" })
                 ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-3", children: activityItems.map((item, index2) => {
-                  const Icon2 = item.icon;
-                  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                    motion.div,
-                    {
-                      initial: { opacity: 0, x: -10 },
-                      animate: { opacity: 1, x: 0 },
-                      transition: { delay: 0.3 + index2 * 0.06 },
-                      className: "flex items-start gap-3",
-                      children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx(
-                          "div",
-                          {
-                            className: `w-8 h-8 rounded-lg border flex items-center justify-center shrink-0 ${item.color}`,
-                            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: "w-3.5 h-3.5" })
-                          }
-                        ),
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-semibold text-foreground leading-tight", children: item.title }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5 truncate", children: item.detail })
-                        ] }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-muted-foreground/60 shrink-0 mt-0.5", children: item.time })
-                      ]
-                    },
-                    item.id
-                  );
-                }) })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "todays-schedule", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Today's Schedule" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs text-muted-foreground bg-muted/30 px-2.5 py-1 rounded-full border border-border/50", children: [
-                    todayAppts.length,
-                    " appointments"
-                  ] })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2.5", children: todayAppts.map((appt, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  motion.div,
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2", children: overdueAccounts.map((acc) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
                   {
-                    initial: { opacity: 0, x: 10 },
-                    animate: { opacity: 1, x: 0 },
-                    transition: { delay: 0.3 + index2 * 0.06 },
-                    className: "flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.06] transition-smooth border border-white/5 cursor-pointer",
-                    "data-ocid": `schedule-item-${appt.id}`,
+                    className: "flex items-center justify-between p-2.5 rounded-xl bg-rose-500/5 border border-rose-500/15 hover:bg-rose-500/10 transition-smooth",
+                    "data-ocid": `billing-overdue.item.${overdueAccounts.indexOf(acc) + 1}`,
                     children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-14 shrink-0 text-center", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-bold text-primary tabular-nums", children: formatTime(appt.time) }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground capitalize mt-0.5", children: appt.type })
-                      ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-px h-8 bg-border/40 shrink-0" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-semibold text-foreground truncate", children: appt.patientName }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground truncate mt-0.5", children: appt.doctor })
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-semibold text-foreground truncate", children: acc.patient }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-[10px] text-rose-400 mt-0.5", children: [
+                          acc.days,
+                          " days overdue"
+                        ] })
                       ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(StatusBadge, { status: appt.status })
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-bold text-rose-400 ml-2 tabular-nums shrink-0", children: acc.amount })
                     ]
                   },
-                  appt.id
+                  acc.patient
+                )) })
+              ] })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "billing-revenue-chart", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Monthly Revenue" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: "Last 6 months" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium px-2.5 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20", children: "+56%" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 220, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            LineChart,
+            {
+              data: revenueData$1,
+              margin: { top: 5, right: 10, left: -10, bottom: 5 },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  CartesianGrid,
+                  {
+                    strokeDasharray: "3 3",
+                    stroke: "rgba(255,255,255,0.06)"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  XAxis,
+                  {
+                    dataKey: "month",
+                    tick: { fontSize: 11, fill: "hsl(var(--muted-foreground))" },
+                    axisLine: { stroke: "rgba(255,255,255,0.08)" },
+                    tickLine: false
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  YAxis,
+                  {
+                    tick: { fontSize: 10, fill: "hsl(var(--muted-foreground))" },
+                    axisLine: false,
+                    tickLine: false,
+                    tickFormatter: (v2) => `₹${(v2 / 1e3).toFixed(0)}k`
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { content: /* @__PURE__ */ jsxRuntimeExports.jsx(GlassTooltip, {}) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Line,
+                  {
+                    type: "monotone",
+                    dataKey: "revenue",
+                    name: "Revenue",
+                    stroke: "oklch(0.65 0.18 150)",
+                    strokeWidth: 2.5,
+                    dot: { fill: "oklch(0.65 0.18 150)", r: 3, strokeWidth: 0 },
+                    activeDot: {
+                      r: 5,
+                      fill: "oklch(0.65 0.18 150)",
+                      strokeWidth: 0
+                    }
+                  }
+                )
+              ]
+            }
+          ) })
+        ] }) })
+      ]
+    }
+  );
+}
+const todayQueue = [
+  {
+    time: "09:00 AM",
+    patient: "Arjun Sharma",
+    reason: "Follow-up: Migraine",
+    status: "completed"
+  },
+  {
+    time: "10:00 AM",
+    patient: "Fatima Al-Zahra",
+    reason: "New: Chronic IBS",
+    status: "completed"
+  },
+  {
+    time: "11:00 AM",
+    patient: "Priya Nair",
+    reason: "Review: Eczema",
+    status: "confirmed"
+  },
+  {
+    time: "12:00 PM",
+    patient: "Hans Mueller",
+    reason: "New: Joint Pain",
+    status: "pending"
+  },
+  {
+    time: "02:30 PM",
+    patient: "Kavitha Reddy",
+    reason: "Follow-up: Anxiety",
+    status: "pending"
+  }
+];
+const recentCases = [
+  {
+    patient: "Sunita Verma",
+    diagnosis: "Chronic Sinusitis",
+    lastVisit: "May 7, 2026"
+  },
+  {
+    patient: "Ravi Krishnan",
+    diagnosis: "Irritable Bowel Syndrome",
+    lastVisit: "May 5, 2026"
+  },
+  {
+    patient: "Meera Iyer",
+    diagnosis: "Anxiety & Insomnia",
+    lastVisit: "May 3, 2026"
+  },
+  {
+    patient: "Aditya Gupta",
+    diagnosis: "Psoriasis",
+    lastVisit: "Apr 30, 2026"
+  },
+  {
+    patient: "Lakshmi Patel",
+    diagnosis: "Rheumatoid Arthritis",
+    lastVisit: "Apr 28, 2026"
+  }
+];
+function DoctorDashboard() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      className: "space-y-6",
+      initial: "hidden",
+      animate: "visible",
+      variants: containerVariants,
+      "data-ocid": "doctor-dashboard",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          PageHeader,
+          {
+            title: "My Dashboard",
+            description: "Good morning, Doctor. Here's your patient schedule and case overview.",
+            breadcrumb: [{ label: "Dashboard" }]
+          }
+        ) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            variants: itemVariants,
+            className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "My Patients",
+                  value: 89,
+                  change: 3,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-5 h-5" }),
+                  color: "teal"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Today's Appointments",
+                  value: 12,
+                  change: 0,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-5 h-5" }),
+                  color: "purple"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Open Cases",
+                  value: 7,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(ClipboardList, { className: "w-5 h-5" }),
+                  color: "amber"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Prescriptions This Month",
+                  value: 156,
+                  change: 8,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Pill, { className: "w-5 h-5" }),
+                  color: "green"
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            variants: itemVariants,
+            className: "grid grid-cols-1 lg:grid-cols-3 gap-4",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "lg:col-span-2 glass-card p-5",
+                  "data-ocid": "doctor-appt-queue",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Today's Appointment Queue" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground bg-muted/30 px-2.5 py-1 rounded-full border border-border/50", children: "3 remaining" })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-sm", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { className: "border-b border-white/10", children: ["Time", "Patient Name", "Reason", "Status"].map((h2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "th",
+                        {
+                          className: "text-left text-xs font-semibold text-muted-foreground py-2 pr-4 last:pr-0",
+                          children: h2
+                        },
+                        h2
+                      )) }) }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: todayQueue.map((row) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "tr",
+                        {
+                          className: "border-b border-white/5 hover:bg-white/[0.03] transition-colors",
+                          "data-ocid": `doctor-appt.item.${todayQueue.indexOf(row) + 1}`,
+                          children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 text-xs font-bold text-primary tabular-nums", children: row.time }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 font-medium text-foreground", children: row.patient }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 text-xs text-muted-foreground", children: row.reason }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(StatusBadge, { status: row.status }) })
+                          ]
+                        },
+                        row.time
+                      )) })
+                    ] }) })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "doctor-quick-actions", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground mb-4", children: "Quick Actions" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col gap-2.5", children: [
+                  {
+                    label: "New Prescription",
+                    icon: Pill,
+                    color: "text-primary",
+                    bg: "bg-primary/10 hover:bg-primary/20 border-primary/20"
+                  },
+                  {
+                    label: "Start Case Taking",
+                    icon: ClipboardList,
+                    color: "text-purple-400",
+                    bg: "bg-purple-500/10 hover:bg-purple-500/20 border-purple-500/20"
+                  },
+                  {
+                    label: "Remedy Finder",
+                    icon: FileText,
+                    color: "text-amber-400",
+                    bg: "bg-amber-500/10 hover:bg-amber-500/20 border-amber-500/20"
+                  }
+                ].map((action) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "button",
+                  {
+                    type: "button",
+                    className: `flex items-center gap-3 px-4 py-3 rounded-xl border transition-smooth text-sm font-medium ${action.bg} ${action.color}`,
+                    "data-ocid": `doctor-action-${action.label.toLowerCase().replace(/ /g, "-")}`,
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(action.icon, { className: "w-4 h-4" }),
+                      action.label
+                    ]
+                  },
+                  action.label
+                )) })
+              ] })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "doctor-recent-cases", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground mb-4", children: "Recent Cases" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2.5", children: recentCases.map((c2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "flex items-center justify-between p-3 rounded-xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/5 transition-smooth",
+              "data-ocid": `doctor-case.item.${recentCases.indexOf(c2) + 1}`,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-semibold text-foreground", children: c2.patient }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: c2.diagnosis })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-right", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Last visit" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium text-foreground mt-0.5", children: c2.lastVisit })
+                ] })
+              ]
+            },
+            c2.patient
+          )) })
+        ] }) })
+      ]
+    }
+  );
+}
+const prepQueue = [
+  {
+    remedy: "Arnica Montana",
+    potency: "30C",
+    qty: 3,
+    doctor: "Dr. Anjali Sharma",
+    status: "pending"
+  },
+  {
+    remedy: "Belladonna",
+    potency: "200C",
+    qty: 2,
+    doctor: "Dr. Rohan Mehta",
+    status: "in-progress"
+  },
+  {
+    remedy: "Nux Vomica",
+    potency: "1M",
+    qty: 1,
+    doctor: "Dr. Vikram Patel",
+    status: "done"
+  },
+  {
+    remedy: "Pulsatilla",
+    potency: "30C",
+    qty: 4,
+    doctor: "Dr. Anjali Sharma",
+    status: "pending"
+  },
+  {
+    remedy: "Sulphur",
+    potency: "200C",
+    qty: 2,
+    doctor: "Dr. Priya Nair",
+    status: "done"
+  },
+  {
+    remedy: "Calc Carb",
+    potency: "1M",
+    qty: 1,
+    doctor: "Dr. Rohan Mehta",
+    status: "in-progress"
+  }
+];
+const stockCategories = [
+  {
+    label: "Mineral",
+    count: 142,
+    icon: "💎",
+    color: "bg-sky-500/15 border-sky-500/20 text-sky-300"
+  },
+  {
+    label: "Plant",
+    count: 218,
+    icon: "🌿",
+    color: "bg-green-500/15 border-green-500/20 text-green-300"
+  },
+  {
+    label: "Animal",
+    count: 34,
+    icon: "🦐",
+    color: "bg-amber-500/15 border-amber-500/20 text-amber-300"
+  },
+  {
+    label: "Nosode",
+    count: 28,
+    icon: "🔬",
+    color: "bg-purple-500/15 border-purple-500/20 text-purple-300"
+  }
+];
+const statusStyle$1 = {
+  pending: "bg-amber-500/15 text-amber-400 border-amber-500/25",
+  "in-progress": "bg-blue-500/15 text-blue-400 border-blue-500/25",
+  done: "bg-green-500/15 text-green-400 border-green-500/25"
+};
+function NurseDashboard() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      className: "space-y-6",
+      initial: "hidden",
+      animate: "visible",
+      variants: containerVariants,
+      "data-ocid": "nurse-dashboard",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          PageHeader,
+          {
+            title: "Nurse / Compounder",
+            description: "Manage remedy preparations, stock tracking, and task queue.",
+            breadcrumb: [{ label: "Dashboard" }]
+          }
+        ) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            variants: itemVariants,
+            className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Preparation Tasks Today",
+                  value: 18,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(ClipboardList, { className: "w-5 h-5" }),
+                  color: "teal"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Completed",
+                  value: 12,
+                  change: 15,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(SquareCheckBig, { className: "w-5 h-5" }),
+                  color: "green"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Pending Remedies",
+                  value: 6,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Leaf, { className: "w-5 h-5" }),
+                  color: "amber"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Stock Requests",
+                  value: 3,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Package, { className: "w-5 h-5" }),
+                  color: "purple"
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "nurse-stock-categories", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Stock Levels by Category" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                className: "text-xs font-medium px-3 py-1.5 rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-smooth",
+                "data-ocid": "nurse-templates-button",
+                children: "Clinical Templates"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-3", children: stockCategories.map((cat) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: `rounded-xl border p-4 flex flex-col items-center gap-1 ${cat.color}`,
+              "data-ocid": `nurse-stock-cat.item.${stockCategories.indexOf(cat) + 1}`,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-2xl", children: cat.icon }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xl font-bold font-display tabular-nums", children: cat.count }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium", children: cat.label })
+              ]
+            },
+            cat.label
+          )) })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "nurse-prep-queue", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground mb-4", children: "Preparation Queue" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-sm", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { className: "border-b border-white/10", children: [
+              "Remedy Name",
+              "Potency",
+              "Qty",
+              "Doctor Ordered",
+              "Status"
+            ].map((h2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "th",
+              {
+                className: "text-left text-xs font-semibold text-muted-foreground py-2 pr-4 last:pr-0",
+                children: h2
+              },
+              h2
+            )) }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: prepQueue.map((row) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "tr",
+              {
+                className: "border-b border-white/5 hover:bg-white/[0.03] transition-colors",
+                "data-ocid": `nurse-prep.item.${prepQueue.indexOf(row) + 1}`,
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 font-medium text-foreground", children: row.remedy }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-primary", children: row.potency }) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 text-muted-foreground tabular-nums", children: row.qty }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 text-xs text-muted-foreground", children: row.doctor }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "span",
+                    {
+                      className: `text-xs font-medium px-2.5 py-0.5 rounded-full border capitalize ${statusStyle$1[row.status]}`,
+                      children: row.status
+                    }
+                  ) })
+                ]
+              },
+              `${row.remedy}-${row.potency}`
+            )) })
+          ] }) })
+        ] }) })
+      ]
+    }
+  );
+}
+const prescriptionQueue = [
+  {
+    patient: "Priya Nair",
+    doctor: "Dr. Anjali Sharma",
+    remedy: "Natrum Muriaticum",
+    potency: "1M",
+    status: "pending"
+  },
+  {
+    patient: "Hans Mueller",
+    doctor: "Dr. Rohan Mehta",
+    remedy: "Rhus Toxicodendron",
+    potency: "200C",
+    status: "pending"
+  },
+  {
+    patient: "Kavitha Reddy",
+    doctor: "Dr. Vikram Patel",
+    remedy: "Pulsatilla",
+    potency: "30C",
+    status: "preparing"
+  },
+  {
+    patient: "Arjun Sharma",
+    doctor: "Dr. Anjali Sharma",
+    remedy: "Nux Vomica",
+    potency: "200C",
+    status: "ready"
+  },
+  {
+    patient: "Sunita Verma",
+    doctor: "Dr. Priya Nair",
+    remedy: "Belladonna",
+    potency: "30C",
+    status: "dispensed"
+  }
+];
+const stockAlerts = [
+  { name: "Arnica Montana 30C", stock: 5, severity: "critical" },
+  { name: "Belladonna 200C", stock: 3, severity: "critical" },
+  { name: "Nux Vomica 1M", stock: 8, severity: "low" },
+  { name: "Pulsatilla 200C", stock: 6, severity: "low" },
+  { name: "Sulphur 30C", stock: 11, severity: "low" }
+];
+const statusStyle = {
+  pending: "bg-amber-500/15 text-amber-400 border-amber-500/25",
+  preparing: "bg-blue-500/15 text-blue-400 border-blue-500/25",
+  ready: "bg-green-500/15 text-green-400 border-green-500/25",
+  dispensed: "bg-muted/30 text-muted-foreground border-border/30"
+};
+function PharmacistDashboard() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      className: "space-y-6",
+      initial: "hidden",
+      animate: "visible",
+      variants: containerVariants,
+      "data-ocid": "pharmacist-dashboard",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          PageHeader,
+          {
+            title: "Pharmacy Dashboard",
+            description: "Prescription fulfillment, dispensing, and inventory management.",
+            breadcrumb: [{ label: "Dashboard" }]
+          }
+        ) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            variants: itemVariants,
+            className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Prescriptions Pending",
+                  value: 14,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FlaskConical, { className: "w-5 h-5" }),
+                  color: "amber"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Dispensed Today",
+                  value: 28,
+                  change: 12,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(SquareCheckBig, { className: "w-5 h-5" }),
+                  color: "green"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Low Stock Alerts",
+                  value: 5,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-5 h-5" }),
+                  color: "rose"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Pending Preparation",
+                  value: 9,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Package, { className: "w-5 h-5" }),
+                  color: "purple"
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            variants: itemVariants,
+            className: "grid grid-cols-1 lg:grid-cols-3 gap-4",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "lg:col-span-2 glass-card p-5",
+                  "data-ocid": "pharmacist-rx-queue",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground mb-4", children: "Prescription Fulfillment Queue" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-sm", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { className: "border-b border-white/10", children: ["Patient", "Doctor", "Remedy", "Potency", "Status"].map(
+                        (h2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "th",
+                          {
+                            className: "text-left text-xs font-semibold text-muted-foreground py-2 pr-4 last:pr-0",
+                            children: h2
+                          },
+                          h2
+                        )
+                      ) }) }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: prescriptionQueue.map((row) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "tr",
+                        {
+                          className: "border-b border-white/5 hover:bg-white/[0.03] transition-colors",
+                          "data-ocid": `pharmacist-rx.item.${prescriptionQueue.indexOf(row) + 1}`,
+                          children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 font-medium text-foreground", children: row.patient }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 text-xs text-muted-foreground", children: row.doctor }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 text-xs text-foreground/80", children: row.remedy }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-primary", children: row.potency }) }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                              "span",
+                              {
+                                className: `text-xs font-medium px-2.5 py-0.5 rounded-full border capitalize ${statusStyle[row.status]}`,
+                                children: row.status
+                              }
+                            ) })
+                          ]
+                        },
+                        row.patient
+                      )) })
+                    ] }) })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "pharmacist-stock-alerts", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-4 h-4 text-amber-400" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Stock Depletion Alerts" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2.5", children: stockAlerts.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: `flex items-center justify-between p-3 rounded-xl border ${item.severity === "critical" ? "bg-rose-500/10 border-rose-500/20" : "bg-amber-500/10 border-amber-500/20"}`,
+                    "data-ocid": `pharmacist-stock.item.${stockAlerts.indexOf(item) + 1}`,
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0 flex-1", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-semibold text-foreground truncate", children: item.name }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "p",
+                          {
+                            className: `text-[10px] mt-0.5 ${item.severity === "critical" ? "text-rose-400" : "text-amber-400"}`,
+                            children: item.severity === "critical" ? "⚠ Critical" : "↓ Low Stock"
+                          }
+                        )
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "span",
+                        {
+                          className: `text-sm font-bold tabular-nums ml-2 ${item.severity === "critical" ? "text-rose-400" : "text-amber-400"}`,
+                          children: [
+                            item.stock,
+                            " left"
+                          ]
+                        }
+                      )
+                    ]
+                  },
+                  item.name
                 )) })
               ] })
             ]
           }
         )
+      ]
+    }
+  );
+}
+const todayAppts = [
+  {
+    time: "09:00 AM",
+    patient: "Arjun Sharma",
+    doctor: "Dr. Anjali Sharma",
+    status: "completed"
+  },
+  {
+    time: "09:30 AM",
+    patient: "Fatima Al-Zahra",
+    doctor: "Dr. Rohan Mehta",
+    status: "completed"
+  },
+  {
+    time: "10:00 AM",
+    patient: "Priya Nair",
+    doctor: "Dr. Anjali Sharma",
+    status: "confirmed"
+  },
+  {
+    time: "10:30 AM",
+    patient: "Hans Mueller",
+    doctor: "Dr. Priya Nair",
+    status: "pending"
+  },
+  {
+    time: "11:00 AM",
+    patient: "Kavitha Reddy",
+    doctor: "Dr. Vikram Patel",
+    status: "confirmed"
+  },
+  {
+    time: "11:30 AM",
+    patient: "Ravi Krishnan",
+    doctor: "Dr. Rohan Mehta",
+    status: "pending"
+  }
+];
+const pendingConfirmations = [
+  {
+    patient: "Isabella Rossi",
+    time: "May 10, 02:00 PM",
+    doctor: "Dr. Anjali Sharma"
+  },
+  {
+    patient: "Sunita Verma",
+    time: "May 11, 10:00 AM",
+    doctor: "Dr. Vikram Patel"
+  },
+  {
+    patient: "Aditya Gupta",
+    time: "May 12, 09:30 AM",
+    doctor: "Dr. Rohan Mehta"
+  },
+  { patient: "Meera Iyer", time: "May 13, 03:30 PM", doctor: "Dr. Priya Nair" }
+];
+function ReceptionistDashboard() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      className: "space-y-6",
+      initial: "hidden",
+      animate: "visible",
+      variants: containerVariants,
+      "data-ocid": "receptionist-dashboard",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          PageHeader,
+          {
+            title: "Front Desk",
+            description: "Manage appointments, walk-ins, and patient registrations for today.",
+            breadcrumb: [{ label: "Dashboard" }]
+          }
+        ) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            variants: itemVariants,
+            className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Appointments Today",
+                  value: 34,
+                  change: 4,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-5 h-5" }),
+                  color: "teal"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Checked In",
+                  value: 18,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheckBig, { className: "w-5 h-5" }),
+                  color: "green"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Waiting",
+                  value: 8,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { className: "w-5 h-5" }),
+                  color: "amber"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "New Registrations",
+                  value: 3,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(UserPlus, { className: "w-5 h-5" }),
+                  color: "purple"
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            variants: itemVariants,
+            className: "flex flex-col sm:flex-row gap-4",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  type: "button",
+                  className: "flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-primary/20 hover:bg-primary/30 border border-primary/30 transition-smooth text-primary font-semibold text-sm min-w-[200px]",
+                  "data-ocid": "receptionist-walkin-button",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(UserPlus, { className: "w-5 h-5" }),
+                    "Walk-in Registration"
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "glass-card flex-1 p-5",
+                  "data-ocid": "receptionist-pending-confirmations",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground mb-3", children: "Pending Confirmations" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-2", children: pendingConfirmations.map((p2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        className: "flex items-start gap-3 p-2.5 rounded-xl bg-amber-500/5 border border-amber-500/15",
+                        "data-ocid": `receptionist-confirmation.item.${pendingConfirmations.indexOf(p2) + 1}`,
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(Users, { className: "w-4 h-4 text-amber-400 mt-0.5 shrink-0" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-semibold text-foreground", children: p2.patient }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground mt-0.5", children: p2.time }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground", children: p2.doctor })
+                          ] })
+                        ]
+                      },
+                      p2.patient
+                    )) })
+                  ]
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "receptionist-appt-queue", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Today's Full Appointment Queue" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground bg-muted/30 px-2.5 py-1 rounded-full border border-border/50", children: "34 total" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-sm", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { className: "border-b border-white/10", children: ["Time", "Patient", "Doctor", "Status", "Action"].map(
+              (h2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "th",
+                {
+                  className: "text-left text-xs font-semibold text-muted-foreground py-2 pr-4 last:pr-0",
+                  children: h2
+                },
+                h2
+              )
+            ) }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: todayAppts.map((row) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "tr",
+              {
+                className: "border-b border-white/5 hover:bg-white/[0.03] transition-colors",
+                "data-ocid": `receptionist-appt.item.${todayAppts.indexOf(row) + 1}`,
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 text-xs font-bold text-primary tabular-nums", children: row.time }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 font-medium text-foreground", children: row.patient }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 text-xs text-muted-foreground", children: row.doctor }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(StatusBadge, { status: row.status }) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "button",
+                    {
+                      type: "button",
+                      className: "text-xs text-primary hover:underline transition-smooth",
+                      "data-ocid": `receptionist-checkin.item.${todayAppts.indexOf(row) + 1}`,
+                      children: "Check In"
+                    }
+                  ) })
+                ]
+              },
+              row.time
+            )) })
+          ] }) })
+        ] }) })
+      ]
+    }
+  );
+}
+const Route$f = createRoute({
+  getParentRoute: () => Route$j,
+  path: "/",
+  component: DashboardPage
+});
+function DashboardPage() {
+  const currentRole = useAppStore((s2) => s2.currentRole);
+  if (currentRole === null) return null;
+  if (currentRole === "main-admin") return /* @__PURE__ */ jsxRuntimeExports.jsx(AdminDashboard, {});
+  if (currentRole === "doctor") return /* @__PURE__ */ jsxRuntimeExports.jsx(DoctorDashboard, {});
+  if (currentRole === "receptionist") return /* @__PURE__ */ jsxRuntimeExports.jsx(ReceptionistDashboard, {});
+  if (currentRole === "pharmacist") return /* @__PURE__ */ jsxRuntimeExports.jsx(PharmacistDashboard, {});
+  if (currentRole === "nurse") return /* @__PURE__ */ jsxRuntimeExports.jsx(NurseDashboard, {});
+  if (currentRole === "billing") return /* @__PURE__ */ jsxRuntimeExports.jsx(BillingDashboard, {});
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(AdminDashboard, {});
+}
+const Route$e = createRoute({
+  getParentRoute: () => Route$j,
+  path: "/login",
+  component: LoginPage
+});
+function LoginPage() {
+  const navigate = useNavigate();
+  const { setCurrentUser, currentUser } = useAppStore();
+  const [email, setEmail] = reactExports.useState("");
+  const [password, setPassword] = reactExports.useState("");
+  const [showPass, setShowPass] = reactExports.useState(false);
+  const [error, setError] = reactExports.useState("");
+  const [loading, setLoading] = reactExports.useState(false);
+  reactExports.useEffect(() => {
+    seedDemoDataIfEmpty();
+  }, []);
+  reactExports.useEffect(() => {
+    if (currentUser) {
+      navigate({ to: "/" });
+    }
+  }, [currentUser, navigate]);
+  async function handleLogin(e3) {
+    e3.preventDefault();
+    if (!email.trim() || !password.trim()) {
+      setError("Please enter your email and password.");
+      return;
+    }
+    setLoading(true);
+    setError("");
+    await new Promise((r2) => setTimeout(r2, 500));
+    const result = loginUser(email, password);
+    setLoading(false);
+    if (!result.success || !result.user) {
+      setError(result.error ?? "Login failed.");
+      return;
+    }
+    setCurrentUser(result.user);
+    ue.success(`Welcome back, ${result.user.name.split(" ")[0]}!`);
+    navigate({ to: "/" });
+  }
+  function fillDemo() {
+    setEmail("admin@homeopath.com");
+    setPassword("Admin@123");
+    setError("");
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "fixed inset-0 z-[9999] overflow-y-auto bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900",
+      "data-ocid": "login.page",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 overflow-hidden pointer-events-none", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-[-10%] left-[20%] w-[600px] h-[600px] rounded-full bg-violet-600/10 blur-[120px]" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-[-5%] right-[15%] w-96 h-96 rounded-full bg-sky-500/10 blur-[100px]" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-[40%] left-[-5%] w-72 h-72 rounded-full bg-emerald-500/8 blur-[80px]" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "absolute inset-0 opacity-[0.025]",
+              style: {
+                backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
+                backgroundSize: "28px 28px"
+              }
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-16", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              className: "text-center mb-8",
+              initial: { opacity: 0, y: -20 },
+              animate: { opacity: 1, y: 0 },
+              transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 border border-white/20 shadow-xl shadow-violet-900/40 mb-5 backdrop-blur-md", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Leaf, { className: "w-8 h-8 text-white" }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-4xl md:text-5xl font-bold tracking-tight text-white mb-2", children: "HomeoPath CRM" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-white/50", children: "Professional Clinic Management System" })
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              className: "w-full max-w-sm",
+              initial: { opacity: 0, y: 20 },
+              animate: { opacity: 1, y: 0 },
+              transition: { duration: 0.45, delay: 0.1 },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white/8 backdrop-blur-xl border border-white/12 rounded-2xl p-7 shadow-2xl", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-lg font-semibold text-white mb-1", children: "Sign in" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-white/45 mb-6", children: "Access your clinic dashboard" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleLogin, className: "space-y-4", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs font-medium text-white/70 mb-1.5 block", children: "Email Address" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        Input,
+                        {
+                          type: "email",
+                          placeholder: "admin@homeopath.com",
+                          value: email,
+                          onChange: (e3) => {
+                            setEmail(e3.target.value);
+                            setError("");
+                          },
+                          className: "glass border-white/15 bg-white/5 text-white placeholder:text-white/30 focus:border-primary/50",
+                          autoComplete: "email",
+                          "data-ocid": "login.email_input"
+                        }
+                      )
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-1.5", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs font-medium text-white/70", children: "Password" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            type: "button",
+                            onClick: () => ue.info("Password reset coming soon."),
+                            className: "text-xs text-primary/70 hover:text-primary transition-colors",
+                            "data-ocid": "login.forgot_password",
+                            children: "Forgot password?"
+                          }
+                        )
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          Input,
+                          {
+                            type: showPass ? "text" : "password",
+                            placeholder: "Enter your password",
+                            value: password,
+                            onChange: (e3) => {
+                              setPassword(e3.target.value);
+                              setError("");
+                            },
+                            className: "glass border-white/15 bg-white/5 text-white placeholder:text-white/30 focus:border-primary/50 pr-10",
+                            autoComplete: "current-password",
+                            "data-ocid": "login.password_input"
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            type: "button",
+                            onClick: () => setShowPass((v2) => !v2),
+                            className: "absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white/70 transition-colors",
+                            "aria-label": showPass ? "Hide password" : "Show password",
+                            children: showPass ? /* @__PURE__ */ jsxRuntimeExports.jsx(EyeOff, { className: "w-4 h-4" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { className: "w-4 h-4" })
+                          }
+                        )
+                      ] })
+                    ] }),
+                    error && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      motion.p,
+                      {
+                        initial: { opacity: 0, y: -4 },
+                        animate: { opacity: 1, y: 0 },
+                        className: "text-xs text-red-400 bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2",
+                        "data-ocid": "login.error_state",
+                        children: error
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      Button,
+                      {
+                        type: "submit",
+                        disabled: loading,
+                        className: "w-full bg-primary hover:bg-primary/90 text-white font-semibold gap-2 h-10",
+                        "data-ocid": "login.submit_button",
+                        children: loading ? /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-2", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" }),
+                          "Signing in..."
+                        ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-2", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(LogIn, { className: "w-4 h-4" }),
+                          " Sign In"
+                        ] })
+                      }
+                    )
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-5 pt-4 border-t border-white/10 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-white/40", children: [
+                    "New clinic?",
+                    " ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "a",
+                      {
+                        href: "/register",
+                        className: "text-primary hover:text-primary/80 transition-colors font-medium",
+                        "data-ocid": "login.register_link",
+                        children: "Register your clinic"
+                      }
+                    )
+                  ] }) })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "button",
+                  {
+                    type: "button",
+                    onClick: fillDemo,
+                    className: "mt-4 w-full bg-white/5 hover:bg-white/8 border border-white/10 hover:border-white/20 rounded-xl px-4 py-3 transition-all text-left group",
+                    "data-ocid": "login.demo_credentials",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-semibold text-white/60 group-hover:text-white/80 mb-1", children: "🔑 Demo Credentials" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-white/35", children: "admin@homeopath.com / Admin@123" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-white/25 mt-0.5", children: "Click to auto-fill" })
+                    ]
+                  }
+                )
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.p,
+            {
+              className: "mt-10 text-[11px] text-white/20 tracking-widest uppercase",
+              initial: { opacity: 0 },
+              animate: { opacity: 1 },
+              transition: { delay: 0.8 },
+              children: "HomeoPath CRM v2.0 — Secure & Professional"
+            }
+          )
+        ] })
       ]
     }
   );
@@ -76204,7 +77368,7 @@ function usePatients() {
   };
 }
 const Route$d = createRoute({
-  getParentRoute: () => Route$i,
+  getParentRoute: () => Route$j,
   path: "/patients",
   component: PatientsPage
 });
@@ -76612,6 +77776,308 @@ function PatientsPage() {
     }
   );
 }
+const prescriptions = [
+  {
+    id: "rx001",
+    patientId: "p001",
+    patientName: "Arjun Sharma",
+    date: "2026-04-05",
+    remedy: "Natrum Muriaticum",
+    potency: "1M",
+    dosage: "2 pills",
+    frequency: "Single dose",
+    duration: "4 weeks",
+    caseNotes: "Classic Nat-Mur picture — grief held inward, migraines with zigzag aura, worse from consolation. Thirst for large quantities of water. Craving for salty foods.",
+    symptoms: [
+      "Migraine with visual aura",
+      "Grief suppressed",
+      "Craving salt",
+      "Thirst increased",
+      "Consolation aggravates"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx002",
+    patientId: "p002",
+    patientName: "Priya Nair",
+    date: "2026-04-08",
+    remedy: "Apis Mellifica",
+    potency: "30C",
+    dosage: "4 pills",
+    frequency: "TDS (thrice daily)",
+    duration: "2 weeks",
+    caseNotes: "Urticaria with burning-stinging sensation, better cold application. Puffiness of eyelids. Absence of thirst. Worse heat and pressure.",
+    symptoms: [
+      "Urticaria with stinging",
+      "Better cold",
+      "Absence of thirst",
+      "Puffiness",
+      "Worse heat"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx003",
+    patientId: "p003",
+    patientName: "Mohammed Al-Rashid",
+    date: "2026-03-28",
+    remedy: "Aurum Metallicum",
+    potency: "200C",
+    dosage: "2 pills",
+    frequency: "Weekly",
+    duration: "8 weeks",
+    caseNotes: "Hypertension with anticipatory anxiety. Perfectionist personality, guilt-ridden. Heart feels heavy. Worse at night, better motion.",
+    symptoms: [
+      "Hypertension",
+      "Anticipatory anxiety",
+      "Depression",
+      "Insomnia",
+      "Guilt complex"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx004",
+    patientId: "p004",
+    patientName: "Sarah Thompson",
+    date: "2026-04-01",
+    remedy: "Sepia",
+    potency: "200C",
+    dosage: "2 pills",
+    frequency: "Weekly",
+    duration: "6 weeks",
+    caseNotes: "Endometriosis with bearing-down sensation. Indifference to loved ones during pain. Worse standing, better vigorous exercise. Chilly patient, craves sour.",
+    symptoms: [
+      "Dysmenorrhea",
+      "Bearing-down sensation",
+      "Indifference",
+      "Worse standing",
+      "Craving sour"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx005",
+    patientId: "p005",
+    patientName: "Rahul Gupta",
+    date: "2026-04-09",
+    remedy: "Stramonium",
+    potency: "30C",
+    dosage: "4 pills",
+    frequency: "BD (twice daily)",
+    duration: "4 weeks",
+    caseNotes: "ADHD with restlessness, violent behavior. Fear of darkness. Night terrors. Loquacity. Tonsillitis with membrane formation. Thirstless.",
+    symptoms: [
+      "ADHD",
+      "Restlessness",
+      "Fear of dark",
+      "Night terrors",
+      "Tonsillitis"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx006",
+    patientId: "p006",
+    patientName: "Elena Kozlov",
+    date: "2026-03-15",
+    remedy: "Rhus Toxicodendron",
+    potency: "200C",
+    dosage: "2 pills",
+    frequency: "Every 3 days",
+    duration: "6 weeks",
+    caseNotes: "Rheumatoid arthritis — initial stiffness on first motion, better continued motion. Worse cold damp. Restless — must keep moving. Red triangular tip of tongue.",
+    symptoms: [
+      "Joint stiffness",
+      "Better continued motion",
+      "Worse cold damp",
+      "Restlessness",
+      "Initial motion aggravation"
+    ],
+    status: "completed"
+  },
+  {
+    id: "rx007",
+    patientId: "p007",
+    patientName: "Vijay Krishnamurthy",
+    date: "2026-04-07",
+    remedy: "Syzygium Jambolanum",
+    potency: "Q (Mother Tincture)",
+    dosage: "10 drops in water",
+    frequency: "BD (twice daily)",
+    duration: "3 months",
+    caseNotes: "Diabetic neuropathy with burning pains in extremities. Strong anti-diabetic action at Q potency. Complement: Uranium Nitricum 3X for polydipsia.",
+    symptoms: [
+      "Hyperglycemia",
+      "Burning extremities",
+      "Polydipsia",
+      "Polyuria",
+      "Fatigue"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx008",
+    patientId: "p008",
+    patientName: "Amelia Johnson",
+    date: "2026-04-02",
+    remedy: "Thyroidinum",
+    potency: "3X",
+    dosage: "4 pills",
+    frequency: "TDS (thrice daily)",
+    duration: "2 months",
+    caseNotes: "Hashimoto hypothyroid — goitrous tendency, obesity, hair loss, mental dullness. Supports thyroid gland organopathically. Combined with Calc Carb 200C weekly.",
+    symptoms: [
+      "Hypothyroidism",
+      "Hair loss",
+      "Weight gain",
+      "Mental dullness",
+      "Cold sensitivity"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx009",
+    patientId: "p009",
+    patientName: "Kavitha Reddy",
+    date: "2026-04-10",
+    remedy: "Pulsatilla",
+    potency: "30C",
+    dosage: "4 pills",
+    frequency: "OD (once daily)",
+    duration: "4 weeks",
+    caseNotes: "PCOS with delayed, scanty, clotted menses. Mild, yielding, weeping disposition. Worse warmth, better fresh air. Thirstless. Changeable symptoms.",
+    symptoms: [
+      "Irregular menses",
+      "PCOS",
+      "Weeping disposition",
+      "Thirstless",
+      "Worse heat"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx010",
+    patientId: "p010",
+    patientName: "Hans Mueller",
+    date: "2026-03-22",
+    remedy: "Sabal Serrulata",
+    potency: "Q (Mother Tincture)",
+    dosage: "15 drops in water",
+    frequency: "BD (twice daily)",
+    duration: "3 months",
+    caseNotes: "BPH with weak stream, dribbling, frequency. Cold sensation in genitals. Specific remedy for prostate. Adjunct: Thuja 200C for UTI prevention.",
+    symptoms: [
+      "BPH symptoms",
+      "Weak urinary stream",
+      "Frequency",
+      "Dribbling",
+      "Cold genitals"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx011",
+    patientId: "p011",
+    patientName: "Sunita Patel",
+    date: "2026-04-06",
+    remedy: "Lachesis",
+    potency: "200C",
+    dosage: "2 pills",
+    frequency: "Weekly",
+    duration: "8 weeks",
+    caseNotes: "Menopausal — hot flushes predominantly left-sided, worse on waking, worse tight clothing. Loquacious, jealous, suspicious. Excellent Lachesis constitutional.",
+    symptoms: [
+      "Hot flushes",
+      "Worse tight clothing",
+      "Worse on waking",
+      "Left-sided",
+      "Loquacity"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx012",
+    patientId: "p013",
+    patientName: "Fatima Al-Zahra",
+    date: "2026-04-03",
+    remedy: "Arnica Montana",
+    potency: "30C",
+    dosage: "4 pills",
+    frequency: "TDS (thrice daily)",
+    duration: "3 weeks",
+    caseNotes: 'Fibromyalgia with bruised, sore sensation throughout body. Worse slightest touch. Bed feels too hard. Says "nothing is wrong" despite evident pain.',
+    symptoms: [
+      "Fibromyalgia",
+      "Bruised soreness",
+      "Worse touch",
+      "Bed too hard",
+      "Denies illness"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx013",
+    patientId: "p014",
+    patientName: "Rajan Menon",
+    date: "2026-04-04",
+    remedy: "Sulphur",
+    potency: "30C",
+    dosage: "4 pills",
+    frequency: "OD (once daily)",
+    duration: "4 weeks",
+    caseNotes: "Acne — oily skin, pustular, worse exam stress. Untidy in habit, philosophical. Burning heat of eruptions. Worse washing. Sinking feeling at 11am.",
+    symptoms: [
+      "Acne vulgaris",
+      "Oily skin",
+      "Worse stress",
+      "Burning eruptions",
+      "11am hunger"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx014",
+    patientId: "p015",
+    patientName: "Isabella Rossi",
+    date: "2026-03-18",
+    remedy: "Lycopodium",
+    potency: "200C",
+    dosage: "2 pills",
+    frequency: "Weekly",
+    duration: "6 weeks",
+    caseNotes: "IBS — alternating bowel habit, bloating worse 4-8pm, rumbling flatulence. Anticipatory anxiety. Craving sweets. Right-sided complaints. Intellectual but cowardly.",
+    symptoms: [
+      "IBS",
+      "Bloating 4-8pm",
+      "Flatulence",
+      "Alternating bowels",
+      "Craving sweets"
+    ],
+    status: "stopped"
+  },
+  {
+    id: "rx015",
+    patientId: "p001",
+    patientName: "Arjun Sharma",
+    date: "2026-02-10",
+    remedy: "Belladonna",
+    potency: "30C",
+    dosage: "4 pills",
+    frequency: "TDS (thrice daily)",
+    duration: "2 weeks",
+    caseNotes: "Acute migraine management — sudden, violent, throbbing headache. Face hot and red. Dilated pupils. Worse light, noise, jarring. Better in dark quiet room.",
+    symptoms: [
+      "Acute migraine",
+      "Throbbing headache",
+      "Face red and hot",
+      "Worse light",
+      "Worse noise"
+    ],
+    status: "completed"
+  }
+];
 const Route$c = createRoute({
   getParentRoute: () => Route$d,
   path: "$patientId",
@@ -78390,8 +79856,720 @@ function TableCell({ className, ...props }) {
     }
   );
 }
+const remedies = [
+  {
+    id: "r001",
+    name: "Aconitum Napellus",
+    commonName: "Monkshood",
+    keynotes: [
+      "Sudden acute onset",
+      "Intense fear of death",
+      "After exposure to cold dry wind",
+      "Restlessness and anxiety"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r002",
+    name: "Allium Cepa",
+    commonName: "Red Onion",
+    keynotes: [
+      "Profuse watery nasal discharge",
+      "Acrid lachrymation",
+      "Sneezing",
+      "Better open air"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r003",
+    name: "Apis Mellifica",
+    commonName: "Honey Bee",
+    keynotes: [
+      "Stinging burning pains",
+      "Oedema",
+      "Thirstlessness",
+      "Better cold application"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r004",
+    name: "Argentum Nitricum",
+    commonName: "Silver Nitrate",
+    keynotes: [
+      "Anticipatory anxiety",
+      "Desire for sweets",
+      "Diarrhea before events",
+      "Hurried and impulsive"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r005",
+    name: "Arnica Montana",
+    commonName: "Leopard's Bane",
+    keynotes: [
+      "Bruised sore sensation",
+      "Denies illness",
+      "Worse touch",
+      "Bed too hard"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r006",
+    name: "Arsenicum Album",
+    commonName: "White Arsenic",
+    keynotes: [
+      "Restlessness",
+      "Burning pains better heat",
+      "Anxiety about health",
+      "Fastidiousness"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r007",
+    name: "Aurum Metallicum",
+    commonName: "Gold",
+    keynotes: [
+      "Depression",
+      "Suicidal tendency",
+      "Hypertension",
+      "Duty-bound perfectionist"
+    ],
+    potencies: ["30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r008",
+    name: "Belladonna",
+    commonName: "Deadly Nightshade",
+    keynotes: [
+      "Sudden violent onset",
+      "Burning heat",
+      "Throbbing pains",
+      "Delirium"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r009",
+    name: "Bryonia Alba",
+    commonName: "White Bryony",
+    keynotes: [
+      "Worse any motion",
+      "Better pressure",
+      "Dryness of mucous membranes",
+      "Irritable wants to be alone"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r010",
+    name: "Calcarea Carbonica",
+    commonName: "Calcium Carbonate",
+    keynotes: [
+      "Slow plodding",
+      "Sweating on head",
+      "Worse cold damp",
+      "Craving eggs"
+    ],
+    potencies: ["30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r011",
+    name: "Cantharis",
+    commonName: "Spanish Fly",
+    keynotes: [
+      "Burning cutting urination",
+      "Cystitis",
+      "Great tenesmus",
+      "Rawness of parts"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r012",
+    name: "Carbo Vegetabilis",
+    commonName: "Vegetable Charcoal",
+    keynotes: [
+      "Flatulence and bloating",
+      "Desire for air",
+      "Sluggish vital force",
+      "Coldness"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r013",
+    name: "Causticum",
+    commonName: "Potassium Hydrate",
+    keynotes: [
+      "Paralytic conditions",
+      "Rawness and burning",
+      "Worse dry cold",
+      "Sympathy for others"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r014",
+    name: "Chamomilla",
+    commonName: "German Chamomile",
+    keynotes: [
+      "Extreme irritability",
+      "Teething children",
+      "One cheek red",
+      "Nothing satisfies"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r015",
+    name: "China Officinalis",
+    commonName: "Peruvian Bark",
+    keynotes: [
+      "Debility from loss of fluids",
+      "Periodicity",
+      "Tympanic abdomen",
+      "Better hard pressure"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r016",
+    name: "Colocynthis",
+    commonName: "Bitter Cucumber",
+    keynotes: [
+      "Cramping colic better bending double",
+      "After indignation",
+      "Dysentery",
+      "Worse straightening"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r017",
+    name: "Drosera",
+    commonName: "Sundew",
+    keynotes: [
+      "Whooping cough",
+      "Spasmodic cough",
+      "Worse after midnight",
+      "Vomiting after cough"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r018",
+    name: "Euphrasia",
+    commonName: "Eyebright",
+    keynotes: [
+      "Profuse acrid lachrymation",
+      "Bland nasal discharge",
+      "Eye inflammation",
+      "Better open air"
+    ],
+    potencies: ["6C", "30C", "200C", "Q"]
+  },
+  {
+    id: "r019",
+    name: "Ferrum Phosphoricum",
+    commonName: "Iron Phosphate",
+    keynotes: [
+      "First stage inflammation",
+      "Gradual onset fever",
+      "Anemia",
+      "Better slow motion"
+    ],
+    potencies: ["6X", "6C", "30C", "200C"]
+  },
+  {
+    id: "r020",
+    name: "Gelsemium",
+    commonName: "Yellow Jasmine",
+    keynotes: [
+      "Dullness drowsiness dizziness",
+      "Anticipatory anxiety with diarrhea",
+      "Muscle weakness",
+      "Wants to be held"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r021",
+    name: "Graphites",
+    commonName: "Black Lead (Graphite)",
+    keynotes: [
+      "Oozing sticky discharge",
+      "Eczema in folds",
+      "Constipation with hard knots",
+      "Obesity"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r022",
+    name: "Hepar Sulphuris",
+    commonName: "Calcium Sulphide",
+    keynotes: [
+      "Extreme sensitivity to pain",
+      "Suppuration",
+      "Chilly patient",
+      "Irritable when ill"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r023",
+    name: "Hyoscyamus",
+    commonName: "Henbane",
+    keynotes: [
+      "Jealousy",
+      "Lascivious behavior",
+      "Muttering delirium",
+      "Picks at bedclothes"
+    ],
+    potencies: ["30C", "200C", "1M"]
+  },
+  {
+    id: "r024",
+    name: "Ignatia Amara",
+    commonName: "St. Ignatius Bean",
+    keynotes: [
+      "Grief and disappointment",
+      "Contradictory symptoms",
+      "Sighing",
+      "Hysterical tendencies"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r025",
+    name: "Ipecacuanha",
+    commonName: "Ipecac Root",
+    keynotes: [
+      "Persistent nausea",
+      "Bright red hemorrhage",
+      "No relief from vomiting",
+      "Moist clean tongue"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r026",
+    name: "Kali Bichromicum",
+    commonName: "Potassium Dichromate",
+    keynotes: [
+      "Thick stringy tenacious discharges",
+      "Sinusitis",
+      "Ulcers with sharp punched-out edges",
+      "Worse cold"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r027",
+    name: "Kali Carbonicum",
+    commonName: "Potassium Carbonate",
+    keynotes: [
+      "Weakness",
+      "Bag-like swelling above eyelids",
+      "Worse 2-4am",
+      "Stitching pains"
+    ],
+    potencies: ["30C", "200C", "1M"]
+  },
+  {
+    id: "r028",
+    name: "Lachesis",
+    commonName: "Bushmaster Snake Venom",
+    keynotes: ["Left-sided", "Worse tight clothing", "Loquacious", "Jealousy"],
+    potencies: ["30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r029",
+    name: "Ledum Palustre",
+    commonName: "Marsh Tea",
+    keynotes: [
+      "Puncture wounds",
+      "Insect bites",
+      "Rheumatism from below upward",
+      "Better cold application"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r030",
+    name: "Lycopodium",
+    commonName: "Club Moss",
+    keynotes: [
+      "4-8pm aggravation",
+      "Right-sided",
+      "Anticipatory anxiety",
+      "Flatulence bloating"
+    ],
+    potencies: ["30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r031",
+    name: "Magnesia Phosphorica",
+    commonName: "Magnesium Phosphate",
+    keynotes: [
+      "Cramping pains better heat and pressure",
+      "Neuralgic pains",
+      "Better bending double",
+      "Worse cold"
+    ],
+    potencies: ["6X", "6C", "30C", "200C"]
+  },
+  {
+    id: "r032",
+    name: "Mercurius Solubilis",
+    commonName: "Quicksilver",
+    keynotes: [
+      "Worse night",
+      "Profuse offensive perspiration",
+      "Trembling",
+      "Creeping chilliness"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r033",
+    name: "Natrum Muriaticum",
+    commonName: "Table Salt",
+    keynotes: [
+      "Grief held inward",
+      "Worse consolation",
+      "Craving salt",
+      "Migraine with zigzag aura"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r034",
+    name: "Nux Vomica",
+    commonName: "Poison Nut",
+    keynotes: [
+      "Over-indulgence",
+      "Chilly irritable",
+      "Hypersensitive to stimuli",
+      "Sedentary lifestyle"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r035",
+    name: "Phosphorus",
+    commonName: "Phosphorus",
+    keynotes: [
+      "Burning pains",
+      "Tall slender build",
+      "Craves cold drinks",
+      "Fear of being alone in dark"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r036",
+    name: "Phytolacca",
+    commonName: "Pokeweed",
+    keynotes: [
+      "Throat inflammation radiating to ears",
+      "Mastitis",
+      "Rheumatic nodules",
+      "Indifference"
+    ],
+    potencies: ["6C", "30C", "200C", "Q"]
+  },
+  {
+    id: "r037",
+    name: "Pulsatilla",
+    commonName: "Windflower",
+    keynotes: [
+      "Changeable symptoms",
+      "Mild yielding",
+      "Thirstless",
+      "Better open air and cool"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r038",
+    name: "Rhus Toxicodendron",
+    commonName: "Poison Ivy",
+    keynotes: [
+      "Worse initial motion better continued",
+      "Restlessness",
+      "Worse cold damp",
+      "Red triangular tongue tip"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r039",
+    name: "Ruta Graveolens",
+    commonName: "Rue",
+    keynotes: [
+      "Injury to tendons and periosteum",
+      "Eye strain",
+      "Prolapse",
+      "Lame bruised feeling"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r040",
+    name: "Sabal Serrulata",
+    commonName: "Saw Palmetto",
+    keynotes: [
+      "Prostate enlargement",
+      "Weak urinary stream",
+      "Cold sensation in genitals",
+      "Dribbling"
+    ],
+    potencies: ["Q", "6C", "30C"]
+  },
+  {
+    id: "r041",
+    name: "Sepia",
+    commonName: "Ink of Cuttlefish",
+    keynotes: [
+      "Bearing-down sensation",
+      "Indifference",
+      "Worse standing",
+      "Better vigorous exercise"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r042",
+    name: "Silicea",
+    commonName: "Pure Flint",
+    keynotes: [
+      "Lack of confidence",
+      "Suppuration",
+      "Chilly obstinate",
+      "Expels foreign bodies"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r043",
+    name: "Spigelia",
+    commonName: "Pink Root",
+    keynotes: [
+      "Left-sided neuralgias",
+      "Violent palpitation",
+      "Worse motion",
+      "Worm affections"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r044",
+    name: "Spongia Tosta",
+    commonName: "Roasted Sea Sponge",
+    keynotes: [
+      "Dry barking croup",
+      "Anxiety and palpitation",
+      "Worse before midnight",
+      "Better eating and drinking"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r045",
+    name: "Staphysagria",
+    commonName: "Stavesacre",
+    keynotes: [
+      "Suppressed indignation",
+      "After surgical wounds",
+      "Honeymoon cystitis",
+      "Wounded pride"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r046",
+    name: "Stramonium",
+    commonName: "Jimsonweed",
+    keynotes: [
+      "Fear of darkness",
+      "Violent behavior",
+      "Delirium",
+      "Night terrors"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r047",
+    name: "Sulphur",
+    commonName: "Brimstone",
+    keynotes: [
+      "Burning heat",
+      "Aversion to bathing",
+      "Philosophical",
+      "11am sinking feeling"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r048",
+    name: "Syzygium Jambolanum",
+    commonName: "Jamun / Java Plum",
+    keynotes: [
+      "Diabetes mellitus",
+      "Reduces blood sugar",
+      "Burning in feet",
+      "Polyuria"
+    ],
+    potencies: ["Q", "3X", "6X", "30C"]
+  },
+  {
+    id: "r049",
+    name: "Thuja Occidentalis",
+    commonName: "Arborvitae",
+    keynotes: [
+      "Warts and condylomata",
+      "Fixed ideas",
+      "Worse cold damp",
+      "Oily skin"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r050",
+    name: "Thyroidinum",
+    commonName: "Thyroid Gland",
+    keynotes: [
+      "Hypothyroidism",
+      "Obesity",
+      "Hair loss",
+      "Mental dullness and fatigue"
+    ],
+    potencies: ["3X", "6X", "30C", "200C"]
+  },
+  {
+    id: "r051",
+    name: "Tuberculinum",
+    commonName: "Tuberculous Nosode",
+    keynotes: [
+      "Never well since tuberculosis",
+      "Wanderlust",
+      "Dissatisfied",
+      "Recurrent respiratory infections"
+    ],
+    potencies: ["200C", "1M", "10M"]
+  },
+  {
+    id: "r052",
+    name: "Urtica Urens",
+    commonName: "Stinging Nettle",
+    keynotes: ["Burns with intense itching", "Urticaria", "Gout", "Agalactia"],
+    potencies: ["6C", "30C", "200C", "Q"]
+  },
+  {
+    id: "r053",
+    name: "Veratrum Album",
+    commonName: "White Hellebore",
+    keynotes: [
+      "Collapse with cold sweat",
+      "Profuse vomiting and diarrhea",
+      "Cold extremities",
+      "Craves cold drinks"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r054",
+    name: "Zincum Metallicum",
+    commonName: "Zinc",
+    keynotes: [
+      "Brain fag",
+      "Restless legs",
+      "Suppressed eruptions",
+      "Twitching"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r055",
+    name: "Calc Phosphorica",
+    commonName: "Calcium Phosphate",
+    keynotes: [
+      "Teething problems",
+      "Bone weakness",
+      "Craves smoked meat",
+      "Dissatisfied restless"
+    ],
+    potencies: ["6X", "6C", "30C", "200C"]
+  },
+  {
+    id: "r056",
+    name: "Cimicifuga",
+    commonName: "Black Cohosh",
+    keynotes: [
+      "Menstrual irregularity",
+      "Rheumatic affections",
+      "Depression alternating",
+      "Worse cold damp"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r057",
+    name: "Hypericum Perforatum",
+    commonName: "St. John's Wort",
+    keynotes: [
+      "Nerve injuries",
+      "Puncture wounds",
+      "Spinal injuries",
+      "Shooting pains"
+    ],
+    potencies: ["6C", "30C", "200C", "Q"]
+  },
+  {
+    id: "r058",
+    name: "Medhorrhinum",
+    commonName: "Gonorrheal Nosode",
+    keynotes: [
+      "Intense sexuality",
+      "Hurried restless",
+      "Better at seashore",
+      "History of gonorrhea"
+    ],
+    potencies: ["200C", "1M", "10M"]
+  },
+  {
+    id: "r059",
+    name: "Platina",
+    commonName: "Platinum",
+    keynotes: [
+      "Pride arrogance",
+      "Nymphomania",
+      "Numbness and coldness",
+      "Cramping pains"
+    ],
+    potencies: ["30C", "200C", "1M"]
+  },
+  {
+    id: "r060",
+    name: "Petroleum",
+    commonName: "Crude Rock Oil",
+    keynotes: [
+      "Motion sickness",
+      "Eczema with deep cracks",
+      "Hunger at night",
+      "Worse winter"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  }
+];
 const Route$b = createRoute({
-  getParentRoute: () => Route$i,
+  getParentRoute: () => Route$j,
   path: "/prescriptions",
   component: PrescriptionsPage
 });
@@ -79440,7 +81618,7 @@ function DetailField({ label, value, highlight }) {
   ] });
 }
 const Route$a = createRoute({
-  getParentRoute: () => Route$i,
+  getParentRoute: () => Route$j,
   path: "/pro",
   component: ProLayout
 });
@@ -80217,7 +82395,7 @@ const casesArchive = [
 ];
 const Route$9 = createRoute({
   getParentRoute: () => Route$a,
-  path: "/case-repository",
+  path: "case-repository",
   component: CaseRepositoryPage
 });
 const PAGE_SIZE$1 = 10;
@@ -82272,7 +84450,7 @@ const caseTemplates = [
 ];
 const Route$8 = createRoute({
   getParentRoute: () => Route$a,
-  path: "/case-templates",
+  path: "case-templates",
   component: CaseTemplatesPage
 });
 const MOCK_PATIENTS$1 = [
@@ -85466,7 +87644,7 @@ const periodicTableRemedies = [
 ];
 const Route$6 = createRoute({
   getParentRoute: () => Route$a,
-  path: "/materia-medica",
+  path: "materia-medica",
   component: MateriaMedicaPage
 });
 const PERIODIC_GRID = [
@@ -87099,7 +89277,7 @@ const patientTimelines = [
 ];
 const Route$5 = createRoute({
   getParentRoute: () => Route$a,
-  path: "/patient-timeline",
+  path: "patient-timeline",
   component: PatientTimelinePage
 });
 const TEAL = "oklch(0.65 0.18 190)";
@@ -87938,7 +90116,7 @@ function PatientTimelinePage() {
 }
 const Route$4 = createRoute({
   getParentRoute: () => Route$a,
-  path: "/remedy-comparison",
+  path: "remedy-comparison",
   component: RemedyComparisonPage
 });
 const DEFAULT_IDS = ["mm001", "mm002"];
@@ -88848,7 +91026,7 @@ function RemedyComparisonPage() {
 }
 const Route$3 = createRoute({
   getParentRoute: () => Route$a,
-  path: "/remedy-finder",
+  path: "remedy-finder",
   component: RemedyFinderPage
 });
 const SYMPTOM_BANK = [
@@ -89917,7 +92095,7 @@ function RemedyFinderPage() {
 }
 const Route$2 = createRoute({
   getParentRoute: () => Route$a,
-  path: "/voice-recorder",
+  path: "voice-recorder",
   component: VoiceRecorderPage
 });
 const MOCK_PATIENTS = [
@@ -90715,8 +92893,52 @@ ${record.suggestedRemedies.join(", ")}`;
     }
   );
 }
+const analytics = {
+  patientGrowth: [
+    { month: "May 2025", value: 48 },
+    { month: "Jun 2025", value: 54 },
+    { month: "Jul 2025", value: 61 },
+    { month: "Aug 2025", value: 58 },
+    { month: "Sep 2025", value: 67 },
+    { month: "Oct 2025", value: 74 },
+    { month: "Nov 2025", value: 81 },
+    { month: "Dec 2025", value: 79 },
+    { month: "Jan 2026", value: 88 },
+    { month: "Feb 2026", value: 95 },
+    { month: "Mar 2026", value: 102 },
+    { month: "Apr 2026", value: 115 }
+  ],
+  revenue: [
+    { month: "May 2025", value: 42e3 },
+    { month: "Jun 2025", value: 49500 },
+    { month: "Jul 2025", value: 55800 },
+    { month: "Aug 2025", value: 51200 },
+    { month: "Sep 2025", value: 63400 },
+    { month: "Oct 2025", value: 71e3 },
+    { month: "Nov 2025", value: 78500 },
+    { month: "Dec 2025", value: 82e3 },
+    { month: "Jan 2026", value: 86500 },
+    { month: "Feb 2026", value: 91e3 },
+    { month: "Mar 2026", value: 98400 },
+    { month: "Apr 2026", value: 104200 }
+  ],
+  appointmentStats: {
+    confirmed: 45,
+    pending: 18,
+    completed: 87,
+    cancelled: 9
+  }
+};
+const topRemedies = [
+  { name: "Lycopodium", count: 23 },
+  { name: "Sulphur", count: 19 },
+  { name: "Natrum Mur", count: 17 },
+  { name: "Pulsatilla", count: 15 },
+  { name: "Sepia", count: 13 },
+  { name: "Calc Carb", count: 11 }
+];
 const Route$1 = createRoute({
-  getParentRoute: () => Route$i,
+  getParentRoute: () => Route$j,
   path: "/reports",
   component: ReportsPage
 });
@@ -91374,7 +93596,7 @@ function Switch({
   );
 }
 const Route2 = createRoute({
-  getParentRoute: () => Route$i,
+  getParentRoute: () => Route$j,
   path: "/settings",
   component: SettingsPage
 });
@@ -91612,15 +93834,31 @@ function DoctorProfileTab() {
     }
   );
 }
-const ACCENT_COLORS = [
-  { id: "teal", label: "Teal", cls: "bg-teal-500" },
-  { id: "blue", label: "Sky Blue", cls: "bg-blue-500" },
-  { id: "purple", label: "Violet", cls: "bg-violet-500" }
-];
 function AppearanceTab() {
-  const { theme, toggleTheme } = useAppStore();
-  const [accent, setAccent] = reactExports.useState("teal");
+  const { theme, toggleTheme, accentColor, setAccentColor } = useAppStore();
   const [fontSize, setFontSize] = reactExports.useState("medium");
+  const handleAccentChange = (id2) => {
+    var _a2;
+    const palette = ACCENT_COLOR_MAP[id2];
+    if (palette) {
+      const isDark = document.documentElement.classList.contains("dark");
+      const primary = isDark ? palette.primaryDark : palette.primary;
+      const primaryFg = isDark ? palette.primaryForegroundDark : palette.primaryForeground;
+      const root2 = document.documentElement;
+      root2.style.setProperty("--accent", palette.light);
+      root2.style.setProperty("--accent-dark", palette.dark);
+      root2.style.setProperty("--primary", primary);
+      root2.style.setProperty("--primary-foreground", primaryFg);
+      root2.style.setProperty("--sidebar-primary", primary);
+      root2.style.setProperty("--sidebar-primary-foreground", primaryFg);
+      root2.style.setProperty("--ring", primary);
+      root2.style.setProperty("--chart-1", primary);
+    }
+    setAccentColor(id2);
+    ue.success(
+      `Theme colour changed to ${((_a2 = ACCENT_COLORS.find((c2) => c2.id === id2)) == null ? void 0 : _a2.label) ?? id2}`
+    );
+  };
   const apply2 = () => ue.success("Appearance settings saved!");
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { ...fadeIn, className: "space-y-6", "data-ocid": "appearance-tab", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-6", children: [
@@ -91690,22 +93928,30 @@ function AppearanceTab() {
       ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-display font-semibold text-foreground mb-4", children: "Accent Color" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-3 flex-wrap", children: ACCENT_COLORS.map((c2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-display font-semibold text-foreground mb-1", children: "Accent Color" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mb-4", children: "Applies instantly across the entire app." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12 gap-3", children: ACCENT_COLORS.map((c2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
         "button",
         {
           type: "button",
-          onClick: () => setAccent(c2.id),
+          onClick: () => handleAccentChange(c2.id),
           "aria-label": `Select ${c2.label} accent`,
-          className: cn(
-            "flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-medium transition-smooth",
-            accent === c2.id ? "border-primary bg-primary/10 text-primary" : "border-border/40 text-muted-foreground hover:border-border"
-          ),
+          title: c2.label,
+          className: "group flex flex-col items-center gap-1.5 focus:outline-none",
           "data-ocid": `accent-${c2.id}`,
           children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: cn("w-4 h-4 rounded-full", c2.cls) }),
-            c2.label,
-            accent === c2.id && /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "w-3 h-3 ml-1" })
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                className: cn(
+                  "w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 ring-2 ring-offset-2 ring-offset-background",
+                  accentColor === c2.id ? "ring-foreground scale-110 shadow-elevated" : "ring-transparent hover:scale-105 hover:ring-border"
+                ),
+                style: { backgroundColor: c2.hex },
+                children: accentColor === c2.id && /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "w-4 h-4 text-white drop-shadow" })
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-muted-foreground leading-tight text-center", children: c2.label })
           ]
         },
         c2.id
@@ -92001,15 +94247,16 @@ function SettingsPage() {
     )
   ] });
 }
-const rootRoute = Route$i;
-const indexRoute = Route$e;
+const rootRoute = Route$j;
+const indexRoute = Route$f;
 const patientsRoute = Route$d;
 const patientsPatientIdRoute = Route$c;
-const appointmentsRoute = Route$g;
+const appointmentsRoute = Route$h;
 const prescriptionsRoute = Route$b;
-const aiAssistantRoute = Route$h;
-const billingRoute = Route$f;
+const aiAssistantRoute = Route$i;
+const billingRoute = Route$g;
 const reportsRoute = Route$1;
+const loginRoute = Route$e;
 const settingsRoute = Route2;
 const proRoute = Route$a;
 const proIndexRoute = Route$7;
@@ -92021,6 +94268,7 @@ const proRemedyComparisonRoute = Route$4;
 const proRemedyFinderRoute = Route$3;
 const proVoiceRecorderRoute = Route$2;
 const routeTree = rootRoute.addChildren([
+  loginRoute,
   indexRoute,
   patientsRoute.addChildren([patientsPatientIdRoute]),
   appointmentsRoute,
@@ -92041,8 +94289,70 @@ const routeTree = rootRoute.addChildren([
   ])
 ]);
 const router = createRouter({ routeTree });
+class AppErrorBoundary extends reactExports.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+  componentDidCatch(error, info) {
+    console.error("[HomeoPath CRM] Uncaught error:", error, info);
+  }
+  render() {
+    var _a2;
+    if (this.state.hasError) {
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          style: {
+            minHeight: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "#0d1117",
+            color: "#e6edf3",
+            fontFamily: "monospace",
+            padding: "2rem",
+            gap: "1rem"
+          },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { style: { fontSize: "1.5rem", color: "#f85149" }, children: "⚠ Application Error" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "p",
+              {
+                style: { color: "#8b949e", maxWidth: "600px", textAlign: "center" },
+                children: ((_a2 = this.state.error) == null ? void 0 : _a2.message) ?? "An unexpected error occurred."
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                onClick: () => window.location.reload(),
+                style: {
+                  padding: "0.5rem 1.5rem",
+                  borderRadius: "6px",
+                  border: "1px solid #30363d",
+                  background: "#21262d",
+                  color: "#e6edf3",
+                  cursor: "pointer",
+                  fontSize: "0.875rem"
+                },
+                children: "Reload Page"
+              }
+            )
+          ]
+        }
+      );
+    }
+    return this.props.children;
+  }
+}
 function App() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider, { router });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(AppErrorBoundary, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider, { router }) });
 }
 BigInt.prototype.toJSON = function() {
   return this.toString();

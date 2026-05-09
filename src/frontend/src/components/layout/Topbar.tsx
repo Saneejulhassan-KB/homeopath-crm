@@ -12,23 +12,48 @@ import { Input } from "@/components/ui/input";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import { useAppStore } from "@/store";
-import type { Language, Role } from "@/types";
-import { LANGUAGES, ROLES } from "@/utils/constants";
-import { getInitials } from "@/utils/formatters";
-import { useRouterState } from "@tanstack/react-router";
+import type { Language } from "@/types";
+import { LANGUAGES } from "@/utils/constants";
+import { ROLE_CONFIGS, getRoleConfig } from "@/utils/roleAccess";
+const COLOR_HEX: Record<string, string> = {
+  violet: "#7C3AED",
+  sky: "#0EA5E9",
+  emerald: "#10B981",
+  amber: "#F59E0B",
+  pink: "#EC4899",
+  cyan: "#06B6D4",
+};
+import { useNavigate, useRouterState } from "@tanstack/react-router";
 import {
   Bell,
+  CalendarCheck,
   Check,
   ChevronDown,
+  FlaskConical,
   Globe,
+  HeartPulse,
+  LogOut,
   Menu,
   Moon,
+  Receipt,
   Search,
+  Shield,
+  Stethoscope,
   Sun,
   X,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
+
+const ROLE_ICON_MAP: Record<string, LucideIcon> = {
+  Shield,
+  Stethoscope,
+  CalendarCheck,
+  FlaskConical,
+  HeartPulse,
+  Receipt,
+};
 
 const PAGE_TITLES: Record<string, string> = {
   "/": "Dashboard",
@@ -51,7 +76,9 @@ export function Topbar({
     language,
     setLanguage,
     currentRole,
+    currentUser,
     setRole,
+    logout,
     searchQuery,
     setSearchQuery,
     notifications,
@@ -61,19 +88,17 @@ export function Topbar({
 
   const isMobile = useIsMobile();
   const routerState = useRouterState();
+  const navigate = useNavigate();
   const currentPath = routerState.location.pathname;
   const pageTitle = PAGE_TITLES[currentPath] ?? "HomeoPath CRM";
   const unreadCount = notifications.filter((n) => !n.read).length;
 
   const [notifOpen, setNotifOpen] = useState(false);
 
-  const userInfo = {
-    Admin: { name: "Dr. Meera Joshi", color: "bg-primary" },
-    Doctor: { name: "Dr. Anand Verma", color: "bg-accent" },
-    Receptionist: { name: "Priya Sharma", color: "bg-purple-500" },
-  };
-  const user = userInfo[currentRole];
-  const initials = getInitials(user.name);
+  const roleConfig = currentRole ? getRoleConfig(currentRole) : null;
+  const RoleIcon = roleConfig
+    ? (ROLE_ICON_MAP[roleConfig.icon] ?? Shield)
+    : Shield;
 
   const notifTypeColors = {
     appointment: "text-primary",
@@ -302,7 +327,7 @@ export function Topbar({
           </DropdownMenuContent>
         </DropdownMenu>
 
-        {/* User avatar + role switcher */}
+        {/* User avatar + role switcher (6 roles from ROLE_CONFIGS) */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <button
@@ -311,19 +336,27 @@ export function Topbar({
               data-ocid="topbar-user-menu"
             >
               <div
-                className={cn(
-                  "w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-primary-foreground",
-                  user.color,
-                )}
+                className="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
+                style={
+                  roleConfig
+                    ? {
+                        background: `${roleConfig.color}22`,
+                        border: `1px solid ${roleConfig.color}44`,
+                      }
+                    : {}
+                }
               >
-                {initials}
+                <RoleIcon
+                  className="w-4 h-4"
+                  style={roleConfig ? { color: roleConfig.color } : {}}
+                />
               </div>
-              <div className="hidden md:block text-left">
+              <div className="hidden md:block text-left min-w-0">
                 <p className="text-xs font-medium text-foreground leading-tight">
-                  {user.name}
+                  {currentUser?.name ?? roleConfig?.displayName ?? "Guest"}
                 </p>
-                <p className="text-[10px] text-muted-foreground">
-                  {currentRole}
+                <p className="text-[10px] text-muted-foreground capitalize">
+                  {roleConfig?.displayName ?? currentRole ?? "—"}
                 </p>
               </div>
               <ChevronDown className="w-3 h-3 text-muted-foreground hidden md:block" />
@@ -331,25 +364,53 @@ export function Topbar({
           </DropdownMenuTrigger>
           <DropdownMenuContent
             align="end"
-            className="w-48 glass border-white/10 bg-card/90 backdrop-blur-xl"
+            className="w-56 glass border-white/10 bg-card/90 backdrop-blur-xl"
           >
             <DropdownMenuLabel className="text-xs text-muted-foreground">
               Switch Role
             </DropdownMenuLabel>
             <DropdownMenuSeparator className="bg-white/10" />
-            {ROLES.map((role) => (
-              <DropdownMenuItem
-                key={role}
-                onClick={() => setRole(role as Role)}
-                className="gap-2 cursor-pointer"
-                data-ocid={`role-${role.toLowerCase()}`}
-              >
-                {role}
-                {currentRole === role && (
-                  <Check className="w-3.5 h-3.5 ml-auto text-primary" />
-                )}
-              </DropdownMenuItem>
-            ))}
+            {ROLE_CONFIGS.map((config) => {
+              const Icon = ROLE_ICON_MAP[config.icon] ?? Shield;
+              const isActive = currentRole === config.id;
+              return (
+                <DropdownMenuItem
+                  key={config.id}
+                  onClick={() => {
+                    setRole(config.id);
+                    navigate({ to: "/" });
+                  }}
+                  className="gap-2 cursor-pointer"
+                  data-ocid={`role-${config.id}`}
+                >
+                  <div
+                    className="w-5 h-5 rounded-md flex items-center justify-center shrink-0"
+                    style={{
+                      background: `${COLOR_HEX[config.color] ?? config.color}22`,
+                    }}
+                  >
+                    <Icon
+                      className="w-3 h-3"
+                      style={{ color: COLOR_HEX[config.color] ?? config.color }}
+                    />
+                  </div>
+                  <span className="flex-1 text-xs">{config.displayName}</span>
+                  {isActive && <Check className="w-3.5 h-3.5 text-primary" />}
+                </DropdownMenuItem>
+              );
+            })}
+            <DropdownMenuSeparator className="bg-white/10" />
+            <DropdownMenuItem
+              onClick={() => {
+                logout();
+                navigate({ to: "/login" });
+              }}
+              className="gap-2 cursor-pointer text-muted-foreground hover:text-foreground"
+              data-ocid="topbar-change-role"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              <span className="text-xs">Sign Out</span>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>

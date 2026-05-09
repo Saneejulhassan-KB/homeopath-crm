@@ -9,6 +9,7 @@ import { Route as aiAssistantImport } from "./routes/ai-assistant";
 import { Route as appointmentsImport } from "./routes/appointments";
 import { Route as billingImport } from "./routes/billing";
 import { Route as indexImport } from "./routes/index";
+import { Route as loginImport } from "./routes/login";
 import { Route as patientsImport } from "./routes/patients";
 import { Route as patientsPatientIdImport } from "./routes/patients.$patientId";
 import { Route as prescriptionsImport } from "./routes/prescriptions";
@@ -33,6 +34,7 @@ const prescriptionsRoute = prescriptionsImport;
 const aiAssistantRoute = aiAssistantImport;
 const billingRoute = billingImport;
 const reportsRoute = reportsImport;
+const loginRoute = loginImport;
 const settingsRoute = settingsImport;
 const proRoute = proImport;
 const proIndexRoute = proIndexImport;
@@ -45,6 +47,7 @@ const proRemedyFinderRoute = proRemedyFinderImport;
 const proVoiceRecorderRoute = proVoiceRecorderImport;
 
 export const routeTree = rootRoute.addChildren([
+  loginRoute,
   indexRoute,
   patientsRoute.addChildren([patientsPatientIdRoute]),
   appointmentsRoute,
@@ -132,6 +135,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof settingsImport;
       parentRoute: typeof rootImport;
     };
+    "/login": {
+      id: "/login";
+      path: "/login";
+      fullPath: "/login";
+      preLoaderRoute: typeof loginImport;
+      parentRoute: typeof rootImport;
+    };
     "/pro": {
       id: "/pro";
       path: "/pro";
@@ -148,49 +158,49 @@ declare module "@tanstack/react-router" {
     };
     "/pro/case-repository": {
       id: "/pro/case-repository";
-      path: "/case-repository";
+      path: "case-repository";
       fullPath: "/pro/case-repository";
       preLoaderRoute: typeof proCaseRepositoryImport;
       parentRoute: typeof proImport;
     };
     "/pro/case-templates": {
       id: "/pro/case-templates";
-      path: "/case-templates";
+      path: "case-templates";
       fullPath: "/pro/case-templates";
       preLoaderRoute: typeof proCaseTemplatesImport;
       parentRoute: typeof proImport;
     };
     "/pro/materia-medica": {
       id: "/pro/materia-medica";
-      path: "/materia-medica";
+      path: "materia-medica";
       fullPath: "/pro/materia-medica";
       preLoaderRoute: typeof proMateriaMedicaImport;
       parentRoute: typeof proImport;
     };
     "/pro/patient-timeline": {
       id: "/pro/patient-timeline";
-      path: "/patient-timeline";
+      path: "patient-timeline";
       fullPath: "/pro/patient-timeline";
       preLoaderRoute: typeof proPatientTimelineImport;
       parentRoute: typeof proImport;
     };
     "/pro/remedy-comparison": {
       id: "/pro/remedy-comparison";
-      path: "/remedy-comparison";
+      path: "remedy-comparison";
       fullPath: "/pro/remedy-comparison";
       preLoaderRoute: typeof proRemedyComparisonImport;
       parentRoute: typeof proImport;
     };
     "/pro/remedy-finder": {
       id: "/pro/remedy-finder";
-      path: "/remedy-finder";
+      path: "remedy-finder";
       fullPath: "/pro/remedy-finder";
       preLoaderRoute: typeof proRemedyFinderImport;
       parentRoute: typeof proImport;
     };
     "/pro/voice-recorder": {
       id: "/pro/voice-recorder";
-      path: "/voice-recorder";
+      path: "voice-recorder";
       fullPath: "/pro/voice-recorder";
       preLoaderRoute: typeof proVoiceRecorderImport;
       parentRoute: typeof proImport;

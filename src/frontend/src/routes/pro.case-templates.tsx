@@ -42,7 +42,7 @@ import { Route as proRoute } from "./pro";
 
 export const Route = createRoute({
   getParentRoute: () => proRoute,
-  path: "/case-templates",
+  path: "case-templates",
   component: CaseTemplatesPage,
 });
 

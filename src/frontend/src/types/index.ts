@@ -12,7 +12,37 @@ export type NotificationType =
   | "reminder"
   | "system"
   | "alert";
-export type Role = "Admin" | "Doctor" | "Receptionist";
+export type { AuthUser, Clinic } from "@/utils/auth";
+export type Role =
+  | "Main Admin"
+  | "Doctor"
+  | "Receptionist"
+  | "Pharmacist"
+  | "Nurse/Compounder"
+  | "Billing Staff";
+
+export type RoleId =
+  | "main-admin"
+  | "doctor"
+  | "receptionist"
+  | "pharmacist"
+  | "nurse"
+  | "billing";
+
+export interface RoleConfig {
+  id: RoleId;
+  displayName: string;
+  icon: string;
+  color: string;
+  description: string;
+  gradient: string;
+}
+
+export type ModuleAccess = "full" | "view-only" | "filtered" | "none";
+
+export interface RolePermissions {
+  [module: string]: ModuleAccess;
+}
 export type Language = "en" | "hi" | "es" | "fr";
 export type AppointmentType =
   | "consultation"
