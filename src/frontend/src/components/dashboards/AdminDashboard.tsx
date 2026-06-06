@@ -38,32 +38,108 @@ import {
 import { toast } from "sonner";
 import { GlassTooltip, containerVariants, itemVariants } from "./shared";
 
-const revenueTrend = [
-  { month: "Nov", revenue: 198000 },
-  { month: "Dec", revenue: 224000 },
-  { month: "Jan", revenue: 211000 },
-  { month: "Feb", revenue: 248000 },
-  { month: "Mar", revenue: 267000 },
-  { month: "Apr", revenue: 284500 },
-];
+const REVENUE_DATA = {
+  "3 Months": [
+    { label: "Feb", revenue: 248000 },
+    { label: "Mar", revenue: 267000 },
+    { label: "Apr", revenue: 284500 },
+  ],
+  "6 Months": [
+    { label: "Nov", revenue: 198000 },
+    { label: "Dec", revenue: 224000 },
+    { label: "Jan", revenue: 211000 },
+    { label: "Feb", revenue: 248000 },
+    { label: "Mar", revenue: 267000 },
+    { label: "Apr", revenue: 284500 },
+  ],
+  "1 Year": [
+    { label: "May", revenue: 172000 },
+    { label: "Jun", revenue: 185000 },
+    { label: "Jul", revenue: 179000 },
+    { label: "Aug", revenue: 192000 },
+    { label: "Sep", revenue: 205000 },
+    { label: "Oct", revenue: 188000 },
+    { label: "Nov", revenue: 198000 },
+    { label: "Dec", revenue: 224000 },
+    { label: "Jan", revenue: 211000 },
+    { label: "Feb", revenue: 248000 },
+    { label: "Mar", revenue: 267000 },
+    { label: "Apr", revenue: 284500 },
+  ],
+};
 
-const apptVolume = [
-  { day: "Mon", appointments: 28 },
-  { day: "Tue", appointments: 35 },
-  { day: "Wed", appointments: 31 },
-  { day: "Thu", appointments: 40 },
-  { day: "Fri", appointments: 34 },
-  { day: "Sat", appointments: 22 },
-  { day: "Sun", appointments: 8 },
-];
+const APPT_DATA = {
+  Daily: [
+    { label: "9 AM", appointments: 4 },
+    { label: "10 AM", appointments: 7 },
+    { label: "11 AM", appointments: 5 },
+    { label: "12 PM", appointments: 8 },
+    { label: "2 PM", appointments: 6 },
+    { label: "3 PM", appointments: 4 },
+    { label: "4 PM", appointments: 3 },
+    { label: "5 PM", appointments: 2 },
+  ],
+  Weekly: [
+    { label: "Mon", appointments: 28 },
+    { label: "Tue", appointments: 35 },
+    { label: "Wed", appointments: 31 },
+    { label: "Thu", appointments: 40 },
+    { label: "Fri", appointments: 34 },
+    { label: "Sat", appointments: 22 },
+    { label: "Sun", appointments: 8 },
+  ],
+  Monthly: [
+    { label: "Week 1", appointments: 120 },
+    { label: "Week 2", appointments: 145 },
+    { label: "Week 3", appointments: 132 },
+    { label: "Week 4", appointments: 158 },
+  ],
+  Yearly: [
+    { label: "Jan", appointments: 480 },
+    { label: "Feb", appointments: 520 },
+    { label: "Mar", appointments: 560 },
+    { label: "Apr", appointments: 610 },
+    { label: "May", appointments: 590 },
+    { label: "Jun", appointments: 630 },
+    { label: "Jul", appointments: 600 },
+    { label: "Aug", appointments: 640 },
+    { label: "Sep", appointments: 670 },
+    { label: "Oct", appointments: 650 },
+    { label: "Nov", appointments: 690 },
+    { label: "Dec", appointments: 720 },
+  ],
+};
 
-const staffPerformance = [
-  { name: "Dr. Anjali Sharma", patients: 14, openCases: 3, rating: 4.9 },
-  { name: "Dr. Rohan Mehta", patients: 11, openCases: 2, rating: 4.7 },
-  { name: "Dr. Priya Nair", patients: 9, openCases: 4, rating: 4.8 },
-  { name: "Dr. Vikram Patel", patients: 8, openCases: 1, rating: 4.6 },
-  { name: "Dr. Sunita Joshi", patients: 7, openCases: 2, rating: 4.5 },
-];
+const DOCTOR_PERFORMANCE_DATA = {
+  Today: [
+    { name: "Dr. Anjali Sharma", patients: 14, openCases: 3, rating: 4.9 },
+    { name: "Dr. Rohan Mehta", patients: 11, openCases: 2, rating: 4.7 },
+    { name: "Dr. Priya Nair", patients: 9, openCases: 4, rating: 4.8 },
+    { name: "Dr. Vikram Patel", patients: 8, openCases: 1, rating: 4.6 },
+    { name: "Dr. Sunita Joshi", patients: 7, openCases: 2, rating: 4.5 },
+  ],
+  Week: [
+    { name: "Dr. Anjali Sharma", patients: 68, openCases: 5, rating: 4.9 },
+    { name: "Dr. Rohan Mehta", patients: 54, openCases: 4, rating: 4.7 },
+    { name: "Dr. Priya Nair", patients: 49, openCases: 6, rating: 4.8 },
+    { name: "Dr. Vikram Patel", patients: 42, openCases: 3, rating: 4.6 },
+    { name: "Dr. Sunita Joshi", patients: 38, openCases: 4, rating: 4.5 },
+  ],
+  Month: [
+    { name: "Dr. Anjali Sharma", patients: 280, openCases: 12, rating: 4.9 },
+    { name: "Dr. Rohan Mehta", patients: 235, openCases: 9, rating: 4.7 },
+    { name: "Dr. Priya Nair", patients: 210, openCases: 14, rating: 4.8 },
+    { name: "Dr. Vikram Patel", patients: 195, openCases: 7, rating: 4.6 },
+    { name: "Dr. Sunita Joshi", patients: 178, openCases: 10, rating: 4.5 },
+  ],
+  Year: [
+    { name: "Dr. Anjali Sharma", patients: 3240, openCases: 45, rating: 4.9 },
+    { name: "Dr. Rohan Mehta", patients: 2890, openCases: 38, rating: 4.7 },
+    { name: "Dr. Priya Nair", patients: 2650, openCases: 52, rating: 4.8 },
+    { name: "Dr. Vikram Patel", patients: 2410, openCases: 29, rating: 4.6 },
+    { name: "Dr. Sunita Joshi", patients: 2180, openCases: 35, rating: 4.5 },
+  ],
+};
 
 // Per-clinic mock stats so switching clinics shows different numbers
 const CLINIC_STATS: Record<
@@ -90,6 +166,15 @@ export function AdminDashboard() {
     registrationNumber: "",
   });
   const [adding, setAdding] = useState(false);
+  const [revenuePeriod, setRevenuePeriod] = useState<
+    "3 Months" | "6 Months" | "1 Year"
+  >("6 Months");
+  const [apptPeriod, setApptPeriod] = useState<
+    "Daily" | "Weekly" | "Monthly" | "Yearly"
+  >("Weekly");
+  const [doctorPeriod, setDoctorPeriod] = useState<
+    "Today" | "Week" | "Month" | "Year"
+  >("Today");
 
   useEffect(() => {
     const user = getCurrentUser();
@@ -205,24 +290,31 @@ export function AdminDashboard() {
         </motion.div>
       )}
 
-      {/* Stat Cards */}
+      {/* Stat Cards — First Row */}
       <motion.div
         variants={itemVariants}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
       >
         <StatCard
-          title="Total Patients"
-          value={stats.patients}
+          title="Total Appointments"
+          value={stats.appts}
+          change={5}
+          icon={<Calendar className="w-5 h-5" />}
+          color="purple"
+        />
+        <StatCard
+          title="Total Visitors"
+          value="1,580"
           change={12}
           icon={<Users className="w-5 h-5" />}
           color="teal"
         />
         <StatCard
-          title="Appointments Today"
-          value={stats.appts}
-          change={5}
-          icon={<Calendar className="w-5 h-5" />}
-          color="purple"
+          title="Cases Taken"
+          value="312"
+          change={8}
+          icon={<Activity className="w-5 h-5" />}
+          color="amber"
         />
         <StatCard
           title="Total Revenue"
@@ -231,39 +323,20 @@ export function AdminDashboard() {
           icon={<DollarSign className="w-5 h-5" />}
           color="green"
         />
-        <StatCard
-          title="Active Doctors"
-          value={stats.doctors}
-          change={0}
-          icon={<BriefcaseMedical className="w-5 h-5" />}
-          color="amber"
-        />
       </motion.div>
 
-      {/* Occupancy + Pending Cases */}
+      {/* Stat Cards — Second Row */}
       <motion.div
         variants={itemVariants}
-        className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+        className="grid grid-cols-1 sm:grid-cols-3 gap-4"
       >
-        <div className="glass-card p-5" data-ocid="admin-occupancy">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="font-display font-semibold text-foreground">
-              Clinic Occupancy Rate
-            </h3>
-            <span className="text-2xl font-bold text-primary">78%</span>
-          </div>
-          <div className="w-full h-3 rounded-full bg-white/10 overflow-hidden">
-            <motion.div
-              className="h-full rounded-full bg-gradient-to-r from-primary to-primary/70"
-              initial={{ width: 0 }}
-              animate={{ width: "78%" }}
-              transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
-            />
-          </div>
-          <p className="text-xs text-muted-foreground mt-2">
-            78 of 100 slots filled today
-          </p>
-        </div>
+        <StatCard
+          title="Total Patients"
+          value={stats.patients}
+          change={12}
+          icon={<Users className="w-5 h-5" />}
+          color="teal"
+        />
         <div
           className="glass-card p-5 flex items-center gap-4"
           data-ocid="admin-pending-cases"
@@ -281,6 +354,23 @@ export function AdminDashboard() {
             </p>
           </div>
         </div>
+        <div
+          className="glass-card p-5 flex items-center gap-4"
+          data-ocid="admin-waiting-patients"
+        >
+          <div className="p-3 rounded-xl bg-primary/15 border border-primary/20">
+            <Activity className="w-6 h-6 text-primary" />
+          </div>
+          <div>
+            <p className="text-3xl font-bold font-display text-foreground">
+              18
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Waiting Patients Today
+            </p>
+            <p className="text-xs text-primary mt-1">Average wait ~12 min</p>
+          </div>
+        </div>
       </motion.div>
 
       {/* Charts */}
@@ -295,16 +385,37 @@ export function AdminDashboard() {
                 Revenue Trend
               </h3>
               <p className="text-xs text-muted-foreground mt-0.5">
-                Last 6 months
+                {revenuePeriod === "3 Months"
+                  ? "Last 3 months"
+                  : revenuePeriod === "1 Year"
+                    ? "Last 12 months"
+                    : "Last 6 months"}
               </p>
             </div>
             <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
               +43%
             </span>
           </div>
+          <div className="flex gap-2 mb-4">
+            {(["3 Months", "6 Months", "1 Year"] as const).map((p) => (
+              <button
+                key={p}
+                type="button"
+                onClick={() => setRevenuePeriod(p)}
+                className={`text-xs px-2.5 py-1 rounded-full border transition-all ${
+                  revenuePeriod === p
+                    ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30"
+                    : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground"
+                }`}
+                data-ocid={`admin.revenue_toggle.${p.toLowerCase().replace(" ", "_")}`}
+              >
+                {p}
+              </button>
+            ))}
+          </div>
           <ResponsiveContainer width="100%" height={240}>
             <LineChart
-              data={revenueTrend}
+              data={REVENUE_DATA[revenuePeriod]}
               margin={{ top: 5, right: 10, left: -10, bottom: 5 }}
             >
               <CartesianGrid
@@ -312,7 +423,7 @@ export function AdminDashboard() {
                 stroke="rgba(255,255,255,0.06)"
               />
               <XAxis
-                dataKey="month"
+                dataKey="label"
                 tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
                 axisLine={{ stroke: "rgba(255,255,255,0.08)" }}
                 tickLine={false}
@@ -346,15 +457,40 @@ export function AdminDashboard() {
               <h3 className="font-display font-semibold text-foreground">
                 Appointment Volume
               </h3>
-              <p className="text-xs text-muted-foreground mt-0.5">This week</p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                {apptPeriod === "Daily"
+                  ? "Today"
+                  : apptPeriod === "Weekly"
+                    ? "This week"
+                    : apptPeriod === "Monthly"
+                      ? "This month"
+                      : "This year"}
+              </p>
             </div>
             <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
-              Weekly
+              {apptPeriod}
             </span>
+          </div>
+          <div className="flex gap-2 mb-4">
+            {(["Daily", "Weekly", "Monthly", "Yearly"] as const).map((p) => (
+              <button
+                key={p}
+                type="button"
+                onClick={() => setApptPeriod(p)}
+                className={`text-xs px-2.5 py-1 rounded-full border transition-all ${
+                  apptPeriod === p
+                    ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30"
+                    : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground"
+                }`}
+                data-ocid={`admin.appt_toggle.${p.toLowerCase()}`}
+              >
+                {p}
+              </button>
+            ))}
           </div>
           <ResponsiveContainer width="100%" height={240}>
             <BarChart
-              data={apptVolume}
+              data={APPT_DATA[apptPeriod]}
               margin={{ top: 5, right: 10, left: -20, bottom: 5 }}
             >
               <CartesianGrid
@@ -362,7 +498,7 @@ export function AdminDashboard() {
                 stroke="rgba(255,255,255,0.06)"
               />
               <XAxis
-                dataKey="day"
+                dataKey="label"
                 tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
                 axisLine={{ stroke: "rgba(255,255,255,0.08)" }}
                 tickLine={false}
@@ -384,14 +520,30 @@ export function AdminDashboard() {
         </div>
       </motion.div>
 
-      {/* Staff Performance Table */}
+      {/* Doctor Performance Table */}
       <motion.div variants={itemVariants}>
-        <div className="glass-card p-5" data-ocid="admin-staff-table">
+        <div className="glass-card p-5" data-ocid="admin-doctor-table">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-display font-semibold text-foreground">
-              Staff Performance
+              Doctor Performance
             </h3>
-            <span className="text-xs text-muted-foreground">Today</span>
+            <div className="flex gap-2">
+              {(["Today", "Week", "Month", "Year"] as const).map((p) => (
+                <button
+                  key={p}
+                  type="button"
+                  onClick={() => setDoctorPeriod(p)}
+                  className={`text-xs px-2.5 py-1 rounded-full border transition-all ${
+                    doctorPeriod === p
+                      ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30"
+                      : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground"
+                  }`}
+                  data-ocid={`admin.doctor_toggle.${p.toLowerCase()}`}
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -399,7 +551,13 @@ export function AdminDashboard() {
                 <tr className="border-b border-white/10">
                   {[
                     "Doctor Name",
-                    "Patients Today",
+                    doctorPeriod === "Today"
+                      ? "Patients Today"
+                      : doctorPeriod === "Week"
+                        ? "Patients This Week"
+                        : doctorPeriod === "Month"
+                          ? "Patients This Month"
+                          : "Patients This Year",
                     "Cases Open",
                     "Avg Rating",
                   ].map((h) => (
@@ -413,11 +571,11 @@ export function AdminDashboard() {
                 </tr>
               </thead>
               <tbody>
-                {staffPerformance.map((row, i) => (
+                {DOCTOR_PERFORMANCE_DATA[doctorPeriod].map((row, i) => (
                   <tr
                     key={row.name}
                     className="border-b border-white/5 hover:bg-white/[0.03] transition-colors"
-                    data-ocid={`admin-staff.item.${i + 1}`}
+                    data-ocid={`admin-doctor.item.${i + 1}`}
                   >
                     <td className="py-3 pr-4 font-medium text-foreground">
                       {row.name}

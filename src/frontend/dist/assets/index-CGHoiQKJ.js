@@ -6789,7 +6789,7 @@ function mergeLoginOptions(loginOptions, otherLoginOptions) {
   };
 }
 const ONE_HOUR_IN_NANOSECONDS = BigInt(36e11);
-const DEFAULT_IDENTITY_PROVIDER = "https://id.ai";
+const DEFAULT_IDENTITY_PROVIDER = "https://id.ai/authorize";
 const InternetIdentityReactContext = reactExports.createContext(void 0);
 async function createAuthClient(createOptions) {
   const config2 = await loadConfig();
@@ -25723,7 +25723,7 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1E = [
+const __iconNode$1D = [
   [
     "path",
     {
@@ -25732,19 +25732,7 @@ const __iconNode$1E = [
     }
   ]
 ];
-const Activity = createLucideIcon("activity", __iconNode$1E);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1D = [
-  ["rect", { width: "20", height: "5", x: "2", y: "3", rx: "1", key: "1wp1u1" }],
-  ["path", { d: "M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8", key: "1s80jp" }],
-  ["path", { d: "M10 12h4", key: "a56b0p" }]
-];
-const Archive = createLucideIcon("archive", __iconNode$1D);
+const Activity = createLucideIcon("activity", __iconNode$1D);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -25752,10 +25740,11 @@ const Archive = createLucideIcon("archive", __iconNode$1D);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1C = [
-  ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
-  ["path", { d: "M19 12H5", key: "x3x0zl" }]
+  ["rect", { width: "20", height: "5", x: "2", y: "3", rx: "1", key: "1wp1u1" }],
+  ["path", { d: "M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8", key: "1s80jp" }],
+  ["path", { d: "M10 12h4", key: "a56b0p" }]
 ];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$1C);
+const Archive = createLucideIcon("archive", __iconNode$1C);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -25763,10 +25752,10 @@ const ArrowLeft = createLucideIcon("arrow-left", __iconNode$1C);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1B = [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
+  ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
+  ["path", { d: "M19 12H5", key: "x3x0zl" }]
 ];
-const ArrowRight = createLucideIcon("arrow-right", __iconNode$1B);
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$1B);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -25774,6 +25763,17 @@ const ArrowRight = createLucideIcon("arrow-right", __iconNode$1B);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1A = [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
+];
+const ArrowRight = createLucideIcon("arrow-right", __iconNode$1A);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1z = [
   ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
   [
     "path",
@@ -25790,14 +25790,14 @@ const __iconNode$1A = [
     }
   ]
 ];
-const Atom = createLucideIcon("atom", __iconNode$1A);
+const Atom = createLucideIcon("atom", __iconNode$1z);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1z = [
+const __iconNode$1y = [
   ["path", { d: "M10.268 21a2 2 0 0 0 3.464 0", key: "vwvbt9" }],
   [
     "path",
@@ -25807,14 +25807,14 @@ const __iconNode$1z = [
     }
   ]
 ];
-const Bell = createLucideIcon("bell", __iconNode$1z);
+const Bell = createLucideIcon("bell", __iconNode$1y);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1y = [
+const __iconNode$1x = [
   [
     "path",
     {
@@ -25823,14 +25823,14 @@ const __iconNode$1y = [
     }
   ]
 ];
-const Bone = createLucideIcon("bone", __iconNode$1y);
+const Bone = createLucideIcon("bone", __iconNode$1x);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1x = [
+const __iconNode$1w = [
   ["path", { d: "M12 7v14", key: "1akyts" }],
   [
     "path",
@@ -25840,22 +25840,7 @@ const __iconNode$1x = [
     }
   ]
 ];
-const BookOpen = createLucideIcon("book-open", __iconNode$1x);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1w = [
-  ["path", { d: "M12 8V4H8", key: "hb8ula" }],
-  ["rect", { width: "16", height: "12", x: "4", y: "8", rx: "2", key: "enze0r" }],
-  ["path", { d: "M2 14h2", key: "vft8re" }],
-  ["path", { d: "M20 14h2", key: "4cs60a" }],
-  ["path", { d: "M15 13v2", key: "1xurst" }],
-  ["path", { d: "M9 13v2", key: "rq6x2g" }]
-];
-const Bot = createLucideIcon("bot", __iconNode$1w);
+const BookOpen = createLucideIcon("book-open", __iconNode$1w);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -25863,6 +25848,21 @@ const Bot = createLucideIcon("bot", __iconNode$1w);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1v = [
+  ["path", { d: "M12 8V4H8", key: "hb8ula" }],
+  ["rect", { width: "16", height: "12", x: "4", y: "8", rx: "2", key: "enze0r" }],
+  ["path", { d: "M2 14h2", key: "vft8re" }],
+  ["path", { d: "M20 14h2", key: "4cs60a" }],
+  ["path", { d: "M15 13v2", key: "1xurst" }],
+  ["path", { d: "M9 13v2", key: "rq6x2g" }]
+];
+const Bot = createLucideIcon("bot", __iconNode$1v);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1u = [
   [
     "path",
     {
@@ -25885,22 +25885,7 @@ const __iconNode$1v = [
   ["path", { d: "M6 18a4 4 0 0 1-1.967-.516", key: "2e4loj" }],
   ["path", { d: "M19.967 17.484A4 4 0 0 1 18 18", key: "159ez6" }]
 ];
-const Brain = createLucideIcon("brain", __iconNode$1v);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1u = [
-  ["path", { d: "M12 11v4", key: "a6ujw6" }],
-  ["path", { d: "M14 13h-4", key: "1pl8zg" }],
-  ["path", { d: "M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2", key: "1ksdt3" }],
-  ["path", { d: "M18 6v14", key: "1mu4gy" }],
-  ["path", { d: "M6 6v14", key: "1s15cj" }],
-  ["rect", { width: "20", height: "14", x: "2", y: "6", rx: "2", key: "i6l2r4" }]
-];
-const BriefcaseMedical = createLucideIcon("briefcase-medical", __iconNode$1u);
+const Brain = createLucideIcon("brain", __iconNode$1u);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -75181,30 +75166,106 @@ const itemVariants = {
     transition: { duration: 0.4, ease: "easeOut" }
   }
 };
-const revenueTrend = [
-  { month: "Nov", revenue: 198e3 },
-  { month: "Dec", revenue: 224e3 },
-  { month: "Jan", revenue: 211e3 },
-  { month: "Feb", revenue: 248e3 },
-  { month: "Mar", revenue: 267e3 },
-  { month: "Apr", revenue: 284500 }
-];
-const apptVolume = [
-  { day: "Mon", appointments: 28 },
-  { day: "Tue", appointments: 35 },
-  { day: "Wed", appointments: 31 },
-  { day: "Thu", appointments: 40 },
-  { day: "Fri", appointments: 34 },
-  { day: "Sat", appointments: 22 },
-  { day: "Sun", appointments: 8 }
-];
-const staffPerformance = [
-  { name: "Dr. Anjali Sharma", patients: 14, openCases: 3, rating: 4.9 },
-  { name: "Dr. Rohan Mehta", patients: 11, openCases: 2, rating: 4.7 },
-  { name: "Dr. Priya Nair", patients: 9, openCases: 4, rating: 4.8 },
-  { name: "Dr. Vikram Patel", patients: 8, openCases: 1, rating: 4.6 },
-  { name: "Dr. Sunita Joshi", patients: 7, openCases: 2, rating: 4.5 }
-];
+const REVENUE_DATA = {
+  "3 Months": [
+    { label: "Feb", revenue: 248e3 },
+    { label: "Mar", revenue: 267e3 },
+    { label: "Apr", revenue: 284500 }
+  ],
+  "6 Months": [
+    { label: "Nov", revenue: 198e3 },
+    { label: "Dec", revenue: 224e3 },
+    { label: "Jan", revenue: 211e3 },
+    { label: "Feb", revenue: 248e3 },
+    { label: "Mar", revenue: 267e3 },
+    { label: "Apr", revenue: 284500 }
+  ],
+  "1 Year": [
+    { label: "May", revenue: 172e3 },
+    { label: "Jun", revenue: 185e3 },
+    { label: "Jul", revenue: 179e3 },
+    { label: "Aug", revenue: 192e3 },
+    { label: "Sep", revenue: 205e3 },
+    { label: "Oct", revenue: 188e3 },
+    { label: "Nov", revenue: 198e3 },
+    { label: "Dec", revenue: 224e3 },
+    { label: "Jan", revenue: 211e3 },
+    { label: "Feb", revenue: 248e3 },
+    { label: "Mar", revenue: 267e3 },
+    { label: "Apr", revenue: 284500 }
+  ]
+};
+const APPT_DATA = {
+  Daily: [
+    { label: "9 AM", appointments: 4 },
+    { label: "10 AM", appointments: 7 },
+    { label: "11 AM", appointments: 5 },
+    { label: "12 PM", appointments: 8 },
+    { label: "2 PM", appointments: 6 },
+    { label: "3 PM", appointments: 4 },
+    { label: "4 PM", appointments: 3 },
+    { label: "5 PM", appointments: 2 }
+  ],
+  Weekly: [
+    { label: "Mon", appointments: 28 },
+    { label: "Tue", appointments: 35 },
+    { label: "Wed", appointments: 31 },
+    { label: "Thu", appointments: 40 },
+    { label: "Fri", appointments: 34 },
+    { label: "Sat", appointments: 22 },
+    { label: "Sun", appointments: 8 }
+  ],
+  Monthly: [
+    { label: "Week 1", appointments: 120 },
+    { label: "Week 2", appointments: 145 },
+    { label: "Week 3", appointments: 132 },
+    { label: "Week 4", appointments: 158 }
+  ],
+  Yearly: [
+    { label: "Jan", appointments: 480 },
+    { label: "Feb", appointments: 520 },
+    { label: "Mar", appointments: 560 },
+    { label: "Apr", appointments: 610 },
+    { label: "May", appointments: 590 },
+    { label: "Jun", appointments: 630 },
+    { label: "Jul", appointments: 600 },
+    { label: "Aug", appointments: 640 },
+    { label: "Sep", appointments: 670 },
+    { label: "Oct", appointments: 650 },
+    { label: "Nov", appointments: 690 },
+    { label: "Dec", appointments: 720 }
+  ]
+};
+const DOCTOR_PERFORMANCE_DATA = {
+  Today: [
+    { name: "Dr. Anjali Sharma", patients: 14, openCases: 3, rating: 4.9 },
+    { name: "Dr. Rohan Mehta", patients: 11, openCases: 2, rating: 4.7 },
+    { name: "Dr. Priya Nair", patients: 9, openCases: 4, rating: 4.8 },
+    { name: "Dr. Vikram Patel", patients: 8, openCases: 1, rating: 4.6 },
+    { name: "Dr. Sunita Joshi", patients: 7, openCases: 2, rating: 4.5 }
+  ],
+  Week: [
+    { name: "Dr. Anjali Sharma", patients: 68, openCases: 5, rating: 4.9 },
+    { name: "Dr. Rohan Mehta", patients: 54, openCases: 4, rating: 4.7 },
+    { name: "Dr. Priya Nair", patients: 49, openCases: 6, rating: 4.8 },
+    { name: "Dr. Vikram Patel", patients: 42, openCases: 3, rating: 4.6 },
+    { name: "Dr. Sunita Joshi", patients: 38, openCases: 4, rating: 4.5 }
+  ],
+  Month: [
+    { name: "Dr. Anjali Sharma", patients: 280, openCases: 12, rating: 4.9 },
+    { name: "Dr. Rohan Mehta", patients: 235, openCases: 9, rating: 4.7 },
+    { name: "Dr. Priya Nair", patients: 210, openCases: 14, rating: 4.8 },
+    { name: "Dr. Vikram Patel", patients: 195, openCases: 7, rating: 4.6 },
+    { name: "Dr. Sunita Joshi", patients: 178, openCases: 10, rating: 4.5 }
+  ],
+  Year: [
+    { name: "Dr. Anjali Sharma", patients: 3240, openCases: 45, rating: 4.9 },
+    { name: "Dr. Rohan Mehta", patients: 2890, openCases: 38, rating: 4.7 },
+    { name: "Dr. Priya Nair", patients: 2650, openCases: 52, rating: 4.8 },
+    { name: "Dr. Vikram Patel", patients: 2410, openCases: 29, rating: 4.6 },
+    { name: "Dr. Sunita Joshi", patients: 2180, openCases: 35, rating: 4.5 }
+  ]
+};
 const CLINIC_STATS = {
   0: { patients: "1,247", revenue: "₹2,84,500", appts: 34, doctors: 6 },
   1: { patients: "873", revenue: "₹1,94,200", appts: 21, doctors: 4 },
@@ -75226,6 +75287,9 @@ function AdminDashboard() {
     registrationNumber: ""
   });
   const [adding, setAdding] = reactExports.useState(false);
+  const [revenuePeriod, setRevenuePeriod] = reactExports.useState("6 Months");
+  const [apptPeriod, setApptPeriod] = reactExports.useState("Weekly");
+  const [doctorPeriod, setDoctorPeriod] = reactExports.useState("Today");
   reactExports.useEffect(() => {
     const user = getCurrentUser();
     if (!user) return;
@@ -75350,8 +75414,18 @@ function AdminDashboard() {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 StatCard,
                 {
-                  title: "Total Patients",
-                  value: stats.patients,
+                  title: "Total Appointments",
+                  value: stats.appts,
+                  change: 5,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-5 h-5" }),
+                  color: "purple"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Total Visitors",
+                  value: "1,580",
                   change: 12,
                   icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Users, { className: "w-5 h-5" }),
                   color: "teal"
@@ -75360,11 +75434,11 @@ function AdminDashboard() {
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 StatCard,
                 {
-                  title: "Appointments Today",
-                  value: stats.appts,
-                  change: 5,
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-5 h-5" }),
-                  color: "purple"
+                  title: "Cases Taken",
+                  value: "312",
+                  change: 8,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-5 h-5" }),
+                  color: "amber"
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -75376,16 +75450,6 @@ function AdminDashboard() {
                   icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DollarSign, { className: "w-5 h-5" }),
                   color: "green"
                 }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                StatCard,
-                {
-                  title: "Active Doctors",
-                  value: stats.doctors,
-                  change: 0,
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(BriefcaseMedical, { className: "w-5 h-5" }),
-                  color: "amber"
-                }
               )
             ]
           }
@@ -75394,24 +75458,18 @@ function AdminDashboard() {
           motion.div,
           {
             variants: itemVariants,
-            className: "grid grid-cols-1 sm:grid-cols-2 gap-4",
+            className: "grid grid-cols-1 sm:grid-cols-3 gap-4",
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "admin-occupancy", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-3", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Clinic Occupancy Rate" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-2xl font-bold text-primary", children: "78%" })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-3 rounded-full bg-white/10 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  motion.div,
-                  {
-                    className: "h-full rounded-full bg-gradient-to-r from-primary to-primary/70",
-                    initial: { width: 0 },
-                    animate: { width: "78%" },
-                    transition: { duration: 1.2, ease: "easeOut", delay: 0.3 }
-                  }
-                ) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-2", children: "78 of 100 slots filled today" })
-              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                StatCard,
+                {
+                  title: "Total Patients",
+                  value: stats.patients,
+                  change: 12,
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Users, { className: "w-5 h-5" }),
+                  color: "teal"
+                }
+              ),
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "div",
                 {
@@ -75423,6 +75481,21 @@ function AdminDashboard() {
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-3xl font-bold font-display text-foreground", children: "23" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Pending Cases" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-amber-400 mt-1", children: "Needs follow-up this week" })
+                    ] })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "glass-card p-5 flex items-center gap-4",
+                  "data-ocid": "admin-waiting-patients",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-3 rounded-xl bg-primary/15 border border-primary/20", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-6 h-6 text-primary" }) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-3xl font-bold font-display text-foreground", children: "18" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Waiting Patients Today" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-primary mt-1", children: "Average wait ~12 min" })
                     ] })
                   ]
                 }
@@ -75440,14 +75513,25 @@ function AdminDashboard() {
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Revenue Trend" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: "Last 6 months" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: revenuePeriod === "3 Months" ? "Last 3 months" : revenuePeriod === "1 Year" ? "Last 12 months" : "Last 6 months" })
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium px-2.5 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20", children: "+43%" })
                 ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-2 mb-4", children: ["3 Months", "6 Months", "1 Year"].map((p2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    type: "button",
+                    onClick: () => setRevenuePeriod(p2),
+                    className: `text-xs px-2.5 py-1 rounded-full border transition-all ${revenuePeriod === p2 ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30" : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground"}`,
+                    "data-ocid": `admin.revenue_toggle.${p2.toLowerCase().replace(" ", "_")}`,
+                    children: p2
+                  },
+                  p2
+                )) }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 240, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
                   LineChart,
                   {
-                    data: revenueTrend,
+                    data: REVENUE_DATA[revenuePeriod],
                     margin: { top: 5, right: 10, left: -10, bottom: 5 },
                     children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -75460,7 +75544,7 @@ function AdminDashboard() {
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
                         XAxis,
                         {
-                          dataKey: "month",
+                          dataKey: "label",
                           tick: { fontSize: 11, fill: "hsl(var(--muted-foreground))" },
                           axisLine: { stroke: "rgba(255,255,255,0.08)" },
                           tickLine: false
@@ -75500,14 +75584,25 @@ function AdminDashboard() {
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Appointment Volume" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: "This week" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: apptPeriod === "Daily" ? "Today" : apptPeriod === "Weekly" ? "This week" : apptPeriod === "Monthly" ? "This month" : "This year" })
                   ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20", children: "Weekly" })
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20", children: apptPeriod })
                 ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-2 mb-4", children: ["Daily", "Weekly", "Monthly", "Yearly"].map((p2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    type: "button",
+                    onClick: () => setApptPeriod(p2),
+                    className: `text-xs px-2.5 py-1 rounded-full border transition-all ${apptPeriod === p2 ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30" : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground"}`,
+                    "data-ocid": `admin.appt_toggle.${p2.toLowerCase()}`,
+                    children: p2
+                  },
+                  p2
+                )) }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 240, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
                   BarChart,
                   {
-                    data: apptVolume,
+                    data: APPT_DATA[apptPeriod],
                     margin: { top: 5, right: 10, left: -20, bottom: 5 },
                     children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -75520,7 +75615,7 @@ function AdminDashboard() {
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
                         XAxis,
                         {
-                          dataKey: "day",
+                          dataKey: "label",
                           tick: { fontSize: 11, fill: "hsl(var(--muted-foreground))" },
                           axisLine: { stroke: "rgba(255,255,255,0.08)" },
                           tickLine: false
@@ -75551,15 +75646,25 @@ function AdminDashboard() {
             ]
           }
         ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "admin-staff-table", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "admin-doctor-table", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Staff Performance" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground", children: "Today" })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Doctor Performance" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-2", children: ["Today", "Week", "Month", "Year"].map((p2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                onClick: () => setDoctorPeriod(p2),
+                className: `text-xs px-2.5 py-1 rounded-full border transition-all ${doctorPeriod === p2 ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30" : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground"}`,
+                "data-ocid": `admin.doctor_toggle.${p2.toLowerCase()}`,
+                children: p2
+              },
+              p2
+            )) })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-sm", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { className: "border-b border-white/10", children: [
               "Doctor Name",
-              "Patients Today",
+              doctorPeriod === "Today" ? "Patients Today" : doctorPeriod === "Week" ? "Patients This Week" : doctorPeriod === "Month" ? "Patients This Month" : "Patients This Year",
               "Cases Open",
               "Avg Rating"
             ].map((h2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -75570,11 +75675,11 @@ function AdminDashboard() {
               },
               h2
             )) }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: staffPerformance.map((row, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: DOCTOR_PERFORMANCE_DATA[doctorPeriod].map((row, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "tr",
               {
                 className: "border-b border-white/5 hover:bg-white/[0.03] transition-colors",
-                "data-ocid": `admin-staff.item.${i + 1}`,
+                "data-ocid": `admin-doctor.item.${i + 1}`,
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 font-medium text-foreground", children: row.name }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-4 text-muted-foreground tabular-nums", children: row.patients }),
