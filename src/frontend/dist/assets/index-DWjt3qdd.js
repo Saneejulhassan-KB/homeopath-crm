@@ -46751,11 +46751,13 @@ function StatusBadge({ status, className }) {
 const patients = [
   {
     id: "p001",
+    registrationId: "REG-0001",
     name: "Arjun Sharma",
     age: 42,
     gender: "Male",
     email: "arjun.sharma@email.com",
     phone: "+91 98765 43210",
+    place: "New Delhi",
     address: "12, Green Park, New Delhi, 110016",
     bloodGroup: "O+",
     chiefComplaint: "Chronic migraine with visual aura, worse from light and noise",
@@ -46767,11 +46769,13 @@ const patients = [
   },
   {
     id: "p002",
+    registrationId: "REG-0002",
     name: "Priya Nair",
     age: 35,
     gender: "Female",
     email: "priya.nair@email.com",
     phone: "+91 87654 32109",
+    place: "Mumbai",
     address: "45, Andheri West, Mumbai, 400058",
     bloodGroup: "A+",
     chiefComplaint: "Recurrent urticaria and allergic rhinitis, seasonal aggravation",
@@ -46783,11 +46787,13 @@ const patients = [
   },
   {
     id: "p003",
+    registrationId: "REG-0003",
     name: "Mohammed Al-Rashid",
     age: 58,
     gender: "Male",
     email: "m.alrashid@email.com",
     phone: "+971 50 234 5678",
+    place: "Dubai",
     address: "Villa 23, Jumeirah 2, Dubai, UAE",
     bloodGroup: "B+",
     chiefComplaint: "Hypertension, anxiety, insomnia — stress-related complaints",
@@ -46799,11 +46805,13 @@ const patients = [
   },
   {
     id: "p004",
+    registrationId: "REG-0004",
     name: "Sarah Thompson",
     age: 29,
     gender: "Female",
     email: "sarah.t@email.com",
     phone: "+1 555 234 5678",
+    place: "Chicago",
     address: "800 Oak Avenue, Chicago, IL 60601",
     bloodGroup: "AB-",
     chiefComplaint: "Endometriosis — severe dysmenorrhea and pelvic pain",
@@ -46815,11 +46823,13 @@ const patients = [
   },
   {
     id: "p005",
+    registrationId: "REG-0005",
     name: "Rahul Gupta",
     age: 11,
     gender: "Male",
     email: "parent.gupta@email.com",
     phone: "+91 76543 21098",
+    place: "Chandigarh",
     address: "78, Sector 21, Chandigarh, 160021",
     bloodGroup: "A-",
     chiefComplaint: "ADHD, recurrent tonsillitis, delayed milestones",
@@ -46831,11 +46841,13 @@ const patients = [
   },
   {
     id: "p006",
+    registrationId: "REG-0006",
     name: "Elena Kozlov",
     age: 47,
     gender: "Female",
     email: "elena.k@email.com",
     phone: "+7 916 234 5678",
+    place: "Moscow",
     address: "Tverskaya St 15, Moscow, Russia",
     bloodGroup: "O-",
     chiefComplaint: "Rheumatoid arthritis — joint stiffness, worse in cold weather",
@@ -46847,11 +46859,13 @@ const patients = [
   },
   {
     id: "p007",
+    registrationId: "REG-0007",
     name: "Vijay Krishnamurthy",
     age: 63,
     gender: "Male",
     email: "vijay.k@email.com",
     phone: "+91 98452 10987",
+    place: "Bangalore",
     address: "23, Indiranagar, Bangalore, 560038",
     bloodGroup: "B-",
     chiefComplaint: "Type 2 diabetes with neuropathy, fatigue and thirst",
@@ -46863,11 +46877,13 @@ const patients = [
   },
   {
     id: "p008",
+    registrationId: "REG-0008",
     name: "Amelia Johnson",
     age: 33,
     gender: "Female",
     email: "amelia.j@email.com",
     phone: "+44 7700 900234",
+    place: "London",
     address: "15 Baker Street, London, W1U 8AN",
     bloodGroup: "A+",
     chiefComplaint: "Hashimoto thyroiditis, hair loss, fatigue, weight gain",
@@ -46879,11 +46895,13 @@ const patients = [
   },
   {
     id: "p009",
+    registrationId: "REG-0009",
     name: "Kavitha Reddy",
     age: 26,
     gender: "Female",
     email: "kavitha.r@email.com",
     phone: "+91 95678 90123",
+    place: "Hyderabad",
     address: "56, Banjara Hills, Hyderabad, 500034",
     bloodGroup: "O+",
     chiefComplaint: "PCOS, irregular menses, acne, weight management",
@@ -46895,11 +46913,13 @@ const patients = [
   },
   {
     id: "p010",
+    registrationId: "REG-0010",
     name: "Hans Mueller",
     age: 71,
     gender: "Male",
     email: "h.mueller@email.com",
     phone: "+49 170 2345678",
+    place: "Berlin",
     address: "Schillerstraße 8, Berlin 10625, Germany",
     bloodGroup: "AB+",
     chiefComplaint: "Benign prostatic hyperplasia, recurrent UTI, weak stream",
@@ -46911,11 +46931,13 @@ const patients = [
   },
   {
     id: "p011",
+    registrationId: "REG-0011",
     name: "Sunita Patel",
     age: 52,
     gender: "Female",
     email: "sunita.p@email.com",
     phone: "+91 99012 34567",
+    place: "Ahmedabad",
     address: "34, CG Road, Ahmedabad, 380009",
     bloodGroup: "B+",
     chiefComplaint: "Menopausal syndrome — hot flushes, mood swings, insomnia",
@@ -46927,11 +46949,13 @@ const patients = [
   },
   {
     id: "p012",
+    registrationId: "REG-0012",
     name: "Liang Wei",
     age: 38,
     gender: "Male",
     email: "liang.wei@email.com",
     phone: "+86 139 0012 3456",
+    place: "Shanghai",
     address: "88 Nanjing Road, Shanghai 200001, China",
     bloodGroup: "A+",
     chiefComplaint: "Chronic sinusitis, post-nasal drip, recurrent colds",
@@ -46943,11 +46967,13 @@ const patients = [
   },
   {
     id: "p013",
+    registrationId: "REG-0013",
     name: "Fatima Al-Zahra",
     age: 44,
     gender: "Female",
     email: "fatima.z@email.com",
     phone: "+966 50 345 6789",
+    place: "Riyadh",
     address: "Al Olaya District, Riyadh 11453, Saudi Arabia",
     bloodGroup: "O+",
     chiefComplaint: "Fibromyalgia — widespread body pain, tender points, fatigue",
@@ -46959,11 +46985,13 @@ const patients = [
   },
   {
     id: "p014",
+    registrationId: "REG-0014",
     name: "Rajan Menon",
     age: 19,
     gender: "Male",
     email: "rajan.m@email.com",
     phone: "+91 91234 56789",
+    place: "Kochi",
     address: "12, MG Road, Kochi, Kerala 682011",
     bloodGroup: "B+",
     chiefComplaint: "Acne vulgaris grade 3, pustular, worse before exams",
@@ -46975,11 +47003,13 @@ const patients = [
   },
   {
     id: "p015",
+    registrationId: "REG-0015",
     name: "Isabella Rossi",
     age: 55,
     gender: "Female",
     email: "isabella.r@email.com",
     phone: "+39 333 234 5678",
+    place: "Milan",
     address: "Via Roma 45, Milan 20121, Italy",
     bloodGroup: "A-",
     chiefComplaint: "Irritable bowel syndrome — alternating diarrhea/constipation",
@@ -82155,11 +82185,13 @@ const Route$d = createRoute({
 });
 const BLOOD_GROUPS = ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"];
 const defaultForm = {
+  registrationId: "",
   name: "",
   age: 0,
   gender: "Male",
   email: "",
   phone: "",
+  place: "",
   address: "",
   bloodGroup: "O+",
   chiefComplaint: "",
@@ -82436,11 +82468,167 @@ function PatientModal({
     ] })
   ] }) });
 }
+function DetailField$1({ icon, label, value, accent }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-1 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/8 transition-colors", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5 text-muted-foreground", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "span",
+        {
+          className: `w-3.5 h-3.5 shrink-0 ${accent ? "text-primary" : ""}`,
+          children: icon
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-medium uppercase tracking-wide", children: label })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "p",
+      {
+        className: `text-sm font-semibold truncate ${accent ? "text-primary" : "text-foreground"}`,
+        children: value ?? /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground italic font-normal", children: "—" })
+      }
+    )
+  ] });
+}
+function ViewPatientModal({
+  open,
+  onClose,
+  patient
+}) {
+  if (!patient) return null;
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Dialog, { open, onOpenChange: (o) => !o && onClose(), children: /* @__PURE__ */ jsxRuntimeExports.jsxs(DialogContent, { className: "max-w-2xl max-h-[90vh] overflow-y-auto glass-card border-white/20 p-0", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex items-center gap-4 px-6 pt-6 pb-4 border-b border-white/10", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-14 h-14 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center text-lg font-bold text-primary shrink-0 shadow-lg", children: getInitials$1(patient.name) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display text-xl font-bold text-foreground truncate", children: patient.name }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mt-0.5 flex-wrap", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-mono font-semibold text-primary/80 bg-primary/10 px-2 py-0.5 rounded-md border border-primary/20", children: patient.registrationId }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs text-muted-foreground", children: [
+            patient.age,
+            " yrs · ",
+            patient.gender
+          ] }),
+          patient.bloodGroup && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-semibold text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2 py-0.5 rounded-md", children: patient.bloodGroup })
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "button",
+        {
+          type: "button",
+          "aria-label": "Close",
+          onClick: onClose,
+          className: "absolute top-4 right-4 p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-white/10 transition-colors",
+          "data-ocid": "patients.view-modal.close_button",
+          children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "w-4 h-4" })
+        }
+      )
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-6 py-5 space-y-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 sm:grid-cols-3 gap-2.5", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          DetailField$1,
+          {
+            icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Phone, { className: "w-3.5 h-3.5" }),
+            label: "Phone",
+            value: patient.phone
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          DetailField$1,
+          {
+            icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { className: "w-3.5 h-3.5" }),
+            label: "Email",
+            value: patient.email
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          DetailField$1,
+          {
+            icon: /* @__PURE__ */ jsxRuntimeExports.jsx(MapPin, { className: "w-3.5 h-3.5" }),
+            label: "Place",
+            value: patient.place
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          DetailField$1,
+          {
+            icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-3.5 h-3.5" }),
+            label: "Last Visit",
+            value: formatDate$2(patient.lastVisit)
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          DetailField$1,
+          {
+            icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-3.5 h-3.5" }),
+            label: "Total Visits",
+            value: patient.totalVisits,
+            accent: true
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          DetailField$1,
+          {
+            icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Droplets, { className: "w-3.5 h-3.5" }),
+            label: "Blood Group",
+            value: patient.bloodGroup
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          DetailField$1,
+          {
+            icon: /* @__PURE__ */ jsxRuntimeExports.jsx(User, { className: "w-3.5 h-3.5" }),
+            label: "Age",
+            value: `${patient.age} years`
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          DetailField$1,
+          {
+            icon: /* @__PURE__ */ jsxRuntimeExports.jsx(User, { className: "w-3.5 h-3.5" }),
+            label: "Gender",
+            value: patient.gender
+          }
+        )
+      ] }),
+      patient.address && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-white/5 border border-white/10", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-1", children: "Address" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground", children: patient.address })
+      ] }),
+      patient.chiefComplaint && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-primary/5 border border-primary/15", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-medium uppercase tracking-wide text-primary/70 mb-1", children: "Chief Complaint" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground leading-relaxed", children: patient.chiefComplaint })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-end gap-2 pt-1", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        Button$1,
+        {
+          type: "button",
+          variant: "outline",
+          onClick: onClose,
+          className: "glass border-white/20",
+          "data-ocid": "patients.view-modal.close_button",
+          children: "Close"
+        }
+      ) })
+    ] })
+  ] }) });
+}
 function PatientsPage() {
   const navigate = useNavigate();
-  const { patients: patients2, isLoading, addPatient } = usePatients();
+  const { patients: patients2, isLoading, addPatient, updatePatient, deletePatient } = usePatients();
   const [modalOpen, setModalOpen] = reactExports.useState(false);
+  const [editModalOpen, setEditModalOpen] = reactExports.useState(false);
+  const [editPatient, setEditPatient] = reactExports.useState(null);
+  const [viewModalOpen, setViewModalOpen] = reactExports.useState(false);
+  const [viewPatient, setViewPatient] = reactExports.useState(null);
+  const [deleteDialogOpen, setDeleteDialogOpen] = reactExports.useState(false);
+  const [deleteTarget, setDeleteTarget] = reactExports.useState(null);
   const columns = [
+    {
+      key: "registrationId",
+      header: "Reg. ID",
+      sortable: true,
+      cell: (row) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-mono font-semibold text-primary/80 bg-primary/10 px-2 py-0.5 rounded-md border border-primary/20", children: row.registrationId })
+    },
     {
       key: "name",
       header: "Patient",
@@ -82471,9 +82659,13 @@ function PatientsPage() {
       cell: (row) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-mono text-muted-foreground", children: row.phone })
     },
     {
-      key: "email",
-      header: "Email",
-      cell: (row) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm text-muted-foreground truncate max-w-[160px] block", children: row.email })
+      key: "place",
+      header: "Place",
+      sortable: true,
+      cell: (row) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(MapPin, { className: "w-3.5 h-3.5 text-muted-foreground shrink-0" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm text-muted-foreground", children: row.place })
+      ] })
     },
     {
       key: "lastVisit",
@@ -82482,22 +82674,85 @@ function PatientsPage() {
       cell: (row) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm text-muted-foreground", children: formatDate$2(row.lastVisit) })
     },
     {
-      key: "status",
-      header: "Status",
-      cell: (row) => /* @__PURE__ */ jsxRuntimeExports.jsx(StatusBadge, { status: row.status })
-    },
-    {
       key: "totalVisits",
       header: "Visits",
       sortable: true,
       align: "right",
       cell: (row) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold text-foreground tabular-nums", children: row.totalVisits })
+    },
+    {
+      key: "id",
+      header: "Actions",
+      align: "right",
+      cell: (row) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-end gap-1", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            "aria-label": "View patient",
+            "data-ocid": `patients.view_button.${row.registrationId}`,
+            onClick: (e3) => {
+              e3.stopPropagation();
+              setViewPatient(row);
+              setViewModalOpen(true);
+            },
+            className: "p-1.5 rounded-md text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors duration-150",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { className: "w-4 h-4" })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            "aria-label": "Edit patient",
+            "data-ocid": `patients.edit_button.${row.registrationId}`,
+            onClick: (e3) => {
+              e3.stopPropagation();
+              setEditPatient(row);
+              setEditModalOpen(true);
+            },
+            className: "p-1.5 rounded-md text-muted-foreground hover:text-amber-500 hover:bg-amber-500/10 transition-colors duration-150",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Pencil, { className: "w-4 h-4" })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            "aria-label": "Delete patient",
+            "data-ocid": `patients.delete_button.${row.registrationId}`,
+            onClick: (e3) => {
+              e3.stopPropagation();
+              setDeleteTarget(row);
+              setDeleteDialogOpen(true);
+            },
+            className: "p-1.5 rounded-md text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors duration-150",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Trash2, { className: "w-4 h-4" })
+          }
+        )
+      ] })
     }
   ];
   const handleAdd = (data) => {
     addPatient(data);
     setModalOpen(false);
     ue.success("Patient added successfully");
+  };
+  const handleEdit = (data) => {
+    if (editPatient) {
+      updatePatient(editPatient.id, data);
+    }
+    setEditModalOpen(false);
+    setEditPatient(null);
+    ue.success("Patient updated successfully");
+  };
+  const handleDelete = () => {
+    if (deleteTarget) {
+      deletePatient(deleteTarget.id);
+    }
+    setDeleteDialogOpen(false);
+    setDeleteTarget(null);
+    ue.success("Patient removed successfully");
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     motion.div,
@@ -82513,12 +82768,7 @@ function PatientsPage() {
           {
             title: "Patients",
             description: "Manage patient records, case histories, and contact information.",
-            breadcrumb: [{ label: "Dashboard", href: "/" }, { label: "Patients" }],
-            action: {
-              label: "Add Patient",
-              onClick: () => setModalOpen(true),
-              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(UserPlus, { className: "w-4 h-4" })
-            }
+            breadcrumb: [{ label: "Dashboard", href: "/" }, { label: "Patients" }]
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -82533,8 +82783,16 @@ function PatientsPage() {
                 columns,
                 data: patients2,
                 isLoading,
-                searchPlaceholder: "Search by name, email, phone…",
-                searchKeys: ["name", "email", "phone"],
+                searchPlaceholder: "Search by name, ID, phone, place, gender…",
+                searchKeys: [
+                  "name",
+                  "registrationId",
+                  "phone",
+                  "place",
+                  "gender",
+                  "age",
+                  "lastVisit"
+                ],
                 onRowClick: (row) => navigate({
                   to: "/patients/$patientId",
                   params: { patientId: row.id }
@@ -82552,6 +82810,70 @@ function PatientsPage() {
             onClose: () => setModalOpen(false),
             onSave: handleAdd,
             mode: "add"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          PatientModal,
+          {
+            open: editModalOpen,
+            onClose: () => {
+              setEditModalOpen(false);
+              setEditPatient(null);
+            },
+            patient: editPatient,
+            onSave: handleEdit,
+            mode: "edit"
+          },
+          (editPatient == null ? void 0 : editPatient.id) ?? "edit"
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          ViewPatientModal,
+          {
+            open: viewModalOpen,
+            onClose: () => {
+              setViewModalOpen(false);
+              setViewPatient(null);
+            },
+            patient: viewPatient
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Dialog,
+          {
+            open: deleteDialogOpen,
+            onOpenChange: (o) => !o && setDeleteDialogOpen(false),
+            children: /* @__PURE__ */ jsxRuntimeExports.jsxs(DialogContent, { className: "max-w-sm glass-card border-white/20", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(DialogHeader, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(DialogTitle, { className: "font-display text-lg", children: "Remove Patient" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-muted-foreground", children: [
+                "Are you sure you want to remove",
+                " ",
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold text-foreground", children: deleteTarget == null ? void 0 : deleteTarget.name }),
+                "? This action cannot be undone."
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-end gap-3 pt-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Button$1,
+                  {
+                    type: "button",
+                    variant: "outline",
+                    onClick: () => setDeleteDialogOpen(false),
+                    className: "glass border-white/20",
+                    "data-ocid": "patients.delete-dialog.cancel_button",
+                    children: "Cancel"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Button$1,
+                  {
+                    type: "button",
+                    variant: "destructive",
+                    onClick: handleDelete,
+                    "data-ocid": "patients.delete-dialog.confirm_button",
+                    children: "Remove"
+                  }
+                )
+              ] })
+            ] })
           }
         )
       ]

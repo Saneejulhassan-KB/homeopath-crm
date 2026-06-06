@@ -1941,9 +1941,6 @@ video {
 .max-w-\[1600px\] {
   max-width: 1600px;
 }
-.max-w-\[160px\] {
-  max-width: 160px;
-}
 .max-w-\[180px\] {
   max-width: 180px;
 }
@@ -3601,6 +3598,9 @@ video {
 }
 .capitalize {
   text-transform: capitalize;
+}
+.italic {
+  font-style: italic;
 }
 .tabular-nums {
   --tw-numeric-spacing: tabular-nums;
@@ -5265,6 +5265,10 @@ video {
   background-color: oklch(var(--accent) / var(--tw-bg-opacity, 1));
 }
 
+.hover\:bg-amber-500\/10:hover {
+  background-color: rgb(245 158 11 / 0.1);
+}
+
 .hover\:bg-amber-500\/20:hover {
   background-color: rgb(245 158 11 / 0.2);
 }
@@ -5410,6 +5414,11 @@ video {
 
 .hover\:text-accent-foreground:hover {
   color: oklch(var(--accent-foreground));
+}
+
+.hover\:text-amber-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(245 158 11 / var(--tw-text-opacity, 1));
 }
 
 .hover\:text-destructive:hover {

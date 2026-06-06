@@ -52,11 +52,13 @@ export type AppointmentType =
 
 export interface Patient {
   id: string;
+  registrationId: string;
   name: string;
   age: number;
   gender: "Male" | "Female" | "Other";
   email: string;
   phone: string;
+  place: string;
   address: string;
   bloodGroup: string;
   chiefComplaint: string;
