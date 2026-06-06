@@ -12,18 +12,36 @@ import { StatCard } from "@/components/ui/stat-card";
 import { addClinic, getCurrentUser, getUserClinics } from "@/utils/auth";
 import type { Clinic } from "@/utils/auth";
 import {
+  addDays,
+  endOfDay,
+  endOfMonth,
+  endOfYear,
+  format,
+  isWithinInterval,
+  parseISO,
+  startOfDay,
+  startOfMonth,
+  startOfYear,
+  subDays,
+  subMonths,
+  subYears,
+} from "date-fns";
+import {
   Activity,
   AlertCircle,
-  BriefcaseMedical,
   Building2,
   Calendar,
+  CalendarDays,
   ChevronRight,
   DollarSign,
   Plus,
+  UserPlus,
   Users,
+  X,
 } from "lucide-react";
-import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { useEffect, useRef, useState } from "react";
+import { type DateRange, DayPicker } from "react-day-picker";
 import {
   Bar,
   BarChart,
@@ -36,6 +54,7 @@ import {
   YAxis,
 } from "recharts";
 import { toast } from "sonner";
+import "react-day-picker/style.css";
 import { GlassTooltip, containerVariants, itemVariants } from "./shared";
 
 const REVENUE_DATA = {
@@ -151,6 +170,215 @@ const CLINIC_STATS: Record<
   2: { patients: "512", revenue: "₹98,700", appts: 14, doctors: 3 },
 };
 
+// ─── Expanded dummy data ────────────────────────────────────────────────────
+// We generate deterministic records across many months so every date-range
+// preset produces visibly different non-zero numbers.
+
+interface DummyAppointment {
+  id: string;
+  patientId: string;
+  date: string; // ISO yyyy-MM-dd
+  status: "confirmed" | "completed" | "pending" | "cancelled";
+  type: "consultation" | "follow-up" | "check-up";
+  fee: number;
+}
+
+interface DummyPatient {
+  id: string;
+  createdAt: string; // ISO yyyy-MM-dd
+  consultationFee: number;
+}
+
+function generateDummyData() {
+  const dummyAppts: DummyAppointment[] = [];
+  const dummyPatients: DummyPatient[] = [];
+
+  const statuses: DummyAppointment["status"][] = [
+    "confirmed",
+    "completed",
+    "pending",
+    "cancelled",
+  ];
+  const types: DummyAppointment["type"][] = [
+    "consultation",
+    "follow-up",
+    "check-up",
+  ];
+
+  const today = new Date();
+  // Generate appointments for the last 730 days (2 years) and next 60 days
+  for (let d = -730; d <= 60; d++) {
+    const date = format(addDays(today, d), "yyyy-MM-dd");
+    // 3–12 appointments per day, more on weekdays
+    const dayOfWeek = addDays(today, d).getDay();
+    const baseCount = dayOfWeek === 0 || dayOfWeek === 6 ? 3 : 8;
+    const count = baseCount + Math.floor(Math.random() * 5);
+
+    for (let i = 0; i < count; i++) {
+      const status = statuses[Math.floor(Math.random() * statuses.length)];
+      const type = types[Math.floor(Math.random() * types.length)];
+      const fee = 300 + Math.floor(Math.random() * 1200);
+      dummyAppts.push({
+        id: `da-${d}-${i}`,
+        patientId: `p-${Math.floor(Math.random() * 2000)}`,
+        date,
+        status,
+        type,
+        fee,
+      });
+    }
+  }
+
+  // Generate patients registered across 2 years
+  for (let d = -730; d <= 30; d++) {
+    const date = format(addDays(today, d), "yyyy-MM-dd");
+    // 0–4 new registrations per day
+    const regCount = Math.floor(Math.random() * 5);
+    for (let i = 0; i < regCount; i++) {
+      dummyPatients.push({
+        id: `dp-${d}-${i}`,
+        createdAt: date,
+        consultationFee: 300 + Math.floor(Math.random() * 1200),
+      });
+    }
+  }
+
+  return { dummyAppts, dummyPatients };
+}
+
+const { dummyAppts, dummyPatients } = generateDummyData();
+
+// ─── Date filter types ──────────────────────────────────────────────────────
+
+type DateFilterOption =
+  | "Custom Range"
+  | "Next 30 Days"
+  | "Next 7 Days"
+  | "Tomorrow"
+  | "Today"
+  | "Yesterday"
+  | "Last 7 Days"
+  | "Last 30 Days"
+  | "This Month"
+  | "Last Month"
+  | "This Month Last Year"
+  | "This Year Last Year";
+
+const DATE_FILTER_OPTIONS: DateFilterOption[] = [
+  "Custom Range",
+  "Next 30 Days",
+  "Next 7 Days",
+  "Tomorrow",
+  "Today",
+  "Yesterday",
+  "Last 7 Days",
+  "Last 30 Days",
+  "This Month",
+  "Last Month",
+  "This Month Last Year",
+  "This Year Last Year",
+];
+
+function getDateRangeForFilter(
+  option: DateFilterOption,
+): { from: Date; to: Date } | null {
+  const now = new Date();
+  const today = startOfDay(now);
+  switch (option) {
+    case "Today":
+      return { from: today, to: endOfDay(now) };
+    case "Yesterday":
+      return {
+        from: startOfDay(subDays(today, 1)),
+        to: endOfDay(subDays(today, 1)),
+      };
+    case "Tomorrow":
+      return {
+        from: startOfDay(addDays(today, 1)),
+        to: endOfDay(addDays(today, 1)),
+      };
+    case "Last 7 Days":
+      return { from: startOfDay(subDays(today, 6)), to: endOfDay(today) };
+    case "Next 7 Days":
+      return { from: startOfDay(today), to: endOfDay(addDays(today, 6)) };
+    case "Last 30 Days":
+      return { from: startOfDay(subDays(today, 29)), to: endOfDay(today) };
+    case "Next 30 Days":
+      return { from: startOfDay(today), to: endOfDay(addDays(today, 29)) };
+    case "This Month":
+      return { from: startOfMonth(today), to: endOfMonth(today) };
+    case "Last Month": {
+      const lm = subMonths(today, 1);
+      return { from: startOfMonth(lm), to: endOfMonth(lm) };
+    }
+    case "This Month Last Year": {
+      const tml = subYears(today, 1);
+      return { from: startOfMonth(tml), to: endOfMonth(tml) };
+    }
+    case "This Year Last Year": {
+      const tyl = subYears(today, 1);
+      return { from: startOfYear(tyl), to: endOfYear(tyl) };
+    }
+    case "Custom Range":
+      return null;
+    default:
+      return null;
+  }
+}
+
+function formatDateRangeLabel(range: { from: Date; to: Date }): string {
+  if (format(range.from, "yyyy-MM-dd") === format(range.to, "yyyy-MM-dd")) {
+    return format(range.from, "MMM d, yyyy");
+  }
+  return `${format(range.from, "MMM d")} – ${format(range.to, "MMM d, yyyy")}`;
+}
+
+function computeFilteredStats(range: { from: Date; to: Date }) {
+  const apptCount = dummyAppts.filter((a) => {
+    const d = parseISO(a.date);
+    return isWithinInterval(d, { start: range.from, end: range.to });
+  }).length;
+
+  const visitorCount = dummyAppts.filter((a) => {
+    const d = parseISO(a.date);
+    return (
+      isWithinInterval(d, { start: range.from, end: range.to }) &&
+      (a.status === "confirmed" || a.status === "completed")
+    );
+  }).length;
+
+  const casesTaken = dummyAppts.filter((a) => {
+    const d = parseISO(a.date);
+    return (
+      isWithinInterval(d, { start: range.from, end: range.to }) &&
+      a.type === "consultation"
+    );
+  }).length;
+
+  const revenue = dummyAppts
+    .filter((a) => {
+      const d = parseISO(a.date);
+      return (
+        isWithinInterval(d, { start: range.from, end: range.to }) &&
+        (a.status === "confirmed" || a.status === "completed")
+      );
+    })
+    .reduce((sum, a) => sum + a.fee, 0);
+
+  const newRegistrations = dummyPatients.filter((p) => {
+    const d = parseISO(p.createdAt);
+    return isWithinInterval(d, { start: range.from, end: range.to });
+  }).length;
+
+  return {
+    appointments: apptCount,
+    visitors: visitorCount,
+    casesTaken,
+    revenue,
+    newRegistrations,
+  };
+}
+
 export function AdminDashboard() {
   const [clinics, setClinics] = useState<Clinic[]>([]);
   const [activeIdx, setActiveIdx] = useState(0);
@@ -175,6 +403,19 @@ export function AdminDashboard() {
   const [doctorPeriod, setDoctorPeriod] = useState<
     "Today" | "Week" | "Month" | "Year"
   >("Today");
+
+  const [dateFilterOpen, setDateFilterOpen] = useState(false);
+  const [selectedFilter, setSelectedFilter] =
+    useState<DateFilterOption>("Today");
+  const [customRange, setCustomRange] = useState<DateRange | undefined>(
+    undefined,
+  );
+  const [showCustomCalendar, setShowCustomCalendar] = useState(false);
+  const dateFilterRef = useRef<HTMLDivElement>(null);
+
+  // Drag-to-select state
+  const isDragging = useRef(false);
+  const dragStart = useRef<Date | null>(null);
 
   useEffect(() => {
     const user = getCurrentUser();
@@ -216,6 +457,73 @@ export function AdminDashboard() {
   }
 
   const stats = CLINIC_STATS[activeIdx] ?? CLINIC_STATS[0];
+
+  const activeDateRange = ((): { from: Date; to: Date } | null => {
+    if (
+      selectedFilter === "Custom Range" &&
+      customRange?.from &&
+      customRange?.to
+    ) {
+      return {
+        from: startOfDay(customRange.from),
+        to: endOfDay(customRange.to),
+      };
+    }
+    return getDateRangeForFilter(selectedFilter);
+  })();
+
+  const filteredStats = activeDateRange
+    ? computeFilteredStats(activeDateRange)
+    : null;
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        dateFilterRef.current &&
+        !dateFilterRef.current.contains(e.target as Node)
+      ) {
+        setDateFilterOpen(false);
+        setShowCustomCalendar(false);
+      }
+    }
+    if (dateFilterOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [dateFilterOpen]);
+
+  // Global mouseup to end drag selection
+  useEffect(() => {
+    function handleMouseUp() {
+      if (isDragging.current) {
+        isDragging.current = false;
+        dragStart.current = null;
+        // If a valid range exists, commit it
+        if (customRange?.from && customRange?.to) {
+          setSelectedFilter("Custom Range");
+          setDateFilterOpen(false);
+          setShowCustomCalendar(false);
+        }
+      }
+    }
+    document.addEventListener("mouseup", handleMouseUp);
+    return () => document.removeEventListener("mouseup", handleMouseUp);
+  }, [customRange]);
+
+  const filterButtonLabel = ((): string => {
+    if (
+      selectedFilter === "Custom Range" &&
+      customRange?.from &&
+      customRange?.to
+    ) {
+      return formatDateRangeLabel({
+        from: customRange.from,
+        to: customRange.to,
+      });
+    }
+    return selectedFilter;
+  })();
 
   return (
     <motion.div
@@ -264,14 +572,162 @@ export function AdminDashboard() {
             ))}
           </div>
         )}
-        <button
-          type="button"
-          onClick={() => setAddOpen(true)}
-          className="ml-auto flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border border-white/15 text-muted-foreground hover:text-foreground hover:border-white/30 transition-all"
-          data-ocid="admin.add_clinic_button"
-        >
-          <Plus className="w-3.5 h-3.5" /> Add Clinic
-        </button>
+        <div className="ml-auto flex items-center gap-2 flex-wrap">
+          <div className="relative" ref={dateFilterRef}>
+            <button
+              type="button"
+              onClick={() => {
+                setDateFilterOpen((v) => !v);
+                setShowCustomCalendar(false);
+              }}
+              className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border border-white/15 text-muted-foreground hover:text-foreground hover:border-white/30 transition-all"
+              data-ocid="admin.date_filter_button"
+            >
+              <CalendarDays className="w-3.5 h-3.5" />
+              {filterButtonLabel}
+            </button>
+            <AnimatePresence>
+              {dateFilterOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -4, scale: 0.98 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -4, scale: 0.98 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute right-0 mt-2 rounded-xl border border-white/15 bg-card/95 backdrop-blur-xl shadow-2xl z-50 overflow-hidden"
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    width: showCustomCalendar ? "auto" : "14rem",
+                  }}
+                >
+                  {/* Options panel */}
+                  <div className="flex flex-col" style={{ minWidth: "14rem" }}>
+                    {DATE_FILTER_OPTIONS.map((opt) => (
+                      <button
+                        key={opt}
+                        type="button"
+                        onClick={() => {
+                          if (opt === "Custom Range") {
+                            setShowCustomCalendar(true);
+                          } else {
+                            setSelectedFilter(opt);
+                            setDateFilterOpen(false);
+                            setShowCustomCalendar(false);
+                          }
+                        }}
+                        className={`w-full text-left px-4 py-2 text-xs transition-colors ${
+                          selectedFilter === opt && !showCustomCalendar
+                            ? "bg-primary/10 text-primary"
+                            : "text-muted-foreground hover:bg-white/5 hover:text-foreground"
+                        }`}
+                        data-ocid={`admin.date_filter.option.${opt.toLowerCase().replace(/\s+/g, "_")}`}
+                      >
+                        {opt}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Calendar panel */}
+                  {showCustomCalendar && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      className="p-3 border-l border-white/10"
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs font-medium text-foreground">
+                          Select Range
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => setShowCustomCalendar(false)}
+                          className="text-muted-foreground hover:text-foreground"
+                        >
+                          <span className="text-xs">Close</span>
+                        </button>
+                      </div>
+                      <div
+                        onMouseDown={(e) => {
+                          const target = e.target as HTMLElement;
+                          const dayBtn = target.closest(
+                            "[data-day]",
+                          ) as HTMLElement | null;
+                          if (dayBtn) {
+                            const dayAttr = dayBtn.getAttribute("data-day");
+                            if (dayAttr) {
+                              const day = new Date(dayAttr);
+                              isDragging.current = true;
+                              dragStart.current = day;
+                              setCustomRange({ from: day, to: day });
+                            }
+                          }
+                        }}
+                        onMouseMove={(e) => {
+                          if (!isDragging.current || !dragStart.current) return;
+                          const target = e.target as HTMLElement;
+                          const dayBtn = target.closest(
+                            "[data-day]",
+                          ) as HTMLElement | null;
+                          if (dayBtn) {
+                            const dayAttr = dayBtn.getAttribute("data-day");
+                            if (dayAttr) {
+                              const end = new Date(dayAttr);
+                              const start = dragStart.current;
+                              if (start <= end) {
+                                setCustomRange({ from: start, to: end });
+                              } else {
+                                setCustomRange({ from: end, to: start });
+                              }
+                            }
+                          }
+                        }}
+                      >
+                        <DayPicker
+                          mode="range"
+                          selected={customRange}
+                          onSelect={(range) => {
+                            setCustomRange(range);
+                            if (range?.from && range?.to) {
+                              setSelectedFilter("Custom Range");
+                              setDateFilterOpen(false);
+                              setShowCustomCalendar(false);
+                            }
+                          }}
+                          numberOfMonths={2}
+                          className="rdp-custom"
+                        />
+                      </div>
+                    </motion.div>
+                  )}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          {(selectedFilter !== "Today" || customRange) && (
+            <button
+              type="button"
+              onClick={() => {
+                setSelectedFilter("Today");
+                setCustomRange(undefined);
+                setDateFilterOpen(false);
+                setShowCustomCalendar(false);
+              }}
+              className="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-full border border-red-400/20 text-red-400/80 hover:text-red-400 hover:border-red-400/40 hover:bg-red-400/10 transition-all"
+              data-ocid="admin.clear_filter_button"
+            >
+              <X className="w-3 h-3" />
+              Clear Filter
+            </button>
+          )}
+          <button
+            type="button"
+            onClick={() => setAddOpen(true)}
+            className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border border-white/15 text-muted-foreground hover:text-foreground hover:border-white/30 transition-all"
+            data-ocid="admin.add_clinic_button"
+          >
+            <Plus className="w-3.5 h-3.5" /> Add Clinic
+          </button>
+        </div>
       </motion.div>
 
       {/* Active clinic label */}
@@ -293,35 +749,46 @@ export function AdminDashboard() {
       {/* Stat Cards — First Row */}
       <motion.div
         variants={itemVariants}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
       >
         <StatCard
           title="Total Appointments"
-          value={stats.appts}
+          value={filteredStats?.appointments ?? stats.appts}
           change={5}
           icon={<Calendar className="w-5 h-5" />}
           color="purple"
         />
         <StatCard
           title="Total Visitors"
-          value="1,580"
+          value={filteredStats?.visitors ?? 1580}
           change={12}
           icon={<Users className="w-5 h-5" />}
           color="teal"
         />
         <StatCard
           title="Cases Taken"
-          value="312"
+          value={filteredStats?.casesTaken ?? 312}
           change={8}
           icon={<Activity className="w-5 h-5" />}
           color="amber"
         />
         <StatCard
           title="Total Revenue"
-          value={stats.revenue}
+          value={
+            filteredStats
+              ? `₹${filteredStats.revenue.toLocaleString("en-IN")}`
+              : stats.revenue
+          }
           change={8}
           icon={<DollarSign className="w-5 h-5" />}
           color="green"
+        />
+        <StatCard
+          title="New Registrations"
+          value={filteredStats?.newRegistrations ?? 0}
+          change={3}
+          icon={<UserPlus className="w-5 h-5" />}
+          color="rose"
         />
       </motion.div>
 

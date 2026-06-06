@@ -61,6 +61,7 @@ export interface Patient {
   bloodGroup: string;
   chiefComplaint: string;
   lastVisit: string;
+  createdAt: string;
   status: PatientStatus;
   totalVisits: number;
   consultationFee: number;

@@ -47,6 +47,7 @@ const defaultForm: Omit<Patient, "id"> = {
   bloodGroup: "O+",
   chiefComplaint: "",
   lastVisit: new Date().toISOString().split("T")[0],
+  createdAt: new Date().toISOString().split("T")[0],
   status: "active",
   totalVisits: 0,
   consultationFee: 800,
