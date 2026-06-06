@@ -1,25 +1,20 @@
 {
-  "overview": "HomeoPath CRM is a professional frontend-only CRM for homeopathy clinics worldwide. It features multi-clinic management, role-based access for 6 clinic roles, a full registration and login flow, staff account creation, permission management, and dedicated dashboards per role — all with a premium glassmorphism design.",
+  "overview": "A frontend-only CRM for homeopathy clinics with patient management, case-taking forms, voice recording simulation, diagnosis suggestions, and visit history tracking.",
   "features": [
-    "Professional Main Admin registration with clinic details",
-    "Email and password login for all staff accounts",
-    "Multi-clinic support — Admin sees clinic count and can switch between clinics",
-    "Staff account creation — Admin creates Doctor, Receptionist, Pharmacist, Nurse, Billing Staff accounts",
-    "Permission granting — Admin can allow staff to create new accounts",
-    "Role-based dashboards for 6 roles: Main Admin, Doctor, Receptionist, Pharmacist, Nurse, Billing Staff",
-    "Pro features gated for admin/doctor: Voice-to-text, Remedy Finder, Clinical Templates, Patient Timeline, Remedy Comparison, Case Repository, Materia Medica Browser",
-    "All data persisted in localStorage — no backend required"
+    "Patient list with search and actions",
+    "Patient detail page with case-taking form",
+    "Voice recording simulation with transcript auto-fill",
+    "Keyword-based diagnosis suggestions",
+    "File and media uploads",
+    "Visit history timeline"
   ],
-  "category": "healthcare",
+  "category": "healthcare-crm",
   "tags": [
+    "healthcare",
     "crm",
     "homeopathy",
-    "clinic",
-    "healthcare",
-    "role-based-access",
-    "multi-clinic",
-    "registration",
-    "login"
+    "patient-management",
+    "case-taking"
   ],
-  "last_updated": "2026-05-09T08:44:51.787Z"
+  "last_updated": "2026-06-06T08:18:30.151Z"
 }

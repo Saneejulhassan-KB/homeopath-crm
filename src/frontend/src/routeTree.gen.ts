@@ -12,6 +12,7 @@ import { Route as indexImport } from "./routes/index";
 import { Route as loginImport } from "./routes/login";
 import { Route as patientsImport } from "./routes/patients";
 import { Route as patientsPatientIdImport } from "./routes/patients.$patientId";
+import { Route as patientsIndexImport } from "./routes/patients.index";
 import { Route as prescriptionsImport } from "./routes/prescriptions";
 import { Route as proImport } from "./routes/pro";
 import { Route as proCaseRepositoryImport } from "./routes/pro.case-repository";
@@ -28,6 +29,7 @@ import { Route as settingsImport } from "./routes/settings";
 const rootRoute = rootImport;
 const indexRoute = indexImport;
 const patientsRoute = patientsImport;
+const patientsIndexRoute = patientsIndexImport;
 const patientsPatientIdRoute = patientsPatientIdImport;
 const appointmentsRoute = appointmentsImport;
 const prescriptionsRoute = prescriptionsImport;
@@ -49,7 +51,7 @@ const proVoiceRecorderRoute = proVoiceRecorderImport;
 export const routeTree = rootRoute.addChildren([
   loginRoute,
   indexRoute,
-  patientsRoute.addChildren([patientsPatientIdRoute]),
+  patientsRoute.addChildren([patientsIndexRoute, patientsPatientIdRoute]),
   appointmentsRoute,
   prescriptionsRoute,
   aiAssistantRoute,
@@ -85,6 +87,13 @@ declare module "@tanstack/react-router" {
       fullPath: "/patients";
       preLoaderRoute: typeof patientsImport;
       parentRoute: typeof rootImport;
+    };
+    "/patients/": {
+      id: "/patients/";
+      path: "/";
+      fullPath: "/patients/";
+      preLoaderRoute: typeof patientsIndexImport;
+      parentRoute: typeof patientsImport;
     };
     "/patients/$patientId": {
       id: "/patients/$patientId";

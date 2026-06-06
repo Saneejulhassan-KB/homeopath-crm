@@ -89,6 +89,11 @@
     "react-use": "~17.6.0",
     "react-dom": "~19.1.0",
     "react-quill-new": "3.4.6",
+    "@tiptap/react": "^2.11.5",
+    "@tiptap/pm": "^2.11.5",
+    "@tiptap/starter-kit": "^2.11.5",
+    "@tiptap/extension-underline": "^2.11.5",
+    "@tiptap/extension-placeholder": "^2.11.5",
     "three": "^0.176.0",
     "zustand": "~5.0.5",
     "motion": "^12.34.3"

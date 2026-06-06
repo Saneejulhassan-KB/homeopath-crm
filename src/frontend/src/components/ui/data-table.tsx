@@ -171,7 +171,23 @@ export function DataTable<T extends Record<string, unknown>>({
               paginated.map((row, i) => (
                 <tr
                   key={`row-${String(row.id ?? i)}`}
-                  onClick={() => onRowClick?.(row)}
+                  onClick={(e) => {
+                    const target = e.target as HTMLElement;
+                    if (
+                      target.closest("button") ||
+                      target.closest("a") ||
+                      target.closest("input") ||
+                      target.closest("select") ||
+                      target.closest("textarea") ||
+                      target.closest("[data-no-row-click]") ||
+                      target.closest("[role='button']") ||
+                      target.closest("label")
+                    ) {
+                      return;
+                    }
+                    e.stopPropagation();
+                    onRowClick?.(row);
+                  }}
                   onKeyDown={(e) =>
                     (e.key === "Enter" || e.key === " ") && onRowClick?.(row)
                   }
@@ -180,7 +196,7 @@ export function DataTable<T extends Record<string, unknown>>({
                     "transition-colors duration-150",
                     onRowClick && "cursor-pointer hover:bg-white/5",
                   )}
-                  data-ocid="data-table-row"
+                  data-ocid={`data-table-row.${i + 1}`}
                 >
                   {columns.map((col) => (
                     <td
