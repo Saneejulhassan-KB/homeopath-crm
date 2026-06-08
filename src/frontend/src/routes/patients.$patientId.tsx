@@ -19,19 +19,24 @@ import {
   ArrowLeft,
   Brain,
   Calendar,
+  CheckCircle2,
   ChevronDown,
   ChevronUp,
   Clock,
+  Edit2,
   Edit3,
   FileText,
+  IndianRupee,
   Mail,
   MapPin,
   Mic,
   Paperclip,
+  PenLine,
   Phone,
   Pill,
   Plus,
   Save,
+  Send,
   Stethoscope,
   Trash2,
   User,
@@ -67,6 +72,18 @@ interface VisitEntry {
   medicine: string;
   labFiles: UploadedFile[];
   mediaFiles: UploadedFile[];
+}
+
+interface FeeEntry {
+  id: string;
+  date: string;
+  consultationFee: number;
+  medicineRegular: number;
+  extraMedicine: number;
+  registrationFee: number;
+  totalAmount: number;
+  dueAmount: number;
+  confirmedToPharmacist: boolean;
 }
 
 // ─── HtmlContent helper (avoids dangerouslySetInnerHTML lint errors) ──────────
@@ -324,14 +341,94 @@ function CaseTakingTab({ patient }: { patient: Patient }) {
       isDemo: true,
     },
   ]);
+  // Fee Structure state
+  const [consultationFee, setConsultationFee] = useState("");
+  const [medicineRegular, setMedicineRegular] = useState("");
+  const [extraMedicine, setExtraMedicine] = useState("");
+  const [registrationFee, setRegistrationFee] = useState("");
+  const [dueAmount, setDueAmount] = useState("");
+  const [feeHistory, setFeeHistory] = useState<FeeEntry[]>([
+    {
+      id: "fee-demo-1",
+      date: "2026-05-10T10:30:00",
+      consultationFee: 500,
+      medicineRegular: 300,
+      extraMedicine: 150,
+      registrationFee: 200,
+      totalAmount: 1150,
+      dueAmount: 200,
+      confirmedToPharmacist: true,
+    },
+    {
+      id: "fee-demo-2",
+      date: "2026-03-22T14:15:00",
+      consultationFee: 500,
+      medicineRegular: 250,
+      extraMedicine: 0,
+      registrationFee: 0,
+      totalAmount: 750,
+      dueAmount: 0,
+      confirmedToPharmacist: false,
+    },
+  ]);
+
+  const totalAmount =
+    (Number.parseFloat(consultationFee) || 0) +
+    (Number.parseFloat(medicineRegular) || 0) +
+    (Number.parseFloat(extraMedicine) || 0) +
+    (Number.parseFloat(registrationFee) || 0);
+
+  const handleSaveFee = () => {
+    if (totalAmount === 0) {
+      toast.error("Please enter at least one fee amount before saving.");
+      return;
+    }
+    const newFee: FeeEntry = {
+      id: `fee-${Date.now()}`,
+      date: new Date().toISOString(),
+      consultationFee: Number.parseFloat(consultationFee) || 0,
+      medicineRegular: Number.parseFloat(medicineRegular) || 0,
+      extraMedicine: Number.parseFloat(extraMedicine) || 0,
+      registrationFee: Number.parseFloat(registrationFee) || 0,
+      totalAmount,
+      dueAmount: Number.parseFloat(dueAmount) || 0,
+      confirmedToPharmacist: false,
+    };
+    setFeeHistory((prev) => [newFee, ...prev]);
+    setConsultationFee("");
+    setMedicineRegular("");
+    setExtraMedicine("");
+    setRegistrationFee("");
+    setDueAmount("");
+    toast.success("Fee structure saved successfully!");
+  };
+
+  const handleConfirmToPharmacist = (feeId: string) => {
+    setFeeHistory((prev) =>
+      prev.map((f) =>
+        f.id === feeId ? { ...f, confirmedToPharmacist: true } : f,
+      ),
+    );
+    toast.success("Fee confirmed and sent to pharmacist!", {
+      description: "The pharmacist has been notified of the fee details.",
+    });
+  };
+
   const [visitHistory, setVisitHistory] =
     useState<VisitEntry[]>(DEMO_PAST_VISITS);
   const [expandedVisits, setExpandedVisits] = useState<Set<string>>(
     new Set(["visit-demo-1"]),
   );
+  // Edit mode state
+  const [editingVisitId, setEditingVisitId] = useState<string | null>(null);
+  const editingVisit = editingVisitId
+    ? (visitHistory.find((v) => v.id === editingVisitId) ?? null)
+    : null;
+
   const labInputRef = useRef<HTMLInputElement>(null);
   const mediaInputRef = useRef<HTMLInputElement>(null);
   const recordingTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const editorsTopRef = useRef<HTMLDivElement>(null);
 
   const handleRecord = useCallback(() => {
     if (isRecording) return;
@@ -394,21 +491,7 @@ function CaseTakingTab({ patient }: { patient: Patient }) {
   const removeMediaFile = (idx: number) =>
     setMediaFiles((prev) => prev.filter((_, i) => i !== idx));
 
-  const handleSave = () => {
-    if (!symptoms.trim() && !investigation.trim() && !medicine.trim()) {
-      toast.error("Please fill in at least one field before saving.");
-      return;
-    }
-    const newVisit: VisitEntry = {
-      id: `visit-${Date.now()}`,
-      date: new Date().toISOString(),
-      symptoms,
-      investigation,
-      medicine,
-      labFiles: labFiles.filter((f) => !f.isDemo),
-      mediaFiles: mediaFiles.filter((f) => !f.isDemo),
-    };
-    setVisitHistory((prev) => [newVisit, ...prev]);
+  const resetForm = () => {
     setSymptoms("");
     setInvestigation("");
     setMedicine("");
@@ -431,7 +514,61 @@ function CaseTakingTab({ patient }: { patient: Patient }) {
       },
     ]);
     setShowDiagnosis(false);
-    toast.success("Visit saved successfully!");
+    setEditingVisitId(null);
+  };
+
+  const handleEditVisit = (visit: VisitEntry) => {
+    setSymptoms(visit.symptoms);
+    setInvestigation(visit.investigation);
+    setMedicine(visit.medicine);
+    setEditingVisitId(visit.id);
+    setShowDiagnosis(false);
+    // Scroll to editors section
+    setTimeout(() => {
+      editorsTopRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 50);
+  };
+
+  const handleCancelEdit = () => {
+    resetForm();
+    toast.info("Edit cancelled.");
+  };
+
+  const handleSave = () => {
+    if (!symptoms.trim() && !investigation.trim() && !medicine.trim()) {
+      toast.error("Please fill in at least one field before saving.");
+      return;
+    }
+
+    if (editingVisitId) {
+      // Update existing visit
+      setVisitHistory((prev) =>
+        prev.map((v) =>
+          v.id === editingVisitId
+            ? { ...v, symptoms, investigation, medicine }
+            : v,
+        ),
+      );
+      resetForm();
+      toast.success("Visit updated successfully!");
+    } else {
+      // Create new visit
+      const newVisit: VisitEntry = {
+        id: `visit-${Date.now()}`,
+        date: new Date().toISOString(),
+        symptoms,
+        investigation,
+        medicine,
+        labFiles: labFiles.filter((f) => !f.isDemo),
+        mediaFiles: mediaFiles.filter((f) => !f.isDemo),
+      };
+      setVisitHistory((prev) => [newVisit, ...prev]);
+      resetForm();
+      toast.success("Visit saved successfully!");
+    }
   };
 
   const toggleExpand = (id: string) => {
@@ -460,8 +597,49 @@ function CaseTakingTab({ patient }: { patient: Patient }) {
       transition={{ duration: 0.3 }}
       className="space-y-6"
     >
+      {/* Edit mode banner */}
+      <AnimatePresence>
+        {editingVisit && (
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.98 }}
+            transition={{ duration: 0.25 }}
+            className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl bg-amber-500/10 border border-amber-400/30 text-amber-400"
+            data-ocid="case-taking.edit_mode_banner"
+          >
+            <div className="flex items-center gap-2 min-w-0">
+              <PenLine className="w-4 h-4 shrink-0" />
+              <span className="text-sm font-medium">
+                Editing visit from{" "}
+                <span className="font-semibold">
+                  {new Date(editingVisit.date).toLocaleDateString("en-IN", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </span>
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={handleCancelEdit}
+              aria-label="Cancel edit"
+              data-ocid="case-taking.cancel_edit_button"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 transition-colors duration-200 shrink-0"
+            >
+              <X className="w-3.5 h-3.5" />
+              Cancel Edit
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Three text editor boxes */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div
+        ref={editorsTopRef}
+        className="grid grid-cols-1 lg:grid-cols-3 gap-4"
+      >
         {/* Symptoms */}
         <div
           className="glass-card p-5 space-y-3 flex flex-col"
@@ -782,15 +960,273 @@ function CaseTakingTab({ patient }: { patient: Patient }) {
         </div>
       </div>
 
+      {/* ─── Fee Structure ─────────────────────────────────────────── */}
+      <div className="glass-card p-5 space-y-5" data-ocid="fee-structure.panel">
+        {/* Header */}
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-lg bg-emerald-500/15 border border-emerald-400/25 flex items-center justify-center">
+            <IndianRupee className="w-4 h-4 text-emerald-400" />
+          </div>
+          <div>
+            <h3 className="font-semibold font-display text-foreground text-sm">
+              Fee Structure
+            </h3>
+            <p className="text-[11px] text-muted-foreground">
+              Enter billing details for this visit
+            </p>
+          </div>
+        </div>
+
+        {/* Fee inputs grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {(
+            [
+              {
+                label: "Consultation Fee",
+                value: consultationFee,
+                setter: setConsultationFee,
+                ocid: "fee-structure.consultation_input",
+                color: "text-blue-400",
+              },
+              {
+                label: "Medicine (Regular)",
+                value: medicineRegular,
+                setter: setMedicineRegular,
+                ocid: "fee-structure.medicine_regular_input",
+                color: "text-violet-400",
+              },
+              {
+                label: "Extra Medicine",
+                value: extraMedicine,
+                setter: setExtraMedicine,
+                ocid: "fee-structure.extra_medicine_input",
+                color: "text-amber-400",
+              },
+              {
+                label: "One-Time Registration",
+                value: registrationFee,
+                setter: setRegistrationFee,
+                ocid: "fee-structure.registration_input",
+                color: "text-cyan-400",
+              },
+            ] as const
+          ).map(({ label, value, setter, ocid, color }) => {
+            const inputId = ocid.replace(/[./]/g, "-");
+            return (
+              <div key={label} className="space-y-1.5">
+                <label
+                  htmlFor={inputId}
+                  className={`text-[11px] font-medium uppercase tracking-wide ${color}`}
+                >
+                  {label}
+                </label>
+                <div className="relative">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm font-medium text-muted-foreground select-none">
+                    ₹
+                  </span>
+                  <input
+                    id={inputId}
+                    type="number"
+                    min="0"
+                    step="1"
+                    value={value}
+                    onChange={(e) => setter(e.target.value)}
+                    placeholder="0"
+                    data-ocid={ocid}
+                    className="w-full pl-7 pr-3 py-2.5 rounded-lg bg-white/5 border border-white/15 focus:border-primary/50 focus:ring-2 focus:ring-primary/15 outline-none text-sm text-foreground placeholder:text-muted-foreground/50 transition-all duration-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Total + Due row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+          {/* Total Amount — read-only */}
+          <div className="space-y-1.5">
+            <p className="text-[11px] font-medium uppercase tracking-wide text-emerald-400">
+              Total Amount
+            </p>
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-emerald-400 select-none">
+                ₹
+              </span>
+              <div
+                data-ocid="fee-structure.total_amount"
+                className="w-full pl-7 pr-3 py-2.5 rounded-lg bg-emerald-500/8 border border-emerald-400/25 text-sm font-semibold text-emerald-400 select-none cursor-default"
+              >
+                {totalAmount.toLocaleString("en-IN")}
+              </div>
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-emerald-400/60 font-medium">
+                AUTO
+              </span>
+            </div>
+          </div>
+
+          {/* Due Amount — editable */}
+          <div className="space-y-1.5">
+            <label
+              htmlFor="fee-due-amount"
+              className="text-[11px] font-medium uppercase tracking-wide text-rose-400"
+            >
+              Due Amount
+            </label>
+            <div className="relative">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm font-medium text-muted-foreground select-none">
+                ₹
+              </span>
+              <input
+                id="fee-due-amount"
+                type="number"
+                min="0"
+                step="1"
+                value={dueAmount}
+                onChange={(e) => setDueAmount(e.target.value)}
+                placeholder="0"
+                data-ocid="fee-structure.due_amount_input"
+                className="w-full pl-7 pr-3 py-2.5 rounded-lg bg-rose-500/8 border border-rose-400/25 focus:border-rose-400/50 focus:ring-2 focus:ring-rose-400/15 outline-none text-sm text-foreground placeholder:text-muted-foreground/50 transition-all duration-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Action buttons */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-1 border-t border-white/10">
+          <Button
+            type="button"
+            variant="outline"
+            onClick={handleSaveFee}
+            className="flex items-center gap-2 px-5"
+            data-ocid="fee-structure.save_button"
+          >
+            <Save className="w-4 h-4" />
+            Save Fee
+          </Button>
+          <Button
+            type="button"
+            onClick={() => {
+              if (feeHistory.length === 0) {
+                toast.error("Save fee details first before confirming.");
+                return;
+              }
+              const latestUnconfirmed = feeHistory.find(
+                (f) => !f.confirmedToPharmacist,
+              );
+              if (!latestUnconfirmed) {
+                toast.info("All saved fees have already been confirmed.");
+                return;
+              }
+              handleConfirmToPharmacist(latestUnconfirmed.id);
+            }}
+            className="flex items-center gap-2 px-5 bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-500 shadow-md shadow-emerald-900/20"
+            data-ocid="fee-structure.confirm_pharmacist_button"
+          >
+            <Pill className="w-4 h-4" />
+            <Send className="w-3.5 h-3.5" />
+            Confirm &amp; Send to Pharmacist
+          </Button>
+        </div>
+
+        {/* Fee history */}
+        {feeHistory.length > 0 && (
+          <div className="space-y-2.5 pt-1" data-ocid="fee-structure.history">
+            <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
+              Fee History
+            </p>
+            <div className="space-y-2">
+              {feeHistory.map((fee, idx) => {
+                const feeDate = new Date(fee.date);
+                return (
+                  <motion.div
+                    key={fee.id}
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.05, duration: 0.25 }}
+                    className={`flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-xl border transition-colors duration-200 ${
+                      fee.confirmedToPharmacist
+                        ? "bg-emerald-500/8 border-emerald-400/25"
+                        : "bg-white/5 border-white/10"
+                    }`}
+                    data-ocid={`fee-structure.history_item.${idx + 1}`}
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3 min-w-0">
+                      <span className="text-xs font-mono text-primary shrink-0">
+                        {feeDate.toLocaleDateString("en-IN", {
+                          day: "2-digit",
+                          month: "short",
+                          year: "numeric",
+                        })}{" "}
+                        <span className="text-muted-foreground">
+                          {feeDate.toLocaleTimeString("en-IN", {
+                            hour: "2-digit",
+                            minute: "2-digit",
+                          })}
+                        </span>
+                      </span>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-xs text-foreground font-medium">
+                          Total:{" "}
+                          <span className="text-emerald-400 font-semibold">
+                            ₹{fee.totalAmount.toLocaleString("en-IN")}
+                          </span>
+                        </span>
+                        {fee.dueAmount > 0 && (
+                          <span className="text-xs text-foreground">
+                            Due:{" "}
+                            <span className="text-rose-400 font-semibold">
+                              ₹{fee.dueAmount.toLocaleString("en-IN")}
+                            </span>
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 shrink-0">
+                      {fee.confirmedToPharmacist ? (
+                        <span className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400">
+                          <CheckCircle2 className="w-3 h-3" />
+                          Sent to Pharmacist
+                        </span>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => handleConfirmToPharmacist(fee.id)}
+                          data-ocid={`fee-structure.confirm_button.${idx + 1}`}
+                          className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/20 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-400/40 transition-all duration-200"
+                        >
+                          <Send className="w-3 h-3" />
+                          Confirm
+                        </button>
+                      )}
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </div>
+
       {/* Save button */}
-      <div className="flex justify-end">
+      <div className="flex items-center justify-end gap-3">
+        {editingVisitId && (
+          <Button
+            variant="outline"
+            onClick={handleCancelEdit}
+            className="flex items-center gap-2 px-5"
+            data-ocid="case-taking.cancel_edit_btn"
+          >
+            <X className="w-4 h-4" />
+            Cancel
+          </Button>
+        )}
         <Button
           onClick={handleSave}
           className="flex items-center gap-2 px-6"
           data-ocid="case-taking.save_button"
         >
           <Save className="w-4 h-4" />
-          Save Visit
+          {editingVisitId ? "Update Visit" : "Save Visit"}
         </Button>
       </div>
 
@@ -834,53 +1270,78 @@ function CaseTakingTab({ patient }: { patient: Patient }) {
                   >
                     <div className="absolute -left-[2.1rem] top-4 w-3 h-3 rounded-full bg-primary border-2 border-background" />
                     <div className="glass-card overflow-hidden">
-                      <button
-                        type="button"
-                        className="w-full flex items-start justify-between gap-3 p-4 text-left hover:bg-white/5 transition-colors duration-150"
-                        onClick={() => toggleExpand(visit.id)}
-                        data-ocid={`case-taking.visit_toggle.${idx + 1}`}
-                        aria-expanded={isExpanded}
-                      >
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <span className="text-xs font-semibold text-primary font-mono">
-                              {visitDate.toLocaleDateString("en-IN", {
-                                day: "2-digit",
-                                month: "short",
-                                year: "numeric",
-                              })}
-                            </span>
-                            <span className="text-xs text-muted-foreground">
-                              {visitDate.toLocaleTimeString("en-IN", {
-                                hour: "2-digit",
-                                minute: "2-digit",
-                              })}
-                            </span>
-                            {allFiles.length > 0 && (
-                              <span className="text-[10px] bg-primary/10 border border-primary/20 text-primary px-1.5 py-0.5 rounded-full">
-                                {allFiles.length} file
-                                {allFiles.length !== 1 ? "s" : ""}
+                      <div className="w-full flex items-start justify-between gap-3 p-4">
+                        <button
+                          type="button"
+                          className="flex-1 flex items-start gap-3 text-left hover:opacity-80 transition-opacity duration-150 min-w-0"
+                          onClick={() => toggleExpand(visit.id)}
+                          data-ocid={`case-taking.visit_toggle.${idx + 1}`}
+                          aria-expanded={isExpanded}
+                        >
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className="text-xs font-semibold text-primary font-mono">
+                                {visitDate.toLocaleDateString("en-IN", {
+                                  day: "2-digit",
+                                  month: "short",
+                                  year: "numeric",
+                                })}
                               </span>
+                              <span className="text-xs text-muted-foreground">
+                                {visitDate.toLocaleTimeString("en-IN", {
+                                  hour: "2-digit",
+                                  minute: "2-digit",
+                                })}
+                              </span>
+                              {allFiles.length > 0 && (
+                                <span className="text-[10px] bg-primary/10 border border-primary/20 text-primary px-1.5 py-0.5 rounded-full">
+                                  {allFiles.length} file
+                                  {allFiles.length !== 1 ? "s" : ""}
+                                </span>
+                              )}
+                              {editingVisitId === visit.id && (
+                                <span className="text-[10px] bg-amber-400/15 border border-amber-400/30 text-amber-400 px-1.5 py-0.5 rounded-full font-medium">
+                                  Editing
+                                </span>
+                              )}
+                            </div>
+                            {!isExpanded && visit.symptoms && (
+                              <p className="text-xs text-muted-foreground mt-1 truncate">
+                                {visit.symptoms
+                                  .replace(/<[^>]*>/g, "")
+                                  .slice(0, 100)}
+                                {visit.symptoms.replace(/<[^>]*>/g, "").length >
+                                100
+                                  ? "…"
+                                  : ""}
+                              </p>
                             )}
                           </div>
-                          {!isExpanded && visit.symptoms && (
-                            <p className="text-xs text-muted-foreground mt-1 truncate">
-                              {visit.symptoms
-                                .replace(/<[^>]*>/g, "")
-                                .slice(0, 100)}
-                              {visit.symptoms.replace(/<[^>]*>/g, "").length >
-                              100
-                                ? "…"
-                                : ""}
-                            </p>
+                          {isExpanded ? (
+                            <ChevronUp className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
+                          ) : (
+                            <ChevronDown className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
                           )}
-                        </div>
-                        {isExpanded ? (
-                          <ChevronUp className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
-                        ) : (
-                          <ChevronDown className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
-                        )}
-                      </button>
+                        </button>
+                        {/* Edit button */}
+                        <button
+                          type="button"
+                          aria-label={`Edit visit from ${visitDate.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" })}`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleEditVisit(visit);
+                          }}
+                          data-ocid={`case-taking.visit_edit.${idx + 1}`}
+                          className={`p-1.5 rounded-lg transition-all duration-200 shrink-0 mt-0.5 ${
+                            editingVisitId === visit.id
+                              ? "bg-amber-400/20 text-amber-400 ring-1 ring-amber-400/40"
+                              : "text-muted-foreground hover:text-primary hover:bg-primary/10"
+                          }`}
+                          title="Edit this visit"
+                        >
+                          <Edit2 className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
                       <AnimatePresence>
                         {isExpanded && (
                           <motion.div
