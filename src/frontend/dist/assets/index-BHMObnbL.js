@@ -102373,7 +102373,8 @@ const DEMO_PAST_VISITS = [
         size: "2.1 MB",
         isDemo: true
       }
-    ]
+    ],
+    visitType: "OP"
   },
   {
     id: "visit-demo-2",
@@ -102402,7 +102403,8 @@ const DEMO_PAST_VISITS = [
         size: "18.5 MB",
         isDemo: true
       }
-    ]
+    ],
+    visitType: "OP"
   },
   {
     id: "visit-demo-3",
@@ -102411,7 +102413,8 @@ const DEMO_PAST_VISITS = [
     investigation: "H. Pylori test: Negative. Stool routine: Normal. Endoscopy deferred.",
     medicine: "Nux Vomica 30C — after meals. Carbo Veg 30C — for bloating. Robinia 30C — for heartburn.",
     labFiles: [],
-    mediaFiles: []
+    mediaFiles: [],
+    visitType: "OP"
   }
 ];
 function highlightSymptoms(text) {
@@ -102485,7 +102488,12 @@ function WaveformBars$1() {
     i
   )) });
 }
-function CaseTakingTab({ patient }) {
+function CaseTakingTab({
+  patient,
+  nextVisitDate,
+  onVisitSaved,
+  onOpenScheduleModal
+}) {
   const [symptoms, setSymptoms] = reactExports.useState("");
   const [investigation, setInvestigation] = reactExports.useState("");
   const [medicine, setMedicine] = reactExports.useState("");
@@ -102578,6 +102586,7 @@ function CaseTakingTab({ patient }) {
   const [expandedVisits, setExpandedVisits] = reactExports.useState(
     /* @__PURE__ */ new Set(["visit-demo-1"])
   );
+  const [visitType, setVisitType] = reactExports.useState("OP");
   const [editingVisitId, setEditingVisitId] = reactExports.useState(null);
   const editingVisit = editingVisitId ? visitHistory.find((v2) => v2.id === editingVisitId) ?? null : null;
   const labInputRef = reactExports.useRef(null);
@@ -102660,12 +102669,14 @@ function CaseTakingTab({ patient }) {
       }
     ]);
     setShowDiagnosis(false);
+    setVisitType("OP");
     setEditingVisitId(null);
   };
   const handleEditVisit = (visit) => {
     setSymptoms(visit.symptoms);
     setInvestigation(visit.investigation);
     setMedicine(visit.medicine);
+    setVisitType(visit.visitType ?? "OP");
     setEditingVisitId(visit.id);
     setShowDiagnosis(false);
     setTimeout(() => {
@@ -102701,9 +102712,12 @@ function CaseTakingTab({ patient }) {
         investigation,
         medicine,
         labFiles: labFiles.filter((f2) => !f2.isDemo),
-        mediaFiles: mediaFiles.filter((f2) => !f2.isDemo)
+        mediaFiles: mediaFiles.filter((f2) => !f2.isDemo),
+        visitType,
+        ...nextVisitDate ? { nextVisitDate } : {}
       };
       setVisitHistory((prev) => [newVisit, ...prev]);
+      onVisitSaved(nextVisitDate);
       resetForm();
       ue.success("Visit saved successfully!");
     }
@@ -102766,6 +102780,33 @@ function CaseTakingTab({ patient }) {
             ]
           }
         ) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-4 flex-wrap", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-semibold text-muted-foreground", children: "Visit Type" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex rounded-lg overflow-hidden border border-white/20", children: ["OP", "Online"].map((type) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              type: "button",
+              onClick: () => setVisitType(type),
+              "data-ocid": `case-taking.visit_type_${type.toLowerCase()}`,
+              className: `px-4 py-1.5 text-sm font-medium transition-colors duration-200 ${visitType === type ? "bg-blue-600 text-white" : "bg-white/5 text-muted-foreground hover:bg-white/10 hover:text-foreground"}`,
+              children: type
+            },
+            type
+          )) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              type: "button",
+              onClick: onOpenScheduleModal,
+              "data-ocid": "case-taking.schedule_next_visit_button",
+              className: "flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium bg-emerald-500/10 border border-emerald-400/25 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-400/40 transition-all duration-200",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-4 h-4" }),
+                nextVisitDate ? `Next: ${(/* @__PURE__ */ new Date(`${nextVisitDate}T00:00:00`)).toLocaleDateString("en-US", { month: "short", day: "numeric" })}` : "Schedule Next Visit"
+              ]
+            }
+          )
+        ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
@@ -103396,8 +103437,27 @@ function CaseTakingTab({ patient }) {
                                     " file",
                                     allFiles.length !== 1 ? "s" : ""
                                   ] }),
+                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                    "span",
+                                    {
+                                      className: `ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${(visit.visitType ?? "OP") === "Online" ? "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300" : "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300"}`,
+                                      children: visit.visitType ?? "OP"
+                                    }
+                                  ),
                                   editingVisitId === visit.id && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] bg-amber-400/15 border border-amber-400/30 text-amber-400 px-1.5 py-0.5 rounded-full font-medium", children: "Editing" })
                                 ] }),
+                                visit.nextVisitDate && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-full bg-green-500/15 border border-green-400/30 text-green-400", children: [
+                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-3 h-3" }),
+                                  "Next Visit:",
+                                  " ",
+                                  (/* @__PURE__ */ new Date(
+                                    `${visit.nextVisitDate}T00:00:00`
+                                  )).toLocaleDateString("en-US", {
+                                    month: "short",
+                                    day: "numeric",
+                                    year: "numeric"
+                                  })
+                                ] }) }),
                                 !isExpanded && visit.symptoms && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground mt-1 truncate", children: [
                                   visit.symptoms.replace(/<[^>]*>/g, "").slice(0, 100),
                                   visit.symptoms.replace(/<[^>]*>/g, "").length > 100 ? "…" : ""
@@ -103868,7 +103928,25 @@ function PatientDetailPage() {
   const navigate = useNavigate();
   const { patients: patients2, updatePatient, isLoading } = usePatients();
   const [editOpen, setEditOpen] = reactExports.useState(false);
+  const [showNextVisitModal, setShowNextVisitModal] = reactExports.useState(false);
+  const [nextVisitDate, setNextVisitDate] = reactExports.useState(null);
+  const [tempNextVisitDate, setTempNextVisitDate] = reactExports.useState("");
+  const [showReminderPopup, setShowReminderPopup] = reactExports.useState(false);
+  const [reminderDate, setReminderDate] = reactExports.useState("2026-06-20");
   const patient = patients2.find((p2) => p2.id === patientId);
+  reactExports.useEffect(() => {
+    const mostRecent = DEMO_PAST_VISITS[0];
+    if (mostRecent == null ? void 0 : mostRecent.nextVisitDate) {
+      setReminderDate(mostRecent.nextVisitDate);
+    }
+    const timer = setTimeout(() => setShowReminderPopup(true), 600);
+    return () => clearTimeout(timer);
+  }, []);
+  reactExports.useEffect(() => {
+    if (!showReminderPopup) return;
+    const autoTimer = setTimeout(() => setShowReminderPopup(false), 5e3);
+    return () => clearTimeout(autoTimer);
+  }, [showReminderPopup]);
   if (isLoading) {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", "data-ocid": "patient-detail-loading", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-8 w-48 rounded-lg glass animate-pulse" }),
@@ -103916,6 +103994,230 @@ function PatientDetailPage() {
       className: "space-y-6",
       "data-ocid": "patient-detail-page",
       children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: showReminderPopup && /* @__PURE__ */ jsxRuntimeExports.jsx(
+          motion.div,
+          {
+            initial: { opacity: 0 },
+            animate: { opacity: 1 },
+            exit: { opacity: 0 },
+            transition: { duration: 0.2 },
+            className: "fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-md",
+            "data-ocid": "patient-detail.reminder_overlay",
+            onClick: () => setShowReminderPopup(false),
+            children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              motion.div,
+              {
+                initial: { opacity: 0, scale: 0.88, y: 24 },
+                animate: { opacity: 1, scale: 1, y: 0 },
+                exit: { opacity: 0, scale: 0.92, y: 16 },
+                transition: { type: "spring", stiffness: 340, damping: 28 },
+                className: "relative w-full max-w-sm mx-4 rounded-2xl overflow-hidden shadow-2xl",
+                style: {
+                  background: "linear-gradient(135deg, rgba(16,18,27,0.97) 0%, rgba(20,24,38,0.97) 100%)",
+                  border: "1px solid rgba(52,211,153,0.22)",
+                  boxShadow: "0 0 0 1px rgba(52,211,153,0.12), 0 24px 64px -12px rgba(0,0,0,0.7), 0 0 80px -20px rgba(52,211,153,0.15)"
+                },
+                onClick: (e3) => e3.stopPropagation(),
+                "data-ocid": "patient-detail.reminder_dialog",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      className: "absolute inset-x-0 top-0 h-px",
+                      style: {
+                        background: "linear-gradient(90deg, transparent, rgba(52,211,153,0.6), transparent)"
+                      }
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    motion.div,
+                    {
+                      className: "absolute top-0 left-0 h-0.5 bg-emerald-400/70",
+                      initial: { width: "100%" },
+                      animate: { width: "0%" },
+                      transition: { duration: 5, ease: "linear" }
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-4 mb-5", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "w-12 h-12 rounded-2xl flex items-center justify-center shrink-0",
+                          style: {
+                            background: "linear-gradient(135deg, rgba(52,211,153,0.25), rgba(16,185,129,0.15))",
+                            border: "1px solid rgba(52,211,153,0.3)",
+                            boxShadow: "0 4px 16px rgba(52,211,153,0.15)"
+                          },
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(Bell, { className: "w-6 h-6 text-emerald-400" })
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-semibold uppercase tracking-widest text-emerald-400/70 mb-0.5", children: "Visit Reminder" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base font-bold text-white leading-tight", children: patient.name }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-white/50 mt-0.5", children: "Next appointment scheduled" })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "button",
+                        {
+                          type: "button",
+                          "aria-label": "Close reminder",
+                          onClick: () => setShowReminderPopup(false),
+                          "data-ocid": "patient-detail.reminder_close_button",
+                          className: "p-1.5 rounded-lg text-white/30 hover:text-white/70 hover:bg-white/10 transition-colors shrink-0 -mt-0.5 -mr-1",
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "w-4 h-4" })
+                        }
+                      )
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        className: "flex items-center gap-3 p-4 rounded-xl mb-5",
+                        style: {
+                          background: "rgba(52,211,153,0.07)",
+                          border: "1px solid rgba(52,211,153,0.18)"
+                        },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-5 h-5 text-emerald-400 shrink-0" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-emerald-400/70 font-medium mb-0.5", children: "Scheduled Date" }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-bold text-emerald-300", children: (/* @__PURE__ */ new Date(`${reminderDate}T00:00:00`)).toLocaleDateString(
+                              "en-US",
+                              {
+                                weekday: "long",
+                                month: "long",
+                                day: "numeric",
+                                year: "numeric"
+                              }
+                            ) })
+                          ] })
+                        ]
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-white/60 leading-relaxed mb-5", children: [
+                      "Reminder: Next visit for",
+                      " ",
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white font-semibold", children: patient.name }),
+                      " ",
+                      "is scheduled on",
+                      " ",
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-emerald-400 font-semibold", children: (/* @__PURE__ */ new Date(`${reminderDate}T00:00:00`)).toLocaleDateString(
+                        "en-US",
+                        { month: "short", day: "numeric", year: "numeric" }
+                      ) }),
+                      ". Please ensure the appointment is confirmed."
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2.5", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "button",
+                        {
+                          type: "button",
+                          onClick: () => setShowReminderPopup(false),
+                          "data-ocid": "patient-detail.reminder_ok_button",
+                          className: "flex-1 px-4 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200",
+                          style: {
+                            background: "linear-gradient(135deg, rgb(16,185,129), rgb(5,150,105))",
+                            boxShadow: "0 4px 16px rgba(16,185,129,0.3)"
+                          },
+                          children: "OK, Got It"
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "button",
+                        {
+                          type: "button",
+                          onClick: () => setShowReminderPopup(false),
+                          "data-ocid": "patient-detail.reminder_dismiss_button",
+                          className: "flex-1 px-4 py-2.5 rounded-xl text-sm font-medium text-white/50 border border-white/10 hover:bg-white/5 hover:text-white/70 transition-all duration-200",
+                          children: "Dismiss"
+                        }
+                      )
+                    ] })
+                  ] })
+                ]
+              },
+              "reminder-modal"
+            )
+          },
+          "reminder-overlay"
+        ) }),
+        showNextVisitModal && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-8 w-full max-w-md mx-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-6", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "svg",
+              {
+                className: "w-5 h-5 text-blue-600 dark:text-blue-400",
+                fill: "none",
+                viewBox: "0 0 24 24",
+                stroke: "currentColor",
+                role: "img",
+                "aria-label": "Calendar",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "path",
+                  {
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    strokeWidth: 2,
+                    d: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  }
+                )
+              }
+            ) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-bold text-gray-900 dark:text-white", children: "Schedule Next Visit" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-gray-500 dark:text-gray-400", children: [
+                "Select a date for ",
+                (patient == null ? void 0 : patient.name) ?? "this patient",
+                "'s next appointment"
+              ] })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-6", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "label",
+              {
+                htmlFor: "next-visit-date",
+                className: "block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2",
+                children: "Next Visit Date"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "input",
+              {
+                id: "next-visit-date",
+                type: "date",
+                value: tempNextVisitDate,
+                onChange: (e3) => setTempNextVisitDate(e3.target.value),
+                min: (/* @__PURE__ */ new Date()).toISOString().split("T")[0],
+                className: "w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                onClick: () => {
+                  if (tempNextVisitDate) setNextVisitDate(tempNextVisitDate);
+                  setShowNextVisitModal(false);
+                },
+                disabled: !tempNextVisitDate,
+                className: "flex-1 px-4 py-2.5 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors",
+                children: "Schedule Visit"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                onClick: () => setShowNextVisitModal(false),
+                className: "flex-1 px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors",
+                children: "Skip for Now"
+              }
+            )
+          ] })
+        ] }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between gap-4 flex-wrap", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -103977,6 +104279,34 @@ function PatientDetailPage() {
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(StatusBadge, { status: patient.status })
                 ] }),
+                nextVisitDate && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-sm font-medium", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "svg",
+                    {
+                      className: "w-4 h-4",
+                      fill: "none",
+                      viewBox: "0 0 24 24",
+                      stroke: "currentColor",
+                      role: "img",
+                      "aria-label": "Calendar",
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "path",
+                        {
+                          strokeLinecap: "round",
+                          strokeLinejoin: "round",
+                          strokeWidth: 2,
+                          d: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        }
+                      )
+                    }
+                  ),
+                  "Next Visit:",
+                  " ",
+                  (/* @__PURE__ */ new Date(`${nextVisitDate}T00:00:00`)).toLocaleDateString(
+                    "en-US",
+                    { month: "short", day: "numeric", year: "numeric" }
+                  )
+                ] }) }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(InfoChip, { icon: Phone, label: "Phone", value: patient.phone }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx(InfoChip, { icon: Mail, label: "Email", value: patient.email }),
@@ -104069,7 +104399,21 @@ function PatientDetailPage() {
                 )
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "case-taking", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CaseTakingTab, { patient }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "case-taking", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  CaseTakingTab,
+                  {
+                    patient,
+                    nextVisitDate,
+                    onVisitSaved: (savedNextVisit) => {
+                      setNextVisitDate(savedNextVisit);
+                      setTempNextVisitDate("");
+                    },
+                    onOpenScheduleModal: () => {
+                      setTempNextVisitDate(nextVisitDate ?? "");
+                      setShowNextVisitModal(true);
+                    }
+                  }
+                ) }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "overview", children: /* @__PURE__ */ jsxRuntimeExports.jsx(OverviewTab, { patient }) }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "case-history", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CaseHistoryTab, { patient }) }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "prescriptions", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PrescriptionsTab, { patient }) }),

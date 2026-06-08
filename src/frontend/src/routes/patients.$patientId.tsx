@@ -17,6 +17,7 @@ import {
 import { createRoute, useNavigate, useParams } from "@tanstack/react-router";
 import {
   ArrowLeft,
+  Bell,
   Brain,
   Calendar,
   CheckCircle2,
@@ -72,6 +73,8 @@ interface VisitEntry {
   medicine: string;
   labFiles: UploadedFile[];
   mediaFiles: UploadedFile[];
+  visitType: "OP" | "Online";
+  nextVisitDate?: string;
 }
 
 interface FeeEntry {
@@ -180,6 +183,7 @@ const DEMO_PAST_VISITS: VisitEntry[] = [
         isDemo: true,
       },
     ],
+    visitType: "OP" as const,
   },
   {
     id: "visit-demo-2",
@@ -212,6 +216,7 @@ const DEMO_PAST_VISITS: VisitEntry[] = [
         isDemo: true,
       },
     ],
+    visitType: "OP" as const,
   },
   {
     id: "visit-demo-3",
@@ -224,6 +229,7 @@ const DEMO_PAST_VISITS: VisitEntry[] = [
       "Nux Vomica 30C — after meals. Carbo Veg 30C — for bloating. Robinia 30C — for heartburn.",
     labFiles: [],
     mediaFiles: [],
+    visitType: "OP" as const,
   },
 ];
 
@@ -314,7 +320,17 @@ function WaveformBars() {
 
 // ─── Case Taking Tab ─────────────────────────────────────────────────────────
 
-function CaseTakingTab({ patient }: { patient: Patient }) {
+function CaseTakingTab({
+  patient,
+  nextVisitDate,
+  onVisitSaved,
+  onOpenScheduleModal,
+}: {
+  patient: Patient;
+  nextVisitDate: string | null;
+  onVisitSaved: (nextVisitDate: string | null) => void;
+  onOpenScheduleModal: () => void;
+}) {
   const [symptoms, setSymptoms] = useState("");
   const [investigation, setInvestigation] = useState("");
   const [medicine, setMedicine] = useState("");
@@ -419,6 +435,7 @@ function CaseTakingTab({ patient }: { patient: Patient }) {
   const [expandedVisits, setExpandedVisits] = useState<Set<string>>(
     new Set(["visit-demo-1"]),
   );
+  const [visitType, setVisitType] = useState<"OP" | "Online">("OP");
   // Edit mode state
   const [editingVisitId, setEditingVisitId] = useState<string | null>(null);
   const editingVisit = editingVisitId
@@ -514,6 +531,7 @@ function CaseTakingTab({ patient }: { patient: Patient }) {
       },
     ]);
     setShowDiagnosis(false);
+    setVisitType("OP");
     setEditingVisitId(null);
   };
 
@@ -521,6 +539,7 @@ function CaseTakingTab({ patient }: { patient: Patient }) {
     setSymptoms(visit.symptoms);
     setInvestigation(visit.investigation);
     setMedicine(visit.medicine);
+    setVisitType(visit.visitType ?? "OP");
     setEditingVisitId(visit.id);
     setShowDiagnosis(false);
     // Scroll to editors section
@@ -564,8 +583,11 @@ function CaseTakingTab({ patient }: { patient: Patient }) {
         medicine,
         labFiles: labFiles.filter((f) => !f.isDemo),
         mediaFiles: mediaFiles.filter((f) => !f.isDemo),
+        visitType,
+        ...(nextVisitDate ? { nextVisitDate } : {}),
       };
       setVisitHistory((prev) => [newVisit, ...prev]);
+      onVisitSaved(nextVisitDate);
       resetForm();
       toast.success("Visit saved successfully!");
     }
@@ -589,6 +611,7 @@ function CaseTakingTab({ patient }: { patient: Patient }) {
 
   // Suppress patient unused lint — patient is available for future use
   void patient;
+  // nextVisitDate & onVisitSaved props are used in handleSave
 
   return (
     <motion.div
@@ -634,6 +657,42 @@ function CaseTakingTab({ patient }: { patient: Patient }) {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Visit Type Toggle + Schedule Next Visit */}
+      <div className="flex items-center gap-3 mb-4 flex-wrap">
+        <span className="text-sm font-semibold text-muted-foreground">
+          Visit Type
+        </span>
+        <div className="flex rounded-lg overflow-hidden border border-white/20">
+          {(["OP", "Online"] as const).map((type) => (
+            <button
+              key={type}
+              type="button"
+              onClick={() => setVisitType(type)}
+              data-ocid={`case-taking.visit_type_${type.toLowerCase()}`}
+              className={`px-4 py-1.5 text-sm font-medium transition-colors duration-200 ${
+                visitType === type
+                  ? "bg-blue-600 text-white"
+                  : "bg-white/5 text-muted-foreground hover:bg-white/10 hover:text-foreground"
+              }`}
+            >
+              {type}
+            </button>
+          ))}
+        </div>
+        {/* Schedule Next Visit — inline with visit type toggle */}
+        <button
+          type="button"
+          onClick={onOpenScheduleModal}
+          data-ocid="case-taking.schedule_next_visit_button"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium bg-emerald-500/10 border border-emerald-400/25 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-400/40 transition-all duration-200"
+        >
+          <Calendar className="w-4 h-4" />
+          {nextVisitDate
+            ? `Next: ${new Date(`${nextVisitDate}T00:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric" })}`
+            : "Schedule Next Visit"}
+        </button>
+      </div>
 
       {/* Three text editor boxes */}
       <div
@@ -1299,12 +1358,36 @@ function CaseTakingTab({ patient }: { patient: Patient }) {
                                   {allFiles.length !== 1 ? "s" : ""}
                                 </span>
                               )}
+                              <span
+                                className={`ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
+                                  (visit.visitType ?? "OP") === "Online"
+                                    ? "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300"
+                                    : "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300"
+                                }`}
+                              >
+                                {visit.visitType ?? "OP"}
+                              </span>
                               {editingVisitId === visit.id && (
                                 <span className="text-[10px] bg-amber-400/15 border border-amber-400/30 text-amber-400 px-1.5 py-0.5 rounded-full font-medium">
                                   Editing
                                 </span>
                               )}
                             </div>
+                            {visit.nextVisitDate && (
+                              <div className="mt-1">
+                                <span className="inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-full bg-green-500/15 border border-green-400/30 text-green-400">
+                                  <Calendar className="w-3 h-3" />
+                                  Next Visit:{" "}
+                                  {new Date(
+                                    `${visit.nextVisitDate}T00:00:00`,
+                                  ).toLocaleDateString("en-US", {
+                                    month: "short",
+                                    day: "numeric",
+                                    year: "numeric",
+                                  })}
+                                </span>
+                              </div>
+                            )}
                             {!isExpanded && visit.symptoms && (
                               <p className="text-xs text-muted-foreground mt-1 truncate">
                                 {visit.symptoms
@@ -1844,8 +1927,33 @@ function PatientDetailPage() {
   const navigate = useNavigate();
   const { patients, updatePatient, isLoading } = usePatients();
   const [editOpen, setEditOpen] = useState(false);
+  const [showNextVisitModal, setShowNextVisitModal] = useState(false);
+  const [nextVisitDate, setNextVisitDate] = useState<string | null>(null);
+  const [tempNextVisitDate, setTempNextVisitDate] = useState<string>("");
+  // Reminder popup: always show on page load (demo mode)
+  const [showReminderPopup, setShowReminderPopup] = useState(false);
+  const [reminderDate, setReminderDate] = useState<string>("2026-06-20");
 
   const patient = patients.find((p) => p.id === patientId);
+
+  // On mount: always show the reminder popup (demo mode)
+  useEffect(() => {
+    // Check for a real nextVisitDate in demo visits first
+    const mostRecent = DEMO_PAST_VISITS[0];
+    if (mostRecent?.nextVisitDate) {
+      setReminderDate(mostRecent.nextVisitDate);
+    }
+    // Show popup after a short delay for better UX
+    const timer = setTimeout(() => setShowReminderPopup(true), 600);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Auto-dismiss reminder after 5 seconds
+  useEffect(() => {
+    if (!showReminderPopup) return;
+    const autoTimer = setTimeout(() => setShowReminderPopup(false), 5000);
+    return () => clearTimeout(autoTimer);
+  }, [showReminderPopup]);
 
   if (isLoading) {
     return (
@@ -1897,6 +2005,233 @@ function PatientDetailPage() {
       className="space-y-6"
       data-ocid="patient-detail-page"
     >
+      {/* ─── Next Visit Reminder Popup Modal (Demo: always shows on open) ─── */}
+      <AnimatePresence>
+        {showReminderPopup && (
+          <motion.div
+            key="reminder-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-md"
+            data-ocid="patient-detail.reminder_overlay"
+            onClick={() => setShowReminderPopup(false)}
+          >
+            <motion.div
+              key="reminder-modal"
+              initial={{ opacity: 0, scale: 0.88, y: 24 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 16 }}
+              transition={{ type: "spring", stiffness: 340, damping: 28 }}
+              className="relative w-full max-w-sm mx-4 rounded-2xl overflow-hidden shadow-2xl"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(16,18,27,0.97) 0%, rgba(20,24,38,0.97) 100%)",
+                border: "1px solid rgba(52,211,153,0.22)",
+                boxShadow:
+                  "0 0 0 1px rgba(52,211,153,0.12), 0 24px 64px -12px rgba(0,0,0,0.7), 0 0 80px -20px rgba(52,211,153,0.15)",
+              }}
+              onClick={(e) => e.stopPropagation()}
+              data-ocid="patient-detail.reminder_dialog"
+            >
+              {/* Decorative top glow */}
+              <div
+                className="absolute inset-x-0 top-0 h-px"
+                style={{
+                  background:
+                    "linear-gradient(90deg, transparent, rgba(52,211,153,0.6), transparent)",
+                }}
+              />
+              {/* Auto-dismiss progress bar */}
+              <motion.div
+                className="absolute top-0 left-0 h-0.5 bg-emerald-400/70"
+                initial={{ width: "100%" }}
+                animate={{ width: "0%" }}
+                transition={{ duration: 5, ease: "linear" }}
+              />
+
+              <div className="p-6">
+                {/* Header */}
+                <div className="flex items-start gap-4 mb-5">
+                  <div
+                    className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, rgba(52,211,153,0.25), rgba(16,185,129,0.15))",
+                      border: "1px solid rgba(52,211,153,0.3)",
+                      boxShadow: "0 4px 16px rgba(52,211,153,0.15)",
+                    }}
+                  >
+                    <Bell className="w-6 h-6 text-emerald-400" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[11px] font-semibold uppercase tracking-widest text-emerald-400/70 mb-0.5">
+                      Visit Reminder
+                    </p>
+                    <h3 className="text-base font-bold text-white leading-tight">
+                      {patient.name}
+                    </h3>
+                    <p className="text-xs text-white/50 mt-0.5">
+                      Next appointment scheduled
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    aria-label="Close reminder"
+                    onClick={() => setShowReminderPopup(false)}
+                    data-ocid="patient-detail.reminder_close_button"
+                    className="p-1.5 rounded-lg text-white/30 hover:text-white/70 hover:bg-white/10 transition-colors shrink-0 -mt-0.5 -mr-1"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+
+                {/* Date card */}
+                <div
+                  className="flex items-center gap-3 p-4 rounded-xl mb-5"
+                  style={{
+                    background: "rgba(52,211,153,0.07)",
+                    border: "1px solid rgba(52,211,153,0.18)",
+                  }}
+                >
+                  <Calendar className="w-5 h-5 text-emerald-400 shrink-0" />
+                  <div>
+                    <p className="text-xs text-emerald-400/70 font-medium mb-0.5">
+                      Scheduled Date
+                    </p>
+                    <p className="text-sm font-bold text-emerald-300">
+                      {new Date(`${reminderDate}T00:00:00`).toLocaleDateString(
+                        "en-US",
+                        {
+                          weekday: "long",
+                          month: "long",
+                          day: "numeric",
+                          year: "numeric",
+                        },
+                      )}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Message */}
+                <p className="text-sm text-white/60 leading-relaxed mb-5">
+                  Reminder: Next visit for{" "}
+                  <span className="text-white font-semibold">
+                    {patient.name}
+                  </span>{" "}
+                  is scheduled on{" "}
+                  <span className="text-emerald-400 font-semibold">
+                    {new Date(`${reminderDate}T00:00:00`).toLocaleDateString(
+                      "en-US",
+                      { month: "short", day: "numeric", year: "numeric" },
+                    )}
+                  </span>
+                  . Please ensure the appointment is confirmed.
+                </p>
+
+                {/* Actions */}
+                <div className="flex gap-2.5">
+                  <button
+                    type="button"
+                    onClick={() => setShowReminderPopup(false)}
+                    data-ocid="patient-detail.reminder_ok_button"
+                    className="flex-1 px-4 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, rgb(16,185,129), rgb(5,150,105))",
+                      boxShadow: "0 4px 16px rgba(16,185,129,0.3)",
+                    }}
+                  >
+                    OK, Got It
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setShowReminderPopup(false)}
+                    data-ocid="patient-detail.reminder_dismiss_button"
+                    className="flex-1 px-4 py-2.5 rounded-xl text-sm font-medium text-white/50 border border-white/10 hover:bg-white/5 hover:text-white/70 transition-all duration-200"
+                  >
+                    Dismiss
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Next Visit Modal */}
+      {showNextVisitModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-8 w-full max-w-md mx-4">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+                <svg
+                  className="w-5 h-5 text-blue-600 dark:text-blue-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  role="img"
+                  aria-label="Calendar"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                  Schedule Next Visit
+                </h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Select a date for {patient?.name ?? "this patient"}&apos;s
+                  next appointment
+                </p>
+              </div>
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="next-visit-date"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              >
+                Next Visit Date
+              </label>
+              <input
+                id="next-visit-date"
+                type="date"
+                value={tempNextVisitDate}
+                onChange={(e) => setTempNextVisitDate(e.target.value)}
+                min={new Date().toISOString().split("T")[0]}
+                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+              />
+            </div>
+            <div className="flex gap-3">
+              <button
+                type="button"
+                onClick={() => {
+                  if (tempNextVisitDate) setNextVisitDate(tempNextVisitDate);
+                  setShowNextVisitModal(false);
+                }}
+                disabled={!tempNextVisitDate}
+                className="flex-1 px-4 py-2.5 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                Schedule Visit
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowNextVisitModal(false)}
+                className="flex-1 px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+              >
+                Skip for Now
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Breadcrumb + Back */}
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div className="flex items-center gap-2">
@@ -1958,6 +2293,32 @@ function PatientDetailPage() {
               </div>
               <StatusBadge status={patient.status} />
             </div>
+            {nextVisitDate && (
+              <div className="mt-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-sm font-medium">
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    role="img"
+                    aria-label="Calendar"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  Next Visit:{" "}
+                  {new Date(`${nextVisitDate}T00:00:00`).toLocaleDateString(
+                    "en-US",
+                    { month: "short", day: "numeric", year: "numeric" },
+                  )}
+                </span>
+              </div>
+            )}
 
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
               <InfoChip icon={Phone} label="Phone" value={patient.phone} />
@@ -2041,7 +2402,18 @@ function PatientDetailPage() {
 
           <div className="mt-5">
             <TabsContent value="case-taking">
-              <CaseTakingTab patient={patient} />
+              <CaseTakingTab
+                patient={patient}
+                nextVisitDate={nextVisitDate}
+                onVisitSaved={(savedNextVisit) => {
+                  setNextVisitDate(savedNextVisit);
+                  setTempNextVisitDate("");
+                }}
+                onOpenScheduleModal={() => {
+                  setTempNextVisitDate(nextVisitDate ?? "");
+                  setShowNextVisitModal(true);
+                }}
+              />
             </TabsContent>
             <TabsContent value="overview">
               <OverviewTab patient={patient} />
