@@ -13,7 +13,6 @@ import { Route as loginImport } from "./routes/login";
 import { Route as patientsImport } from "./routes/patients";
 import { Route as patientsPatientIdImport } from "./routes/patients.$patientId";
 import { Route as patientsIndexImport } from "./routes/patients.index";
-import { Route as prescriptionsImport } from "./routes/prescriptions";
 import { Route as proImport } from "./routes/pro";
 import { Route as proCaseRepositoryImport } from "./routes/pro.case-repository";
 import { Route as proCaseTemplatesImport } from "./routes/pro.case-templates";
@@ -23,7 +22,6 @@ import { Route as proPatientTimelineImport } from "./routes/pro.patient-timeline
 import { Route as proRemedyComparisonImport } from "./routes/pro.remedy-comparison";
 import { Route as proRemedyFinderImport } from "./routes/pro.remedy-finder";
 import { Route as proVoiceRecorderImport } from "./routes/pro.voice-recorder";
-import { Route as reportsImport } from "./routes/reports";
 import { Route as settingsImport } from "./routes/settings";
 
 const rootRoute = rootImport;
@@ -32,10 +30,8 @@ const patientsRoute = patientsImport;
 const patientsIndexRoute = patientsIndexImport;
 const patientsPatientIdRoute = patientsPatientIdImport;
 const appointmentsRoute = appointmentsImport;
-const prescriptionsRoute = prescriptionsImport;
 const aiAssistantRoute = aiAssistantImport;
 const billingRoute = billingImport;
-const reportsRoute = reportsImport;
 const loginRoute = loginImport;
 const settingsRoute = settingsImport;
 const proRoute = proImport;
@@ -53,10 +49,8 @@ export const routeTree = rootRoute.addChildren([
   indexRoute,
   patientsRoute.addChildren([patientsIndexRoute, patientsPatientIdRoute]),
   appointmentsRoute,
-  prescriptionsRoute,
   aiAssistantRoute,
   billingRoute,
-  reportsRoute,
   settingsRoute,
   proRoute.addChildren([
     proIndexRoute,
@@ -109,13 +103,6 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof appointmentsImport;
       parentRoute: typeof rootImport;
     };
-    "/prescriptions": {
-      id: "/prescriptions";
-      path: "/prescriptions";
-      fullPath: "/prescriptions";
-      preLoaderRoute: typeof prescriptionsImport;
-      parentRoute: typeof rootImport;
-    };
     "/ai-assistant": {
       id: "/ai-assistant";
       path: "/ai-assistant";
@@ -128,13 +115,6 @@ declare module "@tanstack/react-router" {
       path: "/billing";
       fullPath: "/billing";
       preLoaderRoute: typeof billingImport;
-      parentRoute: typeof rootImport;
-    };
-    "/reports": {
-      id: "/reports";
-      path: "/reports";
-      fullPath: "/reports";
-      preLoaderRoute: typeof reportsImport;
       parentRoute: typeof rootImport;
     };
     "/settings": {

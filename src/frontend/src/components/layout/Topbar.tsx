@@ -59,10 +59,8 @@ const PAGE_TITLES: Record<string, string> = {
   "/": "Dashboard",
   "/patients": "Patient Management",
   "/appointments": "Appointments",
-  "/prescriptions": "Prescriptions",
   "/ai-assistant": "AI Assistant",
   "/billing": "Billing & Payments",
-  "/reports": "Reports & Analytics",
   "/settings": "Clinic Settings",
 };
 

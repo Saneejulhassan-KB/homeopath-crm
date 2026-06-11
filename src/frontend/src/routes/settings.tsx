@@ -9,23 +9,25 @@ import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { useAppStore } from "@/store";
 import { ACCENT_COLORS, ACCENT_COLOR_MAP } from "@/utils/accentColors";
-import { LANGUAGES } from "@/utils/constants";
+import { getCurrentUser, getUserClinics } from "@/utils/auth";
 import { createRoute } from "@tanstack/react-router";
 import {
-  Bell,
   Building2,
   Camera,
   Check,
+  CreditCard,
   Globe,
+  MessageSquareText,
   Moon,
   Palette,
   Save,
+  Shield,
   Sun,
   Upload,
   User,
 } from "lucide-react";
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Route as rootRoute } from "./__root";
 
@@ -46,6 +48,43 @@ const stagger = (i: number) => ({
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.3, delay: i * 0.06 },
 });
+
+// ─── Clinic Name Header ───────────────────────────────────────────
+function ClinicNameHeader() {
+  const [clinicName, setClinicName] = useState("My Clinic");
+
+  useEffect(() => {
+    const user = getCurrentUser();
+    if (user && user.clinicIds.length > 0) {
+      const clinics = getUserClinics(user.id);
+      if (clinics.length > 0) {
+        setClinicName(clinics[0].name);
+      }
+    }
+  }, []);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="glass-card p-5 flex items-center gap-4 border-l-4 border-l-primary"
+      data-ocid="settings.clinic_name_header"
+    >
+      <div className="w-12 h-12 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center shrink-0">
+        <Building2 className="w-6 h-6 text-primary" />
+      </div>
+      <div className="min-w-0">
+        <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+          Current Clinic
+        </p>
+        <h2 className="text-xl font-display font-bold text-foreground truncate">
+          {clinicName}
+        </h2>
+      </div>
+    </motion.div>
+  );
+}
 
 // ─── Clinic Profile ───────────────────────────────────────────────
 function ClinicProfileTab() {
@@ -305,7 +344,6 @@ function DoctorProfileTab() {
 // ─── Appearance ───────────────────────────────────────────────────
 function AppearanceTab() {
   const { theme, toggleTheme, accentColor, setAccentColor } = useAppStore();
-  const [fontSize, setFontSize] = useState("medium");
 
   const handleAccentChange = (id: string) => {
     const palette = ACCENT_COLOR_MAP[id];
@@ -468,38 +506,6 @@ function AppearanceTab() {
         </div>
       </div>
 
-      {/* Font size */}
-      <div className="glass-card p-6">
-        <h3 className="text-sm font-display font-semibold text-foreground mb-4">
-          Font Size
-        </h3>
-        <div className="flex gap-3 flex-wrap">
-          {(["small", "medium", "large"] as const).map((size) => (
-            <button
-              key={size}
-              type="button"
-              onClick={() => setFontSize(size)}
-              className={cn(
-                "px-5 py-2 rounded-lg border text-sm font-medium capitalize transition-smooth",
-                fontSize === size
-                  ? "border-primary bg-primary/10 text-primary"
-                  : "border-border/40 text-muted-foreground hover:border-border",
-              )}
-              data-ocid={`font-size-${size}`}
-            >
-              {size === "small"
-                ? "Small"
-                : size === "medium"
-                  ? "Medium"
-                  : "Large"}
-            </button>
-          ))}
-        </div>
-        <p className="text-xs text-muted-foreground mt-2">
-          Affects body text across the application.
-        </p>
-      </div>
-
       <div className="flex justify-end">
         <Button
           onClick={apply}
@@ -513,259 +519,262 @@ function AppearanceTab() {
   );
 }
 
-// ─── Notifications ────────────────────────────────────────────────
-interface NotifPref {
+// ─── Auto Messages ────────────────────────────────────────────────
+interface MessageTemplate {
   id: string;
   label: string;
   description: string;
-  defaultOn: boolean;
+  placeholder: string;
 }
 
-const NOTIF_PREFS: NotifPref[] = [
+const MESSAGE_TEMPLATES: MessageTemplate[] = [
   {
-    id: "appointment-reminders",
-    label: "Appointment Reminders",
-    description: "Get notified 1 hour before appointments",
-    defaultOn: true,
+    id: "welcome",
+    label: "Welcome Message",
+    description: "Sent when a patient registers",
+    placeholder:
+      "Welcome to {clinic_name}, {patient_name}! We're delighted to have you. Your registration is complete and we look forward to serving you.",
   },
   {
-    id: "billing-alerts",
-    label: "Billing Alerts",
-    description: "Notify on payment received or overdue invoices",
-    defaultOn: true,
+    id: "thankyou",
+    label: "Thank You for Visiting",
+    description: "Sent after a visit is completed",
+    placeholder:
+      "Dear {patient_name}, thank you for visiting {clinic_name} today. We hope you feel better soon. If you have any questions, please don't hesitate to reach out.",
   },
   {
-    id: "system-updates",
-    label: "System Updates",
-    description: "Product announcements and feature releases",
-    defaultOn: true,
+    id: "booking",
+    label: "Booking Message",
+    description: "Sent when an appointment is booked",
+    placeholder:
+      "Hi {patient_name}, your appointment at {clinic_name} has been booked for {date} with {doctor_name}. Please arrive 10 minutes early.",
   },
   {
-    id: "new-patient",
-    label: "New Patient Registration",
-    description: "Alert when a new patient profile is created",
-    defaultOn: false,
+    id: "case-taking-reminder",
+    label: "Case Taking Reminder",
+    description: "Reminder for case taking",
+    placeholder:
+      "Reminder: {patient_name}, please complete your case taking form before your visit on {date} at {clinic_name}.",
   },
   {
-    id: "daily-summary",
-    label: "Daily Summary Email",
-    description: "Morning digest of the day's schedule and stats",
-    defaultOn: false,
+    id: "booking-reminder",
+    label: "Booking Reminder Before Date",
+    description: "Reminder sent before appointment date",
+    placeholder:
+      "Hi {patient_name}, this is a friendly reminder about your upcoming appointment at {clinic_name} on {date} with {doctor_name}. We look forward to seeing you!",
+  },
+  {
+    id: "first-followup",
+    label: "First Follow Up",
+    description: "First followup after a missed/overdue visit",
+    placeholder:
+      "Dear {patient_name}, we noticed you missed your scheduled visit on {date} at {clinic_name}. Please contact us to reschedule at your earliest convenience.",
+  },
+  {
+    id: "second-followup",
+    label: "Second Follow Up",
+    description: "Second followup for overdue visits",
+    placeholder:
+      "Hi {patient_name}, this is our second reminder regarding your missed appointment on {date} at {clinic_name}. Your health is important to us — please book a new slot.",
+  },
+  {
+    id: "third-followup",
+    label: "Third Follow Up",
+    description: "Third followup for very overdue visits",
+    placeholder:
+      "Dear {patient_name}, we are concerned as we haven't seen you since {date}. Please visit {clinic_name} as soon as possible or call us to discuss your care plan.",
+  },
+  {
+    id: "cancel-manual",
+    label: "Cancel / Manual Message",
+    description: "Manual cancellation message",
+    placeholder:
+      "Hi {patient_name}, your appointment at {clinic_name} scheduled for {date} with {doctor_name} has been cancelled. Please contact us to reschedule.",
   },
 ];
 
-function NotificationsTab() {
-  const [prefs, setPrefs] = useState<Record<string, boolean>>(
-    Object.fromEntries(NOTIF_PREFS.map((p) => [p.id, p.defaultOn])),
-  );
+const PLACEHOLDER_VARIABLES = [
+  "{patient_name}",
+  "{clinic_name}",
+  "{date}",
+  "{doctor_name}",
+  "{time}",
+];
 
-  const save = () => toast.success("Notification preferences saved!");
+function AutoMessagesTab() {
+  const [messages, setMessages] = useState<Record<string, string>>(() => {
+    const initial: Record<string, string> = {};
+    for (const m of MESSAGE_TEMPLATES) {
+      initial[m.id] = m.placeholder;
+    }
+    return initial;
+  });
+
+  const [saved, setSaved] = useState<Record<string, boolean>>({});
+
+  const updateMessage = (id: string, text: string) => {
+    setMessages((prev) => ({ ...prev, [id]: text }));
+    setSaved((prev) => ({ ...prev, [id]: false }));
+  };
+
+  const saveAll = () => {
+    const allSaved: Record<string, boolean> = {};
+    for (const m of MESSAGE_TEMPLATES) {
+      allSaved[m.id] = true;
+    }
+    setSaved(allSaved);
+    toast.success("All message templates saved!");
+  };
+
+  const insertVariable = (id: string, variable: string) => {
+    const textarea = document.getElementById(
+      `msg-${id}`,
+    ) as HTMLTextAreaElement | null;
+    if (!textarea) return;
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const current = messages[id] || "";
+    const newText =
+      current.substring(0, start) + variable + current.substring(end);
+    setMessages((prev) => ({ ...prev, [id]: newText }));
+    setSaved((prev) => ({ ...prev, [id]: false }));
+    setTimeout(() => {
+      textarea.focus();
+      textarea.setSelectionRange(
+        start + variable.length,
+        start + variable.length,
+      );
+    }, 0);
+  };
 
   return (
-    <motion.div {...fadeIn} className="space-y-6" data-ocid="notifications-tab">
-      <div className="glass-card p-6 space-y-1">
-        <h3 className="text-sm font-display font-semibold text-foreground mb-4 flex items-center gap-2">
-          <Bell className="w-4 h-4 text-primary" /> Notification Preferences
-        </h3>
-        <div className="divide-y divide-border/40">
-          {NOTIF_PREFS.map((pref, i) => (
+    <motion.div {...fadeIn} className="space-y-6" data-ocid="auto-messages-tab">
+      <div className="glass-card p-6">
+        <div className="flex items-center justify-between mb-1">
+          <h3 className="text-sm font-display font-semibold text-foreground flex items-center gap-2">
+            <MessageSquareText className="w-4 h-4 text-primary" /> Auto Message
+            Templates
+          </h3>
+        </div>
+        <p className="text-xs text-muted-foreground mb-5">
+          Customize the messages sent automatically to patients. Use the
+          placeholder variables below each field.
+        </p>
+
+        <div className="space-y-5">
+          {MESSAGE_TEMPLATES.map((tmpl, i) => (
             <motion.div
-              key={pref.id}
+              key={tmpl.id}
               {...stagger(i)}
-              className="flex items-center justify-between py-4 gap-4"
+              className="space-y-2"
+              data-ocid={`auto-msg-${tmpl.id}`}
             >
-              <div className="min-w-0">
-                <p className="text-sm font-medium text-foreground">
-                  {pref.label}
-                </p>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  {pref.description}
-                </p>
+              <div className="flex items-center justify-between">
+                <div>
+                  <Label
+                    htmlFor={`msg-${tmpl.id}`}
+                    className="text-sm font-medium text-foreground"
+                  >
+                    {tmpl.label}
+                  </Label>
+                  <p className="text-xs text-muted-foreground">
+                    {tmpl.description}
+                  </p>
+                </div>
+                {saved[tmpl.id] && (
+                  <span className="text-xs font-medium text-green-500 flex items-center gap-1">
+                    <Check className="w-3 h-3" /> Saved
+                  </span>
+                )}
               </div>
-              <Switch
-                checked={prefs[pref.id]}
-                onCheckedChange={(v) =>
-                  setPrefs((p) => ({ ...p, [pref.id]: v }))
-                }
-                className="data-[state=checked]:bg-primary shrink-0"
-                data-ocid={`notif-switch-${pref.id}`}
+              <Textarea
+                id={`msg-${tmpl.id}`}
+                value={messages[tmpl.id] || ""}
+                onChange={(e) => updateMessage(tmpl.id, e.target.value)}
+                rows={3}
+                className="resize-none bg-background/50 border-border/60 focus:border-primary/60 text-sm"
+                data-ocid={`auto-msg-input-${tmpl.id}`}
               />
+              <div className="flex flex-wrap items-center gap-1.5">
+                <span className="text-[10px] text-muted-foreground uppercase tracking-wide mr-1">
+                  Variables:
+                </span>
+                {PLACEHOLDER_VARIABLES.map((v) => (
+                  <button
+                    key={v}
+                    type="button"
+                    onClick={() => insertVariable(tmpl.id, v)}
+                    className="text-[10px] px-2 py-0.5 rounded-md bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-smooth font-mono"
+                    data-ocid={`auto-msg-var-${tmpl.id}-${v.replace(/[{}]/g, "")}`}
+                  >
+                    {v}
+                  </button>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
-      </div>
-      <div className="flex justify-end">
-        <Button
-          onClick={save}
-          className="gap-2"
-          data-ocid="notifications-save-btn"
-        >
-          <Save className="w-4 h-4" /> Save Preferences
-        </Button>
+
+        <Separator className="my-5" />
+        <div className="flex justify-end">
+          <Button
+            onClick={saveAll}
+            className="gap-2"
+            data-ocid="auto-messages-save-all-btn"
+          >
+            <Save className="w-4 h-4" /> Save All Messages
+          </Button>
+        </div>
       </div>
     </motion.div>
   );
 }
 
-// ─── Language & Region ────────────────────────────────────────────
-function LanguageTab() {
-  const { language, setLanguage } = useAppStore();
-  const [currency, setCurrency] = useState("INR");
-  const [dateFormat, setDateFormat] = useState("DD/MM/YYYY");
-  const [timezone, setTimezone] = useState("Asia/Kolkata");
-
-  const handleLanguage = (code: string) => {
-    setLanguage(code as "en" | "hi" | "es" | "fr");
-    const found = LANGUAGES.find((l) => l.code === code);
-    toast.success(`Language changed to ${found?.label ?? code}`);
-  };
-
-  const save = () => toast.success("Regional settings saved!");
-
+// ─── Security (placeholder) ─────────────────────────────────────
+function SecurityTab() {
   return (
-    <motion.div {...fadeIn} className="space-y-6" data-ocid="language-tab">
-      {/* Language selector */}
+    <motion.div {...fadeIn} className="space-y-6" data-ocid="security-tab">
       <div className="glass-card p-6">
         <h3 className="text-sm font-display font-semibold text-foreground mb-4 flex items-center gap-2">
-          <Globe className="w-4 h-4 text-primary" /> Language
+          <Shield className="w-4 h-4 text-primary" /> Security Settings
         </h3>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {LANGUAGES.map((lang, i) => (
-            <motion.button
-              key={lang.code}
-              type="button"
-              {...stagger(i)}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              onClick={() => handleLanguage(lang.code)}
-              className={cn(
-                "relative flex flex-col items-center gap-2 p-4 rounded-xl border-2 text-center transition-smooth",
-                language === lang.code
-                  ? "border-primary bg-primary/10 shadow-elevated"
-                  : "border-border/40 bg-background/40 hover:border-border",
-              )}
-              data-ocid={`lang-${lang.code}`}
-            >
-              {language === lang.code && (
-                <span className="absolute top-2 right-2 w-4 h-4 rounded-full bg-primary flex items-center justify-center">
-                  <Check className="w-2.5 h-2.5 text-primary-foreground" />
-                </span>
-              )}
-              <span className="text-2xl">{lang.flag}</span>
-              <span className="text-xs font-semibold text-foreground uppercase tracking-wide">
-                {lang.code}
-              </span>
-              <span className="text-xs text-muted-foreground">
-                {lang.label}
-              </span>
-            </motion.button>
-          ))}
-        </div>
+        <p className="text-sm text-muted-foreground">
+          Security settings will be available here soon.
+        </p>
       </div>
+    </motion.div>
+  );
+}
 
-      {/* Currency, Date format, Timezone */}
+// ─── Billing (placeholder) ────────────────────────────────────────
+function BillingTab() {
+  return (
+    <motion.div {...fadeIn} className="space-y-6" data-ocid="billing-tab">
+      <div className="glass-card p-6">
+        <h3 className="text-sm font-display font-semibold text-foreground mb-4 flex items-center gap-2">
+          <CreditCard className="w-4 h-4 text-primary" /> Billing Settings
+        </h3>
+        <p className="text-sm text-muted-foreground">
+          Billing settings will be available here soon.
+        </p>
+      </div>
+    </motion.div>
+  );
+}
+
+// ─── About (placeholder) ──────────────────────────────────────────
+function AboutTab() {
+  return (
+    <motion.div {...fadeIn} className="space-y-6" data-ocid="about-tab">
       <div className="glass-card p-6">
         <h3 className="text-sm font-display font-semibold text-foreground mb-4">
-          Regional Preferences
+          About HomeoPath CRM
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Currency */}
-          <div className="space-y-2">
-            <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-              Currency
-            </Label>
-            <div className="flex flex-col gap-2">
-              {[
-                { code: "INR", symbol: "₹", label: "Indian Rupee" },
-                { code: "USD", symbol: "$", label: "US Dollar" },
-                { code: "EUR", symbol: "€", label: "Euro" },
-              ].map((c) => (
-                <button
-                  key={c.code}
-                  type="button"
-                  onClick={() => setCurrency(c.code)}
-                  className={cn(
-                    "flex items-center gap-2 px-3 py-2 rounded-lg border text-sm transition-smooth text-left",
-                    currency === c.code
-                      ? "border-primary bg-primary/10 text-primary"
-                      : "border-border/40 text-muted-foreground hover:border-border",
-                  )}
-                  data-ocid={`currency-${c.code.toLowerCase()}`}
-                >
-                  <span className="font-bold">{c.symbol}</span>
-                  <span>
-                    {c.code} — {c.label}
-                  </span>
-                  {currency === c.code && <Check className="w-3 h-3 ml-auto" />}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Date Format */}
-          <div className="space-y-2">
-            <Label className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-              Date Format
-            </Label>
-            <div className="flex flex-col gap-2">
-              {["DD/MM/YYYY", "MM/DD/YYYY", "YYYY-MM-DD"].map((fmt) => (
-                <button
-                  key={fmt}
-                  type="button"
-                  onClick={() => setDateFormat(fmt)}
-                  className={cn(
-                    "flex items-center justify-between px-3 py-2 rounded-lg border text-sm font-mono transition-smooth",
-                    dateFormat === fmt
-                      ? "border-primary bg-primary/10 text-primary"
-                      : "border-border/40 text-muted-foreground hover:border-border",
-                  )}
-                  data-ocid={`date-fmt-${fmt.replace(/\//g, "-")}`}
-                >
-                  {fmt}
-                  {dateFormat === fmt && <Check className="w-3 h-3" />}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Timezone */}
-          <div className="space-y-2">
-            <Label
-              htmlFor="timezone"
-              className="text-xs font-medium text-muted-foreground uppercase tracking-wide"
-            >
-              Timezone
-            </Label>
-            <select
-              id="timezone"
-              value={timezone}
-              onChange={(e) => setTimezone(e.target.value)}
-              className="w-full px-3 py-2 rounded-lg border border-border/60 bg-background/50 text-sm text-foreground focus:outline-none focus:border-primary/60 transition-smooth"
-              data-ocid="timezone-select"
-            >
-              {[
-                ["Asia/Kolkata", "IST — India (UTC+5:30)"],
-                ["America/New_York", "EST — New York (UTC-5)"],
-                ["America/Los_Angeles", "PST — Los Angeles (UTC-8)"],
-                ["Europe/London", "GMT — London (UTC+0)"],
-                ["Europe/Paris", "CET — Paris (UTC+1)"],
-                ["Asia/Dubai", "GST — Dubai (UTC+4)"],
-                ["Asia/Singapore", "SGT — Singapore (UTC+8)"],
-                ["Australia/Sydney", "AEDT — Sydney (UTC+11)"],
-              ].map(([val, label]) => (
-                <option key={val} value={val}>
-                  {label}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex justify-end">
-        <Button onClick={save} className="gap-2" data-ocid="language-save-btn">
-          <Save className="w-4 h-4" /> Save Regional Settings
-        </Button>
+        <p className="text-sm text-muted-foreground">
+          HomeoPath CRM — A professional clinic management solution for
+          homeopathic practitioners worldwide.
+        </p>
+        <p className="text-xs text-muted-foreground mt-2">Version 1.0.0</p>
       </div>
     </motion.div>
   );
@@ -781,6 +790,8 @@ function SettingsPage() {
         breadcrumb={[{ label: "Dashboard", href: "/" }, { label: "Settings" }]}
       />
 
+      <ClinicNameHeader />
+
       <Tabs
         defaultValue="clinic"
         className="space-y-6"
@@ -791,8 +802,14 @@ function SettingsPage() {
             { value: "clinic", icon: Building2, label: "Clinic Profile" },
             { value: "doctor", icon: User, label: "Doctor Profile" },
             { value: "appearance", icon: Palette, label: "Appearance" },
-            { value: "notifications", icon: Bell, label: "Notifications" },
-            { value: "language", icon: Globe, label: "Language & Region" },
+            {
+              value: "auto-messages",
+              icon: MessageSquareText,
+              label: "Auto Messages",
+            },
+            { value: "security", icon: Shield, label: "Security" },
+            { value: "billing", icon: CreditCard, label: "Billing" },
+            { value: "about", icon: Globe, label: "About" },
           ].map(({ value, icon: Icon, label }) => (
             <TabsTrigger
               key={value}
@@ -816,11 +833,17 @@ function SettingsPage() {
         <TabsContent value="appearance">
           <AppearanceTab />
         </TabsContent>
-        <TabsContent value="notifications">
-          <NotificationsTab />
+        <TabsContent value="auto-messages">
+          <AutoMessagesTab />
         </TabsContent>
-        <TabsContent value="language">
-          <LanguageTab />
+        <TabsContent value="security">
+          <SecurityTab />
+        </TabsContent>
+        <TabsContent value="billing">
+          <BillingTab />
+        </TabsContent>
+        <TabsContent value="about">
+          <AboutTab />
         </TabsContent>
       </Tabs>
     </div>

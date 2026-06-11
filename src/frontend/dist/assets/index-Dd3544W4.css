@@ -1917,9 +1917,6 @@ video {
 .top-1\/2 {
   top: 50%;
 }
-.top-2 {
-  top: 0.5rem;
-}
 .top-3 {
   top: 0.75rem;
 }
@@ -1977,9 +1974,6 @@ video {
 .z-\[9999\] {
   z-index: 9999;
 }
-.col-span-full {
-  grid-column: 1 / -1;
-}
 .col-start-2 {
   grid-column-start: 2;
 }
@@ -2024,10 +2018,6 @@ video {
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
-}
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 .my-5 {
   margin-top: 1.25rem;
@@ -2377,9 +2367,6 @@ video {
 .max-h-52 {
   max-height: 13rem;
 }
-.max-h-60 {
-  max-height: 15rem;
-}
 .max-h-80 {
   max-height: 20rem;
 }
@@ -2600,9 +2587,6 @@ video {
 }
 .min-w-\[130px\] {
   min-width: 130px;
-}
-.min-w-\[140px\] {
-  min-width: 140px;
 }
 .min-w-\[160px\] {
   min-width: 160px;
@@ -3154,6 +3138,9 @@ video {
 .border-l-2 {
   border-left-width: 2px;
 }
+.border-l-4 {
+  border-left-width: 4px;
+}
 .border-r {
   border-right-width: 1px;
 }
@@ -3509,6 +3496,10 @@ video {
 }
 .border-zinc-500\/25 {
   border-color: rgb(113 113 122 / 0.25);
+}
+.border-l-primary {
+  --tw-border-opacity: 1;
+  border-left-color: oklch(var(--primary) / var(--tw-border-opacity, 1));
 }
 .border-l-transparent {
   border-left-color: transparent;
@@ -4258,10 +4249,6 @@ video {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
-.py-0 {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
 .py-0\.5 {
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
@@ -4662,6 +4649,10 @@ video {
 .text-green-400 {
   --tw-text-opacity: 1;
   color: rgb(74 222 128 / var(--tw-text-opacity, 1));
+}
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity, 1));
 }
 .text-green-700 {
   --tw-text-opacity: 1;
@@ -6347,10 +6338,6 @@ video {
   background-color: oklch(var(--muted) / var(--tw-bg-opacity, 1));
 }
 
-.hover\:bg-muted\/20:hover {
-  background-color: oklch(var(--muted) / 0.2);
-}
-
 .hover\:bg-muted\/30:hover {
   background-color: oklch(var(--muted) / 0.3);
 }
@@ -6521,10 +6508,6 @@ video {
 
 .hover\:underline:hover {
   text-decoration-line: underline;
-}
-
-.hover\:no-underline:hover {
-  text-decoration-line: none;
 }
 
 .hover\:opacity-100:hover {
@@ -8507,16 +8490,8 @@ video {
     top: 1rem;
   }
 
-  .lg\:col-span-1 {
-    grid-column: span 1 / span 1;
-  }
-
   .lg\:col-span-2 {
     grid-column: span 2 / span 2;
-  }
-
-  .lg\:col-span-3 {
-    grid-column: span 3 / span 3;
   }
 
   .lg\:table-cell {

@@ -22981,7 +22981,7 @@ const Link = reactExports.forwardRef(
 function isCtrlEvent(e3) {
   return !!(e3.metaKey || e3.altKey || e3.ctrlKey || e3.shiftKey);
 }
-let Route$l = class Route extends BaseRoute {
+let Route$j = class Route extends BaseRoute {
   /**
    * @deprecated Use the `createRoute` function instead.
    */
@@ -23033,7 +23033,7 @@ let Route$l = class Route extends BaseRoute {
   }
 };
 function createRoute(options) {
-  return new Route$l(options);
+  return new Route$j(options);
 }
 class RootRoute extends BaseRootRoute {
   /**
@@ -25352,11 +25352,11 @@ var Dialog$1 = (props) => {
   );
 };
 Dialog$1.displayName = DIALOG_NAME;
-var TRIGGER_NAME$7 = "DialogTrigger";
+var TRIGGER_NAME$5 = "DialogTrigger";
 var DialogTrigger = reactExports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDialog, ...triggerProps } = props;
-    const context = useDialogContext(TRIGGER_NAME$7, __scopeDialog);
+    const context = useDialogContext(TRIGGER_NAME$5, __scopeDialog);
     const composedTriggerRef = useComposedRefs$1(forwardedRef, context.triggerRef);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
       Primitive$1.button,
@@ -25365,7 +25365,7 @@ var DialogTrigger = reactExports.forwardRef(
         "aria-haspopup": "dialog",
         "aria-expanded": context.open,
         "aria-controls": context.contentId,
-        "data-state": getState$4(context.open),
+        "data-state": getState$1(context.open),
         ...triggerProps,
         ref: composedTriggerRef,
         onClick: composeEventHandlers(props.onClick, context.onOpenToggle)
@@ -25373,7 +25373,7 @@ var DialogTrigger = reactExports.forwardRef(
     );
   }
 );
-DialogTrigger.displayName = TRIGGER_NAME$7;
+DialogTrigger.displayName = TRIGGER_NAME$5;
 var PORTAL_NAME$4 = "DialogPortal";
 var [PortalProvider$2, usePortalContext$2] = createDialogContext(PORTAL_NAME$4, {
   forceMount: void 0
@@ -25405,7 +25405,7 @@ var DialogOverlayImpl = reactExports.forwardRef(
       /* @__PURE__ */ jsxRuntimeExports.jsx(ReactRemoveScroll, { as: Slot$3, allowPinchZoom: true, shards: [context.contentRef], children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         Primitive$1.div,
         {
-          "data-state": getState$4(context.open),
+          "data-state": getState$1(context.open),
           ...overlayProps,
           ref: forwardedRef,
           style: { pointerEvents: "auto", ...overlayProps.style }
@@ -25414,19 +25414,19 @@ var DialogOverlayImpl = reactExports.forwardRef(
     );
   }
 );
-var CONTENT_NAME$8 = "DialogContent";
+var CONTENT_NAME$6 = "DialogContent";
 var DialogContent$1 = reactExports.forwardRef(
   (props, forwardedRef) => {
-    const portalContext = usePortalContext$2(CONTENT_NAME$8, props.__scopeDialog);
+    const portalContext = usePortalContext$2(CONTENT_NAME$6, props.__scopeDialog);
     const { forceMount = portalContext.forceMount, ...contentProps } = props;
-    const context = useDialogContext(CONTENT_NAME$8, props.__scopeDialog);
+    const context = useDialogContext(CONTENT_NAME$6, props.__scopeDialog);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(Presence, { present: forceMount || context.open, children: context.modal ? /* @__PURE__ */ jsxRuntimeExports.jsx(DialogContentModal, { ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ jsxRuntimeExports.jsx(DialogContentNonModal, { ...contentProps, ref: forwardedRef }) });
   }
 );
-DialogContent$1.displayName = CONTENT_NAME$8;
+DialogContent$1.displayName = CONTENT_NAME$6;
 var DialogContentModal = reactExports.forwardRef(
   (props, forwardedRef) => {
-    const context = useDialogContext(CONTENT_NAME$8, props.__scopeDialog);
+    const context = useDialogContext(CONTENT_NAME$6, props.__scopeDialog);
     const contentRef = reactExports.useRef(null);
     const composedRefs = useComposedRefs$1(forwardedRef, context.contentRef, contentRef);
     reactExports.useEffect(() => {
@@ -25461,7 +25461,7 @@ var DialogContentModal = reactExports.forwardRef(
 );
 var DialogContentNonModal = reactExports.forwardRef(
   (props, forwardedRef) => {
-    const context = useDialogContext(CONTENT_NAME$8, props.__scopeDialog);
+    const context = useDialogContext(CONTENT_NAME$6, props.__scopeDialog);
     const hasInteractedOutsideRef = reactExports.useRef(false);
     const hasPointerDownOutsideRef = reactExports.useRef(false);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -25504,7 +25504,7 @@ var DialogContentNonModal = reactExports.forwardRef(
 var DialogContentImpl = reactExports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDialog, trapFocus, onOpenAutoFocus, onCloseAutoFocus, ...contentProps } = props;
-    const context = useDialogContext(CONTENT_NAME$8, __scopeDialog);
+    const context = useDialogContext(CONTENT_NAME$6, __scopeDialog);
     const contentRef = reactExports.useRef(null);
     const composedRefs = useComposedRefs$1(forwardedRef, contentRef);
     useFocusGuards();
@@ -25524,7 +25524,7 @@ var DialogContentImpl = reactExports.forwardRef(
               id: context.contentId,
               "aria-describedby": context.descriptionId,
               "aria-labelledby": context.titleId,
-              "data-state": getState$4(context.open),
+              "data-state": getState$1(context.open),
               ...contentProps,
               ref: composedRefs,
               onDismiss: () => context.onOpenChange(false)
@@ -25574,12 +25574,12 @@ var DialogClose = reactExports.forwardRef(
   }
 );
 DialogClose.displayName = CLOSE_NAME;
-function getState$4(open) {
+function getState$1(open) {
   return open ? "open" : "closed";
 }
 var TITLE_WARNING_NAME = "DialogTitleWarning";
 var [WarningProvider, useWarningContext] = createContext2(TITLE_WARNING_NAME, {
-  contentName: CONTENT_NAME$8,
+  contentName: CONTENT_NAME$6,
   titleName: TITLE_NAME,
   docsSlug: "dialog"
 });
@@ -25612,10 +25612,10 @@ var DescriptionWarning = ({ contentRef, descriptionId }) => {
   }, [MESSAGE, contentRef, descriptionId]);
   return null;
 };
-var Root$b = Dialog$1;
+var Root$8 = Dialog$1;
 var Portal$3 = DialogPortal$1;
 var Overlay = DialogOverlay$1;
-var Content$3 = DialogContent$1;
+var Content$2 = DialogContent$1;
 var Title = DialogTitle$1;
 var Close = DialogClose;
 /**
@@ -25723,7 +25723,7 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1P = [
+const __iconNode$1L = [
   [
     "path",
     {
@@ -25732,48 +25732,48 @@ const __iconNode$1P = [
     }
   ]
 ];
-const Activity = createLucideIcon("activity", __iconNode$1P);
+const Activity = createLucideIcon("activity", __iconNode$1L);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1O = [
+const __iconNode$1K = [
   ["rect", { width: "20", height: "5", x: "2", y: "3", rx: "1", key: "1wp1u1" }],
   ["path", { d: "M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8", key: "1s80jp" }],
   ["path", { d: "M10 12h4", key: "a56b0p" }]
 ];
-const Archive = createLucideIcon("archive", __iconNode$1O);
+const Archive = createLucideIcon("archive", __iconNode$1K);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1N = [
+const __iconNode$1J = [
   ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
   ["path", { d: "M19 12H5", key: "x3x0zl" }]
 ];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$1N);
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$1J);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1M = [
+const __iconNode$1I = [
   ["path", { d: "M5 12h14", key: "1ays0h" }],
   ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
 ];
-const ArrowRight = createLucideIcon("arrow-right", __iconNode$1M);
+const ArrowRight = createLucideIcon("arrow-right", __iconNode$1I);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1L = [
+const __iconNode$1H = [
   ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
   [
     "path",
@@ -25790,14 +25790,14 @@ const __iconNode$1L = [
     }
   ]
 ];
-const Atom = createLucideIcon("atom", __iconNode$1L);
+const Atom = createLucideIcon("atom", __iconNode$1H);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1K = [
+const __iconNode$1G = [
   ["path", { d: "M10.268 21a2 2 0 0 0 3.464 0", key: "vwvbt9" }],
   ["path", { d: "M22 8c0-2.3-.8-4.3-2-6", key: "5bb3ad" }],
   [
@@ -25809,14 +25809,14 @@ const __iconNode$1K = [
   ],
   ["path", { d: "M4 2C2.8 3.7 2 5.7 2 8", key: "tap9e0" }]
 ];
-const BellRing = createLucideIcon("bell-ring", __iconNode$1K);
+const BellRing = createLucideIcon("bell-ring", __iconNode$1G);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1J = [
+const __iconNode$1F = [
   ["path", { d: "M10.268 21a2 2 0 0 0 3.464 0", key: "vwvbt9" }],
   [
     "path",
@@ -25826,27 +25826,27 @@ const __iconNode$1J = [
     }
   ]
 ];
-const Bell = createLucideIcon("bell", __iconNode$1J);
+const Bell = createLucideIcon("bell", __iconNode$1F);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1I = [
+const __iconNode$1E = [
   [
     "path",
     { d: "M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8", key: "mg9rjx" }
   ]
 ];
-const Bold$1 = createLucideIcon("bold", __iconNode$1I);
+const Bold$1 = createLucideIcon("bold", __iconNode$1E);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1H = [
+const __iconNode$1D = [
   [
     "path",
     {
@@ -25855,14 +25855,14 @@ const __iconNode$1H = [
     }
   ]
 ];
-const Bone = createLucideIcon("bone", __iconNode$1H);
+const Bone = createLucideIcon("bone", __iconNode$1D);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1G = [
+const __iconNode$1C = [
   ["path", { d: "M12 7v14", key: "1akyts" }],
   [
     "path",
@@ -25872,14 +25872,14 @@ const __iconNode$1G = [
     }
   ]
 ];
-const BookOpen = createLucideIcon("book-open", __iconNode$1G);
+const BookOpen = createLucideIcon("book-open", __iconNode$1C);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1F = [
+const __iconNode$1B = [
   ["path", { d: "M12 8V4H8", key: "hb8ula" }],
   ["rect", { width: "16", height: "12", x: "4", y: "8", rx: "2", key: "enze0r" }],
   ["path", { d: "M2 14h2", key: "vft8re" }],
@@ -25887,14 +25887,14 @@ const __iconNode$1F = [
   ["path", { d: "M15 13v2", key: "1xurst" }],
   ["path", { d: "M9 13v2", key: "rq6x2g" }]
 ];
-const Bot = createLucideIcon("bot", __iconNode$1F);
+const Bot = createLucideIcon("bot", __iconNode$1B);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1E = [
+const __iconNode$1A = [
   [
     "path",
     {
@@ -25917,14 +25917,14 @@ const __iconNode$1E = [
   ["path", { d: "M6 18a4 4 0 0 1-1.967-.516", key: "2e4loj" }],
   ["path", { d: "M19.967 17.484A4 4 0 0 1 18 18", key: "159ez6" }]
 ];
-const Brain = createLucideIcon("brain", __iconNode$1E);
+const Brain = createLucideIcon("brain", __iconNode$1A);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1D = [
+const __iconNode$1z = [
   ["path", { d: "M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z", key: "1b4qmf" }],
   ["path", { d: "M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2", key: "i71pzd" }],
   ["path", { d: "M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2", key: "10jefs" }],
@@ -25933,28 +25933,28 @@ const __iconNode$1D = [
   ["path", { d: "M10 14h4", key: "kelpxr" }],
   ["path", { d: "M10 18h4", key: "1ulq68" }]
 ];
-const Building2 = createLucideIcon("building-2", __iconNode$1D);
+const Building2 = createLucideIcon("building-2", __iconNode$1z);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1C = [
+const __iconNode$1y = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M3 10h18", key: "8toen8" }],
   ["path", { d: "m9 16 2 2 4-4", key: "19s6y9" }]
 ];
-const CalendarCheck = createLucideIcon("calendar-check", __iconNode$1C);
+const CalendarCheck = createLucideIcon("calendar-check", __iconNode$1y);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1B = [
+const __iconNode$1x = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
@@ -25966,27 +25966,27 @@ const __iconNode$1B = [
   ["path", { d: "M12 18h.01", key: "mhygvu" }],
   ["path", { d: "M16 18h.01", key: "kzsmim" }]
 ];
-const CalendarDays = createLucideIcon("calendar-days", __iconNode$1B);
+const CalendarDays = createLucideIcon("calendar-days", __iconNode$1x);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1A = [
+const __iconNode$1w = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M3 10h18", key: "8toen8" }]
 ];
-const Calendar = createLucideIcon("calendar", __iconNode$1A);
+const Calendar = createLucideIcon("calendar", __iconNode$1w);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1z = [
+const __iconNode$1v = [
   [
     "path",
     {
@@ -25996,116 +25996,71 @@ const __iconNode$1z = [
   ],
   ["circle", { cx: "12", cy: "13", r: "3", key: "1vg3eu" }]
 ];
-const Camera = createLucideIcon("camera", __iconNode$1z);
+const Camera = createLucideIcon("camera", __iconNode$1v);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1y = [
+const __iconNode$1u = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M18 17V9", key: "2bz60n" }],
   ["path", { d: "M13 17V5", key: "1frdt8" }],
   ["path", { d: "M8 17v-3", key: "17ska0" }]
 ];
-const ChartColumn = createLucideIcon("chart-column", __iconNode$1y);
+const ChartColumn = createLucideIcon("chart-column", __iconNode$1u);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1x = [
+const __iconNode$1t = [
   ["path", { d: "M18 6 7 17l-5-5", key: "116fxf" }],
   ["path", { d: "m22 10-7.5 7.5L13 16", key: "ke71qq" }]
 ];
-const CheckCheck = createLucideIcon("check-check", __iconNode$1x);
+const CheckCheck = createLucideIcon("check-check", __iconNode$1t);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1w = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-const Check = createLucideIcon("check", __iconNode$1w);
+const __iconNode$1s = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+const Check = createLucideIcon("check", __iconNode$1s);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1v = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$1v);
+const __iconNode$1r = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$1r);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1u = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$1u);
+const __iconNode$1q = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$1q);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1t = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$1t);
+const __iconNode$1p = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$1p);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1s = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
-const ChevronUp = createLucideIcon("chevron-up", __iconNode$1s);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1r = [
-  ["path", { d: "m7 15 5 5 5-5", key: "1hf1tw" }],
-  ["path", { d: "m7 9 5-5 5 5", key: "sgt6xg" }]
-];
-const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$1r);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1q = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
-];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$1q);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1p = [
-  ["path", { d: "M21.801 10A10 10 0 1 1 17 3.335", key: "yps3ct" }],
-  ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
-];
-const CircleCheckBig = createLucideIcon("circle-check-big", __iconNode$1p);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1o = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$1o);
+const __iconNode$1o = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+const ChevronUp = createLucideIcon("chevron-up", __iconNode$1o);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26113,6 +26068,51 @@ const CircleCheck = createLucideIcon("circle-check", __iconNode$1o);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1n = [
+  ["path", { d: "m7 15 5 5 5-5", key: "1hf1tw" }],
+  ["path", { d: "m7 9 5-5 5 5", key: "sgt6xg" }]
+];
+const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$1n);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1m = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+];
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$1m);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1l = [
+  ["path", { d: "M21.801 10A10 10 0 1 1 17 3.335", key: "yps3ct" }],
+  ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
+];
+const CircleCheckBig = createLucideIcon("circle-check-big", __iconNode$1l);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1k = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const CircleCheck = createLucideIcon("circle-check", __iconNode$1k);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1j = [
   ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
   [
     "path",
@@ -26123,14 +26123,14 @@ const __iconNode$1n = [
   ],
   ["path", { d: "m9 14 2 2 4-4", key: "df797q" }]
 ];
-const ClipboardCheck = createLucideIcon("clipboard-check", __iconNode$1n);
+const ClipboardCheck = createLucideIcon("clipboard-check", __iconNode$1j);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1m = [
+const __iconNode$1i = [
   ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
   [
     "path",
@@ -26144,47 +26144,47 @@ const __iconNode$1m = [
   ["path", { d: "M8 11h.01", key: "1dfujw" }],
   ["path", { d: "M8 16h.01", key: "18s6g9" }]
 ];
-const ClipboardList = createLucideIcon("clipboard-list", __iconNode$1m);
+const ClipboardList = createLucideIcon("clipboard-list", __iconNode$1i);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1l = [
+const __iconNode$1h = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
 ];
-const Clock = createLucideIcon("clock", __iconNode$1l);
+const Clock = createLucideIcon("clock", __iconNode$1h);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1k = [
+const __iconNode$1g = [
   ["rect", { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2", key: "17jyea" }],
   ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
 ];
-const Copy = createLucideIcon("copy", __iconNode$1k);
+const Copy = createLucideIcon("copy", __iconNode$1g);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1j = [
+const __iconNode$1f = [
   ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "2", key: "ynyp8z" }],
   ["line", { x1: "2", x2: "22", y1: "10", y2: "10", key: "1b3vmo" }]
 ];
-const CreditCard = createLucideIcon("credit-card", __iconNode$1j);
+const CreditCard = createLucideIcon("credit-card", __iconNode$1f);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1i = [
+const __iconNode$1e = [
   [
     "path",
     {
@@ -26194,37 +26194,37 @@ const __iconNode$1i = [
   ],
   ["path", { d: "M5 21h14", key: "11awu3" }]
 ];
-const Crown = createLucideIcon("crown", __iconNode$1i);
+const Crown = createLucideIcon("crown", __iconNode$1e);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1h = [
+const __iconNode$1d = [
   ["line", { x1: "12", x2: "12", y1: "2", y2: "22", key: "7eqyqh" }],
   ["path", { d: "M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6", key: "1b0p4s" }]
 ];
-const DollarSign = createLucideIcon("dollar-sign", __iconNode$1h);
+const DollarSign = createLucideIcon("dollar-sign", __iconNode$1d);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1g = [
+const __iconNode$1c = [
   ["path", { d: "M12 15V3", key: "m9g1x1" }],
   ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
   ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
 ];
-const Download = createLucideIcon("download", __iconNode$1g);
+const Download = createLucideIcon("download", __iconNode$1c);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1f = [
+const __iconNode$1b = [
   [
     "path",
     {
@@ -26240,14 +26240,14 @@ const __iconNode$1f = [
     }
   ]
 ];
-const Droplets = createLucideIcon("droplets", __iconNode$1f);
+const Droplets = createLucideIcon("droplets", __iconNode$1b);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1e = [
+const __iconNode$1a = [
   [
     "path",
     {
@@ -26265,14 +26265,14 @@ const __iconNode$1e = [
   ],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
 ];
-const EyeOff = createLucideIcon("eye-off", __iconNode$1e);
+const EyeOff = createLucideIcon("eye-off", __iconNode$1a);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1d = [
+const __iconNode$19 = [
   [
     "path",
     {
@@ -26282,67 +26282,7 @@ const __iconNode$1d = [
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Eye = createLucideIcon("eye", __iconNode$1d);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1c = [
-  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
-  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
-  ["path", { d: "M8 18v-2", key: "qcmpov" }],
-  ["path", { d: "M12 18v-4", key: "q1q25u" }],
-  ["path", { d: "M16 18v-6", key: "15y0np" }]
-];
-const FileChartColumnIncreasing = createLucideIcon("file-chart-column-increasing", __iconNode$1c);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1b = [
-  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
-  ["path", { d: "M16 22h2a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3.5", key: "13ddob" }],
-  ["path", { d: "M4.017 11.512a6 6 0 1 0 8.466 8.475", key: "s6vs5t" }],
-  [
-    "path",
-    {
-      d: "M9 16a1 1 0 0 1-1-1v-4c0-.552.45-1.008.995-.917a6 6 0 0 1 4.922 4.922c.091.544-.365.995-.917.995z",
-      key: "1dl6s6"
-    }
-  ]
-];
-const FileChartPie = createLucideIcon("file-chart-pie", __iconNode$1b);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1a = [
-  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
-  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
-  ["path", { d: "M9 15h6", key: "cctwl0" }],
-  ["path", { d: "M12 18v-6", key: "17g6i2" }]
-];
-const FilePlus = createLucideIcon("file-plus", __iconNode$1a);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$19 = [
-  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
-  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
-  ["path", { d: "M10 9H8", key: "b1mrlr" }],
-  ["path", { d: "M16 13H8", key: "t4e002" }],
-  ["path", { d: "M16 17H8", key: "z1uh3a" }]
-];
-const FileText = createLucideIcon("file-text", __iconNode$19);
+const Eye = createLucideIcon("eye", __iconNode$19);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26350,6 +26290,33 @@ const FileText = createLucideIcon("file-text", __iconNode$19);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$18 = [
+  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  ["path", { d: "M9 15h6", key: "cctwl0" }],
+  ["path", { d: "M12 18v-6", key: "17g6i2" }]
+];
+const FilePlus = createLucideIcon("file-plus", __iconNode$18);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$17 = [
+  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  ["path", { d: "M10 9H8", key: "b1mrlr" }],
+  ["path", { d: "M16 13H8", key: "t4e002" }],
+  ["path", { d: "M16 17H8", key: "z1uh3a" }]
+];
+const FileText = createLucideIcon("file-text", __iconNode$17);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$16 = [
   [
     "path",
     {
@@ -26360,14 +26327,14 @@ const __iconNode$18 = [
   ["path", { d: "M6.453 15h11.094", key: "3shlmq" }],
   ["path", { d: "M8.5 2h7", key: "csnxdl" }]
 ];
-const FlaskConical = createLucideIcon("flask-conical", __iconNode$18);
+const FlaskConical = createLucideIcon("flask-conical", __iconNode$16);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$17 = [
+const __iconNode$15 = [
   [
     "path",
     {
@@ -26376,32 +26343,7 @@ const __iconNode$17 = [
     }
   ]
 ];
-const Funnel = createLucideIcon("funnel", __iconNode$17);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$16 = [
-  ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }],
-  ["circle", { cx: "6", cy: "6", r: "3", key: "1lh9wr" }],
-  ["path", { d: "M13 6h3a2 2 0 0 1 2 2v7", key: "1yeb86" }],
-  ["path", { d: "M11 18H8a2 2 0 0 1-2-2V9", key: "19pyzm" }]
-];
-const GitCompare = createLucideIcon("git-compare", __iconNode$16);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$15 = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
-  ["path", { d: "M2 12h20", key: "9i4pu4" }]
-];
-const Globe = createLucideIcon("globe", __iconNode$15);
+const Funnel = createLucideIcon("funnel", __iconNode$15);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26409,13 +26351,12 @@ const Globe = createLucideIcon("globe", __iconNode$15);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$14 = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "M3 9h18", key: "1pudct" }],
-  ["path", { d: "M3 15h18", key: "5xshup" }],
-  ["path", { d: "M9 3v18", key: "fh3hqa" }],
-  ["path", { d: "M15 3v18", key: "14nvp0" }]
+  ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }],
+  ["circle", { cx: "6", cy: "6", r: "3", key: "1lh9wr" }],
+  ["path", { d: "M13 6h3a2 2 0 0 1 2 2v7", key: "1yeb86" }],
+  ["path", { d: "M11 18H8a2 2 0 0 1-2-2V9", key: "19pyzm" }]
 ];
-const Grid3x3 = createLucideIcon("grid-3x3", __iconNode$14);
+const GitCompare = createLucideIcon("git-compare", __iconNode$14);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26423,6 +26364,32 @@ const Grid3x3 = createLucideIcon("grid-3x3", __iconNode$14);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$13 = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }]
+];
+const Globe = createLucideIcon("globe", __iconNode$13);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$12 = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["path", { d: "M3 9h18", key: "1pudct" }],
+  ["path", { d: "M3 15h18", key: "5xshup" }],
+  ["path", { d: "M9 3v18", key: "fh3hqa" }],
+  ["path", { d: "M15 3v18", key: "14nvp0" }]
+];
+const Grid3x3 = createLucideIcon("grid-3x3", __iconNode$12);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$11 = [
   [
     "path",
     {
@@ -26432,14 +26399,14 @@ const __iconNode$13 = [
   ],
   ["path", { d: "M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27", key: "1uw2ng" }]
 ];
-const HeartPulse = createLucideIcon("heart-pulse", __iconNode$13);
+const HeartPulse = createLucideIcon("heart-pulse", __iconNode$11);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$12 = [
+const __iconNode$10 = [
   [
     "path",
     {
@@ -26448,33 +26415,7 @@ const __iconNode$12 = [
     }
   ]
 ];
-const Heart = createLucideIcon("heart", __iconNode$12);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$11 = [
-  ["path", { d: "M6 3h12", key: "ggurg9" }],
-  ["path", { d: "M6 8h12", key: "6g4wlu" }],
-  ["path", { d: "m6 13 8.5 8", key: "u1kupk" }],
-  ["path", { d: "M6 13h3", key: "wdp6ag" }],
-  ["path", { d: "M9 13c6.667 0 6.667-10 0-10", key: "1nkvk2" }]
-];
-const IndianRupee = createLucideIcon("indian-rupee", __iconNode$11);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$10 = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 16v-4", key: "1dtifu" }],
-  ["path", { d: "M12 8h.01", key: "e9boi3" }]
-];
-const Info = createLucideIcon("info", __iconNode$10);
+const Heart = createLucideIcon("heart", __iconNode$10);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26482,11 +26423,13 @@ const Info = createLucideIcon("info", __iconNode$10);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$$ = [
-  ["line", { x1: "19", x2: "10", y1: "4", y2: "4", key: "15jd3p" }],
-  ["line", { x1: "14", x2: "5", y1: "20", y2: "20", key: "bu0au3" }],
-  ["line", { x1: "15", x2: "9", y1: "4", y2: "20", key: "uljnxc" }]
+  ["path", { d: "M6 3h12", key: "ggurg9" }],
+  ["path", { d: "M6 8h12", key: "6g4wlu" }],
+  ["path", { d: "m6 13 8.5 8", key: "u1kupk" }],
+  ["path", { d: "M6 13h3", key: "wdp6ag" }],
+  ["path", { d: "M9 13c6.667 0 6.667-10 0-10", key: "1nkvk2" }]
 ];
-const Italic$1 = createLucideIcon("italic", __iconNode$$);
+const IndianRupee = createLucideIcon("indian-rupee", __iconNode$$);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26494,6 +26437,30 @@ const Italic$1 = createLucideIcon("italic", __iconNode$$);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$_ = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 16v-4", key: "1dtifu" }],
+  ["path", { d: "M12 8h.01", key: "e9boi3" }]
+];
+const Info = createLucideIcon("info", __iconNode$_);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$Z = [
+  ["line", { x1: "19", x2: "10", y1: "4", y2: "4", key: "15jd3p" }],
+  ["line", { x1: "14", x2: "5", y1: "20", y2: "20", key: "bu0au3" }],
+  ["line", { x1: "15", x2: "9", y1: "4", y2: "20", key: "uljnxc" }]
+];
+const Italic$1 = createLucideIcon("italic", __iconNode$Z);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$Y = [
   [
     "path",
     {
@@ -26516,33 +26483,7 @@ const __iconNode$_ = [
     }
   ]
 ];
-const Layers = createLucideIcon("layers", __iconNode$_);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$Z = [
-  ["rect", { width: "7", height: "9", x: "3", y: "3", rx: "1", key: "10lvy0" }],
-  ["rect", { width: "7", height: "5", x: "14", y: "3", rx: "1", key: "16une8" }],
-  ["rect", { width: "7", height: "9", x: "14", y: "12", rx: "1", key: "1hutg5" }],
-  ["rect", { width: "7", height: "5", x: "3", y: "16", rx: "1", key: "ldoo1y" }]
-];
-const LayoutDashboard = createLucideIcon("layout-dashboard", __iconNode$Z);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$Y = [
-  ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
-  ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
-  ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }],
-  ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }]
-];
-const LayoutGrid = createLucideIcon("layout-grid", __iconNode$Y);
+const Layers = createLucideIcon("layers", __iconNode$Y);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26550,6 +26491,32 @@ const LayoutGrid = createLucideIcon("layout-grid", __iconNode$Y);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$X = [
+  ["rect", { width: "7", height: "9", x: "3", y: "3", rx: "1", key: "10lvy0" }],
+  ["rect", { width: "7", height: "5", x: "14", y: "3", rx: "1", key: "16une8" }],
+  ["rect", { width: "7", height: "9", x: "14", y: "12", rx: "1", key: "1hutg5" }],
+  ["rect", { width: "7", height: "5", x: "3", y: "16", rx: "1", key: "ldoo1y" }]
+];
+const LayoutDashboard = createLucideIcon("layout-dashboard", __iconNode$X);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$W = [
+  ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
+  ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
+  ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }],
+  ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }]
+];
+const LayoutGrid = createLucideIcon("layout-grid", __iconNode$W);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$V = [
   [
     "path",
     {
@@ -26559,14 +26526,14 @@ const __iconNode$X = [
   ],
   ["path", { d: "M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12", key: "mt58a7" }]
 ];
-const Leaf$1 = createLucideIcon("leaf", __iconNode$X);
+const Leaf$1 = createLucideIcon("leaf", __iconNode$V);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$W = [
+const __iconNode$U = [
   ["path", { d: "M10 12h11", key: "6m4ad9" }],
   ["path", { d: "M10 18h11", key: "11hvi2" }],
   ["path", { d: "M10 6h11", key: "c7qv1k" }],
@@ -26574,30 +26541,7 @@ const __iconNode$W = [
   ["path", { d: "M4 6h1v4", key: "cnovpq" }],
   ["path", { d: "M6 18H4c0-1 2-2 2-3s-1-1.5-2-1", key: "m9a95d" }]
 ];
-const ListOrdered = createLucideIcon("list-ordered", __iconNode$W);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$V = [
-  ["path", { d: "M3 12h.01", key: "nlz23k" }],
-  ["path", { d: "M3 18h.01", key: "1tta3j" }],
-  ["path", { d: "M3 6h.01", key: "1rqtza" }],
-  ["path", { d: "M8 12h13", key: "1za7za" }],
-  ["path", { d: "M8 18h13", key: "1lx6n3" }],
-  ["path", { d: "M8 6h13", key: "ik3vkj" }]
-];
-const List$1 = createLucideIcon("list", __iconNode$V);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$U = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("loader-circle", __iconNode$U);
+const ListOrdered = createLucideIcon("list-ordered", __iconNode$U);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26605,22 +26549,22 @@ const LoaderCircle = createLucideIcon("loader-circle", __iconNode$U);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$T = [
-  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
-  ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
+  ["path", { d: "M3 12h.01", key: "nlz23k" }],
+  ["path", { d: "M3 18h.01", key: "1tta3j" }],
+  ["path", { d: "M3 6h.01", key: "1rqtza" }],
+  ["path", { d: "M8 12h13", key: "1za7za" }],
+  ["path", { d: "M8 18h13", key: "1lx6n3" }],
+  ["path", { d: "M8 6h13", key: "ik3vkj" }]
 ];
-const Lock = createLucideIcon("lock", __iconNode$T);
+const List$1 = createLucideIcon("list", __iconNode$T);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$S = [
-  ["path", { d: "m10 17 5-5-5-5", key: "1bsop3" }],
-  ["path", { d: "M15 12H3", key: "6jk70r" }],
-  ["path", { d: "M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4", key: "u53s6r" }]
-];
-const LogIn = createLucideIcon("log-in", __iconNode$S);
+const __iconNode$S = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("loader-circle", __iconNode$S);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26628,11 +26572,10 @@ const LogIn = createLucideIcon("log-in", __iconNode$S);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$R = [
-  ["path", { d: "m16 17 5-5-5-5", key: "1bji2h" }],
-  ["path", { d: "M21 12H9", key: "dn1m92" }],
-  ["path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1uf3rs" }]
+  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
+  ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
 ];
-const LogOut = createLucideIcon("log-out", __iconNode$R);
+const Lock = createLucideIcon("lock", __iconNode$R);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26640,10 +26583,11 @@ const LogOut = createLucideIcon("log-out", __iconNode$R);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$Q = [
-  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
-  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
+  ["path", { d: "m10 17 5-5-5-5", key: "1bsop3" }],
+  ["path", { d: "M15 12H3", key: "6jk70r" }],
+  ["path", { d: "M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4", key: "u53s6r" }]
 ];
-const Mail = createLucideIcon("mail", __iconNode$Q);
+const LogIn = createLucideIcon("log-in", __iconNode$Q);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26651,6 +26595,29 @@ const Mail = createLucideIcon("mail", __iconNode$Q);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$P = [
+  ["path", { d: "m16 17 5-5-5-5", key: "1bji2h" }],
+  ["path", { d: "M21 12H9", key: "dn1m92" }],
+  ["path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1uf3rs" }]
+];
+const LogOut = createLucideIcon("log-out", __iconNode$P);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$O = [
+  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
+  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
+];
+const Mail = createLucideIcon("mail", __iconNode$O);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$N = [
   [
     "path",
     {
@@ -26660,29 +26627,7 @@ const __iconNode$P = [
   ],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
 ];
-const MapPin = createLucideIcon("map-pin", __iconNode$P);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$O = [
-  ["path", { d: "M4 12h16", key: "1lakjw" }],
-  ["path", { d: "M4 18h16", key: "19g7jn" }],
-  ["path", { d: "M4 6h16", key: "1o0s65" }]
-];
-const Menu$1 = createLucideIcon("menu", __iconNode$O);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$N = [
-  ["path", { d: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z", key: "1lielz" }]
-];
-const MessageSquare = createLucideIcon("message-square", __iconNode$N);
+const MapPin = createLucideIcon("map-pin", __iconNode$N);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26690,14 +26635,11 @@ const MessageSquare = createLucideIcon("message-square", __iconNode$N);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$M = [
-  ["line", { x1: "2", x2: "22", y1: "2", y2: "22", key: "a6p6uj" }],
-  ["path", { d: "M18.89 13.23A7.12 7.12 0 0 0 19 12v-2", key: "80xlxr" }],
-  ["path", { d: "M5 10v2a7 7 0 0 0 12 5", key: "p2k8kg" }],
-  ["path", { d: "M15 9.34V5a3 3 0 0 0-5.68-1.33", key: "1gzdoj" }],
-  ["path", { d: "M9 9v3a3 3 0 0 0 5.12 2.12", key: "r2i35w" }],
-  ["line", { x1: "12", x2: "12", y1: "19", y2: "22", key: "x3vr5v" }]
+  ["path", { d: "M4 12h16", key: "1lakjw" }],
+  ["path", { d: "M4 18h16", key: "19g7jn" }],
+  ["path", { d: "M4 6h16", key: "1o0s65" }]
 ];
-const MicOff = createLucideIcon("mic-off", __iconNode$M);
+const Menu$1 = createLucideIcon("menu", __iconNode$M);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26705,6 +26647,43 @@ const MicOff = createLucideIcon("mic-off", __iconNode$M);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$L = [
+  ["path", { d: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z", key: "1lielz" }],
+  ["path", { d: "M13 8H7", key: "14i4kc" }],
+  ["path", { d: "M17 12H7", key: "16if0g" }]
+];
+const MessageSquareText = createLucideIcon("message-square-text", __iconNode$L);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$K = [
+  ["path", { d: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z", key: "1lielz" }]
+];
+const MessageSquare = createLucideIcon("message-square", __iconNode$K);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$J = [
+  ["line", { x1: "2", x2: "22", y1: "2", y2: "22", key: "a6p6uj" }],
+  ["path", { d: "M18.89 13.23A7.12 7.12 0 0 0 19 12v-2", key: "80xlxr" }],
+  ["path", { d: "M5 10v2a7 7 0 0 0 12 5", key: "p2k8kg" }],
+  ["path", { d: "M15 9.34V5a3 3 0 0 0-5.68-1.33", key: "1gzdoj" }],
+  ["path", { d: "M9 9v3a3 3 0 0 0 5.12 2.12", key: "r2i35w" }],
+  ["line", { x1: "12", x2: "12", y1: "19", y2: "22", key: "x3vr5v" }]
+];
+const MicOff = createLucideIcon("mic-off", __iconNode$J);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$I = [
   [
     "path",
     {
@@ -26721,44 +26700,7 @@ const __iconNode$L = [
   ],
   ["circle", { cx: "16", cy: "7", r: "5", key: "d08jfb" }]
 ];
-const MicVocal = createLucideIcon("mic-vocal", __iconNode$L);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$K = [
-  ["path", { d: "M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z", key: "131961" }],
-  ["path", { d: "M19 10v2a7 7 0 0 1-14 0v-2", key: "1vc78b" }],
-  ["line", { x1: "12", x2: "12", y1: "19", y2: "22", key: "x3vr5v" }]
-];
-const Mic = createLucideIcon("mic", __iconNode$K);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$J = [
-  ["path", { d: "M6 18h8", key: "1borvv" }],
-  ["path", { d: "M3 22h18", key: "8prr45" }],
-  ["path", { d: "M14 22a7 7 0 1 0 0-14h-1", key: "1jwaiy" }],
-  ["path", { d: "M9 14h2", key: "197e7h" }],
-  ["path", { d: "M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z", key: "1bmzmy" }],
-  ["path", { d: "M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3", key: "1drr47" }]
-];
-const Microscope = createLucideIcon("microscope", __iconNode$J);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$I = [
-  ["path", { d: "M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z", key: "a7tn18" }]
-];
-const Moon = createLucideIcon("moon", __iconNode$I);
+const MicVocal = createLucideIcon("mic-vocal", __iconNode$I);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26766,6 +26708,28 @@ const Moon = createLucideIcon("moon", __iconNode$I);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$H = [
+  ["path", { d: "M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z", key: "131961" }],
+  ["path", { d: "M19 10v2a7 7 0 0 1-14 0v-2", key: "1vc78b" }],
+  ["line", { x1: "12", x2: "12", y1: "19", y2: "22", key: "x3vr5v" }]
+];
+const Mic = createLucideIcon("mic", __iconNode$H);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$G = [
+  ["path", { d: "M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z", key: "a7tn18" }]
+];
+const Moon = createLucideIcon("moon", __iconNode$G);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$F = [
   [
     "path",
     {
@@ -26777,14 +26741,14 @@ const __iconNode$H = [
   ["polyline", { points: "3.29 7 12 12 20.71 7", key: "ousv84" }],
   ["path", { d: "m7.5 4.27 9 5.15", key: "1c824w" }]
 ];
-const Package = createLucideIcon("package", __iconNode$H);
+const Package = createLucideIcon("package", __iconNode$F);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$G = [
+const __iconNode$E = [
   [
     "path",
     {
@@ -26797,14 +26761,14 @@ const __iconNode$G = [
   ["circle", { cx: "6.5", cy: "12.5", r: ".5", fill: "currentColor", key: "qy21gx" }],
   ["circle", { cx: "8.5", cy: "7.5", r: ".5", fill: "currentColor", key: "fotxhn" }]
 ];
-const Palette = createLucideIcon("palette", __iconNode$G);
+const Palette = createLucideIcon("palette", __iconNode$E);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$F = [
+const __iconNode$D = [
   ["path", { d: "M13.234 20.252 21 12.3", key: "1cbrk9" }],
   [
     "path",
@@ -26814,14 +26778,14 @@ const __iconNode$F = [
     }
   ]
 ];
-const Paperclip = createLucideIcon("paperclip", __iconNode$F);
+const Paperclip = createLucideIcon("paperclip", __iconNode$D);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$E = [
+const __iconNode$C = [
   ["path", { d: "M12 20h9", key: "t2du7b" }],
   [
     "path",
@@ -26831,40 +26795,7 @@ const __iconNode$E = [
     }
   ]
 ];
-const PenLine = createLucideIcon("pen-line", __iconNode$E);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$D = [
-  [
-    "path",
-    {
-      d: "M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z",
-      key: "1a8usu"
-    }
-  ]
-];
-const Pen = createLucideIcon("pen", __iconNode$D);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$C = [
-  [
-    "path",
-    {
-      d: "M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z",
-      key: "1a8usu"
-    }
-  ],
-  ["path", { d: "m15 5 4 4", key: "1mk7zo" }]
-];
-const Pencil = createLucideIcon("pencil", __iconNode$C);
+const PenLine = createLucideIcon("pen-line", __iconNode$C);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26875,12 +26806,12 @@ const __iconNode$B = [
   [
     "path",
     {
-      d: "M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384",
-      key: "9njp5v"
+      d: "M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z",
+      key: "1a8usu"
     }
   ]
 ];
-const Phone = createLucideIcon("phone", __iconNode$B);
+const Pen = createLucideIcon("pen", __iconNode$B);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26890,19 +26821,30 @@ const Phone = createLucideIcon("phone", __iconNode$B);
 const __iconNode$A = [
   [
     "path",
-    { d: "m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z", key: "wa1lgi" }
+    {
+      d: "M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z",
+      key: "1a8usu"
+    }
   ],
-  ["path", { d: "m8.5 8.5 7 7", key: "rvfmvr" }]
+  ["path", { d: "m15 5 4 4", key: "1mk7zo" }]
 ];
-const Pill = createLucideIcon("pill", __iconNode$A);
+const Pencil = createLucideIcon("pencil", __iconNode$A);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$z = [["polygon", { points: "6 3 20 12 6 21 6 3", key: "1oa8hb" }]];
-const Play = createLucideIcon("play", __iconNode$z);
+const __iconNode$z = [
+  [
+    "path",
+    {
+      d: "M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384",
+      key: "9njp5v"
+    }
+  ]
+];
+const Phone = createLucideIcon("phone", __iconNode$z);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26910,17 +26852,39 @@ const Play = createLucideIcon("play", __iconNode$z);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$y = [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "M12 5v14", key: "s699le" }]
+  [
+    "path",
+    { d: "m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z", key: "wa1lgi" }
+  ],
+  ["path", { d: "m8.5 8.5 7 7", key: "rvfmvr" }]
 ];
-const Plus = createLucideIcon("plus", __iconNode$y);
+const Pill = createLucideIcon("pill", __iconNode$y);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$x = [
+const __iconNode$x = [["polygon", { points: "6 3 20 12 6 21 6 3", key: "1oa8hb" }]];
+const Play = createLucideIcon("play", __iconNode$x);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$w = [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "M12 5v14", key: "s699le" }]
+];
+const Plus = createLucideIcon("plus", __iconNode$w);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$v = [
   [
     "path",
     {
@@ -26931,35 +26895,7 @@ const __iconNode$x = [
   ["path", { d: "M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6", key: "1itne7" }],
   ["rect", { x: "6", y: "14", width: "12", height: "8", rx: "1", key: "1ue0tg" }]
 ];
-const Printer = createLucideIcon("printer", __iconNode$x);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$w = [
-  [
-    "path",
-    { d: "M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z", key: "q3az6g" }
-  ],
-  ["path", { d: "M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8", key: "1h4pet" }],
-  ["path", { d: "M12 17.5v-11", key: "1jc1ny" }]
-];
-const Receipt = createLucideIcon("receipt", __iconNode$w);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$v = [
-  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
-  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
-  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
-  ["path", { d: "M8 16H3v5", key: "1cv678" }]
-];
-const RefreshCw = createLucideIcon("refresh-cw", __iconNode$v);
+const Printer = createLucideIcon("printer", __iconNode$v);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26967,13 +26903,14 @@ const RefreshCw = createLucideIcon("refresh-cw", __iconNode$v);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$u = [
-  ["path", { d: "M4 7V4h16v3", key: "9msm58" }],
-  ["path", { d: "M5 20h6", key: "1h6pxn" }],
-  ["path", { d: "M13 4 8 20", key: "kqq6aj" }],
-  ["path", { d: "m15 15 5 5", key: "me55sn" }],
-  ["path", { d: "m20 15-5 5", key: "11p7ol" }]
+  [
+    "path",
+    { d: "M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z", key: "q3az6g" }
+  ],
+  ["path", { d: "M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8", key: "1h4pet" }],
+  ["path", { d: "M12 17.5v-11", key: "1jc1ny" }]
 ];
-const RemoveFormatting = createLucideIcon("remove-formatting", __iconNode$u);
+const Receipt = createLucideIcon("receipt", __iconNode$u);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26981,17 +26918,12 @@ const RemoveFormatting = createLucideIcon("remove-formatting", __iconNode$u);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$t = [
-  [
-    "path",
-    {
-      d: "M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z",
-      key: "1c8476"
-    }
-  ],
-  ["path", { d: "M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7", key: "1ydtos" }],
-  ["path", { d: "M7 3v4a1 1 0 0 0 1 1h7", key: "t51u73" }]
+  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
+  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
+  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
+  ["path", { d: "M8 16H3v5", key: "1cv678" }]
 ];
-const Save = createLucideIcon("save", __iconNode$t);
+const RefreshCw = createLucideIcon("refresh-cw", __iconNode$t);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26999,10 +26931,13 @@ const Save = createLucideIcon("save", __iconNode$t);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$s = [
-  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
-  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
+  ["path", { d: "M4 7V4h16v3", key: "9msm58" }],
+  ["path", { d: "M5 20h6", key: "1h6pxn" }],
+  ["path", { d: "M13 4 8 20", key: "kqq6aj" }],
+  ["path", { d: "m15 15 5 5", key: "me55sn" }],
+  ["path", { d: "m20 15-5 5", key: "11p7ol" }]
 ];
-const Search = createLucideIcon("search", __iconNode$s);
+const RemoveFormatting = createLucideIcon("remove-formatting", __iconNode$s);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27013,13 +26948,14 @@ const __iconNode$r = [
   [
     "path",
     {
-      d: "M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z",
-      key: "1ffxy3"
+      d: "M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z",
+      key: "1c8476"
     }
   ],
-  ["path", { d: "m21.854 2.147-10.94 10.939", key: "12cjpa" }]
+  ["path", { d: "M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7", key: "1ydtos" }],
+  ["path", { d: "M7 3v4a1 1 0 0 0 1 1h7", key: "t51u73" }]
 ];
-const Send = createLucideIcon("send", __iconNode$r);
+const Save = createLucideIcon("save", __iconNode$r);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27027,16 +26963,10 @@ const Send = createLucideIcon("send", __iconNode$r);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$q = [
-  [
-    "path",
-    {
-      d: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z",
-      key: "1qme2f"
-    }
-  ],
-  ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
+  ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
+  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
 ];
-const Settings = createLucideIcon("settings", __iconNode$q);
+const Search = createLucideIcon("search", __iconNode$q);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27047,12 +26977,13 @@ const __iconNode$p = [
   [
     "path",
     {
-      d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
-      key: "oel41y"
+      d: "M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z",
+      key: "1ffxy3"
     }
-  ]
+  ],
+  ["path", { d: "m21.854 2.147-10.94 10.939", key: "12cjpa" }]
 ];
-const Shield = createLucideIcon("shield", __iconNode$p);
+const Send = createLucideIcon("send", __iconNode$p);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27060,6 +26991,39 @@ const Shield = createLucideIcon("shield", __iconNode$p);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$o = [
+  [
+    "path",
+    {
+      d: "M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z",
+      key: "1qme2f"
+    }
+  ],
+  ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
+];
+const Settings = createLucideIcon("settings", __iconNode$o);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$n = [
+  [
+    "path",
+    {
+      d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+      key: "oel41y"
+    }
+  ]
+];
+const Shield = createLucideIcon("shield", __iconNode$n);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$m = [
   ["line", { x1: "21", x2: "14", y1: "4", y2: "4", key: "obuewd" }],
   ["line", { x1: "10", x2: "3", y1: "4", y2: "4", key: "1q6298" }],
   ["line", { x1: "21", x2: "12", y1: "12", y2: "12", key: "1iu8h1" }],
@@ -27070,14 +27034,14 @@ const __iconNode$o = [
   ["line", { x1: "8", x2: "8", y1: "10", y2: "14", key: "1i6ji0" }],
   ["line", { x1: "16", x2: "16", y1: "18", y2: "22", key: "1lctlv" }]
 ];
-const SlidersHorizontal = createLucideIcon("sliders-horizontal", __iconNode$o);
+const SlidersHorizontal = createLucideIcon("sliders-horizontal", __iconNode$m);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$n = [
+const __iconNode$l = [
   [
     "path",
     {
@@ -27090,35 +27054,7 @@ const __iconNode$n = [
   ["path", { d: "M4 17v2", key: "vumght" }],
   ["path", { d: "M5 18H3", key: "zchphs" }]
 ];
-const Sparkles = createLucideIcon("sparkles", __iconNode$n);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$m = [
-  ["path", { d: "M21 10.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.5", key: "1uzm8b" }],
-  ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
-];
-const SquareCheckBig = createLucideIcon("square-check-big", __iconNode$m);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$l = [
-  ["path", { d: "M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7", key: "1m0v6g" }],
-  [
-    "path",
-    {
-      d: "M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z",
-      key: "ohrbg2"
-    }
-  ]
-];
-const SquarePen = createLucideIcon("square-pen", __iconNode$l);
+const Sparkles = createLucideIcon("sparkles", __iconNode$l);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27126,9 +27062,10 @@ const SquarePen = createLucideIcon("square-pen", __iconNode$l);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$k = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }]
+  ["path", { d: "M21 10.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.5", key: "1uzm8b" }],
+  ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
 ];
-const Square = createLucideIcon("square", __iconNode$k);
+const SquareCheckBig = createLucideIcon("square-check-big", __iconNode$k);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27136,6 +27073,16 @@ const Square = createLucideIcon("square", __iconNode$k);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$j = [
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }]
+];
+const Square = createLucideIcon("square", __iconNode$j);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$i = [
   [
     "path",
     {
@@ -27144,21 +27091,7 @@ const __iconNode$j = [
     }
   ]
 ];
-const Star = createLucideIcon("star", __iconNode$j);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$i = [
-  ["path", { d: "M11 2v2", key: "1539x4" }],
-  ["path", { d: "M5 2v2", key: "1yf1q8" }],
-  ["path", { d: "M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1", key: "rb5t3r" }],
-  ["path", { d: "M8 15a6 6 0 0 0 12 0v-3", key: "x18d4x" }],
-  ["circle", { cx: "20", cy: "10", r: "2", key: "ts1r5v" }]
-];
-const Stethoscope = createLucideIcon("stethoscope", __iconNode$i);
+const Star = createLucideIcon("star", __iconNode$i);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27166,6 +27099,20 @@ const Stethoscope = createLucideIcon("stethoscope", __iconNode$i);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$h = [
+  ["path", { d: "M11 2v2", key: "1539x4" }],
+  ["path", { d: "M5 2v2", key: "1yf1q8" }],
+  ["path", { d: "M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1", key: "rb5t3r" }],
+  ["path", { d: "M8 15a6 6 0 0 0 12 0v-3", key: "x18d4x" }],
+  ["circle", { cx: "20", cy: "10", r: "2", key: "ts1r5v" }]
+];
+const Stethoscope = createLucideIcon("stethoscope", __iconNode$h);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$g = [
   ["circle", { cx: "12", cy: "12", r: "4", key: "4exip2" }],
   ["path", { d: "M12 2v2", key: "tus03m" }],
   ["path", { d: "M12 20v2", key: "1lh1kg" }],
@@ -27176,14 +27123,14 @@ const __iconNode$h = [
   ["path", { d: "m6.34 17.66-1.41 1.41", key: "1m8zz5" }],
   ["path", { d: "m19.07 4.93-1.41 1.41", key: "1shlcs" }]
 ];
-const Sun = createLucideIcon("sun", __iconNode$h);
+const Sun = createLucideIcon("sun", __iconNode$g);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$g = [
+const __iconNode$f = [
   [
     "path",
     {
@@ -27192,14 +27139,14 @@ const __iconNode$g = [
     }
   ]
 ];
-const Table2 = createLucideIcon("table-2", __iconNode$g);
+const Table2 = createLucideIcon("table-2", __iconNode$f);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$f = [
+const __iconNode$e = [
   ["path", { d: "M17 14V2", key: "8ymqnk" }],
   [
     "path",
@@ -27209,14 +27156,14 @@ const __iconNode$f = [
     }
   ]
 ];
-const ThumbsDown = createLucideIcon("thumbs-down", __iconNode$f);
+const ThumbsDown = createLucideIcon("thumbs-down", __iconNode$e);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$e = [
+const __iconNode$d = [
   ["path", { d: "M7 10v12", key: "1qc93n" }],
   [
     "path",
@@ -27226,21 +27173,7 @@ const __iconNode$e = [
     }
   ]
 ];
-const ThumbsUp = createLucideIcon("thumbs-up", __iconNode$e);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$d = [
-  ["path", { d: "M3 6h18", key: "d0wm0j" }],
-  ["path", { d: "M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6", key: "4alrt4" }],
-  ["path", { d: "M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2", key: "v07s0e" }],
-  ["line", { x1: "10", x2: "10", y1: "11", y2: "17", key: "1uufr5" }],
-  ["line", { x1: "14", x2: "14", y1: "11", y2: "17", key: "xtxkd" }]
-];
-const Trash2 = createLucideIcon("trash-2", __iconNode$d);
+const ThumbsUp = createLucideIcon("thumbs-up", __iconNode$d);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27248,10 +27181,13 @@ const Trash2 = createLucideIcon("trash-2", __iconNode$d);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$c = [
-  ["path", { d: "M16 17h6v-6", key: "t6n2it" }],
-  ["path", { d: "m22 17-8.5-8.5-5 5L2 7", key: "x473p" }]
+  ["path", { d: "M3 6h18", key: "d0wm0j" }],
+  ["path", { d: "M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6", key: "4alrt4" }],
+  ["path", { d: "M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2", key: "v07s0e" }],
+  ["line", { x1: "10", x2: "10", y1: "11", y2: "17", key: "1uufr5" }],
+  ["line", { x1: "14", x2: "14", y1: "11", y2: "17", key: "xtxkd" }]
 ];
-const TrendingDown = createLucideIcon("trending-down", __iconNode$c);
+const Trash2 = createLucideIcon("trash-2", __iconNode$c);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27259,10 +27195,10 @@ const TrendingDown = createLucideIcon("trending-down", __iconNode$c);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$b = [
-  ["path", { d: "M16 7h6v6", key: "box55l" }],
-  ["path", { d: "m22 7-8.5 8.5-5-5L2 17", key: "1t1m79" }]
+  ["path", { d: "M16 17h6v-6", key: "t6n2it" }],
+  ["path", { d: "m22 17-8.5-8.5-5 5L2 7", key: "x473p" }]
 ];
-const TrendingUp = createLucideIcon("trending-up", __iconNode$b);
+const TrendingDown = createLucideIcon("trending-down", __iconNode$b);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27270,6 +27206,17 @@ const TrendingUp = createLucideIcon("trending-up", __iconNode$b);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$a = [
+  ["path", { d: "M16 7h6v6", key: "box55l" }],
+  ["path", { d: "m22 7-8.5 8.5-5-5L2 17", key: "1t1m79" }]
+];
+const TrendingUp = createLucideIcon("trending-up", __iconNode$a);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$9 = [
   [
     "path",
     {
@@ -27280,18 +27227,7 @@ const __iconNode$a = [
   ["path", { d: "M12 9v4", key: "juzpu7" }],
   ["path", { d: "M12 17h.01", key: "p32p05" }]
 ];
-const TriangleAlert = createLucideIcon("triangle-alert", __iconNode$a);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$9 = [
-  ["path", { d: "M6 4v6a6 6 0 0 0 12 0V4", key: "9kb039" }],
-  ["line", { x1: "4", x2: "20", y1: "20", y2: "20", key: "nun2al" }]
-];
-const Underline$1 = createLucideIcon("underline", __iconNode$9);
+const TriangleAlert = createLucideIcon("triangle-alert", __iconNode$9);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27299,11 +27235,10 @@ const Underline$1 = createLucideIcon("underline", __iconNode$9);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$8 = [
-  ["path", { d: "M12 3v12", key: "1x0j5s" }],
-  ["path", { d: "m17 8-5-5-5 5", key: "7q97r8" }],
-  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }]
+  ["path", { d: "M6 4v6a6 6 0 0 0 12 0V4", key: "9kb039" }],
+  ["line", { x1: "4", x2: "20", y1: "20", y2: "20", key: "nun2al" }]
 ];
-const Upload = createLucideIcon("upload", __iconNode$8);
+const Underline$1 = createLucideIcon("underline", __iconNode$8);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27311,6 +27246,18 @@ const Upload = createLucideIcon("upload", __iconNode$8);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$7 = [
+  ["path", { d: "M12 3v12", key: "1x0j5s" }],
+  ["path", { d: "m17 8-5-5-5 5", key: "7q97r8" }],
+  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }]
+];
+const Upload = createLucideIcon("upload", __iconNode$7);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$6 = [
   ["path", { d: "M10 15H6a4 4 0 0 0-4 4v2", key: "1nfge6" }],
   ["path", { d: "m14.305 16.53.923-.382", key: "1itpsq" }],
   ["path", { d: "m15.228 13.852-.923-.383", key: "eplpkm" }],
@@ -27323,20 +27270,7 @@ const __iconNode$7 = [
   ["circle", { cx: "18", cy: "15", r: "3", key: "gjjjvw" }],
   ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }]
 ];
-const UserCog = createLucideIcon("user-cog", __iconNode$7);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$6 = [
-  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
-  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }],
-  ["line", { x1: "19", x2: "19", y1: "8", y2: "14", key: "1bvyxn" }],
-  ["line", { x1: "22", x2: "16", y1: "11", y2: "11", key: "1shjgl" }]
-];
-const UserPlus = createLucideIcon("user-plus", __iconNode$6);
+const UserCog = createLucideIcon("user-cog", __iconNode$6);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27344,10 +27278,12 @@ const UserPlus = createLucideIcon("user-plus", __iconNode$6);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$5 = [
-  ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
-  ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
+  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
+  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }],
+  ["line", { x1: "19", x2: "19", y1: "8", y2: "14", key: "1bvyxn" }],
+  ["line", { x1: "22", x2: "16", y1: "11", y2: "11", key: "1shjgl" }]
 ];
-const User = createLucideIcon("user", __iconNode$5);
+const UserPlus = createLucideIcon("user-plus", __iconNode$5);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27355,12 +27291,10 @@ const User = createLucideIcon("user", __iconNode$5);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$4 = [
-  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
-  ["path", { d: "M16 3.128a4 4 0 0 1 0 7.744", key: "16gr8j" }],
-  ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }],
-  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }]
+  ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
+  ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
 ];
-const Users = createLucideIcon("users", __iconNode$4);
+const User = createLucideIcon("user", __iconNode$4);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27368,16 +27302,12 @@ const Users = createLucideIcon("users", __iconNode$4);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$3 = [
-  [
-    "path",
-    {
-      d: "m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5",
-      key: "ftymec"
-    }
-  ],
-  ["rect", { x: "2", y: "6", width: "14", height: "12", rx: "2", key: "158x01" }]
+  ["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }],
+  ["path", { d: "M16 3.128a4 4 0 0 1 0 7.744", key: "16gr8j" }],
+  ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }],
+  ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }]
 ];
-const Video = createLucideIcon("video", __iconNode$3);
+const Users = createLucideIcon("users", __iconNode$3);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -27388,13 +27318,13 @@ const __iconNode$2 = [
   [
     "path",
     {
-      d: "M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1",
-      key: "18etb6"
+      d: "m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5",
+      key: "ftymec"
     }
   ],
-  ["path", { d: "M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4", key: "xoc0q4" }]
+  ["rect", { x: "2", y: "6", width: "14", height: "12", rx: "2", key: "158x01" }]
 ];
-const Wallet = createLucideIcon("wallet", __iconNode$2);
+const Video = createLucideIcon("video", __iconNode$2);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -29898,7 +29828,7 @@ function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 function Sheet({ ...props }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root$b, { "data-slot": "sheet", ...props });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root$8, { "data-slot": "sheet", ...props });
 }
 function SheetPortal({
   ...props
@@ -29930,7 +29860,7 @@ function SheetContent({
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(SheetPortal, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(SheetOverlay, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      Content$3,
+      Content$2,
       {
         "data-slot": "sheet-content",
         className: cn(
@@ -40866,7 +40796,7 @@ var Arrow$1 = reactExports.forwardRef((props, forwardedRef) => {
   );
 });
 Arrow$1.displayName = NAME$3;
-var Root$a = Arrow$1;
+var Root$7 = Arrow$1;
 function useSize(element) {
   const [size2, setSize] = reactExports.useState(void 0);
   useLayoutEffect2(() => {
@@ -40929,8 +40859,8 @@ var PopperAnchor = reactExports.forwardRef(
   }
 );
 PopperAnchor.displayName = ANCHOR_NAME$1;
-var CONTENT_NAME$7 = "PopperContent";
-var [PopperContentProvider, useContentContext] = createPopperContext(CONTENT_NAME$7);
+var CONTENT_NAME$5 = "PopperContent";
+var [PopperContentProvider, useContentContext] = createPopperContext(CONTENT_NAME$5);
 var PopperContent = reactExports.forwardRef(
   (props, forwardedRef) => {
     var _a2, _b2, _c2, _d2, _e2, _f2;
@@ -40950,7 +40880,7 @@ var PopperContent = reactExports.forwardRef(
       onPlaced,
       ...contentProps
     } = props;
-    const context = usePopperContext(CONTENT_NAME$7, __scopePopper);
+    const context = usePopperContext(CONTENT_NAME$5, __scopePopper);
     const [content, setContent2] = reactExports.useState(null);
     const composedRefs = useComposedRefs$1(forwardedRef, (node) => setContent2(node));
     const [arrow2, setArrow] = reactExports.useState(null);
@@ -41073,7 +41003,7 @@ var PopperContent = reactExports.forwardRef(
     );
   }
 );
-PopperContent.displayName = CONTENT_NAME$7;
+PopperContent.displayName = CONTENT_NAME$5;
 var ARROW_NAME$4 = "PopperArrow";
 var OPPOSITE_SIDE = {
   top: "bottom",
@@ -41113,7 +41043,7 @@ var PopperArrow = reactExports.forwardRef(function PopperArrow2(props, forwarded
           visibility: contentContext.shouldHideArrow ? "hidden" : void 0
         },
         children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Root$a,
+          Root$7,
           {
             ...arrowProps,
             ref: forwardedRef,
@@ -41168,9 +41098,9 @@ function getSideAndAlignFromPlacement(placement) {
   const [side, align = "center"] = placement.split("-");
   return [side, align];
 }
-var Root2$4 = Popper;
+var Root2$3 = Popper;
 var Anchor = PopperAnchor;
-var Content$2 = PopperContent;
+var Content$1 = PopperContent;
 var Arrow = PopperArrow;
 var VISUALLY_HIDDEN_STYLES = Object.freeze({
   // See: https://github.com/twbs/bootstrap/blob/main/scss/mixins/_visually-hidden.scss
@@ -41199,7 +41129,7 @@ var VisuallyHidden = reactExports.forwardRef(
   }
 );
 VisuallyHidden.displayName = NAME$2;
-var Root$9 = VisuallyHidden;
+var Root$6 = VisuallyHidden;
 var [createTooltipContext] = createContextScope$1("Tooltip", [
   createPopperScope
 ]);
@@ -41314,7 +41244,7 @@ var Tooltip$2 = (props) => {
       }
     };
   }, []);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$4, { ...popperScope, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$3, { ...popperScope, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     TooltipContextProvider,
     {
       scope: __scopeTooltip,
@@ -41343,12 +41273,12 @@ var Tooltip$2 = (props) => {
   ) });
 };
 Tooltip$2.displayName = TOOLTIP_NAME;
-var TRIGGER_NAME$6 = "TooltipTrigger";
+var TRIGGER_NAME$4 = "TooltipTrigger";
 var TooltipTrigger$1 = reactExports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeTooltip, ...triggerProps } = props;
-    const context = useTooltipContext(TRIGGER_NAME$6, __scopeTooltip);
-    const providerContext = useTooltipProviderContext(TRIGGER_NAME$6, __scopeTooltip);
+    const context = useTooltipContext(TRIGGER_NAME$4, __scopeTooltip);
+    const providerContext = useTooltipProviderContext(TRIGGER_NAME$4, __scopeTooltip);
     const popperScope = usePopperScope$2(__scopeTooltip);
     const ref = reactExports.useRef(null);
     const composedRefs = useComposedRefs$1(forwardedRef, ref, context.onTriggerChange);
@@ -41392,7 +41322,7 @@ var TooltipTrigger$1 = reactExports.forwardRef(
     ) });
   }
 );
-TooltipTrigger$1.displayName = TRIGGER_NAME$6;
+TooltipTrigger$1.displayName = TRIGGER_NAME$4;
 var PORTAL_NAME$3 = "TooltipPortal";
 var [PortalProvider$1, usePortalContext$1] = createTooltipContext(PORTAL_NAME$3, {
   forceMount: void 0
@@ -41403,18 +41333,18 @@ var TooltipPortal = (props) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(PortalProvider$1, { scope: __scopeTooltip, forceMount, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Portal$4, { asChild: true, container: container2, children }) }) });
 };
 TooltipPortal.displayName = PORTAL_NAME$3;
-var CONTENT_NAME$6 = "TooltipContent";
+var CONTENT_NAME$4 = "TooltipContent";
 var TooltipContent$1 = reactExports.forwardRef(
   (props, forwardedRef) => {
-    const portalContext = usePortalContext$1(CONTENT_NAME$6, props.__scopeTooltip);
+    const portalContext = usePortalContext$1(CONTENT_NAME$4, props.__scopeTooltip);
     const { forceMount = portalContext.forceMount, side = "top", ...contentProps } = props;
-    const context = useTooltipContext(CONTENT_NAME$6, props.__scopeTooltip);
+    const context = useTooltipContext(CONTENT_NAME$4, props.__scopeTooltip);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(Presence, { present: forceMount || context.open, children: context.disableHoverableContent ? /* @__PURE__ */ jsxRuntimeExports.jsx(TooltipContentImpl, { side, ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ jsxRuntimeExports.jsx(TooltipContentHoverable, { side, ...contentProps, ref: forwardedRef }) });
   }
 );
 var TooltipContentHoverable = reactExports.forwardRef((props, forwardedRef) => {
-  const context = useTooltipContext(CONTENT_NAME$6, props.__scopeTooltip);
-  const providerContext = useTooltipProviderContext(CONTENT_NAME$6, props.__scopeTooltip);
+  const context = useTooltipContext(CONTENT_NAME$4, props.__scopeTooltip);
+  const providerContext = useTooltipProviderContext(CONTENT_NAME$4, props.__scopeTooltip);
   const ref = reactExports.useRef(null);
   const composedRefs = useComposedRefs$1(forwardedRef, ref);
   const [pointerGraceArea, setPointerGraceArea] = reactExports.useState(null);
@@ -41485,7 +41415,7 @@ var TooltipContentImpl = reactExports.forwardRef(
       onPointerDownOutside,
       ...contentProps
     } = props;
-    const context = useTooltipContext(CONTENT_NAME$6, __scopeTooltip);
+    const context = useTooltipContext(CONTENT_NAME$4, __scopeTooltip);
     const popperScope = usePopperScope$2(__scopeTooltip);
     const { onClose } = context;
     reactExports.useEffect(() => {
@@ -41512,7 +41442,7 @@ var TooltipContentImpl = reactExports.forwardRef(
         onFocusOutside: (event) => event.preventDefault(),
         onDismiss: onClose,
         children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          Content$2,
+          Content$1,
           {
             "data-state": context.stateAttribute,
             ...popperScope,
@@ -41531,7 +41461,7 @@ var TooltipContentImpl = reactExports.forwardRef(
             },
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(Slottable, { children }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(VisuallyHiddenContentContextProvider, { scope: __scopeTooltip, isInside: true, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Root$9, { id: context.contentId, role: "tooltip", children: ariaLabel || children }) })
+              /* @__PURE__ */ jsxRuntimeExports.jsx(VisuallyHiddenContentContextProvider, { scope: __scopeTooltip, isInside: true, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Root$6, { id: context.contentId, role: "tooltip", children: ariaLabel || children }) })
             ]
           }
         )
@@ -41539,7 +41469,7 @@ var TooltipContentImpl = reactExports.forwardRef(
     );
   }
 );
-TooltipContent$1.displayName = CONTENT_NAME$6;
+TooltipContent$1.displayName = CONTENT_NAME$4;
 var ARROW_NAME$3 = "TooltipArrow";
 var TooltipArrow = reactExports.forwardRef(
   (props, forwardedRef) => {
@@ -41670,9 +41600,9 @@ function getHullPresorted(points) {
 }
 var Provider = TooltipProvider$1;
 var Root3$1 = Tooltip$2;
-var Trigger$4 = TooltipTrigger$1;
+var Trigger$3 = TooltipTrigger$1;
 var Portal$2 = TooltipPortal;
-var Content2$4 = TooltipContent$1;
+var Content2$3 = TooltipContent$1;
 var Arrow2$1 = TooltipArrow;
 function TooltipProvider({
   delayDuration = 0,
@@ -41695,7 +41625,7 @@ function Tooltip$1({
 function TooltipTrigger({
   ...props
 }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Trigger$4, { "data-slot": "tooltip-trigger", ...props });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Trigger$3, { "data-slot": "tooltip-trigger", ...props });
 }
 function TooltipContent({
   className,
@@ -41704,7 +41634,7 @@ function TooltipContent({
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Portal$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    Content2$4,
+    Content2$3,
     {
       "data-slot": "tooltip-content",
       sideOffset,
@@ -41724,10 +41654,8 @@ const ROUTES = {
   DASHBOARD: "/",
   PATIENTS: "/patients",
   APPOINTMENTS: "/appointments",
-  PRESCRIPTIONS: "/prescriptions",
   AI_ASSISTANT: "/ai-assistant",
   BILLING: "/billing",
-  REPORTS: "/reports",
   SETTINGS: "/settings",
   STAFF: "/staff",
   PRO: "/pro",
@@ -41772,12 +41700,6 @@ const NAV_ITEMS = [
     roles: ["main-admin", "doctor", "receptionist", "nurse"]
   },
   {
-    path: ROUTES.PRESCRIPTIONS,
-    label: "Prescriptions",
-    icon: "Pill",
-    roles: ["main-admin", "doctor", "pharmacist", "nurse", "billing"]
-  },
-  {
     path: ROUTES.AI_ASSISTANT,
     label: "AI Assistant",
     icon: "Brain",
@@ -41788,12 +41710,6 @@ const NAV_ITEMS = [
     label: "Billing",
     icon: "CreditCard",
     roles: ["main-admin", "billing"]
-  },
-  {
-    path: ROUTES.REPORTS,
-    label: "Reports",
-    icon: "BarChart3",
-    roles: ["main-admin", "doctor", "billing"]
   },
   {
     path: ROUTES.SETTINGS,
@@ -42354,15 +42270,15 @@ function useDirection(localDir) {
 var ENTRY_FOCUS = "rovingFocusGroup.onEntryFocus";
 var EVENT_OPTIONS = { bubbles: false, cancelable: true };
 var GROUP_NAME$3 = "RovingFocusGroup";
-var [Collection$4, useCollection$4, createCollectionScope$4] = createCollection(GROUP_NAME$3);
+var [Collection$2, useCollection$2, createCollectionScope$2] = createCollection(GROUP_NAME$3);
 var [createRovingFocusGroupContext, createRovingFocusGroupScope] = createContextScope$1(
   GROUP_NAME$3,
-  [createCollectionScope$4]
+  [createCollectionScope$2]
 );
 var [RovingFocusProvider, useRovingFocusContext] = createRovingFocusGroupContext(GROUP_NAME$3);
 var RovingFocusGroup = reactExports.forwardRef(
   (props, forwardedRef) => {
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$4.Provider, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$4.Slot, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RovingFocusGroupImpl, { ...props, ref: forwardedRef }) }) });
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$2.Provider, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$2.Slot, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RovingFocusGroupImpl, { ...props, ref: forwardedRef }) }) });
   }
 );
 RovingFocusGroup.displayName = GROUP_NAME$3;
@@ -42390,7 +42306,7 @@ var RovingFocusGroupImpl = reactExports.forwardRef((props, forwardedRef) => {
   });
   const [isTabbingBackOut, setIsTabbingBackOut] = reactExports.useState(false);
   const handleEntryFocus = useCallbackRef$1(onEntryFocus);
-  const getItems = useCollection$4(__scopeRovingFocusGroup);
+  const getItems = useCollection$2(__scopeRovingFocusGroup);
   const isClickFocusRef = reactExports.useRef(false);
   const [focusableItemsCount, setFocusableItemsCount] = reactExports.useState(0);
   reactExports.useEffect(() => {
@@ -42456,7 +42372,7 @@ var RovingFocusGroupImpl = reactExports.forwardRef((props, forwardedRef) => {
     }
   );
 });
-var ITEM_NAME$4 = "RovingFocusGroupItem";
+var ITEM_NAME$3 = "RovingFocusGroupItem";
 var RovingFocusGroupItem = reactExports.forwardRef(
   (props, forwardedRef) => {
     const {
@@ -42469,9 +42385,9 @@ var RovingFocusGroupItem = reactExports.forwardRef(
     } = props;
     const autoId = useId();
     const id2 = tabStopId || autoId;
-    const context = useRovingFocusContext(ITEM_NAME$4, __scopeRovingFocusGroup);
+    const context = useRovingFocusContext(ITEM_NAME$3, __scopeRovingFocusGroup);
     const isCurrentTabStop = context.currentTabStopId === id2;
-    const getItems = useCollection$4(__scopeRovingFocusGroup);
+    const getItems = useCollection$2(__scopeRovingFocusGroup);
     const { onFocusableItemAdd, onFocusableItemRemove, currentTabStopId } = context;
     reactExports.useEffect(() => {
       if (focusable) {
@@ -42480,7 +42396,7 @@ var RovingFocusGroupItem = reactExports.forwardRef(
       }
     }, [focusable, onFocusableItemAdd, onFocusableItemRemove]);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Collection$4.ItemSlot,
+      Collection$2.ItemSlot,
       {
         scope: __scopeRovingFocusGroup,
         id: id2,
@@ -42526,7 +42442,7 @@ var RovingFocusGroupItem = reactExports.forwardRef(
     );
   }
 );
-RovingFocusGroupItem.displayName = ITEM_NAME$4;
+RovingFocusGroupItem.displayName = ITEM_NAME$3;
 var MAP_KEY_TO_FOCUS_INTENT = {
   ArrowLeft: "prev",
   ArrowUp: "prev",
@@ -42558,8 +42474,8 @@ function focusFirst$1(candidates, preventScroll = false) {
 function wrapArray$2(array2, startIndex) {
   return array2.map((_2, index2) => array2[(startIndex + index2) % array2.length]);
 }
-var Root$8 = RovingFocusGroup;
-var Item$3 = RovingFocusGroupItem;
+var Root$5 = RovingFocusGroup;
+var Item$2 = RovingFocusGroupItem;
 var SELECTION_KEYS$1 = ["Enter", " "];
 var FIRST_KEYS = ["ArrowDown", "PageUp", "Home"];
 var LAST_KEYS = ["ArrowUp", "PageDown", "End"];
@@ -42573,9 +42489,9 @@ var SUB_CLOSE_KEYS = {
   rtl: ["ArrowRight"]
 };
 var MENU_NAME = "Menu";
-var [Collection$3, useCollection$3, createCollectionScope$3] = createCollection(MENU_NAME);
+var [Collection$1, useCollection$1, createCollectionScope$1] = createCollection(MENU_NAME);
 var [createMenuContext, createMenuScope] = createContextScope$1(MENU_NAME, [
-  createCollectionScope$3,
+  createCollectionScope$1,
   createPopperScope,
   createRovingFocusGroupScope
 ]);
@@ -42604,7 +42520,7 @@ var Menu = (props) => {
       document.removeEventListener("pointermove", handlePointer, { capture: true });
     };
   }, []);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$4, { ...popperScope, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$3, { ...popperScope, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
     MenuProvider,
     {
       scope: __scopeMenu,
@@ -42646,20 +42562,20 @@ var MenuPortal = (props) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(PortalProvider, { scope: __scopeMenu, forceMount, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Portal$4, { asChild: true, container: container2, children }) }) });
 };
 MenuPortal.displayName = PORTAL_NAME$2;
-var CONTENT_NAME$5 = "MenuContent";
-var [MenuContentProvider, useMenuContentContext] = createMenuContext(CONTENT_NAME$5);
+var CONTENT_NAME$3 = "MenuContent";
+var [MenuContentProvider, useMenuContentContext] = createMenuContext(CONTENT_NAME$3);
 var MenuContent = reactExports.forwardRef(
   (props, forwardedRef) => {
-    const portalContext = usePortalContext(CONTENT_NAME$5, props.__scopeMenu);
+    const portalContext = usePortalContext(CONTENT_NAME$3, props.__scopeMenu);
     const { forceMount = portalContext.forceMount, ...contentProps } = props;
-    const context = useMenuContext(CONTENT_NAME$5, props.__scopeMenu);
-    const rootContext = useMenuRootContext(CONTENT_NAME$5, props.__scopeMenu);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$3.Provider, { scope: props.__scopeMenu, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$3.Slot, { scope: props.__scopeMenu, children: rootContext.modal ? /* @__PURE__ */ jsxRuntimeExports.jsx(MenuRootContentModal, { ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ jsxRuntimeExports.jsx(MenuRootContentNonModal, { ...contentProps, ref: forwardedRef }) }) }) });
+    const context = useMenuContext(CONTENT_NAME$3, props.__scopeMenu);
+    const rootContext = useMenuRootContext(CONTENT_NAME$3, props.__scopeMenu);
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.Provider, { scope: props.__scopeMenu, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.Slot, { scope: props.__scopeMenu, children: rootContext.modal ? /* @__PURE__ */ jsxRuntimeExports.jsx(MenuRootContentModal, { ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ jsxRuntimeExports.jsx(MenuRootContentNonModal, { ...contentProps, ref: forwardedRef }) }) }) });
   }
 );
 var MenuRootContentModal = reactExports.forwardRef(
   (props, forwardedRef) => {
-    const context = useMenuContext(CONTENT_NAME$5, props.__scopeMenu);
+    const context = useMenuContext(CONTENT_NAME$3, props.__scopeMenu);
     const ref = reactExports.useRef(null);
     const composedRefs = useComposedRefs$1(forwardedRef, ref);
     reactExports.useEffect(() => {
@@ -42685,7 +42601,7 @@ var MenuRootContentModal = reactExports.forwardRef(
   }
 );
 var MenuRootContentNonModal = reactExports.forwardRef((props, forwardedRef) => {
-  const context = useMenuContext(CONTENT_NAME$5, props.__scopeMenu);
+  const context = useMenuContext(CONTENT_NAME$3, props.__scopeMenu);
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     MenuContentImpl,
     {
@@ -42717,11 +42633,11 @@ var MenuContentImpl = reactExports.forwardRef(
       disableOutsideScroll,
       ...contentProps
     } = props;
-    const context = useMenuContext(CONTENT_NAME$5, __scopeMenu);
-    const rootContext = useMenuRootContext(CONTENT_NAME$5, __scopeMenu);
+    const context = useMenuContext(CONTENT_NAME$3, __scopeMenu);
+    const rootContext = useMenuRootContext(CONTENT_NAME$3, __scopeMenu);
     const popperScope = usePopperScope$1(__scopeMenu);
     const rovingFocusGroupScope = useRovingFocusGroupScope$1(__scopeMenu);
-    const getItems = useCollection$3(__scopeMenu);
+    const getItems = useCollection$1(__scopeMenu);
     const [currentItemId, setCurrentItemId] = reactExports.useState(null);
     const contentRef = reactExports.useRef(null);
     const composedRefs = useComposedRefs$1(forwardedRef, contentRef, context.onContentChange);
@@ -42812,7 +42728,7 @@ var MenuContentImpl = reactExports.forwardRef(
                 onInteractOutside,
                 onDismiss,
                 children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Root$8,
+                  Root$5,
                   {
                     asChild: true,
                     ...rovingFocusGroupScope,
@@ -42826,7 +42742,7 @@ var MenuContentImpl = reactExports.forwardRef(
                     }),
                     preventScrollOnEntryFocus: true,
                     children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      Content$2,
+                      Content$1,
                       {
                         role: "menu",
                         "aria-orientation": "vertical",
@@ -42885,7 +42801,7 @@ var MenuContentImpl = reactExports.forwardRef(
     );
   }
 );
-MenuContent.displayName = CONTENT_NAME$5;
+MenuContent.displayName = CONTENT_NAME$3;
 var GROUP_NAME$2 = "MenuGroup";
 var MenuGroup = reactExports.forwardRef(
   (props, forwardedRef) => {
@@ -42902,14 +42818,14 @@ var MenuLabel = reactExports.forwardRef(
   }
 );
 MenuLabel.displayName = LABEL_NAME$2;
-var ITEM_NAME$3 = "MenuItem";
+var ITEM_NAME$2 = "MenuItem";
 var ITEM_SELECT = "menu.itemSelect";
 var MenuItem = reactExports.forwardRef(
   (props, forwardedRef) => {
     const { disabled = false, onSelect, ...itemProps } = props;
     const ref = reactExports.useRef(null);
-    const rootContext = useMenuRootContext(ITEM_NAME$3, props.__scopeMenu);
-    const contentContext = useMenuContentContext(ITEM_NAME$3, props.__scopeMenu);
+    const rootContext = useMenuRootContext(ITEM_NAME$2, props.__scopeMenu);
+    const contentContext = useMenuContentContext(ITEM_NAME$2, props.__scopeMenu);
     const composedRefs = useComposedRefs$1(forwardedRef, ref);
     const isPointerDownRef = reactExports.useRef(false);
     const handleSelect = () => {
@@ -42953,11 +42869,11 @@ var MenuItem = reactExports.forwardRef(
     );
   }
 );
-MenuItem.displayName = ITEM_NAME$3;
+MenuItem.displayName = ITEM_NAME$2;
 var MenuItemImpl = reactExports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenu, disabled = false, textValue, ...itemProps } = props;
-    const contentContext = useMenuContentContext(ITEM_NAME$3, __scopeMenu);
+    const contentContext = useMenuContentContext(ITEM_NAME$2, __scopeMenu);
     const rovingFocusGroupScope = useRovingFocusGroupScope$1(__scopeMenu);
     const ref = reactExports.useRef(null);
     const composedRefs = useComposedRefs$1(forwardedRef, ref);
@@ -42970,12 +42886,12 @@ var MenuItemImpl = reactExports.forwardRef(
       }
     }, [itemProps.children]);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Collection$3.ItemSlot,
+      Collection$1.ItemSlot,
       {
         scope: __scopeMenu,
         disabled,
         textValue: textValue ?? textContent,
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(Item$3, { asChild: true, ...rovingFocusGroupScope, focusable: !disabled, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        children: /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { asChild: true, ...rovingFocusGroupScope, focusable: !disabled, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
           Primitive$1.div,
           {
             role: "menuitem",
@@ -43233,14 +43149,14 @@ MenuSubTrigger.displayName = SUB_TRIGGER_NAME$1;
 var SUB_CONTENT_NAME$1 = "MenuSubContent";
 var MenuSubContent = reactExports.forwardRef(
   (props, forwardedRef) => {
-    const portalContext = usePortalContext(CONTENT_NAME$5, props.__scopeMenu);
+    const portalContext = usePortalContext(CONTENT_NAME$3, props.__scopeMenu);
     const { forceMount = portalContext.forceMount, ...subContentProps } = props;
-    const context = useMenuContext(CONTENT_NAME$5, props.__scopeMenu);
-    const rootContext = useMenuRootContext(CONTENT_NAME$5, props.__scopeMenu);
+    const context = useMenuContext(CONTENT_NAME$3, props.__scopeMenu);
+    const rootContext = useMenuRootContext(CONTENT_NAME$3, props.__scopeMenu);
     const subContext = useMenuSubContext(SUB_CONTENT_NAME$1, props.__scopeMenu);
     const ref = reactExports.useRef(null);
     const composedRefs = useComposedRefs$1(forwardedRef, ref);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$3.Provider, { scope: props.__scopeMenu, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$3.Slot, { scope: props.__scopeMenu, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.Provider, { scope: props.__scopeMenu, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.Slot, { scope: props.__scopeMenu, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       MenuContentImpl,
       {
         id: subContext.contentId,
@@ -43338,7 +43254,7 @@ function whenMouse(handler) {
 var Root3 = Menu;
 var Anchor2 = MenuAnchor;
 var Portal$1 = MenuPortal;
-var Content2$3 = MenuContent;
+var Content2$2 = MenuContent;
 var Group = MenuGroup;
 var Label$3 = MenuLabel;
 var Item2$1 = MenuItem;
@@ -43391,11 +43307,11 @@ var DropdownMenu$1 = (props) => {
   );
 };
 DropdownMenu$1.displayName = DROPDOWN_MENU_NAME;
-var TRIGGER_NAME$5 = "DropdownMenuTrigger";
+var TRIGGER_NAME$3 = "DropdownMenuTrigger";
 var DropdownMenuTrigger$1 = reactExports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDropdownMenu, disabled = false, ...triggerProps } = props;
-    const context = useDropdownMenuContext(TRIGGER_NAME$5, __scopeDropdownMenu);
+    const context = useDropdownMenuContext(TRIGGER_NAME$3, __scopeDropdownMenu);
     const menuScope = useMenuScope(__scopeDropdownMenu);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(Anchor2, { asChild: true, ...menuScope, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
       Primitive$1.button,
@@ -43426,7 +43342,7 @@ var DropdownMenuTrigger$1 = reactExports.forwardRef(
     ) });
   }
 );
-DropdownMenuTrigger$1.displayName = TRIGGER_NAME$5;
+DropdownMenuTrigger$1.displayName = TRIGGER_NAME$3;
 var PORTAL_NAME$1 = "DropdownMenuPortal";
 var DropdownMenuPortal = (props) => {
   const { __scopeDropdownMenu, ...portalProps } = props;
@@ -43434,15 +43350,15 @@ var DropdownMenuPortal = (props) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Portal$1, { ...menuScope, ...portalProps });
 };
 DropdownMenuPortal.displayName = PORTAL_NAME$1;
-var CONTENT_NAME$4 = "DropdownMenuContent";
+var CONTENT_NAME$2 = "DropdownMenuContent";
 var DropdownMenuContent$1 = reactExports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDropdownMenu, ...contentProps } = props;
-    const context = useDropdownMenuContext(CONTENT_NAME$4, __scopeDropdownMenu);
+    const context = useDropdownMenuContext(CONTENT_NAME$2, __scopeDropdownMenu);
     const menuScope = useMenuScope(__scopeDropdownMenu);
     const hasInteractedOutsideRef = reactExports.useRef(false);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Content2$3,
+      Content2$2,
       {
         id: context.contentId,
         "aria-labelledby": context.triggerId,
@@ -43476,7 +43392,7 @@ var DropdownMenuContent$1 = reactExports.forwardRef(
     );
   }
 );
-DropdownMenuContent$1.displayName = CONTENT_NAME$4;
+DropdownMenuContent$1.displayName = CONTENT_NAME$2;
 var GROUP_NAME$1 = "DropdownMenuGroup";
 var DropdownMenuGroup = reactExports.forwardRef(
   (props, forwardedRef) => {
@@ -43495,7 +43411,7 @@ var DropdownMenuLabel$1 = reactExports.forwardRef(
   }
 );
 DropdownMenuLabel$1.displayName = LABEL_NAME$1;
-var ITEM_NAME$2 = "DropdownMenuItem";
+var ITEM_NAME$1 = "DropdownMenuItem";
 var DropdownMenuItem$1 = reactExports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDropdownMenu, ...itemProps } = props;
@@ -43503,7 +43419,7 @@ var DropdownMenuItem$1 = reactExports.forwardRef(
     return /* @__PURE__ */ jsxRuntimeExports.jsx(Item2$1, { ...menuScope, ...itemProps, ref: forwardedRef });
   }
 );
-DropdownMenuItem$1.displayName = ITEM_NAME$2;
+DropdownMenuItem$1.displayName = ITEM_NAME$1;
 var CHECKBOX_ITEM_NAME = "DropdownMenuCheckboxItem";
 var DropdownMenuCheckboxItem = reactExports.forwardRef((props, forwardedRef) => {
   const { __scopeDropdownMenu, ...checkboxItemProps } = props;
@@ -43580,23 +43496,23 @@ var DropdownMenuSubContent = reactExports.forwardRef((props, forwardedRef) => {
   );
 });
 DropdownMenuSubContent.displayName = SUB_CONTENT_NAME;
-var Root2$3 = DropdownMenu$1;
-var Trigger$3 = DropdownMenuTrigger$1;
+var Root2$2 = DropdownMenu$1;
+var Trigger$2 = DropdownMenuTrigger$1;
 var Portal2 = DropdownMenuPortal;
-var Content2$2 = DropdownMenuContent$1;
+var Content2$1 = DropdownMenuContent$1;
 var Label2 = DropdownMenuLabel$1;
 var Item2 = DropdownMenuItem$1;
 var Separator2 = DropdownMenuSeparator$1;
 function DropdownMenu({
   ...props
 }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$3, { "data-slot": "dropdown-menu", ...props });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$2, { "data-slot": "dropdown-menu", ...props });
 }
 function DropdownMenuTrigger({
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Trigger$3,
+    Trigger$2,
     {
       "data-slot": "dropdown-menu-trigger",
       ...props
@@ -43609,7 +43525,7 @@ function DropdownMenuContent({
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Portal2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Content2$2,
+    Content2$1,
     {
       "data-slot": "dropdown-menu-content",
       sideOffset,
@@ -43718,10 +43634,8 @@ const PAGE_TITLES = {
   "/": "Dashboard",
   "/patients": "Patient Management",
   "/appointments": "Appointments",
-  "/prescriptions": "Prescriptions",
   "/ai-assistant": "AI Assistant",
   "/billing": "Billing & Payments",
-  "/reports": "Reports & Analytics",
   "/settings": "Clinic Settings"
 };
 function Topbar({
@@ -44166,7 +44080,7 @@ function Layout({ children }) {
     )
   ] });
 }
-const Route$k = createRootRoute({
+const Route$i = createRootRoute({
   component: RootComponent
 });
 function RootComponent() {
@@ -44687,19 +44601,19 @@ var ScrollAreaScrollbarImpl = reactExports.forwardRef((props, forwardedRef) => {
     }
   );
 });
-var THUMB_NAME$2 = "ScrollAreaThumb";
+var THUMB_NAME = "ScrollAreaThumb";
 var ScrollAreaThumb = reactExports.forwardRef(
   (props, forwardedRef) => {
     const { forceMount, ...thumbProps } = props;
-    const scrollbarContext = useScrollbarContext(THUMB_NAME$2, props.__scopeScrollArea);
+    const scrollbarContext = useScrollbarContext(THUMB_NAME, props.__scopeScrollArea);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(Presence, { present: forceMount || scrollbarContext.hasThumb, children: /* @__PURE__ */ jsxRuntimeExports.jsx(ScrollAreaThumbImpl, { ref: forwardedRef, ...thumbProps }) });
   }
 );
 var ScrollAreaThumbImpl = reactExports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeScrollArea, style: style2, ...thumbProps } = props;
-    const scrollAreaContext = useScrollAreaContext(THUMB_NAME$2, __scopeScrollArea);
-    const scrollbarContext = useScrollbarContext(THUMB_NAME$2, __scopeScrollArea);
+    const scrollAreaContext = useScrollAreaContext(THUMB_NAME, __scopeScrollArea);
+    const scrollbarContext = useScrollbarContext(THUMB_NAME, __scopeScrollArea);
     const { onThumbPositionChange } = scrollbarContext;
     const composedRef = useComposedRefs$1(
       forwardedRef,
@@ -44751,7 +44665,7 @@ var ScrollAreaThumbImpl = reactExports.forwardRef(
     );
   }
 );
-ScrollAreaThumb.displayName = THUMB_NAME$2;
+ScrollAreaThumb.displayName = THUMB_NAME;
 var CORNER_NAME = "ScrollAreaCorner";
 var ScrollAreaCorner = reactExports.forwardRef(
   (props, forwardedRef) => {
@@ -44819,7 +44733,7 @@ function getScrollPositionFromPointer(pointerPos, pointerOffset, sizes, dir = "l
   const maxPointerPos = sizes.scrollbar.size - sizes.scrollbar.paddingEnd - thumbOffsetFromEnd;
   const maxScrollPos = sizes.content - sizes.viewport;
   const scrollRange = dir === "ltr" ? [0, maxScrollPos] : [maxScrollPos * -1, 0];
-  const interpolate2 = linearScale$1([minPointerPos, maxPointerPos], scrollRange);
+  const interpolate2 = linearScale([minPointerPos, maxPointerPos], scrollRange);
   return interpolate2(pointerPos);
 }
 function getThumbOffsetFromScroll(scrollPos, sizes, dir = "ltr") {
@@ -44830,10 +44744,10 @@ function getThumbOffsetFromScroll(scrollPos, sizes, dir = "ltr") {
   const maxThumbPos = scrollbar - thumbSizePx;
   const scrollClampRange = dir === "ltr" ? [0, maxScrollPos] : [maxScrollPos * -1, 0];
   const scrollWithoutMomentum = clamp(scrollPos, scrollClampRange);
-  const interpolate2 = linearScale$1([0, maxScrollPos], [0, maxThumbPos]);
+  const interpolate2 = linearScale([0, maxScrollPos], [0, maxThumbPos]);
   return interpolate2(scrollWithoutMomentum);
 }
-function linearScale$1(input, output) {
+function linearScale(input, output) {
   return (value) => {
     if (input[0] === input[1] || output[0] === output[1]) return output[0];
     const ratio = (output[1] - output[0]) / (input[1] - input[0]);
@@ -44883,7 +44797,7 @@ function useResizeObserver(element, onResize) {
     }
   }, [element, handleResize]);
 }
-var Root$7 = ScrollArea$1;
+var Root$4 = ScrollArea$1;
 var Viewport$1 = ScrollAreaViewport;
 var Corner = ScrollAreaCorner;
 function ScrollArea({
@@ -44892,7 +44806,7 @@ function ScrollArea({
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    Root$7,
+    Root$4,
     {
       "data-slot": "scroll-area",
       className: cn("relative", className),
@@ -44952,8 +44866,8 @@ function Textarea({ className, ...props }) {
     }
   );
 }
-const Route$j = createRoute({
-  getParentRoute: () => Route$k,
+const Route$h = createRoute({
+  getParentRoute: () => Route$i,
   path: "/ai-assistant",
   component: AIAssistantPage
 });
@@ -45411,7 +45325,7 @@ function AIAssistantPage() {
 function Dialog({
   ...props
 }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root$b, { "data-slot": "dialog", ...props });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root$8, { "data-slot": "dialog", ...props });
 }
 function DialogPortal({
   ...props
@@ -45443,7 +45357,7 @@ function DialogContent({
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(DialogPortal, { "data-slot": "dialog-portal", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(DialogOverlay, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      Content$3,
+      Content$2,
       {
         "data-slot": "dialog-content",
         className: cn(
@@ -45555,13 +45469,13 @@ var Label$2 = reactExports.forwardRef((props, forwardedRef) => {
   );
 });
 Label$2.displayName = NAME$1;
-var Root$6 = Label$2;
+var Root$3 = Label$2;
 function Label$1({
   className,
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Root$6,
+    Root$3,
     {
       "data-slot": "label",
       className: cn(
@@ -45631,9 +45545,9 @@ function usePrevious(value) {
 var OPEN_KEYS = [" ", "Enter", "ArrowUp", "ArrowDown"];
 var SELECTION_KEYS = [" ", "Enter"];
 var SELECT_NAME = "Select";
-var [Collection$2, useCollection$2, createCollectionScope$2] = createCollection(SELECT_NAME);
+var [Collection, useCollection, createCollectionScope] = createCollection(SELECT_NAME);
 var [createSelectContext] = createContextScope$1(SELECT_NAME, [
-  createCollectionScope$2,
+  createCollectionScope,
   createPopperScope
 ]);
 var usePopperScope = createPopperScope();
@@ -45677,7 +45591,7 @@ var Select$2 = (props) => {
   const isFormControl = trigger ? form || !!trigger.closest("form") : true;
   const [nativeOptionsSet, setNativeOptionsSet] = reactExports.useState(/* @__PURE__ */ new Set());
   const nativeSelectKey = Array.from(nativeOptionsSet).map((option) => option.props.value).join(";");
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$4, { ...popperScope, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$3, { ...popperScope, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
     SelectProvider,
     {
       required,
@@ -45697,7 +45611,7 @@ var Select$2 = (props) => {
       triggerPointerDownPosRef,
       disabled,
       children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$2.Provider, { scope: __scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Collection.Provider, { scope: __scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
           SelectNativeOptionsProvider,
           {
             scope: props.__scopeSelect,
@@ -45738,15 +45652,15 @@ var Select$2 = (props) => {
   ) });
 };
 Select$2.displayName = SELECT_NAME;
-var TRIGGER_NAME$4 = "SelectTrigger";
+var TRIGGER_NAME$2 = "SelectTrigger";
 var SelectTrigger$1 = reactExports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeSelect, disabled = false, ...triggerProps } = props;
     const popperScope = usePopperScope(__scopeSelect);
-    const context = useSelectContext(TRIGGER_NAME$4, __scopeSelect);
+    const context = useSelectContext(TRIGGER_NAME$2, __scopeSelect);
     const isDisabled = context.disabled || disabled;
     const composedRefs = useComposedRefs$1(forwardedRef, context.onTriggerChange);
-    const getItems = useCollection$2(__scopeSelect);
+    const getItems = useCollection(__scopeSelect);
     const pointerTypeRef = reactExports.useRef("touch");
     const [searchRef, handleTypeaheadSearch, resetTypeahead] = useTypeaheadSearch((search) => {
       const enabledItems = getItems().filter((item) => !item.disabled);
@@ -45815,7 +45729,7 @@ var SelectTrigger$1 = reactExports.forwardRef(
     ) });
   }
 );
-SelectTrigger$1.displayName = TRIGGER_NAME$4;
+SelectTrigger$1.displayName = TRIGGER_NAME$2;
 var VALUE_NAME = "SelectValue";
 var SelectValue$1 = reactExports.forwardRef(
   (props, forwardedRef) => {
@@ -45852,10 +45766,10 @@ var SelectPortal = (props) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Portal$4, { asChild: true, ...props });
 };
 SelectPortal.displayName = PORTAL_NAME;
-var CONTENT_NAME$3 = "SelectContent";
+var CONTENT_NAME$1 = "SelectContent";
 var SelectContent$1 = reactExports.forwardRef(
   (props, forwardedRef) => {
-    const context = useSelectContext(CONTENT_NAME$3, props.__scopeSelect);
+    const context = useSelectContext(CONTENT_NAME$1, props.__scopeSelect);
     const [fragment, setFragment] = reactExports.useState();
     useLayoutEffect2(() => {
       setFragment(new DocumentFragment());
@@ -45863,16 +45777,16 @@ var SelectContent$1 = reactExports.forwardRef(
     if (!context.open) {
       const frag = fragment;
       return frag ? reactDomExports.createPortal(
-        /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContentProvider, { scope: props.__scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$2.Slot, { scope: props.__scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: props.children }) }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContentProvider, { scope: props.__scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection.Slot, { scope: props.__scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: props.children }) }) }),
         frag
       ) : null;
     }
     return /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContentImpl, { ...props, ref: forwardedRef });
   }
 );
-SelectContent$1.displayName = CONTENT_NAME$3;
+SelectContent$1.displayName = CONTENT_NAME$1;
 var CONTENT_MARGIN = 10;
-var [SelectContentProvider, useSelectContentContext] = createSelectContext(CONTENT_NAME$3);
+var [SelectContentProvider, useSelectContentContext] = createSelectContext(CONTENT_NAME$1);
 var CONTENT_IMPL_NAME = "SelectContentImpl";
 var Slot = /* @__PURE__ */ createSlot$1("SelectContent.RemoveScroll");
 var SelectContentImpl = reactExports.forwardRef(
@@ -45898,7 +45812,7 @@ var SelectContentImpl = reactExports.forwardRef(
       //
       ...contentProps
     } = props;
-    const context = useSelectContext(CONTENT_NAME$3, __scopeSelect);
+    const context = useSelectContext(CONTENT_NAME$1, __scopeSelect);
     const [content, setContent2] = reactExports.useState(null);
     const [viewport, setViewport] = reactExports.useState(null);
     const composedRefs = useComposedRefs$1(forwardedRef, (node) => setContent2(node));
@@ -45906,7 +45820,7 @@ var SelectContentImpl = reactExports.forwardRef(
     const [selectedItemText, setSelectedItemText] = reactExports.useState(
       null
     );
-    const getItems = useCollection$2(__scopeSelect);
+    const getItems = useCollection(__scopeSelect);
     const [isPositioned, setIsPositioned] = reactExports.useState(false);
     const firstValidItemFoundRef = reactExports.useRef(false);
     reactExports.useEffect(() => {
@@ -46113,12 +46027,12 @@ SelectContentImpl.displayName = CONTENT_IMPL_NAME;
 var ITEM_ALIGNED_POSITION_NAME = "SelectItemAlignedPosition";
 var SelectItemAlignedPosition = reactExports.forwardRef((props, forwardedRef) => {
   const { __scopeSelect, onPlaced, ...popperProps } = props;
-  const context = useSelectContext(CONTENT_NAME$3, __scopeSelect);
-  const contentContext = useSelectContentContext(CONTENT_NAME$3, __scopeSelect);
+  const context = useSelectContext(CONTENT_NAME$1, __scopeSelect);
+  const contentContext = useSelectContentContext(CONTENT_NAME$1, __scopeSelect);
   const [contentWrapper, setContentWrapper] = reactExports.useState(null);
   const [content, setContent2] = reactExports.useState(null);
   const composedRefs = useComposedRefs$1(forwardedRef, (node) => setContent2(node));
-  const getItems = useCollection$2(__scopeSelect);
+  const getItems = useCollection(__scopeSelect);
   const shouldExpandOnScrollRef = reactExports.useRef(false);
   const shouldRepositionRef = reactExports.useRef(true);
   const { viewport, selectedItem, selectedItemText, focusSelectedItem } = contentContext;
@@ -46284,7 +46198,7 @@ var SelectPopperPosition = reactExports.forwardRef((props, forwardedRef) => {
   } = props;
   const popperScope = usePopperScope(__scopeSelect);
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Content$2,
+    Content$1,
     {
       ...popperScope,
       ...popperProps,
@@ -46308,7 +46222,7 @@ var SelectPopperPosition = reactExports.forwardRef((props, forwardedRef) => {
   );
 });
 SelectPopperPosition.displayName = POPPER_POSITION_NAME;
-var [SelectViewportProvider, useSelectViewportContext] = createSelectContext(CONTENT_NAME$3, {});
+var [SelectViewportProvider, useSelectViewportContext] = createSelectContext(CONTENT_NAME$1, {});
 var VIEWPORT_NAME = "SelectViewport";
 var SelectViewport = reactExports.forwardRef(
   (props, forwardedRef) => {
@@ -46327,7 +46241,7 @@ var SelectViewport = reactExports.forwardRef(
           nonce
         }
       ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$2.Slot, { scope: __scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Collection.Slot, { scope: __scopeSelect, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         Primitive$1.div,
         {
           "data-radix-select-viewport": "",
@@ -46396,8 +46310,8 @@ var SelectLabel = reactExports.forwardRef(
   }
 );
 SelectLabel.displayName = LABEL_NAME;
-var ITEM_NAME$1 = "SelectItem";
-var [SelectItemContextProvider, useSelectItemContext] = createSelectContext(ITEM_NAME$1);
+var ITEM_NAME = "SelectItem";
+var [SelectItemContextProvider, useSelectItemContext] = createSelectContext(ITEM_NAME);
 var SelectItem$1 = reactExports.forwardRef(
   (props, forwardedRef) => {
     const {
@@ -46407,8 +46321,8 @@ var SelectItem$1 = reactExports.forwardRef(
       textValue: textValueProp,
       ...itemProps
     } = props;
-    const context = useSelectContext(ITEM_NAME$1, __scopeSelect);
-    const contentContext = useSelectContentContext(ITEM_NAME$1, __scopeSelect);
+    const context = useSelectContext(ITEM_NAME, __scopeSelect);
+    const contentContext = useSelectContentContext(ITEM_NAME, __scopeSelect);
     const isSelected = context.value === value;
     const [textValue, setTextValue] = reactExports.useState(textValueProp ?? "");
     const [isFocused, setIsFocused] = reactExports.useState(false);
@@ -46444,7 +46358,7 @@ var SelectItem$1 = reactExports.forwardRef(
           setTextValue((prevTextValue) => prevTextValue || ((node == null ? void 0 : node.textContent) ?? "").trim());
         }, []),
         children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Collection$2.ItemSlot,
+          Collection.ItemSlot,
           {
             scope: __scopeSelect,
             value,
@@ -46504,7 +46418,7 @@ var SelectItem$1 = reactExports.forwardRef(
     );
   }
 );
-SelectItem$1.displayName = ITEM_NAME$1;
+SelectItem$1.displayName = ITEM_NAME;
 var ITEM_TEXT_NAME = "SelectItemText";
 var SelectItemText = reactExports.forwardRef(
   (props, forwardedRef) => {
@@ -46620,7 +46534,7 @@ var SelectScrollButtonImpl = reactExports.forwardRef((props, forwardedRef) => {
   const { __scopeSelect, onAutoScroll, ...scrollIndicatorProps } = props;
   const contentContext = useSelectContentContext("SelectScrollButton", __scopeSelect);
   const autoScrollTimerRef = reactExports.useRef(null);
-  const getItems = useCollection$2(__scopeSelect);
+  const getItems = useCollection(__scopeSelect);
   const clearAutoScrollTimer = reactExports.useCallback(() => {
     if (autoScrollTimerRef.current !== null) {
       window.clearInterval(autoScrollTimerRef.current);
@@ -46679,7 +46593,7 @@ var SelectArrow = reactExports.forwardRef(
   }
 );
 SelectArrow.displayName = ARROW_NAME;
-var BUBBLE_INPUT_NAME$3 = "SelectBubbleInput";
+var BUBBLE_INPUT_NAME$1 = "SelectBubbleInput";
 var SelectBubbleInput = reactExports.forwardRef(
   ({ __scopeSelect, value, ...props }, forwardedRef) => {
     const ref = reactExports.useRef(null);
@@ -46711,7 +46625,7 @@ var SelectBubbleInput = reactExports.forwardRef(
     );
   }
 );
-SelectBubbleInput.displayName = BUBBLE_INPUT_NAME$3;
+SelectBubbleInput.displayName = BUBBLE_INPUT_NAME$1;
 function shouldShowPlaceholder(value) {
   return value === "" || value === void 0;
 }
@@ -46755,14 +46669,14 @@ function findNextItem(items, search, currentItem) {
 function wrapArray(array2, startIndex) {
   return array2.map((_2, index2) => array2[(startIndex + index2) % array2.length]);
 }
-var Root2$2 = Select$2;
-var Trigger$2 = SelectTrigger$1;
+var Root2$1 = Select$2;
+var Trigger$1 = SelectTrigger$1;
 var Value = SelectValue$1;
 var Icon = SelectIcon;
 var Portal = SelectPortal;
-var Content2$1 = SelectContent$1;
+var Content2 = SelectContent$1;
 var Viewport = SelectViewport;
-var Item$2 = SelectItem$1;
+var Item$1 = SelectItem$1;
 var ItemText = SelectItemText;
 var ItemIndicator = SelectItemIndicator;
 var ScrollUpButton = SelectScrollUpButton$1;
@@ -46770,7 +46684,7 @@ var ScrollDownButton = SelectScrollDownButton$1;
 function Select$1({
   ...props
 }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$2, { "data-slot": "select", ...props });
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2$1, { "data-slot": "select", ...props });
 }
 function SelectValue({
   ...props
@@ -46784,7 +46698,7 @@ function SelectTrigger({
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    Trigger$2,
+    Trigger$1,
     {
       "data-slot": "select-trigger",
       "data-size": size2,
@@ -46807,7 +46721,7 @@ function SelectContent({
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(Portal, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    Content2$1,
+    Content2,
     {
       "data-slot": "select-content",
       className: cn(
@@ -46840,7 +46754,7 @@ function SelectItem({
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    Item$2,
+    Item$1,
     {
       "data-slot": "select-item",
       className: cn(
@@ -47497,10 +47411,6 @@ function formatCurrency$1(amount, currency = "₹") {
 }
 function getInitials$1(name) {
   return name.split(" ").slice(0, 2).map((n2) => n2[0]).join("").toUpperCase();
-}
-function truncate$1(str, maxLength = 40) {
-  if (str.length <= maxLength) return str;
-  return `${str.slice(0, maxLength)}…`;
 }
 function formatTime(timeStr) {
   const [hours, minutes] = timeStr.split(":").map(Number);
@@ -49238,8 +49148,8 @@ function subMonths(date2, amount) {
 function subYears(date2, amount) {
   return addYears$1(date2, -1);
 }
-const Route$i = createRoute({
-  getParentRoute: () => Route$k,
+const Route$g = createRoute({
+  getParentRoute: () => Route$i,
   path: "/appointments",
   component: AppointmentsPage
 });
@@ -50167,7 +50077,7 @@ var TabsList$1 = reactExports.forwardRef(
     const context = useTabsContext(TAB_LIST_NAME, __scopeTabs);
     const rovingFocusGroupScope = useRovingFocusGroupScope(__scopeTabs);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Root$8,
+      Root$5,
       {
         asChild: true,
         ...rovingFocusGroupScope,
@@ -50188,17 +50098,17 @@ var TabsList$1 = reactExports.forwardRef(
   }
 );
 TabsList$1.displayName = TAB_LIST_NAME;
-var TRIGGER_NAME$3 = "TabsTrigger";
+var TRIGGER_NAME$1 = "TabsTrigger";
 var TabsTrigger$1 = reactExports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeTabs, value, disabled = false, ...triggerProps } = props;
-    const context = useTabsContext(TRIGGER_NAME$3, __scopeTabs);
+    const context = useTabsContext(TRIGGER_NAME$1, __scopeTabs);
     const rovingFocusGroupScope = useRovingFocusGroupScope(__scopeTabs);
     const triggerId = makeTriggerId(context.baseId, value);
     const contentId = makeContentId(context.baseId, value);
     const isSelected = value === context.value;
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Item$3,
+      Item$2,
       {
         asChild: true,
         ...rovingFocusGroupScope,
@@ -50239,12 +50149,12 @@ var TabsTrigger$1 = reactExports.forwardRef(
     );
   }
 );
-TabsTrigger$1.displayName = TRIGGER_NAME$3;
-var CONTENT_NAME$2 = "TabsContent";
+TabsTrigger$1.displayName = TRIGGER_NAME$1;
+var CONTENT_NAME = "TabsContent";
 var TabsContent$1 = reactExports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeTabs, value, forceMount, children, ...contentProps } = props;
-    const context = useTabsContext(CONTENT_NAME$2, __scopeTabs);
+    const context = useTabsContext(CONTENT_NAME, __scopeTabs);
     const triggerId = makeTriggerId(context.baseId, value);
     const contentId = makeContentId(context.baseId, value);
     const isSelected = value === context.value;
@@ -50274,23 +50184,23 @@ var TabsContent$1 = reactExports.forwardRef(
     ) });
   }
 );
-TabsContent$1.displayName = CONTENT_NAME$2;
+TabsContent$1.displayName = CONTENT_NAME;
 function makeTriggerId(baseId, value) {
   return `${baseId}-trigger-${value}`;
 }
 function makeContentId(baseId, value) {
   return `${baseId}-content-${value}`;
 }
-var Root2$1 = Tabs$1;
+var Root2 = Tabs$1;
 var List = TabsList$1;
-var Trigger$1 = TabsTrigger$1;
-var Content$1 = TabsContent$1;
+var Trigger = TabsTrigger$1;
+var Content = TabsContent$1;
 function Tabs({
   className,
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Root2$1,
+    Root2,
     {
       "data-slot": "tabs",
       className: cn("flex flex-col gap-2", className),
@@ -50319,7 +50229,7 @@ function TabsTrigger({
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Trigger$1,
+    Trigger,
     {
       "data-slot": "tabs-trigger",
       className: cn(
@@ -50335,7 +50245,7 @@ function TabsContent({
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Content$1,
+    Content,
     {
       "data-slot": "tabs-content",
       className: cn("flex-1 outline-none", className),
@@ -50742,8 +50652,8 @@ const invoices = [
     paymentMethod: "Cash"
   }
 ];
-const Route$h = createRoute({
-  getParentRoute: () => Route$k,
+const Route$f = createRoute({
+  getParentRoute: () => Route$i,
   path: "/billing",
   component: BillingPage
 });
@@ -53803,7 +53713,7 @@ function PreviousMonthButton(props) {
   const { components: components2 } = useDayPicker();
   return React$4.createElement(components2.Button, { ...props });
 }
-function Root$5(props) {
+function Root$2(props) {
   const { rootRef, ...rest } = props;
   return React$4.createElement("div", { ...rest, ref: rootRef });
 }
@@ -53857,7 +53767,7 @@ const components = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePr
   NextMonthButton,
   Option,
   PreviousMonthButton,
-  Root: Root$5,
+  Root: Root$2,
   Select,
   Week,
   WeekNumber,
@@ -56189,13 +56099,13 @@ function shallowEqual(a2, b2) {
   }
   return true;
 }
-function _typeof$O(o) {
+function _typeof$M(o) {
   "@babel/helpers - typeof";
-  return _typeof$O = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$M = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$O(o);
+  }, _typeof$M(o);
 }
 var SVGContainerPropKeys = ["viewBox", "children"];
 var SVGElementPropKeys = [
@@ -56543,7 +56453,7 @@ var getEventHandlerOfChild = function getEventHandlerOfChild2(originalHandler, d
   };
 };
 var adaptEventsOfChild = function adaptEventsOfChild2(props, data, index2) {
-  if (!isObject$8(props) || _typeof$O(props) !== "object") {
+  if (!isObject$8(props) || _typeof$M(props) !== "object") {
     return null;
   }
   var out = null;
@@ -56556,10 +56466,10 @@ var adaptEventsOfChild = function adaptEventsOfChild2(props, data, index2) {
   });
   return out;
 };
-var _excluded$m = ["children"], _excluded2$8 = ["children"];
-function _objectWithoutProperties$m(source, excluded) {
+var _excluded$l = ["children"], _excluded2$7 = ["children"];
+function _objectWithoutProperties$l(source, excluded) {
   if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$m(source, excluded);
+  var target = _objectWithoutPropertiesLoose$l(source, excluded);
   var key, i;
   if (Object.getOwnPropertySymbols) {
     var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
@@ -56572,7 +56482,7 @@ function _objectWithoutProperties$m(source, excluded) {
   }
   return target;
 }
-function _objectWithoutPropertiesLoose$m(source, excluded) {
+function _objectWithoutPropertiesLoose$l(source, excluded) {
   if (source == null) return {};
   var target = {};
   for (var key in source) {
@@ -56583,13 +56493,13 @@ function _objectWithoutPropertiesLoose$m(source, excluded) {
   }
   return target;
 }
-function _typeof$N(o) {
+function _typeof$L(o) {
   "@babel/helpers - typeof";
-  return _typeof$N = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$L = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$N(o);
+  }, _typeof$L(o);
 }
 var REACT_BROWSER_EVENT_MAP = {
   click: "onClick",
@@ -56672,7 +56582,7 @@ var isSvgElement = function isSvgElement2(child) {
   return child && child.type && isString$1(child.type) && SVG_TAGS.indexOf(child.type) >= 0;
 };
 var hasClipDot = function hasClipDot2(dot) {
-  return dot && _typeof$N(dot) === "object" && "clipDot" in dot;
+  return dot && _typeof$L(dot) === "object" && "clipDot" in dot;
 };
 var isValidSpreadableProp = function isValidSpreadableProp2(property2, key, includeEvents, svgElementType) {
   var _FilteredElementKeyMa;
@@ -56731,8 +56641,8 @@ var isSingleChildEqual = function isSingleChildEqual2(nextChild, prevChild) {
     return true;
   }
   if (!isNil$1(nextChild) && !isNil$1(prevChild)) {
-    var _ref = nextChild.props || {}, nextChildren = _ref.children, nextProps = _objectWithoutProperties$m(_ref, _excluded$m);
-    var _ref2 = prevChild.props || {}, prevChildren = _ref2.children, prevProps = _objectWithoutProperties$m(_ref2, _excluded2$8);
+    var _ref = nextChild.props || {}, nextChildren = _ref.children, nextProps = _objectWithoutProperties$l(_ref, _excluded$l);
+    var _ref2 = prevChild.props || {}, prevChildren = _ref2.children, prevProps = _objectWithoutProperties$l(_ref2, _excluded2$7);
     if (nextChildren && prevChildren) {
       return shallowEqual(nextProps, prevProps) && isChildrenEqual(nextChildren, prevChildren);
     }
@@ -56771,9 +56681,9 @@ var getReactEventByType = function getReactEventByType2(e3) {
 var parseChildIndex = function parseChildIndex2(child, children) {
   return toArray(children).indexOf(child);
 };
-var _excluded$l = ["children", "width", "height", "viewBox", "className", "style", "title", "desc"];
-function _extends$x() {
-  _extends$x = Object.assign ? Object.assign.bind() : function(target) {
+var _excluded$k = ["children", "width", "height", "viewBox", "className", "style", "title", "desc"];
+function _extends$v() {
+  _extends$v = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -56784,65 +56694,7 @@ function _extends$x() {
     }
     return target;
   };
-  return _extends$x.apply(this, arguments);
-}
-function _objectWithoutProperties$l(source, excluded) {
-  if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$l(source, excluded);
-  var key, i;
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-function _objectWithoutPropertiesLoose$l(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  for (var key in source) {
-    if (Object.prototype.hasOwnProperty.call(source, key)) {
-      if (excluded.indexOf(key) >= 0) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-function Surface(props) {
-  var children = props.children, width = props.width, height = props.height, viewBox = props.viewBox, className = props.className, style2 = props.style, title = props.title, desc = props.desc, others = _objectWithoutProperties$l(props, _excluded$l);
-  var svgView = viewBox || {
-    width,
-    height,
-    x: 0,
-    y: 0
-  };
-  var layerClass = clsx("recharts-surface", className);
-  return /* @__PURE__ */ React$4.createElement("svg", _extends$x({}, filterProps(others, true, "svg"), {
-    className: layerClass,
-    width,
-    height,
-    style: style2,
-    viewBox: "".concat(svgView.x, " ").concat(svgView.y, " ").concat(svgView.width, " ").concat(svgView.height)
-  }), /* @__PURE__ */ React$4.createElement("title", null, title), /* @__PURE__ */ React$4.createElement("desc", null, desc), children);
-}
-var _excluded$k = ["children", "className"];
-function _extends$w() {
-  _extends$w = Object.assign ? Object.assign.bind() : function(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-    return target;
-  };
-  return _extends$w.apply(this, arguments);
+  return _extends$v.apply(this, arguments);
 }
 function _objectWithoutProperties$k(source, excluded) {
   if (source == null) return {};
@@ -56870,10 +56722,68 @@ function _objectWithoutPropertiesLoose$k(source, excluded) {
   }
   return target;
 }
+function Surface(props) {
+  var children = props.children, width = props.width, height = props.height, viewBox = props.viewBox, className = props.className, style2 = props.style, title = props.title, desc = props.desc, others = _objectWithoutProperties$k(props, _excluded$k);
+  var svgView = viewBox || {
+    width,
+    height,
+    x: 0,
+    y: 0
+  };
+  var layerClass = clsx("recharts-surface", className);
+  return /* @__PURE__ */ React$4.createElement("svg", _extends$v({}, filterProps(others, true, "svg"), {
+    className: layerClass,
+    width,
+    height,
+    style: style2,
+    viewBox: "".concat(svgView.x, " ").concat(svgView.y, " ").concat(svgView.width, " ").concat(svgView.height)
+  }), /* @__PURE__ */ React$4.createElement("title", null, title), /* @__PURE__ */ React$4.createElement("desc", null, desc), children);
+}
+var _excluded$j = ["children", "className"];
+function _extends$u() {
+  _extends$u = Object.assign ? Object.assign.bind() : function(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends$u.apply(this, arguments);
+}
+function _objectWithoutProperties$j(source, excluded) {
+  if (source == null) return {};
+  var target = _objectWithoutPropertiesLoose$j(source, excluded);
+  var key, i;
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+function _objectWithoutPropertiesLoose$j(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  for (var key in source) {
+    if (Object.prototype.hasOwnProperty.call(source, key)) {
+      if (excluded.indexOf(key) >= 0) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
 var Layer = /* @__PURE__ */ React$4.forwardRef(function(props, ref) {
-  var children = props.children, className = props.className, others = _objectWithoutProperties$k(props, _excluded$k);
+  var children = props.children, className = props.className, others = _objectWithoutProperties$j(props, _excluded$j);
   var layerClass = clsx("recharts-layer", className);
-  return /* @__PURE__ */ React$4.createElement("g", _extends$w({
+  return /* @__PURE__ */ React$4.createElement("g", _extends$u({
     className: layerClass
   }, filterProps(others, true), {
     ref
@@ -57838,17 +57748,17 @@ function stackOffsetWiggle(series, order) {
   s0[j - 1][1] += s0[j - 1][0] = y2;
   stackOffsetNone(series, order);
 }
-function _typeof$M(o) {
+function _typeof$K(o) {
   "@babel/helpers - typeof";
-  return _typeof$M = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$K = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$M(o);
+  }, _typeof$K(o);
 }
-var _excluded$j = ["type", "size", "sizeType"];
-function _extends$v() {
-  _extends$v = Object.assign ? Object.assign.bind() : function(target) {
+var _excluded$i = ["type", "size", "sizeType"];
+function _extends$t() {
+  _extends$t = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -57859,9 +57769,9 @@ function _extends$v() {
     }
     return target;
   };
-  return _extends$v.apply(this, arguments);
+  return _extends$t.apply(this, arguments);
 }
-function ownKeys$F(e3, r2) {
+function ownKeys$D(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -57871,19 +57781,19 @@ function ownKeys$F(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$F(e3) {
+function _objectSpread$D(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$F(Object(t2), true).forEach(function(r3) {
-      _defineProperty$L(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$F(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$D(Object(t2), true).forEach(function(r3) {
+      _defineProperty$J(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$D(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$L(obj, key, value) {
-  key = _toPropertyKey$L(key);
+function _defineProperty$J(obj, key, value) {
+  key = _toPropertyKey$J(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -57891,23 +57801,23 @@ function _defineProperty$L(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$L(t2) {
-  var i = _toPrimitive$L(t2, "string");
-  return "symbol" == _typeof$M(i) ? i : i + "";
+function _toPropertyKey$J(t2) {
+  var i = _toPrimitive$J(t2, "string");
+  return "symbol" == _typeof$K(i) ? i : i + "";
 }
-function _toPrimitive$L(t2, r2) {
-  if ("object" != _typeof$M(t2) || !t2) return t2;
+function _toPrimitive$J(t2, r2) {
+  if ("object" != _typeof$K(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$M(i)) return i;
+    if ("object" != _typeof$K(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
 }
-function _objectWithoutProperties$j(source, excluded) {
+function _objectWithoutProperties$i(source, excluded) {
   if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$j(source, excluded);
+  var target = _objectWithoutPropertiesLoose$i(source, excluded);
   var key, i;
   if (Object.getOwnPropertySymbols) {
     var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
@@ -57920,7 +57830,7 @@ function _objectWithoutProperties$j(source, excluded) {
   }
   return target;
 }
-function _objectWithoutPropertiesLoose$j(source, excluded) {
+function _objectWithoutPropertiesLoose$i(source, excluded) {
   if (source == null) return {};
   var target = {};
   for (var key in source) {
@@ -57972,8 +57882,8 @@ var registerSymbol = function registerSymbol2(key, factory) {
   symbolFactories["symbol".concat(upperFirst$1(key))] = factory;
 };
 var Symbols = function Symbols2(_ref) {
-  var _ref$type = _ref.type, type = _ref$type === void 0 ? "circle" : _ref$type, _ref$size = _ref.size, size2 = _ref$size === void 0 ? 64 : _ref$size, _ref$sizeType = _ref.sizeType, sizeType = _ref$sizeType === void 0 ? "area" : _ref$sizeType, rest = _objectWithoutProperties$j(_ref, _excluded$j);
-  var props = _objectSpread$F(_objectSpread$F({}, rest), {}, {
+  var _ref$type = _ref.type, type = _ref$type === void 0 ? "circle" : _ref$type, _ref$size = _ref.size, size2 = _ref$size === void 0 ? 64 : _ref$size, _ref$sizeType = _ref.sizeType, sizeType = _ref$sizeType === void 0 ? "area" : _ref$sizeType, rest = _objectWithoutProperties$i(_ref, _excluded$i);
+  var props = _objectSpread$D(_objectSpread$D({}, rest), {}, {
     type,
     size: size2,
     sizeType
@@ -57986,7 +57896,7 @@ var Symbols = function Symbols2(_ref) {
   var className = props.className, cx2 = props.cx, cy = props.cy;
   var filteredProps = filterProps(props, true);
   if (cx2 === +cx2 && cy === +cy && size2 === +size2) {
-    return /* @__PURE__ */ React$4.createElement("path", _extends$v({}, filteredProps, {
+    return /* @__PURE__ */ React$4.createElement("path", _extends$t({}, filteredProps, {
       className: clsx("recharts-symbols", className),
       transform: "translate(".concat(cx2, ", ").concat(cy, ")"),
       d: getPath4()
@@ -57995,16 +57905,16 @@ var Symbols = function Symbols2(_ref) {
   return null;
 };
 Symbols.registerSymbol = registerSymbol;
-function _typeof$L(o) {
+function _typeof$J(o) {
   "@babel/helpers - typeof";
-  return _typeof$L = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$J = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$L(o);
+  }, _typeof$J(o);
 }
-function _extends$u() {
-  _extends$u = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$s() {
+  _extends$s = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -58015,9 +57925,9 @@ function _extends$u() {
     }
     return target;
   };
-  return _extends$u.apply(this, arguments);
+  return _extends$s.apply(this, arguments);
 }
-function ownKeys$E(e3, r2) {
+function ownKeys$C(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -58027,86 +57937,86 @@ function ownKeys$E(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$E(e3) {
+function _objectSpread$C(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$E(Object(t2), true).forEach(function(r3) {
-      _defineProperty$K(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$E(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$C(Object(t2), true).forEach(function(r3) {
+      _defineProperty$I(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$C(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _classCallCheck$n(instance, Constructor) {
+function _classCallCheck$l(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-function _defineProperties$n(target, props) {
+function _defineProperties$l(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$K(descriptor.key), descriptor);
+    Object.defineProperty(target, _toPropertyKey$I(descriptor.key), descriptor);
   }
 }
-function _createClass$n(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$n(Constructor.prototype, protoProps);
+function _createClass$l(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$l(Constructor.prototype, protoProps);
   Object.defineProperty(Constructor, "prototype", { writable: false });
   return Constructor;
 }
-function _callSuper$j(t2, o, e3) {
-  return o = _getPrototypeOf$k(o), _possibleConstructorReturn$k(t2, _isNativeReflectConstruct$k() ? Reflect.construct(o, e3 || [], _getPrototypeOf$k(t2).constructor) : o.apply(t2, e3));
+function _callSuper$h(t2, o, e3) {
+  return o = _getPrototypeOf$i(o), _possibleConstructorReturn$i(t2, _isNativeReflectConstruct$i() ? Reflect.construct(o, e3 || [], _getPrototypeOf$i(t2).constructor) : o.apply(t2, e3));
 }
-function _possibleConstructorReturn$k(self2, call) {
-  if (call && (_typeof$L(call) === "object" || typeof call === "function")) {
+function _possibleConstructorReturn$i(self2, call) {
+  if (call && (_typeof$J(call) === "object" || typeof call === "function")) {
     return call;
   } else if (call !== void 0) {
     throw new TypeError("Derived constructors may only return object or undefined");
   }
-  return _assertThisInitialized$k(self2);
+  return _assertThisInitialized$i(self2);
 }
-function _assertThisInitialized$k(self2) {
+function _assertThisInitialized$i(self2) {
   if (self2 === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
   return self2;
 }
-function _isNativeReflectConstruct$k() {
+function _isNativeReflectConstruct$i() {
   try {
     var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
     }));
   } catch (t3) {
   }
-  return (_isNativeReflectConstruct$k = function _isNativeReflectConstruct2() {
+  return (_isNativeReflectConstruct$i = function _isNativeReflectConstruct2() {
     return !!t2;
   })();
 }
-function _getPrototypeOf$k(o) {
-  _getPrototypeOf$k = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
+function _getPrototypeOf$i(o) {
+  _getPrototypeOf$i = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
     return o2.__proto__ || Object.getPrototypeOf(o2);
   };
-  return _getPrototypeOf$k(o);
+  return _getPrototypeOf$i(o);
 }
-function _inherits$k(subClass, superClass) {
+function _inherits$i(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
   }
   subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
   Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$k(subClass, superClass);
+  if (superClass) _setPrototypeOf$i(subClass, superClass);
 }
-function _setPrototypeOf$k(o, p2) {
-  _setPrototypeOf$k = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
+function _setPrototypeOf$i(o, p2) {
+  _setPrototypeOf$i = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
     o2.__proto__ = p3;
     return o2;
   };
-  return _setPrototypeOf$k(o, p2);
+  return _setPrototypeOf$i(o, p2);
 }
-function _defineProperty$K(obj, key, value) {
-  key = _toPropertyKey$K(key);
+function _defineProperty$I(obj, key, value) {
+  key = _toPropertyKey$I(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -58114,16 +58024,16 @@ function _defineProperty$K(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$K(t2) {
-  var i = _toPrimitive$K(t2, "string");
-  return "symbol" == _typeof$L(i) ? i : i + "";
+function _toPropertyKey$I(t2) {
+  var i = _toPrimitive$I(t2, "string");
+  return "symbol" == _typeof$J(i) ? i : i + "";
 }
-function _toPrimitive$K(t2, r2) {
-  if ("object" != _typeof$L(t2) || !t2) return t2;
+function _toPrimitive$I(t2, r2) {
+  if ("object" != _typeof$J(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$L(i)) return i;
+    if ("object" != _typeof$J(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return String(t2);
@@ -58131,11 +58041,11 @@ function _toPrimitive$K(t2, r2) {
 var SIZE = 32;
 var DefaultLegendContent = /* @__PURE__ */ function(_PureComponent) {
   function DefaultLegendContent2() {
-    _classCallCheck$n(this, DefaultLegendContent2);
-    return _callSuper$j(this, DefaultLegendContent2, arguments);
+    _classCallCheck$l(this, DefaultLegendContent2);
+    return _callSuper$h(this, DefaultLegendContent2, arguments);
   }
-  _inherits$k(DefaultLegendContent2, _PureComponent);
-  return _createClass$n(DefaultLegendContent2, [{
+  _inherits$i(DefaultLegendContent2, _PureComponent);
+  return _createClass$l(DefaultLegendContent2, [{
     key: "renderIcon",
     value: (
       /**
@@ -58180,7 +58090,7 @@ var DefaultLegendContent = /* @__PURE__ */ function(_PureComponent) {
           });
         }
         if (/* @__PURE__ */ React$4.isValidElement(data.legendIcon)) {
-          var iconProps = _objectSpread$E({}, data);
+          var iconProps = _objectSpread$C({}, data);
           delete iconProps.legendIcon;
           return /* @__PURE__ */ React$4.cloneElement(data.legendIcon, iconProps);
         }
@@ -58220,7 +58130,7 @@ var DefaultLegendContent = /* @__PURE__ */ function(_PureComponent) {
       };
       return payload.map(function(entry, i) {
         var finalFormatter = entry.formatter || formatter;
-        var className = clsx(_defineProperty$K(_defineProperty$K({
+        var className = clsx(_defineProperty$I(_defineProperty$I({
           "recharts-legend-item": true
         }, "legend-item-".concat(i), true), "inactive", entry.inactive));
         if (entry.type === "none") {
@@ -58233,7 +58143,7 @@ var DefaultLegendContent = /* @__PURE__ */ function(_PureComponent) {
           // eslint-disable-line max-len
         );
         var color2 = entry.inactive ? inactiveColor : entry.color;
-        return /* @__PURE__ */ React$4.createElement("li", _extends$u({
+        return /* @__PURE__ */ React$4.createElement("li", _extends$s({
           className,
           style: itemStyle,
           key: "legend-item-".concat(i)
@@ -58269,8 +58179,8 @@ var DefaultLegendContent = /* @__PURE__ */ function(_PureComponent) {
     }
   }]);
 }(reactExports.PureComponent);
-_defineProperty$K(DefaultLegendContent, "displayName", "Legend");
-_defineProperty$K(DefaultLegendContent, "defaultProps", {
+_defineProperty$I(DefaultLegendContent, "displayName", "Legend");
+_defineProperty$I(DefaultLegendContent, "defaultProps", {
   iconSize: 14,
   layout: "horizontal",
   align: "center",
@@ -59068,16 +58978,16 @@ function getUniqPayload(payload, option, defaultUniqBy2) {
   }
   return payload;
 }
-function _typeof$K(o) {
+function _typeof$I(o) {
   "@babel/helpers - typeof";
-  return _typeof$K = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$I = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$K(o);
+  }, _typeof$I(o);
 }
-var _excluded$i = ["ref"];
-function ownKeys$D(e3, r2) {
+var _excluded$h = ["ref"];
+function ownKeys$B(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -59087,87 +58997,87 @@ function ownKeys$D(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$D(e3) {
+function _objectSpread$B(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$D(Object(t2), true).forEach(function(r3) {
-      _defineProperty$J(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$D(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$B(Object(t2), true).forEach(function(r3) {
+      _defineProperty$H(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$B(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _classCallCheck$m(instance, Constructor) {
+function _classCallCheck$k(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-function _defineProperties$m(target, props) {
+function _defineProperties$k(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$J(descriptor.key), descriptor);
+    Object.defineProperty(target, _toPropertyKey$H(descriptor.key), descriptor);
   }
 }
-function _createClass$m(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$m(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties$m(Constructor, staticProps);
+function _createClass$k(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$k(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties$k(Constructor, staticProps);
   Object.defineProperty(Constructor, "prototype", { writable: false });
   return Constructor;
 }
-function _callSuper$i(t2, o, e3) {
-  return o = _getPrototypeOf$j(o), _possibleConstructorReturn$j(t2, _isNativeReflectConstruct$j() ? Reflect.construct(o, e3 || [], _getPrototypeOf$j(t2).constructor) : o.apply(t2, e3));
+function _callSuper$g(t2, o, e3) {
+  return o = _getPrototypeOf$h(o), _possibleConstructorReturn$h(t2, _isNativeReflectConstruct$h() ? Reflect.construct(o, e3 || [], _getPrototypeOf$h(t2).constructor) : o.apply(t2, e3));
 }
-function _possibleConstructorReturn$j(self2, call) {
-  if (call && (_typeof$K(call) === "object" || typeof call === "function")) {
+function _possibleConstructorReturn$h(self2, call) {
+  if (call && (_typeof$I(call) === "object" || typeof call === "function")) {
     return call;
   } else if (call !== void 0) {
     throw new TypeError("Derived constructors may only return object or undefined");
   }
-  return _assertThisInitialized$j(self2);
+  return _assertThisInitialized$h(self2);
 }
-function _assertThisInitialized$j(self2) {
+function _assertThisInitialized$h(self2) {
   if (self2 === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
   return self2;
 }
-function _isNativeReflectConstruct$j() {
+function _isNativeReflectConstruct$h() {
   try {
     var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
     }));
   } catch (t3) {
   }
-  return (_isNativeReflectConstruct$j = function _isNativeReflectConstruct2() {
+  return (_isNativeReflectConstruct$h = function _isNativeReflectConstruct2() {
     return !!t2;
   })();
 }
-function _getPrototypeOf$j(o) {
-  _getPrototypeOf$j = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
+function _getPrototypeOf$h(o) {
+  _getPrototypeOf$h = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
     return o2.__proto__ || Object.getPrototypeOf(o2);
   };
-  return _getPrototypeOf$j(o);
+  return _getPrototypeOf$h(o);
 }
-function _inherits$j(subClass, superClass) {
+function _inherits$h(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
   }
   subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
   Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$j(subClass, superClass);
+  if (superClass) _setPrototypeOf$h(subClass, superClass);
 }
-function _setPrototypeOf$j(o, p2) {
-  _setPrototypeOf$j = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
+function _setPrototypeOf$h(o, p2) {
+  _setPrototypeOf$h = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
     o2.__proto__ = p3;
     return o2;
   };
-  return _setPrototypeOf$j(o, p2);
+  return _setPrototypeOf$h(o, p2);
 }
-function _defineProperty$J(obj, key, value) {
-  key = _toPropertyKey$J(key);
+function _defineProperty$H(obj, key, value) {
+  key = _toPropertyKey$H(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -59175,23 +59085,23 @@ function _defineProperty$J(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$J(t2) {
-  var i = _toPrimitive$J(t2, "string");
-  return "symbol" == _typeof$K(i) ? i : i + "";
+function _toPropertyKey$H(t2) {
+  var i = _toPrimitive$H(t2, "string");
+  return "symbol" == _typeof$I(i) ? i : i + "";
 }
-function _toPrimitive$J(t2, r2) {
-  if ("object" != _typeof$K(t2) || !t2) return t2;
+function _toPrimitive$H(t2, r2) {
+  if ("object" != _typeof$I(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$K(i)) return i;
+    if ("object" != _typeof$I(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return String(t2);
 }
-function _objectWithoutProperties$i(source, excluded) {
+function _objectWithoutProperties$h(source, excluded) {
   if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$i(source, excluded);
+  var target = _objectWithoutPropertiesLoose$h(source, excluded);
   var key, i;
   if (Object.getOwnPropertySymbols) {
     var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
@@ -59204,7 +59114,7 @@ function _objectWithoutProperties$i(source, excluded) {
   }
   return target;
 }
-function _objectWithoutPropertiesLoose$i(source, excluded) {
+function _objectWithoutPropertiesLoose$h(source, excluded) {
   if (source == null) return {};
   var target = {};
   for (var key in source) {
@@ -59226,26 +59136,26 @@ function renderContent$1(content, props) {
     return /* @__PURE__ */ React$4.createElement(content, props);
   }
   props.ref;
-  var otherProps = _objectWithoutProperties$i(props, _excluded$i);
+  var otherProps = _objectWithoutProperties$h(props, _excluded$h);
   return /* @__PURE__ */ React$4.createElement(DefaultLegendContent, otherProps);
 }
 var EPS$1 = 1;
 var Legend = /* @__PURE__ */ function(_PureComponent) {
   function Legend2() {
     var _this;
-    _classCallCheck$m(this, Legend2);
+    _classCallCheck$k(this, Legend2);
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
-    _this = _callSuper$i(this, Legend2, [].concat(args));
-    _defineProperty$J(_this, "lastBoundingBox", {
+    _this = _callSuper$g(this, Legend2, [].concat(args));
+    _defineProperty$H(_this, "lastBoundingBox", {
       width: -1,
       height: -1
     });
     return _this;
   }
-  _inherits$j(Legend2, _PureComponent);
-  return _createClass$m(Legend2, [{
+  _inherits$h(Legend2, _PureComponent);
+  return _createClass$k(Legend2, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.updateBBox();
@@ -59291,7 +59201,7 @@ var Legend = /* @__PURE__ */ function(_PureComponent) {
     key: "getBBoxSnapshot",
     value: function getBBoxSnapshot() {
       if (this.lastBoundingBox.width >= 0 && this.lastBoundingBox.height >= 0) {
-        return _objectSpread$D({}, this.lastBoundingBox);
+        return _objectSpread$B({}, this.lastBoundingBox);
       }
       return {
         width: 0,
@@ -59331,14 +59241,14 @@ var Legend = /* @__PURE__ */ function(_PureComponent) {
           };
         }
       }
-      return _objectSpread$D(_objectSpread$D({}, hPos), vPos);
+      return _objectSpread$B(_objectSpread$B({}, hPos), vPos);
     }
   }, {
     key: "render",
     value: function render() {
       var _this2 = this;
       var _this$props2 = this.props, content = _this$props2.content, width = _this$props2.width, height = _this$props2.height, wrapperStyle = _this$props2.wrapperStyle, payloadUniqBy = _this$props2.payloadUniqBy, payload = _this$props2.payload;
-      var outerStyle = _objectSpread$D(_objectSpread$D({
+      var outerStyle = _objectSpread$B(_objectSpread$B({
         position: "absolute",
         width: width || "auto",
         height: height || "auto"
@@ -59349,14 +59259,14 @@ var Legend = /* @__PURE__ */ function(_PureComponent) {
         ref: function ref(node) {
           _this2.wrapperNode = node;
         }
-      }, renderContent$1(content, _objectSpread$D(_objectSpread$D({}, this.props), {}, {
+      }, renderContent$1(content, _objectSpread$B(_objectSpread$B({}, this.props), {}, {
         payload: getUniqPayload(payload, payloadUniqBy, defaultUniqBy$1)
       })));
     }
   }], [{
     key: "getWithHeight",
     value: function getWithHeight(item, chartWidth) {
-      var _this$defaultProps$it = _objectSpread$D(_objectSpread$D({}, this.defaultProps), item.props), layout2 = _this$defaultProps$it.layout;
+      var _this$defaultProps$it = _objectSpread$B(_objectSpread$B({}, this.defaultProps), item.props), layout2 = _this$defaultProps$it.layout;
       if (layout2 === "vertical" && isNumber$2(item.props.height)) {
         return {
           height: item.props.height
@@ -59371,8 +59281,8 @@ var Legend = /* @__PURE__ */ function(_PureComponent) {
     }
   }]);
 }(reactExports.PureComponent);
-_defineProperty$J(Legend, "displayName", "Legend");
-_defineProperty$J(Legend, "defaultProps", {
+_defineProperty$H(Legend, "displayName", "Legend");
+_defineProperty$H(Legend, "defaultProps", {
   iconSize: 14,
   layout: "horizontal",
   align: "center",
@@ -59571,8 +59481,8 @@ var defineProperty$2 = function() {
   } catch (e3) {
   }
 }();
-var _defineProperty$I = defineProperty$2;
-var constant$1 = constant_1, defineProperty$1 = _defineProperty$I, identity$8 = identity_1;
+var _defineProperty$G = defineProperty$2;
+var constant$1 = constant_1, defineProperty$1 = _defineProperty$G, identity$8 = identity_1;
 var baseSetToString$1 = !defineProperty$1 ? identity$8 : function(func, string2) {
   return defineProperty$1(func, "toString", {
     "configurable": true,
@@ -59635,16 +59545,16 @@ var sortBy = baseRest(function(collection, iteratees) {
 });
 var sortBy_1 = sortBy;
 const sortBy$1 = /* @__PURE__ */ getDefaultExportFromCjs$1(sortBy_1);
-function _typeof$J(o) {
+function _typeof$H(o) {
   "@babel/helpers - typeof";
-  return _typeof$J = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$H = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$J(o);
+  }, _typeof$H(o);
 }
-function _extends$t() {
-  _extends$t = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$r() {
+  _extends$r = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -59655,7 +59565,7 @@ function _extends$t() {
     }
     return target;
   };
-  return _extends$t.apply(this, arguments);
+  return _extends$r.apply(this, arguments);
 }
 function _slicedToArray$c(arr, i) {
   return _arrayWithHoles$d(arr) || _iterableToArrayLimit$c(arr, i) || _unsupportedIterableToArray$l(arr, i) || _nonIterableRest$d();
@@ -59698,7 +59608,7 @@ function _iterableToArrayLimit$c(r2, l2) {
 function _arrayWithHoles$d(arr) {
   if (Array.isArray(arr)) return arr;
 }
-function ownKeys$C(e3, r2) {
+function ownKeys$A(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -59708,19 +59618,19 @@ function ownKeys$C(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$C(e3) {
+function _objectSpread$A(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$C(Object(t2), true).forEach(function(r3) {
-      _defineProperty$H(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$C(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$A(Object(t2), true).forEach(function(r3) {
+      _defineProperty$F(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$A(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$H(obj, key, value) {
-  key = _toPropertyKey$I(key);
+function _defineProperty$F(obj, key, value) {
+  key = _toPropertyKey$G(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -59728,16 +59638,16 @@ function _defineProperty$H(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$I(t2) {
-  var i = _toPrimitive$I(t2, "string");
-  return "symbol" == _typeof$J(i) ? i : i + "";
+function _toPropertyKey$G(t2) {
+  var i = _toPrimitive$G(t2, "string");
+  return "symbol" == _typeof$H(i) ? i : i + "";
 }
-function _toPrimitive$I(t2, r2) {
-  if ("object" != _typeof$J(t2) || !t2) return t2;
+function _toPrimitive$G(t2, r2) {
+  if ("object" != _typeof$H(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$J(i)) return i;
+    if ("object" != _typeof$H(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
@@ -59757,7 +59667,7 @@ var DefaultTooltipContent = function DefaultTooltipContent2(props) {
         if (entry.type === "none") {
           return null;
         }
-        var finalItemStyle = _objectSpread$C({
+        var finalItemStyle = _objectSpread$A({
           display: "block",
           paddingTop: 4,
           paddingBottom: 4,
@@ -59801,14 +59711,14 @@ var DefaultTooltipContent = function DefaultTooltipContent2(props) {
     }
     return null;
   };
-  var finalStyle = _objectSpread$C({
+  var finalStyle = _objectSpread$A({
     margin: 0,
     padding: 10,
     backgroundColor: "#fff",
     border: "1px solid #ccc",
     whiteSpace: "nowrap"
   }, contentStyle);
-  var finalLabelStyle = _objectSpread$C({
+  var finalLabelStyle = _objectSpread$A({
     margin: 0
   }, labelStyle);
   var hasLabel = !isNil$1(label);
@@ -59822,7 +59732,7 @@ var DefaultTooltipContent = function DefaultTooltipContent2(props) {
     role: "status",
     "aria-live": "assertive"
   } : {};
-  return /* @__PURE__ */ React$4.createElement("div", _extends$t({
+  return /* @__PURE__ */ React$4.createElement("div", _extends$r({
     className: wrapperCN,
     style: finalStyle
   }, accessibilityAttributes), /* @__PURE__ */ React$4.createElement("p", {
@@ -59830,16 +59740,16 @@ var DefaultTooltipContent = function DefaultTooltipContent2(props) {
     style: finalLabelStyle
   }, /* @__PURE__ */ React$4.isValidElement(finalLabel) ? finalLabel : "".concat(finalLabel)), renderContent2());
 };
-function _typeof$I(o) {
+function _typeof$G(o) {
   "@babel/helpers - typeof";
-  return _typeof$I = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$G = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$I(o);
+  }, _typeof$G(o);
 }
-function _defineProperty$G(obj, key, value) {
-  key = _toPropertyKey$H(key);
+function _defineProperty$E(obj, key, value) {
+  key = _toPropertyKey$F(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -59847,16 +59757,16 @@ function _defineProperty$G(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$H(t2) {
-  var i = _toPrimitive$H(t2, "string");
-  return "symbol" == _typeof$I(i) ? i : i + "";
+function _toPropertyKey$F(t2) {
+  var i = _toPrimitive$F(t2, "string");
+  return "symbol" == _typeof$G(i) ? i : i + "";
 }
-function _toPrimitive$H(t2, r2) {
-  if ("object" != _typeof$I(t2) || !t2) return t2;
+function _toPrimitive$F(t2, r2) {
+  if ("object" != _typeof$G(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$I(i)) return i;
+    if ("object" != _typeof$G(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
@@ -59867,7 +59777,7 @@ var TOOLTIP_HIDDEN = {
 };
 function getTooltipCSSClassName(_ref) {
   var coordinate = _ref.coordinate, translateX = _ref.translateX, translateY = _ref.translateY;
-  return clsx(CSS_CLASS_PREFIX, _defineProperty$G(_defineProperty$G(_defineProperty$G(_defineProperty$G({}, "".concat(CSS_CLASS_PREFIX, "-right"), isNumber$2(translateX) && coordinate && isNumber$2(coordinate.x) && translateX >= coordinate.x), "".concat(CSS_CLASS_PREFIX, "-left"), isNumber$2(translateX) && coordinate && isNumber$2(coordinate.x) && translateX < coordinate.x), "".concat(CSS_CLASS_PREFIX, "-bottom"), isNumber$2(translateY) && coordinate && isNumber$2(coordinate.y) && translateY >= coordinate.y), "".concat(CSS_CLASS_PREFIX, "-top"), isNumber$2(translateY) && coordinate && isNumber$2(coordinate.y) && translateY < coordinate.y));
+  return clsx(CSS_CLASS_PREFIX, _defineProperty$E(_defineProperty$E(_defineProperty$E(_defineProperty$E({}, "".concat(CSS_CLASS_PREFIX, "-right"), isNumber$2(translateX) && coordinate && isNumber$2(coordinate.x) && translateX >= coordinate.x), "".concat(CSS_CLASS_PREFIX, "-left"), isNumber$2(translateX) && coordinate && isNumber$2(coordinate.x) && translateX < coordinate.x), "".concat(CSS_CLASS_PREFIX, "-bottom"), isNumber$2(translateY) && coordinate && isNumber$2(coordinate.y) && translateY >= coordinate.y), "".concat(CSS_CLASS_PREFIX, "-top"), isNumber$2(translateY) && coordinate && isNumber$2(coordinate.y) && translateY < coordinate.y));
 }
 function getTooltipTranslateXY(_ref2) {
   var allowEscapeViewBox = _ref2.allowEscapeViewBox, coordinate = _ref2.coordinate, key = _ref2.key, offsetTopLeft = _ref2.offsetTopLeft, position = _ref2.position, reverseDirection = _ref2.reverseDirection, tooltipDimension = _ref2.tooltipDimension, viewBox = _ref2.viewBox, viewBoxDimension = _ref2.viewBoxDimension;
@@ -59943,15 +59853,15 @@ function getTooltipTranslate(_ref4) {
     })
   };
 }
-function _typeof$H(o) {
+function _typeof$F(o) {
   "@babel/helpers - typeof";
-  return _typeof$H = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$F = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$H(o);
+  }, _typeof$F(o);
 }
-function ownKeys$B(e3, r2) {
+function ownKeys$z(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -59961,86 +59871,86 @@ function ownKeys$B(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$B(e3) {
+function _objectSpread$z(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$B(Object(t2), true).forEach(function(r3) {
-      _defineProperty$F(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$B(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$z(Object(t2), true).forEach(function(r3) {
+      _defineProperty$D(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$z(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _classCallCheck$l(instance, Constructor) {
+function _classCallCheck$j(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-function _defineProperties$l(target, props) {
+function _defineProperties$j(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$G(descriptor.key), descriptor);
+    Object.defineProperty(target, _toPropertyKey$E(descriptor.key), descriptor);
   }
 }
-function _createClass$l(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$l(Constructor.prototype, protoProps);
+function _createClass$j(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$j(Constructor.prototype, protoProps);
   Object.defineProperty(Constructor, "prototype", { writable: false });
   return Constructor;
 }
-function _callSuper$h(t2, o, e3) {
-  return o = _getPrototypeOf$i(o), _possibleConstructorReturn$i(t2, _isNativeReflectConstruct$i() ? Reflect.construct(o, e3 || [], _getPrototypeOf$i(t2).constructor) : o.apply(t2, e3));
+function _callSuper$f(t2, o, e3) {
+  return o = _getPrototypeOf$g(o), _possibleConstructorReturn$g(t2, _isNativeReflectConstruct$g() ? Reflect.construct(o, e3 || [], _getPrototypeOf$g(t2).constructor) : o.apply(t2, e3));
 }
-function _possibleConstructorReturn$i(self2, call) {
-  if (call && (_typeof$H(call) === "object" || typeof call === "function")) {
+function _possibleConstructorReturn$g(self2, call) {
+  if (call && (_typeof$F(call) === "object" || typeof call === "function")) {
     return call;
   } else if (call !== void 0) {
     throw new TypeError("Derived constructors may only return object or undefined");
   }
-  return _assertThisInitialized$i(self2);
+  return _assertThisInitialized$g(self2);
 }
-function _assertThisInitialized$i(self2) {
+function _assertThisInitialized$g(self2) {
   if (self2 === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
   return self2;
 }
-function _isNativeReflectConstruct$i() {
+function _isNativeReflectConstruct$g() {
   try {
     var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
     }));
   } catch (t3) {
   }
-  return (_isNativeReflectConstruct$i = function _isNativeReflectConstruct2() {
+  return (_isNativeReflectConstruct$g = function _isNativeReflectConstruct2() {
     return !!t2;
   })();
 }
-function _getPrototypeOf$i(o) {
-  _getPrototypeOf$i = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
+function _getPrototypeOf$g(o) {
+  _getPrototypeOf$g = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
     return o2.__proto__ || Object.getPrototypeOf(o2);
   };
-  return _getPrototypeOf$i(o);
+  return _getPrototypeOf$g(o);
 }
-function _inherits$i(subClass, superClass) {
+function _inherits$g(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
   }
   subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
   Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$i(subClass, superClass);
+  if (superClass) _setPrototypeOf$g(subClass, superClass);
 }
-function _setPrototypeOf$i(o, p2) {
-  _setPrototypeOf$i = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
+function _setPrototypeOf$g(o, p2) {
+  _setPrototypeOf$g = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
     o2.__proto__ = p3;
     return o2;
   };
-  return _setPrototypeOf$i(o, p2);
+  return _setPrototypeOf$g(o, p2);
 }
-function _defineProperty$F(obj, key, value) {
-  key = _toPropertyKey$G(key);
+function _defineProperty$D(obj, key, value) {
+  key = _toPropertyKey$E(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -60048,16 +59958,16 @@ function _defineProperty$F(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$G(t2) {
-  var i = _toPrimitive$G(t2, "string");
-  return "symbol" == _typeof$H(i) ? i : i + "";
+function _toPropertyKey$E(t2) {
+  var i = _toPrimitive$E(t2, "string");
+  return "symbol" == _typeof$F(i) ? i : i + "";
 }
-function _toPrimitive$G(t2, r2) {
-  if ("object" != _typeof$H(t2) || !t2) return t2;
+function _toPrimitive$E(t2, r2) {
+  if ("object" != _typeof$F(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$H(i)) return i;
+    if ("object" != _typeof$F(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return String(t2);
@@ -60066,12 +59976,12 @@ var EPSILON = 1;
 var TooltipBoundingBox = /* @__PURE__ */ function(_PureComponent) {
   function TooltipBoundingBox2() {
     var _this;
-    _classCallCheck$l(this, TooltipBoundingBox2);
+    _classCallCheck$j(this, TooltipBoundingBox2);
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
-    _this = _callSuper$h(this, TooltipBoundingBox2, [].concat(args));
-    _defineProperty$F(_this, "state", {
+    _this = _callSuper$f(this, TooltipBoundingBox2, [].concat(args));
+    _defineProperty$D(_this, "state", {
       dismissed: false,
       dismissedAtCoordinate: {
         x: 0,
@@ -60082,7 +59992,7 @@ var TooltipBoundingBox = /* @__PURE__ */ function(_PureComponent) {
         height: -1
       }
     });
-    _defineProperty$F(_this, "handleKeyDown", function(event) {
+    _defineProperty$D(_this, "handleKeyDown", function(event) {
       if (event.key === "Escape") {
         var _this$props$coordinat, _this$props$coordinat2, _this$props$coordinat3, _this$props$coordinat4;
         _this.setState({
@@ -60096,8 +60006,8 @@ var TooltipBoundingBox = /* @__PURE__ */ function(_PureComponent) {
     });
     return _this;
   }
-  _inherits$i(TooltipBoundingBox2, _PureComponent);
-  return _createClass$l(TooltipBoundingBox2, [{
+  _inherits$g(TooltipBoundingBox2, _PureComponent);
+  return _createClass$j(TooltipBoundingBox2, [{
     key: "updateBBox",
     value: function updateBBox() {
       if (this.wrapperNode && this.wrapperNode.getBoundingClientRect) {
@@ -60159,7 +60069,7 @@ var TooltipBoundingBox = /* @__PURE__ */ function(_PureComponent) {
         useTranslate3d,
         viewBox
       }), cssClasses = _getTooltipTranslate.cssClasses, cssProperties = _getTooltipTranslate.cssProperties;
-      var outerStyle = _objectSpread$B(_objectSpread$B({
+      var outerStyle = _objectSpread$z(_objectSpread$z({
         transition: isAnimationActive && active ? "transform ".concat(animationDuration, "ms ").concat(animationEasing) : void 0
       }, cssProperties), {}, {
         pointerEvents: "none",
@@ -60189,15 +60099,15 @@ var parseIsSsrByDefault = function parseIsSsrByDefault2() {
 var Global = {
   isSsr: parseIsSsrByDefault()
 };
-function _typeof$G(o) {
+function _typeof$E(o) {
   "@babel/helpers - typeof";
-  return _typeof$G = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$E = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$G(o);
+  }, _typeof$E(o);
 }
-function ownKeys$A(e3, r2) {
+function ownKeys$y(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -60207,86 +60117,86 @@ function ownKeys$A(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$A(e3) {
+function _objectSpread$y(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$A(Object(t2), true).forEach(function(r3) {
-      _defineProperty$E(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$A(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$y(Object(t2), true).forEach(function(r3) {
+      _defineProperty$C(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$y(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _classCallCheck$k(instance, Constructor) {
+function _classCallCheck$i(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-function _defineProperties$k(target, props) {
+function _defineProperties$i(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$F(descriptor.key), descriptor);
+    Object.defineProperty(target, _toPropertyKey$D(descriptor.key), descriptor);
   }
 }
-function _createClass$k(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$k(Constructor.prototype, protoProps);
+function _createClass$i(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$i(Constructor.prototype, protoProps);
   Object.defineProperty(Constructor, "prototype", { writable: false });
   return Constructor;
 }
-function _callSuper$g(t2, o, e3) {
-  return o = _getPrototypeOf$h(o), _possibleConstructorReturn$h(t2, _isNativeReflectConstruct$h() ? Reflect.construct(o, e3 || [], _getPrototypeOf$h(t2).constructor) : o.apply(t2, e3));
+function _callSuper$e(t2, o, e3) {
+  return o = _getPrototypeOf$f(o), _possibleConstructorReturn$f(t2, _isNativeReflectConstruct$f() ? Reflect.construct(o, e3 || [], _getPrototypeOf$f(t2).constructor) : o.apply(t2, e3));
 }
-function _possibleConstructorReturn$h(self2, call) {
-  if (call && (_typeof$G(call) === "object" || typeof call === "function")) {
+function _possibleConstructorReturn$f(self2, call) {
+  if (call && (_typeof$E(call) === "object" || typeof call === "function")) {
     return call;
   } else if (call !== void 0) {
     throw new TypeError("Derived constructors may only return object or undefined");
   }
-  return _assertThisInitialized$h(self2);
+  return _assertThisInitialized$f(self2);
 }
-function _assertThisInitialized$h(self2) {
+function _assertThisInitialized$f(self2) {
   if (self2 === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
   return self2;
 }
-function _isNativeReflectConstruct$h() {
+function _isNativeReflectConstruct$f() {
   try {
     var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
     }));
   } catch (t3) {
   }
-  return (_isNativeReflectConstruct$h = function _isNativeReflectConstruct2() {
+  return (_isNativeReflectConstruct$f = function _isNativeReflectConstruct2() {
     return !!t2;
   })();
 }
-function _getPrototypeOf$h(o) {
-  _getPrototypeOf$h = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
+function _getPrototypeOf$f(o) {
+  _getPrototypeOf$f = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
     return o2.__proto__ || Object.getPrototypeOf(o2);
   };
-  return _getPrototypeOf$h(o);
+  return _getPrototypeOf$f(o);
 }
-function _inherits$h(subClass, superClass) {
+function _inherits$f(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
   }
   subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
   Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$h(subClass, superClass);
+  if (superClass) _setPrototypeOf$f(subClass, superClass);
 }
-function _setPrototypeOf$h(o, p2) {
-  _setPrototypeOf$h = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
+function _setPrototypeOf$f(o, p2) {
+  _setPrototypeOf$f = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
     o2.__proto__ = p3;
     return o2;
   };
-  return _setPrototypeOf$h(o, p2);
+  return _setPrototypeOf$f(o, p2);
 }
-function _defineProperty$E(obj, key, value) {
-  key = _toPropertyKey$F(key);
+function _defineProperty$C(obj, key, value) {
+  key = _toPropertyKey$D(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -60294,16 +60204,16 @@ function _defineProperty$E(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$F(t2) {
-  var i = _toPrimitive$F(t2, "string");
-  return "symbol" == _typeof$G(i) ? i : i + "";
+function _toPropertyKey$D(t2) {
+  var i = _toPrimitive$D(t2, "string");
+  return "symbol" == _typeof$E(i) ? i : i + "";
 }
-function _toPrimitive$F(t2, r2) {
-  if ("object" != _typeof$G(t2) || !t2) return t2;
+function _toPrimitive$D(t2, r2) {
+  if ("object" != _typeof$E(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$G(i)) return i;
+    if ("object" != _typeof$E(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return String(t2);
@@ -60322,11 +60232,11 @@ function renderContent(content, props) {
 }
 var Tooltip = /* @__PURE__ */ function(_PureComponent) {
   function Tooltip2() {
-    _classCallCheck$k(this, Tooltip2);
-    return _callSuper$g(this, Tooltip2, arguments);
+    _classCallCheck$i(this, Tooltip2);
+    return _callSuper$e(this, Tooltip2, arguments);
   }
-  _inherits$h(Tooltip2, _PureComponent);
-  return _createClass$k(Tooltip2, [{
+  _inherits$f(Tooltip2, _PureComponent);
+  return _createClass$i(Tooltip2, [{
     key: "render",
     value: function render() {
       var _this = this;
@@ -60352,14 +60262,14 @@ var Tooltip = /* @__PURE__ */ function(_PureComponent) {
         useTranslate3d,
         viewBox,
         wrapperStyle
-      }, renderContent(content, _objectSpread$A(_objectSpread$A({}, this.props), {}, {
+      }, renderContent(content, _objectSpread$y(_objectSpread$y({}, this.props), {}, {
         payload: finalPayload
       })));
     }
   }]);
 }(reactExports.PureComponent);
-_defineProperty$E(Tooltip, "displayName", "Tooltip");
-_defineProperty$E(Tooltip, "defaultProps", {
+_defineProperty$C(Tooltip, "displayName", "Tooltip");
+_defineProperty$C(Tooltip, "defaultProps", {
   accessibilityLayer: false,
   allowEscapeViewBox: {
     x: false,
@@ -60542,15 +60452,15 @@ function throttle(func, wait, options) {
 }
 var throttle_1 = throttle;
 const throttle$1 = /* @__PURE__ */ getDefaultExportFromCjs$1(throttle_1);
-function _typeof$F(o) {
+function _typeof$D(o) {
   "@babel/helpers - typeof";
-  return _typeof$F = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$D = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$F(o);
+  }, _typeof$D(o);
 }
-function ownKeys$z(e3, r2) {
+function ownKeys$x(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -60560,19 +60470,19 @@ function ownKeys$z(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$z(e3) {
+function _objectSpread$x(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$z(Object(t2), true).forEach(function(r3) {
-      _defineProperty$D(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$z(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$x(Object(t2), true).forEach(function(r3) {
+      _defineProperty$B(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$x(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$D(obj, key, value) {
-  key = _toPropertyKey$E(key);
+function _defineProperty$B(obj, key, value) {
+  key = _toPropertyKey$C(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -60580,16 +60490,16 @@ function _defineProperty$D(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$E(t2) {
-  var i = _toPrimitive$E(t2, "string");
-  return "symbol" == _typeof$F(i) ? i : i + "";
+function _toPropertyKey$C(t2) {
+  var i = _toPrimitive$C(t2, "string");
+  return "symbol" == _typeof$D(i) ? i : i + "";
 }
-function _toPrimitive$E(t2, r2) {
-  if ("object" != _typeof$F(t2) || !t2) return t2;
+function _toPrimitive$C(t2, r2) {
+  if ("object" != _typeof$D(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$F(i)) return i;
+    if ("object" != _typeof$D(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
@@ -60713,11 +60623,11 @@ var ResponsiveContainer = /* @__PURE__ */ reactExports.forwardRef(function(_ref,
     var isCharts = !Array.isArray(children) && getDisplayName(children.type).endsWith("Chart");
     return React$4.Children.map(children, function(child) {
       if (/* @__PURE__ */ React$4.isValidElement(child)) {
-        return /* @__PURE__ */ reactExports.cloneElement(child, _objectSpread$z({
+        return /* @__PURE__ */ reactExports.cloneElement(child, _objectSpread$x({
           width: calculatedWidth,
           height: calculatedHeight
         }, isCharts ? {
-          style: _objectSpread$z({
+          style: _objectSpread$x({
             height: "100%",
             width: "100%",
             maxHeight: calculatedHeight,
@@ -60731,7 +60641,7 @@ var ResponsiveContainer = /* @__PURE__ */ reactExports.forwardRef(function(_ref,
   return /* @__PURE__ */ React$4.createElement("div", {
     id: id2 ? "".concat(id2) : void 0,
     className: clsx("recharts-responsive-container", className),
-    style: _objectSpread$z(_objectSpread$z({}, style2), {}, {
+    style: _objectSpread$x(_objectSpread$x({}, style2), {}, {
       width,
       height,
       minWidth,
@@ -60745,15 +60655,15 @@ var Cell = function Cell2(_props) {
   return null;
 };
 Cell.displayName = "Cell";
-function _typeof$E(o) {
+function _typeof$C(o) {
   "@babel/helpers - typeof";
-  return _typeof$E = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$C = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$E(o);
+  }, _typeof$C(o);
 }
-function ownKeys$y(e3, r2) {
+function ownKeys$w(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -60763,19 +60673,19 @@ function ownKeys$y(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$y(e3) {
+function _objectSpread$w(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$y(Object(t2), true).forEach(function(r3) {
-      _defineProperty$C(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$y(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$w(Object(t2), true).forEach(function(r3) {
+      _defineProperty$A(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$w(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$C(obj, key, value) {
-  key = _toPropertyKey$D(key);
+function _defineProperty$A(obj, key, value) {
+  key = _toPropertyKey$B(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -60783,16 +60693,16 @@ function _defineProperty$C(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$D(t2) {
-  var i = _toPrimitive$D(t2, "string");
-  return "symbol" == _typeof$E(i) ? i : i + "";
+function _toPropertyKey$B(t2) {
+  var i = _toPrimitive$B(t2, "string");
+  return "symbol" == _typeof$C(i) ? i : i + "";
 }
-function _toPrimitive$D(t2, r2) {
-  if ("object" != _typeof$E(t2) || !t2) return t2;
+function _toPrimitive$B(t2, r2) {
+  if ("object" != _typeof$C(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$E(i)) return i;
+    if ("object" != _typeof$C(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
@@ -60813,7 +60723,7 @@ var SPAN_STYLE = {
 };
 var MEASUREMENT_SPAN_ID = "recharts_measurement_span";
 function removeInvalidKeys(obj) {
-  var copyObj = _objectSpread$y({}, obj);
+  var copyObj = _objectSpread$w({}, obj);
   Object.keys(copyObj).forEach(function(key) {
     if (!copyObj[key]) {
       delete copyObj[key];
@@ -60845,7 +60755,7 @@ var getStringSize = function getStringSize2(text) {
       measurementSpan.setAttribute("aria-hidden", "true");
       document.body.appendChild(measurementSpan);
     }
-    var measurementSpanStyle = _objectSpread$y(_objectSpread$y({}, SPAN_STYLE), copyStyle);
+    var measurementSpanStyle = _objectSpread$w(_objectSpread$w({}, SPAN_STYLE), copyStyle);
     Object.assign(measurementSpan.style, measurementSpanStyle);
     measurementSpan.textContent = "".concat(text);
     var rect = measurementSpan.getBoundingClientRect();
@@ -60872,13 +60782,13 @@ var getOffset = function getOffset2(rect) {
     left: rect.left + window.scrollX - document.documentElement.clientLeft
   };
 };
-function _typeof$D(o) {
+function _typeof$B(o) {
   "@babel/helpers - typeof";
-  return _typeof$D = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$B = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$D(o);
+  }, _typeof$B(o);
 }
 function _slicedToArray$a(arr, i) {
   return _arrayWithHoles$b(arr) || _iterableToArrayLimit$a(arr, i) || _unsupportedIterableToArray$j(arr, i) || _nonIterableRest$b();
@@ -60923,36 +60833,36 @@ function _iterableToArrayLimit$a(r2, l2) {
 function _arrayWithHoles$b(arr) {
   if (Array.isArray(arr)) return arr;
 }
-function _classCallCheck$j(instance, Constructor) {
+function _classCallCheck$h(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-function _defineProperties$j(target, props) {
+function _defineProperties$h(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$C(descriptor.key), descriptor);
+    Object.defineProperty(target, _toPropertyKey$A(descriptor.key), descriptor);
   }
 }
-function _createClass$j(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$j(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties$j(Constructor, staticProps);
+function _createClass$h(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$h(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties$h(Constructor, staticProps);
   Object.defineProperty(Constructor, "prototype", { writable: false });
   return Constructor;
 }
-function _toPropertyKey$C(t2) {
-  var i = _toPrimitive$C(t2, "string");
-  return "symbol" == _typeof$D(i) ? i : i + "";
+function _toPropertyKey$A(t2) {
+  var i = _toPrimitive$A(t2, "string");
+  return "symbol" == _typeof$B(i) ? i : i + "";
 }
-function _toPrimitive$C(t2, r2) {
-  if ("object" != _typeof$D(t2) || !t2) return t2;
+function _toPrimitive$A(t2, r2) {
+  if ("object" != _typeof$B(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$D(i)) return i;
+    if ("object" != _typeof$B(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return String(t2);
@@ -60977,7 +60887,7 @@ function convertToPx(value, unit2) {
 }
 var DecimalCSS = /* @__PURE__ */ function() {
   function DecimalCSS2(num, unit2) {
-    _classCallCheck$j(this, DecimalCSS2);
+    _classCallCheck$h(this, DecimalCSS2);
     this.num = num;
     this.unit = unit2;
     this.num = num;
@@ -60994,7 +60904,7 @@ var DecimalCSS = /* @__PURE__ */ function() {
       this.unit = "px";
     }
   }
-  return _createClass$j(DecimalCSS2, [{
+  return _createClass$h(DecimalCSS2, [{
     key: "add",
     value: function add2(other) {
       if (this.unit !== other.unit) {
@@ -61103,9 +61013,9 @@ function reduceCSSCalc(expression) {
   }
   return result;
 }
-var _excluded$h = ["x", "y", "lineHeight", "capHeight", "scaleToFit", "textAnchor", "verticalAnchor", "fill"], _excluded2$7 = ["dx", "dy", "angle", "className", "breakAll"];
-function _extends$s() {
-  _extends$s = Object.assign ? Object.assign.bind() : function(target) {
+var _excluded$g = ["x", "y", "lineHeight", "capHeight", "scaleToFit", "textAnchor", "verticalAnchor", "fill"], _excluded2$6 = ["dx", "dy", "angle", "className", "breakAll"];
+function _extends$q() {
+  _extends$q = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -61116,11 +61026,11 @@ function _extends$s() {
     }
     return target;
   };
-  return _extends$s.apply(this, arguments);
+  return _extends$q.apply(this, arguments);
 }
-function _objectWithoutProperties$h(source, excluded) {
+function _objectWithoutProperties$g(source, excluded) {
   if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$h(source, excluded);
+  var target = _objectWithoutPropertiesLoose$g(source, excluded);
   var key, i;
   if (Object.getOwnPropertySymbols) {
     var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
@@ -61133,7 +61043,7 @@ function _objectWithoutProperties$h(source, excluded) {
   }
   return target;
 }
-function _objectWithoutPropertiesLoose$h(source, excluded) {
+function _objectWithoutPropertiesLoose$g(source, excluded) {
   if (source == null) return {};
   var target = {};
   for (var key in source) {
@@ -61313,7 +61223,7 @@ var getWordsByLines = function getWordsByLines2(_ref4) {
 };
 var DEFAULT_FILL = "#808080";
 var Text$1 = function Text(_ref5) {
-  var _ref5$x = _ref5.x, propsX = _ref5$x === void 0 ? 0 : _ref5$x, _ref5$y = _ref5.y, propsY = _ref5$y === void 0 ? 0 : _ref5$y, _ref5$lineHeight = _ref5.lineHeight, lineHeight = _ref5$lineHeight === void 0 ? "1em" : _ref5$lineHeight, _ref5$capHeight = _ref5.capHeight, capHeight = _ref5$capHeight === void 0 ? "0.71em" : _ref5$capHeight, _ref5$scaleToFit = _ref5.scaleToFit, scaleToFit = _ref5$scaleToFit === void 0 ? false : _ref5$scaleToFit, _ref5$textAnchor = _ref5.textAnchor, textAnchor = _ref5$textAnchor === void 0 ? "start" : _ref5$textAnchor, _ref5$verticalAnchor = _ref5.verticalAnchor, verticalAnchor = _ref5$verticalAnchor === void 0 ? "end" : _ref5$verticalAnchor, _ref5$fill = _ref5.fill, fill = _ref5$fill === void 0 ? DEFAULT_FILL : _ref5$fill, props = _objectWithoutProperties$h(_ref5, _excluded$h);
+  var _ref5$x = _ref5.x, propsX = _ref5$x === void 0 ? 0 : _ref5$x, _ref5$y = _ref5.y, propsY = _ref5$y === void 0 ? 0 : _ref5$y, _ref5$lineHeight = _ref5.lineHeight, lineHeight = _ref5$lineHeight === void 0 ? "1em" : _ref5$lineHeight, _ref5$capHeight = _ref5.capHeight, capHeight = _ref5$capHeight === void 0 ? "0.71em" : _ref5$capHeight, _ref5$scaleToFit = _ref5.scaleToFit, scaleToFit = _ref5$scaleToFit === void 0 ? false : _ref5$scaleToFit, _ref5$textAnchor = _ref5.textAnchor, textAnchor = _ref5$textAnchor === void 0 ? "start" : _ref5$textAnchor, _ref5$verticalAnchor = _ref5.verticalAnchor, verticalAnchor = _ref5$verticalAnchor === void 0 ? "end" : _ref5$verticalAnchor, _ref5$fill = _ref5.fill, fill = _ref5$fill === void 0 ? DEFAULT_FILL : _ref5$fill, props = _objectWithoutProperties$g(_ref5, _excluded$g);
   var wordsByLines = reactExports.useMemo(function() {
     return getWordsByLines({
       breakAll: props.breakAll,
@@ -61324,7 +61234,7 @@ var Text$1 = function Text(_ref5) {
       width: props.width
     });
   }, [props.breakAll, props.children, props.maxLines, scaleToFit, props.style, props.width]);
-  var dx = props.dx, dy = props.dy, angle = props.angle, className = props.className, breakAll = props.breakAll, textProps = _objectWithoutProperties$h(props, _excluded2$7);
+  var dx = props.dx, dy = props.dy, angle = props.angle, className = props.className, breakAll = props.breakAll, textProps = _objectWithoutProperties$g(props, _excluded2$6);
   if (!isNumOrStr(propsX) || !isNumOrStr(propsY)) {
     return null;
   }
@@ -61354,7 +61264,7 @@ var Text$1 = function Text(_ref5) {
   if (transforms.length) {
     textProps.transform = transforms.join(" ");
   }
-  return /* @__PURE__ */ React$4.createElement("text", _extends$s({}, filterProps(textProps, true), {
+  return /* @__PURE__ */ React$4.createElement("text", _extends$q({}, filterProps(textProps, true), {
     x: x2,
     y: y2,
     className: clsx("recharts-text", className),
@@ -65369,17 +65279,17 @@ function getTickValuesFixedDomainFn(_ref7, tickCount) {
 }
 var getNiceTickValues = memoize(getNiceTickValuesFn);
 var getTickValuesFixedDomain = memoize(getTickValuesFixedDomainFn);
-var _excluded$g = ["offset", "layout", "width", "dataKey", "data", "dataPointFormatter", "xAxis", "yAxis"];
-function _typeof$C(o) {
+var _excluded$f = ["offset", "layout", "width", "dataKey", "data", "dataPointFormatter", "xAxis", "yAxis"];
+function _typeof$A(o) {
   "@babel/helpers - typeof";
-  return _typeof$C = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$A = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$C(o);
+  }, _typeof$A(o);
 }
-function _extends$r() {
-  _extends$r = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$p() {
+  _extends$p = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -65390,7 +65300,7 @@ function _extends$r() {
     }
     return target;
   };
-  return _extends$r.apply(this, arguments);
+  return _extends$p.apply(this, arguments);
 }
 function _slicedToArray$7(arr, i) {
   return _arrayWithHoles$8(arr) || _iterableToArrayLimit$7(arr, i) || _unsupportedIterableToArray$f(arr, i) || _nonIterableRest$8();
@@ -65433,9 +65343,9 @@ function _iterableToArrayLimit$7(r2, l2) {
 function _arrayWithHoles$8(arr) {
   if (Array.isArray(arr)) return arr;
 }
-function _objectWithoutProperties$g(source, excluded) {
+function _objectWithoutProperties$f(source, excluded) {
   if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$g(source, excluded);
+  var target = _objectWithoutPropertiesLoose$f(source, excluded);
   var key, i;
   if (Object.getOwnPropertySymbols) {
     var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
@@ -65448,7 +65358,7 @@ function _objectWithoutProperties$g(source, excluded) {
   }
   return target;
 }
-function _objectWithoutPropertiesLoose$g(source, excluded) {
+function _objectWithoutPropertiesLoose$f(source, excluded) {
   if (source == null) return {};
   var target = {};
   for (var key in source) {
@@ -65459,75 +65369,75 @@ function _objectWithoutPropertiesLoose$g(source, excluded) {
   }
   return target;
 }
-function _classCallCheck$i(instance, Constructor) {
+function _classCallCheck$g(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-function _defineProperties$i(target, props) {
+function _defineProperties$g(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$B(descriptor.key), descriptor);
+    Object.defineProperty(target, _toPropertyKey$z(descriptor.key), descriptor);
   }
 }
-function _createClass$i(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$i(Constructor.prototype, protoProps);
+function _createClass$g(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$g(Constructor.prototype, protoProps);
   Object.defineProperty(Constructor, "prototype", { writable: false });
   return Constructor;
 }
-function _callSuper$f(t2, o, e3) {
-  return o = _getPrototypeOf$g(o), _possibleConstructorReturn$g(t2, _isNativeReflectConstruct$g() ? Reflect.construct(o, e3 || [], _getPrototypeOf$g(t2).constructor) : o.apply(t2, e3));
+function _callSuper$d(t2, o, e3) {
+  return o = _getPrototypeOf$e(o), _possibleConstructorReturn$e(t2, _isNativeReflectConstruct$e() ? Reflect.construct(o, e3 || [], _getPrototypeOf$e(t2).constructor) : o.apply(t2, e3));
 }
-function _possibleConstructorReturn$g(self2, call) {
-  if (call && (_typeof$C(call) === "object" || typeof call === "function")) {
+function _possibleConstructorReturn$e(self2, call) {
+  if (call && (_typeof$A(call) === "object" || typeof call === "function")) {
     return call;
   } else if (call !== void 0) {
     throw new TypeError("Derived constructors may only return object or undefined");
   }
-  return _assertThisInitialized$g(self2);
+  return _assertThisInitialized$e(self2);
 }
-function _assertThisInitialized$g(self2) {
+function _assertThisInitialized$e(self2) {
   if (self2 === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
   return self2;
 }
-function _isNativeReflectConstruct$g() {
+function _isNativeReflectConstruct$e() {
   try {
     var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
     }));
   } catch (t22) {
   }
-  return (_isNativeReflectConstruct$g = function _isNativeReflectConstruct2() {
+  return (_isNativeReflectConstruct$e = function _isNativeReflectConstruct2() {
     return !!t2;
   })();
 }
-function _getPrototypeOf$g(o) {
-  _getPrototypeOf$g = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
+function _getPrototypeOf$e(o) {
+  _getPrototypeOf$e = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
     return o2.__proto__ || Object.getPrototypeOf(o2);
   };
-  return _getPrototypeOf$g(o);
+  return _getPrototypeOf$e(o);
 }
-function _inherits$g(subClass, superClass) {
+function _inherits$e(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
   }
   subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
   Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$g(subClass, superClass);
+  if (superClass) _setPrototypeOf$e(subClass, superClass);
 }
-function _setPrototypeOf$g(o, p2) {
-  _setPrototypeOf$g = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p22) {
+function _setPrototypeOf$e(o, p2) {
+  _setPrototypeOf$e = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p22) {
     o2.__proto__ = p22;
     return o2;
   };
-  return _setPrototypeOf$g(o, p2);
+  return _setPrototypeOf$e(o, p2);
 }
-function _defineProperty$B(obj, key, value) {
-  key = _toPropertyKey$B(key);
+function _defineProperty$z(obj, key, value) {
+  key = _toPropertyKey$z(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -65535,30 +65445,30 @@ function _defineProperty$B(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$B(t2) {
-  var i = _toPrimitive$B(t2, "string");
-  return "symbol" == _typeof$C(i) ? i : i + "";
+function _toPropertyKey$z(t2) {
+  var i = _toPrimitive$z(t2, "string");
+  return "symbol" == _typeof$A(i) ? i : i + "";
 }
-function _toPrimitive$B(t2, r2) {
-  if ("object" != _typeof$C(t2) || !t2) return t2;
+function _toPrimitive$z(t2, r2) {
+  if ("object" != _typeof$A(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$C(i)) return i;
+    if ("object" != _typeof$A(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return String(t2);
 }
 var ErrorBar = /* @__PURE__ */ function(_React$Component) {
   function ErrorBar2() {
-    _classCallCheck$i(this, ErrorBar2);
-    return _callSuper$f(this, ErrorBar2, arguments);
+    _classCallCheck$g(this, ErrorBar2);
+    return _callSuper$d(this, ErrorBar2, arguments);
   }
-  _inherits$g(ErrorBar2, _React$Component);
-  return _createClass$i(ErrorBar2, [{
+  _inherits$e(ErrorBar2, _React$Component);
+  return _createClass$g(ErrorBar2, [{
     key: "render",
     value: function render() {
-      var _this$props = this.props, offset2 = _this$props.offset, layout2 = _this$props.layout, width = _this$props.width, dataKey = _this$props.dataKey, data = _this$props.data, dataPointFormatter = _this$props.dataPointFormatter, xAxis = _this$props.xAxis, yAxis = _this$props.yAxis, others = _objectWithoutProperties$g(_this$props, _excluded$g);
+      var _this$props = this.props, offset2 = _this$props.offset, layout2 = _this$props.layout, width = _this$props.width, dataKey = _this$props.dataKey, data = _this$props.data, dataPointFormatter = _this$props.dataPointFormatter, xAxis = _this$props.xAxis, yAxis = _this$props.yAxis, others = _objectWithoutProperties$f(_this$props, _excluded$f);
       var svgProps = filterProps(others, false);
       !!(this.props.direction === "x" && xAxis.type !== "number") ? invariant$1(false) : void 0;
       var errorBars = data.map(function(entry) {
@@ -65626,13 +65536,13 @@ var ErrorBar = /* @__PURE__ */ function(_React$Component) {
             y2: _yMin
           });
         }
-        return /* @__PURE__ */ React$4.createElement(Layer, _extends$r({
+        return /* @__PURE__ */ React$4.createElement(Layer, _extends$p({
           className: "recharts-errorBar",
           key: "bar-".concat(lineCoordinates.map(function(c2) {
             return "".concat(c2.x1, "-").concat(c2.x2, "-").concat(c2.y1, "-").concat(c2.y2);
           }))
         }, svgProps), lineCoordinates.map(function(coordinates) {
-          return /* @__PURE__ */ React$4.createElement("line", _extends$r({}, coordinates, {
+          return /* @__PURE__ */ React$4.createElement("line", _extends$p({}, coordinates, {
             key: "line-".concat(coordinates.x1, "-").concat(coordinates.x2, "-").concat(coordinates.y1, "-").concat(coordinates.y2)
           }));
         }));
@@ -65643,23 +65553,23 @@ var ErrorBar = /* @__PURE__ */ function(_React$Component) {
     }
   }]);
 }(React$4.Component);
-_defineProperty$B(ErrorBar, "defaultProps", {
+_defineProperty$z(ErrorBar, "defaultProps", {
   stroke: "black",
   strokeWidth: 1.5,
   width: 5,
   offset: 0,
   layout: "horizontal"
 });
-_defineProperty$B(ErrorBar, "displayName", "ErrorBar");
-function _typeof$B(o) {
+_defineProperty$z(ErrorBar, "displayName", "ErrorBar");
+function _typeof$z(o) {
   "@babel/helpers - typeof";
-  return _typeof$B = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$z = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$B(o);
+  }, _typeof$z(o);
 }
-function ownKeys$x(e3, r2) {
+function ownKeys$v(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -65669,19 +65579,19 @@ function ownKeys$x(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$x(e3) {
+function _objectSpread$v(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$x(Object(t2), true).forEach(function(r3) {
-      _defineProperty$A(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$x(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$v(Object(t2), true).forEach(function(r3) {
+      _defineProperty$y(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$v(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$A(obj, key, value) {
-  key = _toPropertyKey$A(key);
+function _defineProperty$y(obj, key, value) {
+  key = _toPropertyKey$y(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -65689,16 +65599,16 @@ function _defineProperty$A(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$A(t2) {
-  var i = _toPrimitive$A(t2, "string");
-  return "symbol" == _typeof$B(i) ? i : i + "";
+function _toPropertyKey$y(t2) {
+  var i = _toPrimitive$y(t2, "string");
+  return "symbol" == _typeof$z(i) ? i : i + "";
 }
-function _toPrimitive$A(t2, r2) {
-  if ("object" != _typeof$B(t2) || !t2) return t2;
+function _toPrimitive$y(t2, r2) {
+  if ("object" != _typeof$z(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$B(i)) return i;
+    if ("object" != _typeof$z(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
@@ -65710,7 +65620,7 @@ var getLegendProps = function getLegendProps2(_ref) {
     return null;
   }
   var legendDefaultProps = Legend.defaultProps;
-  var legendProps = legendDefaultProps !== void 0 ? _objectSpread$x(_objectSpread$x({}, legendDefaultProps), legendItem.props) : {};
+  var legendProps = legendDefaultProps !== void 0 ? _objectSpread$v(_objectSpread$v({}, legendDefaultProps), legendItem.props) : {};
   var legendData;
   if (legendItem.props && legendItem.props.payload) {
     legendData = legendItem.props && legendItem.props.payload;
@@ -65731,7 +65641,7 @@ var getLegendProps = function getLegendProps2(_ref) {
     legendData = (formattedGraphicalItems || []).map(function(_ref3) {
       var item = _ref3.item;
       var itemDefaultProps = item.type.defaultProps;
-      var itemProps = itemDefaultProps !== void 0 ? _objectSpread$x(_objectSpread$x({}, itemDefaultProps), item.props) : {};
+      var itemProps = itemDefaultProps !== void 0 ? _objectSpread$v(_objectSpread$v({}, itemDefaultProps), item.props) : {};
       var dataKey = itemProps.dataKey, name = itemProps.name, legendType = itemProps.legendType, hide2 = itemProps.hide;
       return {
         inactive: hide2,
@@ -65744,18 +65654,18 @@ var getLegendProps = function getLegendProps2(_ref) {
       };
     });
   }
-  return _objectSpread$x(_objectSpread$x(_objectSpread$x({}, legendProps), Legend.getWithHeight(legendItem, legendWidth)), {}, {
+  return _objectSpread$v(_objectSpread$v(_objectSpread$v({}, legendProps), Legend.getWithHeight(legendItem, legendWidth)), {}, {
     payload: legendData,
     item: legendItem
   });
 };
-function _typeof$A(o) {
+function _typeof$y(o) {
   "@babel/helpers - typeof";
-  return _typeof$A = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$y = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$A(o);
+  }, _typeof$y(o);
 }
 function _toConsumableArray$9(arr) {
   return _arrayWithoutHoles$9(arr) || _iterableToArray$a(arr) || _unsupportedIterableToArray$e(arr) || _nonIterableSpread$9();
@@ -65782,7 +65692,7 @@ function _arrayLikeToArray$e(arr, len) {
   for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
   return arr2;
 }
-function ownKeys$w(e3, r2) {
+function ownKeys$u(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -65792,19 +65702,19 @@ function ownKeys$w(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$w(e3) {
+function _objectSpread$u(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$w(Object(t2), true).forEach(function(r3) {
-      _defineProperty$z(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$w(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$u(Object(t2), true).forEach(function(r3) {
+      _defineProperty$x(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$u(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$z(obj, key, value) {
-  key = _toPropertyKey$z(key);
+function _defineProperty$x(obj, key, value) {
+  key = _toPropertyKey$x(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -65812,16 +65722,16 @@ function _defineProperty$z(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$z(t2) {
-  var i = _toPrimitive$z(t2, "string");
-  return "symbol" == _typeof$A(i) ? i : i + "";
+function _toPropertyKey$x(t2) {
+  var i = _toPrimitive$x(t2, "string");
+  return "symbol" == _typeof$y(i) ? i : i + "";
 }
-function _toPrimitive$z(t2, r2) {
-  if ("object" != _typeof$A(t2) || !t2) return t2;
+function _toPrimitive$x(t2, r2) {
+  if ("object" != _typeof$y(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$A(i)) return i;
+    if ("object" != _typeof$y(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
@@ -65912,7 +65822,7 @@ var calculateActiveTickIndex = function calculateActiveTickIndex2(coordinate) {
 var getMainColorOfGraphicItem = function getMainColorOfGraphicItem2(item) {
   var _item$type;
   var _ref = item, displayName = _ref.type.displayName;
-  var defaultedProps = (_item$type = item.type) !== null && _item$type !== void 0 && _item$type.defaultProps ? _objectSpread$w(_objectSpread$w({}, item.type.defaultProps), item.props) : item.props;
+  var defaultedProps = (_item$type = item.type) !== null && _item$type !== void 0 && _item$type.defaultProps ? _objectSpread$u(_objectSpread$u({}, item.type.defaultProps), item.props) : item.props;
   var stroke = defaultedProps.stroke, fill = defaultedProps.fill;
   var result;
   switch (displayName) {
@@ -65946,7 +65856,7 @@ var getBarSizeList = function getBarSizeList2(_ref2) {
       });
       if (barItems && barItems.length) {
         var barItemDefaultProps = barItems[0].type.defaultProps;
-        var barItemProps = barItemDefaultProps !== void 0 ? _objectSpread$w(_objectSpread$w({}, barItemDefaultProps), barItems[0].props) : barItems[0].props;
+        var barItemProps = barItemDefaultProps !== void 0 ? _objectSpread$u(_objectSpread$u({}, barItemDefaultProps), barItems[0].props) : barItems[0].props;
         var selfSize = barItemProps.barSize;
         var cateId = barItemProps[cateAxisId];
         if (!result[cateId]) {
@@ -66054,10 +65964,10 @@ var appendOffsetOfLegend = function appendOffsetOfLegend2(offset2, _unused, prop
     var _ref4 = legendBox || {}, boxWidth = _ref4.width, boxHeight = _ref4.height;
     var align = legendProps.align, verticalAlign = legendProps.verticalAlign, layout2 = legendProps.layout;
     if ((layout2 === "vertical" || layout2 === "horizontal" && verticalAlign === "middle") && align !== "center" && isNumber$2(offset2[align])) {
-      return _objectSpread$w(_objectSpread$w({}, offset2), {}, _defineProperty$z({}, align, offset2[align] + (boxWidth || 0)));
+      return _objectSpread$u(_objectSpread$u({}, offset2), {}, _defineProperty$x({}, align, offset2[align] + (boxWidth || 0)));
     }
     if ((layout2 === "horizontal" || layout2 === "vertical" && align === "center") && verticalAlign !== "middle" && isNumber$2(offset2[verticalAlign])) {
-      return _objectSpread$w(_objectSpread$w({}, offset2), {}, _defineProperty$z({}, verticalAlign, offset2[verticalAlign] + (boxHeight || 0)));
+      return _objectSpread$u(_objectSpread$u({}, offset2), {}, _defineProperty$x({}, verticalAlign, offset2[verticalAlign] + (boxHeight || 0)));
     }
   }
   return offset2;
@@ -66408,7 +66318,7 @@ var getStackGroupsByAxisId = function getStackGroupsByAxisId2(data, _items, nume
   var parentStackGroupsInitialValue = {};
   var stackGroups = items.reduce(function(result, item) {
     var _item$type2;
-    var defaultedProps = (_item$type2 = item.type) !== null && _item$type2 !== void 0 && _item$type2.defaultProps ? _objectSpread$w(_objectSpread$w({}, item.type.defaultProps), item.props) : item.props;
+    var defaultedProps = (_item$type2 = item.type) !== null && _item$type2 !== void 0 && _item$type2.defaultProps ? _objectSpread$u(_objectSpread$u({}, item.type.defaultProps), item.props) : item.props;
     var stackId = defaultedProps.stackId, hide2 = defaultedProps.hide;
     if (hide2) {
       return result;
@@ -66434,7 +66344,7 @@ var getStackGroupsByAxisId = function getStackGroupsByAxisId2(data, _items, nume
         items: [item]
       };
     }
-    return _objectSpread$w(_objectSpread$w({}, result), {}, _defineProperty$z({}, axisId, parentGroup));
+    return _objectSpread$u(_objectSpread$u({}, result), {}, _defineProperty$x({}, axisId, parentGroup));
   }, parentStackGroupsInitialValue);
   var axisStackGroupsInitialValue = {};
   return Object.keys(stackGroups).reduce(function(result, axisId) {
@@ -66443,7 +66353,7 @@ var getStackGroupsByAxisId = function getStackGroupsByAxisId2(data, _items, nume
       var stackGroupsInitialValue = {};
       group.stackGroups = Object.keys(group.stackGroups).reduce(function(res, stackId) {
         var g2 = group.stackGroups[stackId];
-        return _objectSpread$w(_objectSpread$w({}, res), {}, _defineProperty$z({}, stackId, {
+        return _objectSpread$u(_objectSpread$u({}, res), {}, _defineProperty$x({}, stackId, {
           numericAxisId,
           cateAxisId,
           items: g2.items,
@@ -66451,7 +66361,7 @@ var getStackGroupsByAxisId = function getStackGroupsByAxisId2(data, _items, nume
         }));
       }, stackGroupsInitialValue);
     }
-    return _objectSpread$w(_objectSpread$w({}, result), {}, _defineProperty$z({}, axisId, group));
+    return _objectSpread$u(_objectSpread$u({}, result), {}, _defineProperty$x({}, axisId, group));
   }, axisStackGroupsInitialValue);
 };
 var getTicksOfScale = function getTicksOfScale2(scale2, opts) {
@@ -66520,7 +66430,7 @@ var getBaseValueOfBar = function getBaseValueOfBar2(_ref7) {
 };
 var getStackedDataOfItem = function getStackedDataOfItem2(item, stackGroups) {
   var _item$type3;
-  var defaultedProps = (_item$type3 = item.type) !== null && _item$type3 !== void 0 && _item$type3.defaultProps ? _objectSpread$w(_objectSpread$w({}, item.type.defaultProps), item.props) : item.props;
+  var defaultedProps = (_item$type3 = item.type) !== null && _item$type3 !== void 0 && _item$type3.defaultProps ? _objectSpread$u(_objectSpread$u({}, item.type.defaultProps), item.props) : item.props;
   var stackId = defaultedProps.stackId;
   if (isNumOrStr(stackId)) {
     var group = stackGroups[stackId];
@@ -66612,9 +66522,9 @@ var parseDomainOfCategoryAxis = function parseDomainOfCategoryAxis2(specifiedDom
   return specifiedDomain;
 };
 var getTooltipItem = function getTooltipItem2(graphicalItem, payload) {
-  var defaultedProps = graphicalItem.type.defaultProps ? _objectSpread$w(_objectSpread$w({}, graphicalItem.type.defaultProps), graphicalItem.props) : graphicalItem.props;
+  var defaultedProps = graphicalItem.type.defaultProps ? _objectSpread$u(_objectSpread$u({}, graphicalItem.type.defaultProps), graphicalItem.props) : graphicalItem.props;
   var dataKey = defaultedProps.dataKey, name = defaultedProps.name, unit2 = defaultedProps.unit, formatter = defaultedProps.formatter, tooltipType = defaultedProps.tooltipType, chartType = defaultedProps.chartType, hide2 = defaultedProps.hide;
-  return _objectSpread$w(_objectSpread$w({}, filterProps(graphicalItem, false)), {}, {
+  return _objectSpread$u(_objectSpread$u({}, filterProps(graphicalItem, false)), {}, {
     dataKey,
     unit: unit2,
     formatter,
@@ -66627,15 +66537,15 @@ var getTooltipItem = function getTooltipItem2(graphicalItem, payload) {
     hide: hide2
   });
 };
-function _typeof$z(o) {
+function _typeof$x(o) {
   "@babel/helpers - typeof";
-  return _typeof$z = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$x = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$z(o);
+  }, _typeof$x(o);
 }
-function ownKeys$v(e3, r2) {
+function ownKeys$t(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -66645,19 +66555,19 @@ function ownKeys$v(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$v(e3) {
+function _objectSpread$t(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$v(Object(t2), true).forEach(function(r3) {
-      _defineProperty$y(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$v(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$t(Object(t2), true).forEach(function(r3) {
+      _defineProperty$w(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$t(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$y(obj, key, value) {
-  key = _toPropertyKey$y(key);
+function _defineProperty$w(obj, key, value) {
+  key = _toPropertyKey$w(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -66665,16 +66575,16 @@ function _defineProperty$y(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$y(t2) {
-  var i = _toPrimitive$y(t2, "string");
-  return "symbol" == _typeof$z(i) ? i : i + "";
+function _toPropertyKey$w(t2) {
+  var i = _toPrimitive$w(t2, "string");
+  return "symbol" == _typeof$x(i) ? i : i + "";
 }
-function _toPrimitive$y(t2, r2) {
-  if ("object" != _typeof$z(t2) || !t2) return t2;
+function _toPrimitive$w(t2, r2) {
+  if ("object" != _typeof$x(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$z(i)) return i;
+    if ("object" != _typeof$x(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
@@ -66771,10 +66681,10 @@ var formatAxisMap$1 = function formatAxisMap(props, axisMap, offset2, axisType, 
     var _parseScale = parseScale(axis, chartName), realScaleType = _parseScale.realScaleType, scale2 = _parseScale.scale;
     scale2.domain(domain).range(range3);
     checkDomainOfScale(scale2);
-    var ticks2 = getTicksOfScale(scale2, _objectSpread$v(_objectSpread$v({}, axis), {}, {
+    var ticks2 = getTicksOfScale(scale2, _objectSpread$t(_objectSpread$t({}, axis), {}, {
       realScaleType
     }));
-    var finalAxis = _objectSpread$v(_objectSpread$v(_objectSpread$v({}, axis), ticks2), {}, {
+    var finalAxis = _objectSpread$t(_objectSpread$t(_objectSpread$t({}, axis), ticks2), {}, {
       range: range3,
       radius: outerRadius,
       realScaleType,
@@ -66786,7 +66696,7 @@ var formatAxisMap$1 = function formatAxisMap(props, axisMap, offset2, axisType, 
       startAngle,
       endAngle
     });
-    return _objectSpread$v(_objectSpread$v({}, result), {}, _defineProperty$y({}, id2, finalAxis));
+    return _objectSpread$t(_objectSpread$t({}, result), {}, _defineProperty$w({}, id2, finalAxis));
   }, {});
 };
 var distanceBetweenPoints = function distanceBetweenPoints2(point2, anotherPoint) {
@@ -66871,7 +66781,7 @@ var inRangeOfSector = function inRangeOfSector2(_ref5, sector) {
     inRange2 = formatAngle >= endAngle && formatAngle <= startAngle;
   }
   if (inRange2) {
-    return _objectSpread$v(_objectSpread$v({}, sector), {}, {
+    return _objectSpread$t(_objectSpread$t({}, sector), {}, {
       radius,
       angle: reverseFormatAngleOfSetor(formatAngle, sector)
     });
@@ -66881,15 +66791,15 @@ var inRangeOfSector = function inRangeOfSector2(_ref5, sector) {
 var getTickClassName = function getTickClassName2(tick) {
   return !/* @__PURE__ */ reactExports.isValidElement(tick) && !isFunction$5(tick) && typeof tick !== "boolean" ? tick.className : "";
 };
-function _typeof$y(o) {
+function _typeof$w(o) {
   "@babel/helpers - typeof";
-  return _typeof$y = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$w = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$y(o);
+  }, _typeof$w(o);
 }
-var _excluded$f = ["offset"];
+var _excluded$e = ["offset"];
 function _toConsumableArray$8(arr) {
   return _arrayWithoutHoles$8(arr) || _iterableToArray$9(arr) || _unsupportedIterableToArray$c(arr) || _nonIterableSpread$8();
 }
@@ -66915,9 +66825,9 @@ function _arrayLikeToArray$c(arr, len) {
   for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
   return arr2;
 }
-function _objectWithoutProperties$f(source, excluded) {
+function _objectWithoutProperties$e(source, excluded) {
   if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$f(source, excluded);
+  var target = _objectWithoutPropertiesLoose$e(source, excluded);
   var key, i;
   if (Object.getOwnPropertySymbols) {
     var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
@@ -66930,7 +66840,7 @@ function _objectWithoutProperties$f(source, excluded) {
   }
   return target;
 }
-function _objectWithoutPropertiesLoose$f(source, excluded) {
+function _objectWithoutPropertiesLoose$e(source, excluded) {
   if (source == null) return {};
   var target = {};
   for (var key in source) {
@@ -66941,7 +66851,7 @@ function _objectWithoutPropertiesLoose$f(source, excluded) {
   }
   return target;
 }
-function ownKeys$u(e3, r2) {
+function ownKeys$s(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -66951,19 +66861,19 @@ function ownKeys$u(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$u(e3) {
+function _objectSpread$s(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$u(Object(t2), true).forEach(function(r3) {
-      _defineProperty$x(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$u(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$s(Object(t2), true).forEach(function(r3) {
+      _defineProperty$v(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$s(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$x(obj, key, value) {
-  key = _toPropertyKey$x(key);
+function _defineProperty$v(obj, key, value) {
+  key = _toPropertyKey$v(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -66971,22 +66881,22 @@ function _defineProperty$x(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$x(t2) {
-  var i = _toPrimitive$x(t2, "string");
-  return "symbol" == _typeof$y(i) ? i : i + "";
+function _toPropertyKey$v(t2) {
+  var i = _toPrimitive$v(t2, "string");
+  return "symbol" == _typeof$w(i) ? i : i + "";
 }
-function _toPrimitive$x(t2, r2) {
-  if ("object" != _typeof$y(t2) || !t2) return t2;
+function _toPrimitive$v(t2, r2) {
+  if ("object" != _typeof$w(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$y(i)) return i;
+    if ("object" != _typeof$w(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
 }
-function _extends$q() {
-  _extends$q = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$o() {
+  _extends$o = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -66997,9 +66907,9 @@ function _extends$q() {
     }
     return target;
   };
-  return _extends$q.apply(this, arguments);
+  return _extends$o.apply(this, arguments);
 }
-var getLabel$1 = function getLabel(props) {
+var getLabel = function getLabel2(props) {
   var value = props.value, formatter = props.formatter;
   var label = isNil$1(props.children) ? value : props.children;
   if (isFunction$5(formatter)) {
@@ -67034,7 +66944,7 @@ var renderRadialLabel = function renderRadialLabel2(labelProps, label, attrs) {
   var endPoint = polarToCartesian(cx2, cy, radius, labelAngle + (direction ? 1 : -1) * 359);
   var path = "M".concat(startPoint.x, ",").concat(startPoint.y, "\n    A").concat(radius, ",").concat(radius, ",0,1,").concat(direction ? 0 : 1, ",\n    ").concat(endPoint.x, ",").concat(endPoint.y);
   var id2 = isNil$1(labelProps.id) ? uniqueId("recharts-radial-line-") : labelProps.id;
-  return /* @__PURE__ */ React$4.createElement("text", _extends$q({}, attrs, {
+  return /* @__PURE__ */ React$4.createElement("text", _extends$o({}, attrs, {
     dominantBaseline: "central",
     className: clsx("recharts-radial-bar-label", className)
   }), /* @__PURE__ */ React$4.createElement("defs", null, /* @__PURE__ */ React$4.createElement("path", {
@@ -67108,7 +67018,7 @@ var getAttrsOfCartesianLabel = function getAttrsOfCartesianLabel2(props) {
       textAnchor: "middle",
       verticalAnchor: verticalEnd
     };
-    return _objectSpread$u(_objectSpread$u({}, attrs), parentViewBox ? {
+    return _objectSpread$s(_objectSpread$s({}, attrs), parentViewBox ? {
       height: Math.max(y2 - parentViewBox.y, 0),
       width
     } : {});
@@ -67120,7 +67030,7 @@ var getAttrsOfCartesianLabel = function getAttrsOfCartesianLabel2(props) {
       textAnchor: "middle",
       verticalAnchor: verticalStart
     };
-    return _objectSpread$u(_objectSpread$u({}, _attrs), parentViewBox ? {
+    return _objectSpread$s(_objectSpread$s({}, _attrs), parentViewBox ? {
       height: Math.max(parentViewBox.y + parentViewBox.height - (y2 + height), 0),
       width
     } : {});
@@ -67132,7 +67042,7 @@ var getAttrsOfCartesianLabel = function getAttrsOfCartesianLabel2(props) {
       textAnchor: horizontalEnd,
       verticalAnchor: "middle"
     };
-    return _objectSpread$u(_objectSpread$u({}, _attrs2), parentViewBox ? {
+    return _objectSpread$s(_objectSpread$s({}, _attrs2), parentViewBox ? {
       width: Math.max(_attrs2.x - parentViewBox.x, 0),
       height
     } : {});
@@ -67144,7 +67054,7 @@ var getAttrsOfCartesianLabel = function getAttrsOfCartesianLabel2(props) {
       textAnchor: horizontalStart,
       verticalAnchor: "middle"
     };
-    return _objectSpread$u(_objectSpread$u({}, _attrs3), parentViewBox ? {
+    return _objectSpread$s(_objectSpread$s({}, _attrs3), parentViewBox ? {
       width: Math.max(parentViewBox.x + parentViewBox.width - _attrs3.x, 0),
       height
     } : {});
@@ -67154,7 +67064,7 @@ var getAttrsOfCartesianLabel = function getAttrsOfCartesianLabel2(props) {
     height
   } : {};
   if (position === "insideLeft") {
-    return _objectSpread$u({
+    return _objectSpread$s({
       x: x2 + horizontalOffset,
       y: y2 + height / 2,
       textAnchor: horizontalStart,
@@ -67162,7 +67072,7 @@ var getAttrsOfCartesianLabel = function getAttrsOfCartesianLabel2(props) {
     }, sizeAttrs);
   }
   if (position === "insideRight") {
-    return _objectSpread$u({
+    return _objectSpread$s({
       x: x2 + width - horizontalOffset,
       y: y2 + height / 2,
       textAnchor: horizontalEnd,
@@ -67170,7 +67080,7 @@ var getAttrsOfCartesianLabel = function getAttrsOfCartesianLabel2(props) {
     }, sizeAttrs);
   }
   if (position === "insideTop") {
-    return _objectSpread$u({
+    return _objectSpread$s({
       x: x2 + width / 2,
       y: y2 + verticalOffset,
       textAnchor: "middle",
@@ -67178,7 +67088,7 @@ var getAttrsOfCartesianLabel = function getAttrsOfCartesianLabel2(props) {
     }, sizeAttrs);
   }
   if (position === "insideBottom") {
-    return _objectSpread$u({
+    return _objectSpread$s({
       x: x2 + width / 2,
       y: y2 + height - verticalOffset,
       textAnchor: "middle",
@@ -67186,7 +67096,7 @@ var getAttrsOfCartesianLabel = function getAttrsOfCartesianLabel2(props) {
     }, sizeAttrs);
   }
   if (position === "insideTopLeft") {
-    return _objectSpread$u({
+    return _objectSpread$s({
       x: x2 + horizontalOffset,
       y: y2 + verticalOffset,
       textAnchor: horizontalStart,
@@ -67194,7 +67104,7 @@ var getAttrsOfCartesianLabel = function getAttrsOfCartesianLabel2(props) {
     }, sizeAttrs);
   }
   if (position === "insideTopRight") {
-    return _objectSpread$u({
+    return _objectSpread$s({
       x: x2 + width - horizontalOffset,
       y: y2 + verticalOffset,
       textAnchor: horizontalEnd,
@@ -67202,7 +67112,7 @@ var getAttrsOfCartesianLabel = function getAttrsOfCartesianLabel2(props) {
     }, sizeAttrs);
   }
   if (position === "insideBottomLeft") {
-    return _objectSpread$u({
+    return _objectSpread$s({
       x: x2 + horizontalOffset,
       y: y2 + height - verticalOffset,
       textAnchor: horizontalStart,
@@ -67210,7 +67120,7 @@ var getAttrsOfCartesianLabel = function getAttrsOfCartesianLabel2(props) {
     }, sizeAttrs);
   }
   if (position === "insideBottomRight") {
-    return _objectSpread$u({
+    return _objectSpread$s({
       x: x2 + width - horizontalOffset,
       y: y2 + height - verticalOffset,
       textAnchor: horizontalEnd,
@@ -67218,14 +67128,14 @@ var getAttrsOfCartesianLabel = function getAttrsOfCartesianLabel2(props) {
     }, sizeAttrs);
   }
   if (isObject$8(position) && (isNumber$2(position.x) || isPercent(position.x)) && (isNumber$2(position.y) || isPercent(position.y))) {
-    return _objectSpread$u({
+    return _objectSpread$s({
       x: x2 + getPercentValue(position.x, width),
       y: y2 + getPercentValue(position.y, height),
       textAnchor: "end",
       verticalAnchor: "end"
     }, sizeAttrs);
   }
-  return _objectSpread$u({
+  return _objectSpread$s({
     x: x2 + width / 2,
     y: y2 + height / 2,
     textAnchor: "middle",
@@ -67236,8 +67146,8 @@ var isPolar = function isPolar2(viewBox) {
   return "cx" in viewBox && isNumber$2(viewBox.cx);
 };
 function Label(_ref4) {
-  var _ref4$offset = _ref4.offset, offset2 = _ref4$offset === void 0 ? 5 : _ref4$offset, restProps = _objectWithoutProperties$f(_ref4, _excluded$f);
-  var props = _objectSpread$u({
+  var _ref4$offset = _ref4.offset, offset2 = _ref4$offset === void 0 ? 5 : _ref4$offset, restProps = _objectWithoutProperties$e(_ref4, _excluded$e);
+  var props = _objectSpread$s({
     offset: offset2
   }, restProps);
   var viewBox = props.viewBox, position = props.position, value = props.value, children = props.children, content = props.content, _props$className = props.className, className = _props$className === void 0 ? "" : _props$className, textBreakAll = props.textBreakAll;
@@ -67254,7 +67164,7 @@ function Label(_ref4) {
       return label;
     }
   } else {
-    label = getLabel$1(props);
+    label = getLabel(props);
   }
   var isPolarLabel = isPolar(viewBox);
   var attrs = filterProps(props, true);
@@ -67262,7 +67172,7 @@ function Label(_ref4) {
     return renderRadialLabel(props, label, attrs);
   }
   var positionAttrs = isPolarLabel ? getAttrsOfPolarLabel(props) : getAttrsOfCartesianLabel(props);
-  return /* @__PURE__ */ React$4.createElement(Text$1, _extends$q({
+  return /* @__PURE__ */ React$4.createElement(Text$1, _extends$o({
     className: clsx("recharts-label", className)
   }, attrs, positionAttrs, {
     breakAll: textBreakAll
@@ -67354,7 +67264,7 @@ var parseLabel = function parseLabel2(label, viewBox) {
     });
   }
   if (isObject$8(label)) {
-    return /* @__PURE__ */ React$4.createElement(Label, _extends$q({
+    return /* @__PURE__ */ React$4.createElement(Label, _extends$o({
       viewBox
     }, label, {
       key: "label-implicit"
@@ -67390,15 +67300,15 @@ function last(array2) {
 }
 var last_1 = last;
 const last$1 = /* @__PURE__ */ getDefaultExportFromCjs$1(last_1);
-function _typeof$x(o) {
+function _typeof$v(o) {
   "@babel/helpers - typeof";
-  return _typeof$x = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$v = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$x(o);
+  }, _typeof$v(o);
 }
-var _excluded$e = ["valueAccessor"], _excluded2$6 = ["data", "dataKey", "clockWise", "id", "textBreakAll"];
+var _excluded$d = ["valueAccessor"], _excluded2$5 = ["data", "dataKey", "clockWise", "id", "textBreakAll"];
 function _toConsumableArray$7(arr) {
   return _arrayWithoutHoles$7(arr) || _iterableToArray$8(arr) || _unsupportedIterableToArray$b(arr) || _nonIterableSpread$7();
 }
@@ -67424,8 +67334,8 @@ function _arrayLikeToArray$b(arr, len) {
   for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
   return arr2;
 }
-function _extends$p() {
-  _extends$p = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$n() {
+  _extends$n = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -67436,9 +67346,9 @@ function _extends$p() {
     }
     return target;
   };
-  return _extends$p.apply(this, arguments);
+  return _extends$n.apply(this, arguments);
 }
-function ownKeys$t(e3, r2) {
+function ownKeys$r(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -67448,19 +67358,19 @@ function ownKeys$t(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$t(e3) {
+function _objectSpread$r(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$t(Object(t2), true).forEach(function(r3) {
-      _defineProperty$w(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$t(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$r(Object(t2), true).forEach(function(r3) {
+      _defineProperty$u(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$r(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$w(obj, key, value) {
-  key = _toPropertyKey$w(key);
+function _defineProperty$u(obj, key, value) {
+  key = _toPropertyKey$u(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -67468,23 +67378,23 @@ function _defineProperty$w(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$w(t2) {
-  var i = _toPrimitive$w(t2, "string");
-  return "symbol" == _typeof$x(i) ? i : i + "";
+function _toPropertyKey$u(t2) {
+  var i = _toPrimitive$u(t2, "string");
+  return "symbol" == _typeof$v(i) ? i : i + "";
 }
-function _toPrimitive$w(t2, r2) {
-  if ("object" != _typeof$x(t2) || !t2) return t2;
+function _toPrimitive$u(t2, r2) {
+  if ("object" != _typeof$v(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$x(i)) return i;
+    if ("object" != _typeof$v(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
 }
-function _objectWithoutProperties$e(source, excluded) {
+function _objectWithoutProperties$d(source, excluded) {
   if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$e(source, excluded);
+  var target = _objectWithoutPropertiesLoose$d(source, excluded);
   var key, i;
   if (Object.getOwnPropertySymbols) {
     var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
@@ -67497,7 +67407,7 @@ function _objectWithoutProperties$e(source, excluded) {
   }
   return target;
 }
-function _objectWithoutPropertiesLoose$e(source, excluded) {
+function _objectWithoutPropertiesLoose$d(source, excluded) {
   if (source == null) return {};
   var target = {};
   for (var key in source) {
@@ -67512,8 +67422,8 @@ var defaultAccessor = function defaultAccessor2(entry) {
   return Array.isArray(entry.value) ? last$1(entry.value) : entry.value;
 };
 function LabelList(_ref) {
-  var _ref$valueAccessor = _ref.valueAccessor, valueAccessor = _ref$valueAccessor === void 0 ? defaultAccessor : _ref$valueAccessor, restProps = _objectWithoutProperties$e(_ref, _excluded$e);
-  var data = restProps.data, dataKey = restProps.dataKey, clockWise = restProps.clockWise, id2 = restProps.id, textBreakAll = restProps.textBreakAll, others = _objectWithoutProperties$e(restProps, _excluded2$6);
+  var _ref$valueAccessor = _ref.valueAccessor, valueAccessor = _ref$valueAccessor === void 0 ? defaultAccessor : _ref$valueAccessor, restProps = _objectWithoutProperties$d(_ref, _excluded$d);
+  var data = restProps.data, dataKey = restProps.dataKey, clockWise = restProps.clockWise, id2 = restProps.id, textBreakAll = restProps.textBreakAll, others = _objectWithoutProperties$d(restProps, _excluded2$5);
   if (!data || !data.length) {
     return null;
   }
@@ -67524,11 +67434,11 @@ function LabelList(_ref) {
     var idProps = isNil$1(id2) ? {} : {
       id: "".concat(id2, "-").concat(index2)
     };
-    return /* @__PURE__ */ React$4.createElement(Label, _extends$p({}, filterProps(entry, true), others, idProps, {
+    return /* @__PURE__ */ React$4.createElement(Label, _extends$n({}, filterProps(entry, true), others, idProps, {
       parentViewBox: entry.parentViewBox,
       value,
       textBreakAll,
-      viewBox: Label.parseViewBox(isNil$1(clockWise) ? entry : _objectSpread$t(_objectSpread$t({}, entry), {}, {
+      viewBox: Label.parseViewBox(isNil$1(clockWise) ? entry : _objectSpread$r(_objectSpread$r({}, entry), {}, {
         clockWise
       })),
       key: "label-".concat(index2),
@@ -67555,7 +67465,7 @@ function parseLabelList(label, data) {
     });
   }
   if (isObject$8(label)) {
-    return /* @__PURE__ */ React$4.createElement(LabelList, _extends$p({
+    return /* @__PURE__ */ React$4.createElement(LabelList, _extends$n({
       data
     }, label, {
       key: "labelList-implicit"
@@ -67583,16 +67493,16 @@ function renderCallByParent2(parentProps, data) {
   return [implicitLabelList].concat(_toConsumableArray$7(explicitChildren));
 }
 LabelList.renderCallByParent = renderCallByParent2;
-function _typeof$w(o) {
+function _typeof$u(o) {
   "@babel/helpers - typeof";
-  return _typeof$w = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$u = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$w(o);
+  }, _typeof$u(o);
 }
-function _extends$o() {
-  _extends$o = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$m() {
+  _extends$m = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -67603,9 +67513,9 @@ function _extends$o() {
     }
     return target;
   };
-  return _extends$o.apply(this, arguments);
+  return _extends$m.apply(this, arguments);
 }
-function ownKeys$s(e3, r2) {
+function ownKeys$q(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -67615,19 +67525,19 @@ function ownKeys$s(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$s(e3) {
+function _objectSpread$q(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$s(Object(t2), true).forEach(function(r3) {
-      _defineProperty$v(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$s(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$q(Object(t2), true).forEach(function(r3) {
+      _defineProperty$t(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$q(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$v(obj, key, value) {
-  key = _toPropertyKey$v(key);
+function _defineProperty$t(obj, key, value) {
+  key = _toPropertyKey$t(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -67635,16 +67545,16 @@ function _defineProperty$v(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$v(t2) {
-  var i = _toPrimitive$v(t2, "string");
-  return "symbol" == _typeof$w(i) ? i : i + "";
+function _toPropertyKey$t(t2) {
+  var i = _toPrimitive$t(t2, "string");
+  return "symbol" == _typeof$u(i) ? i : i + "";
 }
-function _toPrimitive$v(t2, r2) {
-  if ("object" != _typeof$w(t2) || !t2) return t2;
+function _toPrimitive$t(t2, r2) {
+  if ("object" != _typeof$u(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$w(i)) return i;
+    if ("object" != _typeof$u(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
@@ -67765,7 +67675,7 @@ var defaultProps$3 = {
   cornerIsExternal: false
 };
 var Sector = function Sector2(sectorProps) {
-  var props = _objectSpread$s(_objectSpread$s({}, defaultProps$3), sectorProps);
+  var props = _objectSpread$q(_objectSpread$q({}, defaultProps$3), sectorProps);
   var cx2 = props.cx, cy = props.cy, innerRadius = props.innerRadius, outerRadius = props.outerRadius, cornerRadius = props.cornerRadius, forceCornerRadius = props.forceCornerRadius, cornerIsExternal = props.cornerIsExternal, startAngle = props.startAngle, endAngle = props.endAngle, className = props.className;
   if (outerRadius < innerRadius || startAngle === endAngle) {
     return null;
@@ -67796,22 +67706,22 @@ var Sector = function Sector2(sectorProps) {
       endAngle
     });
   }
-  return /* @__PURE__ */ React$4.createElement("path", _extends$o({}, filterProps(props, true), {
+  return /* @__PURE__ */ React$4.createElement("path", _extends$m({}, filterProps(props, true), {
     className: layerClass,
     d: path,
     role: "img"
   }));
 };
-function _typeof$v(o) {
+function _typeof$t(o) {
   "@babel/helpers - typeof";
-  return _typeof$v = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$t = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$v(o);
+  }, _typeof$t(o);
 }
-function _extends$n() {
-  _extends$n = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$l() {
+  _extends$l = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -67822,9 +67732,9 @@ function _extends$n() {
     }
     return target;
   };
-  return _extends$n.apply(this, arguments);
+  return _extends$l.apply(this, arguments);
 }
-function ownKeys$r(e3, r2) {
+function ownKeys$p(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -67834,19 +67744,19 @@ function ownKeys$r(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$r(e3) {
+function _objectSpread$p(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$r(Object(t2), true).forEach(function(r3) {
-      _defineProperty$u(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$r(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$p(Object(t2), true).forEach(function(r3) {
+      _defineProperty$s(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$p(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$u(obj, key, value) {
-  key = _toPropertyKey$u(key);
+function _defineProperty$s(obj, key, value) {
+  key = _toPropertyKey$s(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -67854,16 +67764,16 @@ function _defineProperty$u(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$u(t2) {
-  var i = _toPrimitive$u(t2, "string");
-  return "symbol" == _typeof$v(i) ? i : i + "";
+function _toPropertyKey$s(t2) {
+  var i = _toPrimitive$s(t2, "string");
+  return "symbol" == _typeof$t(i) ? i : i + "";
 }
-function _toPrimitive$u(t2, r2) {
-  if ("object" != _typeof$v(t2) || !t2) return t2;
+function _toPrimitive$s(t2, r2) {
+  if ("object" != _typeof$t(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$v(i)) return i;
+    if ("object" != _typeof$t(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
@@ -67914,7 +67824,7 @@ var getPath$1 = function getPath(_ref) {
       return defined(base2);
     }) : baseLine;
     var areaPoints = formatPoints.map(function(entry, index2) {
-      return _objectSpread$r(_objectSpread$r({}, entry), {}, {
+      return _objectSpread$p(_objectSpread$p({}, entry), {}, {
         base: formatBaseLine[index2]
       });
     });
@@ -67946,7 +67856,7 @@ var Curve = function Curve2(props) {
     return null;
   }
   var realPath = points && points.length ? getPath$1(props) : path;
-  return /* @__PURE__ */ reactExports.createElement("path", _extends$n({}, filterProps(props, false), adaptEventHandlers(props), {
+  return /* @__PURE__ */ reactExports.createElement("path", _extends$l({}, filterProps(props, false), adaptEventHandlers(props), {
     className: clsx("recharts-curve", className),
     d: realPath,
     ref: pathRef
@@ -68462,13 +68372,13 @@ function setRafTimeout(callback) {
   };
   requestAnimationFrame(shouldUpdate);
 }
-function _typeof$u(o) {
+function _typeof$s(o) {
   "@babel/helpers - typeof";
-  return _typeof$u = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$s = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$u(o);
+  }, _typeof$s(o);
 }
 function _toArray(arr) {
   return _arrayWithHoles$6(arr) || _iterableToArray$7(arr) || _unsupportedIterableToArray$a(arr) || _nonIterableRest$6();
@@ -68519,7 +68429,7 @@ function createAnimateManager() {
       setRafTimeout(setStyle3.bind(null, restStyles));
       return;
     }
-    if (_typeof$u(_style) === "object") {
+    if (_typeof$s(_style) === "object") {
       currStyle = _style;
       handleChange(currStyle);
     }
@@ -68545,15 +68455,15 @@ function createAnimateManager() {
     }
   };
 }
-function _typeof$t(o) {
+function _typeof$r(o) {
   "@babel/helpers - typeof";
-  return _typeof$t = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$t(o);
+  }, _typeof$r(o);
 }
-function ownKeys$q(e3, r2) {
+function ownKeys$o(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -68563,19 +68473,19 @@ function ownKeys$q(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$q(e3) {
+function _objectSpread$o(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$q(Object(t2), true).forEach(function(r22) {
-      _defineProperty$t(e3, r22, t2[r22]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$q(Object(t2)).forEach(function(r22) {
+    r2 % 2 ? ownKeys$o(Object(t2), true).forEach(function(r22) {
+      _defineProperty$r(e3, r22, t2[r22]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$o(Object(t2)).forEach(function(r22) {
       Object.defineProperty(e3, r22, Object.getOwnPropertyDescriptor(t2, r22));
     });
   }
   return e3;
 }
-function _defineProperty$t(obj, key, value) {
-  key = _toPropertyKey$t(key);
+function _defineProperty$r(obj, key, value) {
+  key = _toPropertyKey$r(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -68583,16 +68493,16 @@ function _defineProperty$t(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$t(arg) {
-  var key = _toPrimitive$t(arg, "string");
-  return _typeof$t(key) === "symbol" ? key : String(key);
+function _toPropertyKey$r(arg) {
+  var key = _toPrimitive$r(arg, "string");
+  return _typeof$r(key) === "symbol" ? key : String(key);
 }
-function _toPrimitive$t(input, hint) {
-  if (_typeof$t(input) !== "object" || input === null) return input;
+function _toPrimitive$r(input, hint) {
+  if (_typeof$r(input) !== "object" || input === null) return input;
   var prim = input[Symbol.toPrimitive];
   if (prim !== void 0) {
     var res = prim.call(input, hint);
-    if (_typeof$t(res) !== "object") return res;
+    if (_typeof$r(res) !== "object") return res;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return (hint === "string" ? String : Number)(input);
@@ -68614,7 +68524,7 @@ var getDashCase = function getDashCase2(name) {
 };
 var mapObject = function mapObject2(fn, obj) {
   return Object.keys(obj).reduce(function(res, key) {
-    return _objectSpread$q(_objectSpread$q({}, res), {}, _defineProperty$t({}, key, fn(key, obj[key])));
+    return _objectSpread$o(_objectSpread$o({}, res), {}, _defineProperty$r({}, key, fn(key, obj[key])));
   }, {});
 };
 var getTransitionVal = function getTransitionVal2(props, duration, easing) {
@@ -68824,13 +68734,13 @@ var configEasing = function configEasing2() {
   }
   return null;
 };
-function _typeof$s(o) {
+function _typeof$q(o) {
   "@babel/helpers - typeof";
-  return _typeof$s = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$q = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$s(o);
+  }, _typeof$q(o);
 }
 function _toConsumableArray$5(arr) {
   return _arrayWithoutHoles$5(arr) || _iterableToArray$5(arr) || _unsupportedIterableToArray$8(arr) || _nonIterableSpread$5();
@@ -68844,7 +68754,7 @@ function _iterableToArray$5(iter) {
 function _arrayWithoutHoles$5(arr) {
   if (Array.isArray(arr)) return _arrayLikeToArray$8(arr);
 }
-function ownKeys$p(e3, r2) {
+function ownKeys$n(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -68854,19 +68764,19 @@ function ownKeys$p(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$p(e3) {
+function _objectSpread$n(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$p(Object(t2), true).forEach(function(r3) {
-      _defineProperty$s(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$p(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$n(Object(t2), true).forEach(function(r3) {
+      _defineProperty$q(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$n(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$s(obj, key, value) {
-  key = _toPropertyKey$s(key);
+function _defineProperty$q(obj, key, value) {
+  key = _toPropertyKey$q(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -68874,16 +68784,16 @@ function _defineProperty$s(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$s(arg) {
-  var key = _toPrimitive$s(arg, "string");
-  return _typeof$s(key) === "symbol" ? key : String(key);
+function _toPropertyKey$q(arg) {
+  var key = _toPrimitive$q(arg, "string");
+  return _typeof$q(key) === "symbol" ? key : String(key);
 }
-function _toPrimitive$s(input, hint) {
-  if (_typeof$s(input) !== "object" || input === null) return input;
+function _toPrimitive$q(input, hint) {
+  if (_typeof$q(input) !== "object" || input === null) return input;
   var prim = input[Symbol.toPrimitive];
   if (prim !== void 0) {
     var res = prim.call(input, hint);
-    if (_typeof$s(res) !== "object") return res;
+    if (_typeof$q(res) !== "object") return res;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return (hint === "string" ? String : Number)(input);
@@ -68940,7 +68850,7 @@ var calStepperVals = function calStepperVals2(easing, preVals, steps) {
   var nextStepVals = mapObject(function(key, val) {
     if (needContinue(val)) {
       var _easing = easing(val.from, val.to, val.velocity), _easing2 = _slicedToArray$4(_easing, 2), newX = _easing2[0], newV = _easing2[1];
-      return _objectSpread$p(_objectSpread$p({}, val), {}, {
+      return _objectSpread$n(_objectSpread$n({}, val), {}, {
         from: newX,
         velocity: newV
       });
@@ -68950,7 +68860,7 @@ var calStepperVals = function calStepperVals2(easing, preVals, steps) {
   if (steps < 1) {
     return mapObject(function(key, val) {
       if (needContinue(val)) {
-        return _objectSpread$p(_objectSpread$p({}, val), {}, {
+        return _objectSpread$n(_objectSpread$n({}, val), {}, {
           velocity: alpha(val.velocity, nextStepVals[key].velocity, steps),
           from: alpha(val.from, nextStepVals[key].from, steps)
         });
@@ -68963,10 +68873,10 @@ var calStepperVals = function calStepperVals2(easing, preVals, steps) {
 const configUpdate = function(from2, to, easing, duration, render) {
   var interKeys = getIntersectionKeys(from2, to);
   var timingStyle = interKeys.reduce(function(res, key) {
-    return _objectSpread$p(_objectSpread$p({}, res), {}, _defineProperty$s({}, key, [from2[key], to[key]]));
+    return _objectSpread$n(_objectSpread$n({}, res), {}, _defineProperty$q({}, key, [from2[key], to[key]]));
   }, {});
   var stepperStyle = interKeys.reduce(function(res, key) {
-    return _objectSpread$p(_objectSpread$p({}, res), {}, _defineProperty$s({}, key, {
+    return _objectSpread$n(_objectSpread$n({}, res), {}, _defineProperty$q({}, key, {
       from: from2[key],
       velocity: 0,
       to: to[key]
@@ -68993,7 +68903,7 @@ const configUpdate = function(from2, to, easing, duration, render) {
     var deltaTime = now2 - preTime;
     var steps = deltaTime / easing.dt;
     stepperStyle = calStepperVals(easing, stepperStyle, steps);
-    render(_objectSpread$p(_objectSpread$p(_objectSpread$p({}, from2), to), getCurrStyle()));
+    render(_objectSpread$n(_objectSpread$n(_objectSpread$n({}, from2), to), getCurrStyle()));
     preTime = now2;
     if (!shouldStopAnimation()) {
       cafId = requestAnimationFrame(update);
@@ -69007,14 +68917,14 @@ const configUpdate = function(from2, to, easing, duration, render) {
     var currStyle = mapObject(function(key, val) {
       return alpha.apply(void 0, _toConsumableArray$5(val).concat([easing(t2)]));
     }, timingStyle);
-    render(_objectSpread$p(_objectSpread$p(_objectSpread$p({}, from2), to), currStyle));
+    render(_objectSpread$n(_objectSpread$n(_objectSpread$n({}, from2), to), currStyle));
     if (t2 < 1) {
       cafId = requestAnimationFrame(update);
     } else {
       var finalStyle = mapObject(function(key, val) {
         return alpha.apply(void 0, _toConsumableArray$5(val).concat([easing(1)]));
       }, timingStyle);
-      render(_objectSpread$p(_objectSpread$p(_objectSpread$p({}, from2), to), finalStyle));
+      render(_objectSpread$n(_objectSpread$n(_objectSpread$n({}, from2), to), finalStyle));
     }
   };
   update = easing.isStepper ? stepperUpdate : timingUpdate;
@@ -69025,18 +68935,18 @@ const configUpdate = function(from2, to, easing, duration, render) {
     };
   };
 };
-function _typeof$r(o) {
+function _typeof$p(o) {
   "@babel/helpers - typeof";
-  return _typeof$r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$p = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$r(o);
+  }, _typeof$p(o);
 }
-var _excluded$d = ["children", "begin", "duration", "attributeName", "easing", "isActive", "steps", "from", "to", "canBegin", "onAnimationEnd", "shouldReAnimate", "onAnimationReStart"];
-function _objectWithoutProperties$d(source, excluded) {
+var _excluded$c = ["children", "begin", "duration", "attributeName", "easing", "isActive", "steps", "from", "to", "canBegin", "onAnimationEnd", "shouldReAnimate", "onAnimationReStart"];
+function _objectWithoutProperties$c(source, excluded) {
   if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$d(source, excluded);
+  var target = _objectWithoutPropertiesLoose$c(source, excluded);
   var key, i;
   if (Object.getOwnPropertySymbols) {
     var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
@@ -69049,7 +68959,7 @@ function _objectWithoutProperties$d(source, excluded) {
   }
   return target;
 }
-function _objectWithoutPropertiesLoose$d(source, excluded) {
+function _objectWithoutPropertiesLoose$c(source, excluded) {
   if (source == null) return {};
   var target = {};
   var sourceKeys = Object.keys(source);
@@ -69086,7 +68996,7 @@ function _arrayLikeToArray$7(arr, len) {
   for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
   return arr2;
 }
-function ownKeys$o(e3, r2) {
+function ownKeys$m(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -69096,19 +69006,19 @@ function ownKeys$o(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$o(e3) {
+function _objectSpread$m(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$o(Object(t2), true).forEach(function(r3) {
-      _defineProperty$r(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$o(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$m(Object(t2), true).forEach(function(r3) {
+      _defineProperty$p(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$m(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$r(obj, key, value) {
-  key = _toPropertyKey$r(key);
+function _defineProperty$p(obj, key, value) {
+  key = _toPropertyKey$p(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -69116,82 +69026,82 @@ function _defineProperty$r(obj, key, value) {
   }
   return obj;
 }
-function _classCallCheck$h(instance, Constructor) {
+function _classCallCheck$f(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-function _defineProperties$h(target, props) {
+function _defineProperties$f(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$r(descriptor.key), descriptor);
+    Object.defineProperty(target, _toPropertyKey$p(descriptor.key), descriptor);
   }
 }
-function _createClass$h(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$h(Constructor.prototype, protoProps);
+function _createClass$f(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$f(Constructor.prototype, protoProps);
   Object.defineProperty(Constructor, "prototype", { writable: false });
   return Constructor;
 }
-function _toPropertyKey$r(arg) {
-  var key = _toPrimitive$r(arg, "string");
-  return _typeof$r(key) === "symbol" ? key : String(key);
+function _toPropertyKey$p(arg) {
+  var key = _toPrimitive$p(arg, "string");
+  return _typeof$p(key) === "symbol" ? key : String(key);
 }
-function _toPrimitive$r(input, hint) {
-  if (_typeof$r(input) !== "object" || input === null) return input;
+function _toPrimitive$p(input, hint) {
+  if (_typeof$p(input) !== "object" || input === null) return input;
   var prim = input[Symbol.toPrimitive];
   if (prim !== void 0) {
     var res = prim.call(input, hint);
-    if (_typeof$r(res) !== "object") return res;
+    if (_typeof$p(res) !== "object") return res;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return (hint === "string" ? String : Number)(input);
 }
-function _inherits$f(subClass, superClass) {
+function _inherits$d(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
   }
   subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
   Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$f(subClass, superClass);
+  if (superClass) _setPrototypeOf$d(subClass, superClass);
 }
-function _setPrototypeOf$f(o, p2) {
-  _setPrototypeOf$f = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
+function _setPrototypeOf$d(o, p2) {
+  _setPrototypeOf$d = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
     o2.__proto__ = p3;
     return o2;
   };
-  return _setPrototypeOf$f(o, p2);
+  return _setPrototypeOf$d(o, p2);
 }
 function _createSuper(Derived2) {
-  var hasNativeReflectConstruct = _isNativeReflectConstruct$f();
+  var hasNativeReflectConstruct = _isNativeReflectConstruct$d();
   return function _createSuperInternal() {
-    var Super = _getPrototypeOf$f(Derived2), result;
+    var Super = _getPrototypeOf$d(Derived2), result;
     if (hasNativeReflectConstruct) {
-      var NewTarget = _getPrototypeOf$f(this).constructor;
+      var NewTarget = _getPrototypeOf$d(this).constructor;
       result = Reflect.construct(Super, arguments, NewTarget);
     } else {
       result = Super.apply(this, arguments);
     }
-    return _possibleConstructorReturn$f(this, result);
+    return _possibleConstructorReturn$d(this, result);
   };
 }
-function _possibleConstructorReturn$f(self2, call) {
-  if (call && (_typeof$r(call) === "object" || typeof call === "function")) {
+function _possibleConstructorReturn$d(self2, call) {
+  if (call && (_typeof$p(call) === "object" || typeof call === "function")) {
     return call;
   } else if (call !== void 0) {
     throw new TypeError("Derived constructors may only return object or undefined");
   }
-  return _assertThisInitialized$f(self2);
+  return _assertThisInitialized$d(self2);
 }
-function _assertThisInitialized$f(self2) {
+function _assertThisInitialized$d(self2) {
   if (self2 === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
   return self2;
 }
-function _isNativeReflectConstruct$f() {
+function _isNativeReflectConstruct$d() {
   if (typeof Reflect === "undefined" || !Reflect.construct) return false;
   if (Reflect.construct.sham) return false;
   if (typeof Proxy === "function") return true;
@@ -69203,22 +69113,22 @@ function _isNativeReflectConstruct$f() {
     return false;
   }
 }
-function _getPrototypeOf$f(o) {
-  _getPrototypeOf$f = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
+function _getPrototypeOf$d(o) {
+  _getPrototypeOf$d = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
     return o2.__proto__ || Object.getPrototypeOf(o2);
   };
-  return _getPrototypeOf$f(o);
+  return _getPrototypeOf$d(o);
 }
 var Animate = /* @__PURE__ */ function(_PureComponent) {
-  _inherits$f(Animate2, _PureComponent);
+  _inherits$d(Animate2, _PureComponent);
   var _super = _createSuper(Animate2);
   function Animate2(props, context) {
     var _this;
-    _classCallCheck$h(this, Animate2);
+    _classCallCheck$f(this, Animate2);
     _this = _super.call(this, props, context);
     var _this$props = _this.props, isActive2 = _this$props.isActive, attributeName = _this$props.attributeName, from2 = _this$props.from, to = _this$props.to, steps = _this$props.steps, children = _this$props.children, duration = _this$props.duration;
-    _this.handleStyleChange = _this.handleStyleChange.bind(_assertThisInitialized$f(_this));
-    _this.changeStyle = _this.changeStyle.bind(_assertThisInitialized$f(_this));
+    _this.handleStyleChange = _this.handleStyleChange.bind(_assertThisInitialized$d(_this));
+    _this.changeStyle = _this.changeStyle.bind(_assertThisInitialized$d(_this));
     if (!isActive2 || duration <= 0) {
       _this.state = {
         style: {}
@@ -69228,7 +69138,7 @@ var Animate = /* @__PURE__ */ function(_PureComponent) {
           style: to
         };
       }
-      return _possibleConstructorReturn$f(_this);
+      return _possibleConstructorReturn$d(_this);
     }
     if (steps && steps.length) {
       _this.state = {
@@ -69239,10 +69149,10 @@ var Animate = /* @__PURE__ */ function(_PureComponent) {
         _this.state = {
           style: from2
         };
-        return _possibleConstructorReturn$f(_this);
+        return _possibleConstructorReturn$d(_this);
       }
       _this.state = {
-        style: attributeName ? _defineProperty$r({}, attributeName, from2) : from2
+        style: attributeName ? _defineProperty$p({}, attributeName, from2) : from2
       };
     } else {
       _this.state = {
@@ -69251,7 +69161,7 @@ var Animate = /* @__PURE__ */ function(_PureComponent) {
     }
     return _this;
   }
-  _createClass$h(Animate2, [{
+  _createClass$f(Animate2, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this$props2 = this.props, isActive2 = _this$props2.isActive, canBegin = _this$props2.canBegin;
@@ -69271,7 +69181,7 @@ var Animate = /* @__PURE__ */ function(_PureComponent) {
       }
       if (!isActive2) {
         var newState = {
-          style: attributeName ? _defineProperty$r({}, attributeName, to) : to
+          style: attributeName ? _defineProperty$p({}, attributeName, to) : to
         };
         if (this.state && style2) {
           if (attributeName && style2[attributeName] !== to || !attributeName && style2 !== to) {
@@ -69293,13 +69203,13 @@ var Animate = /* @__PURE__ */ function(_PureComponent) {
       var from2 = isTriggered || shouldReAnimate ? currentFrom : prevProps.to;
       if (this.state && style2) {
         var _newState = {
-          style: attributeName ? _defineProperty$r({}, attributeName, from2) : from2
+          style: attributeName ? _defineProperty$p({}, attributeName, from2) : from2
         };
         if (attributeName && style2[attributeName] !== from2 || !attributeName && style2 !== from2) {
           this.setState(_newState);
         }
       }
-      this.runAnimation(_objectSpread$o(_objectSpread$o({}, this.props), {}, {
+      this.runAnimation(_objectSpread$m(_objectSpread$m({}, this.props), {}, {
         from: from2,
         begin: 0
       }));
@@ -69370,7 +69280,7 @@ var Animate = /* @__PURE__ */ function(_PureComponent) {
           }), duration]);
         }
         var transition = getTransitionVal(properties, duration, easing);
-        var newStyle = _objectSpread$o(_objectSpread$o(_objectSpread$o({}, preItem.style), style2), {}, {
+        var newStyle = _objectSpread$m(_objectSpread$m(_objectSpread$m({}, preItem.style), style2), {}, {
           transition
         });
         return [].concat(_toConsumableArray$4(sequence), [newStyle, duration, onAnimationEnd2]).filter(identity2);
@@ -69394,9 +69304,9 @@ var Animate = /* @__PURE__ */ function(_PureComponent) {
         this.runStepAnimation(props);
         return;
       }
-      var to = attributeName ? _defineProperty$r({}, attributeName, propsTo) : propsTo;
+      var to = attributeName ? _defineProperty$p({}, attributeName, propsTo) : propsTo;
       var transition = getTransitionVal(Object.keys(to), duration, easing);
-      manager.start([onAnimationStart2, begin, _objectSpread$o(_objectSpread$o({}, to), {}, {
+      manager.start([onAnimationStart2, begin, _objectSpread$m(_objectSpread$m({}, to), {}, {
         transition
       }), duration, onAnimationEnd2]);
     }
@@ -69416,7 +69326,7 @@ var Animate = /* @__PURE__ */ function(_PureComponent) {
       _this$props4.onAnimationEnd;
       _this$props4.shouldReAnimate;
       _this$props4.onAnimationReStart;
-      var others = _objectWithoutProperties$d(_this$props4, _excluded$d);
+      var others = _objectWithoutProperties$c(_this$props4, _excluded$c);
       var count2 = reactExports.Children.count(children);
       var stateStyle = this.state.style;
       if (typeof children === "function") {
@@ -69427,8 +69337,8 @@ var Animate = /* @__PURE__ */ function(_PureComponent) {
       }
       var cloneContainer = function cloneContainer2(container2) {
         var _container$props = container2.props, _container$props$styl = _container$props.style, style2 = _container$props$styl === void 0 ? {} : _container$props$styl, className = _container$props.className;
-        var res = /* @__PURE__ */ reactExports.cloneElement(container2, _objectSpread$o(_objectSpread$o({}, others), {}, {
-          style: _objectSpread$o(_objectSpread$o({}, style2), stateStyle),
+        var res = /* @__PURE__ */ reactExports.cloneElement(container2, _objectSpread$m(_objectSpread$m({}, others), {}, {
+          style: _objectSpread$m(_objectSpread$m({}, style2), stateStyle),
           className
         }));
         return res;
@@ -69484,16 +69394,16 @@ Animate.propTypes = {
   onAnimationStart: PropTypes.func,
   onAnimationReStart: PropTypes.func
 };
-function _typeof$q(o) {
+function _typeof$o(o) {
   "@babel/helpers - typeof";
-  return _typeof$q = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$q(o);
+  }, _typeof$o(o);
 }
-function _extends$m() {
-  _extends$m = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$k() {
+  _extends$k = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -69504,7 +69414,7 @@ function _extends$m() {
     }
     return target;
   };
-  return _extends$m.apply(this, arguments);
+  return _extends$k.apply(this, arguments);
 }
 function _slicedToArray$3(arr, i) {
   return _arrayWithHoles$3(arr) || _iterableToArrayLimit$3(arr, i) || _unsupportedIterableToArray$6(arr, i) || _nonIterableRest$3();
@@ -69547,7 +69457,7 @@ function _iterableToArrayLimit$3(r2, l2) {
 function _arrayWithHoles$3(arr) {
   if (Array.isArray(arr)) return arr;
 }
-function ownKeys$n(e3, r2) {
+function ownKeys$l(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -69557,19 +69467,19 @@ function ownKeys$n(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$n(e3) {
+function _objectSpread$l(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$n(Object(t2), true).forEach(function(r3) {
-      _defineProperty$q(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$n(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$l(Object(t2), true).forEach(function(r3) {
+      _defineProperty$o(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$l(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$q(obj, key, value) {
-  key = _toPropertyKey$q(key);
+function _defineProperty$o(obj, key, value) {
+  key = _toPropertyKey$o(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -69577,16 +69487,16 @@ function _defineProperty$q(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$q(t2) {
-  var i = _toPrimitive$q(t2, "string");
-  return "symbol" == _typeof$q(i) ? i : i + "";
+function _toPropertyKey$o(t2) {
+  var i = _toPrimitive$o(t2, "string");
+  return "symbol" == _typeof$o(i) ? i : i + "";
 }
-function _toPrimitive$q(t2, r2) {
-  if ("object" != _typeof$q(t2) || !t2) return t2;
+function _toPrimitive$o(t2, r2) {
+  if ("object" != _typeof$o(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$q(i)) return i;
+    if ("object" != _typeof$o(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
@@ -69658,7 +69568,7 @@ var defaultProps$2 = {
   animationEasing: "ease"
 };
 var Rectangle = function Rectangle2(rectangleProps) {
-  var props = _objectSpread$n(_objectSpread$n({}, defaultProps$2), rectangleProps);
+  var props = _objectSpread$l(_objectSpread$l({}, defaultProps$2), rectangleProps);
   var pathRef = reactExports.useRef();
   var _useState = reactExports.useState(-1), _useState2 = _slicedToArray$3(_useState, 2), totalLength = _useState2[0], setTotalLength = _useState2[1];
   reactExports.useEffect(function() {
@@ -69679,7 +69589,7 @@ var Rectangle = function Rectangle2(rectangleProps) {
   }
   var layerClass = clsx("recharts-rectangle", className);
   if (!isUpdateAnimationActive) {
-    return /* @__PURE__ */ React$4.createElement("path", _extends$m({}, filterProps(props, true), {
+    return /* @__PURE__ */ React$4.createElement("path", _extends$k({}, filterProps(props, true), {
       className: layerClass,
       d: getRectanglePath(x2, y2, width, height, radius)
     }));
@@ -69712,16 +69622,16 @@ var Rectangle = function Rectangle2(rectangleProps) {
       duration: animationDuration,
       isActive: isAnimationActive,
       easing: animationEasing
-    }, /* @__PURE__ */ React$4.createElement("path", _extends$m({}, filterProps(props, true), {
+    }, /* @__PURE__ */ React$4.createElement("path", _extends$k({}, filterProps(props, true), {
       className: layerClass,
       d: getRectanglePath(currX, currY, currWidth, currHeight, radius),
       ref: pathRef
     })));
   });
 };
-var _excluded$c = ["points", "className", "baseLinePoints", "connectNulls"];
-function _extends$l() {
-  _extends$l = Object.assign ? Object.assign.bind() : function(target) {
+var _excluded$b = ["points", "className", "baseLinePoints", "connectNulls"];
+function _extends$j() {
+  _extends$j = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -69732,11 +69642,11 @@ function _extends$l() {
     }
     return target;
   };
-  return _extends$l.apply(this, arguments);
+  return _extends$j.apply(this, arguments);
 }
-function _objectWithoutProperties$c(source, excluded) {
+function _objectWithoutProperties$b(source, excluded) {
   if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$c(source, excluded);
+  var target = _objectWithoutPropertiesLoose$b(source, excluded);
   var key, i;
   if (Object.getOwnPropertySymbols) {
     var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
@@ -69749,7 +69659,7 @@ function _objectWithoutProperties$c(source, excluded) {
   }
   return target;
 }
-function _objectWithoutPropertiesLoose$c(source, excluded) {
+function _objectWithoutPropertiesLoose$b(source, excluded) {
   if (source == null) return {};
   var target = {};
   for (var key in source) {
@@ -69825,7 +69735,7 @@ var getRanglePath = function getRanglePath2(points, baseLinePoints, connectNulls
   return "".concat(outerPath.slice(-1) === "Z" ? outerPath.slice(0, -1) : outerPath, "L").concat(getSinglePolygonPath(baseLinePoints.reverse(), connectNulls).slice(1));
 };
 var Polygon = function Polygon2(props) {
-  var points = props.points, className = props.className, baseLinePoints = props.baseLinePoints, connectNulls = props.connectNulls, others = _objectWithoutProperties$c(props, _excluded$c);
+  var points = props.points, className = props.className, baseLinePoints = props.baseLinePoints, connectNulls = props.connectNulls, others = _objectWithoutProperties$b(props, _excluded$b);
   if (!points || !points.length) {
     return null;
   }
@@ -69835,201 +69745,25 @@ var Polygon = function Polygon2(props) {
     var rangePath = getRanglePath(points, baseLinePoints, connectNulls);
     return /* @__PURE__ */ React$4.createElement("g", {
       className: layerClass
-    }, /* @__PURE__ */ React$4.createElement("path", _extends$l({}, filterProps(others, true), {
+    }, /* @__PURE__ */ React$4.createElement("path", _extends$j({}, filterProps(others, true), {
       fill: rangePath.slice(-1) === "Z" ? others.fill : "none",
       stroke: "none",
       d: rangePath
-    })), hasStroke ? /* @__PURE__ */ React$4.createElement("path", _extends$l({}, filterProps(others, true), {
+    })), hasStroke ? /* @__PURE__ */ React$4.createElement("path", _extends$j({}, filterProps(others, true), {
       fill: "none",
       d: getSinglePolygonPath(points, connectNulls)
-    })) : null, hasStroke ? /* @__PURE__ */ React$4.createElement("path", _extends$l({}, filterProps(others, true), {
+    })) : null, hasStroke ? /* @__PURE__ */ React$4.createElement("path", _extends$j({}, filterProps(others, true), {
       fill: "none",
       d: getSinglePolygonPath(baseLinePoints, connectNulls)
     })) : null);
   }
   var singlePath = getSinglePolygonPath(points, connectNulls);
-  return /* @__PURE__ */ React$4.createElement("path", _extends$l({}, filterProps(others, true), {
+  return /* @__PURE__ */ React$4.createElement("path", _extends$j({}, filterProps(others, true), {
     fill: singlePath.slice(-1) === "Z" ? others.fill : "none",
     className: layerClass,
     d: singlePath
   }));
 };
-function _extends$k() {
-  _extends$k = Object.assign ? Object.assign.bind() : function(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-    return target;
-  };
-  return _extends$k.apply(this, arguments);
-}
-var Dot = function Dot2(props) {
-  var cx2 = props.cx, cy = props.cy, r2 = props.r, className = props.className;
-  var layerClass = clsx("recharts-dot", className);
-  if (cx2 === +cx2 && cy === +cy && r2 === +r2) {
-    return /* @__PURE__ */ reactExports.createElement("circle", _extends$k({}, filterProps(props, false), adaptEventHandlers(props), {
-      className: layerClass,
-      cx: cx2,
-      cy,
-      r: r2
-    }));
-  }
-  return null;
-};
-function _typeof$p(o) {
-  "@babel/helpers - typeof";
-  return _typeof$p = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
-    return typeof o2;
-  } : function(o2) {
-    return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$p(o);
-}
-var _excluded$b = ["x", "y", "top", "left", "width", "height", "className"];
-function _extends$j() {
-  _extends$j = Object.assign ? Object.assign.bind() : function(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-    return target;
-  };
-  return _extends$j.apply(this, arguments);
-}
-function ownKeys$m(e3, r2) {
-  var t2 = Object.keys(e3);
-  if (Object.getOwnPropertySymbols) {
-    var o = Object.getOwnPropertySymbols(e3);
-    r2 && (o = o.filter(function(r3) {
-      return Object.getOwnPropertyDescriptor(e3, r3).enumerable;
-    })), t2.push.apply(t2, o);
-  }
-  return t2;
-}
-function _objectSpread$m(e3) {
-  for (var r2 = 1; r2 < arguments.length; r2++) {
-    var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$m(Object(t2), true).forEach(function(r3) {
-      _defineProperty$p(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$m(Object(t2)).forEach(function(r3) {
-      Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
-    });
-  }
-  return e3;
-}
-function _defineProperty$p(obj, key, value) {
-  key = _toPropertyKey$p(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
-function _toPropertyKey$p(t2) {
-  var i = _toPrimitive$p(t2, "string");
-  return "symbol" == _typeof$p(i) ? i : i + "";
-}
-function _toPrimitive$p(t2, r2) {
-  if ("object" != _typeof$p(t2) || !t2) return t2;
-  var e3 = t2[Symbol.toPrimitive];
-  if (void 0 !== e3) {
-    var i = e3.call(t2, r2);
-    if ("object" != _typeof$p(i)) return i;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return ("string" === r2 ? String : Number)(t2);
-}
-function _objectWithoutProperties$b(source, excluded) {
-  if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$b(source, excluded);
-  var key, i;
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-function _objectWithoutPropertiesLoose$b(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  for (var key in source) {
-    if (Object.prototype.hasOwnProperty.call(source, key)) {
-      if (excluded.indexOf(key) >= 0) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-var getPath2 = function getPath3(x2, y2, width, height, top, left) {
-  return "M".concat(x2, ",").concat(top, "v").concat(height, "M").concat(left, ",").concat(y2, "h").concat(width);
-};
-var Cross = function Cross2(_ref) {
-  var _ref$x = _ref.x, x2 = _ref$x === void 0 ? 0 : _ref$x, _ref$y = _ref.y, y2 = _ref$y === void 0 ? 0 : _ref$y, _ref$top = _ref.top, top = _ref$top === void 0 ? 0 : _ref$top, _ref$left = _ref.left, left = _ref$left === void 0 ? 0 : _ref$left, _ref$width = _ref.width, width = _ref$width === void 0 ? 0 : _ref$width, _ref$height = _ref.height, height = _ref$height === void 0 ? 0 : _ref$height, className = _ref.className, rest = _objectWithoutProperties$b(_ref, _excluded$b);
-  var props = _objectSpread$m({
-    x: x2,
-    y: y2,
-    top,
-    left,
-    width,
-    height
-  }, rest);
-  if (!isNumber$2(x2) || !isNumber$2(y2) || !isNumber$2(width) || !isNumber$2(height) || !isNumber$2(top) || !isNumber$2(left)) {
-    return null;
-  }
-  return /* @__PURE__ */ React$4.createElement("path", _extends$j({}, filterProps(props, true), {
-    className: clsx("recharts-cross", className),
-    d: getPath2(x2, y2, width, height, top, left)
-  }));
-};
-var _excluded$a = ["cx", "cy", "innerRadius", "outerRadius", "gridType", "radialLines"];
-function _typeof$o(o) {
-  "@babel/helpers - typeof";
-  return _typeof$o = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
-    return typeof o2;
-  } : function(o2) {
-    return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$o(o);
-}
-function _objectWithoutProperties$a(source, excluded) {
-  if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$a(source, excluded);
-  var key, i;
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-function _objectWithoutPropertiesLoose$a(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  for (var key in source) {
-    if (Object.prototype.hasOwnProperty.call(source, key)) {
-      if (excluded.indexOf(key) >= 0) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
 function _extends$i() {
   _extends$i = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -70044,173 +69778,19 @@ function _extends$i() {
   };
   return _extends$i.apply(this, arguments);
 }
-function ownKeys$l(e3, r2) {
-  var t2 = Object.keys(e3);
-  if (Object.getOwnPropertySymbols) {
-    var o = Object.getOwnPropertySymbols(e3);
-    r2 && (o = o.filter(function(r3) {
-      return Object.getOwnPropertyDescriptor(e3, r3).enumerable;
-    })), t2.push.apply(t2, o);
-  }
-  return t2;
-}
-function _objectSpread$l(e3) {
-  for (var r2 = 1; r2 < arguments.length; r2++) {
-    var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$l(Object(t2), true).forEach(function(r3) {
-      _defineProperty$o(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$l(Object(t2)).forEach(function(r3) {
-      Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
-    });
-  }
-  return e3;
-}
-function _defineProperty$o(obj, key, value) {
-  key = _toPropertyKey$o(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
-function _toPropertyKey$o(t2) {
-  var i = _toPrimitive$o(t2, "string");
-  return "symbol" == _typeof$o(i) ? i : i + "";
-}
-function _toPrimitive$o(t2, r2) {
-  if ("object" != _typeof$o(t2) || !t2) return t2;
-  var e3 = t2[Symbol.toPrimitive];
-  if (void 0 !== e3) {
-    var i = e3.call(t2, r2);
-    if ("object" != _typeof$o(i)) return i;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return ("string" === r2 ? String : Number)(t2);
-}
-var getPolygonPath = function getPolygonPath2(radius, cx2, cy, polarAngles) {
-  var path = "";
-  polarAngles.forEach(function(angle, i) {
-    var point2 = polarToCartesian(cx2, cy, radius, angle);
-    if (i) {
-      path += "L ".concat(point2.x, ",").concat(point2.y);
-    } else {
-      path += "M ".concat(point2.x, ",").concat(point2.y);
-    }
-  });
-  path += "Z";
-  return path;
-};
-var PolarAngles = function PolarAngles2(props) {
-  var cx2 = props.cx, cy = props.cy, innerRadius = props.innerRadius, outerRadius = props.outerRadius, polarAngles = props.polarAngles, radialLines = props.radialLines;
-  if (!polarAngles || !polarAngles.length || !radialLines) {
-    return null;
-  }
-  var polarAnglesProps = _objectSpread$l({
-    stroke: "#ccc"
-  }, filterProps(props, false));
-  return /* @__PURE__ */ React$4.createElement("g", {
-    className: "recharts-polar-grid-angle"
-  }, polarAngles.map(function(entry) {
-    var start = polarToCartesian(cx2, cy, innerRadius, entry);
-    var end = polarToCartesian(cx2, cy, outerRadius, entry);
-    return /* @__PURE__ */ React$4.createElement("line", _extends$i({}, polarAnglesProps, {
-      key: "line-".concat(entry),
-      x1: start.x,
-      y1: start.y,
-      x2: end.x,
-      y2: end.y
+var Dot = function Dot2(props) {
+  var cx2 = props.cx, cy = props.cy, r2 = props.r, className = props.className;
+  var layerClass = clsx("recharts-dot", className);
+  if (cx2 === +cx2 && cy === +cy && r2 === +r2) {
+    return /* @__PURE__ */ reactExports.createElement("circle", _extends$i({}, filterProps(props, false), adaptEventHandlers(props), {
+      className: layerClass,
+      cx: cx2,
+      cy,
+      r: r2
     }));
-  }));
-};
-var ConcentricCircle = function ConcentricCircle2(props) {
-  var cx2 = props.cx, cy = props.cy, radius = props.radius, index2 = props.index;
-  var concentricCircleProps = _objectSpread$l(_objectSpread$l({
-    stroke: "#ccc"
-  }, filterProps(props, false)), {}, {
-    fill: "none"
-  });
-  return /* @__PURE__ */ React$4.createElement("circle", _extends$i({}, concentricCircleProps, {
-    className: clsx("recharts-polar-grid-concentric-circle", props.className),
-    key: "circle-".concat(index2),
-    cx: cx2,
-    cy,
-    r: radius
-  }));
-};
-var ConcentricPolygon = function ConcentricPolygon2(props) {
-  var radius = props.radius, index2 = props.index;
-  var concentricPolygonProps = _objectSpread$l(_objectSpread$l({
-    stroke: "#ccc"
-  }, filterProps(props, false)), {}, {
-    fill: "none"
-  });
-  return /* @__PURE__ */ React$4.createElement("path", _extends$i({}, concentricPolygonProps, {
-    className: clsx("recharts-polar-grid-concentric-polygon", props.className),
-    key: "path-".concat(index2),
-    d: getPolygonPath(radius, props.cx, props.cy, props.polarAngles)
-  }));
-};
-var ConcentricPath = function ConcentricPath2(props) {
-  var polarRadius = props.polarRadius, gridType = props.gridType;
-  if (!polarRadius || !polarRadius.length) {
-    return null;
   }
-  return /* @__PURE__ */ React$4.createElement("g", {
-    className: "recharts-polar-grid-concentric"
-  }, polarRadius.map(function(entry, i) {
-    var key = i;
-    if (gridType === "circle") return /* @__PURE__ */ React$4.createElement(ConcentricCircle, _extends$i({
-      key
-    }, props, {
-      radius: entry,
-      index: i
-    }));
-    return /* @__PURE__ */ React$4.createElement(ConcentricPolygon, _extends$i({
-      key
-    }, props, {
-      radius: entry,
-      index: i
-    }));
-  }));
+  return null;
 };
-var PolarGrid = function PolarGrid2(_ref) {
-  var _ref$cx = _ref.cx, cx2 = _ref$cx === void 0 ? 0 : _ref$cx, _ref$cy = _ref.cy, cy = _ref$cy === void 0 ? 0 : _ref$cy, _ref$innerRadius = _ref.innerRadius, innerRadius = _ref$innerRadius === void 0 ? 0 : _ref$innerRadius, _ref$outerRadius = _ref.outerRadius, outerRadius = _ref$outerRadius === void 0 ? 0 : _ref$outerRadius, _ref$gridType = _ref.gridType, gridType = _ref$gridType === void 0 ? "polygon" : _ref$gridType, _ref$radialLines = _ref.radialLines, radialLines = _ref$radialLines === void 0 ? true : _ref$radialLines, props = _objectWithoutProperties$a(_ref, _excluded$a);
-  if (outerRadius <= 0) {
-    return null;
-  }
-  return /* @__PURE__ */ React$4.createElement("g", {
-    className: "recharts-polar-grid"
-  }, /* @__PURE__ */ React$4.createElement(PolarAngles, _extends$i({
-    cx: cx2,
-    cy,
-    innerRadius,
-    outerRadius,
-    gridType,
-    radialLines
-  }, props)), /* @__PURE__ */ React$4.createElement(ConcentricPath, _extends$i({
-    cx: cx2,
-    cy,
-    innerRadius,
-    outerRadius,
-    gridType,
-    radialLines
-  }, props)));
-};
-PolarGrid.displayName = "PolarGrid";
-var baseExtremum$1 = _baseExtremum, baseGt = _baseGt, baseIteratee$6 = _baseIteratee;
-function maxBy(array2, iteratee) {
-  return array2 && array2.length ? baseExtremum$1(array2, baseIteratee$6(iteratee), baseGt) : void 0;
-}
-var maxBy_1 = maxBy;
-const maxBy$1 = /* @__PURE__ */ getDefaultExportFromCjs$1(maxBy_1);
-var baseExtremum = _baseExtremum, baseIteratee$5 = _baseIteratee, baseLt = _baseLt;
-function minBy(array2, iteratee) {
-  return array2 && array2.length ? baseExtremum(array2, baseIteratee$5(iteratee), baseLt) : void 0;
-}
-var minBy_1 = minBy;
-const minBy$1 = /* @__PURE__ */ getDefaultExportFromCjs$1(minBy_1);
-var _excluded$9 = ["cx", "cy", "angle", "ticks", "axisLine"], _excluded2$5 = ["ticks", "tick", "angle", "tickFormatter", "stroke"];
 function _typeof$n(o) {
   "@babel/helpers - typeof";
   return _typeof$n = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
@@ -70219,6 +69799,7 @@ function _typeof$n(o) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
   }, _typeof$n(o);
 }
+var _excluded$a = ["x", "y", "top", "left", "width", "height", "className"];
 function _extends$h() {
   _extends$h = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -70254,6 +69835,85 @@ function _objectSpread$k(e3) {
   }
   return e3;
 }
+function _defineProperty$n(obj, key, value) {
+  key = _toPropertyKey$n(key);
+  if (key in obj) {
+    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+function _toPropertyKey$n(t2) {
+  var i = _toPrimitive$n(t2, "string");
+  return "symbol" == _typeof$n(i) ? i : i + "";
+}
+function _toPrimitive$n(t2, r2) {
+  if ("object" != _typeof$n(t2) || !t2) return t2;
+  var e3 = t2[Symbol.toPrimitive];
+  if (void 0 !== e3) {
+    var i = e3.call(t2, r2);
+    if ("object" != _typeof$n(i)) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r2 ? String : Number)(t2);
+}
+function _objectWithoutProperties$a(source, excluded) {
+  if (source == null) return {};
+  var target = _objectWithoutPropertiesLoose$a(source, excluded);
+  var key, i;
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+function _objectWithoutPropertiesLoose$a(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  for (var key in source) {
+    if (Object.prototype.hasOwnProperty.call(source, key)) {
+      if (excluded.indexOf(key) >= 0) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+var getPath2 = function getPath3(x2, y2, width, height, top, left) {
+  return "M".concat(x2, ",").concat(top, "v").concat(height, "M").concat(left, ",").concat(y2, "h").concat(width);
+};
+var Cross = function Cross2(_ref) {
+  var _ref$x = _ref.x, x2 = _ref$x === void 0 ? 0 : _ref$x, _ref$y = _ref.y, y2 = _ref$y === void 0 ? 0 : _ref$y, _ref$top = _ref.top, top = _ref$top === void 0 ? 0 : _ref$top, _ref$left = _ref.left, left = _ref$left === void 0 ? 0 : _ref$left, _ref$width = _ref.width, width = _ref$width === void 0 ? 0 : _ref$width, _ref$height = _ref.height, height = _ref$height === void 0 ? 0 : _ref$height, className = _ref.className, rest = _objectWithoutProperties$a(_ref, _excluded$a);
+  var props = _objectSpread$k({
+    x: x2,
+    y: y2,
+    top,
+    left,
+    width,
+    height
+  }, rest);
+  if (!isNumber$2(x2) || !isNumber$2(y2) || !isNumber$2(width) || !isNumber$2(height) || !isNumber$2(top) || !isNumber$2(left)) {
+    return null;
+  }
+  return /* @__PURE__ */ React$4.createElement("path", _extends$h({}, filterProps(props, true), {
+    className: clsx("recharts-cross", className),
+    d: getPath2(x2, y2, width, height, top, left)
+  }));
+};
+var _excluded$9 = ["cx", "cy", "innerRadius", "outerRadius", "gridType", "radialLines"];
+function _typeof$m(o) {
+  "@babel/helpers - typeof";
+  return _typeof$m = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+    return typeof o2;
+  } : function(o2) {
+    return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
+  }, _typeof$m(o);
+}
 function _objectWithoutProperties$9(source, excluded) {
   if (source == null) return {};
   var target = _objectWithoutPropertiesLoose$9(source, excluded);
@@ -70280,76 +69940,43 @@ function _objectWithoutPropertiesLoose$9(source, excluded) {
   }
   return target;
 }
-function _classCallCheck$g(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-function _defineProperties$g(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$n(descriptor.key), descriptor);
-  }
-}
-function _createClass$g(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$g(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties$g(Constructor, staticProps);
-  Object.defineProperty(Constructor, "prototype", { writable: false });
-  return Constructor;
-}
-function _callSuper$e(t2, o, e3) {
-  return o = _getPrototypeOf$e(o), _possibleConstructorReturn$e(t2, _isNativeReflectConstruct$e() ? Reflect.construct(o, e3 || [], _getPrototypeOf$e(t2).constructor) : o.apply(t2, e3));
-}
-function _possibleConstructorReturn$e(self2, call) {
-  if (call && (_typeof$n(call) === "object" || typeof call === "function")) {
-    return call;
-  } else if (call !== void 0) {
-    throw new TypeError("Derived constructors may only return object or undefined");
-  }
-  return _assertThisInitialized$e(self2);
-}
-function _assertThisInitialized$e(self2) {
-  if (self2 === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-  return self2;
-}
-function _isNativeReflectConstruct$e() {
-  try {
-    var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
-    }));
-  } catch (t3) {
-  }
-  return (_isNativeReflectConstruct$e = function _isNativeReflectConstruct2() {
-    return !!t2;
-  })();
-}
-function _getPrototypeOf$e(o) {
-  _getPrototypeOf$e = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
-    return o2.__proto__ || Object.getPrototypeOf(o2);
+function _extends$g() {
+  _extends$g = Object.assign ? Object.assign.bind() : function(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
   };
-  return _getPrototypeOf$e(o);
+  return _extends$g.apply(this, arguments);
 }
-function _inherits$e(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
+function ownKeys$j(e3, r2) {
+  var t2 = Object.keys(e3);
+  if (Object.getOwnPropertySymbols) {
+    var o = Object.getOwnPropertySymbols(e3);
+    r2 && (o = o.filter(function(r3) {
+      return Object.getOwnPropertyDescriptor(e3, r3).enumerable;
+    })), t2.push.apply(t2, o);
   }
-  subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
-  Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$e(subClass, superClass);
+  return t2;
 }
-function _setPrototypeOf$e(o, p2) {
-  _setPrototypeOf$e = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
-    o2.__proto__ = p3;
-    return o2;
-  };
-  return _setPrototypeOf$e(o, p2);
+function _objectSpread$j(e3) {
+  for (var r2 = 1; r2 < arguments.length; r2++) {
+    var t2 = null != arguments[r2] ? arguments[r2] : {};
+    r2 % 2 ? ownKeys$j(Object(t2), true).forEach(function(r3) {
+      _defineProperty$m(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$j(Object(t2)).forEach(function(r3) {
+      Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
+    });
+  }
+  return e3;
 }
-function _defineProperty$n(obj, key, value) {
-  key = _toPropertyKey$n(key);
+function _defineProperty$m(obj, key, value) {
+  key = _toPropertyKey$m(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -70357,27 +69984,310 @@ function _defineProperty$n(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$n(t2) {
-  var i = _toPrimitive$n(t2, "string");
-  return "symbol" == _typeof$n(i) ? i : i + "";
+function _toPropertyKey$m(t2) {
+  var i = _toPrimitive$m(t2, "string");
+  return "symbol" == _typeof$m(i) ? i : i + "";
 }
-function _toPrimitive$n(t2, r2) {
-  if ("object" != _typeof$n(t2) || !t2) return t2;
+function _toPrimitive$m(t2, r2) {
+  if ("object" != _typeof$m(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$n(i)) return i;
+    if ("object" != _typeof$m(i)) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r2 ? String : Number)(t2);
+}
+var getPolygonPath = function getPolygonPath2(radius, cx2, cy, polarAngles) {
+  var path = "";
+  polarAngles.forEach(function(angle, i) {
+    var point2 = polarToCartesian(cx2, cy, radius, angle);
+    if (i) {
+      path += "L ".concat(point2.x, ",").concat(point2.y);
+    } else {
+      path += "M ".concat(point2.x, ",").concat(point2.y);
+    }
+  });
+  path += "Z";
+  return path;
+};
+var PolarAngles = function PolarAngles2(props) {
+  var cx2 = props.cx, cy = props.cy, innerRadius = props.innerRadius, outerRadius = props.outerRadius, polarAngles = props.polarAngles, radialLines = props.radialLines;
+  if (!polarAngles || !polarAngles.length || !radialLines) {
+    return null;
+  }
+  var polarAnglesProps = _objectSpread$j({
+    stroke: "#ccc"
+  }, filterProps(props, false));
+  return /* @__PURE__ */ React$4.createElement("g", {
+    className: "recharts-polar-grid-angle"
+  }, polarAngles.map(function(entry) {
+    var start = polarToCartesian(cx2, cy, innerRadius, entry);
+    var end = polarToCartesian(cx2, cy, outerRadius, entry);
+    return /* @__PURE__ */ React$4.createElement("line", _extends$g({}, polarAnglesProps, {
+      key: "line-".concat(entry),
+      x1: start.x,
+      y1: start.y,
+      x2: end.x,
+      y2: end.y
+    }));
+  }));
+};
+var ConcentricCircle = function ConcentricCircle2(props) {
+  var cx2 = props.cx, cy = props.cy, radius = props.radius, index2 = props.index;
+  var concentricCircleProps = _objectSpread$j(_objectSpread$j({
+    stroke: "#ccc"
+  }, filterProps(props, false)), {}, {
+    fill: "none"
+  });
+  return /* @__PURE__ */ React$4.createElement("circle", _extends$g({}, concentricCircleProps, {
+    className: clsx("recharts-polar-grid-concentric-circle", props.className),
+    key: "circle-".concat(index2),
+    cx: cx2,
+    cy,
+    r: radius
+  }));
+};
+var ConcentricPolygon = function ConcentricPolygon2(props) {
+  var radius = props.radius, index2 = props.index;
+  var concentricPolygonProps = _objectSpread$j(_objectSpread$j({
+    stroke: "#ccc"
+  }, filterProps(props, false)), {}, {
+    fill: "none"
+  });
+  return /* @__PURE__ */ React$4.createElement("path", _extends$g({}, concentricPolygonProps, {
+    className: clsx("recharts-polar-grid-concentric-polygon", props.className),
+    key: "path-".concat(index2),
+    d: getPolygonPath(radius, props.cx, props.cy, props.polarAngles)
+  }));
+};
+var ConcentricPath = function ConcentricPath2(props) {
+  var polarRadius = props.polarRadius, gridType = props.gridType;
+  if (!polarRadius || !polarRadius.length) {
+    return null;
+  }
+  return /* @__PURE__ */ React$4.createElement("g", {
+    className: "recharts-polar-grid-concentric"
+  }, polarRadius.map(function(entry, i) {
+    var key = i;
+    if (gridType === "circle") return /* @__PURE__ */ React$4.createElement(ConcentricCircle, _extends$g({
+      key
+    }, props, {
+      radius: entry,
+      index: i
+    }));
+    return /* @__PURE__ */ React$4.createElement(ConcentricPolygon, _extends$g({
+      key
+    }, props, {
+      radius: entry,
+      index: i
+    }));
+  }));
+};
+var PolarGrid = function PolarGrid2(_ref) {
+  var _ref$cx = _ref.cx, cx2 = _ref$cx === void 0 ? 0 : _ref$cx, _ref$cy = _ref.cy, cy = _ref$cy === void 0 ? 0 : _ref$cy, _ref$innerRadius = _ref.innerRadius, innerRadius = _ref$innerRadius === void 0 ? 0 : _ref$innerRadius, _ref$outerRadius = _ref.outerRadius, outerRadius = _ref$outerRadius === void 0 ? 0 : _ref$outerRadius, _ref$gridType = _ref.gridType, gridType = _ref$gridType === void 0 ? "polygon" : _ref$gridType, _ref$radialLines = _ref.radialLines, radialLines = _ref$radialLines === void 0 ? true : _ref$radialLines, props = _objectWithoutProperties$9(_ref, _excluded$9);
+  if (outerRadius <= 0) {
+    return null;
+  }
+  return /* @__PURE__ */ React$4.createElement("g", {
+    className: "recharts-polar-grid"
+  }, /* @__PURE__ */ React$4.createElement(PolarAngles, _extends$g({
+    cx: cx2,
+    cy,
+    innerRadius,
+    outerRadius,
+    gridType,
+    radialLines
+  }, props)), /* @__PURE__ */ React$4.createElement(ConcentricPath, _extends$g({
+    cx: cx2,
+    cy,
+    innerRadius,
+    outerRadius,
+    gridType,
+    radialLines
+  }, props)));
+};
+PolarGrid.displayName = "PolarGrid";
+var baseExtremum$1 = _baseExtremum, baseGt = _baseGt, baseIteratee$6 = _baseIteratee;
+function maxBy(array2, iteratee) {
+  return array2 && array2.length ? baseExtremum$1(array2, baseIteratee$6(iteratee), baseGt) : void 0;
+}
+var maxBy_1 = maxBy;
+const maxBy$1 = /* @__PURE__ */ getDefaultExportFromCjs$1(maxBy_1);
+var baseExtremum = _baseExtremum, baseIteratee$5 = _baseIteratee, baseLt = _baseLt;
+function minBy(array2, iteratee) {
+  return array2 && array2.length ? baseExtremum(array2, baseIteratee$5(iteratee), baseLt) : void 0;
+}
+var minBy_1 = minBy;
+const minBy$1 = /* @__PURE__ */ getDefaultExportFromCjs$1(minBy_1);
+var _excluded$8 = ["cx", "cy", "angle", "ticks", "axisLine"], _excluded2$4 = ["ticks", "tick", "angle", "tickFormatter", "stroke"];
+function _typeof$l(o) {
+  "@babel/helpers - typeof";
+  return _typeof$l = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+    return typeof o2;
+  } : function(o2) {
+    return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
+  }, _typeof$l(o);
+}
+function _extends$f() {
+  _extends$f = Object.assign ? Object.assign.bind() : function(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends$f.apply(this, arguments);
+}
+function ownKeys$i(e3, r2) {
+  var t2 = Object.keys(e3);
+  if (Object.getOwnPropertySymbols) {
+    var o = Object.getOwnPropertySymbols(e3);
+    r2 && (o = o.filter(function(r3) {
+      return Object.getOwnPropertyDescriptor(e3, r3).enumerable;
+    })), t2.push.apply(t2, o);
+  }
+  return t2;
+}
+function _objectSpread$i(e3) {
+  for (var r2 = 1; r2 < arguments.length; r2++) {
+    var t2 = null != arguments[r2] ? arguments[r2] : {};
+    r2 % 2 ? ownKeys$i(Object(t2), true).forEach(function(r3) {
+      _defineProperty$l(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$i(Object(t2)).forEach(function(r3) {
+      Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
+    });
+  }
+  return e3;
+}
+function _objectWithoutProperties$8(source, excluded) {
+  if (source == null) return {};
+  var target = _objectWithoutPropertiesLoose$8(source, excluded);
+  var key, i;
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+function _objectWithoutPropertiesLoose$8(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  for (var key in source) {
+    if (Object.prototype.hasOwnProperty.call(source, key)) {
+      if (excluded.indexOf(key) >= 0) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+function _classCallCheck$e(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+function _defineProperties$e(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, _toPropertyKey$l(descriptor.key), descriptor);
+  }
+}
+function _createClass$e(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$e(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties$e(Constructor, staticProps);
+  Object.defineProperty(Constructor, "prototype", { writable: false });
+  return Constructor;
+}
+function _callSuper$c(t2, o, e3) {
+  return o = _getPrototypeOf$c(o), _possibleConstructorReturn$c(t2, _isNativeReflectConstruct$c() ? Reflect.construct(o, e3 || [], _getPrototypeOf$c(t2).constructor) : o.apply(t2, e3));
+}
+function _possibleConstructorReturn$c(self2, call) {
+  if (call && (_typeof$l(call) === "object" || typeof call === "function")) {
+    return call;
+  } else if (call !== void 0) {
+    throw new TypeError("Derived constructors may only return object or undefined");
+  }
+  return _assertThisInitialized$c(self2);
+}
+function _assertThisInitialized$c(self2) {
+  if (self2 === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+  return self2;
+}
+function _isNativeReflectConstruct$c() {
+  try {
+    var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
+    }));
+  } catch (t3) {
+  }
+  return (_isNativeReflectConstruct$c = function _isNativeReflectConstruct2() {
+    return !!t2;
+  })();
+}
+function _getPrototypeOf$c(o) {
+  _getPrototypeOf$c = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
+    return o2.__proto__ || Object.getPrototypeOf(o2);
+  };
+  return _getPrototypeOf$c(o);
+}
+function _inherits$c(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+  subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
+  Object.defineProperty(subClass, "prototype", { writable: false });
+  if (superClass) _setPrototypeOf$c(subClass, superClass);
+}
+function _setPrototypeOf$c(o, p2) {
+  _setPrototypeOf$c = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
+    o2.__proto__ = p3;
+    return o2;
+  };
+  return _setPrototypeOf$c(o, p2);
+}
+function _defineProperty$l(obj, key, value) {
+  key = _toPropertyKey$l(key);
+  if (key in obj) {
+    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+function _toPropertyKey$l(t2) {
+  var i = _toPrimitive$l(t2, "string");
+  return "symbol" == _typeof$l(i) ? i : i + "";
+}
+function _toPrimitive$l(t2, r2) {
+  if ("object" != _typeof$l(t2) || !t2) return t2;
+  var e3 = t2[Symbol.toPrimitive];
+  if (void 0 !== e3) {
+    var i = e3.call(t2, r2);
+    if ("object" != _typeof$l(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return String(t2);
 }
 var PolarRadiusAxis = /* @__PURE__ */ function(_PureComponent) {
   function PolarRadiusAxis2() {
-    _classCallCheck$g(this, PolarRadiusAxis2);
-    return _callSuper$e(this, PolarRadiusAxis2, arguments);
+    _classCallCheck$e(this, PolarRadiusAxis2);
+    return _callSuper$c(this, PolarRadiusAxis2, arguments);
   }
-  _inherits$e(PolarRadiusAxis2, _PureComponent);
-  return _createClass$g(PolarRadiusAxis2, [{
+  _inherits$c(PolarRadiusAxis2, _PureComponent);
+  return _createClass$e(PolarRadiusAxis2, [{
     key: "getTickValueCoord",
     value: (
       /**
@@ -70431,13 +70341,13 @@ var PolarRadiusAxis = /* @__PURE__ */ function(_PureComponent) {
   }, {
     key: "renderAxisLine",
     value: function renderAxisLine() {
-      var _this$props3 = this.props, cx2 = _this$props3.cx, cy = _this$props3.cy, angle = _this$props3.angle, ticks2 = _this$props3.ticks, axisLine = _this$props3.axisLine, others = _objectWithoutProperties$9(_this$props3, _excluded$9);
+      var _this$props3 = this.props, cx2 = _this$props3.cx, cy = _this$props3.cy, angle = _this$props3.angle, ticks2 = _this$props3.ticks, axisLine = _this$props3.axisLine, others = _objectWithoutProperties$8(_this$props3, _excluded$8);
       var extent = ticks2.reduce(function(result, entry) {
         return [Math.min(result[0], entry.coordinate), Math.max(result[1], entry.coordinate)];
       }, [Infinity, -Infinity]);
       var point0 = polarToCartesian(cx2, cy, extent[0], angle);
       var point1 = polarToCartesian(cx2, cy, extent[1], angle);
-      var props = _objectSpread$k(_objectSpread$k(_objectSpread$k({}, filterProps(others, false)), {}, {
+      var props = _objectSpread$i(_objectSpread$i(_objectSpread$i({}, filterProps(others, false)), {}, {
         fill: "none"
       }, filterProps(axisLine, false)), {}, {
         x1: point0.x,
@@ -70445,7 +70355,7 @@ var PolarRadiusAxis = /* @__PURE__ */ function(_PureComponent) {
         x2: point1.x,
         y2: point1.y
       });
-      return /* @__PURE__ */ React$4.createElement("line", _extends$h({
+      return /* @__PURE__ */ React$4.createElement("line", _extends$f({
         className: "recharts-polar-radius-axis-line"
       }, props));
     }
@@ -70453,13 +70363,13 @@ var PolarRadiusAxis = /* @__PURE__ */ function(_PureComponent) {
     key: "renderTicks",
     value: function renderTicks() {
       var _this = this;
-      var _this$props4 = this.props, ticks2 = _this$props4.ticks, tick = _this$props4.tick, angle = _this$props4.angle, tickFormatter = _this$props4.tickFormatter, stroke = _this$props4.stroke, others = _objectWithoutProperties$9(_this$props4, _excluded2$5);
+      var _this$props4 = this.props, ticks2 = _this$props4.ticks, tick = _this$props4.tick, angle = _this$props4.angle, tickFormatter = _this$props4.tickFormatter, stroke = _this$props4.stroke, others = _objectWithoutProperties$8(_this$props4, _excluded2$4);
       var textAnchor = this.getTickTextAnchor();
       var axisProps = filterProps(others, false);
       var customTickProps = filterProps(tick, false);
       var items = ticks2.map(function(entry, i) {
         var coord = _this.getTickValueCoord(entry);
-        var tickProps = _objectSpread$k(_objectSpread$k(_objectSpread$k(_objectSpread$k({
+        var tickProps = _objectSpread$i(_objectSpread$i(_objectSpread$i(_objectSpread$i({
           textAnchor,
           transform: "rotate(".concat(90 - angle, ", ").concat(coord.x, ", ").concat(coord.y, ")")
         }, axisProps), {}, {
@@ -70470,7 +70380,7 @@ var PolarRadiusAxis = /* @__PURE__ */ function(_PureComponent) {
         }, coord), {}, {
           payload: entry
         });
-        return /* @__PURE__ */ React$4.createElement(Layer, _extends$h({
+        return /* @__PURE__ */ React$4.createElement(Layer, _extends$f({
           className: clsx("recharts-polar-radius-axis-tick", getTickClassName(tick)),
           key: "tick-".concat(entry.coordinate)
         }, adaptEventsOfChild(_this.props, entry, i)), PolarRadiusAxis2.renderTickItem(tick, tickProps, tickFormatter ? tickFormatter(entry.value, i) : entry.value));
@@ -70499,7 +70409,7 @@ var PolarRadiusAxis = /* @__PURE__ */ function(_PureComponent) {
       } else if (isFunction$5(option)) {
         tickItem = option(props);
       } else {
-        tickItem = /* @__PURE__ */ React$4.createElement(Text$1, _extends$h({}, props, {
+        tickItem = /* @__PURE__ */ React$4.createElement(Text$1, _extends$f({}, props, {
           className: "recharts-polar-radius-axis-tick-value"
         }), value);
       }
@@ -70507,9 +70417,9 @@ var PolarRadiusAxis = /* @__PURE__ */ function(_PureComponent) {
     }
   }]);
 }(reactExports.PureComponent);
-_defineProperty$n(PolarRadiusAxis, "displayName", "PolarRadiusAxis");
-_defineProperty$n(PolarRadiusAxis, "axisType", "radiusAxis");
-_defineProperty$n(PolarRadiusAxis, "defaultProps", {
+_defineProperty$l(PolarRadiusAxis, "displayName", "PolarRadiusAxis");
+_defineProperty$l(PolarRadiusAxis, "axisType", "radiusAxis");
+_defineProperty$l(PolarRadiusAxis, "defaultProps", {
   type: "number",
   radiusAxisId: 0,
   cx: 0,
@@ -70524,16 +70434,16 @@ _defineProperty$n(PolarRadiusAxis, "defaultProps", {
   scale: "auto",
   allowDuplicatedCategory: true
 });
-function _typeof$m(o) {
+function _typeof$k(o) {
   "@babel/helpers - typeof";
-  return _typeof$m = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$k = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$m(o);
+  }, _typeof$k(o);
 }
-function _extends$g() {
-  _extends$g = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$e() {
+  _extends$e = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -70544,9 +70454,9 @@ function _extends$g() {
     }
     return target;
   };
-  return _extends$g.apply(this, arguments);
+  return _extends$e.apply(this, arguments);
 }
-function ownKeys$j(e3, r2) {
+function ownKeys$h(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -70556,87 +70466,87 @@ function ownKeys$j(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$j(e3) {
+function _objectSpread$h(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$j(Object(t2), true).forEach(function(r3) {
-      _defineProperty$m(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$j(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$h(Object(t2), true).forEach(function(r3) {
+      _defineProperty$k(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$h(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _classCallCheck$f(instance, Constructor) {
+function _classCallCheck$d(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-function _defineProperties$f(target, props) {
+function _defineProperties$d(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$m(descriptor.key), descriptor);
+    Object.defineProperty(target, _toPropertyKey$k(descriptor.key), descriptor);
   }
 }
-function _createClass$f(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$f(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties$f(Constructor, staticProps);
+function _createClass$d(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$d(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties$d(Constructor, staticProps);
   Object.defineProperty(Constructor, "prototype", { writable: false });
   return Constructor;
 }
-function _callSuper$d(t2, o, e3) {
-  return o = _getPrototypeOf$d(o), _possibleConstructorReturn$d(t2, _isNativeReflectConstruct$d() ? Reflect.construct(o, e3 || [], _getPrototypeOf$d(t2).constructor) : o.apply(t2, e3));
+function _callSuper$b(t2, o, e3) {
+  return o = _getPrototypeOf$b(o), _possibleConstructorReturn$b(t2, _isNativeReflectConstruct$b() ? Reflect.construct(o, e3 || [], _getPrototypeOf$b(t2).constructor) : o.apply(t2, e3));
 }
-function _possibleConstructorReturn$d(self2, call) {
-  if (call && (_typeof$m(call) === "object" || typeof call === "function")) {
+function _possibleConstructorReturn$b(self2, call) {
+  if (call && (_typeof$k(call) === "object" || typeof call === "function")) {
     return call;
   } else if (call !== void 0) {
     throw new TypeError("Derived constructors may only return object or undefined");
   }
-  return _assertThisInitialized$d(self2);
+  return _assertThisInitialized$b(self2);
 }
-function _assertThisInitialized$d(self2) {
+function _assertThisInitialized$b(self2) {
   if (self2 === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
   return self2;
 }
-function _isNativeReflectConstruct$d() {
+function _isNativeReflectConstruct$b() {
   try {
     var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
     }));
   } catch (t3) {
   }
-  return (_isNativeReflectConstruct$d = function _isNativeReflectConstruct2() {
+  return (_isNativeReflectConstruct$b = function _isNativeReflectConstruct2() {
     return !!t2;
   })();
 }
-function _getPrototypeOf$d(o) {
-  _getPrototypeOf$d = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
+function _getPrototypeOf$b(o) {
+  _getPrototypeOf$b = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
     return o2.__proto__ || Object.getPrototypeOf(o2);
   };
-  return _getPrototypeOf$d(o);
+  return _getPrototypeOf$b(o);
 }
-function _inherits$d(subClass, superClass) {
+function _inherits$b(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
   }
   subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
   Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$d(subClass, superClass);
+  if (superClass) _setPrototypeOf$b(subClass, superClass);
 }
-function _setPrototypeOf$d(o, p2) {
-  _setPrototypeOf$d = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
+function _setPrototypeOf$b(o, p2) {
+  _setPrototypeOf$b = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
     o2.__proto__ = p3;
     return o2;
   };
-  return _setPrototypeOf$d(o, p2);
+  return _setPrototypeOf$b(o, p2);
 }
-function _defineProperty$m(obj, key, value) {
-  key = _toPropertyKey$m(key);
+function _defineProperty$k(obj, key, value) {
+  key = _toPropertyKey$k(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -70644,16 +70554,16 @@ function _defineProperty$m(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$m(t2) {
-  var i = _toPrimitive$m(t2, "string");
-  return "symbol" == _typeof$m(i) ? i : i + "";
+function _toPropertyKey$k(t2) {
+  var i = _toPrimitive$k(t2, "string");
+  return "symbol" == _typeof$k(i) ? i : i + "";
 }
-function _toPrimitive$m(t2, r2) {
-  if ("object" != _typeof$m(t2) || !t2) return t2;
+function _toPrimitive$k(t2, r2) {
+  if ("object" != _typeof$k(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$m(i)) return i;
+    if ("object" != _typeof$k(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return String(t2);
@@ -70662,11 +70572,11 @@ var RADIAN = Math.PI / 180;
 var eps = 1e-5;
 var PolarAngleAxis = /* @__PURE__ */ function(_PureComponent) {
   function PolarAngleAxis2() {
-    _classCallCheck$f(this, PolarAngleAxis2);
-    return _callSuper$d(this, PolarAngleAxis2, arguments);
+    _classCallCheck$d(this, PolarAngleAxis2);
+    return _callSuper$b(this, PolarAngleAxis2, arguments);
   }
-  _inherits$d(PolarAngleAxis2, _PureComponent);
-  return _createClass$f(PolarAngleAxis2, [{
+  _inherits$b(PolarAngleAxis2, _PureComponent);
+  return _createClass$d(PolarAngleAxis2, [{
     key: "getTickLineCoord",
     value: (
       /**
@@ -70713,11 +70623,11 @@ var PolarAngleAxis = /* @__PURE__ */ function(_PureComponent) {
     key: "renderAxisLine",
     value: function renderAxisLine() {
       var _this$props2 = this.props, cx2 = _this$props2.cx, cy = _this$props2.cy, radius = _this$props2.radius, axisLine = _this$props2.axisLine, axisLineType = _this$props2.axisLineType;
-      var props = _objectSpread$j(_objectSpread$j({}, filterProps(this.props, false)), {}, {
+      var props = _objectSpread$h(_objectSpread$h({}, filterProps(this.props, false)), {}, {
         fill: "none"
       }, filterProps(axisLine, false));
       if (axisLineType === "circle") {
-        return /* @__PURE__ */ React$4.createElement(Dot, _extends$g({
+        return /* @__PURE__ */ React$4.createElement(Dot, _extends$e({
           className: "recharts-polar-angle-axis-line"
         }, props, {
           cx: cx2,
@@ -70729,7 +70639,7 @@ var PolarAngleAxis = /* @__PURE__ */ function(_PureComponent) {
       var points = ticks2.map(function(entry) {
         return polarToCartesian(cx2, cy, radius, entry.coordinate);
       });
-      return /* @__PURE__ */ React$4.createElement(Polygon, _extends$g({
+      return /* @__PURE__ */ React$4.createElement(Polygon, _extends$e({
         className: "recharts-polar-angle-axis-line"
       }, props, {
         points
@@ -70742,13 +70652,13 @@ var PolarAngleAxis = /* @__PURE__ */ function(_PureComponent) {
       var _this$props3 = this.props, ticks2 = _this$props3.ticks, tick = _this$props3.tick, tickLine = _this$props3.tickLine, tickFormatter = _this$props3.tickFormatter, stroke = _this$props3.stroke;
       var axisProps = filterProps(this.props, false);
       var customTickProps = filterProps(tick, false);
-      var tickLineProps = _objectSpread$j(_objectSpread$j({}, axisProps), {}, {
+      var tickLineProps = _objectSpread$h(_objectSpread$h({}, axisProps), {}, {
         fill: "none"
       }, filterProps(tickLine, false));
       var items = ticks2.map(function(entry, i) {
         var lineCoord = _this.getTickLineCoord(entry);
         var textAnchor = _this.getTickTextAnchor(entry);
-        var tickProps = _objectSpread$j(_objectSpread$j(_objectSpread$j({
+        var tickProps = _objectSpread$h(_objectSpread$h(_objectSpread$h({
           textAnchor
         }, axisProps), {}, {
           stroke: "none",
@@ -70759,10 +70669,10 @@ var PolarAngleAxis = /* @__PURE__ */ function(_PureComponent) {
           x: lineCoord.x2,
           y: lineCoord.y2
         });
-        return /* @__PURE__ */ React$4.createElement(Layer, _extends$g({
+        return /* @__PURE__ */ React$4.createElement(Layer, _extends$e({
           className: clsx("recharts-polar-angle-axis-tick", getTickClassName(tick)),
           key: "tick-".concat(entry.coordinate)
-        }, adaptEventsOfChild(_this.props, entry, i)), tickLine && /* @__PURE__ */ React$4.createElement("line", _extends$g({
+        }, adaptEventsOfChild(_this.props, entry, i)), tickLine && /* @__PURE__ */ React$4.createElement("line", _extends$e({
           className: "recharts-polar-angle-axis-tick-line"
         }, tickLineProps, lineCoord)), tick && PolarAngleAxis2.renderTickItem(tick, tickProps, tickFormatter ? tickFormatter(entry.value, i) : entry.value));
       });
@@ -70790,7 +70700,7 @@ var PolarAngleAxis = /* @__PURE__ */ function(_PureComponent) {
       } else if (isFunction$5(option)) {
         tickItem = option(props);
       } else {
-        tickItem = /* @__PURE__ */ React$4.createElement(Text$1, _extends$g({}, props, {
+        tickItem = /* @__PURE__ */ React$4.createElement(Text$1, _extends$e({}, props, {
           className: "recharts-polar-angle-axis-tick-value"
         }), value);
       }
@@ -70798,9 +70708,9 @@ var PolarAngleAxis = /* @__PURE__ */ function(_PureComponent) {
     }
   }]);
 }(reactExports.PureComponent);
-_defineProperty$m(PolarAngleAxis, "displayName", "PolarAngleAxis");
-_defineProperty$m(PolarAngleAxis, "axisType", "angleAxis");
-_defineProperty$m(PolarAngleAxis, "defaultProps", {
+_defineProperty$k(PolarAngleAxis, "displayName", "PolarAngleAxis");
+_defineProperty$k(PolarAngleAxis, "axisType", "angleAxis");
+_defineProperty$k(PolarAngleAxis, "defaultProps", {
   type: "category",
   angleAxisId: 0,
   scale: "auto",
@@ -70843,16 +70753,16 @@ function isBoolean(value) {
 }
 var isBoolean_1 = isBoolean;
 const isBoolean$1 = /* @__PURE__ */ getDefaultExportFromCjs$1(isBoolean_1);
-function _typeof$l(o) {
+function _typeof$j(o) {
   "@babel/helpers - typeof";
-  return _typeof$l = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$j = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$l(o);
+  }, _typeof$j(o);
 }
-function _extends$f() {
-  _extends$f = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$d() {
+  _extends$d = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -70863,7 +70773,7 @@ function _extends$f() {
     }
     return target;
   };
-  return _extends$f.apply(this, arguments);
+  return _extends$d.apply(this, arguments);
 }
 function _slicedToArray$2(arr, i) {
   return _arrayWithHoles$2(arr) || _iterableToArrayLimit$2(arr, i) || _unsupportedIterableToArray$4(arr, i) || _nonIterableRest$2();
@@ -70906,7 +70816,7 @@ function _iterableToArrayLimit$2(r2, l2) {
 function _arrayWithHoles$2(arr) {
   if (Array.isArray(arr)) return arr;
 }
-function ownKeys$i(e3, r2) {
+function ownKeys$g(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -70916,19 +70826,19 @@ function ownKeys$i(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$i(e3) {
+function _objectSpread$g(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$i(Object(t2), true).forEach(function(r3) {
-      _defineProperty$l(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$i(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$g(Object(t2), true).forEach(function(r3) {
+      _defineProperty$j(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$g(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$l(obj, key, value) {
-  key = _toPropertyKey$l(key);
+function _defineProperty$j(obj, key, value) {
+  key = _toPropertyKey$j(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -70936,16 +70846,16 @@ function _defineProperty$l(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$l(t2) {
-  var i = _toPrimitive$l(t2, "string");
-  return "symbol" == _typeof$l(i) ? i : i + "";
+function _toPropertyKey$j(t2) {
+  var i = _toPrimitive$j(t2, "string");
+  return "symbol" == _typeof$j(i) ? i : i + "";
 }
-function _toPrimitive$l(t2, r2) {
-  if ("object" != _typeof$l(t2) || !t2) return t2;
+function _toPrimitive$j(t2, r2) {
+  if ("object" != _typeof$j(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$l(i)) return i;
+    if ("object" != _typeof$j(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
@@ -70972,7 +70882,7 @@ var defaultProps$1 = {
   animationEasing: "ease"
 };
 var Trapezoid = function Trapezoid2(props) {
-  var trapezoidProps = _objectSpread$i(_objectSpread$i({}, defaultProps$1), props);
+  var trapezoidProps = _objectSpread$g(_objectSpread$g({}, defaultProps$1), props);
   var pathRef = reactExports.useRef();
   var _useState = reactExports.useState(-1), _useState2 = _slicedToArray$2(_useState, 2), totalLength = _useState2[0], setTotalLength = _useState2[1];
   reactExports.useEffect(function() {
@@ -70993,7 +70903,7 @@ var Trapezoid = function Trapezoid2(props) {
   }
   var layerClass = clsx("recharts-trapezoid", className);
   if (!isUpdateAnimationActive) {
-    return /* @__PURE__ */ React$4.createElement("g", null, /* @__PURE__ */ React$4.createElement("path", _extends$f({}, filterProps(trapezoidProps, true), {
+    return /* @__PURE__ */ React$4.createElement("g", null, /* @__PURE__ */ React$4.createElement("path", _extends$d({}, filterProps(trapezoidProps, true), {
       className: layerClass,
       d: getTrapezoidPath(x2, y2, upperWidth, lowerWidth, height)
     })));
@@ -71027,25 +70937,25 @@ var Trapezoid = function Trapezoid2(props) {
       begin: animationBegin,
       duration: animationDuration,
       easing: animationEasing
-    }, /* @__PURE__ */ React$4.createElement("path", _extends$f({}, filterProps(trapezoidProps, true), {
+    }, /* @__PURE__ */ React$4.createElement("path", _extends$d({}, filterProps(trapezoidProps, true), {
       className: layerClass,
       d: getTrapezoidPath(currX, currY, currUpperWidth, currLowerWidth, currHeight),
       ref: pathRef
     })));
   });
 };
-var _excluded$8 = ["option", "shapeType", "propTransformer", "activeClassName", "isActive"];
-function _typeof$k(o) {
+var _excluded$7 = ["option", "shapeType", "propTransformer", "activeClassName", "isActive"];
+function _typeof$i(o) {
   "@babel/helpers - typeof";
-  return _typeof$k = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$i = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$k(o);
+  }, _typeof$i(o);
 }
-function _objectWithoutProperties$8(source, excluded) {
+function _objectWithoutProperties$7(source, excluded) {
   if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$8(source, excluded);
+  var target = _objectWithoutPropertiesLoose$7(source, excluded);
   var key, i;
   if (Object.getOwnPropertySymbols) {
     var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
@@ -71058,7 +70968,7 @@ function _objectWithoutProperties$8(source, excluded) {
   }
   return target;
 }
-function _objectWithoutPropertiesLoose$8(source, excluded) {
+function _objectWithoutPropertiesLoose$7(source, excluded) {
   if (source == null) return {};
   var target = {};
   for (var key in source) {
@@ -71069,7 +70979,7 @@ function _objectWithoutPropertiesLoose$8(source, excluded) {
   }
   return target;
 }
-function ownKeys$h(e3, r2) {
+function ownKeys$f(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -71079,19 +70989,19 @@ function ownKeys$h(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$h(e3) {
+function _objectSpread$f(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$h(Object(t2), true).forEach(function(r3) {
-      _defineProperty$k(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$h(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$f(Object(t2), true).forEach(function(r3) {
+      _defineProperty$i(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$f(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$k(obj, key, value) {
-  key = _toPropertyKey$k(key);
+function _defineProperty$i(obj, key, value) {
+  key = _toPropertyKey$i(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -71099,22 +71009,22 @@ function _defineProperty$k(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$k(t2) {
-  var i = _toPrimitive$k(t2, "string");
-  return "symbol" == _typeof$k(i) ? i : i + "";
+function _toPropertyKey$i(t2) {
+  var i = _toPrimitive$i(t2, "string");
+  return "symbol" == _typeof$i(i) ? i : i + "";
 }
-function _toPrimitive$k(t2, r2) {
-  if ("object" != _typeof$k(t2) || !t2) return t2;
+function _toPrimitive$i(t2, r2) {
+  if ("object" != _typeof$i(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$k(i)) return i;
+    if ("object" != _typeof$i(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
 }
 function defaultPropTransformer(option, props) {
-  return _objectSpread$h(_objectSpread$h({}, props), option);
+  return _objectSpread$f(_objectSpread$f({}, props), option);
 }
 function isSymbolsProps(shapeType, _elementProps) {
   return shapeType === "symbols";
@@ -71144,10 +71054,10 @@ function getPropsFromShapeOption(option) {
   return option;
 }
 function Shape(_ref2) {
-  var option = _ref2.option, shapeType = _ref2.shapeType, _ref2$propTransformer = _ref2.propTransformer, propTransformer = _ref2$propTransformer === void 0 ? defaultPropTransformer : _ref2$propTransformer, _ref2$activeClassName = _ref2.activeClassName, activeClassName = _ref2$activeClassName === void 0 ? "recharts-active-shape" : _ref2$activeClassName, isActive2 = _ref2.isActive, props = _objectWithoutProperties$8(_ref2, _excluded$8);
+  var option = _ref2.option, shapeType = _ref2.shapeType, _ref2$propTransformer = _ref2.propTransformer, propTransformer = _ref2$propTransformer === void 0 ? defaultPropTransformer : _ref2$propTransformer, _ref2$activeClassName = _ref2.activeClassName, activeClassName = _ref2$activeClassName === void 0 ? "recharts-active-shape" : _ref2$activeClassName, isActive2 = _ref2.isActive, props = _objectWithoutProperties$7(_ref2, _excluded$7);
   var shape;
   if (/* @__PURE__ */ reactExports.isValidElement(option)) {
-    shape = /* @__PURE__ */ reactExports.cloneElement(option, _objectSpread$h(_objectSpread$h({}, props), getPropsFromShapeOption(option)));
+    shape = /* @__PURE__ */ reactExports.cloneElement(option, _objectSpread$f(_objectSpread$f({}, props), getPropsFromShapeOption(option)));
   } else if (isFunction$5(option)) {
     shape = option(props);
   } else if (isPlainObject$2(option) && !isBoolean$1(option)) {
@@ -71249,621 +71159,24 @@ function getActiveShapeIndexForTooltip(_ref3) {
   var activeIndex = itemData.indexOf(activeItemMatches[activeItemMatches.length - 1]);
   return activeIndex;
 }
-var _Pie;
-function _typeof$j(o) {
-  "@babel/helpers - typeof";
-  return _typeof$j = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
-    return typeof o2;
-  } : function(o2) {
-    return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$j(o);
-}
-function _extends$e() {
-  _extends$e = Object.assign ? Object.assign.bind() : function(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-    return target;
-  };
-  return _extends$e.apply(this, arguments);
-}
-function ownKeys$g(e3, r2) {
-  var t2 = Object.keys(e3);
-  if (Object.getOwnPropertySymbols) {
-    var o = Object.getOwnPropertySymbols(e3);
-    r2 && (o = o.filter(function(r3) {
-      return Object.getOwnPropertyDescriptor(e3, r3).enumerable;
-    })), t2.push.apply(t2, o);
-  }
-  return t2;
-}
-function _objectSpread$g(e3) {
-  for (var r2 = 1; r2 < arguments.length; r2++) {
-    var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$g(Object(t2), true).forEach(function(r3) {
-      _defineProperty$j(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$g(Object(t2)).forEach(function(r3) {
-      Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
-    });
-  }
-  return e3;
-}
-function _classCallCheck$e(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-function _defineProperties$e(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$j(descriptor.key), descriptor);
-  }
-}
-function _createClass$e(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$e(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties$e(Constructor, staticProps);
-  Object.defineProperty(Constructor, "prototype", { writable: false });
-  return Constructor;
-}
-function _callSuper$c(t2, o, e3) {
-  return o = _getPrototypeOf$c(o), _possibleConstructorReturn$c(t2, _isNativeReflectConstruct$c() ? Reflect.construct(o, e3 || [], _getPrototypeOf$c(t2).constructor) : o.apply(t2, e3));
-}
-function _possibleConstructorReturn$c(self2, call) {
-  if (call && (_typeof$j(call) === "object" || typeof call === "function")) {
-    return call;
-  } else if (call !== void 0) {
-    throw new TypeError("Derived constructors may only return object or undefined");
-  }
-  return _assertThisInitialized$c(self2);
-}
-function _assertThisInitialized$c(self2) {
-  if (self2 === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-  return self2;
-}
-function _isNativeReflectConstruct$c() {
-  try {
-    var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
-    }));
-  } catch (t3) {
-  }
-  return (_isNativeReflectConstruct$c = function _isNativeReflectConstruct2() {
-    return !!t2;
-  })();
-}
-function _getPrototypeOf$c(o) {
-  _getPrototypeOf$c = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
-    return o2.__proto__ || Object.getPrototypeOf(o2);
-  };
-  return _getPrototypeOf$c(o);
-}
-function _inherits$c(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-  subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
-  Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$c(subClass, superClass);
-}
-function _setPrototypeOf$c(o, p2) {
-  _setPrototypeOf$c = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
-    o2.__proto__ = p3;
-    return o2;
-  };
-  return _setPrototypeOf$c(o, p2);
-}
-function _defineProperty$j(obj, key, value) {
-  key = _toPropertyKey$j(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
-function _toPropertyKey$j(t2) {
-  var i = _toPrimitive$j(t2, "string");
-  return "symbol" == _typeof$j(i) ? i : i + "";
-}
-function _toPrimitive$j(t2, r2) {
-  if ("object" != _typeof$j(t2) || !t2) return t2;
-  var e3 = t2[Symbol.toPrimitive];
-  if (void 0 !== e3) {
-    var i = e3.call(t2, r2);
-    if ("object" != _typeof$j(i)) return i;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return String(t2);
-}
-var Pie = /* @__PURE__ */ function(_PureComponent) {
-  function Pie2(props) {
-    var _this;
-    _classCallCheck$e(this, Pie2);
-    _this = _callSuper$c(this, Pie2, [props]);
-    _defineProperty$j(_this, "pieRef", null);
-    _defineProperty$j(_this, "sectorRefs", []);
-    _defineProperty$j(_this, "id", uniqueId("recharts-pie-"));
-    _defineProperty$j(_this, "handleAnimationEnd", function() {
-      var onAnimationEnd2 = _this.props.onAnimationEnd;
-      _this.setState({
-        isAnimationFinished: true
-      });
-      if (isFunction$5(onAnimationEnd2)) {
-        onAnimationEnd2();
-      }
-    });
-    _defineProperty$j(_this, "handleAnimationStart", function() {
-      var onAnimationStart2 = _this.props.onAnimationStart;
-      _this.setState({
-        isAnimationFinished: false
-      });
-      if (isFunction$5(onAnimationStart2)) {
-        onAnimationStart2();
-      }
-    });
-    _this.state = {
-      isAnimationFinished: !props.isAnimationActive,
-      prevIsAnimationActive: props.isAnimationActive,
-      prevAnimationId: props.animationId,
-      sectorToFocus: 0
-    };
-    return _this;
-  }
-  _inherits$c(Pie2, _PureComponent);
-  return _createClass$e(Pie2, [{
-    key: "isActiveIndex",
-    value: function isActiveIndex(i) {
-      var activeIndex = this.props.activeIndex;
-      if (Array.isArray(activeIndex)) {
-        return activeIndex.indexOf(i) !== -1;
-      }
-      return i === activeIndex;
-    }
-  }, {
-    key: "hasActiveIndex",
-    value: function hasActiveIndex() {
-      var activeIndex = this.props.activeIndex;
-      return Array.isArray(activeIndex) ? activeIndex.length !== 0 : activeIndex || activeIndex === 0;
-    }
-  }, {
-    key: "renderLabels",
-    value: function renderLabels(sectors) {
-      var isAnimationActive = this.props.isAnimationActive;
-      if (isAnimationActive && !this.state.isAnimationFinished) {
-        return null;
-      }
-      var _this$props = this.props, label = _this$props.label, labelLine = _this$props.labelLine, dataKey = _this$props.dataKey, valueKey = _this$props.valueKey;
-      var pieProps = filterProps(this.props, false);
-      var customLabelProps = filterProps(label, false);
-      var customLabelLineProps = filterProps(labelLine, false);
-      var offsetRadius = label && label.offsetRadius || 20;
-      var labels = sectors.map(function(entry, i) {
-        var midAngle = (entry.startAngle + entry.endAngle) / 2;
-        var endPoint = polarToCartesian(entry.cx, entry.cy, entry.outerRadius + offsetRadius, midAngle);
-        var labelProps = _objectSpread$g(_objectSpread$g(_objectSpread$g(_objectSpread$g({}, pieProps), entry), {}, {
-          stroke: "none"
-        }, customLabelProps), {}, {
-          index: i,
-          textAnchor: Pie2.getTextAnchor(endPoint.x, entry.cx)
-        }, endPoint);
-        var lineProps = _objectSpread$g(_objectSpread$g(_objectSpread$g(_objectSpread$g({}, pieProps), entry), {}, {
-          fill: "none",
-          stroke: entry.fill
-        }, customLabelLineProps), {}, {
-          index: i,
-          points: [polarToCartesian(entry.cx, entry.cy, entry.outerRadius, midAngle), endPoint]
-        });
-        var realDataKey = dataKey;
-        if (isNil$1(dataKey) && isNil$1(valueKey)) {
-          realDataKey = "value";
-        } else if (isNil$1(dataKey)) {
-          realDataKey = valueKey;
-        }
-        return (
-          // eslint-disable-next-line react/no-array-index-key
-          /* @__PURE__ */ React$4.createElement(Layer, {
-            key: "label-".concat(entry.startAngle, "-").concat(entry.endAngle, "-").concat(entry.midAngle, "-").concat(i)
-          }, labelLine && Pie2.renderLabelLineItem(labelLine, lineProps, "line"), Pie2.renderLabelItem(label, labelProps, getValueByDataKey(entry, realDataKey)))
-        );
-      });
-      return /* @__PURE__ */ React$4.createElement(Layer, {
-        className: "recharts-pie-labels"
-      }, labels);
-    }
-  }, {
-    key: "renderSectorsStatically",
-    value: function renderSectorsStatically(sectors) {
-      var _this2 = this;
-      var _this$props2 = this.props, activeShape = _this$props2.activeShape, blendStroke = _this$props2.blendStroke, inactiveShapeProp = _this$props2.inactiveShape;
-      return sectors.map(function(entry, i) {
-        if ((entry === null || entry === void 0 ? void 0 : entry.startAngle) === 0 && (entry === null || entry === void 0 ? void 0 : entry.endAngle) === 0 && sectors.length !== 1) return null;
-        var isActive2 = _this2.isActiveIndex(i);
-        var inactiveShape = inactiveShapeProp && _this2.hasActiveIndex() ? inactiveShapeProp : null;
-        var sectorOptions = isActive2 ? activeShape : inactiveShape;
-        var sectorProps = _objectSpread$g(_objectSpread$g({}, entry), {}, {
-          stroke: blendStroke ? entry.fill : entry.stroke,
-          tabIndex: -1
-        });
-        return /* @__PURE__ */ React$4.createElement(Layer, _extends$e({
-          ref: function ref(_ref) {
-            if (_ref && !_this2.sectorRefs.includes(_ref)) {
-              _this2.sectorRefs.push(_ref);
-            }
-          },
-          tabIndex: -1,
-          className: "recharts-pie-sector"
-        }, adaptEventsOfChild(_this2.props, entry, i), {
-          // eslint-disable-next-line react/no-array-index-key
-          key: "sector-".concat(entry === null || entry === void 0 ? void 0 : entry.startAngle, "-").concat(entry === null || entry === void 0 ? void 0 : entry.endAngle, "-").concat(entry.midAngle, "-").concat(i)
-        }), /* @__PURE__ */ React$4.createElement(Shape, _extends$e({
-          option: sectorOptions,
-          isActive: isActive2,
-          shapeType: "sector"
-        }, sectorProps)));
-      });
-    }
-  }, {
-    key: "renderSectorsWithAnimation",
-    value: function renderSectorsWithAnimation() {
-      var _this3 = this;
-      var _this$props3 = this.props, sectors = _this$props3.sectors, isAnimationActive = _this$props3.isAnimationActive, animationBegin = _this$props3.animationBegin, animationDuration = _this$props3.animationDuration, animationEasing = _this$props3.animationEasing, animationId = _this$props3.animationId;
-      var _this$state = this.state, prevSectors = _this$state.prevSectors, prevIsAnimationActive = _this$state.prevIsAnimationActive;
-      return /* @__PURE__ */ React$4.createElement(Animate, {
-        begin: animationBegin,
-        duration: animationDuration,
-        isActive: isAnimationActive,
-        easing: animationEasing,
-        from: {
-          t: 0
-        },
-        to: {
-          t: 1
-        },
-        key: "pie-".concat(animationId, "-").concat(prevIsAnimationActive),
-        onAnimationStart: this.handleAnimationStart,
-        onAnimationEnd: this.handleAnimationEnd
-      }, function(_ref2) {
-        var t2 = _ref2.t;
-        var stepData = [];
-        var first2 = sectors && sectors[0];
-        var curAngle = first2.startAngle;
-        sectors.forEach(function(entry, index2) {
-          var prev = prevSectors && prevSectors[index2];
-          var paddingAngle = index2 > 0 ? get$2(entry, "paddingAngle", 0) : 0;
-          if (prev) {
-            var angleIp = interpolateNumber$2(prev.endAngle - prev.startAngle, entry.endAngle - entry.startAngle);
-            var latest = _objectSpread$g(_objectSpread$g({}, entry), {}, {
-              startAngle: curAngle + paddingAngle,
-              endAngle: curAngle + angleIp(t2) + paddingAngle
-            });
-            stepData.push(latest);
-            curAngle = latest.endAngle;
-          } else {
-            var endAngle = entry.endAngle, startAngle = entry.startAngle;
-            var interpolatorAngle = interpolateNumber$2(0, endAngle - startAngle);
-            var deltaAngle = interpolatorAngle(t2);
-            var _latest = _objectSpread$g(_objectSpread$g({}, entry), {}, {
-              startAngle: curAngle + paddingAngle,
-              endAngle: curAngle + deltaAngle + paddingAngle
-            });
-            stepData.push(_latest);
-            curAngle = _latest.endAngle;
-          }
-        });
-        return /* @__PURE__ */ React$4.createElement(Layer, null, _this3.renderSectorsStatically(stepData));
-      });
-    }
-  }, {
-    key: "attachKeyboardHandlers",
-    value: function attachKeyboardHandlers(pieRef) {
-      var _this4 = this;
-      pieRef.onkeydown = function(e3) {
-        if (!e3.altKey) {
-          switch (e3.key) {
-            case "ArrowLeft": {
-              var next = ++_this4.state.sectorToFocus % _this4.sectorRefs.length;
-              _this4.sectorRefs[next].focus();
-              _this4.setState({
-                sectorToFocus: next
-              });
-              break;
-            }
-            case "ArrowRight": {
-              var _next = --_this4.state.sectorToFocus < 0 ? _this4.sectorRefs.length - 1 : _this4.state.sectorToFocus % _this4.sectorRefs.length;
-              _this4.sectorRefs[_next].focus();
-              _this4.setState({
-                sectorToFocus: _next
-              });
-              break;
-            }
-            case "Escape": {
-              _this4.sectorRefs[_this4.state.sectorToFocus].blur();
-              _this4.setState({
-                sectorToFocus: 0
-              });
-              break;
-            }
-          }
-        }
-      };
-    }
-  }, {
-    key: "renderSectors",
-    value: function renderSectors() {
-      var _this$props4 = this.props, sectors = _this$props4.sectors, isAnimationActive = _this$props4.isAnimationActive;
-      var prevSectors = this.state.prevSectors;
-      if (isAnimationActive && sectors && sectors.length && (!prevSectors || !isEqual$1(prevSectors, sectors))) {
-        return this.renderSectorsWithAnimation();
-      }
-      return this.renderSectorsStatically(sectors);
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      if (this.pieRef) {
-        this.attachKeyboardHandlers(this.pieRef);
-      }
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this5 = this;
-      var _this$props5 = this.props, hide2 = _this$props5.hide, sectors = _this$props5.sectors, className = _this$props5.className, label = _this$props5.label, cx2 = _this$props5.cx, cy = _this$props5.cy, innerRadius = _this$props5.innerRadius, outerRadius = _this$props5.outerRadius, isAnimationActive = _this$props5.isAnimationActive;
-      var isAnimationFinished = this.state.isAnimationFinished;
-      if (hide2 || !sectors || !sectors.length || !isNumber$2(cx2) || !isNumber$2(cy) || !isNumber$2(innerRadius) || !isNumber$2(outerRadius)) {
-        return null;
-      }
-      var layerClass = clsx("recharts-pie", className);
-      return /* @__PURE__ */ React$4.createElement(Layer, {
-        tabIndex: this.props.rootTabIndex,
-        className: layerClass,
-        ref: function ref(_ref3) {
-          _this5.pieRef = _ref3;
-        }
-      }, this.renderSectors(), label && this.renderLabels(sectors), Label.renderCallByParent(this.props, null, false), (!isAnimationActive || isAnimationFinished) && LabelList.renderCallByParent(this.props, sectors, false));
-    }
-  }], [{
-    key: "getDerivedStateFromProps",
-    value: function getDerivedStateFromProps(nextProps, prevState) {
-      if (prevState.prevIsAnimationActive !== nextProps.isAnimationActive) {
-        return {
-          prevIsAnimationActive: nextProps.isAnimationActive,
-          prevAnimationId: nextProps.animationId,
-          curSectors: nextProps.sectors,
-          prevSectors: [],
-          isAnimationFinished: true
-        };
-      }
-      if (nextProps.isAnimationActive && nextProps.animationId !== prevState.prevAnimationId) {
-        return {
-          prevAnimationId: nextProps.animationId,
-          curSectors: nextProps.sectors,
-          prevSectors: prevState.curSectors,
-          isAnimationFinished: true
-        };
-      }
-      if (nextProps.sectors !== prevState.curSectors) {
-        return {
-          curSectors: nextProps.sectors,
-          isAnimationFinished: true
-        };
-      }
-      return null;
-    }
-  }, {
-    key: "getTextAnchor",
-    value: function getTextAnchor(x2, cx2) {
-      if (x2 > cx2) {
-        return "start";
-      }
-      if (x2 < cx2) {
-        return "end";
-      }
-      return "middle";
-    }
-  }, {
-    key: "renderLabelLineItem",
-    value: function renderLabelLineItem(option, props, key) {
-      if (/* @__PURE__ */ React$4.isValidElement(option)) {
-        return /* @__PURE__ */ React$4.cloneElement(option, props);
-      }
-      if (isFunction$5(option)) {
-        return option(props);
-      }
-      var className = clsx("recharts-pie-label-line", typeof option !== "boolean" ? option.className : "");
-      return /* @__PURE__ */ React$4.createElement(Curve, _extends$e({}, props, {
-        key,
-        type: "linear",
-        className
-      }));
-    }
-  }, {
-    key: "renderLabelItem",
-    value: function renderLabelItem(option, props, value) {
-      if (/* @__PURE__ */ React$4.isValidElement(option)) {
-        return /* @__PURE__ */ React$4.cloneElement(option, props);
-      }
-      var label = value;
-      if (isFunction$5(option)) {
-        label = option(props);
-        if (/* @__PURE__ */ React$4.isValidElement(label)) {
-          return label;
-        }
-      }
-      var className = clsx("recharts-pie-label-text", typeof option !== "boolean" && !isFunction$5(option) ? option.className : "");
-      return /* @__PURE__ */ React$4.createElement(Text$1, _extends$e({}, props, {
-        alignmentBaseline: "middle",
-        className
-      }), label);
-    }
-  }]);
-}(reactExports.PureComponent);
-_Pie = Pie;
-_defineProperty$j(Pie, "displayName", "Pie");
-_defineProperty$j(Pie, "defaultProps", {
-  stroke: "#fff",
-  fill: "#808080",
-  legendType: "rect",
-  cx: "50%",
-  cy: "50%",
-  startAngle: 0,
-  endAngle: 360,
-  innerRadius: 0,
-  outerRadius: "80%",
-  paddingAngle: 0,
-  labelLine: true,
-  hide: false,
-  minAngle: 0,
-  isAnimationActive: !Global.isSsr,
-  animationBegin: 400,
-  animationDuration: 1500,
-  animationEasing: "ease",
-  nameKey: "name",
-  blendStroke: false,
-  rootTabIndex: 0
-});
-_defineProperty$j(Pie, "parseDeltaAngle", function(startAngle, endAngle) {
-  var sign2 = mathSign(endAngle - startAngle);
-  var deltaAngle = Math.min(Math.abs(endAngle - startAngle), 360);
-  return sign2 * deltaAngle;
-});
-_defineProperty$j(Pie, "getRealPieData", function(itemProps) {
-  var data = itemProps.data, children = itemProps.children;
-  var presentationProps = filterProps(itemProps, false);
-  var cells = findAllByType(children, Cell);
-  if (data && data.length) {
-    return data.map(function(entry, index2) {
-      return _objectSpread$g(_objectSpread$g(_objectSpread$g({
-        payload: entry
-      }, presentationProps), entry), cells && cells[index2] && cells[index2].props);
-    });
-  }
-  if (cells && cells.length) {
-    return cells.map(function(cell) {
-      return _objectSpread$g(_objectSpread$g({}, presentationProps), cell.props);
-    });
-  }
-  return [];
-});
-_defineProperty$j(Pie, "parseCoordinateOfPie", function(itemProps, offset2) {
-  var top = offset2.top, left = offset2.left, width = offset2.width, height = offset2.height;
-  var maxPieRadius = getMaxRadius(width, height);
-  var cx2 = left + getPercentValue(itemProps.cx, width, width / 2);
-  var cy = top + getPercentValue(itemProps.cy, height, height / 2);
-  var innerRadius = getPercentValue(itemProps.innerRadius, maxPieRadius, 0);
-  var outerRadius = getPercentValue(itemProps.outerRadius, maxPieRadius, maxPieRadius * 0.8);
-  var maxRadius = itemProps.maxRadius || Math.sqrt(width * width + height * height) / 2;
-  return {
-    cx: cx2,
-    cy,
-    innerRadius,
-    outerRadius,
-    maxRadius
-  };
-});
-_defineProperty$j(Pie, "getComposedData", function(_ref4) {
-  var item = _ref4.item, offset2 = _ref4.offset;
-  var itemProps = item.type.defaultProps !== void 0 ? _objectSpread$g(_objectSpread$g({}, item.type.defaultProps), item.props) : item.props;
-  var pieData = _Pie.getRealPieData(itemProps);
-  if (!pieData || !pieData.length) {
-    return null;
-  }
-  var cornerRadius = itemProps.cornerRadius, startAngle = itemProps.startAngle, endAngle = itemProps.endAngle, paddingAngle = itemProps.paddingAngle, dataKey = itemProps.dataKey, nameKey = itemProps.nameKey, valueKey = itemProps.valueKey, tooltipType = itemProps.tooltipType;
-  var minAngle = Math.abs(itemProps.minAngle);
-  var coordinate = _Pie.parseCoordinateOfPie(itemProps, offset2);
-  var deltaAngle = _Pie.parseDeltaAngle(startAngle, endAngle);
-  var absDeltaAngle = Math.abs(deltaAngle);
-  var realDataKey = dataKey;
-  if (isNil$1(dataKey) && isNil$1(valueKey)) {
-    warn(false, 'Use "dataKey" to specify the value of pie,\n      the props "valueKey" will be deprecated in 1.1.0');
-    realDataKey = "value";
-  } else if (isNil$1(dataKey)) {
-    warn(false, 'Use "dataKey" to specify the value of pie,\n      the props "valueKey" will be deprecated in 1.1.0');
-    realDataKey = valueKey;
-  }
-  var notZeroItemCount = pieData.filter(function(entry) {
-    return getValueByDataKey(entry, realDataKey, 0) !== 0;
-  }).length;
-  var totalPadingAngle = (absDeltaAngle >= 360 ? notZeroItemCount : notZeroItemCount - 1) * paddingAngle;
-  var realTotalAngle = absDeltaAngle - notZeroItemCount * minAngle - totalPadingAngle;
-  var sum = pieData.reduce(function(result, entry) {
-    var val = getValueByDataKey(entry, realDataKey, 0);
-    return result + (isNumber$2(val) ? val : 0);
-  }, 0);
-  var sectors;
-  if (sum > 0) {
-    var prev;
-    sectors = pieData.map(function(entry, i) {
-      var val = getValueByDataKey(entry, realDataKey, 0);
-      var name = getValueByDataKey(entry, nameKey, i);
-      var percent2 = (isNumber$2(val) ? val : 0) / sum;
-      var tempStartAngle;
-      if (i) {
-        tempStartAngle = prev.endAngle + mathSign(deltaAngle) * paddingAngle * (val !== 0 ? 1 : 0);
-      } else {
-        tempStartAngle = startAngle;
-      }
-      var tempEndAngle = tempStartAngle + mathSign(deltaAngle) * ((val !== 0 ? minAngle : 0) + percent2 * realTotalAngle);
-      var midAngle = (tempStartAngle + tempEndAngle) / 2;
-      var middleRadius = (coordinate.innerRadius + coordinate.outerRadius) / 2;
-      var tooltipPayload = [{
-        name,
-        value: val,
-        payload: entry,
-        dataKey: realDataKey,
-        type: tooltipType
-      }];
-      var tooltipPosition = polarToCartesian(coordinate.cx, coordinate.cy, middleRadius, midAngle);
-      prev = _objectSpread$g(_objectSpread$g(_objectSpread$g({
-        percent: percent2,
-        cornerRadius,
-        name,
-        tooltipPayload,
-        midAngle,
-        middleRadius,
-        tooltipPosition
-      }, entry), coordinate), {}, {
-        value: getValueByDataKey(entry, realDataKey),
-        startAngle: tempStartAngle,
-        endAngle: tempEndAngle,
-        payload: entry,
-        paddingAngle: mathSign(deltaAngle) * paddingAngle
-      });
-      return prev;
-    });
-  }
-  return _objectSpread$g(_objectSpread$g({}, coordinate), {}, {
-    sectors,
-    data: pieData
-  });
-});
 function head(array2) {
   return array2 && array2.length ? array2[0] : void 0;
 }
 var head_1 = head;
 var first$1 = head_1;
 const first$2 = /* @__PURE__ */ getDefaultExportFromCjs$1(first$1);
-var _excluded$7 = ["key"];
-function _typeof$i(o) {
+var _excluded$6 = ["key"];
+function _typeof$h(o) {
   "@babel/helpers - typeof";
-  return _typeof$i = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$h = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$i(o);
+  }, _typeof$h(o);
 }
-function _objectWithoutProperties$7(source, excluded) {
+function _objectWithoutProperties$6(source, excluded) {
   if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$7(source, excluded);
+  var target = _objectWithoutPropertiesLoose$6(source, excluded);
   var key, i;
   if (Object.getOwnPropertySymbols) {
     var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
@@ -71876,7 +71189,7 @@ function _objectWithoutProperties$7(source, excluded) {
   }
   return target;
 }
-function _objectWithoutPropertiesLoose$7(source, excluded) {
+function _objectWithoutPropertiesLoose$6(source, excluded) {
   if (source == null) return {};
   var target = {};
   for (var key in source) {
@@ -71887,8 +71200,8 @@ function _objectWithoutPropertiesLoose$7(source, excluded) {
   }
   return target;
 }
-function _extends$d() {
-  _extends$d = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$c() {
+  _extends$c = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -71899,9 +71212,9 @@ function _extends$d() {
     }
     return target;
   };
-  return _extends$d.apply(this, arguments);
+  return _extends$c.apply(this, arguments);
 }
-function ownKeys$f(e3, r2) {
+function ownKeys$e(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -71911,87 +71224,87 @@ function ownKeys$f(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$f(e3) {
+function _objectSpread$e(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$f(Object(t2), true).forEach(function(r3) {
-      _defineProperty$i(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$f(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$e(Object(t2), true).forEach(function(r3) {
+      _defineProperty$h(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$e(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _classCallCheck$d(instance, Constructor) {
+function _classCallCheck$c(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-function _defineProperties$d(target, props) {
+function _defineProperties$c(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$i(descriptor.key), descriptor);
+    Object.defineProperty(target, _toPropertyKey$h(descriptor.key), descriptor);
   }
 }
-function _createClass$d(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$d(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties$d(Constructor, staticProps);
+function _createClass$c(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$c(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties$c(Constructor, staticProps);
   Object.defineProperty(Constructor, "prototype", { writable: false });
   return Constructor;
 }
-function _callSuper$b(t2, o, e3) {
-  return o = _getPrototypeOf$b(o), _possibleConstructorReturn$b(t2, _isNativeReflectConstruct$b() ? Reflect.construct(o, e3 || [], _getPrototypeOf$b(t2).constructor) : o.apply(t2, e3));
+function _callSuper$a(t2, o, e3) {
+  return o = _getPrototypeOf$a(o), _possibleConstructorReturn$a(t2, _isNativeReflectConstruct$a() ? Reflect.construct(o, e3 || [], _getPrototypeOf$a(t2).constructor) : o.apply(t2, e3));
 }
-function _possibleConstructorReturn$b(self2, call) {
-  if (call && (_typeof$i(call) === "object" || typeof call === "function")) {
+function _possibleConstructorReturn$a(self2, call) {
+  if (call && (_typeof$h(call) === "object" || typeof call === "function")) {
     return call;
   } else if (call !== void 0) {
     throw new TypeError("Derived constructors may only return object or undefined");
   }
-  return _assertThisInitialized$b(self2);
+  return _assertThisInitialized$a(self2);
 }
-function _assertThisInitialized$b(self2) {
+function _assertThisInitialized$a(self2) {
   if (self2 === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
   return self2;
 }
-function _isNativeReflectConstruct$b() {
+function _isNativeReflectConstruct$a() {
   try {
     var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
     }));
   } catch (t3) {
   }
-  return (_isNativeReflectConstruct$b = function _isNativeReflectConstruct2() {
+  return (_isNativeReflectConstruct$a = function _isNativeReflectConstruct2() {
     return !!t2;
   })();
 }
-function _getPrototypeOf$b(o) {
-  _getPrototypeOf$b = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
+function _getPrototypeOf$a(o) {
+  _getPrototypeOf$a = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
     return o2.__proto__ || Object.getPrototypeOf(o2);
   };
-  return _getPrototypeOf$b(o);
+  return _getPrototypeOf$a(o);
 }
-function _inherits$b(subClass, superClass) {
+function _inherits$a(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
   }
   subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
   Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$b(subClass, superClass);
+  if (superClass) _setPrototypeOf$a(subClass, superClass);
 }
-function _setPrototypeOf$b(o, p2) {
-  _setPrototypeOf$b = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
+function _setPrototypeOf$a(o, p2) {
+  _setPrototypeOf$a = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
     o2.__proto__ = p3;
     return o2;
   };
-  return _setPrototypeOf$b(o, p2);
+  return _setPrototypeOf$a(o, p2);
 }
-function _defineProperty$i(obj, key, value) {
-  key = _toPropertyKey$i(key);
+function _defineProperty$h(obj, key, value) {
+  key = _toPropertyKey$h(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -71999,16 +71312,16 @@ function _defineProperty$i(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$i(t2) {
-  var i = _toPrimitive$i(t2, "string");
-  return "symbol" == _typeof$i(i) ? i : i + "";
+function _toPropertyKey$h(t2) {
+  var i = _toPrimitive$h(t2, "string");
+  return "symbol" == _typeof$h(i) ? i : i + "";
 }
-function _toPrimitive$i(t2, r2) {
-  if ("object" != _typeof$i(t2) || !t2) return t2;
+function _toPrimitive$h(t2, r2) {
+  if ("object" != _typeof$h(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$i(i)) return i;
+    if ("object" != _typeof$h(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return String(t2);
@@ -72016,15 +71329,15 @@ function _toPrimitive$i(t2, r2) {
 var Radar = /* @__PURE__ */ function(_PureComponent) {
   function Radar2() {
     var _this;
-    _classCallCheck$d(this, Radar2);
+    _classCallCheck$c(this, Radar2);
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
-    _this = _callSuper$b(this, Radar2, [].concat(args));
-    _defineProperty$i(_this, "state", {
+    _this = _callSuper$a(this, Radar2, [].concat(args));
+    _defineProperty$h(_this, "state", {
       isAnimationFinished: false
     });
-    _defineProperty$i(_this, "handleAnimationEnd", function() {
+    _defineProperty$h(_this, "handleAnimationEnd", function() {
       var onAnimationEnd2 = _this.props.onAnimationEnd;
       _this.setState({
         isAnimationFinished: true
@@ -72033,7 +71346,7 @@ var Radar = /* @__PURE__ */ function(_PureComponent) {
         onAnimationEnd2();
       }
     });
-    _defineProperty$i(_this, "handleAnimationStart", function() {
+    _defineProperty$h(_this, "handleAnimationStart", function() {
       var onAnimationStart2 = _this.props.onAnimationStart;
       _this.setState({
         isAnimationFinished: false
@@ -72042,13 +71355,13 @@ var Radar = /* @__PURE__ */ function(_PureComponent) {
         onAnimationStart2();
       }
     });
-    _defineProperty$i(_this, "handleMouseEnter", function(e3) {
+    _defineProperty$h(_this, "handleMouseEnter", function(e3) {
       var onMouseEnter = _this.props.onMouseEnter;
       if (onMouseEnter) {
         onMouseEnter(_this.props, e3);
       }
     });
-    _defineProperty$i(_this, "handleMouseLeave", function(e3) {
+    _defineProperty$h(_this, "handleMouseLeave", function(e3) {
       var onMouseLeave = _this.props.onMouseLeave;
       if (onMouseLeave) {
         onMouseLeave(_this.props, e3);
@@ -72056,15 +71369,15 @@ var Radar = /* @__PURE__ */ function(_PureComponent) {
     });
     return _this;
   }
-  _inherits$b(Radar2, _PureComponent);
-  return _createClass$d(Radar2, [{
+  _inherits$a(Radar2, _PureComponent);
+  return _createClass$c(Radar2, [{
     key: "renderDots",
     value: function renderDots(points) {
       var _this$props = this.props, dot = _this$props.dot, dataKey = _this$props.dataKey;
       var baseProps = filterProps(this.props, false);
       var customDotProps = filterProps(dot, true);
       var dots = points.map(function(entry, i) {
-        var dotProps = _objectSpread$f(_objectSpread$f(_objectSpread$f({
+        var dotProps = _objectSpread$e(_objectSpread$e(_objectSpread$e({
           key: "dot-".concat(i),
           r: 3
         }, baseProps), customDotProps), {}, {
@@ -72086,15 +71399,15 @@ var Radar = /* @__PURE__ */ function(_PureComponent) {
       var _this$props2 = this.props, shape = _this$props2.shape, dot = _this$props2.dot, isRange = _this$props2.isRange, baseLinePoints = _this$props2.baseLinePoints, connectNulls = _this$props2.connectNulls;
       var radar;
       if (/* @__PURE__ */ React$4.isValidElement(shape)) {
-        radar = /* @__PURE__ */ React$4.cloneElement(shape, _objectSpread$f(_objectSpread$f({}, this.props), {}, {
+        radar = /* @__PURE__ */ React$4.cloneElement(shape, _objectSpread$e(_objectSpread$e({}, this.props), {}, {
           points
         }));
       } else if (isFunction$5(shape)) {
-        radar = shape(_objectSpread$f(_objectSpread$f({}, this.props), {}, {
+        radar = shape(_objectSpread$e(_objectSpread$e({}, this.props), {}, {
           points
         }));
       } else {
-        radar = /* @__PURE__ */ React$4.createElement(Polygon, _extends$d({}, filterProps(this.props, true), {
+        radar = /* @__PURE__ */ React$4.createElement(Polygon, _extends$c({}, filterProps(this.props, true), {
           onMouseEnter: this.handleMouseEnter,
           onMouseLeave: this.handleMouseLeave,
           points,
@@ -72134,14 +71447,14 @@ var Radar = /* @__PURE__ */ function(_PureComponent) {
           if (prev) {
             var _interpolatorX = interpolateNumber$2(prev.x, entry.x);
             var _interpolatorY = interpolateNumber$2(prev.y, entry.y);
-            return _objectSpread$f(_objectSpread$f({}, entry), {}, {
+            return _objectSpread$e(_objectSpread$e({}, entry), {}, {
               x: _interpolatorX(t2),
               y: _interpolatorY(t2)
             });
           }
           var interpolatorX = interpolateNumber$2(entry.cx, entry.x);
           var interpolatorY = interpolateNumber$2(entry.cy, entry.y);
-          return _objectSpread$f(_objectSpread$f({}, entry), {}, {
+          return _objectSpread$e(_objectSpread$e({}, entry), {}, {
             x: interpolatorX(t2),
             y: interpolatorY(t2)
           });
@@ -72198,8 +71511,8 @@ var Radar = /* @__PURE__ */ function(_PureComponent) {
       } else if (isFunction$5(option)) {
         dotItem = option(props);
       } else {
-        var key = props.key, dotProps = _objectWithoutProperties$7(props, _excluded$7);
-        dotItem = /* @__PURE__ */ React$4.createElement(Dot, _extends$d({}, dotProps, {
+        var key = props.key, dotProps = _objectWithoutProperties$6(props, _excluded$6);
+        dotItem = /* @__PURE__ */ React$4.createElement(Dot, _extends$c({}, dotProps, {
           key,
           className: clsx("recharts-radar-dot", typeof option !== "boolean" ? option.className : "")
         }));
@@ -72208,8 +71521,8 @@ var Radar = /* @__PURE__ */ function(_PureComponent) {
     }
   }]);
 }(reactExports.PureComponent);
-_defineProperty$i(Radar, "displayName", "Radar");
-_defineProperty$i(Radar, "defaultProps", {
+_defineProperty$h(Radar, "displayName", "Radar");
+_defineProperty$h(Radar, "defaultProps", {
   angleAxisId: 0,
   radiusAxisId: 0,
   hide: false,
@@ -72221,7 +71534,7 @@ _defineProperty$i(Radar, "defaultProps", {
   animationDuration: 1500,
   animationEasing: "ease"
 });
-_defineProperty$i(Radar, "getComposedData", function(_ref2) {
+_defineProperty$h(Radar, "getComposedData", function(_ref2) {
   var radiusAxis = _ref2.radiusAxis, angleAxis = _ref2.angleAxis, displayedData = _ref2.displayedData, dataKey = _ref2.dataKey, bandSize = _ref2.bandSize;
   var cx2 = angleAxis.cx, cy = angleAxis.cy;
   var isRange = false;
@@ -72236,7 +71549,7 @@ _defineProperty$i(Radar, "getComposedData", function(_ref2) {
     if (Array.isArray(value) && value.length >= 2) {
       isRange = true;
     }
-    points.push(_objectSpread$f(_objectSpread$f({}, polarToCartesian(cx2, cy, radius, angle)), {}, {
+    points.push(_objectSpread$e(_objectSpread$e({}, polarToCartesian(cx2, cy, radius, angle)), {}, {
       name,
       value,
       cx: cx2,
@@ -72252,7 +71565,7 @@ _defineProperty$i(Radar, "getComposedData", function(_ref2) {
       if (Array.isArray(point2.value)) {
         var baseValue = first$2(point2.value);
         var radius = isNil$1(baseValue) ? void 0 : radiusAxis.scale(baseValue);
-        baseLinePoints.push(_objectSpread$f(_objectSpread$f({}, point2), {}, {
+        baseLinePoints.push(_objectSpread$e(_objectSpread$e({}, point2), {}, {
           radius
         }, polarToCartesian(cx2, cy, radius, point2.angle)));
       } else {
@@ -72312,69 +71625,6 @@ var createRange = _createRange;
 var range$1 = createRange();
 var range_1 = range$1;
 const range$2 = /* @__PURE__ */ getDefaultExportFromCjs$1(range_1);
-function _typeof$h(o) {
-  "@babel/helpers - typeof";
-  return _typeof$h = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
-    return typeof o2;
-  } : function(o2) {
-    return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$h(o);
-}
-function ownKeys$e(e3, r2) {
-  var t2 = Object.keys(e3);
-  if (Object.getOwnPropertySymbols) {
-    var o = Object.getOwnPropertySymbols(e3);
-    r2 && (o = o.filter(function(r3) {
-      return Object.getOwnPropertyDescriptor(e3, r3).enumerable;
-    })), t2.push.apply(t2, o);
-  }
-  return t2;
-}
-function _objectSpread$e(e3) {
-  for (var r2 = 1; r2 < arguments.length; r2++) {
-    var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$e(Object(t2), true).forEach(function(r3) {
-      _defineProperty$h(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$e(Object(t2)).forEach(function(r3) {
-      Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
-    });
-  }
-  return e3;
-}
-function _defineProperty$h(obj, key, value) {
-  key = _toPropertyKey$h(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
-function _toPropertyKey$h(t2) {
-  var i = _toPrimitive$h(t2, "string");
-  return "symbol" == _typeof$h(i) ? i : i + "";
-}
-function _toPrimitive$h(t2, r2) {
-  if ("object" != _typeof$h(t2) || !t2) return t2;
-  var e3 = t2[Symbol.toPrimitive];
-  if (void 0 !== e3) {
-    var i = e3.call(t2, r2);
-    if ("object" != _typeof$h(i)) return i;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return ("string" === r2 ? String : Number)(t2);
-}
-var PREFIX_LIST = ["Webkit", "Moz", "O", "ms"];
-var generatePrefixStyle = function generatePrefixStyle2(name, value) {
-  var camelName = name.replace(/(\w)/, function(v2) {
-    return v2.toUpperCase();
-  });
-  var result = PREFIX_LIST.reduce(function(res, entry) {
-    return _objectSpread$e(_objectSpread$e({}, res), {}, _defineProperty$h({}, entry + camelName, value));
-  }, {});
-  result[name] = value;
-  return result;
-};
 function _typeof$g(o) {
   "@babel/helpers - typeof";
   return _typeof$g = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
@@ -72382,20 +71632,6 @@ function _typeof$g(o) {
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
   }, _typeof$g(o);
-}
-function _extends$c() {
-  _extends$c = Object.assign ? Object.assign.bind() : function(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-    return target;
-  };
-  return _extends$c.apply(this, arguments);
 }
 function ownKeys$d(e3, r2) {
   var t2 = Object.keys(e3);
@@ -72418,74 +71654,6 @@ function _objectSpread$d(e3) {
   }
   return e3;
 }
-function _classCallCheck$c(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-function _defineProperties$c(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$g(descriptor.key), descriptor);
-  }
-}
-function _createClass$c(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$c(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties$c(Constructor, staticProps);
-  Object.defineProperty(Constructor, "prototype", { writable: false });
-  return Constructor;
-}
-function _callSuper$a(t2, o, e3) {
-  return o = _getPrototypeOf$a(o), _possibleConstructorReturn$a(t2, _isNativeReflectConstruct$a() ? Reflect.construct(o, e3 || [], _getPrototypeOf$a(t2).constructor) : o.apply(t2, e3));
-}
-function _possibleConstructorReturn$a(self2, call) {
-  if (call && (_typeof$g(call) === "object" || typeof call === "function")) {
-    return call;
-  } else if (call !== void 0) {
-    throw new TypeError("Derived constructors may only return object or undefined");
-  }
-  return _assertThisInitialized$a(self2);
-}
-function _assertThisInitialized$a(self2) {
-  if (self2 === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-  return self2;
-}
-function _isNativeReflectConstruct$a() {
-  try {
-    var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
-    }));
-  } catch (t3) {
-  }
-  return (_isNativeReflectConstruct$a = function _isNativeReflectConstruct2() {
-    return !!t2;
-  })();
-}
-function _getPrototypeOf$a(o) {
-  _getPrototypeOf$a = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
-    return o2.__proto__ || Object.getPrototypeOf(o2);
-  };
-  return _getPrototypeOf$a(o);
-}
-function _inherits$a(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-  subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
-  Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$a(subClass, superClass);
-}
-function _setPrototypeOf$a(o, p2) {
-  _setPrototypeOf$a = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
-    o2.__proto__ = p3;
-    return o2;
-  };
-  return _setPrototypeOf$a(o, p2);
-}
 function _defineProperty$g(obj, key, value) {
   key = _toPropertyKey$g(key);
   if (key in obj) {
@@ -72505,6 +71673,151 @@ function _toPrimitive$g(t2, r2) {
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
     if ("object" != _typeof$g(i)) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r2 ? String : Number)(t2);
+}
+var PREFIX_LIST = ["Webkit", "Moz", "O", "ms"];
+var generatePrefixStyle = function generatePrefixStyle2(name, value) {
+  var camelName = name.replace(/(\w)/, function(v2) {
+    return v2.toUpperCase();
+  });
+  var result = PREFIX_LIST.reduce(function(res, entry) {
+    return _objectSpread$d(_objectSpread$d({}, res), {}, _defineProperty$g({}, entry + camelName, value));
+  }, {});
+  result[name] = value;
+  return result;
+};
+function _typeof$f(o) {
+  "@babel/helpers - typeof";
+  return _typeof$f = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+    return typeof o2;
+  } : function(o2) {
+    return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
+  }, _typeof$f(o);
+}
+function _extends$b() {
+  _extends$b = Object.assign ? Object.assign.bind() : function(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends$b.apply(this, arguments);
+}
+function ownKeys$c(e3, r2) {
+  var t2 = Object.keys(e3);
+  if (Object.getOwnPropertySymbols) {
+    var o = Object.getOwnPropertySymbols(e3);
+    r2 && (o = o.filter(function(r3) {
+      return Object.getOwnPropertyDescriptor(e3, r3).enumerable;
+    })), t2.push.apply(t2, o);
+  }
+  return t2;
+}
+function _objectSpread$c(e3) {
+  for (var r2 = 1; r2 < arguments.length; r2++) {
+    var t2 = null != arguments[r2] ? arguments[r2] : {};
+    r2 % 2 ? ownKeys$c(Object(t2), true).forEach(function(r3) {
+      _defineProperty$f(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$c(Object(t2)).forEach(function(r3) {
+      Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
+    });
+  }
+  return e3;
+}
+function _classCallCheck$b(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+function _defineProperties$b(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, _toPropertyKey$f(descriptor.key), descriptor);
+  }
+}
+function _createClass$b(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$b(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties$b(Constructor, staticProps);
+  Object.defineProperty(Constructor, "prototype", { writable: false });
+  return Constructor;
+}
+function _callSuper$9(t2, o, e3) {
+  return o = _getPrototypeOf$9(o), _possibleConstructorReturn$9(t2, _isNativeReflectConstruct$9() ? Reflect.construct(o, e3 || [], _getPrototypeOf$9(t2).constructor) : o.apply(t2, e3));
+}
+function _possibleConstructorReturn$9(self2, call) {
+  if (call && (_typeof$f(call) === "object" || typeof call === "function")) {
+    return call;
+  } else if (call !== void 0) {
+    throw new TypeError("Derived constructors may only return object or undefined");
+  }
+  return _assertThisInitialized$9(self2);
+}
+function _assertThisInitialized$9(self2) {
+  if (self2 === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+  return self2;
+}
+function _isNativeReflectConstruct$9() {
+  try {
+    var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
+    }));
+  } catch (t3) {
+  }
+  return (_isNativeReflectConstruct$9 = function _isNativeReflectConstruct2() {
+    return !!t2;
+  })();
+}
+function _getPrototypeOf$9(o) {
+  _getPrototypeOf$9 = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
+    return o2.__proto__ || Object.getPrototypeOf(o2);
+  };
+  return _getPrototypeOf$9(o);
+}
+function _inherits$9(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+  subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
+  Object.defineProperty(subClass, "prototype", { writable: false });
+  if (superClass) _setPrototypeOf$9(subClass, superClass);
+}
+function _setPrototypeOf$9(o, p2) {
+  _setPrototypeOf$9 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
+    o2.__proto__ = p3;
+    return o2;
+  };
+  return _setPrototypeOf$9(o, p2);
+}
+function _defineProperty$f(obj, key, value) {
+  key = _toPropertyKey$f(key);
+  if (key in obj) {
+    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+function _toPropertyKey$f(t2) {
+  var i = _toPrimitive$f(t2, "string");
+  return "symbol" == _typeof$f(i) ? i : i + "";
+}
+function _toPrimitive$f(t2, r2) {
+  if ("object" != _typeof$f(t2) || !t2) return t2;
+  var e3 = t2[Symbol.toPrimitive];
+  if (void 0 !== e3) {
+    var i = e3.call(t2, r2);
+    if ("object" != _typeof$f(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return String(t2);
@@ -72536,9 +71849,9 @@ var isTouch = function isTouch2(e3) {
 var Brush = /* @__PURE__ */ function(_PureComponent) {
   function Brush2(props) {
     var _this;
-    _classCallCheck$c(this, Brush2);
-    _this = _callSuper$a(this, Brush2, [props]);
-    _defineProperty$g(_this, "handleDrag", function(e3) {
+    _classCallCheck$b(this, Brush2);
+    _this = _callSuper$9(this, Brush2, [props]);
+    _defineProperty$f(_this, "handleDrag", function(e3) {
       if (_this.leaveTimer) {
         clearTimeout(_this.leaveTimer);
         _this.leaveTimer = null;
@@ -72549,12 +71862,12 @@ var Brush = /* @__PURE__ */ function(_PureComponent) {
         _this.handleSlideDrag(e3);
       }
     });
-    _defineProperty$g(_this, "handleTouchMove", function(e3) {
+    _defineProperty$f(_this, "handleTouchMove", function(e3) {
       if (e3.changedTouches != null && e3.changedTouches.length > 0) {
         _this.handleDrag(e3.changedTouches[0]);
       }
     });
-    _defineProperty$g(_this, "handleDragEnd", function() {
+    _defineProperty$f(_this, "handleDragEnd", function() {
       _this.setState({
         isTravellerMoving: false,
         isSlideMoving: false
@@ -72567,22 +71880,22 @@ var Brush = /* @__PURE__ */ function(_PureComponent) {
       });
       _this.detachDragEndListener();
     });
-    _defineProperty$g(_this, "handleLeaveWrapper", function() {
+    _defineProperty$f(_this, "handleLeaveWrapper", function() {
       if (_this.state.isTravellerMoving || _this.state.isSlideMoving) {
         _this.leaveTimer = window.setTimeout(_this.handleDragEnd, _this.props.leaveTimeOut);
       }
     });
-    _defineProperty$g(_this, "handleEnterSlideOrTraveller", function() {
+    _defineProperty$f(_this, "handleEnterSlideOrTraveller", function() {
       _this.setState({
         isTextActive: true
       });
     });
-    _defineProperty$g(_this, "handleLeaveSlideOrTraveller", function() {
+    _defineProperty$f(_this, "handleLeaveSlideOrTraveller", function() {
       _this.setState({
         isTextActive: false
       });
     });
-    _defineProperty$g(_this, "handleSlideDragStart", function(e3) {
+    _defineProperty$f(_this, "handleSlideDragStart", function(e3) {
       var event = isTouch(e3) ? e3.changedTouches[0] : e3;
       _this.setState({
         isTravellerMoving: false,
@@ -72598,8 +71911,8 @@ var Brush = /* @__PURE__ */ function(_PureComponent) {
     _this.state = {};
     return _this;
   }
-  _inherits$a(Brush2, _PureComponent);
-  return _createClass$c(Brush2, [{
+  _inherits$9(Brush2, _PureComponent);
+  return _createClass$b(Brush2, [{
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       if (this.leaveTimer) {
@@ -72707,7 +72020,7 @@ var Brush = /* @__PURE__ */ function(_PureComponent) {
         }
         return false;
       };
-      this.setState(_defineProperty$g(_defineProperty$g({}, movingTravellerId, prevValue + delta), "brushMoveStartX", e3.pageX), function() {
+      this.setState(_defineProperty$f(_defineProperty$f({}, movingTravellerId, prevValue + delta), "brushMoveStartX", e3.pageX), function() {
         if (onChange) {
           if (isFullGap()) {
             onChange(newIndex);
@@ -72733,7 +72046,7 @@ var Brush = /* @__PURE__ */ function(_PureComponent) {
       if (id2 === "startX" && newScaleValue >= endX || id2 === "endX" && newScaleValue <= startX) {
         return;
       }
-      this.setState(_defineProperty$g({}, id2, newScaleValue), function() {
+      this.setState(_defineProperty$f({}, id2, newScaleValue), function() {
         _this2.props.onChange(_this2.getIndex({
           startX: _this2.state.startX,
           endX: _this2.state.endX
@@ -72777,7 +72090,7 @@ var Brush = /* @__PURE__ */ function(_PureComponent) {
       var _data$startIndex, _data$endIndex, _this3 = this;
       var _this$props8 = this.props, y2 = _this$props8.y, travellerWidth = _this$props8.travellerWidth, height = _this$props8.height, traveller = _this$props8.traveller, ariaLabel = _this$props8.ariaLabel, data = _this$props8.data, startIndex = _this$props8.startIndex, endIndex = _this$props8.endIndex;
       var x2 = Math.max(travellerX, this.props.x);
-      var travellerProps = _objectSpread$d(_objectSpread$d({}, filterProps(this.props, false)), {}, {
+      var travellerProps = _objectSpread$c(_objectSpread$c({}, filterProps(this.props, false)), {}, {
         x: x2,
         y: y2,
         width: travellerWidth,
@@ -72853,12 +72166,12 @@ var Brush = /* @__PURE__ */ function(_PureComponent) {
       };
       return /* @__PURE__ */ React$4.createElement(Layer, {
         className: "recharts-brush-texts"
-      }, /* @__PURE__ */ React$4.createElement(Text$1, _extends$c({
+      }, /* @__PURE__ */ React$4.createElement(Text$1, _extends$b({
         textAnchor: "end",
         verticalAnchor: "middle",
         x: Math.min(startX, endX) - offset2,
         y: y2 + height / 2
-      }, attrs), this.getTextOfTick(startIndex)), /* @__PURE__ */ React$4.createElement(Text$1, _extends$c({
+      }, attrs), this.getTextOfTick(startIndex)), /* @__PURE__ */ React$4.createElement(Text$1, _extends$b({
         textAnchor: "start",
         verticalAnchor: "middle",
         x: Math.max(startX, endX) + travellerWidth + offset2,
@@ -72929,7 +72242,7 @@ var Brush = /* @__PURE__ */ function(_PureComponent) {
     value: function getDerivedStateFromProps(nextProps, prevState) {
       var data = nextProps.data, width = nextProps.width, x2 = nextProps.x, travellerWidth = nextProps.travellerWidth, updateId2 = nextProps.updateId, startIndex = nextProps.startIndex, endIndex = nextProps.endIndex;
       if (data !== prevState.prevData || updateId2 !== prevState.prevUpdateId) {
-        return _objectSpread$d({
+        return _objectSpread$c({
           prevData: data,
           prevTravellerWidth: travellerWidth,
           prevUpdateId: updateId2,
@@ -72983,8 +72296,8 @@ var Brush = /* @__PURE__ */ function(_PureComponent) {
     }
   }]);
 }(reactExports.PureComponent);
-_defineProperty$g(Brush, "displayName", "Brush");
-_defineProperty$g(Brush, "defaultProps", {
+_defineProperty$f(Brush, "displayName", "Brush");
+_defineProperty$f(Brush, "defaultProps", {
   height: 40,
   travellerWidth: 5,
   gap: 1,
@@ -73027,7 +72340,7 @@ var ifOverflowMatches = function ifOverflowMatches2(props, value) {
   }
   return ifOverflow === value;
 };
-var defineProperty = _defineProperty$I;
+var defineProperty = _defineProperty$G;
 function baseAssignValue$1(object2, key, value) {
   if (key == "__proto__" && defineProperty) {
     defineProperty(object2, key, {
@@ -73082,17 +72395,17 @@ function every(collection, predicate, guard) {
 }
 var every_1 = every;
 const every$1 = /* @__PURE__ */ getDefaultExportFromCjs$1(every_1);
-var _excluded$6 = ["x", "y"];
-function _typeof$f(o) {
+var _excluded$5 = ["x", "y"];
+function _typeof$e(o) {
   "@babel/helpers - typeof";
-  return _typeof$f = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$e = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$f(o);
+  }, _typeof$e(o);
 }
-function _extends$b() {
-  _extends$b = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$a() {
+  _extends$a = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -73103,9 +72416,9 @@ function _extends$b() {
     }
     return target;
   };
-  return _extends$b.apply(this, arguments);
+  return _extends$a.apply(this, arguments);
 }
-function ownKeys$c(e3, r2) {
+function ownKeys$b(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -73115,19 +72428,19 @@ function ownKeys$c(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$c(e3) {
+function _objectSpread$b(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$c(Object(t2), true).forEach(function(r22) {
-      _defineProperty$f(e3, r22, t2[r22]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$c(Object(t2)).forEach(function(r22) {
+    r2 % 2 ? ownKeys$b(Object(t2), true).forEach(function(r22) {
+      _defineProperty$e(e3, r22, t2[r22]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$b(Object(t2)).forEach(function(r22) {
       Object.defineProperty(e3, r22, Object.getOwnPropertyDescriptor(t2, r22));
     });
   }
   return e3;
 }
-function _defineProperty$f(obj, key, value) {
-  key = _toPropertyKey$f(key);
+function _defineProperty$e(obj, key, value) {
+  key = _toPropertyKey$e(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -73135,95 +72448,19 @@ function _defineProperty$f(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$f(t2) {
-  var i = _toPrimitive$f(t2, "string");
-  return "symbol" == _typeof$f(i) ? i : i + "";
+function _toPropertyKey$e(t2) {
+  var i = _toPrimitive$e(t2, "string");
+  return "symbol" == _typeof$e(i) ? i : i + "";
 }
-function _toPrimitive$f(t2, r2) {
-  if ("object" != _typeof$f(t2) || !t2) return t2;
+function _toPrimitive$e(t2, r2) {
+  if ("object" != _typeof$e(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$f(i)) return i;
+    if ("object" != _typeof$e(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
-}
-function _objectWithoutProperties$6(source, excluded) {
-  if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$6(source, excluded);
-  var key, i;
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-function _objectWithoutPropertiesLoose$6(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  for (var key in source) {
-    if (Object.prototype.hasOwnProperty.call(source, key)) {
-      if (excluded.indexOf(key) >= 0) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-function typeguardBarRectangleProps(_ref, props) {
-  var xProp = _ref.x, yProp = _ref.y, option = _objectWithoutProperties$6(_ref, _excluded$6);
-  var xValue = "".concat(xProp);
-  var x2 = parseInt(xValue, 10);
-  var yValue = "".concat(yProp);
-  var y2 = parseInt(yValue, 10);
-  var heightValue = "".concat(props.height || option.height);
-  var height = parseInt(heightValue, 10);
-  var widthValue = "".concat(props.width || option.width);
-  var width = parseInt(widthValue, 10);
-  return _objectSpread$c(_objectSpread$c(_objectSpread$c(_objectSpread$c(_objectSpread$c({}, props), option), x2 ? {
-    x: x2
-  } : {}), y2 ? {
-    y: y2
-  } : {}), {}, {
-    height,
-    width,
-    name: props.name,
-    radius: props.radius
-  });
-}
-function BarRectangle(props) {
-  return /* @__PURE__ */ React$4.createElement(Shape, _extends$b({
-    shapeType: "rectangle",
-    propTransformer: typeguardBarRectangleProps,
-    activeClassName: "recharts-active-bar"
-  }, props));
-}
-var minPointSizeCallback = function minPointSizeCallback2(minPointSize) {
-  var defaultValue = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 0;
-  return function(value, index2) {
-    if (typeof minPointSize === "number") return minPointSize;
-    var isValueNumberOrNil = isNumber$2(value) || isNullish(value);
-    if (isValueNumberOrNil) {
-      return minPointSize(value, index2);
-    }
-    !isValueNumberOrNil ? invariant$1(false) : void 0;
-    return defaultValue;
-  };
-};
-var _excluded$5 = ["value", "background"];
-var _Bar;
-function _typeof$e(o) {
-  "@babel/helpers - typeof";
-  return _typeof$e = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
-    return typeof o2;
-  } : function(o2) {
-    return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$e(o);
 }
 function _objectWithoutProperties$5(source, excluded) {
   if (source == null) return {};
@@ -73251,8 +72488,84 @@ function _objectWithoutPropertiesLoose$5(source, excluded) {
   }
   return target;
 }
-function _extends$a() {
-  _extends$a = Object.assign ? Object.assign.bind() : function(target) {
+function typeguardBarRectangleProps(_ref, props) {
+  var xProp = _ref.x, yProp = _ref.y, option = _objectWithoutProperties$5(_ref, _excluded$5);
+  var xValue = "".concat(xProp);
+  var x2 = parseInt(xValue, 10);
+  var yValue = "".concat(yProp);
+  var y2 = parseInt(yValue, 10);
+  var heightValue = "".concat(props.height || option.height);
+  var height = parseInt(heightValue, 10);
+  var widthValue = "".concat(props.width || option.width);
+  var width = parseInt(widthValue, 10);
+  return _objectSpread$b(_objectSpread$b(_objectSpread$b(_objectSpread$b(_objectSpread$b({}, props), option), x2 ? {
+    x: x2
+  } : {}), y2 ? {
+    y: y2
+  } : {}), {}, {
+    height,
+    width,
+    name: props.name,
+    radius: props.radius
+  });
+}
+function BarRectangle(props) {
+  return /* @__PURE__ */ React$4.createElement(Shape, _extends$a({
+    shapeType: "rectangle",
+    propTransformer: typeguardBarRectangleProps,
+    activeClassName: "recharts-active-bar"
+  }, props));
+}
+var minPointSizeCallback = function minPointSizeCallback2(minPointSize) {
+  var defaultValue = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 0;
+  return function(value, index2) {
+    if (typeof minPointSize === "number") return minPointSize;
+    var isValueNumberOrNil = isNumber$2(value) || isNullish(value);
+    if (isValueNumberOrNil) {
+      return minPointSize(value, index2);
+    }
+    !isValueNumberOrNil ? invariant$1(false) : void 0;
+    return defaultValue;
+  };
+};
+var _excluded$4 = ["value", "background"];
+var _Bar;
+function _typeof$d(o) {
+  "@babel/helpers - typeof";
+  return _typeof$d = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+    return typeof o2;
+  } : function(o2) {
+    return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
+  }, _typeof$d(o);
+}
+function _objectWithoutProperties$4(source, excluded) {
+  if (source == null) return {};
+  var target = _objectWithoutPropertiesLoose$4(source, excluded);
+  var key, i;
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+function _objectWithoutPropertiesLoose$4(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  for (var key in source) {
+    if (Object.prototype.hasOwnProperty.call(source, key)) {
+      if (excluded.indexOf(key) >= 0) continue;
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+function _extends$9() {
+  _extends$9 = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -73263,9 +72576,9 @@ function _extends$a() {
     }
     return target;
   };
-  return _extends$a.apply(this, arguments);
+  return _extends$9.apply(this, arguments);
 }
-function ownKeys$b(e3, r2) {
+function ownKeys$a(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -73275,87 +72588,87 @@ function ownKeys$b(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$b(e3) {
+function _objectSpread$a(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$b(Object(t2), true).forEach(function(r3) {
-      _defineProperty$e(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$b(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$a(Object(t2), true).forEach(function(r3) {
+      _defineProperty$d(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$a(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _classCallCheck$b(instance, Constructor) {
+function _classCallCheck$a(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-function _defineProperties$b(target, props) {
+function _defineProperties$a(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$e(descriptor.key), descriptor);
+    Object.defineProperty(target, _toPropertyKey$d(descriptor.key), descriptor);
   }
 }
-function _createClass$b(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$b(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties$b(Constructor, staticProps);
+function _createClass$a(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$a(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties$a(Constructor, staticProps);
   Object.defineProperty(Constructor, "prototype", { writable: false });
   return Constructor;
 }
-function _callSuper$9(t2, o, e3) {
-  return o = _getPrototypeOf$9(o), _possibleConstructorReturn$9(t2, _isNativeReflectConstruct$9() ? Reflect.construct(o, e3 || [], _getPrototypeOf$9(t2).constructor) : o.apply(t2, e3));
+function _callSuper$8(t2, o, e3) {
+  return o = _getPrototypeOf$8(o), _possibleConstructorReturn$8(t2, _isNativeReflectConstruct$8() ? Reflect.construct(o, e3 || [], _getPrototypeOf$8(t2).constructor) : o.apply(t2, e3));
 }
-function _possibleConstructorReturn$9(self2, call) {
-  if (call && (_typeof$e(call) === "object" || typeof call === "function")) {
+function _possibleConstructorReturn$8(self2, call) {
+  if (call && (_typeof$d(call) === "object" || typeof call === "function")) {
     return call;
   } else if (call !== void 0) {
     throw new TypeError("Derived constructors may only return object or undefined");
   }
-  return _assertThisInitialized$9(self2);
+  return _assertThisInitialized$8(self2);
 }
-function _assertThisInitialized$9(self2) {
+function _assertThisInitialized$8(self2) {
   if (self2 === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
   return self2;
 }
-function _isNativeReflectConstruct$9() {
+function _isNativeReflectConstruct$8() {
   try {
     var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
     }));
   } catch (t3) {
   }
-  return (_isNativeReflectConstruct$9 = function _isNativeReflectConstruct2() {
+  return (_isNativeReflectConstruct$8 = function _isNativeReflectConstruct2() {
     return !!t2;
   })();
 }
-function _getPrototypeOf$9(o) {
-  _getPrototypeOf$9 = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
+function _getPrototypeOf$8(o) {
+  _getPrototypeOf$8 = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
     return o2.__proto__ || Object.getPrototypeOf(o2);
   };
-  return _getPrototypeOf$9(o);
+  return _getPrototypeOf$8(o);
 }
-function _inherits$9(subClass, superClass) {
+function _inherits$8(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
   }
   subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
   Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$9(subClass, superClass);
+  if (superClass) _setPrototypeOf$8(subClass, superClass);
 }
-function _setPrototypeOf$9(o, p2) {
-  _setPrototypeOf$9 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
+function _setPrototypeOf$8(o, p2) {
+  _setPrototypeOf$8 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
     o2.__proto__ = p3;
     return o2;
   };
-  return _setPrototypeOf$9(o, p2);
+  return _setPrototypeOf$8(o, p2);
 }
-function _defineProperty$e(obj, key, value) {
-  key = _toPropertyKey$e(key);
+function _defineProperty$d(obj, key, value) {
+  key = _toPropertyKey$d(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -73363,16 +72676,16 @@ function _defineProperty$e(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$e(t2) {
-  var i = _toPrimitive$e(t2, "string");
-  return "symbol" == _typeof$e(i) ? i : i + "";
+function _toPropertyKey$d(t2) {
+  var i = _toPrimitive$d(t2, "string");
+  return "symbol" == _typeof$d(i) ? i : i + "";
 }
-function _toPrimitive$e(t2, r2) {
-  if ("object" != _typeof$e(t2) || !t2) return t2;
+function _toPrimitive$d(t2, r2) {
+  if ("object" != _typeof$d(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$e(i)) return i;
+    if ("object" != _typeof$d(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return String(t2);
@@ -73380,16 +72693,16 @@ function _toPrimitive$e(t2, r2) {
 var Bar = /* @__PURE__ */ function(_PureComponent) {
   function Bar2() {
     var _this;
-    _classCallCheck$b(this, Bar2);
+    _classCallCheck$a(this, Bar2);
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
-    _this = _callSuper$9(this, Bar2, [].concat(args));
-    _defineProperty$e(_this, "state", {
+    _this = _callSuper$8(this, Bar2, [].concat(args));
+    _defineProperty$d(_this, "state", {
       isAnimationFinished: false
     });
-    _defineProperty$e(_this, "id", uniqueId("recharts-bar-"));
-    _defineProperty$e(_this, "handleAnimationEnd", function() {
+    _defineProperty$d(_this, "id", uniqueId("recharts-bar-"));
+    _defineProperty$d(_this, "handleAnimationEnd", function() {
       var onAnimationEnd2 = _this.props.onAnimationEnd;
       _this.setState({
         isAnimationFinished: true
@@ -73398,7 +72711,7 @@ var Bar = /* @__PURE__ */ function(_PureComponent) {
         onAnimationEnd2();
       }
     });
-    _defineProperty$e(_this, "handleAnimationStart", function() {
+    _defineProperty$d(_this, "handleAnimationStart", function() {
       var onAnimationStart2 = _this.props.onAnimationStart;
       _this.setState({
         isAnimationFinished: false
@@ -73409,8 +72722,8 @@ var Bar = /* @__PURE__ */ function(_PureComponent) {
     });
     return _this;
   }
-  _inherits$9(Bar2, _PureComponent);
-  return _createClass$b(Bar2, [{
+  _inherits$8(Bar2, _PureComponent);
+  return _createClass$a(Bar2, [{
     key: "renderRectanglesStatically",
     value: function renderRectanglesStatically(data) {
       var _this2 = this;
@@ -73419,7 +72732,7 @@ var Bar = /* @__PURE__ */ function(_PureComponent) {
       return data && data.map(function(entry, i) {
         var isActive2 = i === activeIndex;
         var option = isActive2 ? activeBar : shape;
-        var props = _objectSpread$b(_objectSpread$b(_objectSpread$b({}, baseProps), entry), {}, {
+        var props = _objectSpread$a(_objectSpread$a(_objectSpread$a({}, baseProps), entry), {}, {
           isActive: isActive2,
           option,
           index: i,
@@ -73427,7 +72740,7 @@ var Bar = /* @__PURE__ */ function(_PureComponent) {
           onAnimationStart: _this2.handleAnimationStart,
           onAnimationEnd: _this2.handleAnimationEnd
         });
-        return /* @__PURE__ */ React$4.createElement(Layer, _extends$a({
+        return /* @__PURE__ */ React$4.createElement(Layer, _extends$9({
           className: "recharts-bar-rectangle"
         }, adaptEventsOfChild(_this2.props, entry, i), {
           // https://github.com/recharts/recharts/issues/5415
@@ -73465,7 +72778,7 @@ var Bar = /* @__PURE__ */ function(_PureComponent) {
             var interpolatorY = interpolateNumber$2(prev.y, entry.y);
             var interpolatorWidth = interpolateNumber$2(prev.width, entry.width);
             var interpolatorHeight = interpolateNumber$2(prev.height, entry.height);
-            return _objectSpread$b(_objectSpread$b({}, entry), {}, {
+            return _objectSpread$a(_objectSpread$a({}, entry), {}, {
               x: interpolatorX(t2),
               y: interpolatorY(t2),
               width: interpolatorWidth(t2),
@@ -73475,14 +72788,14 @@ var Bar = /* @__PURE__ */ function(_PureComponent) {
           if (layout2 === "horizontal") {
             var _interpolatorHeight = interpolateNumber$2(0, entry.height);
             var h2 = _interpolatorHeight(t2);
-            return _objectSpread$b(_objectSpread$b({}, entry), {}, {
+            return _objectSpread$a(_objectSpread$a({}, entry), {}, {
               y: entry.y + entry.height - h2,
               height: h2
             });
           }
           var interpolator = interpolateNumber$2(0, entry.width);
           var w = interpolator(t2);
-          return _objectSpread$b(_objectSpread$b({}, entry), {}, {
+          return _objectSpread$a(_objectSpread$a({}, entry), {}, {
             width: w
           });
         });
@@ -73507,11 +72820,11 @@ var Bar = /* @__PURE__ */ function(_PureComponent) {
       var backgroundProps = filterProps(this.props.background, false);
       return data.map(function(entry, i) {
         entry.value;
-        var background = entry.background, rest = _objectWithoutProperties$5(entry, _excluded$5);
+        var background = entry.background, rest = _objectWithoutProperties$4(entry, _excluded$4);
         if (!background) {
           return null;
         }
-        var props = _objectSpread$b(_objectSpread$b(_objectSpread$b(_objectSpread$b(_objectSpread$b({}, rest), {}, {
+        var props = _objectSpread$a(_objectSpread$a(_objectSpread$a(_objectSpread$a(_objectSpread$a({}, rest), {}, {
           fill: "#eee"
         }, background), backgroundProps), adaptEventsOfChild(_this4.props, entry, i)), {}, {
           onAnimationStart: _this4.handleAnimationStart,
@@ -73520,7 +72833,7 @@ var Bar = /* @__PURE__ */ function(_PureComponent) {
           index: i,
           className: "recharts-bar-background-rectangle"
         });
-        return /* @__PURE__ */ React$4.createElement(BarRectangle, _extends$a({
+        return /* @__PURE__ */ React$4.createElement(BarRectangle, _extends$9({
           key: "background-bar-".concat(i),
           option: _this4.props.background,
           isActive: i === activeIndex
@@ -73610,8 +72923,8 @@ var Bar = /* @__PURE__ */ function(_PureComponent) {
   }]);
 }(reactExports.PureComponent);
 _Bar = Bar;
-_defineProperty$e(Bar, "displayName", "Bar");
-_defineProperty$e(Bar, "defaultProps", {
+_defineProperty$d(Bar, "displayName", "Bar");
+_defineProperty$d(Bar, "defaultProps", {
   xAxisId: 0,
   yAxisId: 0,
   legendType: "rect",
@@ -73625,7 +72938,7 @@ _defineProperty$e(Bar, "defaultProps", {
   animationDuration: 400,
   animationEasing: "ease"
 });
-_defineProperty$e(Bar, "getComposedData", function(_ref2) {
+_defineProperty$d(Bar, "getComposedData", function(_ref2) {
   var props = _ref2.props, item = _ref2.item, barPosition = _ref2.barPosition, bandSize = _ref2.bandSize, xAxis = _ref2.xAxis, yAxis = _ref2.yAxis, xAxisTicks = _ref2.xAxisTicks, yAxisTicks = _ref2.yAxisTicks, stackedData = _ref2.stackedData, dataStartIndex = _ref2.dataStartIndex, displayedData = _ref2.displayedData, offset2 = _ref2.offset;
   var pos = findPositionOfBar(barPosition, item);
   if (!pos) {
@@ -73633,7 +72946,7 @@ _defineProperty$e(Bar, "getComposedData", function(_ref2) {
   }
   var layout2 = props.layout;
   var itemDefaultProps = item.type.defaultProps;
-  var itemProps = itemDefaultProps !== void 0 ? _objectSpread$b(_objectSpread$b({}, itemDefaultProps), item.props) : item.props;
+  var itemProps = itemDefaultProps !== void 0 ? _objectSpread$a(_objectSpread$a({}, itemDefaultProps), item.props) : item.props;
   var dataKey = itemProps.dataKey, children = itemProps.children, minPointSizeProp = itemProps.minPointSize;
   var numericAxis = layout2 === "horizontal" ? yAxis : xAxis;
   var stackedDomain = stackedData ? numericAxis.scale.domain() : null;
@@ -73702,7 +73015,7 @@ _defineProperty$e(Bar, "getComposedData", function(_ref2) {
         width += _delta;
       }
     }
-    return _objectSpread$b(_objectSpread$b(_objectSpread$b({}, entry), {}, {
+    return _objectSpread$a(_objectSpread$a(_objectSpread$a({}, entry), {}, {
       x: x2,
       y: y2,
       width,
@@ -73718,40 +73031,40 @@ _defineProperty$e(Bar, "getComposedData", function(_ref2) {
       }
     });
   });
-  return _objectSpread$b({
+  return _objectSpread$a({
     data: rects,
     layout: layout2
   }, offset2);
 });
-function _typeof$d(o) {
+function _typeof$c(o) {
   "@babel/helpers - typeof";
-  return _typeof$d = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$c = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$d(o);
+  }, _typeof$c(o);
 }
-function _classCallCheck$a(instance, Constructor) {
+function _classCallCheck$9(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-function _defineProperties$a(target, props) {
+function _defineProperties$9(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$d(descriptor.key), descriptor);
+    Object.defineProperty(target, _toPropertyKey$c(descriptor.key), descriptor);
   }
 }
-function _createClass$a(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$a(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties$a(Constructor, staticProps);
+function _createClass$9(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$9(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties$9(Constructor, staticProps);
   Object.defineProperty(Constructor, "prototype", { writable: false });
   return Constructor;
 }
-function ownKeys$a(e3, r2) {
+function ownKeys$9(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -73761,19 +73074,19 @@ function ownKeys$a(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$a(e3) {
+function _objectSpread$9(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$a(Object(t2), true).forEach(function(r3) {
-      _defineProperty$d(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$a(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$9(Object(t2), true).forEach(function(r3) {
+      _defineProperty$c(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$9(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$d(obj, key, value) {
-  key = _toPropertyKey$d(key);
+function _defineProperty$c(obj, key, value) {
+  key = _toPropertyKey$c(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -73781,16 +73094,16 @@ function _defineProperty$d(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$d(t2) {
-  var i = _toPrimitive$d(t2, "string");
-  return "symbol" == _typeof$d(i) ? i : i + "";
+function _toPropertyKey$c(t2) {
+  var i = _toPrimitive$c(t2, "string");
+  return "symbol" == _typeof$c(i) ? i : i + "";
 }
-function _toPrimitive$d(t2, r2) {
-  if ("object" != _typeof$d(t2) || !t2) return t2;
+function _toPrimitive$c(t2, r2) {
+  if ("object" != _typeof$c(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$d(i)) return i;
+    if ("object" != _typeof$c(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
@@ -73849,7 +73162,7 @@ var formatAxisMap2 = function formatAxisMap3(props, axisMap, offset2, axisType, 
     var _parseScale = parseScale(axis, chartName, hasBar), scale2 = _parseScale.scale, realScaleType = _parseScale.realScaleType;
     scale2.domain(domain).range(range3);
     checkDomainOfScale(scale2);
-    var ticks2 = getTicksOfScale(scale2, _objectSpread$a(_objectSpread$a({}, axis), {}, {
+    var ticks2 = getTicksOfScale(scale2, _objectSpread$9(_objectSpread$9({}, axis), {}, {
       realScaleType
     }));
     if (axisType === "xAxis") {
@@ -73861,7 +73174,7 @@ var formatAxisMap2 = function formatAxisMap3(props, axisMap, offset2, axisType, 
       x2 = steps[offsetKey] - needSpace * axis.width;
       y2 = offset2.top;
     }
-    var finalAxis = _objectSpread$a(_objectSpread$a(_objectSpread$a({}, axis), ticks2), {}, {
+    var finalAxis = _objectSpread$9(_objectSpread$9(_objectSpread$9({}, axis), ticks2), {}, {
       realScaleType,
       x: x2,
       y: y2,
@@ -73875,7 +73188,7 @@ var formatAxisMap2 = function formatAxisMap3(props, axisMap, offset2, axisType, 
     } else if (!axis.hide) {
       steps[offsetKey] += (needSpace ? -1 : 1) * finalAxis.width;
     }
-    return _objectSpread$a(_objectSpread$a({}, result), {}, _defineProperty$d({}, id2, finalAxis));
+    return _objectSpread$9(_objectSpread$9({}, result), {}, _defineProperty$c({}, id2, finalAxis));
   }, {});
 };
 var rectWithPoints = function rectWithPoints2(_ref, _ref2) {
@@ -73900,10 +73213,10 @@ var rectWithCoords = function rectWithCoords2(_ref3) {
 };
 var ScaleHelper = /* @__PURE__ */ function() {
   function ScaleHelper2(scale2) {
-    _classCallCheck$a(this, ScaleHelper2);
+    _classCallCheck$9(this, ScaleHelper2);
     this.scale = scale2;
   }
-  return _createClass$a(ScaleHelper2, [{
+  return _createClass$9(ScaleHelper2, [{
     key: "domain",
     get: function get3() {
       return this.scale.domain;
@@ -73974,12 +73287,12 @@ var ScaleHelper = /* @__PURE__ */ function() {
     }
   }]);
 }();
-_defineProperty$d(ScaleHelper, "EPS", 1e-4);
+_defineProperty$c(ScaleHelper, "EPS", 1e-4);
 var createLabeledScales = function createLabeledScales2(options) {
   var scales = Object.keys(options).reduce(function(res, key) {
-    return _objectSpread$a(_objectSpread$a({}, res), {}, _defineProperty$d({}, key, ScaleHelper.create(options[key])));
+    return _objectSpread$9(_objectSpread$9({}, res), {}, _defineProperty$c({}, key, ScaleHelper.create(options[key])));
   }, {});
-  return _objectSpread$a(_objectSpread$a({}, scales), {}, {
+  return _objectSpread$9(_objectSpread$9({}, scales), {}, {
     apply: function apply2(coord) {
       var _ref5 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, bandAware = _ref5.bandAware, position = _ref5.position;
       return mapValues$1(coord, function(value, label) {
@@ -74125,82 +73438,82 @@ var useChartWidth = function useChartWidth2() {
 var useChartHeight = function useChartHeight2() {
   return reactExports.useContext(ChartHeightContext);
 };
-function _typeof$c(o) {
+function _typeof$b(o) {
   "@babel/helpers - typeof";
-  return _typeof$c = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$b = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$c(o);
+  }, _typeof$b(o);
 }
-function _classCallCheck$9(instance, Constructor) {
+function _classCallCheck$8(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-function _defineProperties$9(target, props) {
+function _defineProperties$8(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$c(descriptor.key), descriptor);
+    Object.defineProperty(target, _toPropertyKey$b(descriptor.key), descriptor);
   }
 }
-function _createClass$9(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$9(Constructor.prototype, protoProps);
+function _createClass$8(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$8(Constructor.prototype, protoProps);
   Object.defineProperty(Constructor, "prototype", { writable: false });
   return Constructor;
 }
-function _callSuper$8(t2, o, e3) {
-  return o = _getPrototypeOf$8(o), _possibleConstructorReturn$8(t2, _isNativeReflectConstruct$8() ? Reflect.construct(o, e3 || [], _getPrototypeOf$8(t2).constructor) : o.apply(t2, e3));
+function _callSuper$7(t2, o, e3) {
+  return o = _getPrototypeOf$7(o), _possibleConstructorReturn$7(t2, _isNativeReflectConstruct$7() ? Reflect.construct(o, e3 || [], _getPrototypeOf$7(t2).constructor) : o.apply(t2, e3));
 }
-function _possibleConstructorReturn$8(self2, call) {
-  if (call && (_typeof$c(call) === "object" || typeof call === "function")) {
+function _possibleConstructorReturn$7(self2, call) {
+  if (call && (_typeof$b(call) === "object" || typeof call === "function")) {
     return call;
   } else if (call !== void 0) {
     throw new TypeError("Derived constructors may only return object or undefined");
   }
-  return _assertThisInitialized$8(self2);
+  return _assertThisInitialized$7(self2);
 }
-function _assertThisInitialized$8(self2) {
+function _assertThisInitialized$7(self2) {
   if (self2 === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
   return self2;
 }
-function _isNativeReflectConstruct$8() {
+function _isNativeReflectConstruct$7() {
   try {
     var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
     }));
   } catch (t3) {
   }
-  return (_isNativeReflectConstruct$8 = function _isNativeReflectConstruct2() {
+  return (_isNativeReflectConstruct$7 = function _isNativeReflectConstruct2() {
     return !!t2;
   })();
 }
-function _getPrototypeOf$8(o) {
-  _getPrototypeOf$8 = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
+function _getPrototypeOf$7(o) {
+  _getPrototypeOf$7 = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
     return o2.__proto__ || Object.getPrototypeOf(o2);
   };
-  return _getPrototypeOf$8(o);
+  return _getPrototypeOf$7(o);
 }
-function _inherits$8(subClass, superClass) {
+function _inherits$7(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
   }
   subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
   Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$8(subClass, superClass);
+  if (superClass) _setPrototypeOf$7(subClass, superClass);
 }
-function _setPrototypeOf$8(o, p2) {
-  _setPrototypeOf$8 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
+function _setPrototypeOf$7(o, p2) {
+  _setPrototypeOf$7 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
     o2.__proto__ = p3;
     return o2;
   };
-  return _setPrototypeOf$8(o, p2);
+  return _setPrototypeOf$7(o, p2);
 }
-function ownKeys$9(e3, r2) {
+function ownKeys$8(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -74210,19 +73523,19 @@ function ownKeys$9(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$9(e3) {
+function _objectSpread$8(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$9(Object(t2), true).forEach(function(r3) {
-      _defineProperty$c(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$9(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$8(Object(t2), true).forEach(function(r3) {
+      _defineProperty$b(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$8(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$c(obj, key, value) {
-  key = _toPropertyKey$c(key);
+function _defineProperty$b(obj, key, value) {
+  key = _toPropertyKey$b(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -74230,16 +73543,16 @@ function _defineProperty$c(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$c(t2) {
-  var i = _toPrimitive$c(t2, "string");
-  return "symbol" == _typeof$c(i) ? i : i + "";
+function _toPropertyKey$b(t2) {
+  var i = _toPrimitive$b(t2, "string");
+  return "symbol" == _typeof$b(i) ? i : i + "";
 }
-function _toPrimitive$c(t2, r2) {
-  if ("object" != _typeof$c(t2) || !t2) return t2;
+function _toPrimitive$b(t2, r2) {
+  if ("object" != _typeof$b(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$c(i)) return i;
+    if ("object" != _typeof$b(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return String(t2);
@@ -74285,8 +73598,8 @@ function _iterableToArrayLimit$1(r2, l2) {
 function _arrayWithHoles$1(arr) {
   if (Array.isArray(arr)) return arr;
 }
-function _extends$9() {
-  _extends$9 = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$8() {
+  _extends$8 = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -74297,7 +73610,7 @@ function _extends$9() {
     }
     return target;
   };
-  return _extends$9.apply(this, arguments);
+  return _extends$8.apply(this, arguments);
 }
 var renderLine = function renderLine2(option, props) {
   var line;
@@ -74306,7 +73619,7 @@ var renderLine = function renderLine2(option, props) {
   } else if (isFunction$5(option)) {
     line = option(props);
   } else {
-    line = /* @__PURE__ */ React$4.createElement("line", _extends$9({}, props, {
+    line = /* @__PURE__ */ React$4.createElement("line", _extends$8({}, props, {
       className: "recharts-reference-line-line"
     }));
   }
@@ -74387,7 +73700,7 @@ function ReferenceLineImpl(props) {
   }
   var _endPoints = _slicedToArray$1(endPoints, 2), _endPoints$ = _endPoints[0], x1 = _endPoints$.x, y1 = _endPoints$.y, _endPoints$2 = _endPoints[1], x2 = _endPoints$2.x, y2 = _endPoints$2.y;
   var clipPath = ifOverflowMatches(props, "hidden") ? "url(#".concat(clipPathId, ")") : void 0;
-  var lineProps = _objectSpread$9(_objectSpread$9({
+  var lineProps = _objectSpread$8(_objectSpread$8({
     clipPath
   }, filterProps(props, true)), {}, {
     x1,
@@ -74406,19 +73719,19 @@ function ReferenceLineImpl(props) {
 }
 var ReferenceLine = /* @__PURE__ */ function(_React$Component) {
   function ReferenceLine2() {
-    _classCallCheck$9(this, ReferenceLine2);
-    return _callSuper$8(this, ReferenceLine2, arguments);
+    _classCallCheck$8(this, ReferenceLine2);
+    return _callSuper$7(this, ReferenceLine2, arguments);
   }
-  _inherits$8(ReferenceLine2, _React$Component);
-  return _createClass$9(ReferenceLine2, [{
+  _inherits$7(ReferenceLine2, _React$Component);
+  return _createClass$8(ReferenceLine2, [{
     key: "render",
     value: function render() {
       return /* @__PURE__ */ React$4.createElement(ReferenceLineImpl, this.props);
     }
   }]);
 }(React$4.Component);
-_defineProperty$c(ReferenceLine, "displayName", "ReferenceLine");
-_defineProperty$c(ReferenceLine, "defaultProps", {
+_defineProperty$b(ReferenceLine, "displayName", "ReferenceLine");
+_defineProperty$b(ReferenceLine, "defaultProps", {
   isFront: false,
   ifOverflow: "discard",
   xAxisId: 0,
@@ -74428,223 +73741,6 @@ _defineProperty$c(ReferenceLine, "defaultProps", {
   fillOpacity: 1,
   strokeWidth: 1,
   position: "middle"
-});
-function _extends$8() {
-  _extends$8 = Object.assign ? Object.assign.bind() : function(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-    return target;
-  };
-  return _extends$8.apply(this, arguments);
-}
-function _typeof$b(o) {
-  "@babel/helpers - typeof";
-  return _typeof$b = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
-    return typeof o2;
-  } : function(o2) {
-    return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$b(o);
-}
-function ownKeys$8(e3, r2) {
-  var t2 = Object.keys(e3);
-  if (Object.getOwnPropertySymbols) {
-    var o = Object.getOwnPropertySymbols(e3);
-    r2 && (o = o.filter(function(r3) {
-      return Object.getOwnPropertyDescriptor(e3, r3).enumerable;
-    })), t2.push.apply(t2, o);
-  }
-  return t2;
-}
-function _objectSpread$8(e3) {
-  for (var r2 = 1; r2 < arguments.length; r2++) {
-    var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$8(Object(t2), true).forEach(function(r3) {
-      _defineProperty$b(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$8(Object(t2)).forEach(function(r3) {
-      Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
-    });
-  }
-  return e3;
-}
-function _classCallCheck$8(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-function _defineProperties$8(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$b(descriptor.key), descriptor);
-  }
-}
-function _createClass$8(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$8(Constructor.prototype, protoProps);
-  Object.defineProperty(Constructor, "prototype", { writable: false });
-  return Constructor;
-}
-function _callSuper$7(t2, o, e3) {
-  return o = _getPrototypeOf$7(o), _possibleConstructorReturn$7(t2, _isNativeReflectConstruct$7() ? Reflect.construct(o, e3 || [], _getPrototypeOf$7(t2).constructor) : o.apply(t2, e3));
-}
-function _possibleConstructorReturn$7(self2, call) {
-  if (call && (_typeof$b(call) === "object" || typeof call === "function")) {
-    return call;
-  } else if (call !== void 0) {
-    throw new TypeError("Derived constructors may only return object or undefined");
-  }
-  return _assertThisInitialized$7(self2);
-}
-function _assertThisInitialized$7(self2) {
-  if (self2 === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-  return self2;
-}
-function _isNativeReflectConstruct$7() {
-  try {
-    var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
-    }));
-  } catch (t3) {
-  }
-  return (_isNativeReflectConstruct$7 = function _isNativeReflectConstruct2() {
-    return !!t2;
-  })();
-}
-function _getPrototypeOf$7(o) {
-  _getPrototypeOf$7 = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
-    return o2.__proto__ || Object.getPrototypeOf(o2);
-  };
-  return _getPrototypeOf$7(o);
-}
-function _inherits$7(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-  subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
-  Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$7(subClass, superClass);
-}
-function _setPrototypeOf$7(o, p2) {
-  _setPrototypeOf$7 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
-    o2.__proto__ = p3;
-    return o2;
-  };
-  return _setPrototypeOf$7(o, p2);
-}
-function _defineProperty$b(obj, key, value) {
-  key = _toPropertyKey$b(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
-function _toPropertyKey$b(t2) {
-  var i = _toPrimitive$b(t2, "string");
-  return "symbol" == _typeof$b(i) ? i : i + "";
-}
-function _toPrimitive$b(t2, r2) {
-  if ("object" != _typeof$b(t2) || !t2) return t2;
-  var e3 = t2[Symbol.toPrimitive];
-  if (void 0 !== e3) {
-    var i = e3.call(t2, r2);
-    if ("object" != _typeof$b(i)) return i;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return String(t2);
-}
-var getCoordinate = function getCoordinate2(props) {
-  var x2 = props.x, y2 = props.y, xAxis = props.xAxis, yAxis = props.yAxis;
-  var scales = createLabeledScales({
-    x: xAxis.scale,
-    y: yAxis.scale
-  });
-  var result = scales.apply({
-    x: x2,
-    y: y2
-  }, {
-    bandAware: true
-  });
-  if (ifOverflowMatches(props, "discard") && !scales.isInRange(result)) {
-    return null;
-  }
-  return result;
-};
-var ReferenceDot = /* @__PURE__ */ function(_React$Component) {
-  function ReferenceDot2() {
-    _classCallCheck$8(this, ReferenceDot2);
-    return _callSuper$7(this, ReferenceDot2, arguments);
-  }
-  _inherits$7(ReferenceDot2, _React$Component);
-  return _createClass$8(ReferenceDot2, [{
-    key: "render",
-    value: function render() {
-      var _this$props = this.props, x2 = _this$props.x, y2 = _this$props.y, r2 = _this$props.r, alwaysShow = _this$props.alwaysShow, clipPathId = _this$props.clipPathId;
-      var isX = isNumOrStr(x2);
-      var isY = isNumOrStr(y2);
-      warn(alwaysShow === void 0, 'The alwaysShow prop is deprecated. Please use ifOverflow="extendDomain" instead.');
-      if (!isX || !isY) {
-        return null;
-      }
-      var coordinate = getCoordinate(this.props);
-      if (!coordinate) {
-        return null;
-      }
-      var cx2 = coordinate.x, cy = coordinate.y;
-      var _this$props2 = this.props, shape = _this$props2.shape, className = _this$props2.className;
-      var clipPath = ifOverflowMatches(this.props, "hidden") ? "url(#".concat(clipPathId, ")") : void 0;
-      var dotProps = _objectSpread$8(_objectSpread$8({
-        clipPath
-      }, filterProps(this.props, true)), {}, {
-        cx: cx2,
-        cy
-      });
-      return /* @__PURE__ */ React$4.createElement(Layer, {
-        className: clsx("recharts-reference-dot", className)
-      }, ReferenceDot2.renderDot(shape, dotProps), Label.renderCallByParent(this.props, {
-        x: cx2 - r2,
-        y: cy - r2,
-        width: 2 * r2,
-        height: 2 * r2
-      }));
-    }
-  }]);
-}(React$4.Component);
-_defineProperty$b(ReferenceDot, "displayName", "ReferenceDot");
-_defineProperty$b(ReferenceDot, "defaultProps", {
-  isFront: false,
-  ifOverflow: "discard",
-  xAxisId: 0,
-  yAxisId: 0,
-  r: 10,
-  fill: "#fff",
-  stroke: "#ccc",
-  fillOpacity: 1,
-  strokeWidth: 1
-});
-_defineProperty$b(ReferenceDot, "renderDot", function(option, props) {
-  var dot;
-  if (/* @__PURE__ */ React$4.isValidElement(option)) {
-    dot = /* @__PURE__ */ React$4.cloneElement(option, props);
-  } else if (isFunction$5(option)) {
-    dot = option(props);
-  } else {
-    dot = /* @__PURE__ */ React$4.createElement(Dot, _extends$8({}, props, {
-      cx: props.cx,
-      cy: props.cy,
-      className: "recharts-reference-dot-dot"
-    }));
-  }
-  return dot;
 });
 function _extends$7() {
   _extends$7 = Object.assign ? Object.assign.bind() : function(target) {
@@ -74779,6 +73875,223 @@ function _toPrimitive$a(t2, r2) {
   }
   return String(t2);
 }
+var getCoordinate = function getCoordinate2(props) {
+  var x2 = props.x, y2 = props.y, xAxis = props.xAxis, yAxis = props.yAxis;
+  var scales = createLabeledScales({
+    x: xAxis.scale,
+    y: yAxis.scale
+  });
+  var result = scales.apply({
+    x: x2,
+    y: y2
+  }, {
+    bandAware: true
+  });
+  if (ifOverflowMatches(props, "discard") && !scales.isInRange(result)) {
+    return null;
+  }
+  return result;
+};
+var ReferenceDot = /* @__PURE__ */ function(_React$Component) {
+  function ReferenceDot2() {
+    _classCallCheck$7(this, ReferenceDot2);
+    return _callSuper$6(this, ReferenceDot2, arguments);
+  }
+  _inherits$6(ReferenceDot2, _React$Component);
+  return _createClass$7(ReferenceDot2, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props, x2 = _this$props.x, y2 = _this$props.y, r2 = _this$props.r, alwaysShow = _this$props.alwaysShow, clipPathId = _this$props.clipPathId;
+      var isX = isNumOrStr(x2);
+      var isY = isNumOrStr(y2);
+      warn(alwaysShow === void 0, 'The alwaysShow prop is deprecated. Please use ifOverflow="extendDomain" instead.');
+      if (!isX || !isY) {
+        return null;
+      }
+      var coordinate = getCoordinate(this.props);
+      if (!coordinate) {
+        return null;
+      }
+      var cx2 = coordinate.x, cy = coordinate.y;
+      var _this$props2 = this.props, shape = _this$props2.shape, className = _this$props2.className;
+      var clipPath = ifOverflowMatches(this.props, "hidden") ? "url(#".concat(clipPathId, ")") : void 0;
+      var dotProps = _objectSpread$7(_objectSpread$7({
+        clipPath
+      }, filterProps(this.props, true)), {}, {
+        cx: cx2,
+        cy
+      });
+      return /* @__PURE__ */ React$4.createElement(Layer, {
+        className: clsx("recharts-reference-dot", className)
+      }, ReferenceDot2.renderDot(shape, dotProps), Label.renderCallByParent(this.props, {
+        x: cx2 - r2,
+        y: cy - r2,
+        width: 2 * r2,
+        height: 2 * r2
+      }));
+    }
+  }]);
+}(React$4.Component);
+_defineProperty$a(ReferenceDot, "displayName", "ReferenceDot");
+_defineProperty$a(ReferenceDot, "defaultProps", {
+  isFront: false,
+  ifOverflow: "discard",
+  xAxisId: 0,
+  yAxisId: 0,
+  r: 10,
+  fill: "#fff",
+  stroke: "#ccc",
+  fillOpacity: 1,
+  strokeWidth: 1
+});
+_defineProperty$a(ReferenceDot, "renderDot", function(option, props) {
+  var dot;
+  if (/* @__PURE__ */ React$4.isValidElement(option)) {
+    dot = /* @__PURE__ */ React$4.cloneElement(option, props);
+  } else if (isFunction$5(option)) {
+    dot = option(props);
+  } else {
+    dot = /* @__PURE__ */ React$4.createElement(Dot, _extends$7({}, props, {
+      cx: props.cx,
+      cy: props.cy,
+      className: "recharts-reference-dot-dot"
+    }));
+  }
+  return dot;
+});
+function _extends$6() {
+  _extends$6 = Object.assign ? Object.assign.bind() : function(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends$6.apply(this, arguments);
+}
+function _typeof$9(o) {
+  "@babel/helpers - typeof";
+  return _typeof$9 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+    return typeof o2;
+  } : function(o2) {
+    return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
+  }, _typeof$9(o);
+}
+function ownKeys$6(e3, r2) {
+  var t2 = Object.keys(e3);
+  if (Object.getOwnPropertySymbols) {
+    var o = Object.getOwnPropertySymbols(e3);
+    r2 && (o = o.filter(function(r3) {
+      return Object.getOwnPropertyDescriptor(e3, r3).enumerable;
+    })), t2.push.apply(t2, o);
+  }
+  return t2;
+}
+function _objectSpread$6(e3) {
+  for (var r2 = 1; r2 < arguments.length; r2++) {
+    var t2 = null != arguments[r2] ? arguments[r2] : {};
+    r2 % 2 ? ownKeys$6(Object(t2), true).forEach(function(r3) {
+      _defineProperty$9(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$6(Object(t2)).forEach(function(r3) {
+      Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
+    });
+  }
+  return e3;
+}
+function _classCallCheck$6(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+function _defineProperties$6(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, _toPropertyKey$9(descriptor.key), descriptor);
+  }
+}
+function _createClass$6(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$6(Constructor.prototype, protoProps);
+  Object.defineProperty(Constructor, "prototype", { writable: false });
+  return Constructor;
+}
+function _callSuper$5(t2, o, e3) {
+  return o = _getPrototypeOf$5(o), _possibleConstructorReturn$5(t2, _isNativeReflectConstruct$5() ? Reflect.construct(o, e3 || [], _getPrototypeOf$5(t2).constructor) : o.apply(t2, e3));
+}
+function _possibleConstructorReturn$5(self2, call) {
+  if (call && (_typeof$9(call) === "object" || typeof call === "function")) {
+    return call;
+  } else if (call !== void 0) {
+    throw new TypeError("Derived constructors may only return object or undefined");
+  }
+  return _assertThisInitialized$5(self2);
+}
+function _assertThisInitialized$5(self2) {
+  if (self2 === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+  return self2;
+}
+function _isNativeReflectConstruct$5() {
+  try {
+    var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
+    }));
+  } catch (t3) {
+  }
+  return (_isNativeReflectConstruct$5 = function _isNativeReflectConstruct2() {
+    return !!t2;
+  })();
+}
+function _getPrototypeOf$5(o) {
+  _getPrototypeOf$5 = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
+    return o2.__proto__ || Object.getPrototypeOf(o2);
+  };
+  return _getPrototypeOf$5(o);
+}
+function _inherits$5(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+  subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
+  Object.defineProperty(subClass, "prototype", { writable: false });
+  if (superClass) _setPrototypeOf$5(subClass, superClass);
+}
+function _setPrototypeOf$5(o, p2) {
+  _setPrototypeOf$5 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
+    o2.__proto__ = p3;
+    return o2;
+  };
+  return _setPrototypeOf$5(o, p2);
+}
+function _defineProperty$9(obj, key, value) {
+  key = _toPropertyKey$9(key);
+  if (key in obj) {
+    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+function _toPropertyKey$9(t2) {
+  var i = _toPrimitive$9(t2, "string");
+  return "symbol" == _typeof$9(i) ? i : i + "";
+}
+function _toPrimitive$9(t2, r2) {
+  if ("object" != _typeof$9(t2) || !t2) return t2;
+  var e3 = t2[Symbol.toPrimitive];
+  if (void 0 !== e3) {
+    var i = e3.call(t2, r2);
+    if ("object" != _typeof$9(i)) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return String(t2);
+}
 var getRect = function getRect2(hasX1, hasX2, hasY1, hasY2, props) {
   var xValue1 = props.x1, xValue2 = props.x2, yValue1 = props.y1, yValue2 = props.y2, xAxis = props.xAxis, yAxis = props.yAxis;
   if (!xAxis || !yAxis) return null;
@@ -74809,11 +74122,11 @@ var getRect = function getRect2(hasX1, hasX2, hasY1, hasY2, props) {
 };
 var ReferenceArea = /* @__PURE__ */ function(_React$Component) {
   function ReferenceArea2() {
-    _classCallCheck$7(this, ReferenceArea2);
-    return _callSuper$6(this, ReferenceArea2, arguments);
+    _classCallCheck$6(this, ReferenceArea2);
+    return _callSuper$5(this, ReferenceArea2, arguments);
   }
-  _inherits$6(ReferenceArea2, _React$Component);
-  return _createClass$7(ReferenceArea2, [{
+  _inherits$5(ReferenceArea2, _React$Component);
+  return _createClass$6(ReferenceArea2, [{
     key: "render",
     value: function render() {
       var _this$props = this.props, x1 = _this$props.x1, x2 = _this$props.x2, y1 = _this$props.y1, y2 = _this$props.y2, className = _this$props.className, alwaysShow = _this$props.alwaysShow, clipPathId = _this$props.clipPathId;
@@ -74833,14 +74146,14 @@ var ReferenceArea = /* @__PURE__ */ function(_React$Component) {
       var clipPath = ifOverflowMatches(this.props, "hidden") ? "url(#".concat(clipPathId, ")") : void 0;
       return /* @__PURE__ */ React$4.createElement(Layer, {
         className: clsx("recharts-reference-area", className)
-      }, ReferenceArea2.renderRect(shape, _objectSpread$7(_objectSpread$7({
+      }, ReferenceArea2.renderRect(shape, _objectSpread$6(_objectSpread$6({
         clipPath
       }, filterProps(this.props, true)), rect)), Label.renderCallByParent(this.props, rect));
     }
   }]);
 }(React$4.Component);
-_defineProperty$a(ReferenceArea, "displayName", "ReferenceArea");
-_defineProperty$a(ReferenceArea, "defaultProps", {
+_defineProperty$9(ReferenceArea, "displayName", "ReferenceArea");
+_defineProperty$9(ReferenceArea, "defaultProps", {
   isFront: false,
   ifOverflow: "discard",
   xAxisId: 0,
@@ -74851,14 +74164,14 @@ _defineProperty$a(ReferenceArea, "defaultProps", {
   stroke: "none",
   strokeWidth: 1
 });
-_defineProperty$a(ReferenceArea, "renderRect", function(option, props) {
+_defineProperty$9(ReferenceArea, "renderRect", function(option, props) {
   var rect;
   if (/* @__PURE__ */ React$4.isValidElement(option)) {
     rect = /* @__PURE__ */ React$4.cloneElement(option, props);
   } else if (isFunction$5(option)) {
     rect = option(props);
   } else {
-    rect = /* @__PURE__ */ React$4.createElement(Rectangle, _extends$7({}, props, {
+    rect = /* @__PURE__ */ React$4.createElement(Rectangle, _extends$6({}, props, {
       className: "recharts-reference-area-rect"
     }));
   }
@@ -74949,15 +74262,15 @@ function getEquidistantTicks(sign2, boundaries, getTickSize, ticks2, minTickGap)
   }
   return [];
 }
-function _typeof$9(o) {
+function _typeof$8(o) {
   "@babel/helpers - typeof";
-  return _typeof$9 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$8 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$9(o);
+  }, _typeof$8(o);
 }
-function ownKeys$6(e3, r2) {
+function ownKeys$5(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -74967,19 +74280,19 @@ function ownKeys$6(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$6(e3) {
+function _objectSpread$5(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$6(Object(t2), true).forEach(function(r3) {
-      _defineProperty$9(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$6(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$5(Object(t2), true).forEach(function(r3) {
+      _defineProperty$8(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$5(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$9(obj, key, value) {
-  key = _toPropertyKey$9(key);
+function _defineProperty$8(obj, key, value) {
+  key = _toPropertyKey$8(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -74987,16 +74300,16 @@ function _defineProperty$9(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$9(t2) {
-  var i = _toPrimitive$9(t2, "string");
-  return "symbol" == _typeof$9(i) ? i : i + "";
+function _toPropertyKey$8(t2) {
+  var i = _toPrimitive$8(t2, "string");
+  return "symbol" == _typeof$8(i) ? i : i + "";
 }
-function _toPrimitive$9(t2, r2) {
-  if ("object" != _typeof$9(t2) || !t2) return t2;
+function _toPrimitive$8(t2, r2) {
+  if ("object" != _typeof$8(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$9(i)) return i;
+    if ("object" != _typeof$8(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
@@ -75017,18 +74330,18 @@ function getTicksEnd(sign2, boundaries, getTickSize, ticks2, minTickGap) {
     };
     if (i2 === len - 1) {
       var gap = sign2 * (entry.coordinate + sign2 * getSize2() / 2 - end);
-      result[i2] = entry = _objectSpread$6(_objectSpread$6({}, entry), {}, {
+      result[i2] = entry = _objectSpread$5(_objectSpread$5({}, entry), {}, {
         tickCoord: gap > 0 ? entry.coordinate - gap * sign2 : entry.coordinate
       });
     } else {
-      result[i2] = entry = _objectSpread$6(_objectSpread$6({}, entry), {}, {
+      result[i2] = entry = _objectSpread$5(_objectSpread$5({}, entry), {}, {
         tickCoord: entry.coordinate
       });
     }
     var isShow = isVisible(sign2, entry.tickCoord, getSize2, start, end);
     if (isShow) {
       end = entry.tickCoord - sign2 * (getSize2() / 2 + minTickGap);
-      result[i2] = _objectSpread$6(_objectSpread$6({}, entry), {}, {
+      result[i2] = _objectSpread$5(_objectSpread$5({}, entry), {}, {
         isShow: true
       });
     }
@@ -75046,7 +74359,7 @@ function getTicksStart(sign2, boundaries, getTickSize, ticks2, minTickGap, prese
     var tail = ticks2[len - 1];
     var tailSize = getTickSize(tail, len - 1);
     var tailGap = sign2 * (tail.coordinate + sign2 * tailSize / 2 - end);
-    result[len - 1] = tail = _objectSpread$6(_objectSpread$6({}, tail), {}, {
+    result[len - 1] = tail = _objectSpread$5(_objectSpread$5({}, tail), {}, {
       tickCoord: tailGap > 0 ? tail.coordinate - tailGap * sign2 : tail.coordinate
     });
     var isTailShow = isVisible(sign2, tail.tickCoord, function() {
@@ -75054,7 +74367,7 @@ function getTicksStart(sign2, boundaries, getTickSize, ticks2, minTickGap, prese
     }, start, end);
     if (isTailShow) {
       end = tail.tickCoord - sign2 * (tailSize / 2 + minTickGap);
-      result[len - 1] = _objectSpread$6(_objectSpread$6({}, tail), {}, {
+      result[len - 1] = _objectSpread$5(_objectSpread$5({}, tail), {}, {
         isShow: true
       });
     }
@@ -75071,18 +74384,18 @@ function getTicksStart(sign2, boundaries, getTickSize, ticks2, minTickGap, prese
     };
     if (i2 === 0) {
       var gap = sign2 * (entry.coordinate - sign2 * getSize2() / 2 - start);
-      result[i2] = entry = _objectSpread$6(_objectSpread$6({}, entry), {}, {
+      result[i2] = entry = _objectSpread$5(_objectSpread$5({}, entry), {}, {
         tickCoord: gap < 0 ? entry.coordinate - gap * sign2 : entry.coordinate
       });
     } else {
-      result[i2] = entry = _objectSpread$6(_objectSpread$6({}, entry), {}, {
+      result[i2] = entry = _objectSpread$5(_objectSpread$5({}, entry), {}, {
         tickCoord: entry.coordinate
       });
     }
     var isShow = isVisible(sign2, entry.tickCoord, getSize2, start, end);
     if (isShow) {
       start = entry.tickCoord + sign2 * (getSize2() / 2 + minTickGap);
-      result[i2] = _objectSpread$6(_objectSpread$6({}, entry), {}, {
+      result[i2] = _objectSpread$5(_objectSpread$5({}, entry), {}, {
         isShow: true
       });
     }
@@ -75133,17 +74446,17 @@ function getTicks(props, fontSize, letterSpacing) {
     return entry.isShow;
   });
 }
-var _excluded$4 = ["viewBox"], _excluded2$4 = ["viewBox"], _excluded3 = ["ticks"];
-function _typeof$8(o) {
+var _excluded$3 = ["viewBox"], _excluded2$3 = ["viewBox"], _excluded3 = ["ticks"];
+function _typeof$7(o) {
   "@babel/helpers - typeof";
-  return _typeof$8 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$7 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$8(o);
+  }, _typeof$7(o);
 }
-function _extends$6() {
-  _extends$6 = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$5() {
+  _extends$5 = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -75154,9 +74467,9 @@ function _extends$6() {
     }
     return target;
   };
-  return _extends$6.apply(this, arguments);
+  return _extends$5.apply(this, arguments);
 }
-function ownKeys$5(e3, r2) {
+function ownKeys$4(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -75166,20 +74479,20 @@ function ownKeys$5(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$5(e3) {
+function _objectSpread$4(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$5(Object(t2), true).forEach(function(r3) {
-      _defineProperty$8(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$5(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$4(Object(t2), true).forEach(function(r3) {
+      _defineProperty$7(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$4(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _objectWithoutProperties$4(source, excluded) {
+function _objectWithoutProperties$3(source, excluded) {
   if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$4(source, excluded);
+  var target = _objectWithoutPropertiesLoose$3(source, excluded);
   var key, i;
   if (Object.getOwnPropertySymbols) {
     var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
@@ -75192,7 +74505,7 @@ function _objectWithoutProperties$4(source, excluded) {
   }
   return target;
 }
-function _objectWithoutPropertiesLoose$4(source, excluded) {
+function _objectWithoutPropertiesLoose$3(source, excluded) {
   if (source == null) return {};
   var target = {};
   for (var key in source) {
@@ -75203,76 +74516,76 @@ function _objectWithoutPropertiesLoose$4(source, excluded) {
   }
   return target;
 }
-function _classCallCheck$6(instance, Constructor) {
+function _classCallCheck$5(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-function _defineProperties$6(target, props) {
+function _defineProperties$5(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$8(descriptor.key), descriptor);
+    Object.defineProperty(target, _toPropertyKey$7(descriptor.key), descriptor);
   }
 }
-function _createClass$6(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$6(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties$6(Constructor, staticProps);
+function _createClass$5(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$5(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties$5(Constructor, staticProps);
   Object.defineProperty(Constructor, "prototype", { writable: false });
   return Constructor;
 }
-function _callSuper$5(t2, o, e3) {
-  return o = _getPrototypeOf$5(o), _possibleConstructorReturn$5(t2, _isNativeReflectConstruct$5() ? Reflect.construct(o, e3 || [], _getPrototypeOf$5(t2).constructor) : o.apply(t2, e3));
+function _callSuper$4(t2, o, e3) {
+  return o = _getPrototypeOf$4(o), _possibleConstructorReturn$4(t2, _isNativeReflectConstruct$4() ? Reflect.construct(o, e3 || [], _getPrototypeOf$4(t2).constructor) : o.apply(t2, e3));
 }
-function _possibleConstructorReturn$5(self2, call) {
-  if (call && (_typeof$8(call) === "object" || typeof call === "function")) {
+function _possibleConstructorReturn$4(self2, call) {
+  if (call && (_typeof$7(call) === "object" || typeof call === "function")) {
     return call;
   } else if (call !== void 0) {
     throw new TypeError("Derived constructors may only return object or undefined");
   }
-  return _assertThisInitialized$5(self2);
+  return _assertThisInitialized$4(self2);
 }
-function _assertThisInitialized$5(self2) {
+function _assertThisInitialized$4(self2) {
   if (self2 === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
   return self2;
 }
-function _isNativeReflectConstruct$5() {
+function _isNativeReflectConstruct$4() {
   try {
     var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
     }));
   } catch (t3) {
   }
-  return (_isNativeReflectConstruct$5 = function _isNativeReflectConstruct2() {
+  return (_isNativeReflectConstruct$4 = function _isNativeReflectConstruct2() {
     return !!t2;
   })();
 }
-function _getPrototypeOf$5(o) {
-  _getPrototypeOf$5 = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
+function _getPrototypeOf$4(o) {
+  _getPrototypeOf$4 = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
     return o2.__proto__ || Object.getPrototypeOf(o2);
   };
-  return _getPrototypeOf$5(o);
+  return _getPrototypeOf$4(o);
 }
-function _inherits$5(subClass, superClass) {
+function _inherits$4(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
   }
   subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
   Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$5(subClass, superClass);
+  if (superClass) _setPrototypeOf$4(subClass, superClass);
 }
-function _setPrototypeOf$5(o, p2) {
-  _setPrototypeOf$5 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
+function _setPrototypeOf$4(o, p2) {
+  _setPrototypeOf$4 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
     o2.__proto__ = p3;
     return o2;
   };
-  return _setPrototypeOf$5(o, p2);
+  return _setPrototypeOf$4(o, p2);
 }
-function _defineProperty$8(obj, key, value) {
-  key = _toPropertyKey$8(key);
+function _defineProperty$7(obj, key, value) {
+  key = _toPropertyKey$7(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -75280,16 +74593,16 @@ function _defineProperty$8(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$8(t2) {
-  var i = _toPrimitive$8(t2, "string");
-  return "symbol" == _typeof$8(i) ? i : i + "";
+function _toPropertyKey$7(t2) {
+  var i = _toPrimitive$7(t2, "string");
+  return "symbol" == _typeof$7(i) ? i : i + "";
 }
-function _toPrimitive$8(t2, r2) {
-  if ("object" != _typeof$8(t2) || !t2) return t2;
+function _toPrimitive$7(t2, r2) {
+  if ("object" != _typeof$7(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$8(i)) return i;
+    if ("object" != _typeof$7(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return String(t2);
@@ -75297,20 +74610,20 @@ function _toPrimitive$8(t2, r2) {
 var CartesianAxis = /* @__PURE__ */ function(_Component) {
   function CartesianAxis2(props) {
     var _this;
-    _classCallCheck$6(this, CartesianAxis2);
-    _this = _callSuper$5(this, CartesianAxis2, [props]);
+    _classCallCheck$5(this, CartesianAxis2);
+    _this = _callSuper$4(this, CartesianAxis2, [props]);
     _this.state = {
       fontSize: "",
       letterSpacing: ""
     };
     return _this;
   }
-  _inherits$5(CartesianAxis2, _Component);
-  return _createClass$6(CartesianAxis2, [{
+  _inherits$4(CartesianAxis2, _Component);
+  return _createClass$5(CartesianAxis2, [{
     key: "shouldComponentUpdate",
     value: function shouldComponentUpdate(_ref, nextState) {
-      var viewBox = _ref.viewBox, restProps = _objectWithoutProperties$4(_ref, _excluded$4);
-      var _this$props = this.props, viewBoxOld = _this$props.viewBox, restPropsOld = _objectWithoutProperties$4(_this$props, _excluded2$4);
+      var viewBox = _ref.viewBox, restProps = _objectWithoutProperties$3(_ref, _excluded$3);
+      var _this$props = this.props, viewBoxOld = _this$props.viewBox, restPropsOld = _objectWithoutProperties$3(_this$props, _excluded2$3);
       return !shallowEqual(viewBox, viewBoxOld) || !shallowEqual(restProps, restPropsOld) || !shallowEqual(nextState, this.state);
     }
   }, {
@@ -75424,12 +74737,12 @@ var CartesianAxis = /* @__PURE__ */ function(_Component) {
     key: "renderAxisLine",
     value: function renderAxisLine() {
       var _this$props5 = this.props, x2 = _this$props5.x, y2 = _this$props5.y, width = _this$props5.width, height = _this$props5.height, orientation = _this$props5.orientation, mirror = _this$props5.mirror, axisLine = _this$props5.axisLine;
-      var props = _objectSpread$5(_objectSpread$5(_objectSpread$5({}, filterProps(this.props, false)), filterProps(axisLine, false)), {}, {
+      var props = _objectSpread$4(_objectSpread$4(_objectSpread$4({}, filterProps(this.props, false)), filterProps(axisLine, false)), {}, {
         fill: "none"
       });
       if (orientation === "top" || orientation === "bottom") {
         var needHeight = +(orientation === "top" && !mirror || orientation === "bottom" && mirror);
-        props = _objectSpread$5(_objectSpread$5({}, props), {}, {
+        props = _objectSpread$4(_objectSpread$4({}, props), {}, {
           x1: x2,
           y1: y2 + needHeight * height,
           x2: x2 + width,
@@ -75437,14 +74750,14 @@ var CartesianAxis = /* @__PURE__ */ function(_Component) {
         });
       } else {
         var needWidth = +(orientation === "left" && !mirror || orientation === "right" && mirror);
-        props = _objectSpread$5(_objectSpread$5({}, props), {}, {
+        props = _objectSpread$4(_objectSpread$4({}, props), {}, {
           x1: x2 + needWidth * width,
           y1: y2,
           x2: x2 + needWidth * width,
           y2: y2 + height
         });
       }
-      return /* @__PURE__ */ React$4.createElement("line", _extends$6({}, props, {
+      return /* @__PURE__ */ React$4.createElement("line", _extends$5({}, props, {
         className: clsx("recharts-cartesian-axis-line", get$2(axisLine, "className"))
       }));
     }
@@ -75461,19 +74774,19 @@ var CartesianAxis = /* @__PURE__ */ function(_Component) {
       function renderTicks(ticks2, fontSize, letterSpacing) {
         var _this2 = this;
         var _this$props6 = this.props, tickLine = _this$props6.tickLine, stroke = _this$props6.stroke, tick = _this$props6.tick, tickFormatter = _this$props6.tickFormatter, unit2 = _this$props6.unit;
-        var finalTicks = getTicks(_objectSpread$5(_objectSpread$5({}, this.props), {}, {
+        var finalTicks = getTicks(_objectSpread$4(_objectSpread$4({}, this.props), {}, {
           ticks: ticks2
         }), fontSize, letterSpacing);
         var textAnchor = this.getTickTextAnchor();
         var verticalAnchor = this.getTickVerticalAnchor();
         var axisProps = filterProps(this.props, false);
         var customTickProps = filterProps(tick, false);
-        var tickLineProps = _objectSpread$5(_objectSpread$5({}, axisProps), {}, {
+        var tickLineProps = _objectSpread$4(_objectSpread$4({}, axisProps), {}, {
           fill: "none"
         }, filterProps(tickLine, false));
         var items = finalTicks.map(function(entry, i) {
           var _this2$getTickLineCoo = _this2.getTickLineCoord(entry), lineCoord = _this2$getTickLineCoo.line, tickCoord = _this2$getTickLineCoo.tick;
-          var tickProps = _objectSpread$5(_objectSpread$5(_objectSpread$5(_objectSpread$5({
+          var tickProps = _objectSpread$4(_objectSpread$4(_objectSpread$4(_objectSpread$4({
             textAnchor,
             verticalAnchor
           }, axisProps), {}, {
@@ -75485,10 +74798,10 @@ var CartesianAxis = /* @__PURE__ */ function(_Component) {
             visibleTicksCount: finalTicks.length,
             tickFormatter
           });
-          return /* @__PURE__ */ React$4.createElement(Layer, _extends$6({
+          return /* @__PURE__ */ React$4.createElement(Layer, _extends$5({
             className: "recharts-cartesian-axis-tick",
             key: "tick-".concat(entry.value, "-").concat(entry.coordinate, "-").concat(entry.tickCoord)
-          }, adaptEventsOfChild(_this2.props, entry, i)), tickLine && /* @__PURE__ */ React$4.createElement("line", _extends$6({}, tickLineProps, lineCoord, {
+          }, adaptEventsOfChild(_this2.props, entry, i)), tickLine && /* @__PURE__ */ React$4.createElement("line", _extends$5({}, tickLineProps, lineCoord, {
             className: clsx("recharts-cartesian-axis-tick-line", get$2(tickLine, "className"))
           })), tick && CartesianAxis2.renderTickItem(tick, tickProps, "".concat(isFunction$5(tickFormatter) ? tickFormatter(entry.value, i) : entry.value).concat(unit2 || "")));
         });
@@ -75505,7 +74818,7 @@ var CartesianAxis = /* @__PURE__ */ function(_Component) {
       if (hide2) {
         return null;
       }
-      var _this$props8 = this.props, ticks2 = _this$props8.ticks, noTicksProps = _objectWithoutProperties$4(_this$props8, _excluded3);
+      var _this$props8 = this.props, ticks2 = _this$props8.ticks, noTicksProps = _objectWithoutProperties$3(_this$props8, _excluded3);
       var finalTicks = ticks2;
       if (isFunction$5(ticksGenerator)) {
         finalTicks = ticks2 && ticks2.length > 0 ? ticksGenerator(this.props) : ticksGenerator(noTicksProps);
@@ -75526,15 +74839,15 @@ var CartesianAxis = /* @__PURE__ */ function(_Component) {
       var tickItem;
       var combinedClassName = clsx(props.className, "recharts-cartesian-axis-tick-value");
       if (/* @__PURE__ */ React$4.isValidElement(option)) {
-        tickItem = /* @__PURE__ */ React$4.cloneElement(option, _objectSpread$5(_objectSpread$5({}, props), {}, {
+        tickItem = /* @__PURE__ */ React$4.cloneElement(option, _objectSpread$4(_objectSpread$4({}, props), {}, {
           className: combinedClassName
         }));
       } else if (isFunction$5(option)) {
-        tickItem = option(_objectSpread$5(_objectSpread$5({}, props), {}, {
+        tickItem = option(_objectSpread$4(_objectSpread$4({}, props), {}, {
           className: combinedClassName
         }));
       } else {
-        tickItem = /* @__PURE__ */ React$4.createElement(Text$1, _extends$6({}, props, {
+        tickItem = /* @__PURE__ */ React$4.createElement(Text$1, _extends$5({}, props, {
           className: "recharts-cartesian-axis-tick-value"
         }), value);
       }
@@ -75542,8 +74855,8 @@ var CartesianAxis = /* @__PURE__ */ function(_Component) {
     }
   }]);
 }(reactExports.Component);
-_defineProperty$8(CartesianAxis, "displayName", "CartesianAxis");
-_defineProperty$8(CartesianAxis, "defaultProps", {
+_defineProperty$7(CartesianAxis, "displayName", "CartesianAxis");
+_defineProperty$7(CartesianAxis, "defaultProps", {
   x: 0,
   y: 0,
   width: 0,
@@ -75569,16 +74882,16 @@ _defineProperty$8(CartesianAxis, "defaultProps", {
   tickMargin: 2,
   interval: "preserveEnd"
 });
-var _excluded$3 = ["x1", "y1", "x2", "y2", "key"], _excluded2$3 = ["offset"];
-function _typeof$7(o) {
+var _excluded$2 = ["x1", "y1", "x2", "y2", "key"], _excluded2$2 = ["offset"];
+function _typeof$6(o) {
   "@babel/helpers - typeof";
-  return _typeof$7 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$6 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$7(o);
+  }, _typeof$6(o);
 }
-function ownKeys$4(e3, r2) {
+function ownKeys$3(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -75588,19 +74901,19 @@ function ownKeys$4(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$4(e3) {
+function _objectSpread$3(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$4(Object(t2), true).forEach(function(r3) {
-      _defineProperty$7(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$4(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$3(Object(t2), true).forEach(function(r3) {
+      _defineProperty$6(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$3(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
   return e3;
 }
-function _defineProperty$7(obj, key, value) {
-  key = _toPropertyKey$7(key);
+function _defineProperty$6(obj, key, value) {
+  key = _toPropertyKey$6(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -75608,22 +74921,22 @@ function _defineProperty$7(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$7(t2) {
-  var i = _toPrimitive$7(t2, "string");
-  return "symbol" == _typeof$7(i) ? i : i + "";
+function _toPropertyKey$6(t2) {
+  var i = _toPrimitive$6(t2, "string");
+  return "symbol" == _typeof$6(i) ? i : i + "";
 }
-function _toPrimitive$7(t2, r2) {
-  if ("object" != _typeof$7(t2) || !t2) return t2;
+function _toPrimitive$6(t2, r2) {
+  if ("object" != _typeof$6(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$7(i)) return i;
+    if ("object" != _typeof$6(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
 }
-function _extends$5() {
-  _extends$5 = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$4() {
+  _extends$4 = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -75634,11 +74947,11 @@ function _extends$5() {
     }
     return target;
   };
-  return _extends$5.apply(this, arguments);
+  return _extends$4.apply(this, arguments);
 }
-function _objectWithoutProperties$3(source, excluded) {
+function _objectWithoutProperties$2(source, excluded) {
   if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$3(source, excluded);
+  var target = _objectWithoutPropertiesLoose$2(source, excluded);
   var key, i;
   if (Object.getOwnPropertySymbols) {
     var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
@@ -75651,7 +74964,7 @@ function _objectWithoutProperties$3(source, excluded) {
   }
   return target;
 }
-function _objectWithoutPropertiesLoose$3(source, excluded) {
+function _objectWithoutPropertiesLoose$2(source, excluded) {
   if (source == null) return {};
   var target = {};
   for (var key in source) {
@@ -75687,11 +75000,11 @@ function renderLineItem(option, props) {
   } else if (isFunction$5(option)) {
     lineItem = option(props);
   } else {
-    var x1 = props.x1, y1 = props.y1, x2 = props.x2, y2 = props.y2, key = props.key, others = _objectWithoutProperties$3(props, _excluded$3);
+    var x1 = props.x1, y1 = props.y1, x2 = props.x2, y2 = props.y2, key = props.key, others = _objectWithoutProperties$2(props, _excluded$2);
     var _filterProps = filterProps(others, false);
     _filterProps.offset;
-    var restOfFilteredProps = _objectWithoutProperties$3(_filterProps, _excluded2$3);
-    lineItem = /* @__PURE__ */ React$4.createElement("line", _extends$5({}, restOfFilteredProps, {
+    var restOfFilteredProps = _objectWithoutProperties$2(_filterProps, _excluded2$2);
+    lineItem = /* @__PURE__ */ React$4.createElement("line", _extends$4({}, restOfFilteredProps, {
       x1,
       y1,
       x2,
@@ -75708,7 +75021,7 @@ function HorizontalGridLines(props) {
     return null;
   }
   var items = horizontalPoints.map(function(entry, i) {
-    var lineItemProps = _objectSpread$4(_objectSpread$4({}, props), {}, {
+    var lineItemProps = _objectSpread$3(_objectSpread$3({}, props), {}, {
       x1: x2,
       y1: entry,
       x2: x2 + width,
@@ -75728,7 +75041,7 @@ function VerticalGridLines(props) {
     return null;
   }
   var items = verticalPoints.map(function(entry, i) {
-    var lineItemProps = _objectSpread$4(_objectSpread$4({}, props), {}, {
+    var lineItemProps = _objectSpread$3(_objectSpread$3({}, props), {}, {
       x1: entry,
       y1: y2,
       x2: entry,
@@ -75816,7 +75129,7 @@ function VerticalStripes(props) {
 }
 var defaultVerticalCoordinatesGenerator = function defaultVerticalCoordinatesGenerator2(_ref, syncWithTicks) {
   var xAxis = _ref.xAxis, width = _ref.width, height = _ref.height, offset2 = _ref.offset;
-  return getCoordinatesOfGrid(getTicks(_objectSpread$4(_objectSpread$4(_objectSpread$4({}, CartesianAxis.defaultProps), xAxis), {}, {
+  return getCoordinatesOfGrid(getTicks(_objectSpread$3(_objectSpread$3(_objectSpread$3({}, CartesianAxis.defaultProps), xAxis), {}, {
     ticks: getTicksOfAxis(xAxis, true),
     viewBox: {
       x: 0,
@@ -75828,7 +75141,7 @@ var defaultVerticalCoordinatesGenerator = function defaultVerticalCoordinatesGen
 };
 var defaultHorizontalCoordinatesGenerator = function defaultHorizontalCoordinatesGenerator2(_ref2, syncWithTicks) {
   var yAxis = _ref2.yAxis, width = _ref2.width, height = _ref2.height, offset2 = _ref2.offset;
-  return getCoordinatesOfGrid(getTicks(_objectSpread$4(_objectSpread$4(_objectSpread$4({}, CartesianAxis.defaultProps), yAxis), {}, {
+  return getCoordinatesOfGrid(getTicks(_objectSpread$3(_objectSpread$3(_objectSpread$3({}, CartesianAxis.defaultProps), yAxis), {}, {
     ticks: getTicksOfAxis(yAxis, true),
     viewBox: {
       x: 0,
@@ -75852,7 +75165,7 @@ function CartesianGrid(props) {
   var chartWidth = useChartWidth();
   var chartHeight = useChartHeight();
   var offset2 = useOffset();
-  var propsIncludingDefaults = _objectSpread$4(_objectSpread$4({}, props), {}, {
+  var propsIncludingDefaults = _objectSpread$3(_objectSpread$3({}, props), {}, {
     stroke: (_props$stroke = props.stroke) !== null && _props$stroke !== void 0 ? _props$stroke : defaultProps.stroke,
     fill: (_props$fill = props.fill) !== null && _props$fill !== void 0 ? _props$fill : defaultProps.fill,
     horizontal: (_props$horizontal3 = props.horizontal) !== null && _props$horizontal3 !== void 0 ? _props$horizontal3 : defaultProps.horizontal,
@@ -75876,14 +75189,14 @@ function CartesianGrid(props) {
   if ((!horizontalPoints || !horizontalPoints.length) && isFunction$5(horizontalCoordinatesGenerator)) {
     var isHorizontalValues = horizontalValues && horizontalValues.length;
     var generatorResult = horizontalCoordinatesGenerator({
-      yAxis: yAxis ? _objectSpread$4(_objectSpread$4({}, yAxis), {}, {
+      yAxis: yAxis ? _objectSpread$3(_objectSpread$3({}, yAxis), {}, {
         ticks: isHorizontalValues ? horizontalValues : yAxis.ticks
       }) : void 0,
       width: chartWidth,
       height: chartHeight,
       offset: offset2
     }, isHorizontalValues ? true : syncWithTicks);
-    warn(Array.isArray(generatorResult), "horizontalCoordinatesGenerator should return Array but instead it returned [".concat(_typeof$7(generatorResult), "]"));
+    warn(Array.isArray(generatorResult), "horizontalCoordinatesGenerator should return Array but instead it returned [".concat(_typeof$6(generatorResult), "]"));
     if (Array.isArray(generatorResult)) {
       horizontalPoints = generatorResult;
     }
@@ -75891,14 +75204,14 @@ function CartesianGrid(props) {
   if ((!verticalPoints || !verticalPoints.length) && isFunction$5(verticalCoordinatesGenerator)) {
     var isVerticalValues = verticalValues && verticalValues.length;
     var _generatorResult = verticalCoordinatesGenerator({
-      xAxis: xAxis ? _objectSpread$4(_objectSpread$4({}, xAxis), {}, {
+      xAxis: xAxis ? _objectSpread$3(_objectSpread$3({}, xAxis), {}, {
         ticks: isVerticalValues ? verticalValues : xAxis.ticks
       }) : void 0,
       width: chartWidth,
       height: chartHeight,
       offset: offset2
     }, isVerticalValues ? true : syncWithTicks);
-    warn(Array.isArray(_generatorResult), "verticalCoordinatesGenerator should return Array but instead it returned [".concat(_typeof$7(_generatorResult), "]"));
+    warn(Array.isArray(_generatorResult), "verticalCoordinatesGenerator should return Array but instead it returned [".concat(_typeof$6(_generatorResult), "]"));
     if (Array.isArray(_generatorResult)) {
       verticalPoints = _generatorResult;
     }
@@ -75913,35 +75226,35 @@ function CartesianGrid(props) {
     width: propsIncludingDefaults.width,
     height: propsIncludingDefaults.height,
     ry: propsIncludingDefaults.ry
-  }), /* @__PURE__ */ React$4.createElement(HorizontalGridLines, _extends$5({}, propsIncludingDefaults, {
+  }), /* @__PURE__ */ React$4.createElement(HorizontalGridLines, _extends$4({}, propsIncludingDefaults, {
     offset: offset2,
     horizontalPoints,
     xAxis,
     yAxis
-  })), /* @__PURE__ */ React$4.createElement(VerticalGridLines, _extends$5({}, propsIncludingDefaults, {
+  })), /* @__PURE__ */ React$4.createElement(VerticalGridLines, _extends$4({}, propsIncludingDefaults, {
     offset: offset2,
     verticalPoints,
     xAxis,
     yAxis
-  })), /* @__PURE__ */ React$4.createElement(HorizontalStripes, _extends$5({}, propsIncludingDefaults, {
+  })), /* @__PURE__ */ React$4.createElement(HorizontalStripes, _extends$4({}, propsIncludingDefaults, {
     horizontalPoints
-  })), /* @__PURE__ */ React$4.createElement(VerticalStripes, _extends$5({}, propsIncludingDefaults, {
+  })), /* @__PURE__ */ React$4.createElement(VerticalStripes, _extends$4({}, propsIncludingDefaults, {
     verticalPoints
   })));
 }
 CartesianGrid.displayName = "CartesianGrid";
-var _excluded$2 = ["type", "layout", "connectNulls", "ref"], _excluded2$2 = ["key"];
-function _typeof$6(o) {
+var _excluded$1 = ["type", "layout", "connectNulls", "ref"], _excluded2$1 = ["key"];
+function _typeof$5(o) {
   "@babel/helpers - typeof";
-  return _typeof$6 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
+  return _typeof$5 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
     return typeof o2;
   } : function(o2) {
     return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$6(o);
+  }, _typeof$5(o);
 }
-function _objectWithoutProperties$2(source, excluded) {
+function _objectWithoutProperties$1(source, excluded) {
   if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$2(source, excluded);
+  var target = _objectWithoutPropertiesLoose$1(source, excluded);
   var key, i;
   if (Object.getOwnPropertySymbols) {
     var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
@@ -75954,7 +75267,7 @@ function _objectWithoutProperties$2(source, excluded) {
   }
   return target;
 }
-function _objectWithoutPropertiesLoose$2(source, excluded) {
+function _objectWithoutPropertiesLoose$1(source, excluded) {
   if (source == null) return {};
   var target = {};
   for (var key in source) {
@@ -75965,8 +75278,8 @@ function _objectWithoutPropertiesLoose$2(source, excluded) {
   }
   return target;
 }
-function _extends$4() {
-  _extends$4 = Object.assign ? Object.assign.bind() : function(target) {
+function _extends$3() {
+  _extends$3 = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
       for (var key in source) {
@@ -75977,9 +75290,9 @@ function _extends$4() {
     }
     return target;
   };
-  return _extends$4.apply(this, arguments);
+  return _extends$3.apply(this, arguments);
 }
-function ownKeys$3(e3, r2) {
+function ownKeys$2(e3, r2) {
   var t2 = Object.keys(e3);
   if (Object.getOwnPropertySymbols) {
     var o = Object.getOwnPropertySymbols(e3);
@@ -75989,12 +75302,12 @@ function ownKeys$3(e3, r2) {
   }
   return t2;
 }
-function _objectSpread$3(e3) {
+function _objectSpread$2(e3) {
   for (var r2 = 1; r2 < arguments.length; r2++) {
     var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$3(Object(t2), true).forEach(function(r3) {
-      _defineProperty$6(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$3(Object(t2)).forEach(function(r3) {
+    r2 % 2 ? ownKeys$2(Object(t2), true).forEach(function(r3) {
+      _defineProperty$5(e3, r3, t2[r3]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$2(Object(t2)).forEach(function(r3) {
       Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
     });
   }
@@ -76025,76 +75338,76 @@ function _arrayLikeToArray$2(arr, len) {
   for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
   return arr2;
 }
-function _classCallCheck$5(instance, Constructor) {
+function _classCallCheck$4(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
   }
 }
-function _defineProperties$5(target, props) {
+function _defineProperties$4(target, props) {
   for (var i = 0; i < props.length; i++) {
     var descriptor = props[i];
     descriptor.enumerable = descriptor.enumerable || false;
     descriptor.configurable = true;
     if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$6(descriptor.key), descriptor);
+    Object.defineProperty(target, _toPropertyKey$5(descriptor.key), descriptor);
   }
 }
-function _createClass$5(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$5(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties$5(Constructor, staticProps);
+function _createClass$4(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties$4(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties$4(Constructor, staticProps);
   Object.defineProperty(Constructor, "prototype", { writable: false });
   return Constructor;
 }
-function _callSuper$4(t2, o, e3) {
-  return o = _getPrototypeOf$4(o), _possibleConstructorReturn$4(t2, _isNativeReflectConstruct$4() ? Reflect.construct(o, e3 || [], _getPrototypeOf$4(t2).constructor) : o.apply(t2, e3));
+function _callSuper$3(t2, o, e3) {
+  return o = _getPrototypeOf$3(o), _possibleConstructorReturn$3(t2, _isNativeReflectConstruct$3() ? Reflect.construct(o, e3 || [], _getPrototypeOf$3(t2).constructor) : o.apply(t2, e3));
 }
-function _possibleConstructorReturn$4(self2, call) {
-  if (call && (_typeof$6(call) === "object" || typeof call === "function")) {
+function _possibleConstructorReturn$3(self2, call) {
+  if (call && (_typeof$5(call) === "object" || typeof call === "function")) {
     return call;
   } else if (call !== void 0) {
     throw new TypeError("Derived constructors may only return object or undefined");
   }
-  return _assertThisInitialized$4(self2);
+  return _assertThisInitialized$3(self2);
 }
-function _assertThisInitialized$4(self2) {
+function _assertThisInitialized$3(self2) {
   if (self2 === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
   return self2;
 }
-function _isNativeReflectConstruct$4() {
+function _isNativeReflectConstruct$3() {
   try {
     var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
     }));
   } catch (t3) {
   }
-  return (_isNativeReflectConstruct$4 = function _isNativeReflectConstruct2() {
+  return (_isNativeReflectConstruct$3 = function _isNativeReflectConstruct2() {
     return !!t2;
   })();
 }
-function _getPrototypeOf$4(o) {
-  _getPrototypeOf$4 = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
+function _getPrototypeOf$3(o) {
+  _getPrototypeOf$3 = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
     return o2.__proto__ || Object.getPrototypeOf(o2);
   };
-  return _getPrototypeOf$4(o);
+  return _getPrototypeOf$3(o);
 }
-function _inherits$4(subClass, superClass) {
+function _inherits$3(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
   }
   subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
   Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$4(subClass, superClass);
+  if (superClass) _setPrototypeOf$3(subClass, superClass);
 }
-function _setPrototypeOf$4(o, p2) {
-  _setPrototypeOf$4 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
+function _setPrototypeOf$3(o, p2) {
+  _setPrototypeOf$3 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
     o2.__proto__ = p3;
     return o2;
   };
-  return _setPrototypeOf$4(o, p2);
+  return _setPrototypeOf$3(o, p2);
 }
-function _defineProperty$6(obj, key, value) {
-  key = _toPropertyKey$6(key);
+function _defineProperty$5(obj, key, value) {
+  key = _toPropertyKey$5(key);
   if (key in obj) {
     Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
   } else {
@@ -76102,16 +75415,16 @@ function _defineProperty$6(obj, key, value) {
   }
   return obj;
 }
-function _toPropertyKey$6(t2) {
-  var i = _toPrimitive$6(t2, "string");
-  return "symbol" == _typeof$6(i) ? i : i + "";
+function _toPropertyKey$5(t2) {
+  var i = _toPrimitive$5(t2, "string");
+  return "symbol" == _typeof$5(i) ? i : i + "";
 }
-function _toPrimitive$6(t2, r2) {
-  if ("object" != _typeof$6(t2) || !t2) return t2;
+function _toPrimitive$5(t2, r2) {
+  if ("object" != _typeof$5(t2) || !t2) return t2;
   var e3 = t2[Symbol.toPrimitive];
   if (void 0 !== e3) {
     var i = e3.call(t2, r2);
-    if ("object" != _typeof$6(i)) return i;
+    if ("object" != _typeof$5(i)) return i;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return String(t2);
@@ -76119,19 +75432,19 @@ function _toPrimitive$6(t2, r2) {
 var Line = /* @__PURE__ */ function(_PureComponent) {
   function Line2() {
     var _this;
-    _classCallCheck$5(this, Line2);
+    _classCallCheck$4(this, Line2);
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
-    _this = _callSuper$4(this, Line2, [].concat(args));
-    _defineProperty$6(_this, "state", {
+    _this = _callSuper$3(this, Line2, [].concat(args));
+    _defineProperty$5(_this, "state", {
       isAnimationFinished: true,
       totalLength: 0
     });
-    _defineProperty$6(_this, "generateSimpleStrokeDasharray", function(totalLength, length) {
+    _defineProperty$5(_this, "generateSimpleStrokeDasharray", function(totalLength, length) {
       return "".concat(length, "px ").concat(totalLength - length, "px");
     });
-    _defineProperty$6(_this, "getStrokeDasharray", function(length, totalLength, lines) {
+    _defineProperty$5(_this, "getStrokeDasharray", function(length, totalLength, lines) {
       var lineLength = lines.reduce(function(pre, next) {
         return pre + next;
       });
@@ -76153,11 +75466,11 @@ var Line = /* @__PURE__ */ function(_PureComponent) {
         return "".concat(line, "px");
       }).join(", ");
     });
-    _defineProperty$6(_this, "id", uniqueId("recharts-line-"));
-    _defineProperty$6(_this, "pathRef", function(node) {
+    _defineProperty$5(_this, "id", uniqueId("recharts-line-"));
+    _defineProperty$5(_this, "pathRef", function(node) {
       _this.mainCurve = node;
     });
-    _defineProperty$6(_this, "handleAnimationEnd", function() {
+    _defineProperty$5(_this, "handleAnimationEnd", function() {
       _this.setState({
         isAnimationFinished: true
       });
@@ -76165,7 +75478,7 @@ var Line = /* @__PURE__ */ function(_PureComponent) {
         _this.props.onAnimationEnd();
       }
     });
-    _defineProperty$6(_this, "handleAnimationStart", function() {
+    _defineProperty$5(_this, "handleAnimationStart", function() {
       _this.setState({
         isAnimationFinished: false
       });
@@ -76175,8 +75488,8 @@ var Line = /* @__PURE__ */ function(_PureComponent) {
     });
     return _this;
   }
-  _inherits$4(Line2, _PureComponent);
-  return _createClass$5(Line2, [{
+  _inherits$3(Line2, _PureComponent);
+  return _createClass$4(Line2, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       if (!this.props.isAnimationActive) {
@@ -76254,7 +75567,7 @@ var Line = /* @__PURE__ */ function(_PureComponent) {
       var lineProps = filterProps(this.props, false);
       var customDotProps = filterProps(dot, true);
       var dots = points.map(function(entry, i) {
-        var dotProps = _objectSpread$3(_objectSpread$3(_objectSpread$3({
+        var dotProps = _objectSpread$2(_objectSpread$2(_objectSpread$2({
           key: "dot-".concat(i),
           r: 3
         }, lineProps), customDotProps), {}, {
@@ -76271,7 +75584,7 @@ var Line = /* @__PURE__ */ function(_PureComponent) {
       var dotsProps = {
         clipPath: needClip ? "url(#clipPath-".concat(clipDot ? "" : "dots-").concat(clipPathId, ")") : null
       };
-      return /* @__PURE__ */ React$4.createElement(Layer, _extends$4({
+      return /* @__PURE__ */ React$4.createElement(Layer, _extends$3({
         className: "recharts-line-dots",
         key: "dots"
       }, dotsProps), dots);
@@ -76281,8 +75594,8 @@ var Line = /* @__PURE__ */ function(_PureComponent) {
     value: function renderCurveStatically(points, needClip, clipPathId, props) {
       var _this$props3 = this.props, type = _this$props3.type, layout2 = _this$props3.layout, connectNulls = _this$props3.connectNulls;
       _this$props3.ref;
-      var others = _objectWithoutProperties$2(_this$props3, _excluded$2);
-      var curveProps = _objectSpread$3(_objectSpread$3(_objectSpread$3({}, filterProps(others, true)), {}, {
+      var others = _objectWithoutProperties$1(_this$props3, _excluded$1);
+      var curveProps = _objectSpread$2(_objectSpread$2(_objectSpread$2({}, filterProps(others, true)), {}, {
         fill: "none",
         className: "recharts-line-curve",
         clipPath: needClip ? "url(#clipPath-".concat(clipPathId, ")") : null,
@@ -76292,7 +75605,7 @@ var Line = /* @__PURE__ */ function(_PureComponent) {
         layout: layout2,
         connectNulls
       });
-      return /* @__PURE__ */ React$4.createElement(Curve, _extends$4({}, curveProps, {
+      return /* @__PURE__ */ React$4.createElement(Curve, _extends$3({}, curveProps, {
         pathRef: this.pathRef
       }));
     }
@@ -76326,7 +75639,7 @@ var Line = /* @__PURE__ */ function(_PureComponent) {
               var prev = prevPoints[prevPointIndex];
               var interpolatorX = interpolateNumber$2(prev.x, entry.x);
               var interpolatorY = interpolateNumber$2(prev.y, entry.y);
-              return _objectSpread$3(_objectSpread$3({}, entry), {}, {
+              return _objectSpread$2(_objectSpread$2({}, entry), {}, {
                 x: interpolatorX(t2),
                 y: interpolatorY(t2)
               });
@@ -76334,12 +75647,12 @@ var Line = /* @__PURE__ */ function(_PureComponent) {
             if (animateNewValues) {
               var _interpolatorX = interpolateNumber$2(width * 2, entry.x);
               var _interpolatorY = interpolateNumber$2(height / 2, entry.y);
-              return _objectSpread$3(_objectSpread$3({}, entry), {}, {
+              return _objectSpread$2(_objectSpread$2({}, entry), {}, {
                 x: _interpolatorX(t2),
                 y: _interpolatorY(t2)
               });
             }
-            return _objectSpread$3(_objectSpread$3({}, entry), {}, {
+            return _objectSpread$2(_objectSpread$2({}, entry), {}, {
               x: entry.x,
               y: entry.y
             });
@@ -76447,9 +75760,9 @@ var Line = /* @__PURE__ */ function(_PureComponent) {
       } else if (isFunction$5(option)) {
         dotItem = option(props);
       } else {
-        var key = props.key, dotProps = _objectWithoutProperties$2(props, _excluded2$2);
+        var key = props.key, dotProps = _objectWithoutProperties$1(props, _excluded2$1);
         var className = clsx("recharts-line-dot", typeof option !== "boolean" ? option.className : "");
-        dotItem = /* @__PURE__ */ React$4.createElement(Dot, _extends$4({
+        dotItem = /* @__PURE__ */ React$4.createElement(Dot, _extends$3({
           key
         }, dotProps, {
           className
@@ -76459,8 +75772,8 @@ var Line = /* @__PURE__ */ function(_PureComponent) {
     }
   }]);
 }(reactExports.PureComponent);
-_defineProperty$6(Line, "displayName", "Line");
-_defineProperty$6(Line, "defaultProps", {
+_defineProperty$5(Line, "displayName", "Line");
+_defineProperty$5(Line, "defaultProps", {
   xAxisId: 0,
   yAxisId: 0,
   connectNulls: false,
@@ -76479,7 +75792,7 @@ _defineProperty$6(Line, "defaultProps", {
   hide: false,
   label: false
 });
-_defineProperty$6(Line, "getComposedData", function(_ref4) {
+_defineProperty$5(Line, "getComposedData", function(_ref4) {
   var props = _ref4.props, xAxis = _ref4.xAxis, yAxis = _ref4.yAxis, xAxisTicks = _ref4.xAxisTicks, yAxisTicks = _ref4.yAxisTicks, dataKey = _ref4.dataKey, bandSize = _ref4.bandSize, displayedData = _ref4.displayedData, offset2 = _ref4.offset;
   var layout2 = props.layout;
   var points = displayedData.map(function(entry, index2) {
@@ -76511,608 +75824,10 @@ _defineProperty$6(Line, "getComposedData", function(_ref4) {
       payload: entry
     };
   });
-  return _objectSpread$3({
+  return _objectSpread$2({
     points,
     layout: layout2
   }, offset2);
-});
-var _excluded$1 = ["layout", "type", "stroke", "connectNulls", "isRange", "ref"], _excluded2$1 = ["key"];
-var _Area;
-function _typeof$5(o) {
-  "@babel/helpers - typeof";
-  return _typeof$5 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
-    return typeof o2;
-  } : function(o2) {
-    return o2 && "function" == typeof Symbol && o2.constructor === Symbol && o2 !== Symbol.prototype ? "symbol" : typeof o2;
-  }, _typeof$5(o);
-}
-function _objectWithoutProperties$1(source, excluded) {
-  if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose$1(source, excluded);
-  var key, i;
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-function _objectWithoutPropertiesLoose$1(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  for (var key in source) {
-    if (Object.prototype.hasOwnProperty.call(source, key)) {
-      if (excluded.indexOf(key) >= 0) continue;
-      target[key] = source[key];
-    }
-  }
-  return target;
-}
-function _extends$3() {
-  _extends$3 = Object.assign ? Object.assign.bind() : function(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-    return target;
-  };
-  return _extends$3.apply(this, arguments);
-}
-function ownKeys$2(e3, r2) {
-  var t2 = Object.keys(e3);
-  if (Object.getOwnPropertySymbols) {
-    var o = Object.getOwnPropertySymbols(e3);
-    r2 && (o = o.filter(function(r3) {
-      return Object.getOwnPropertyDescriptor(e3, r3).enumerable;
-    })), t2.push.apply(t2, o);
-  }
-  return t2;
-}
-function _objectSpread$2(e3) {
-  for (var r2 = 1; r2 < arguments.length; r2++) {
-    var t2 = null != arguments[r2] ? arguments[r2] : {};
-    r2 % 2 ? ownKeys$2(Object(t2), true).forEach(function(r3) {
-      _defineProperty$5(e3, r3, t2[r3]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e3, Object.getOwnPropertyDescriptors(t2)) : ownKeys$2(Object(t2)).forEach(function(r3) {
-      Object.defineProperty(e3, r3, Object.getOwnPropertyDescriptor(t2, r3));
-    });
-  }
-  return e3;
-}
-function _classCallCheck$4(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-function _defineProperties$4(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey$5(descriptor.key), descriptor);
-  }
-}
-function _createClass$4(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties$4(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties$4(Constructor, staticProps);
-  Object.defineProperty(Constructor, "prototype", { writable: false });
-  return Constructor;
-}
-function _callSuper$3(t2, o, e3) {
-  return o = _getPrototypeOf$3(o), _possibleConstructorReturn$3(t2, _isNativeReflectConstruct$3() ? Reflect.construct(o, e3 || [], _getPrototypeOf$3(t2).constructor) : o.apply(t2, e3));
-}
-function _possibleConstructorReturn$3(self2, call) {
-  if (call && (_typeof$5(call) === "object" || typeof call === "function")) {
-    return call;
-  } else if (call !== void 0) {
-    throw new TypeError("Derived constructors may only return object or undefined");
-  }
-  return _assertThisInitialized$3(self2);
-}
-function _assertThisInitialized$3(self2) {
-  if (self2 === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-  return self2;
-}
-function _isNativeReflectConstruct$3() {
-  try {
-    var t2 = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function() {
-    }));
-  } catch (t3) {
-  }
-  return (_isNativeReflectConstruct$3 = function _isNativeReflectConstruct2() {
-    return !!t2;
-  })();
-}
-function _getPrototypeOf$3(o) {
-  _getPrototypeOf$3 = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf2(o2) {
-    return o2.__proto__ || Object.getPrototypeOf(o2);
-  };
-  return _getPrototypeOf$3(o);
-}
-function _inherits$3(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-  subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });
-  Object.defineProperty(subClass, "prototype", { writable: false });
-  if (superClass) _setPrototypeOf$3(subClass, superClass);
-}
-function _setPrototypeOf$3(o, p2) {
-  _setPrototypeOf$3 = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf2(o2, p3) {
-    o2.__proto__ = p3;
-    return o2;
-  };
-  return _setPrototypeOf$3(o, p2);
-}
-function _defineProperty$5(obj, key, value) {
-  key = _toPropertyKey$5(key);
-  if (key in obj) {
-    Object.defineProperty(obj, key, { value, enumerable: true, configurable: true, writable: true });
-  } else {
-    obj[key] = value;
-  }
-  return obj;
-}
-function _toPropertyKey$5(t2) {
-  var i = _toPrimitive$5(t2, "string");
-  return "symbol" == _typeof$5(i) ? i : i + "";
-}
-function _toPrimitive$5(t2, r2) {
-  if ("object" != _typeof$5(t2) || !t2) return t2;
-  var e3 = t2[Symbol.toPrimitive];
-  if (void 0 !== e3) {
-    var i = e3.call(t2, r2);
-    if ("object" != _typeof$5(i)) return i;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return String(t2);
-}
-var Area = /* @__PURE__ */ function(_PureComponent) {
-  function Area2() {
-    var _this;
-    _classCallCheck$4(this, Area2);
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-    _this = _callSuper$3(this, Area2, [].concat(args));
-    _defineProperty$5(_this, "state", {
-      isAnimationFinished: true
-    });
-    _defineProperty$5(_this, "id", uniqueId("recharts-area-"));
-    _defineProperty$5(_this, "handleAnimationEnd", function() {
-      var onAnimationEnd2 = _this.props.onAnimationEnd;
-      _this.setState({
-        isAnimationFinished: true
-      });
-      if (isFunction$5(onAnimationEnd2)) {
-        onAnimationEnd2();
-      }
-    });
-    _defineProperty$5(_this, "handleAnimationStart", function() {
-      var onAnimationStart2 = _this.props.onAnimationStart;
-      _this.setState({
-        isAnimationFinished: false
-      });
-      if (isFunction$5(onAnimationStart2)) {
-        onAnimationStart2();
-      }
-    });
-    return _this;
-  }
-  _inherits$3(Area2, _PureComponent);
-  return _createClass$4(Area2, [{
-    key: "renderDots",
-    value: function renderDots(needClip, clipDot, clipPathId) {
-      var isAnimationActive = this.props.isAnimationActive;
-      var isAnimationFinished = this.state.isAnimationFinished;
-      if (isAnimationActive && !isAnimationFinished) {
-        return null;
-      }
-      var _this$props = this.props, dot = _this$props.dot, points = _this$props.points, dataKey = _this$props.dataKey;
-      var areaProps = filterProps(this.props, false);
-      var customDotProps = filterProps(dot, true);
-      var dots = points.map(function(entry, i) {
-        var dotProps = _objectSpread$2(_objectSpread$2(_objectSpread$2({
-          key: "dot-".concat(i),
-          r: 3
-        }, areaProps), customDotProps), {}, {
-          index: i,
-          cx: entry.x,
-          cy: entry.y,
-          dataKey,
-          value: entry.value,
-          payload: entry.payload,
-          points
-        });
-        return Area2.renderDotItem(dot, dotProps);
-      });
-      var dotsProps = {
-        clipPath: needClip ? "url(#clipPath-".concat(clipDot ? "" : "dots-").concat(clipPathId, ")") : null
-      };
-      return /* @__PURE__ */ React$4.createElement(Layer, _extends$3({
-        className: "recharts-area-dots"
-      }, dotsProps), dots);
-    }
-  }, {
-    key: "renderHorizontalRect",
-    value: function renderHorizontalRect(alpha3) {
-      var _this$props2 = this.props, baseLine = _this$props2.baseLine, points = _this$props2.points, strokeWidth = _this$props2.strokeWidth;
-      var startX = points[0].x;
-      var endX = points[points.length - 1].x;
-      var width = alpha3 * Math.abs(startX - endX);
-      var maxY = max$1(points.map(function(entry) {
-        return entry.y || 0;
-      }));
-      if (isNumber$2(baseLine) && typeof baseLine === "number") {
-        maxY = Math.max(baseLine, maxY);
-      } else if (baseLine && Array.isArray(baseLine) && baseLine.length) {
-        maxY = Math.max(max$1(baseLine.map(function(entry) {
-          return entry.y || 0;
-        })), maxY);
-      }
-      if (isNumber$2(maxY)) {
-        return /* @__PURE__ */ React$4.createElement("rect", {
-          x: startX < endX ? startX : startX - width,
-          y: 0,
-          width,
-          height: Math.floor(maxY + (strokeWidth ? parseInt("".concat(strokeWidth), 10) : 1))
-        });
-      }
-      return null;
-    }
-  }, {
-    key: "renderVerticalRect",
-    value: function renderVerticalRect(alpha3) {
-      var _this$props3 = this.props, baseLine = _this$props3.baseLine, points = _this$props3.points, strokeWidth = _this$props3.strokeWidth;
-      var startY = points[0].y;
-      var endY = points[points.length - 1].y;
-      var height = alpha3 * Math.abs(startY - endY);
-      var maxX = max$1(points.map(function(entry) {
-        return entry.x || 0;
-      }));
-      if (isNumber$2(baseLine) && typeof baseLine === "number") {
-        maxX = Math.max(baseLine, maxX);
-      } else if (baseLine && Array.isArray(baseLine) && baseLine.length) {
-        maxX = Math.max(max$1(baseLine.map(function(entry) {
-          return entry.x || 0;
-        })), maxX);
-      }
-      if (isNumber$2(maxX)) {
-        return /* @__PURE__ */ React$4.createElement("rect", {
-          x: 0,
-          y: startY < endY ? startY : startY - height,
-          width: maxX + (strokeWidth ? parseInt("".concat(strokeWidth), 10) : 1),
-          height: Math.floor(height)
-        });
-      }
-      return null;
-    }
-  }, {
-    key: "renderClipRect",
-    value: function renderClipRect(alpha3) {
-      var layout2 = this.props.layout;
-      if (layout2 === "vertical") {
-        return this.renderVerticalRect(alpha3);
-      }
-      return this.renderHorizontalRect(alpha3);
-    }
-  }, {
-    key: "renderAreaStatically",
-    value: function renderAreaStatically(points, baseLine, needClip, clipPathId) {
-      var _this$props4 = this.props, layout2 = _this$props4.layout, type = _this$props4.type, stroke = _this$props4.stroke, connectNulls = _this$props4.connectNulls, isRange = _this$props4.isRange;
-      _this$props4.ref;
-      var others = _objectWithoutProperties$1(_this$props4, _excluded$1);
-      return /* @__PURE__ */ React$4.createElement(Layer, {
-        clipPath: needClip ? "url(#clipPath-".concat(clipPathId, ")") : null
-      }, /* @__PURE__ */ React$4.createElement(Curve, _extends$3({}, filterProps(others, true), {
-        points,
-        connectNulls,
-        type,
-        baseLine,
-        layout: layout2,
-        stroke: "none",
-        className: "recharts-area-area"
-      })), stroke !== "none" && /* @__PURE__ */ React$4.createElement(Curve, _extends$3({}, filterProps(this.props, false), {
-        className: "recharts-area-curve",
-        layout: layout2,
-        type,
-        connectNulls,
-        fill: "none",
-        points
-      })), stroke !== "none" && isRange && /* @__PURE__ */ React$4.createElement(Curve, _extends$3({}, filterProps(this.props, false), {
-        className: "recharts-area-curve",
-        layout: layout2,
-        type,
-        connectNulls,
-        fill: "none",
-        points: baseLine
-      })));
-    }
-  }, {
-    key: "renderAreaWithAnimation",
-    value: function renderAreaWithAnimation(needClip, clipPathId) {
-      var _this2 = this;
-      var _this$props5 = this.props, points = _this$props5.points, baseLine = _this$props5.baseLine, isAnimationActive = _this$props5.isAnimationActive, animationBegin = _this$props5.animationBegin, animationDuration = _this$props5.animationDuration, animationEasing = _this$props5.animationEasing, animationId = _this$props5.animationId;
-      var _this$state = this.state, prevPoints = _this$state.prevPoints, prevBaseLine = _this$state.prevBaseLine;
-      return /* @__PURE__ */ React$4.createElement(Animate, {
-        begin: animationBegin,
-        duration: animationDuration,
-        isActive: isAnimationActive,
-        easing: animationEasing,
-        from: {
-          t: 0
-        },
-        to: {
-          t: 1
-        },
-        key: "area-".concat(animationId),
-        onAnimationEnd: this.handleAnimationEnd,
-        onAnimationStart: this.handleAnimationStart
-      }, function(_ref) {
-        var t2 = _ref.t;
-        if (prevPoints) {
-          var prevPointsDiffFactor = prevPoints.length / points.length;
-          var stepPoints = points.map(function(entry, index2) {
-            var prevPointIndex = Math.floor(index2 * prevPointsDiffFactor);
-            if (prevPoints[prevPointIndex]) {
-              var prev = prevPoints[prevPointIndex];
-              var interpolatorX = interpolateNumber$2(prev.x, entry.x);
-              var interpolatorY = interpolateNumber$2(prev.y, entry.y);
-              return _objectSpread$2(_objectSpread$2({}, entry), {}, {
-                x: interpolatorX(t2),
-                y: interpolatorY(t2)
-              });
-            }
-            return entry;
-          });
-          var stepBaseLine;
-          if (isNumber$2(baseLine) && typeof baseLine === "number") {
-            var interpolator = interpolateNumber$2(prevBaseLine, baseLine);
-            stepBaseLine = interpolator(t2);
-          } else if (isNil$1(baseLine) || isNan(baseLine)) {
-            var _interpolator = interpolateNumber$2(prevBaseLine, 0);
-            stepBaseLine = _interpolator(t2);
-          } else {
-            stepBaseLine = baseLine.map(function(entry, index2) {
-              var prevPointIndex = Math.floor(index2 * prevPointsDiffFactor);
-              if (prevBaseLine[prevPointIndex]) {
-                var prev = prevBaseLine[prevPointIndex];
-                var interpolatorX = interpolateNumber$2(prev.x, entry.x);
-                var interpolatorY = interpolateNumber$2(prev.y, entry.y);
-                return _objectSpread$2(_objectSpread$2({}, entry), {}, {
-                  x: interpolatorX(t2),
-                  y: interpolatorY(t2)
-                });
-              }
-              return entry;
-            });
-          }
-          return _this2.renderAreaStatically(stepPoints, stepBaseLine, needClip, clipPathId);
-        }
-        return /* @__PURE__ */ React$4.createElement(Layer, null, /* @__PURE__ */ React$4.createElement("defs", null, /* @__PURE__ */ React$4.createElement("clipPath", {
-          id: "animationClipPath-".concat(clipPathId)
-        }, _this2.renderClipRect(t2))), /* @__PURE__ */ React$4.createElement(Layer, {
-          clipPath: "url(#animationClipPath-".concat(clipPathId, ")")
-        }, _this2.renderAreaStatically(points, baseLine, needClip, clipPathId)));
-      });
-    }
-  }, {
-    key: "renderArea",
-    value: function renderArea(needClip, clipPathId) {
-      var _this$props6 = this.props, points = _this$props6.points, baseLine = _this$props6.baseLine, isAnimationActive = _this$props6.isAnimationActive;
-      var _this$state2 = this.state, prevPoints = _this$state2.prevPoints, prevBaseLine = _this$state2.prevBaseLine, totalLength = _this$state2.totalLength;
-      if (isAnimationActive && points && points.length && (!prevPoints && totalLength > 0 || !isEqual$1(prevPoints, points) || !isEqual$1(prevBaseLine, baseLine))) {
-        return this.renderAreaWithAnimation(needClip, clipPathId);
-      }
-      return this.renderAreaStatically(points, baseLine, needClip, clipPathId);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _filterProps;
-      var _this$props7 = this.props, hide2 = _this$props7.hide, dot = _this$props7.dot, points = _this$props7.points, className = _this$props7.className, top = _this$props7.top, left = _this$props7.left, xAxis = _this$props7.xAxis, yAxis = _this$props7.yAxis, width = _this$props7.width, height = _this$props7.height, isAnimationActive = _this$props7.isAnimationActive, id2 = _this$props7.id;
-      if (hide2 || !points || !points.length) {
-        return null;
-      }
-      var isAnimationFinished = this.state.isAnimationFinished;
-      var hasSinglePoint = points.length === 1;
-      var layerClass = clsx("recharts-area", className);
-      var needClipX = xAxis && xAxis.allowDataOverflow;
-      var needClipY = yAxis && yAxis.allowDataOverflow;
-      var needClip = needClipX || needClipY;
-      var clipPathId = isNil$1(id2) ? this.id : id2;
-      var _ref2 = (_filterProps = filterProps(dot, false)) !== null && _filterProps !== void 0 ? _filterProps : {
-        r: 3,
-        strokeWidth: 2
-      }, _ref2$r = _ref2.r, r2 = _ref2$r === void 0 ? 3 : _ref2$r, _ref2$strokeWidth = _ref2.strokeWidth, strokeWidth = _ref2$strokeWidth === void 0 ? 2 : _ref2$strokeWidth;
-      var _ref3 = hasClipDot(dot) ? dot : {}, _ref3$clipDot = _ref3.clipDot, clipDot = _ref3$clipDot === void 0 ? true : _ref3$clipDot;
-      var dotSize = r2 * 2 + strokeWidth;
-      return /* @__PURE__ */ React$4.createElement(Layer, {
-        className: layerClass
-      }, needClipX || needClipY ? /* @__PURE__ */ React$4.createElement("defs", null, /* @__PURE__ */ React$4.createElement("clipPath", {
-        id: "clipPath-".concat(clipPathId)
-      }, /* @__PURE__ */ React$4.createElement("rect", {
-        x: needClipX ? left : left - width / 2,
-        y: needClipY ? top : top - height / 2,
-        width: needClipX ? width : width * 2,
-        height: needClipY ? height : height * 2
-      })), !clipDot && /* @__PURE__ */ React$4.createElement("clipPath", {
-        id: "clipPath-dots-".concat(clipPathId)
-      }, /* @__PURE__ */ React$4.createElement("rect", {
-        x: left - dotSize / 2,
-        y: top - dotSize / 2,
-        width: width + dotSize,
-        height: height + dotSize
-      }))) : null, !hasSinglePoint ? this.renderArea(needClip, clipPathId) : null, (dot || hasSinglePoint) && this.renderDots(needClip, clipDot, clipPathId), (!isAnimationActive || isAnimationFinished) && LabelList.renderCallByParent(this.props, points));
-    }
-  }], [{
-    key: "getDerivedStateFromProps",
-    value: function getDerivedStateFromProps(nextProps, prevState) {
-      if (nextProps.animationId !== prevState.prevAnimationId) {
-        return {
-          prevAnimationId: nextProps.animationId,
-          curPoints: nextProps.points,
-          curBaseLine: nextProps.baseLine,
-          prevPoints: prevState.curPoints,
-          prevBaseLine: prevState.curBaseLine
-        };
-      }
-      if (nextProps.points !== prevState.curPoints || nextProps.baseLine !== prevState.curBaseLine) {
-        return {
-          curPoints: nextProps.points,
-          curBaseLine: nextProps.baseLine
-        };
-      }
-      return null;
-    }
-  }]);
-}(reactExports.PureComponent);
-_Area = Area;
-_defineProperty$5(Area, "displayName", "Area");
-_defineProperty$5(Area, "defaultProps", {
-  stroke: "#3182bd",
-  fill: "#3182bd",
-  fillOpacity: 0.6,
-  xAxisId: 0,
-  yAxisId: 0,
-  legendType: "line",
-  connectNulls: false,
-  // points of area
-  points: [],
-  dot: false,
-  activeDot: true,
-  hide: false,
-  isAnimationActive: !Global.isSsr,
-  animationBegin: 0,
-  animationDuration: 1500,
-  animationEasing: "ease"
-});
-_defineProperty$5(Area, "getBaseValue", function(props, item, xAxis, yAxis) {
-  var layout2 = props.layout, chartBaseValue = props.baseValue;
-  var itemBaseValue = item.props.baseValue;
-  var baseValue = itemBaseValue !== null && itemBaseValue !== void 0 ? itemBaseValue : chartBaseValue;
-  if (isNumber$2(baseValue) && typeof baseValue === "number") {
-    return baseValue;
-  }
-  var numericAxis = layout2 === "horizontal" ? yAxis : xAxis;
-  var domain = numericAxis.scale.domain();
-  if (numericAxis.type === "number") {
-    var domainMax = Math.max(domain[0], domain[1]);
-    var domainMin = Math.min(domain[0], domain[1]);
-    if (baseValue === "dataMin") {
-      return domainMin;
-    }
-    if (baseValue === "dataMax") {
-      return domainMax;
-    }
-    return domainMax < 0 ? domainMax : Math.max(Math.min(domain[0], domain[1]), 0);
-  }
-  if (baseValue === "dataMin") {
-    return domain[0];
-  }
-  if (baseValue === "dataMax") {
-    return domain[1];
-  }
-  return domain[0];
-});
-_defineProperty$5(Area, "getComposedData", function(_ref4) {
-  var props = _ref4.props, item = _ref4.item, xAxis = _ref4.xAxis, yAxis = _ref4.yAxis, xAxisTicks = _ref4.xAxisTicks, yAxisTicks = _ref4.yAxisTicks, bandSize = _ref4.bandSize, dataKey = _ref4.dataKey, stackedData = _ref4.stackedData, dataStartIndex = _ref4.dataStartIndex, displayedData = _ref4.displayedData, offset2 = _ref4.offset;
-  var layout2 = props.layout;
-  var hasStack = stackedData && stackedData.length;
-  var baseValue = _Area.getBaseValue(props, item, xAxis, yAxis);
-  var isHorizontalLayout = layout2 === "horizontal";
-  var isRange = false;
-  var points = displayedData.map(function(entry, index2) {
-    var value;
-    if (hasStack) {
-      value = stackedData[dataStartIndex + index2];
-    } else {
-      value = getValueByDataKey(entry, dataKey);
-      if (!Array.isArray(value)) {
-        value = [baseValue, value];
-      } else {
-        isRange = true;
-      }
-    }
-    var isBreakPoint = value[1] == null || hasStack && getValueByDataKey(entry, dataKey) == null;
-    if (isHorizontalLayout) {
-      return {
-        x: getCateCoordinateOfLine({
-          axis: xAxis,
-          ticks: xAxisTicks,
-          bandSize,
-          entry,
-          index: index2
-        }),
-        y: isBreakPoint ? null : yAxis.scale(value[1]),
-        value,
-        payload: entry
-      };
-    }
-    return {
-      x: isBreakPoint ? null : xAxis.scale(value[1]),
-      y: getCateCoordinateOfLine({
-        axis: yAxis,
-        ticks: yAxisTicks,
-        bandSize,
-        entry,
-        index: index2
-      }),
-      value,
-      payload: entry
-    };
-  });
-  var baseLine;
-  if (hasStack || isRange) {
-    baseLine = points.map(function(entry) {
-      var x2 = Array.isArray(entry.value) ? entry.value[0] : null;
-      if (isHorizontalLayout) {
-        return {
-          x: entry.x,
-          y: x2 != null && entry.y != null ? yAxis.scale(x2) : null
-        };
-      }
-      return {
-        x: x2 != null ? xAxis.scale(x2) : null,
-        y: entry.y
-      };
-    });
-  } else {
-    baseLine = isHorizontalLayout ? yAxis.scale(baseValue) : xAxis.scale(baseValue);
-  }
-  return _objectSpread$2({
-    points,
-    baseLine,
-    layout: layout2,
-    isRange
-  }, offset2);
-});
-_defineProperty$5(Area, "renderDotItem", function(option, props) {
-  var dotItem;
-  if (/* @__PURE__ */ React$4.isValidElement(option)) {
-    dotItem = /* @__PURE__ */ React$4.cloneElement(option, props);
-  } else if (isFunction$5(option)) {
-    dotItem = option(props);
-  } else {
-    var className = clsx("recharts-area-dot", typeof option !== "boolean" ? option.className : "");
-    var key = props.key, rest = _objectWithoutProperties$1(props, _excluded2$1);
-    dotItem = /* @__PURE__ */ React$4.createElement(Dot, _extends$3({}, rest, {
-      key,
-      className
-    }));
-  }
-  return dotItem;
 });
 function _typeof$4(o) {
   "@babel/helpers - typeof";
@@ -79812,30 +78527,6 @@ var BarChart = generateCategoricalChart({
   }],
   formatAxisMap: formatAxisMap2
 });
-var PieChart = generateCategoricalChart({
-  chartName: "PieChart",
-  GraphicalChild: Pie,
-  validateTooltipEventTypes: ["item"],
-  defaultTooltipEventType: "item",
-  legendContent: "children",
-  axisComponents: [{
-    axisType: "angleAxis",
-    AxisComp: PolarAngleAxis
-  }, {
-    axisType: "radiusAxis",
-    AxisComp: PolarRadiusAxis
-  }],
-  formatAxisMap: formatAxisMap$1,
-  defaultProps: {
-    layout: "centric",
-    startAngle: 0,
-    endAngle: 360,
-    cx: "50%",
-    cy: "50%",
-    innerRadius: 0,
-    outerRadius: "80%"
-  }
-});
 var RadarChart = generateCategoricalChart({
   chartName: "RadarChart",
   GraphicalChild: Radar,
@@ -79856,18 +78547,6 @@ var RadarChart = generateCategoricalChart({
     innerRadius: 0,
     outerRadius: "80%"
   }
-});
-var AreaChart = generateCategoricalChart({
-  chartName: "AreaChart",
-  GraphicalChild: Area,
-  axisComponents: [{
-    axisType: "xAxis",
-    AxisComp: XAxis
-  }, {
-    axisType: "yAxis",
-    AxisComp: YAxis
-  }],
-  formatAxisMap: formatAxisMap2
 });
 function GlassTooltip({
   active,
@@ -80883,7 +79562,7 @@ function AdminDashboard() {
     }
   );
 }
-const revenueData$1 = [
+const revenueData = [
   { month: "Nov", revenue: 182e3 },
   { month: "Dec", revenue: 214e3 },
   { month: "Jan", revenue: 196e3 },
@@ -81100,7 +79779,7 @@ function BillingDashboard() {
           /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 220, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
             LineChart,
             {
-              data: revenueData$1,
+              data: revenueData,
               margin: { top: 5, right: 10, left: -10, bottom: 5 },
               children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -82012,8 +80691,8 @@ function ReceptionistDashboard() {
     }
   );
 }
-const Route$g = createRoute({
-  getParentRoute: () => Route$k,
+const Route$e = createRoute({
+  getParentRoute: () => Route$i,
   path: "/",
   component: DashboardPage
 });
@@ -82028,8 +80707,8 @@ function DashboardPage() {
   if (currentRole === "billing") return /* @__PURE__ */ jsxRuntimeExports.jsx(BillingDashboard, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(AdminDashboard, {});
 }
-const Route$f = createRoute({
-  getParentRoute: () => Route$k,
+const Route$d = createRoute({
+  getParentRoute: () => Route$i,
   path: "/login",
   component: LoginPage
 });
@@ -82254,8 +80933,8 @@ function LoginPage() {
     }
   );
 }
-const Route$e = createRoute({
-  getParentRoute: () => Route$k,
+const Route$c = createRoute({
+  getParentRoute: () => Route$i,
   path: "/patients",
   component: PatientsLayout
 });
@@ -100350,11 +99029,11 @@ class Branch {
         return;
       }
       if (remap) {
-        addBefore.push(new Item$1(item.map));
+        addBefore.push(new Item(item.map));
         let step = item.step.map(remap.slice(mapFrom)), map3;
         if (step && transform.maybeStep(step).doc) {
           map3 = transform.mapping.maps[transform.mapping.maps.length - 1];
-          addAfter.push(new Item$1(map3, void 0, void 0, addAfter.length + addBefore.length));
+          addAfter.push(new Item(map3, void 0, void 0, addAfter.length + addBefore.length));
         }
         mapFrom--;
         if (map3)
@@ -100376,7 +99055,7 @@ class Branch {
     let oldItems = this.items, lastItem = !preserveItems && oldItems.length ? oldItems.get(oldItems.length - 1) : null;
     for (let i = 0; i < transform.steps.length; i++) {
       let step = transform.steps[i].invert(transform.docs[i]);
-      let item = new Item$1(transform.mapping.maps[i], step, selection), merged;
+      let item = new Item(transform.mapping.maps[i], step, selection), merged;
       if (merged = lastItem && lastItem.merge(item)) {
         item = merged;
         if (i)
@@ -100410,7 +99089,7 @@ class Branch {
   addMaps(array2) {
     if (this.eventCount == 0)
       return this;
-    return new Branch(this.items.append(array2.map((map3) => new Item$1(map3))), this.eventCount);
+    return new Branch(this.items.append(array2.map((map3) => new Item(map3))), this.eventCount);
   }
   // When the collab module receives remote changes, the history has
   // to know about those, so that it can adjust the steps that were
@@ -100439,14 +99118,14 @@ class Branch {
         let selection = item.selection && item.selection.map(mapping.slice(iRebased + 1, pos));
         if (selection)
           eventCount++;
-        rebasedItems.push(new Item$1(map3, step, selection));
+        rebasedItems.push(new Item(map3, step, selection));
       } else {
-        rebasedItems.push(new Item$1(map3));
+        rebasedItems.push(new Item(map3));
       }
     }, start);
     let newMaps = [];
     for (let i = rebasedCount; i < newUntil; i++)
-      newMaps.push(new Item$1(mapping.maps[i]));
+      newMaps.push(new Item(mapping.maps[i]));
     let items = this.items.slice(0, start).append(newMaps).append(rebasedItems);
     let branch = new Branch(items, eventCount);
     if (branch.emptyItemCount() > max_empty_items)
@@ -100484,7 +99163,7 @@ class Branch {
           let selection = item.selection && item.selection.map(remap.slice(mapFrom));
           if (selection)
             events2++;
-          let newItem = new Item$1(map3.invert(), step, selection), merged, last2 = items.length - 1;
+          let newItem = new Item(map3.invert(), step, selection), merged, last2 = items.length - 1;
           if (merged = items.length && items[last2].merge(newItem))
             items[last2] = merged;
           else
@@ -100508,7 +99187,7 @@ function cutOffEvents(items, n2) {
   });
   return items.slice(cutPoint);
 }
-let Item$1 = class Item {
+class Item {
   constructor(map3, step, selection, mirrorOffset) {
     this.map = map3;
     this.step = step;
@@ -100522,7 +99201,7 @@ let Item$1 = class Item {
         return new Item(step.getMap().invert(), step, this.selection);
     }
   }
-};
+}
 class HistoryState {
   constructor(done, undone, prevRanges, prevTime, prevComposition) {
     this.done = done;
@@ -101537,8 +100216,8 @@ function DataTable({
     )
   ] });
 }
-const Route$d = createRoute({
-  getParentRoute: () => Route$e,
+const Route$b = createRoute({
+  getParentRoute: () => Route$c,
   path: "/",
   component: PatientsPage
 });
@@ -101827,7 +100506,7 @@ function PatientModal({
     ] })
   ] }) });
 }
-function DetailField$1({ icon, label, value, accent }) {
+function DetailField({ icon, label, value, accent }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-1 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/8 transition-colors", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5 text-muted-foreground", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -101884,7 +100563,7 @@ function ViewPatientModal({
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-6 py-5 space-y-4", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 sm:grid-cols-3 gap-2.5", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
-          DetailField$1,
+          DetailField,
           {
             icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Phone, { className: "w-3.5 h-3.5" }),
             label: "Phone",
@@ -101892,7 +100571,7 @@ function ViewPatientModal({
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
-          DetailField$1,
+          DetailField,
           {
             icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Mail, { className: "w-3.5 h-3.5" }),
             label: "Email",
@@ -101900,7 +100579,7 @@ function ViewPatientModal({
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
-          DetailField$1,
+          DetailField,
           {
             icon: /* @__PURE__ */ jsxRuntimeExports.jsx(MapPin, { className: "w-3.5 h-3.5" }),
             label: "Place",
@@ -101908,7 +100587,7 @@ function ViewPatientModal({
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
-          DetailField$1,
+          DetailField,
           {
             icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-3.5 h-3.5" }),
             label: "Last Visit",
@@ -101916,7 +100595,7 @@ function ViewPatientModal({
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
-          DetailField$1,
+          DetailField,
           {
             icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-3.5 h-3.5" }),
             label: "Total Visits",
@@ -101925,7 +100604,7 @@ function ViewPatientModal({
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
-          DetailField$1,
+          DetailField,
           {
             icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Droplets, { className: "w-3.5 h-3.5" }),
             label: "Blood Group",
@@ -101933,7 +100612,7 @@ function ViewPatientModal({
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
-          DetailField$1,
+          DetailField,
           {
             icon: /* @__PURE__ */ jsxRuntimeExports.jsx(User, { className: "w-3.5 h-3.5" }),
             label: "Age",
@@ -101941,7 +100620,7 @@ function ViewPatientModal({
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
-          DetailField$1,
+          DetailField,
           {
             icon: /* @__PURE__ */ jsxRuntimeExports.jsx(User, { className: "w-3.5 h-3.5" }),
             label: "Gender",
@@ -102239,8 +100918,8 @@ function PatientsPage() {
     }
   );
 }
-const Route$c = createRoute({
-  getParentRoute: () => Route$e,
+const Route$a = createRoute({
+  getParentRoute: () => Route$c,
   path: "$patientId",
   component: PatientDetailPage
 });
@@ -104799,3267 +103478,8 @@ function PatientDetailPage() {
     }
   );
 }
-var COLLAPSIBLE_NAME = "Collapsible";
-var [createCollapsibleContext, createCollapsibleScope] = createContextScope$1(COLLAPSIBLE_NAME);
-var [CollapsibleProvider, useCollapsibleContext] = createCollapsibleContext(COLLAPSIBLE_NAME);
-var Collapsible = reactExports.forwardRef(
-  (props, forwardedRef) => {
-    const {
-      __scopeCollapsible,
-      open: openProp,
-      defaultOpen,
-      disabled,
-      onOpenChange,
-      ...collapsibleProps
-    } = props;
-    const [open, setOpen] = useControllableState({
-      prop: openProp,
-      defaultProp: defaultOpen ?? false,
-      onChange: onOpenChange,
-      caller: COLLAPSIBLE_NAME
-    });
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      CollapsibleProvider,
-      {
-        scope: __scopeCollapsible,
-        disabled,
-        contentId: useId(),
-        open,
-        onOpenToggle: reactExports.useCallback(() => setOpen((prevOpen) => !prevOpen), [setOpen]),
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Primitive$1.div,
-          {
-            "data-state": getState$3(open),
-            "data-disabled": disabled ? "" : void 0,
-            ...collapsibleProps,
-            ref: forwardedRef
-          }
-        )
-      }
-    );
-  }
-);
-Collapsible.displayName = COLLAPSIBLE_NAME;
-var TRIGGER_NAME$2 = "CollapsibleTrigger";
-var CollapsibleTrigger = reactExports.forwardRef(
-  (props, forwardedRef) => {
-    const { __scopeCollapsible, ...triggerProps } = props;
-    const context = useCollapsibleContext(TRIGGER_NAME$2, __scopeCollapsible);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Primitive$1.button,
-      {
-        type: "button",
-        "aria-controls": context.contentId,
-        "aria-expanded": context.open || false,
-        "data-state": getState$3(context.open),
-        "data-disabled": context.disabled ? "" : void 0,
-        disabled: context.disabled,
-        ...triggerProps,
-        ref: forwardedRef,
-        onClick: composeEventHandlers(props.onClick, context.onOpenToggle)
-      }
-    );
-  }
-);
-CollapsibleTrigger.displayName = TRIGGER_NAME$2;
-var CONTENT_NAME$1 = "CollapsibleContent";
-var CollapsibleContent = reactExports.forwardRef(
-  (props, forwardedRef) => {
-    const { forceMount, ...contentProps } = props;
-    const context = useCollapsibleContext(CONTENT_NAME$1, props.__scopeCollapsible);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(Presence, { present: forceMount || context.open, children: ({ present }) => /* @__PURE__ */ jsxRuntimeExports.jsx(CollapsibleContentImpl, { ...contentProps, ref: forwardedRef, present }) });
-  }
-);
-CollapsibleContent.displayName = CONTENT_NAME$1;
-var CollapsibleContentImpl = reactExports.forwardRef((props, forwardedRef) => {
-  const { __scopeCollapsible, present, children, ...contentProps } = props;
-  const context = useCollapsibleContext(CONTENT_NAME$1, __scopeCollapsible);
-  const [isPresent, setIsPresent] = reactExports.useState(present);
-  const ref = reactExports.useRef(null);
-  const composedRefs = useComposedRefs$1(forwardedRef, ref);
-  const heightRef = reactExports.useRef(0);
-  const height = heightRef.current;
-  const widthRef = reactExports.useRef(0);
-  const width = widthRef.current;
-  const isOpen = context.open || isPresent;
-  const isMountAnimationPreventedRef = reactExports.useRef(isOpen);
-  const originalStylesRef = reactExports.useRef(void 0);
-  reactExports.useEffect(() => {
-    const rAF = requestAnimationFrame(() => isMountAnimationPreventedRef.current = false);
-    return () => cancelAnimationFrame(rAF);
-  }, []);
-  useLayoutEffect2(() => {
-    const node = ref.current;
-    if (node) {
-      originalStylesRef.current = originalStylesRef.current || {
-        transitionDuration: node.style.transitionDuration,
-        animationName: node.style.animationName
-      };
-      node.style.transitionDuration = "0s";
-      node.style.animationName = "none";
-      const rect = node.getBoundingClientRect();
-      heightRef.current = rect.height;
-      widthRef.current = rect.width;
-      if (!isMountAnimationPreventedRef.current) {
-        node.style.transitionDuration = originalStylesRef.current.transitionDuration;
-        node.style.animationName = originalStylesRef.current.animationName;
-      }
-      setIsPresent(present);
-    }
-  }, [context.open, present]);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Primitive$1.div,
-    {
-      "data-state": getState$3(context.open),
-      "data-disabled": context.disabled ? "" : void 0,
-      id: context.contentId,
-      hidden: !isOpen,
-      ...contentProps,
-      ref: composedRefs,
-      style: {
-        [`--radix-collapsible-content-height`]: height ? `${height}px` : void 0,
-        [`--radix-collapsible-content-width`]: width ? `${width}px` : void 0,
-        ...props.style
-      },
-      children: isOpen && children
-    }
-  );
-});
-function getState$3(open) {
-  return open ? "open" : "closed";
-}
-var Root$4 = Collapsible;
-var Trigger = CollapsibleTrigger;
-var Content = CollapsibleContent;
-var ACCORDION_NAME = "Accordion";
-var ACCORDION_KEYS = ["Home", "End", "ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight"];
-var [Collection$1, useCollection$1, createCollectionScope$1] = createCollection(ACCORDION_NAME);
-var [createAccordionContext] = createContextScope$1(ACCORDION_NAME, [
-  createCollectionScope$1,
-  createCollapsibleScope
-]);
-var useCollapsibleScope = createCollapsibleScope();
-var Accordion$1 = React$4.forwardRef(
-  (props, forwardedRef) => {
-    const { type, ...accordionProps } = props;
-    const singleProps = accordionProps;
-    const multipleProps = accordionProps;
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.Provider, { scope: props.__scopeAccordion, children: type === "multiple" ? /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionImplMultiple, { ...multipleProps, ref: forwardedRef }) : /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionImplSingle, { ...singleProps, ref: forwardedRef }) });
-  }
-);
-Accordion$1.displayName = ACCORDION_NAME;
-var [AccordionValueProvider, useAccordionValueContext] = createAccordionContext(ACCORDION_NAME);
-var [AccordionCollapsibleProvider, useAccordionCollapsibleContext] = createAccordionContext(
-  ACCORDION_NAME,
-  { collapsible: false }
-);
-var AccordionImplSingle = React$4.forwardRef(
-  (props, forwardedRef) => {
-    const {
-      value: valueProp,
-      defaultValue,
-      onValueChange = () => {
-      },
-      collapsible = false,
-      ...accordionSingleProps
-    } = props;
-    const [value, setValue] = useControllableState({
-      prop: valueProp,
-      defaultProp: defaultValue ?? "",
-      onChange: onValueChange,
-      caller: ACCORDION_NAME
-    });
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AccordionValueProvider,
-      {
-        scope: props.__scopeAccordion,
-        value: React$4.useMemo(() => value ? [value] : [], [value]),
-        onItemOpen: setValue,
-        onItemClose: React$4.useCallback(() => collapsible && setValue(""), [collapsible, setValue]),
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionCollapsibleProvider, { scope: props.__scopeAccordion, collapsible, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionImpl, { ...accordionSingleProps, ref: forwardedRef }) })
-      }
-    );
-  }
-);
-var AccordionImplMultiple = React$4.forwardRef((props, forwardedRef) => {
-  const {
-    value: valueProp,
-    defaultValue,
-    onValueChange = () => {
-    },
-    ...accordionMultipleProps
-  } = props;
-  const [value, setValue] = useControllableState({
-    prop: valueProp,
-    defaultProp: defaultValue ?? [],
-    onChange: onValueChange,
-    caller: ACCORDION_NAME
-  });
-  const handleItemOpen = React$4.useCallback(
-    (itemValue) => setValue((prevValue = []) => [...prevValue, itemValue]),
-    [setValue]
-  );
-  const handleItemClose = React$4.useCallback(
-    (itemValue) => setValue((prevValue = []) => prevValue.filter((value2) => value2 !== itemValue)),
-    [setValue]
-  );
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    AccordionValueProvider,
-    {
-      scope: props.__scopeAccordion,
-      value,
-      onItemOpen: handleItemOpen,
-      onItemClose: handleItemClose,
-      children: /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionCollapsibleProvider, { scope: props.__scopeAccordion, collapsible: true, children: /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionImpl, { ...accordionMultipleProps, ref: forwardedRef }) })
-    }
-  );
-});
-var [AccordionImplProvider, useAccordionContext] = createAccordionContext(ACCORDION_NAME);
-var AccordionImpl = React$4.forwardRef(
-  (props, forwardedRef) => {
-    const { __scopeAccordion, disabled, dir, orientation = "vertical", ...accordionProps } = props;
-    const accordionRef = React$4.useRef(null);
-    const composedRefs = useComposedRefs$1(accordionRef, forwardedRef);
-    const getItems = useCollection$1(__scopeAccordion);
-    const direction = useDirection(dir);
-    const isDirectionLTR = direction === "ltr";
-    const handleKeyDown2 = composeEventHandlers(props.onKeyDown, (event) => {
-      var _a2;
-      if (!ACCORDION_KEYS.includes(event.key)) return;
-      const target = event.target;
-      const triggerCollection = getItems().filter((item) => {
-        var _a3;
-        return !((_a3 = item.ref.current) == null ? void 0 : _a3.disabled);
-      });
-      const triggerIndex = triggerCollection.findIndex((item) => item.ref.current === target);
-      const triggerCount = triggerCollection.length;
-      if (triggerIndex === -1) return;
-      event.preventDefault();
-      let nextIndex = triggerIndex;
-      const homeIndex = 0;
-      const endIndex = triggerCount - 1;
-      const moveNext = () => {
-        nextIndex = triggerIndex + 1;
-        if (nextIndex > endIndex) {
-          nextIndex = homeIndex;
-        }
-      };
-      const movePrev = () => {
-        nextIndex = triggerIndex - 1;
-        if (nextIndex < homeIndex) {
-          nextIndex = endIndex;
-        }
-      };
-      switch (event.key) {
-        case "Home":
-          nextIndex = homeIndex;
-          break;
-        case "End":
-          nextIndex = endIndex;
-          break;
-        case "ArrowRight":
-          if (orientation === "horizontal") {
-            if (isDirectionLTR) {
-              moveNext();
-            } else {
-              movePrev();
-            }
-          }
-          break;
-        case "ArrowDown":
-          if (orientation === "vertical") {
-            moveNext();
-          }
-          break;
-        case "ArrowLeft":
-          if (orientation === "horizontal") {
-            if (isDirectionLTR) {
-              movePrev();
-            } else {
-              moveNext();
-            }
-          }
-          break;
-        case "ArrowUp":
-          if (orientation === "vertical") {
-            movePrev();
-          }
-          break;
-      }
-      const clampedIndex = nextIndex % triggerCount;
-      (_a2 = triggerCollection[clampedIndex].ref.current) == null ? void 0 : _a2.focus();
-    });
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AccordionImplProvider,
-      {
-        scope: __scopeAccordion,
-        disabled,
-        direction: dir,
-        orientation,
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.Slot, { scope: __scopeAccordion, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Primitive$1.div,
-          {
-            ...accordionProps,
-            "data-orientation": orientation,
-            ref: composedRefs,
-            onKeyDown: disabled ? void 0 : handleKeyDown2
-          }
-        ) })
-      }
-    );
-  }
-);
-var ITEM_NAME = "AccordionItem";
-var [AccordionItemProvider, useAccordionItemContext] = createAccordionContext(ITEM_NAME);
-var AccordionItem$1 = React$4.forwardRef(
-  (props, forwardedRef) => {
-    const { __scopeAccordion, value, ...accordionItemProps } = props;
-    const accordionContext = useAccordionContext(ITEM_NAME, __scopeAccordion);
-    const valueContext = useAccordionValueContext(ITEM_NAME, __scopeAccordion);
-    const collapsibleScope = useCollapsibleScope(__scopeAccordion);
-    const triggerId = useId();
-    const open = value && valueContext.value.includes(value) || false;
-    const disabled = accordionContext.disabled || props.disabled;
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      AccordionItemProvider,
-      {
-        scope: __scopeAccordion,
-        open,
-        disabled,
-        triggerId,
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Root$4,
-          {
-            "data-orientation": accordionContext.orientation,
-            "data-state": getState$2(open),
-            ...collapsibleScope,
-            ...accordionItemProps,
-            ref: forwardedRef,
-            disabled,
-            open,
-            onOpenChange: (open2) => {
-              if (open2) {
-                valueContext.onItemOpen(value);
-              } else {
-                valueContext.onItemClose(value);
-              }
-            }
-          }
-        )
-      }
-    );
-  }
-);
-AccordionItem$1.displayName = ITEM_NAME;
-var HEADER_NAME = "AccordionHeader";
-var AccordionHeader = React$4.forwardRef(
-  (props, forwardedRef) => {
-    const { __scopeAccordion, ...headerProps } = props;
-    const accordionContext = useAccordionContext(ACCORDION_NAME, __scopeAccordion);
-    const itemContext = useAccordionItemContext(HEADER_NAME, __scopeAccordion);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Primitive$1.h3,
-      {
-        "data-orientation": accordionContext.orientation,
-        "data-state": getState$2(itemContext.open),
-        "data-disabled": itemContext.disabled ? "" : void 0,
-        ...headerProps,
-        ref: forwardedRef
-      }
-    );
-  }
-);
-AccordionHeader.displayName = HEADER_NAME;
-var TRIGGER_NAME$1 = "AccordionTrigger";
-var AccordionTrigger$1 = React$4.forwardRef(
-  (props, forwardedRef) => {
-    const { __scopeAccordion, ...triggerProps } = props;
-    const accordionContext = useAccordionContext(ACCORDION_NAME, __scopeAccordion);
-    const itemContext = useAccordionItemContext(TRIGGER_NAME$1, __scopeAccordion);
-    const collapsibleContext = useAccordionCollapsibleContext(TRIGGER_NAME$1, __scopeAccordion);
-    const collapsibleScope = useCollapsibleScope(__scopeAccordion);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(Collection$1.ItemSlot, { scope: __scopeAccordion, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Trigger,
-      {
-        "aria-disabled": itemContext.open && !collapsibleContext.collapsible || void 0,
-        "data-orientation": accordionContext.orientation,
-        id: itemContext.triggerId,
-        ...collapsibleScope,
-        ...triggerProps,
-        ref: forwardedRef
-      }
-    ) });
-  }
-);
-AccordionTrigger$1.displayName = TRIGGER_NAME$1;
-var CONTENT_NAME = "AccordionContent";
-var AccordionContent$1 = React$4.forwardRef(
-  (props, forwardedRef) => {
-    const { __scopeAccordion, ...contentProps } = props;
-    const accordionContext = useAccordionContext(ACCORDION_NAME, __scopeAccordion);
-    const itemContext = useAccordionItemContext(CONTENT_NAME, __scopeAccordion);
-    const collapsibleScope = useCollapsibleScope(__scopeAccordion);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Content,
-      {
-        role: "region",
-        "aria-labelledby": itemContext.triggerId,
-        "data-orientation": accordionContext.orientation,
-        ...collapsibleScope,
-        ...contentProps,
-        ref: forwardedRef,
-        style: {
-          ["--radix-accordion-content-height"]: "var(--radix-collapsible-content-height)",
-          ["--radix-accordion-content-width"]: "var(--radix-collapsible-content-width)",
-          ...props.style
-        }
-      }
-    );
-  }
-);
-AccordionContent$1.displayName = CONTENT_NAME;
-function getState$2(open) {
-  return open ? "open" : "closed";
-}
-var Root2 = Accordion$1;
-var Item3 = AccordionItem$1;
-var Header = AccordionHeader;
-var Trigger2 = AccordionTrigger$1;
-var Content2 = AccordionContent$1;
-function Accordion({
-  ...props
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Root2, { "data-slot": "accordion", ...props });
-}
-function AccordionItem({
-  className,
-  ...props
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Item3,
-    {
-      "data-slot": "accordion-item",
-      className: cn("border-b last:border-b-0", className),
-      ...props
-    }
-  );
-}
-function AccordionTrigger({
-  className,
-  children,
-  ...props
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Header, { className: "flex", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    Trigger2,
-    {
-      "data-slot": "accordion-trigger",
-      className: cn(
-        "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180",
-        className
-      ),
-      ...props,
-      children: [
-        children,
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronDown, { className: "text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" })
-      ]
-    }
-  ) });
-}
-function AccordionContent({
-  className,
-  children,
-  ...props
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Content2,
-    {
-      "data-slot": "accordion-content",
-      className: "data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm",
-      ...props,
-      children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: cn("pt-0 pb-4", className), children })
-    }
-  );
-}
-var NAME = "Separator";
-var DEFAULT_ORIENTATION = "horizontal";
-var ORIENTATIONS = ["horizontal", "vertical"];
-var Separator$1 = reactExports.forwardRef((props, forwardedRef) => {
-  const { decorative, orientation: orientationProp = DEFAULT_ORIENTATION, ...domProps } = props;
-  const orientation = isValidOrientation(orientationProp) ? orientationProp : DEFAULT_ORIENTATION;
-  const ariaOrientation = orientation === "vertical" ? orientation : void 0;
-  const semanticProps = decorative ? { role: "none" } : { "aria-orientation": ariaOrientation, role: "separator" };
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Primitive.div,
-    {
-      "data-orientation": orientation,
-      ...semanticProps,
-      ...domProps,
-      ref: forwardedRef
-    }
-  );
-});
-Separator$1.displayName = NAME;
-function isValidOrientation(orientation) {
-  return ORIENTATIONS.includes(orientation);
-}
-var Root$3 = Separator$1;
-function Separator({
-  className,
-  orientation = "horizontal",
-  decorative = true,
-  ...props
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Root$3,
-    {
-      "data-slot": "separator",
-      decorative,
-      orientation,
-      className: cn(
-        "bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px",
-        className
-      ),
-      ...props
-    }
-  );
-}
-var PAGE_KEYS = ["PageUp", "PageDown"];
-var ARROW_KEYS = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
-var BACK_KEYS = {
-  "from-left": ["Home", "PageDown", "ArrowDown", "ArrowLeft"],
-  "from-right": ["Home", "PageDown", "ArrowDown", "ArrowRight"],
-  "from-bottom": ["Home", "PageDown", "ArrowDown", "ArrowLeft"],
-  "from-top": ["Home", "PageDown", "ArrowUp", "ArrowLeft"]
-};
-var SLIDER_NAME = "Slider";
-var [Collection, useCollection, createCollectionScope] = createCollection(SLIDER_NAME);
-var [createSliderContext] = createContextScope$1(SLIDER_NAME, [
-  createCollectionScope
-]);
-var [SliderProvider, useSliderContext] = createSliderContext(SLIDER_NAME);
-var Slider$1 = reactExports.forwardRef(
-  (props, forwardedRef) => {
-    const {
-      name,
-      min: min2 = 0,
-      max: max2 = 100,
-      step = 1,
-      orientation = "horizontal",
-      disabled = false,
-      minStepsBetweenThumbs = 0,
-      defaultValue = [min2],
-      value,
-      onValueChange = () => {
-      },
-      onValueCommit = () => {
-      },
-      inverted = false,
-      form,
-      ...sliderProps
-    } = props;
-    const thumbRefs = reactExports.useRef(/* @__PURE__ */ new Set());
-    const valueIndexToChangeRef = reactExports.useRef(0);
-    const isHorizontal = orientation === "horizontal";
-    const SliderOrientation = isHorizontal ? SliderHorizontal : SliderVertical;
-    const [values = [], setValues] = useControllableState({
-      prop: value,
-      defaultProp: defaultValue,
-      onChange: (value2) => {
-        var _a2;
-        const thumbs = [...thumbRefs.current];
-        (_a2 = thumbs[valueIndexToChangeRef.current]) == null ? void 0 : _a2.focus();
-        onValueChange(value2);
-      }
-    });
-    const valuesBeforeSlideStartRef = reactExports.useRef(values);
-    function handleSlideStart(value2) {
-      const closestIndex = getClosestValueIndex(values, value2);
-      updateValues(value2, closestIndex);
-    }
-    function handleSlideMove(value2) {
-      updateValues(value2, valueIndexToChangeRef.current);
-    }
-    function handleSlideEnd() {
-      const prevValue = valuesBeforeSlideStartRef.current[valueIndexToChangeRef.current];
-      const nextValue = values[valueIndexToChangeRef.current];
-      const hasChanged = nextValue !== prevValue;
-      if (hasChanged) onValueCommit(values);
-    }
-    function updateValues(value2, atIndex, { commit } = { commit: false }) {
-      const decimalCount = getDecimalCount(step);
-      const snapToStep = roundValue(Math.round((value2 - min2) / step) * step + min2, decimalCount);
-      const nextValue = clamp(snapToStep, [min2, max2]);
-      setValues((prevValues = []) => {
-        const nextValues = getNextSortedValues(prevValues, nextValue, atIndex);
-        if (hasMinStepsBetweenValues(nextValues, minStepsBetweenThumbs * step)) {
-          valueIndexToChangeRef.current = nextValues.indexOf(nextValue);
-          const hasChanged = String(nextValues) !== String(prevValues);
-          if (hasChanged && commit) onValueCommit(nextValues);
-          return hasChanged ? nextValues : prevValues;
-        } else {
-          return prevValues;
-        }
-      });
-    }
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      SliderProvider,
-      {
-        scope: props.__scopeSlider,
-        name,
-        disabled,
-        min: min2,
-        max: max2,
-        valueIndexToChangeRef,
-        thumbs: thumbRefs.current,
-        values,
-        orientation,
-        form,
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection.Provider, { scope: props.__scopeSlider, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Collection.Slot, { scope: props.__scopeSlider, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          SliderOrientation,
-          {
-            "aria-disabled": disabled,
-            "data-disabled": disabled ? "" : void 0,
-            ...sliderProps,
-            ref: forwardedRef,
-            onPointerDown: composeEventHandlers(sliderProps.onPointerDown, () => {
-              if (!disabled) valuesBeforeSlideStartRef.current = values;
-            }),
-            min: min2,
-            max: max2,
-            inverted,
-            onSlideStart: disabled ? void 0 : handleSlideStart,
-            onSlideMove: disabled ? void 0 : handleSlideMove,
-            onSlideEnd: disabled ? void 0 : handleSlideEnd,
-            onHomeKeyDown: () => !disabled && updateValues(min2, 0, { commit: true }),
-            onEndKeyDown: () => !disabled && updateValues(max2, values.length - 1, { commit: true }),
-            onStepKeyDown: ({ event, direction: stepDirection }) => {
-              if (!disabled) {
-                const isPageKey = PAGE_KEYS.includes(event.key);
-                const isSkipKey = isPageKey || event.shiftKey && ARROW_KEYS.includes(event.key);
-                const multiplier = isSkipKey ? 10 : 1;
-                const atIndex = valueIndexToChangeRef.current;
-                const value2 = values[atIndex];
-                const stepInDirection = step * multiplier * stepDirection;
-                updateValues(value2 + stepInDirection, atIndex, { commit: true });
-              }
-            }
-          }
-        ) }) })
-      }
-    );
-  }
-);
-Slider$1.displayName = SLIDER_NAME;
-var [SliderOrientationProvider, useSliderOrientationContext] = createSliderContext(SLIDER_NAME, {
-  startEdge: "left",
-  endEdge: "right",
-  size: "width",
-  direction: 1
-});
-var SliderHorizontal = reactExports.forwardRef(
-  (props, forwardedRef) => {
-    const {
-      min: min2,
-      max: max2,
-      dir,
-      inverted,
-      onSlideStart,
-      onSlideMove,
-      onSlideEnd,
-      onStepKeyDown,
-      ...sliderProps
-    } = props;
-    const [slider, setSlider] = reactExports.useState(null);
-    const composedRefs = useComposedRefs$1(forwardedRef, (node) => setSlider(node));
-    const rectRef = reactExports.useRef(void 0);
-    const direction = useDirection(dir);
-    const isDirectionLTR = direction === "ltr";
-    const isSlidingFromLeft = isDirectionLTR && !inverted || !isDirectionLTR && inverted;
-    function getValueFromPointer(pointerPosition) {
-      const rect = rectRef.current || slider.getBoundingClientRect();
-      const input = [0, rect.width];
-      const output = isSlidingFromLeft ? [min2, max2] : [max2, min2];
-      const value = linearScale(input, output);
-      rectRef.current = rect;
-      return value(pointerPosition - rect.left);
-    }
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      SliderOrientationProvider,
-      {
-        scope: props.__scopeSlider,
-        startEdge: isSlidingFromLeft ? "left" : "right",
-        endEdge: isSlidingFromLeft ? "right" : "left",
-        direction: isSlidingFromLeft ? 1 : -1,
-        size: "width",
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          SliderImpl,
-          {
-            dir: direction,
-            "data-orientation": "horizontal",
-            ...sliderProps,
-            ref: composedRefs,
-            style: {
-              ...sliderProps.style,
-              ["--radix-slider-thumb-transform"]: "translateX(-50%)"
-            },
-            onSlideStart: (event) => {
-              const value = getValueFromPointer(event.clientX);
-              onSlideStart == null ? void 0 : onSlideStart(value);
-            },
-            onSlideMove: (event) => {
-              const value = getValueFromPointer(event.clientX);
-              onSlideMove == null ? void 0 : onSlideMove(value);
-            },
-            onSlideEnd: () => {
-              rectRef.current = void 0;
-              onSlideEnd == null ? void 0 : onSlideEnd();
-            },
-            onStepKeyDown: (event) => {
-              const slideDirection = isSlidingFromLeft ? "from-left" : "from-right";
-              const isBackKey = BACK_KEYS[slideDirection].includes(event.key);
-              onStepKeyDown == null ? void 0 : onStepKeyDown({ event, direction: isBackKey ? -1 : 1 });
-            }
-          }
-        )
-      }
-    );
-  }
-);
-var SliderVertical = reactExports.forwardRef(
-  (props, forwardedRef) => {
-    const {
-      min: min2,
-      max: max2,
-      inverted,
-      onSlideStart,
-      onSlideMove,
-      onSlideEnd,
-      onStepKeyDown,
-      ...sliderProps
-    } = props;
-    const sliderRef = reactExports.useRef(null);
-    const ref = useComposedRefs$1(forwardedRef, sliderRef);
-    const rectRef = reactExports.useRef(void 0);
-    const isSlidingFromBottom = !inverted;
-    function getValueFromPointer(pointerPosition) {
-      const rect = rectRef.current || sliderRef.current.getBoundingClientRect();
-      const input = [0, rect.height];
-      const output = isSlidingFromBottom ? [max2, min2] : [min2, max2];
-      const value = linearScale(input, output);
-      rectRef.current = rect;
-      return value(pointerPosition - rect.top);
-    }
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      SliderOrientationProvider,
-      {
-        scope: props.__scopeSlider,
-        startEdge: isSlidingFromBottom ? "bottom" : "top",
-        endEdge: isSlidingFromBottom ? "top" : "bottom",
-        size: "height",
-        direction: isSlidingFromBottom ? 1 : -1,
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          SliderImpl,
-          {
-            "data-orientation": "vertical",
-            ...sliderProps,
-            ref,
-            style: {
-              ...sliderProps.style,
-              ["--radix-slider-thumb-transform"]: "translateY(50%)"
-            },
-            onSlideStart: (event) => {
-              const value = getValueFromPointer(event.clientY);
-              onSlideStart == null ? void 0 : onSlideStart(value);
-            },
-            onSlideMove: (event) => {
-              const value = getValueFromPointer(event.clientY);
-              onSlideMove == null ? void 0 : onSlideMove(value);
-            },
-            onSlideEnd: () => {
-              rectRef.current = void 0;
-              onSlideEnd == null ? void 0 : onSlideEnd();
-            },
-            onStepKeyDown: (event) => {
-              const slideDirection = isSlidingFromBottom ? "from-bottom" : "from-top";
-              const isBackKey = BACK_KEYS[slideDirection].includes(event.key);
-              onStepKeyDown == null ? void 0 : onStepKeyDown({ event, direction: isBackKey ? -1 : 1 });
-            }
-          }
-        )
-      }
-    );
-  }
-);
-var SliderImpl = reactExports.forwardRef(
-  (props, forwardedRef) => {
-    const {
-      __scopeSlider,
-      onSlideStart,
-      onSlideMove,
-      onSlideEnd,
-      onHomeKeyDown,
-      onEndKeyDown,
-      onStepKeyDown,
-      ...sliderProps
-    } = props;
-    const context = useSliderContext(SLIDER_NAME, __scopeSlider);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Primitive$1.span,
-      {
-        ...sliderProps,
-        ref: forwardedRef,
-        onKeyDown: composeEventHandlers(props.onKeyDown, (event) => {
-          if (event.key === "Home") {
-            onHomeKeyDown(event);
-            event.preventDefault();
-          } else if (event.key === "End") {
-            onEndKeyDown(event);
-            event.preventDefault();
-          } else if (PAGE_KEYS.concat(ARROW_KEYS).includes(event.key)) {
-            onStepKeyDown(event);
-            event.preventDefault();
-          }
-        }),
-        onPointerDown: composeEventHandlers(props.onPointerDown, (event) => {
-          const target = event.target;
-          target.setPointerCapture(event.pointerId);
-          event.preventDefault();
-          if (context.thumbs.has(target)) {
-            target.focus();
-          } else {
-            onSlideStart(event);
-          }
-        }),
-        onPointerMove: composeEventHandlers(props.onPointerMove, (event) => {
-          const target = event.target;
-          if (target.hasPointerCapture(event.pointerId)) onSlideMove(event);
-        }),
-        onPointerUp: composeEventHandlers(props.onPointerUp, (event) => {
-          const target = event.target;
-          if (target.hasPointerCapture(event.pointerId)) {
-            target.releasePointerCapture(event.pointerId);
-            onSlideEnd(event);
-          }
-        })
-      }
-    );
-  }
-);
-var TRACK_NAME = "SliderTrack";
-var SliderTrack = reactExports.forwardRef(
-  (props, forwardedRef) => {
-    const { __scopeSlider, ...trackProps } = props;
-    const context = useSliderContext(TRACK_NAME, __scopeSlider);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Primitive$1.span,
-      {
-        "data-disabled": context.disabled ? "" : void 0,
-        "data-orientation": context.orientation,
-        ...trackProps,
-        ref: forwardedRef
-      }
-    );
-  }
-);
-SliderTrack.displayName = TRACK_NAME;
-var RANGE_NAME = "SliderRange";
-var SliderRange = reactExports.forwardRef(
-  (props, forwardedRef) => {
-    const { __scopeSlider, ...rangeProps } = props;
-    const context = useSliderContext(RANGE_NAME, __scopeSlider);
-    const orientation = useSliderOrientationContext(RANGE_NAME, __scopeSlider);
-    const ref = reactExports.useRef(null);
-    const composedRefs = useComposedRefs$1(forwardedRef, ref);
-    const valuesCount = context.values.length;
-    const percentages = context.values.map(
-      (value) => convertValueToPercentage(value, context.min, context.max)
-    );
-    const offsetStart = valuesCount > 1 ? Math.min(...percentages) : 0;
-    const offsetEnd = 100 - Math.max(...percentages);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Primitive$1.span,
-      {
-        "data-orientation": context.orientation,
-        "data-disabled": context.disabled ? "" : void 0,
-        ...rangeProps,
-        ref: composedRefs,
-        style: {
-          ...props.style,
-          [orientation.startEdge]: offsetStart + "%",
-          [orientation.endEdge]: offsetEnd + "%"
-        }
-      }
-    );
-  }
-);
-SliderRange.displayName = RANGE_NAME;
-var THUMB_NAME$1 = "SliderThumb";
-var SliderThumb = reactExports.forwardRef(
-  (props, forwardedRef) => {
-    const getItems = useCollection(props.__scopeSlider);
-    const [thumb, setThumb] = reactExports.useState(null);
-    const composedRefs = useComposedRefs$1(forwardedRef, (node) => setThumb(node));
-    const index2 = reactExports.useMemo(
-      () => thumb ? getItems().findIndex((item) => item.ref.current === thumb) : -1,
-      [getItems, thumb]
-    );
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(SliderThumbImpl, { ...props, ref: composedRefs, index: index2 });
-  }
-);
-var SliderThumbImpl = reactExports.forwardRef(
-  (props, forwardedRef) => {
-    const { __scopeSlider, index: index2, name, ...thumbProps } = props;
-    const context = useSliderContext(THUMB_NAME$1, __scopeSlider);
-    const orientation = useSliderOrientationContext(THUMB_NAME$1, __scopeSlider);
-    const [thumb, setThumb] = reactExports.useState(null);
-    const composedRefs = useComposedRefs$1(forwardedRef, (node) => setThumb(node));
-    const isFormControl = thumb ? context.form || !!thumb.closest("form") : true;
-    const size2 = useSize(thumb);
-    const value = context.values[index2];
-    const percent2 = value === void 0 ? 0 : convertValueToPercentage(value, context.min, context.max);
-    const label = getLabel2(index2, context.values.length);
-    const orientationSize = size2 == null ? void 0 : size2[orientation.size];
-    const thumbInBoundsOffset = orientationSize ? getThumbInBoundsOffset(orientationSize, percent2, orientation.direction) : 0;
-    reactExports.useEffect(() => {
-      if (thumb) {
-        context.thumbs.add(thumb);
-        return () => {
-          context.thumbs.delete(thumb);
-        };
-      }
-    }, [thumb, context.thumbs]);
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "span",
-      {
-        style: {
-          transform: "var(--radix-slider-thumb-transform)",
-          position: "absolute",
-          [orientation.startEdge]: `calc(${percent2}% + ${thumbInBoundsOffset}px)`
-        },
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Collection.ItemSlot, { scope: props.__scopeSlider, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Primitive$1.span,
-            {
-              role: "slider",
-              "aria-label": props["aria-label"] || label,
-              "aria-valuemin": context.min,
-              "aria-valuenow": value,
-              "aria-valuemax": context.max,
-              "aria-orientation": context.orientation,
-              "data-orientation": context.orientation,
-              "data-disabled": context.disabled ? "" : void 0,
-              tabIndex: context.disabled ? void 0 : 0,
-              ...thumbProps,
-              ref: composedRefs,
-              style: value === void 0 ? { display: "none" } : props.style,
-              onFocus: composeEventHandlers(props.onFocus, () => {
-                context.valueIndexToChangeRef.current = index2;
-              })
-            }
-          ) }),
-          isFormControl && /* @__PURE__ */ jsxRuntimeExports.jsx(
-            SliderBubbleInput,
-            {
-              name: name ?? (context.name ? context.name + (context.values.length > 1 ? "[]" : "") : void 0),
-              form: context.form,
-              value
-            },
-            index2
-          )
-        ]
-      }
-    );
-  }
-);
-SliderThumb.displayName = THUMB_NAME$1;
-var BUBBLE_INPUT_NAME$2 = "RadioBubbleInput";
-var SliderBubbleInput = reactExports.forwardRef(
-  ({ __scopeSlider, value, ...props }, forwardedRef) => {
-    const ref = reactExports.useRef(null);
-    const composedRefs = useComposedRefs$1(ref, forwardedRef);
-    const prevValue = usePrevious(value);
-    reactExports.useEffect(() => {
-      const input = ref.current;
-      if (!input) return;
-      const inputProto = window.HTMLInputElement.prototype;
-      const descriptor = Object.getOwnPropertyDescriptor(inputProto, "value");
-      const setValue = descriptor.set;
-      if (prevValue !== value && setValue) {
-        const event = new Event("input", { bubbles: true });
-        setValue.call(input, value);
-        input.dispatchEvent(event);
-      }
-    }, [prevValue, value]);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Primitive$1.input,
-      {
-        style: { display: "none" },
-        ...props,
-        ref: composedRefs,
-        defaultValue: value
-      }
-    );
-  }
-);
-SliderBubbleInput.displayName = BUBBLE_INPUT_NAME$2;
-function getNextSortedValues(prevValues = [], nextValue, atIndex) {
-  const nextValues = [...prevValues];
-  nextValues[atIndex] = nextValue;
-  return nextValues.sort((a2, b2) => a2 - b2);
-}
-function convertValueToPercentage(value, min2, max2) {
-  const maxSteps = max2 - min2;
-  const percentPerStep = 100 / maxSteps;
-  const percentage = percentPerStep * (value - min2);
-  return clamp(percentage, [0, 100]);
-}
-function getLabel2(index2, totalValues) {
-  if (totalValues > 2) {
-    return `Value ${index2 + 1} of ${totalValues}`;
-  } else if (totalValues === 2) {
-    return ["Minimum", "Maximum"][index2];
-  } else {
-    return void 0;
-  }
-}
-function getClosestValueIndex(values, nextValue) {
-  if (values.length === 1) return 0;
-  const distances = values.map((value) => Math.abs(value - nextValue));
-  const closestDistance = Math.min(...distances);
-  return distances.indexOf(closestDistance);
-}
-function getThumbInBoundsOffset(width, left, direction) {
-  const halfWidth = width / 2;
-  const halfPercent = 50;
-  const offset2 = linearScale([0, halfPercent], [0, halfWidth]);
-  return (halfWidth - offset2(left) * direction) * direction;
-}
-function getStepsBetweenValues(values) {
-  return values.slice(0, -1).map((value, index2) => values[index2 + 1] - value);
-}
-function hasMinStepsBetweenValues(values, minStepsBetweenValues) {
-  if (minStepsBetweenValues > 0) {
-    const stepsBetweenValues = getStepsBetweenValues(values);
-    const actualMinStepsBetweenValues = Math.min(...stepsBetweenValues);
-    return actualMinStepsBetweenValues >= minStepsBetweenValues;
-  }
-  return true;
-}
-function linearScale(input, output) {
-  return (value) => {
-    if (input[0] === input[1] || output[0] === output[1]) return output[0];
-    const ratio = (output[1] - output[0]) / (input[1] - input[0]);
-    return output[0] + ratio * (value - input[0]);
-  };
-}
-function getDecimalCount(value) {
-  return (String(value).split(".")[1] || "").length;
-}
-function roundValue(value, decimalCount) {
-  const rounder = Math.pow(10, decimalCount);
-  return Math.round(value * rounder) / rounder;
-}
-var Root$2 = Slider$1;
-var Track = SliderTrack;
-var Range = SliderRange;
-var Thumb$1 = SliderThumb;
-function Slider({
-  className,
-  defaultValue,
-  value,
-  min: min2 = 0,
-  max: max2 = 100,
-  ...props
-}) {
-  const _values = reactExports.useMemo(
-    () => Array.isArray(value) ? value : Array.isArray(defaultValue) ? defaultValue : [min2, max2],
-    [value, defaultValue, min2, max2]
-  );
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    Root$2,
-    {
-      "data-slot": "slider",
-      defaultValue,
-      value,
-      min: min2,
-      max: max2,
-      className: cn(
-        "relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col",
-        className
-      ),
-      ...props,
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Track,
-          {
-            "data-slot": "slider-track",
-            className: cn(
-              "bg-muted relative grow overflow-hidden rounded-full data-[orientation=horizontal]:h-1.5 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1.5"
-            ),
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Range,
-              {
-                "data-slot": "slider-range",
-                className: cn(
-                  "bg-primary absolute data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full"
-                )
-              }
-            )
-          }
-        ),
-        Array.from({ length: _values.length }, (value2, _2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Thumb$1,
-          {
-            "data-slot": "slider-thumb",
-            className: "border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
-          },
-          `${value2}`
-        ))
-      ]
-    }
-  );
-}
-function Table({ className, ...props }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    "div",
-    {
-      "data-slot": "table-container",
-      className: "relative w-full overflow-x-auto",
-      children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "table",
-        {
-          "data-slot": "table",
-          className: cn("w-full caption-bottom text-sm", className),
-          ...props
-        }
-      )
-    }
-  );
-}
-function TableHeader({ className, ...props }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    "thead",
-    {
-      "data-slot": "table-header",
-      className: cn("[&_tr]:border-b", className),
-      ...props
-    }
-  );
-}
-function TableBody({ className, ...props }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    "tbody",
-    {
-      "data-slot": "table-body",
-      className: cn("[&_tr:last-child]:border-0", className),
-      ...props
-    }
-  );
-}
-function TableRow$1({ className, ...props }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    "tr",
-    {
-      "data-slot": "table-row",
-      className: cn(
-        "hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
-        className
-      ),
-      ...props
-    }
-  );
-}
-function TableHead({ className, ...props }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    "th",
-    {
-      "data-slot": "table-head",
-      className: cn(
-        "text-foreground h-10 px-2 text-left align-middle font-medium whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
-        className
-      ),
-      ...props
-    }
-  );
-}
-function TableCell({ className, ...props }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    "td",
-    {
-      "data-slot": "table-cell",
-      className: cn(
-        "p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
-        className
-      ),
-      ...props
-    }
-  );
-}
-const prescriptions = [
-  {
-    id: "rx001",
-    patientId: "p001",
-    patientName: "Arjun Sharma",
-    date: "2026-04-05",
-    remedy: "Natrum Muriaticum",
-    potency: "1M",
-    dosage: "2 pills",
-    frequency: "Single dose",
-    duration: "4 weeks",
-    caseNotes: "Classic Nat-Mur picture — grief held inward, migraines with zigzag aura, worse from consolation. Thirst for large quantities of water. Craving for salty foods.",
-    symptoms: [
-      "Migraine with visual aura",
-      "Grief suppressed",
-      "Craving salt",
-      "Thirst increased",
-      "Consolation aggravates"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx002",
-    patientId: "p002",
-    patientName: "Priya Nair",
-    date: "2026-04-08",
-    remedy: "Apis Mellifica",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "TDS (thrice daily)",
-    duration: "2 weeks",
-    caseNotes: "Urticaria with burning-stinging sensation, better cold application. Puffiness of eyelids. Absence of thirst. Worse heat and pressure.",
-    symptoms: [
-      "Urticaria with stinging",
-      "Better cold",
-      "Absence of thirst",
-      "Puffiness",
-      "Worse heat"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx003",
-    patientId: "p003",
-    patientName: "Mohammed Al-Rashid",
-    date: "2026-03-28",
-    remedy: "Aurum Metallicum",
-    potency: "200C",
-    dosage: "2 pills",
-    frequency: "Weekly",
-    duration: "8 weeks",
-    caseNotes: "Hypertension with anticipatory anxiety. Perfectionist personality, guilt-ridden. Heart feels heavy. Worse at night, better motion.",
-    symptoms: [
-      "Hypertension",
-      "Anticipatory anxiety",
-      "Depression",
-      "Insomnia",
-      "Guilt complex"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx004",
-    patientId: "p004",
-    patientName: "Sarah Thompson",
-    date: "2026-04-01",
-    remedy: "Sepia",
-    potency: "200C",
-    dosage: "2 pills",
-    frequency: "Weekly",
-    duration: "6 weeks",
-    caseNotes: "Endometriosis with bearing-down sensation. Indifference to loved ones during pain. Worse standing, better vigorous exercise. Chilly patient, craves sour.",
-    symptoms: [
-      "Dysmenorrhea",
-      "Bearing-down sensation",
-      "Indifference",
-      "Worse standing",
-      "Craving sour"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx005",
-    patientId: "p005",
-    patientName: "Rahul Gupta",
-    date: "2026-04-09",
-    remedy: "Stramonium",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "BD (twice daily)",
-    duration: "4 weeks",
-    caseNotes: "ADHD with restlessness, violent behavior. Fear of darkness. Night terrors. Loquacity. Tonsillitis with membrane formation. Thirstless.",
-    symptoms: [
-      "ADHD",
-      "Restlessness",
-      "Fear of dark",
-      "Night terrors",
-      "Tonsillitis"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx006",
-    patientId: "p006",
-    patientName: "Elena Kozlov",
-    date: "2026-03-15",
-    remedy: "Rhus Toxicodendron",
-    potency: "200C",
-    dosage: "2 pills",
-    frequency: "Every 3 days",
-    duration: "6 weeks",
-    caseNotes: "Rheumatoid arthritis — initial stiffness on first motion, better continued motion. Worse cold damp. Restless — must keep moving. Red triangular tip of tongue.",
-    symptoms: [
-      "Joint stiffness",
-      "Better continued motion",
-      "Worse cold damp",
-      "Restlessness",
-      "Initial motion aggravation"
-    ],
-    status: "completed"
-  },
-  {
-    id: "rx007",
-    patientId: "p007",
-    patientName: "Vijay Krishnamurthy",
-    date: "2026-04-07",
-    remedy: "Syzygium Jambolanum",
-    potency: "Q (Mother Tincture)",
-    dosage: "10 drops in water",
-    frequency: "BD (twice daily)",
-    duration: "3 months",
-    caseNotes: "Diabetic neuropathy with burning pains in extremities. Strong anti-diabetic action at Q potency. Complement: Uranium Nitricum 3X for polydipsia.",
-    symptoms: [
-      "Hyperglycemia",
-      "Burning extremities",
-      "Polydipsia",
-      "Polyuria",
-      "Fatigue"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx008",
-    patientId: "p008",
-    patientName: "Amelia Johnson",
-    date: "2026-04-02",
-    remedy: "Thyroidinum",
-    potency: "3X",
-    dosage: "4 pills",
-    frequency: "TDS (thrice daily)",
-    duration: "2 months",
-    caseNotes: "Hashimoto hypothyroid — goitrous tendency, obesity, hair loss, mental dullness. Supports thyroid gland organopathically. Combined with Calc Carb 200C weekly.",
-    symptoms: [
-      "Hypothyroidism",
-      "Hair loss",
-      "Weight gain",
-      "Mental dullness",
-      "Cold sensitivity"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx009",
-    patientId: "p009",
-    patientName: "Kavitha Reddy",
-    date: "2026-04-10",
-    remedy: "Pulsatilla",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "OD (once daily)",
-    duration: "4 weeks",
-    caseNotes: "PCOS with delayed, scanty, clotted menses. Mild, yielding, weeping disposition. Worse warmth, better fresh air. Thirstless. Changeable symptoms.",
-    symptoms: [
-      "Irregular menses",
-      "PCOS",
-      "Weeping disposition",
-      "Thirstless",
-      "Worse heat"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx010",
-    patientId: "p010",
-    patientName: "Hans Mueller",
-    date: "2026-03-22",
-    remedy: "Sabal Serrulata",
-    potency: "Q (Mother Tincture)",
-    dosage: "15 drops in water",
-    frequency: "BD (twice daily)",
-    duration: "3 months",
-    caseNotes: "BPH with weak stream, dribbling, frequency. Cold sensation in genitals. Specific remedy for prostate. Adjunct: Thuja 200C for UTI prevention.",
-    symptoms: [
-      "BPH symptoms",
-      "Weak urinary stream",
-      "Frequency",
-      "Dribbling",
-      "Cold genitals"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx011",
-    patientId: "p011",
-    patientName: "Sunita Patel",
-    date: "2026-04-06",
-    remedy: "Lachesis",
-    potency: "200C",
-    dosage: "2 pills",
-    frequency: "Weekly",
-    duration: "8 weeks",
-    caseNotes: "Menopausal — hot flushes predominantly left-sided, worse on waking, worse tight clothing. Loquacious, jealous, suspicious. Excellent Lachesis constitutional.",
-    symptoms: [
-      "Hot flushes",
-      "Worse tight clothing",
-      "Worse on waking",
-      "Left-sided",
-      "Loquacity"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx012",
-    patientId: "p013",
-    patientName: "Fatima Al-Zahra",
-    date: "2026-04-03",
-    remedy: "Arnica Montana",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "TDS (thrice daily)",
-    duration: "3 weeks",
-    caseNotes: 'Fibromyalgia with bruised, sore sensation throughout body. Worse slightest touch. Bed feels too hard. Says "nothing is wrong" despite evident pain.',
-    symptoms: [
-      "Fibromyalgia",
-      "Bruised soreness",
-      "Worse touch",
-      "Bed too hard",
-      "Denies illness"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx013",
-    patientId: "p014",
-    patientName: "Rajan Menon",
-    date: "2026-04-04",
-    remedy: "Sulphur",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "OD (once daily)",
-    duration: "4 weeks",
-    caseNotes: "Acne — oily skin, pustular, worse exam stress. Untidy in habit, philosophical. Burning heat of eruptions. Worse washing. Sinking feeling at 11am.",
-    symptoms: [
-      "Acne vulgaris",
-      "Oily skin",
-      "Worse stress",
-      "Burning eruptions",
-      "11am hunger"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx014",
-    patientId: "p015",
-    patientName: "Isabella Rossi",
-    date: "2026-03-18",
-    remedy: "Lycopodium",
-    potency: "200C",
-    dosage: "2 pills",
-    frequency: "Weekly",
-    duration: "6 weeks",
-    caseNotes: "IBS — alternating bowel habit, bloating worse 4-8pm, rumbling flatulence. Anticipatory anxiety. Craving sweets. Right-sided complaints. Intellectual but cowardly.",
-    symptoms: [
-      "IBS",
-      "Bloating 4-8pm",
-      "Flatulence",
-      "Alternating bowels",
-      "Craving sweets"
-    ],
-    status: "stopped"
-  },
-  {
-    id: "rx015",
-    patientId: "p001",
-    patientName: "Arjun Sharma",
-    date: "2026-02-10",
-    remedy: "Belladonna",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "TDS (thrice daily)",
-    duration: "2 weeks",
-    caseNotes: "Acute migraine management — sudden, violent, throbbing headache. Face hot and red. Dilated pupils. Worse light, noise, jarring. Better in dark quiet room.",
-    symptoms: [
-      "Acute migraine",
-      "Throbbing headache",
-      "Face red and hot",
-      "Worse light",
-      "Worse noise"
-    ],
-    status: "completed"
-  }
-];
-const remedies = [
-  {
-    id: "r001",
-    name: "Aconitum Napellus",
-    commonName: "Monkshood",
-    keynotes: [
-      "Sudden acute onset",
-      "Intense fear of death",
-      "After exposure to cold dry wind",
-      "Restlessness and anxiety"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r002",
-    name: "Allium Cepa",
-    commonName: "Red Onion",
-    keynotes: [
-      "Profuse watery nasal discharge",
-      "Acrid lachrymation",
-      "Sneezing",
-      "Better open air"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r003",
-    name: "Apis Mellifica",
-    commonName: "Honey Bee",
-    keynotes: [
-      "Stinging burning pains",
-      "Oedema",
-      "Thirstlessness",
-      "Better cold application"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r004",
-    name: "Argentum Nitricum",
-    commonName: "Silver Nitrate",
-    keynotes: [
-      "Anticipatory anxiety",
-      "Desire for sweets",
-      "Diarrhea before events",
-      "Hurried and impulsive"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r005",
-    name: "Arnica Montana",
-    commonName: "Leopard's Bane",
-    keynotes: [
-      "Bruised sore sensation",
-      "Denies illness",
-      "Worse touch",
-      "Bed too hard"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r006",
-    name: "Arsenicum Album",
-    commonName: "White Arsenic",
-    keynotes: [
-      "Restlessness",
-      "Burning pains better heat",
-      "Anxiety about health",
-      "Fastidiousness"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r007",
-    name: "Aurum Metallicum",
-    commonName: "Gold",
-    keynotes: [
-      "Depression",
-      "Suicidal tendency",
-      "Hypertension",
-      "Duty-bound perfectionist"
-    ],
-    potencies: ["30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r008",
-    name: "Belladonna",
-    commonName: "Deadly Nightshade",
-    keynotes: [
-      "Sudden violent onset",
-      "Burning heat",
-      "Throbbing pains",
-      "Delirium"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r009",
-    name: "Bryonia Alba",
-    commonName: "White Bryony",
-    keynotes: [
-      "Worse any motion",
-      "Better pressure",
-      "Dryness of mucous membranes",
-      "Irritable wants to be alone"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r010",
-    name: "Calcarea Carbonica",
-    commonName: "Calcium Carbonate",
-    keynotes: [
-      "Slow plodding",
-      "Sweating on head",
-      "Worse cold damp",
-      "Craving eggs"
-    ],
-    potencies: ["30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r011",
-    name: "Cantharis",
-    commonName: "Spanish Fly",
-    keynotes: [
-      "Burning cutting urination",
-      "Cystitis",
-      "Great tenesmus",
-      "Rawness of parts"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r012",
-    name: "Carbo Vegetabilis",
-    commonName: "Vegetable Charcoal",
-    keynotes: [
-      "Flatulence and bloating",
-      "Desire for air",
-      "Sluggish vital force",
-      "Coldness"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r013",
-    name: "Causticum",
-    commonName: "Potassium Hydrate",
-    keynotes: [
-      "Paralytic conditions",
-      "Rawness and burning",
-      "Worse dry cold",
-      "Sympathy for others"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r014",
-    name: "Chamomilla",
-    commonName: "German Chamomile",
-    keynotes: [
-      "Extreme irritability",
-      "Teething children",
-      "One cheek red",
-      "Nothing satisfies"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r015",
-    name: "China Officinalis",
-    commonName: "Peruvian Bark",
-    keynotes: [
-      "Debility from loss of fluids",
-      "Periodicity",
-      "Tympanic abdomen",
-      "Better hard pressure"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r016",
-    name: "Colocynthis",
-    commonName: "Bitter Cucumber",
-    keynotes: [
-      "Cramping colic better bending double",
-      "After indignation",
-      "Dysentery",
-      "Worse straightening"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r017",
-    name: "Drosera",
-    commonName: "Sundew",
-    keynotes: [
-      "Whooping cough",
-      "Spasmodic cough",
-      "Worse after midnight",
-      "Vomiting after cough"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r018",
-    name: "Euphrasia",
-    commonName: "Eyebright",
-    keynotes: [
-      "Profuse acrid lachrymation",
-      "Bland nasal discharge",
-      "Eye inflammation",
-      "Better open air"
-    ],
-    potencies: ["6C", "30C", "200C", "Q"]
-  },
-  {
-    id: "r019",
-    name: "Ferrum Phosphoricum",
-    commonName: "Iron Phosphate",
-    keynotes: [
-      "First stage inflammation",
-      "Gradual onset fever",
-      "Anemia",
-      "Better slow motion"
-    ],
-    potencies: ["6X", "6C", "30C", "200C"]
-  },
-  {
-    id: "r020",
-    name: "Gelsemium",
-    commonName: "Yellow Jasmine",
-    keynotes: [
-      "Dullness drowsiness dizziness",
-      "Anticipatory anxiety with diarrhea",
-      "Muscle weakness",
-      "Wants to be held"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r021",
-    name: "Graphites",
-    commonName: "Black Lead (Graphite)",
-    keynotes: [
-      "Oozing sticky discharge",
-      "Eczema in folds",
-      "Constipation with hard knots",
-      "Obesity"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r022",
-    name: "Hepar Sulphuris",
-    commonName: "Calcium Sulphide",
-    keynotes: [
-      "Extreme sensitivity to pain",
-      "Suppuration",
-      "Chilly patient",
-      "Irritable when ill"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r023",
-    name: "Hyoscyamus",
-    commonName: "Henbane",
-    keynotes: [
-      "Jealousy",
-      "Lascivious behavior",
-      "Muttering delirium",
-      "Picks at bedclothes"
-    ],
-    potencies: ["30C", "200C", "1M"]
-  },
-  {
-    id: "r024",
-    name: "Ignatia Amara",
-    commonName: "St. Ignatius Bean",
-    keynotes: [
-      "Grief and disappointment",
-      "Contradictory symptoms",
-      "Sighing",
-      "Hysterical tendencies"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r025",
-    name: "Ipecacuanha",
-    commonName: "Ipecac Root",
-    keynotes: [
-      "Persistent nausea",
-      "Bright red hemorrhage",
-      "No relief from vomiting",
-      "Moist clean tongue"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r026",
-    name: "Kali Bichromicum",
-    commonName: "Potassium Dichromate",
-    keynotes: [
-      "Thick stringy tenacious discharges",
-      "Sinusitis",
-      "Ulcers with sharp punched-out edges",
-      "Worse cold"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r027",
-    name: "Kali Carbonicum",
-    commonName: "Potassium Carbonate",
-    keynotes: [
-      "Weakness",
-      "Bag-like swelling above eyelids",
-      "Worse 2-4am",
-      "Stitching pains"
-    ],
-    potencies: ["30C", "200C", "1M"]
-  },
-  {
-    id: "r028",
-    name: "Lachesis",
-    commonName: "Bushmaster Snake Venom",
-    keynotes: ["Left-sided", "Worse tight clothing", "Loquacious", "Jealousy"],
-    potencies: ["30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r029",
-    name: "Ledum Palustre",
-    commonName: "Marsh Tea",
-    keynotes: [
-      "Puncture wounds",
-      "Insect bites",
-      "Rheumatism from below upward",
-      "Better cold application"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r030",
-    name: "Lycopodium",
-    commonName: "Club Moss",
-    keynotes: [
-      "4-8pm aggravation",
-      "Right-sided",
-      "Anticipatory anxiety",
-      "Flatulence bloating"
-    ],
-    potencies: ["30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r031",
-    name: "Magnesia Phosphorica",
-    commonName: "Magnesium Phosphate",
-    keynotes: [
-      "Cramping pains better heat and pressure",
-      "Neuralgic pains",
-      "Better bending double",
-      "Worse cold"
-    ],
-    potencies: ["6X", "6C", "30C", "200C"]
-  },
-  {
-    id: "r032",
-    name: "Mercurius Solubilis",
-    commonName: "Quicksilver",
-    keynotes: [
-      "Worse night",
-      "Profuse offensive perspiration",
-      "Trembling",
-      "Creeping chilliness"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r033",
-    name: "Natrum Muriaticum",
-    commonName: "Table Salt",
-    keynotes: [
-      "Grief held inward",
-      "Worse consolation",
-      "Craving salt",
-      "Migraine with zigzag aura"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r034",
-    name: "Nux Vomica",
-    commonName: "Poison Nut",
-    keynotes: [
-      "Over-indulgence",
-      "Chilly irritable",
-      "Hypersensitive to stimuli",
-      "Sedentary lifestyle"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r035",
-    name: "Phosphorus",
-    commonName: "Phosphorus",
-    keynotes: [
-      "Burning pains",
-      "Tall slender build",
-      "Craves cold drinks",
-      "Fear of being alone in dark"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r036",
-    name: "Phytolacca",
-    commonName: "Pokeweed",
-    keynotes: [
-      "Throat inflammation radiating to ears",
-      "Mastitis",
-      "Rheumatic nodules",
-      "Indifference"
-    ],
-    potencies: ["6C", "30C", "200C", "Q"]
-  },
-  {
-    id: "r037",
-    name: "Pulsatilla",
-    commonName: "Windflower",
-    keynotes: [
-      "Changeable symptoms",
-      "Mild yielding",
-      "Thirstless",
-      "Better open air and cool"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r038",
-    name: "Rhus Toxicodendron",
-    commonName: "Poison Ivy",
-    keynotes: [
-      "Worse initial motion better continued",
-      "Restlessness",
-      "Worse cold damp",
-      "Red triangular tongue tip"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r039",
-    name: "Ruta Graveolens",
-    commonName: "Rue",
-    keynotes: [
-      "Injury to tendons and periosteum",
-      "Eye strain",
-      "Prolapse",
-      "Lame bruised feeling"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r040",
-    name: "Sabal Serrulata",
-    commonName: "Saw Palmetto",
-    keynotes: [
-      "Prostate enlargement",
-      "Weak urinary stream",
-      "Cold sensation in genitals",
-      "Dribbling"
-    ],
-    potencies: ["Q", "6C", "30C"]
-  },
-  {
-    id: "r041",
-    name: "Sepia",
-    commonName: "Ink of Cuttlefish",
-    keynotes: [
-      "Bearing-down sensation",
-      "Indifference",
-      "Worse standing",
-      "Better vigorous exercise"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r042",
-    name: "Silicea",
-    commonName: "Pure Flint",
-    keynotes: [
-      "Lack of confidence",
-      "Suppuration",
-      "Chilly obstinate",
-      "Expels foreign bodies"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r043",
-    name: "Spigelia",
-    commonName: "Pink Root",
-    keynotes: [
-      "Left-sided neuralgias",
-      "Violent palpitation",
-      "Worse motion",
-      "Worm affections"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r044",
-    name: "Spongia Tosta",
-    commonName: "Roasted Sea Sponge",
-    keynotes: [
-      "Dry barking croup",
-      "Anxiety and palpitation",
-      "Worse before midnight",
-      "Better eating and drinking"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  },
-  {
-    id: "r045",
-    name: "Staphysagria",
-    commonName: "Stavesacre",
-    keynotes: [
-      "Suppressed indignation",
-      "After surgical wounds",
-      "Honeymoon cystitis",
-      "Wounded pride"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r046",
-    name: "Stramonium",
-    commonName: "Jimsonweed",
-    keynotes: [
-      "Fear of darkness",
-      "Violent behavior",
-      "Delirium",
-      "Night terrors"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r047",
-    name: "Sulphur",
-    commonName: "Brimstone",
-    keynotes: [
-      "Burning heat",
-      "Aversion to bathing",
-      "Philosophical",
-      "11am sinking feeling"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r048",
-    name: "Syzygium Jambolanum",
-    commonName: "Jamun / Java Plum",
-    keynotes: [
-      "Diabetes mellitus",
-      "Reduces blood sugar",
-      "Burning in feet",
-      "Polyuria"
-    ],
-    potencies: ["Q", "3X", "6X", "30C"]
-  },
-  {
-    id: "r049",
-    name: "Thuja Occidentalis",
-    commonName: "Arborvitae",
-    keynotes: [
-      "Warts and condylomata",
-      "Fixed ideas",
-      "Worse cold damp",
-      "Oily skin"
-    ],
-    potencies: ["6C", "30C", "200C", "1M", "10M"]
-  },
-  {
-    id: "r050",
-    name: "Thyroidinum",
-    commonName: "Thyroid Gland",
-    keynotes: [
-      "Hypothyroidism",
-      "Obesity",
-      "Hair loss",
-      "Mental dullness and fatigue"
-    ],
-    potencies: ["3X", "6X", "30C", "200C"]
-  },
-  {
-    id: "r051",
-    name: "Tuberculinum",
-    commonName: "Tuberculous Nosode",
-    keynotes: [
-      "Never well since tuberculosis",
-      "Wanderlust",
-      "Dissatisfied",
-      "Recurrent respiratory infections"
-    ],
-    potencies: ["200C", "1M", "10M"]
-  },
-  {
-    id: "r052",
-    name: "Urtica Urens",
-    commonName: "Stinging Nettle",
-    keynotes: ["Burns with intense itching", "Urticaria", "Gout", "Agalactia"],
-    potencies: ["6C", "30C", "200C", "Q"]
-  },
-  {
-    id: "r053",
-    name: "Veratrum Album",
-    commonName: "White Hellebore",
-    keynotes: [
-      "Collapse with cold sweat",
-      "Profuse vomiting and diarrhea",
-      "Cold extremities",
-      "Craves cold drinks"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r054",
-    name: "Zincum Metallicum",
-    commonName: "Zinc",
-    keynotes: [
-      "Brain fag",
-      "Restless legs",
-      "Suppressed eruptions",
-      "Twitching"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r055",
-    name: "Calc Phosphorica",
-    commonName: "Calcium Phosphate",
-    keynotes: [
-      "Teething problems",
-      "Bone weakness",
-      "Craves smoked meat",
-      "Dissatisfied restless"
-    ],
-    potencies: ["6X", "6C", "30C", "200C"]
-  },
-  {
-    id: "r056",
-    name: "Cimicifuga",
-    commonName: "Black Cohosh",
-    keynotes: [
-      "Menstrual irregularity",
-      "Rheumatic affections",
-      "Depression alternating",
-      "Worse cold damp"
-    ],
-    potencies: ["6C", "30C", "200C", "1M"]
-  },
-  {
-    id: "r057",
-    name: "Hypericum Perforatum",
-    commonName: "St. John's Wort",
-    keynotes: [
-      "Nerve injuries",
-      "Puncture wounds",
-      "Spinal injuries",
-      "Shooting pains"
-    ],
-    potencies: ["6C", "30C", "200C", "Q"]
-  },
-  {
-    id: "r058",
-    name: "Medhorrhinum",
-    commonName: "Gonorrheal Nosode",
-    keynotes: [
-      "Intense sexuality",
-      "Hurried restless",
-      "Better at seashore",
-      "History of gonorrhea"
-    ],
-    potencies: ["200C", "1M", "10M"]
-  },
-  {
-    id: "r059",
-    name: "Platina",
-    commonName: "Platinum",
-    keynotes: [
-      "Pride arrogance",
-      "Nymphomania",
-      "Numbness and coldness",
-      "Cramping pains"
-    ],
-    potencies: ["30C", "200C", "1M"]
-  },
-  {
-    id: "r060",
-    name: "Petroleum",
-    commonName: "Crude Rock Oil",
-    keynotes: [
-      "Motion sickness",
-      "Eczema with deep cracks",
-      "Hunger at night",
-      "Worse winter"
-    ],
-    potencies: ["6C", "30C", "200C"]
-  }
-];
-const Route$b = createRoute({
-  getParentRoute: () => Route$k,
-  path: "/prescriptions",
-  component: PrescriptionsPage
-});
-const POTENCIES = [
-  "6C",
-  "12C",
-  "30C",
-  "200C",
-  "1M",
-  "10M",
-  "LM1",
-  "LM2",
-  "LM3",
-  "LM6",
-  "LM12",
-  "LM18",
-  "LM30",
-  "Q (Mother Tincture)",
-  "3X",
-  "6X",
-  "12X"
-];
-const DOSAGE_FORMS = ["Pellets", "Drops", "Liquid", "Tablets", "Globules"];
-const FREQUENCIES = [
-  "Once daily (OD)",
-  "Twice daily (BD)",
-  "Thrice daily (TDS)",
-  "Four times daily (QDS)",
-  "Weekly",
-  "Every 3 days",
-  "Monthly",
-  "Single dose",
-  "As needed (SOS)"
-];
-const THERMAL = ["Hot", "Cold", "Mixed / Neutral"];
-const ONSET = ["Sudden", "Gradual", "Insidious"];
-const emptyForm = {
-  patientId: "",
-  chiefComplaint: "",
-  duration: "",
-  onset: "",
-  previousTreatments: "",
-  physicalSymptoms: "",
-  mentalSymptoms: "",
-  sleepPatterns: "",
-  appetiteThirst: "",
-  thermalSensitivity: "",
-  perspiration: "",
-  betterFrom: "",
-  worseFrom: "",
-  timeModalities: "",
-  energyLevel: [5],
-  mood: "",
-  fears: "",
-  remedyId: "",
-  potency: "",
-  dosageForm: "",
-  frequency: "",
-  prescriptionDuration: "",
-  caseNotes: ""
-};
-function PrescriptionsPage() {
-  const [activeTab, setActiveTab] = reactExports.useState("new");
-  const [form, setForm] = reactExports.useState(emptyForm);
-  const [historyFilter, setHistoryFilter] = reactExports.useState("all");
-  const [remedySearch, setRemedySearch] = reactExports.useState("");
-  const [selectedPrescription, setSelectedPrescription] = reactExports.useState(null);
-  const [selectedRemedy, setSelectedRemedy] = reactExports.useState(null);
-  const [rxList, setRxList] = reactExports.useState(prescriptions);
-  const filteredHistory = reactExports.useMemo(() => {
-    if (historyFilter === "all") return rxList;
-    return rxList.filter((p2) => p2.patientId === historyFilter);
-  }, [rxList, historyFilter]);
-  const filteredRemedies = reactExports.useMemo(() => {
-    const q2 = remedySearch.toLowerCase();
-    if (!q2) return remedies;
-    return remedies.filter(
-      (r2) => r2.name.toLowerCase().includes(q2) || r2.commonName.toLowerCase().includes(q2) || r2.keynotes.some((k2) => k2.toLowerCase().includes(q2))
-    );
-  }, [remedySearch]);
-  const selectedRemedyData = reactExports.useMemo(
-    () => remedies.find((r2) => r2.id === form.remedyId),
-    [form.remedyId]
-  );
-  function updateForm(key, value) {
-    setForm((prev) => ({ ...prev, [key]: value }));
-  }
-  function handleSubmit() {
-    if (!form.patientId || !form.remedyId || !form.potency) {
-      ue.error("Please fill required fields: Patient, Remedy, and Potency.");
-      return;
-    }
-    const patient = patients.find((p2) => p2.id === form.patientId);
-    const remedy = remedies.find((r2) => r2.id === form.remedyId);
-    if (!patient || !remedy) return;
-    const newRx = {
-      id: `rx${Date.now()}`,
-      patientId: form.patientId,
-      patientName: patient.name,
-      date: (/* @__PURE__ */ new Date()).toISOString().split("T")[0],
-      remedy: remedy.name,
-      potency: form.potency,
-      dosage: form.dosageForm || "4 pills",
-      frequency: form.frequency || "As needed",
-      duration: form.prescriptionDuration || "—",
-      caseNotes: form.caseNotes || `${form.chiefComplaint}. Better: ${form.betterFrom}. Worse: ${form.worseFrom}.`,
-      symptoms: form.physicalSymptoms.split(",").map((s2) => s2.trim()).filter(Boolean),
-      status: "active"
-    };
-    setRxList((prev) => [newRx, ...prev]);
-    setForm(emptyForm);
-    ue.success("Prescription saved successfully!", {
-      description: `${remedy.name} ${form.potency} for ${patient.name}`
-    });
-    setActiveTab("history");
-  }
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", "data-ocid": "prescriptions-page", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      PageHeader,
-      {
-        title: "Prescription System",
-        description: "Detailed case-taking, remedy selection with potency, and full prescription history.",
-        breadcrumb: [
-          { label: "Dashboard", href: "/" },
-          { label: "Prescriptions" }
-        ],
-        action: {
-          label: "New Prescription",
-          onClick: () => setActiveTab("new"),
-          icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "w-4 h-4" })
-        }
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      Tabs,
-      {
-        value: activeTab,
-        onValueChange: setActiveTab,
-        "data-ocid": "prescriptions-tabs",
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(TabsList, { className: "glass-card p-1 gap-1 h-auto", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              TabsTrigger,
-              {
-                value: "new",
-                className: "flex items-center gap-2 text-sm",
-                "data-ocid": "tab-new",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(FlaskConical, { className: "w-4 h-4" }),
-                  "New Prescription"
-                ]
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              TabsTrigger,
-              {
-                value: "history",
-                className: "flex items-center gap-2 text-sm",
-                "data-ocid": "tab-history",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(ClipboardList, { className: "w-4 h-4" }),
-                  "History",
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { variant: "secondary", className: "ml-1 text-xs px-1.5 py-0", children: rxList.length })
-                ]
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              TabsTrigger,
-              {
-                value: "remedies",
-                className: "flex items-center gap-2 text-sm",
-                "data-ocid": "tab-remedies",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(BookOpen, { className: "w-4 h-4" }),
-                  "Remedies Database",
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { variant: "secondary", className: "ml-1 text-xs px-1.5 py-0", children: remedies.length })
-                ]
-              }
-            )
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "new", className: "mt-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            motion.div,
-            {
-              initial: { opacity: 0, y: 12 },
-              animate: { opacity: 1, y: 0 },
-              transition: { duration: 0.3 },
-              className: "space-y-4",
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-sm font-display font-semibold text-foreground mb-3 flex items-center gap-2", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-6 h-6 rounded-full bg-primary/15 text-primary flex items-center justify-center text-xs font-bold", children: "1" }),
-                    "Patient Selection ",
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
-                  ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-md", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Select Patient" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                      Select$1,
-                      {
-                        value: form.patientId,
-                        onValueChange: (v2) => updateForm("patientId", v2),
-                        children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(SelectTrigger, { "data-ocid": "select-patient", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SelectValue, { placeholder: "Search and select a patient…" }) }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContent, { children: patients.map((p2) => /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: p2.id, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-2", children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-6 h-6 rounded-full bg-primary/15 text-primary text-xs font-bold flex items-center justify-center shrink-0", children: getInitials$1(p2.name) }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: p2.name }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-muted-foreground text-xs", children: [
-                              "(",
-                              p2.age,
-                              "y, ",
-                              p2.gender,
-                              ")"
-                            ] })
-                          ] }) }, p2.id)) })
-                        ]
-                      }
-                    ),
-                    form.patientId && (() => {
-                      const pt = patients.find((p2) => p2.id === form.patientId);
-                      return pt ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-2 p-3 rounded-lg surface-muted text-xs text-muted-foreground", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium text-foreground", children: pt.name }),
-                        " ",
-                        "· ",
-                        pt.chiefComplaint
-                      ] }) : null;
-                    })()
-                  ] })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-sm font-display font-semibold text-foreground mb-3 flex items-center gap-2", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-6 h-6 rounded-full bg-primary/15 text-primary flex items-center justify-center text-xs font-bold", children: "2" }),
-                    "Case Taking"
-                  ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                    Accordion,
-                    {
-                      type: "multiple",
-                      defaultValue: ["chief", "symptoms"],
-                      className: "space-y-2",
-                      children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                          AccordionItem,
-                          {
-                            value: "chief",
-                            className: "glass rounded-lg border-0 px-4",
-                            children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionTrigger, { className: "text-sm font-medium hover:no-underline py-3", children: "Chief Complaint & History" }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionContent, { className: "pb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-2", children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Chief Complaint" }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                    Textarea,
-                                    {
-                                      placeholder: "Describe the main presenting complaint in detail…",
-                                      rows: 3,
-                                      value: form.chiefComplaint,
-                                      onChange: (e3) => updateForm("chiefComplaint", e3.target.value),
-                                      "data-ocid": "input-chief-complaint"
-                                    }
-                                  )
-                                ] }),
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Duration" }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                    Input,
-                                    {
-                                      placeholder: "e.g. 3 months, 2 years",
-                                      value: form.duration,
-                                      onChange: (e3) => updateForm("duration", e3.target.value),
-                                      "data-ocid": "input-duration"
-                                    }
-                                  )
-                                ] }),
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Onset" }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                                    Select$1,
-                                    {
-                                      value: form.onset,
-                                      onValueChange: (v2) => updateForm("onset", v2),
-                                      children: [
-                                        /* @__PURE__ */ jsxRuntimeExports.jsx(SelectTrigger, { "data-ocid": "select-onset", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SelectValue, { placeholder: "Select onset type…" }) }),
-                                        /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContent, { children: ONSET.map((o) => /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: o, children: o }, o)) })
-                                      ]
-                                    }
-                                  )
-                                ] }),
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-2", children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Previous Treatments" }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                    Textarea,
-                                    {
-                                      placeholder: "Allopathic, Ayurvedic, previous homeopathic treatment…",
-                                      rows: 2,
-                                      value: form.previousTreatments,
-                                      onChange: (e3) => updateForm("previousTreatments", e3.target.value),
-                                      "data-ocid": "input-prev-treatments"
-                                    }
-                                  )
-                                ] })
-                              ] }) })
-                            ]
-                          }
-                        ),
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                          AccordionItem,
-                          {
-                            value: "symptoms",
-                            className: "glass rounded-lg border-0 px-4",
-                            children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionTrigger, { className: "text-sm font-medium hover:no-underline py-3", children: "Symptoms Analysis" }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionContent, { className: "pb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-2", children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsxs(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: [
-                                    "Physical Symptoms",
-                                    " ",
-                                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs", children: "(comma-separated for best results)" })
-                                  ] }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                    Textarea,
-                                    {
-                                      placeholder: "Headache, joint pain, skin eruptions…",
-                                      rows: 2,
-                                      value: form.physicalSymptoms,
-                                      onChange: (e3) => updateForm("physicalSymptoms", e3.target.value),
-                                      "data-ocid": "input-physical-symptoms"
-                                    }
-                                  )
-                                ] }),
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-2", children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Mental / Emotional Symptoms" }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                    Textarea,
-                                    {
-                                      placeholder: "Anxiety, fear, grief, irritability, depression…",
-                                      rows: 2,
-                                      value: form.mentalSymptoms,
-                                      onChange: (e3) => updateForm("mentalSymptoms", e3.target.value),
-                                      "data-ocid": "input-mental-symptoms"
-                                    }
-                                  )
-                                ] }),
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Sleep Patterns" }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                    Textarea,
-                                    {
-                                      placeholder: "Insomnia, position, dreams, waking time…",
-                                      rows: 2,
-                                      value: form.sleepPatterns,
-                                      onChange: (e3) => updateForm("sleepPatterns", e3.target.value),
-                                      "data-ocid": "input-sleep"
-                                    }
-                                  )
-                                ] }),
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Appetite & Thirst" }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                    Input,
-                                    {
-                                      placeholder: "e.g. Increased thirst, craves sweets, aversion to meat",
-                                      value: form.appetiteThirst,
-                                      onChange: (e3) => updateForm("appetiteThirst", e3.target.value),
-                                      "data-ocid": "input-appetite"
-                                    }
-                                  )
-                                ] }),
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Thermal Sensitivity" }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                                    Select$1,
-                                    {
-                                      value: form.thermalSensitivity,
-                                      onValueChange: (v2) => updateForm("thermalSensitivity", v2),
-                                      children: [
-                                        /* @__PURE__ */ jsxRuntimeExports.jsx(SelectTrigger, { "data-ocid": "select-thermal", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SelectValue, { placeholder: "Hot / Cold / Mixed" }) }),
-                                        /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContent, { children: THERMAL.map((t2) => /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: t2, children: t2 }, t2)) })
-                                      ]
-                                    }
-                                  )
-                                ] }),
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Perspiration Characteristics" }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                    Textarea,
-                                    {
-                                      placeholder: "Offensive, profuse, location, time…",
-                                      rows: 2,
-                                      value: form.perspiration,
-                                      onChange: (e3) => updateForm("perspiration", e3.target.value),
-                                      "data-ocid": "input-perspiration"
-                                    }
-                                  )
-                                ] })
-                              ] }) })
-                            ]
-                          }
-                        ),
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                          AccordionItem,
-                          {
-                            value: "modalities",
-                            className: "glass rounded-lg border-0 px-4",
-                            children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionTrigger, { className: "text-sm font-medium hover:no-underline py-3", children: "Modalities" }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionContent, { className: "pb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-4", children: [
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Better From" }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                    Textarea,
-                                    {
-                                      placeholder: "Cold, rest, open air, pressure…",
-                                      rows: 3,
-                                      value: form.betterFrom,
-                                      onChange: (e3) => updateForm("betterFrom", e3.target.value),
-                                      "data-ocid": "input-better-from"
-                                    }
-                                  )
-                                ] }),
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Worse From" }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                    Textarea,
-                                    {
-                                      placeholder: "Heat, motion, noise, light…",
-                                      rows: 3,
-                                      value: form.worseFrom,
-                                      onChange: (e3) => updateForm("worseFrom", e3.target.value),
-                                      "data-ocid": "input-worse-from"
-                                    }
-                                  )
-                                ] }),
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Time Modalities" }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                    Textarea,
-                                    {
-                                      placeholder: "Worse 2-4am, 4-8pm aggravation…",
-                                      rows: 3,
-                                      value: form.timeModalities,
-                                      onChange: (e3) => updateForm("timeModalities", e3.target.value),
-                                      "data-ocid": "input-time-modalities"
-                                    }
-                                  )
-                                ] })
-                              ] }) })
-                            ]
-                          }
-                        ),
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                          AccordionItem,
-                          {
-                            value: "general",
-                            className: "glass rounded-lg border-0 px-4",
-                            children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionTrigger, { className: "text-sm font-medium hover:no-underline py-3", children: "General Symptoms" }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(AccordionContent, { className: "pb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsxs(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: [
-                                    "Energy Level:",
-                                    " ",
-                                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-primary font-semibold", children: [
-                                      form.energyLevel[0],
-                                      " / 10"
-                                    ] })
-                                  ] }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                    Slider,
-                                    {
-                                      min: 1,
-                                      max: 10,
-                                      step: 1,
-                                      value: form.energyLevel,
-                                      onValueChange: (v2) => updateForm("energyLevel", v2),
-                                      className: "mt-3",
-                                      "data-ocid": "slider-energy"
-                                    }
-                                  ),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-xs text-muted-foreground mt-1", children: [
-                                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Very Low" }),
-                                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Very High" })
-                                  ] })
-                                ] }),
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Current Mood" }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                    Input,
-                                    {
-                                      placeholder: "e.g. Irritable, sad, anxious, cheerful",
-                                      value: form.mood,
-                                      onChange: (e3) => updateForm("mood", e3.target.value),
-                                      "data-ocid": "input-mood"
-                                    }
-                                  )
-                                ] }),
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-2", children: [
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Fears / Anxieties" }),
-                                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                    Textarea,
-                                    {
-                                      placeholder: "Fear of death, darkness, disease, being alone…",
-                                      rows: 2,
-                                      value: form.fears,
-                                      onChange: (e3) => updateForm("fears", e3.target.value),
-                                      "data-ocid": "input-fears"
-                                    }
-                                  )
-                                ] })
-                              ] }) })
-                            ]
-                          }
-                        )
-                      ]
-                    }
-                  )
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-sm font-display font-semibold text-foreground mb-4 flex items-center gap-2", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-6 h-6 rounded-full bg-primary/15 text-primary flex items-center justify-center text-xs font-bold", children: "3" }),
-                    "Remedy Prescription"
-                  ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-2 lg:col-span-1", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: [
-                        "Remedy Name ",
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
-                      ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                        Select$1,
-                        {
-                          value: form.remedyId,
-                          onValueChange: (v2) => updateForm("remedyId", v2),
-                          children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx(SelectTrigger, { "data-ocid": "select-remedy", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SelectValue, { placeholder: "Search and select remedy…" }) }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContent, { className: "max-h-60", children: remedies.map((r2) => /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: r2.id, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: r2.name }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-muted-foreground text-xs ml-1", children: [
-                                "(",
-                                r2.commonName,
-                                ")"
-                              ] })
-                            ] }) }, r2.id)) })
-                          ]
-                        }
-                      ),
-                      selectedRemedyData && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 p-2 rounded-lg surface-muted", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-1", children: selectedRemedyData.keynotes.slice(0, 3).map((k2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        Badge,
-                        {
-                          variant: "secondary",
-                          className: "text-xs px-1.5 py-0",
-                          children: k2
-                        },
-                        k2
-                      )) }) })
-                    ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: [
-                        "Potency ",
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "*" })
-                      ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                        Select$1,
-                        {
-                          value: form.potency,
-                          onValueChange: (v2) => updateForm("potency", v2),
-                          children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx(SelectTrigger, { "data-ocid": "select-potency", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SelectValue, { placeholder: "Select potency…" }) }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsxs(SelectContent, { children: [
-                              (selectedRemedyData ? selectedRemedyData.potencies : POTENCIES).map((p2) => /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: p2, children: p2 }, p2)),
-                              selectedRemedyData && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-                                /* @__PURE__ */ jsxRuntimeExports.jsx(Separator, {}),
-                                POTENCIES.filter(
-                                  (p2) => !selectedRemedyData.potencies.includes(p2)
-                                ).map((p2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                  SelectItem,
-                                  {
-                                    value: p2,
-                                    className: "text-muted-foreground",
-                                    children: p2
-                                  },
-                                  p2
-                                ))
-                              ] })
-                            ] })
-                          ]
-                        }
-                      )
-                    ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Dosage Form" }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                        Select$1,
-                        {
-                          value: form.dosageForm,
-                          onValueChange: (v2) => updateForm("dosageForm", v2),
-                          children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx(SelectTrigger, { "data-ocid": "select-dosage-form", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SelectValue, { placeholder: "Pellets / Drops…" }) }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContent, { children: DOSAGE_FORMS.map((d2) => /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: d2, children: d2 }, d2)) })
-                          ]
-                        }
-                      )
-                    ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Frequency" }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                        Select$1,
-                        {
-                          value: form.frequency,
-                          onValueChange: (v2) => updateForm("frequency", v2),
-                          children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx(SelectTrigger, { "data-ocid": "select-frequency", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SelectValue, { placeholder: "How often?" }) }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContent, { children: FREQUENCIES.map((f2) => /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: f2, children: f2 }, f2)) })
-                          ]
-                        }
-                      )
-                    ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Duration" }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        Input,
-                        {
-                          placeholder: "e.g. 4 weeks, 2 months",
-                          value: form.prescriptionDuration,
-                          onChange: (e3) => updateForm("prescriptionDuration", e3.target.value),
-                          "data-ocid": "input-rx-duration"
-                        }
-                      )
-                    ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-2 lg:col-span-3", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs text-muted-foreground mb-1.5 block", children: "Case Notes for Prescription" }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        Textarea,
-                        {
-                          placeholder: "Clinical reasoning, miasm analysis, follow-up instructions, complementary remedies…",
-                          rows: 4,
-                          value: form.caseNotes,
-                          onChange: (e3) => updateForm("caseNotes", e3.target.value),
-                          "data-ocid": "input-case-notes"
-                        }
-                      )
-                    ] })
-                  ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-5 flex justify-end gap-3", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      Button$1,
-                      {
-                        variant: "outline",
-                        onClick: () => setForm(emptyForm),
-                        "data-ocid": "btn-clear-form",
-                        children: "Clear Form"
-                      }
-                    ),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                      Button$1,
-                      {
-                        onClick: handleSubmit,
-                        className: "gap-2",
-                        "data-ocid": "btn-save-prescription",
-                        children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(FlaskConical, { className: "w-4 h-4" }),
-                          "Save Prescription"
-                        ]
-                      }
-                    )
-                  ] })
-                ] })
-              ]
-            }
-          ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "history", className: "mt-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            motion.div,
-            {
-              initial: { opacity: 0, y: 12 },
-              animate: { opacity: 1, y: 0 },
-              transition: { duration: 0.3 },
-              className: "space-y-4",
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-4 flex flex-col sm:flex-row items-start sm:items-center gap-3", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-sm text-muted-foreground font-medium shrink-0", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(ClipboardList, { className: "w-4 h-4" }),
-                    "Filter by Patient:"
-                  ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs(Select$1, { value: historyFilter, onValueChange: setHistoryFilter, children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(SelectTrigger, { className: "max-w-xs", "data-ocid": "filter-patient", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SelectValue, {}) }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs(SelectContent, { children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: "all", children: "All Patients" }),
-                      patients.map((p2) => /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: p2.id, children: p2.name }, p2.id))
-                    ] })
-                  ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs text-muted-foreground ml-auto", children: [
-                    filteredHistory.length,
-                    " prescription",
-                    filteredHistory.length !== 1 ? "s" : ""
-                  ] })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "glass-card overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Table, { children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(TableHeader, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(TableRow$1, { className: "border-border/50", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { className: "text-xs font-semibold text-muted-foreground", children: "Date" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { className: "text-xs font-semibold text-muted-foreground", children: "Patient" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { className: "text-xs font-semibold text-muted-foreground", children: "Remedy + Potency" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { className: "text-xs font-semibold text-muted-foreground", children: "Dosage" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { className: "text-xs font-semibold text-muted-foreground", children: "Duration" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { className: "text-xs font-semibold text-muted-foreground", children: "Status" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(TableHead, { className: "text-xs font-semibold text-muted-foreground text-right", children: "Actions" })
-                  ] }) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs(TableBody, { children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: filteredHistory.map((rx, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                      motion.tr,
-                      {
-                        initial: { opacity: 0, x: -8 },
-                        animate: { opacity: 1, x: 0 },
-                        exit: { opacity: 0, x: 8 },
-                        transition: { delay: i * 0.03 },
-                        className: "border-border/30 hover:bg-muted/20 transition-smooth cursor-pointer",
-                        onClick: () => setSelectedPrescription(rx),
-                        onKeyDown: (e3) => {
-                          if (e3.key === "Enter" || e3.key === " ")
-                            setSelectedPrescription(rx);
-                        },
-                        tabIndex: 0,
-                        "data-ocid": `rx-row-${rx.id}`,
-                        children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-sm text-muted-foreground whitespace-nowrap", children: formatDate$2(rx.date) }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-7 h-7 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center shrink-0", children: getInitials$1(rx.patientName) }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-medium text-foreground", children: rx.patientName })
-                          ] }) }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsxs(TableCell, { children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm font-medium text-foreground", children: truncate$1(rx.remedy, 24) }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-primary font-semibold", children: rx.potency })
-                          ] }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-sm text-muted-foreground", children: rx.dosage }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-sm text-muted-foreground", children: rx.duration }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(StatusBadge, { status: rx.status }) }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(TableCell, { className: "text-right", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-end gap-1", children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx(
-                              Button$1,
-                              {
-                                variant: "ghost",
-                                size: "sm",
-                                className: "h-7 w-7 p-0",
-                                onClick: (e3) => {
-                                  e3.stopPropagation();
-                                  setSelectedPrescription(rx);
-                                },
-                                "data-ocid": `btn-view-${rx.id}`,
-                                children: /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { className: "w-3.5 h-3.5" })
-                              }
-                            ),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx(
-                              Button$1,
-                              {
-                                variant: "ghost",
-                                size: "sm",
-                                className: "h-7 w-7 p-0",
-                                onClick: (e3) => e3.stopPropagation(),
-                                "data-ocid": `btn-edit-${rx.id}`,
-                                children: /* @__PURE__ */ jsxRuntimeExports.jsx(SquarePen, { className: "w-3.5 h-3.5" })
-                              }
-                            )
-                          ] }) })
-                        ]
-                      },
-                      rx.id
-                    )) }),
-                    filteredHistory.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(TableRow$1, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      TableCell,
-                      {
-                        colSpan: 7,
-                        className: "text-center py-12 text-muted-foreground",
-                        children: "No prescriptions found for this patient."
-                      }
-                    ) })
-                  ] })
-                ] }) }) })
-              ]
-            }
-          ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "remedies", className: "mt-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            motion.div,
-            {
-              initial: { opacity: 0, y: 12 },
-              animate: { opacity: 1, y: 0 },
-              transition: { duration: 0.3 },
-              className: "space-y-4",
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-4", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { className: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      Input,
-                      {
-                        placeholder: "Search remedies by name, common name, or indication…",
-                        className: "pl-9",
-                        value: remedySearch,
-                        onChange: (e3) => setRemedySearch(e3.target.value),
-                        "data-ocid": "search-remedies"
-                      }
-                    )
-                  ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground mt-2", children: [
-                    "Showing ",
-                    filteredRemedies.length,
-                    " of ",
-                    remedies.length,
-                    " remedies"
-                  ] })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3", children: [
-                  filteredRemedies.map((remedy, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                    motion.button,
-                    {
-                      type: "button",
-                      initial: { opacity: 0, scale: 0.95 },
-                      animate: { opacity: 1, scale: 1 },
-                      transition: { delay: i * 0.02 },
-                      whileHover: { y: -2 },
-                      className: "glass-card p-4 text-left cursor-pointer hover:border-primary/30 transition-smooth group w-full",
-                      onClick: () => setSelectedRemedy(remedy),
-                      "data-ocid": `remedy-card-${remedy.id}`,
-                      children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-between gap-2 mb-2", children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-sm font-display font-semibold text-foreground leading-tight", children: remedy.name }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-primary mt-0.5", children: remedy.commonName })
-                          ] }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "w-3.5 h-3.5 text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-0.5" })
-                        ] }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx(Separator, { className: "my-2 opacity-50" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-1", children: remedy.keynotes.slice(0, 3).map((k2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                          "li",
-                          {
-                            className: "text-xs text-muted-foreground flex items-start gap-1.5",
-                            children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1 h-1 rounded-full bg-primary/60 mt-1.5 shrink-0" }),
-                              k2
-                            ]
-                          },
-                          k2
-                        )) }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 flex flex-wrap gap-1", children: [
-                          remedy.potencies.slice(0, 4).map((p2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            Badge,
-                            {
-                              variant: "outline",
-                              className: "text-xs px-1.5 py-0 font-mono",
-                              children: p2
-                            },
-                            p2
-                          )),
-                          remedy.potencies.length > 4 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                            Badge,
-                            {
-                              variant: "outline",
-                              className: "text-xs px-1.5 py-0 text-muted-foreground",
-                              children: [
-                                "+",
-                                remedy.potencies.length - 4
-                              ]
-                            }
-                          )
-                        ] })
-                      ]
-                    },
-                    remedy.id
-                  )),
-                  filteredRemedies.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "col-span-full glass-card p-12 text-center text-muted-foreground", children: "No remedies found matching your search." })
-                ] })
-              ]
-            }
-          ) })
-        ]
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Dialog,
-      {
-        open: !!selectedPrescription,
-        onOpenChange: (open) => !open && setSelectedPrescription(null),
-        children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          DialogContent,
-          {
-            className: "max-w-lg glass",
-            "data-ocid": "modal-prescription-detail",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(DialogHeader, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(DialogTitle, { className: "font-display flex items-center gap-2", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(FlaskConical, { className: "w-5 h-5 text-primary" }),
-                "Prescription Details"
-              ] }) }),
-              selectedPrescription && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 text-sm", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-3", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    DetailField,
-                    {
-                      label: "Patient",
-                      value: selectedPrescription.patientName
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    DetailField,
-                    {
-                      label: "Date",
-                      value: formatDate$2(selectedPrescription.date)
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    DetailField,
-                    {
-                      label: "Remedy",
-                      value: selectedPrescription.remedy,
-                      highlight: true
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    DetailField,
-                    {
-                      label: "Potency",
-                      value: selectedPrescription.potency,
-                      highlight: true
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    DetailField,
-                    {
-                      label: "Dosage",
-                      value: selectedPrescription.dosage
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    DetailField,
-                    {
-                      label: "Frequency",
-                      value: selectedPrescription.frequency
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    DetailField,
-                    {
-                      label: "Duration",
-                      value: selectedPrescription.duration
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mb-1", children: "Status" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(StatusBadge, { status: selectedPrescription.status })
-                  ] })
-                ] }),
-                selectedPrescription.symptoms.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mb-2", children: "Symptoms" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-1.5", children: selectedPrescription.symptoms.map((s2) => /* @__PURE__ */ jsxRuntimeExports.jsx(Badge, { variant: "secondary", className: "text-xs", children: s2 }, s2)) })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mb-1", children: "Case Notes" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground leading-relaxed surface-muted rounded-lg p-3", children: selectedPrescription.caseNotes })
-                ] })
-              ] })
-            ]
-          }
-        )
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Dialog,
-      {
-        open: !!selectedRemedy,
-        onOpenChange: (open) => !open && setSelectedRemedy(null),
-        children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          DialogContent,
-          {
-            className: "max-w-md glass",
-            "data-ocid": "modal-remedy-profile",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(DialogHeader, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(DialogTitle, { className: "font-display flex items-center gap-2", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(BookOpen, { className: "w-5 h-5 text-primary" }),
-                "Remedy Profile"
-              ] }) }),
-              selectedRemedy && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 text-sm", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-display font-bold text-foreground", children: selectedRemedy.name }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-primary text-sm mt-0.5", children: selectedRemedy.commonName })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(Separator, { className: "opacity-50" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground font-semibold uppercase tracking-wide mb-2", children: "Key Indications" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: selectedRemedy.keynotes.map((k2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                    "li",
-                    {
-                      className: "flex items-start gap-2 text-foreground",
-                      children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" }),
-                        k2
-                      ]
-                    },
-                    k2
-                  )) })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground font-semibold uppercase tracking-wide mb-2", children: "Available Potencies" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-2", children: selectedRemedy.potencies.map((p2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    Badge,
-                    {
-                      variant: "outline",
-                      className: "font-mono text-xs",
-                      children: p2
-                    },
-                    p2
-                  )) })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  Button$1,
-                  {
-                    className: "w-full gap-2",
-                    onClick: () => {
-                      updateForm("remedyId", selectedRemedy.id);
-                      setSelectedRemedy(null);
-                      setActiveTab("new");
-                      ue.success(
-                        `${selectedRemedy.name} added to new prescription`
-                      );
-                    },
-                    "data-ocid": "btn-use-remedy",
-                    children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(Plus, { className: "w-4 h-4" }),
-                      "Use in New Prescription"
-                    ]
-                  }
-                )
-              ] })
-            ]
-          }
-        )
-      }
-    )
-  ] });
-}
-function DetailField({ label, value, highlight }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mb-0.5", children: label }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "p",
-      {
-        className: highlight ? "font-semibold text-primary" : "text-foreground",
-        children: value
-      }
-    )
-  ] });
-}
-const Route$a = createRoute({
-  getParentRoute: () => Route$k,
+const Route$9 = createRoute({
+  getParentRoute: () => Route$i,
   path: "/pro",
   component: ProLayout
 });
@@ -108834,8 +104254,8 @@ const casesArchive = [
     tags: ["headache", "tension", "nux-vomica", "bryonia", "constipation"]
   }
 ];
-const Route$9 = createRoute({
-  getParentRoute: () => Route$a,
+const Route$8 = createRoute({
+  getParentRoute: () => Route$9,
   path: "case-repository",
   component: CaseRepositoryPage
 });
@@ -110088,7 +105508,7 @@ var CheckboxTrigger = reactExports.forwardRef(
         role: "checkbox",
         "aria-checked": isIndeterminate(checked) ? "mixed" : checked,
         "aria-required": required,
-        "data-state": getState$1(checked),
+        "data-state": getState(checked),
         "data-disabled": disabled ? "" : void 0,
         disabled,
         value,
@@ -110168,7 +105588,7 @@ var CheckboxIndicator = reactExports.forwardRef(
         children: /* @__PURE__ */ jsxRuntimeExports.jsx(
           Primitive$1.span,
           {
-            "data-state": getState$1(context.checked),
+            "data-state": getState(context.checked),
             "data-disabled": context.disabled ? "" : void 0,
             ...indicatorProps,
             ref: forwardedRef,
@@ -110180,7 +105600,7 @@ var CheckboxIndicator = reactExports.forwardRef(
   }
 );
 CheckboxIndicator.displayName = INDICATOR_NAME$1;
-var BUBBLE_INPUT_NAME$1 = "CheckboxBubbleInput";
+var BUBBLE_INPUT_NAME = "CheckboxBubbleInput";
 var CheckboxBubbleInput = reactExports.forwardRef(
   ({ __scopeCheckbox, ...props }, forwardedRef) => {
     const {
@@ -110195,7 +105615,7 @@ var CheckboxBubbleInput = reactExports.forwardRef(
       form,
       bubbleInput,
       setBubbleInput
-    } = useCheckboxContext(BUBBLE_INPUT_NAME$1, __scopeCheckbox);
+    } = useCheckboxContext(BUBBLE_INPUT_NAME, __scopeCheckbox);
     const composedRefs = useComposedRefs$1(forwardedRef, setBubbleInput);
     const prevChecked = usePrevious(checked);
     const controlSize = useSize(control);
@@ -110247,14 +105667,14 @@ var CheckboxBubbleInput = reactExports.forwardRef(
     );
   }
 );
-CheckboxBubbleInput.displayName = BUBBLE_INPUT_NAME$1;
+CheckboxBubbleInput.displayName = BUBBLE_INPUT_NAME;
 function isFunction(value) {
   return typeof value === "function";
 }
 function isIndeterminate(checked) {
   return checked === "indeterminate";
 }
-function getState$1(checked) {
+function getState(checked) {
   return isIndeterminate(checked) ? "indeterminate" : checked ? "checked" : "unchecked";
 }
 function Checkbox({
@@ -110889,8 +106309,8 @@ const caseTemplates = [
     ]
   }
 ];
-const Route$8 = createRoute({
-  getParentRoute: () => Route$a,
+const Route$7 = createRoute({
+  getParentRoute: () => Route$9,
   path: "case-templates",
   component: CaseTemplatesPage
 });
@@ -111848,8 +107268,8 @@ const upgradePlans = [
     ctaLabel: "Contact Sales"
   }
 ];
-const Route$7 = createRoute({
-  getParentRoute: () => Route$a,
+const Route$6 = createRoute({
+  getParentRoute: () => Route$9,
   path: "/",
   component: ProFeaturesPage
 });
@@ -114083,8 +109503,8 @@ const periodicTableRemedies = [
     potencies: ["30C", "200C", "1M"]
   }
 ];
-const Route$6 = createRoute({
-  getParentRoute: () => Route$a,
+const Route$5 = createRoute({
+  getParentRoute: () => Route$9,
   path: "materia-medica",
   component: MateriaMedicaPage
 });
@@ -115716,8 +111136,8 @@ const patientTimelines = [
     }
   }
 ];
-const Route$5 = createRoute({
-  getParentRoute: () => Route$a,
+const Route$4 = createRoute({
+  getParentRoute: () => Route$9,
   path: "patient-timeline",
   component: PatientTimelinePage
 });
@@ -116555,8 +111975,8 @@ function PatientTimelinePage() {
     )
   ] });
 }
-const Route$4 = createRoute({
-  getParentRoute: () => Route$a,
+const Route$3 = createRoute({
+  getParentRoute: () => Route$9,
   path: "remedy-comparison",
   component: RemedyComparisonPage
 });
@@ -117465,8 +112885,720 @@ function RemedyComparisonPage() {
     }
   );
 }
-const Route$3 = createRoute({
-  getParentRoute: () => Route$a,
+const remedies = [
+  {
+    id: "r001",
+    name: "Aconitum Napellus",
+    commonName: "Monkshood",
+    keynotes: [
+      "Sudden acute onset",
+      "Intense fear of death",
+      "After exposure to cold dry wind",
+      "Restlessness and anxiety"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r002",
+    name: "Allium Cepa",
+    commonName: "Red Onion",
+    keynotes: [
+      "Profuse watery nasal discharge",
+      "Acrid lachrymation",
+      "Sneezing",
+      "Better open air"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r003",
+    name: "Apis Mellifica",
+    commonName: "Honey Bee",
+    keynotes: [
+      "Stinging burning pains",
+      "Oedema",
+      "Thirstlessness",
+      "Better cold application"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r004",
+    name: "Argentum Nitricum",
+    commonName: "Silver Nitrate",
+    keynotes: [
+      "Anticipatory anxiety",
+      "Desire for sweets",
+      "Diarrhea before events",
+      "Hurried and impulsive"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r005",
+    name: "Arnica Montana",
+    commonName: "Leopard's Bane",
+    keynotes: [
+      "Bruised sore sensation",
+      "Denies illness",
+      "Worse touch",
+      "Bed too hard"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r006",
+    name: "Arsenicum Album",
+    commonName: "White Arsenic",
+    keynotes: [
+      "Restlessness",
+      "Burning pains better heat",
+      "Anxiety about health",
+      "Fastidiousness"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r007",
+    name: "Aurum Metallicum",
+    commonName: "Gold",
+    keynotes: [
+      "Depression",
+      "Suicidal tendency",
+      "Hypertension",
+      "Duty-bound perfectionist"
+    ],
+    potencies: ["30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r008",
+    name: "Belladonna",
+    commonName: "Deadly Nightshade",
+    keynotes: [
+      "Sudden violent onset",
+      "Burning heat",
+      "Throbbing pains",
+      "Delirium"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r009",
+    name: "Bryonia Alba",
+    commonName: "White Bryony",
+    keynotes: [
+      "Worse any motion",
+      "Better pressure",
+      "Dryness of mucous membranes",
+      "Irritable wants to be alone"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r010",
+    name: "Calcarea Carbonica",
+    commonName: "Calcium Carbonate",
+    keynotes: [
+      "Slow plodding",
+      "Sweating on head",
+      "Worse cold damp",
+      "Craving eggs"
+    ],
+    potencies: ["30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r011",
+    name: "Cantharis",
+    commonName: "Spanish Fly",
+    keynotes: [
+      "Burning cutting urination",
+      "Cystitis",
+      "Great tenesmus",
+      "Rawness of parts"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r012",
+    name: "Carbo Vegetabilis",
+    commonName: "Vegetable Charcoal",
+    keynotes: [
+      "Flatulence and bloating",
+      "Desire for air",
+      "Sluggish vital force",
+      "Coldness"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r013",
+    name: "Causticum",
+    commonName: "Potassium Hydrate",
+    keynotes: [
+      "Paralytic conditions",
+      "Rawness and burning",
+      "Worse dry cold",
+      "Sympathy for others"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r014",
+    name: "Chamomilla",
+    commonName: "German Chamomile",
+    keynotes: [
+      "Extreme irritability",
+      "Teething children",
+      "One cheek red",
+      "Nothing satisfies"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r015",
+    name: "China Officinalis",
+    commonName: "Peruvian Bark",
+    keynotes: [
+      "Debility from loss of fluids",
+      "Periodicity",
+      "Tympanic abdomen",
+      "Better hard pressure"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r016",
+    name: "Colocynthis",
+    commonName: "Bitter Cucumber",
+    keynotes: [
+      "Cramping colic better bending double",
+      "After indignation",
+      "Dysentery",
+      "Worse straightening"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r017",
+    name: "Drosera",
+    commonName: "Sundew",
+    keynotes: [
+      "Whooping cough",
+      "Spasmodic cough",
+      "Worse after midnight",
+      "Vomiting after cough"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r018",
+    name: "Euphrasia",
+    commonName: "Eyebright",
+    keynotes: [
+      "Profuse acrid lachrymation",
+      "Bland nasal discharge",
+      "Eye inflammation",
+      "Better open air"
+    ],
+    potencies: ["6C", "30C", "200C", "Q"]
+  },
+  {
+    id: "r019",
+    name: "Ferrum Phosphoricum",
+    commonName: "Iron Phosphate",
+    keynotes: [
+      "First stage inflammation",
+      "Gradual onset fever",
+      "Anemia",
+      "Better slow motion"
+    ],
+    potencies: ["6X", "6C", "30C", "200C"]
+  },
+  {
+    id: "r020",
+    name: "Gelsemium",
+    commonName: "Yellow Jasmine",
+    keynotes: [
+      "Dullness drowsiness dizziness",
+      "Anticipatory anxiety with diarrhea",
+      "Muscle weakness",
+      "Wants to be held"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r021",
+    name: "Graphites",
+    commonName: "Black Lead (Graphite)",
+    keynotes: [
+      "Oozing sticky discharge",
+      "Eczema in folds",
+      "Constipation with hard knots",
+      "Obesity"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r022",
+    name: "Hepar Sulphuris",
+    commonName: "Calcium Sulphide",
+    keynotes: [
+      "Extreme sensitivity to pain",
+      "Suppuration",
+      "Chilly patient",
+      "Irritable when ill"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r023",
+    name: "Hyoscyamus",
+    commonName: "Henbane",
+    keynotes: [
+      "Jealousy",
+      "Lascivious behavior",
+      "Muttering delirium",
+      "Picks at bedclothes"
+    ],
+    potencies: ["30C", "200C", "1M"]
+  },
+  {
+    id: "r024",
+    name: "Ignatia Amara",
+    commonName: "St. Ignatius Bean",
+    keynotes: [
+      "Grief and disappointment",
+      "Contradictory symptoms",
+      "Sighing",
+      "Hysterical tendencies"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r025",
+    name: "Ipecacuanha",
+    commonName: "Ipecac Root",
+    keynotes: [
+      "Persistent nausea",
+      "Bright red hemorrhage",
+      "No relief from vomiting",
+      "Moist clean tongue"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r026",
+    name: "Kali Bichromicum",
+    commonName: "Potassium Dichromate",
+    keynotes: [
+      "Thick stringy tenacious discharges",
+      "Sinusitis",
+      "Ulcers with sharp punched-out edges",
+      "Worse cold"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r027",
+    name: "Kali Carbonicum",
+    commonName: "Potassium Carbonate",
+    keynotes: [
+      "Weakness",
+      "Bag-like swelling above eyelids",
+      "Worse 2-4am",
+      "Stitching pains"
+    ],
+    potencies: ["30C", "200C", "1M"]
+  },
+  {
+    id: "r028",
+    name: "Lachesis",
+    commonName: "Bushmaster Snake Venom",
+    keynotes: ["Left-sided", "Worse tight clothing", "Loquacious", "Jealousy"],
+    potencies: ["30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r029",
+    name: "Ledum Palustre",
+    commonName: "Marsh Tea",
+    keynotes: [
+      "Puncture wounds",
+      "Insect bites",
+      "Rheumatism from below upward",
+      "Better cold application"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r030",
+    name: "Lycopodium",
+    commonName: "Club Moss",
+    keynotes: [
+      "4-8pm aggravation",
+      "Right-sided",
+      "Anticipatory anxiety",
+      "Flatulence bloating"
+    ],
+    potencies: ["30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r031",
+    name: "Magnesia Phosphorica",
+    commonName: "Magnesium Phosphate",
+    keynotes: [
+      "Cramping pains better heat and pressure",
+      "Neuralgic pains",
+      "Better bending double",
+      "Worse cold"
+    ],
+    potencies: ["6X", "6C", "30C", "200C"]
+  },
+  {
+    id: "r032",
+    name: "Mercurius Solubilis",
+    commonName: "Quicksilver",
+    keynotes: [
+      "Worse night",
+      "Profuse offensive perspiration",
+      "Trembling",
+      "Creeping chilliness"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r033",
+    name: "Natrum Muriaticum",
+    commonName: "Table Salt",
+    keynotes: [
+      "Grief held inward",
+      "Worse consolation",
+      "Craving salt",
+      "Migraine with zigzag aura"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r034",
+    name: "Nux Vomica",
+    commonName: "Poison Nut",
+    keynotes: [
+      "Over-indulgence",
+      "Chilly irritable",
+      "Hypersensitive to stimuli",
+      "Sedentary lifestyle"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r035",
+    name: "Phosphorus",
+    commonName: "Phosphorus",
+    keynotes: [
+      "Burning pains",
+      "Tall slender build",
+      "Craves cold drinks",
+      "Fear of being alone in dark"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r036",
+    name: "Phytolacca",
+    commonName: "Pokeweed",
+    keynotes: [
+      "Throat inflammation radiating to ears",
+      "Mastitis",
+      "Rheumatic nodules",
+      "Indifference"
+    ],
+    potencies: ["6C", "30C", "200C", "Q"]
+  },
+  {
+    id: "r037",
+    name: "Pulsatilla",
+    commonName: "Windflower",
+    keynotes: [
+      "Changeable symptoms",
+      "Mild yielding",
+      "Thirstless",
+      "Better open air and cool"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r038",
+    name: "Rhus Toxicodendron",
+    commonName: "Poison Ivy",
+    keynotes: [
+      "Worse initial motion better continued",
+      "Restlessness",
+      "Worse cold damp",
+      "Red triangular tongue tip"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r039",
+    name: "Ruta Graveolens",
+    commonName: "Rue",
+    keynotes: [
+      "Injury to tendons and periosteum",
+      "Eye strain",
+      "Prolapse",
+      "Lame bruised feeling"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r040",
+    name: "Sabal Serrulata",
+    commonName: "Saw Palmetto",
+    keynotes: [
+      "Prostate enlargement",
+      "Weak urinary stream",
+      "Cold sensation in genitals",
+      "Dribbling"
+    ],
+    potencies: ["Q", "6C", "30C"]
+  },
+  {
+    id: "r041",
+    name: "Sepia",
+    commonName: "Ink of Cuttlefish",
+    keynotes: [
+      "Bearing-down sensation",
+      "Indifference",
+      "Worse standing",
+      "Better vigorous exercise"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r042",
+    name: "Silicea",
+    commonName: "Pure Flint",
+    keynotes: [
+      "Lack of confidence",
+      "Suppuration",
+      "Chilly obstinate",
+      "Expels foreign bodies"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r043",
+    name: "Spigelia",
+    commonName: "Pink Root",
+    keynotes: [
+      "Left-sided neuralgias",
+      "Violent palpitation",
+      "Worse motion",
+      "Worm affections"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r044",
+    name: "Spongia Tosta",
+    commonName: "Roasted Sea Sponge",
+    keynotes: [
+      "Dry barking croup",
+      "Anxiety and palpitation",
+      "Worse before midnight",
+      "Better eating and drinking"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  },
+  {
+    id: "r045",
+    name: "Staphysagria",
+    commonName: "Stavesacre",
+    keynotes: [
+      "Suppressed indignation",
+      "After surgical wounds",
+      "Honeymoon cystitis",
+      "Wounded pride"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r046",
+    name: "Stramonium",
+    commonName: "Jimsonweed",
+    keynotes: [
+      "Fear of darkness",
+      "Violent behavior",
+      "Delirium",
+      "Night terrors"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r047",
+    name: "Sulphur",
+    commonName: "Brimstone",
+    keynotes: [
+      "Burning heat",
+      "Aversion to bathing",
+      "Philosophical",
+      "11am sinking feeling"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r048",
+    name: "Syzygium Jambolanum",
+    commonName: "Jamun / Java Plum",
+    keynotes: [
+      "Diabetes mellitus",
+      "Reduces blood sugar",
+      "Burning in feet",
+      "Polyuria"
+    ],
+    potencies: ["Q", "3X", "6X", "30C"]
+  },
+  {
+    id: "r049",
+    name: "Thuja Occidentalis",
+    commonName: "Arborvitae",
+    keynotes: [
+      "Warts and condylomata",
+      "Fixed ideas",
+      "Worse cold damp",
+      "Oily skin"
+    ],
+    potencies: ["6C", "30C", "200C", "1M", "10M"]
+  },
+  {
+    id: "r050",
+    name: "Thyroidinum",
+    commonName: "Thyroid Gland",
+    keynotes: [
+      "Hypothyroidism",
+      "Obesity",
+      "Hair loss",
+      "Mental dullness and fatigue"
+    ],
+    potencies: ["3X", "6X", "30C", "200C"]
+  },
+  {
+    id: "r051",
+    name: "Tuberculinum",
+    commonName: "Tuberculous Nosode",
+    keynotes: [
+      "Never well since tuberculosis",
+      "Wanderlust",
+      "Dissatisfied",
+      "Recurrent respiratory infections"
+    ],
+    potencies: ["200C", "1M", "10M"]
+  },
+  {
+    id: "r052",
+    name: "Urtica Urens",
+    commonName: "Stinging Nettle",
+    keynotes: ["Burns with intense itching", "Urticaria", "Gout", "Agalactia"],
+    potencies: ["6C", "30C", "200C", "Q"]
+  },
+  {
+    id: "r053",
+    name: "Veratrum Album",
+    commonName: "White Hellebore",
+    keynotes: [
+      "Collapse with cold sweat",
+      "Profuse vomiting and diarrhea",
+      "Cold extremities",
+      "Craves cold drinks"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r054",
+    name: "Zincum Metallicum",
+    commonName: "Zinc",
+    keynotes: [
+      "Brain fag",
+      "Restless legs",
+      "Suppressed eruptions",
+      "Twitching"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r055",
+    name: "Calc Phosphorica",
+    commonName: "Calcium Phosphate",
+    keynotes: [
+      "Teething problems",
+      "Bone weakness",
+      "Craves smoked meat",
+      "Dissatisfied restless"
+    ],
+    potencies: ["6X", "6C", "30C", "200C"]
+  },
+  {
+    id: "r056",
+    name: "Cimicifuga",
+    commonName: "Black Cohosh",
+    keynotes: [
+      "Menstrual irregularity",
+      "Rheumatic affections",
+      "Depression alternating",
+      "Worse cold damp"
+    ],
+    potencies: ["6C", "30C", "200C", "1M"]
+  },
+  {
+    id: "r057",
+    name: "Hypericum Perforatum",
+    commonName: "St. John's Wort",
+    keynotes: [
+      "Nerve injuries",
+      "Puncture wounds",
+      "Spinal injuries",
+      "Shooting pains"
+    ],
+    potencies: ["6C", "30C", "200C", "Q"]
+  },
+  {
+    id: "r058",
+    name: "Medhorrhinum",
+    commonName: "Gonorrheal Nosode",
+    keynotes: [
+      "Intense sexuality",
+      "Hurried restless",
+      "Better at seashore",
+      "History of gonorrhea"
+    ],
+    potencies: ["200C", "1M", "10M"]
+  },
+  {
+    id: "r059",
+    name: "Platina",
+    commonName: "Platinum",
+    keynotes: [
+      "Pride arrogance",
+      "Nymphomania",
+      "Numbness and coldness",
+      "Cramping pains"
+    ],
+    potencies: ["30C", "200C", "1M"]
+  },
+  {
+    id: "r060",
+    name: "Petroleum",
+    commonName: "Crude Rock Oil",
+    keynotes: [
+      "Motion sickness",
+      "Eczema with deep cracks",
+      "Hunger at night",
+      "Worse winter"
+    ],
+    potencies: ["6C", "30C", "200C"]
+  }
+];
+const Route$2 = createRoute({
+  getParentRoute: () => Route$9,
   path: "remedy-finder",
   component: RemedyFinderPage
 });
@@ -118534,8 +114666,8 @@ function RemedyFinderPage() {
     ) })
   ] });
 }
-const Route$2 = createRoute({
-  getParentRoute: () => Route$a,
+const Route$1 = createRoute({
+  getParentRoute: () => Route$9,
   path: "voice-recorder",
   component: VoiceRecorderPage
 });
@@ -119334,710 +115466,51 @@ ${record.suggestedRemedies.join(", ")}`;
     }
   );
 }
-const analytics = {
-  patientGrowth: [
-    { month: "May 2025", value: 48 },
-    { month: "Jun 2025", value: 54 },
-    { month: "Jul 2025", value: 61 },
-    { month: "Aug 2025", value: 58 },
-    { month: "Sep 2025", value: 67 },
-    { month: "Oct 2025", value: 74 },
-    { month: "Nov 2025", value: 81 },
-    { month: "Dec 2025", value: 79 },
-    { month: "Jan 2026", value: 88 },
-    { month: "Feb 2026", value: 95 },
-    { month: "Mar 2026", value: 102 },
-    { month: "Apr 2026", value: 115 }
-  ],
-  revenue: [
-    { month: "May 2025", value: 42e3 },
-    { month: "Jun 2025", value: 49500 },
-    { month: "Jul 2025", value: 55800 },
-    { month: "Aug 2025", value: 51200 },
-    { month: "Sep 2025", value: 63400 },
-    { month: "Oct 2025", value: 71e3 },
-    { month: "Nov 2025", value: 78500 },
-    { month: "Dec 2025", value: 82e3 },
-    { month: "Jan 2026", value: 86500 },
-    { month: "Feb 2026", value: 91e3 },
-    { month: "Mar 2026", value: 98400 },
-    { month: "Apr 2026", value: 104200 }
-  ],
-  appointmentStats: {
-    confirmed: 45,
-    pending: 18,
-    completed: 87,
-    cancelled: 9
-  }
-};
-const topRemedies = [
-  { name: "Lycopodium", count: 23 },
-  { name: "Sulphur", count: 19 },
-  { name: "Natrum Mur", count: 17 },
-  { name: "Pulsatilla", count: 15 },
-  { name: "Sepia", count: 13 },
-  { name: "Calc Carb", count: 11 }
-];
-const Route$1 = createRoute({
-  getParentRoute: () => Route$k,
-  path: "/reports",
-  component: ReportsPage
+var NAME = "Separator";
+var DEFAULT_ORIENTATION = "horizontal";
+var ORIENTATIONS = ["horizontal", "vertical"];
+var Separator$1 = reactExports.forwardRef((props, forwardedRef) => {
+  const { decorative, orientation: orientationProp = DEFAULT_ORIENTATION, ...domProps } = props;
+  const orientation = isValidOrientation(orientationProp) ? orientationProp : DEFAULT_ORIENTATION;
+  const ariaOrientation = orientation === "vertical" ? orientation : void 0;
+  const semanticProps = decorative ? { role: "none" } : { "aria-orientation": ariaOrientation, role: "separator" };
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    Primitive.div,
+    {
+      "data-orientation": orientation,
+      ...semanticProps,
+      ...domProps,
+      ref: forwardedRef
+    }
+  );
 });
-const CHART_TEAL = "oklch(0.65 0.18 190)";
-const CHART_GREEN = "oklch(0.68 0.16 165)";
-const CHART_AMBER = "oklch(0.78 0.14 80)";
-const CHART_ROSE = "oklch(0.65 0.19 22)";
-const PIE_COLORS = [CHART_TEAL, CHART_AMBER, CHART_GREEN, CHART_ROSE];
-const revenueData = analytics.revenue.map((d2) => ({
-  month: d2.month.slice(0, 3),
-  consultations: Math.round(d2.value * 0.62),
-  medicines: Math.round(d2.value * 0.38),
-  total: d2.value
-}));
-const patientData = analytics.patientGrowth.map((d2) => ({
-  month: d2.month.slice(0, 3),
-  patients: d2.value
-}));
-const appointmentPieData = [
-  { name: "Completed", value: analytics.appointmentStats.completed },
-  { name: "Pending", value: analytics.appointmentStats.pending },
-  { name: "Confirmed", value: analytics.appointmentStats.confirmed },
-  { name: "Cancelled", value: analytics.appointmentStats.cancelled }
-];
-function CustomTooltip({
-  active,
-  payload,
-  label
-}) {
-  if (!active || !(payload == null ? void 0 : payload.length)) return null;
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card px-4 py-3 text-sm shadow-elevated min-w-[140px]", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mb-2 font-medium", children: label }),
-    payload.map((p2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between gap-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1.5 text-muted-foreground", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "span",
-          {
-            className: "w-2 h-2 rounded-full",
-            style: { background: p2.color }
-          }
-        ),
-        p2.name
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-semibold text-foreground tabular-nums", children: typeof p2.value === "number" && p2.value > 999 ? `₹${p2.value.toLocaleString("en-IN")}` : p2.value })
-    ] }, p2.name))
-  ] });
+Separator$1.displayName = NAME;
+function isValidOrientation(orientation) {
+  return ORIENTATIONS.includes(orientation);
 }
-const statsData = [
-  {
-    title: "Total Revenue YTD",
-    value: "₹15,45,000",
-    change: 18,
-    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Wallet, { className: "w-4 h-4" }),
-    color: "teal"
-  },
-  {
-    title: "Total Patients",
-    value: "248",
-    change: 12,
-    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Users, { className: "w-4 h-4" }),
-    color: "green"
-  },
-  {
-    title: "Avg Case Value",
-    value: "₹6,230",
-    change: 5,
-    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(TrendingUp, { className: "w-4 h-4" }),
-    color: "purple"
-  },
-  {
-    title: "Patient Retention",
-    value: "78%",
-    change: 3,
-    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-4 h-4" }),
-    color: "amber"
-  }
-];
-const reportCards = [
-  {
-    id: "patient",
-    label: "Patient Report",
-    desc: "Full patient list with visit history",
-    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Users, { className: "w-5 h-5" }),
-    color: "bg-primary/10 text-primary border-primary/20"
-  },
-  {
-    id: "revenue",
-    label: "Revenue Report",
-    desc: "Monthly income & payment breakdown",
-    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Wallet, { className: "w-5 h-5" }),
-    color: "bg-green-500/10 text-green-400 border-green-500/20"
-  },
-  {
-    id: "appointment",
-    label: "Appointment Summary",
-    desc: "Status-wise appointment analytics",
-    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FileText, { className: "w-5 h-5" }),
-    color: "bg-amber-500/10 text-amber-400 border-amber-500/20"
-  },
-  {
-    id: "prescription",
-    label: "Prescription Analysis",
-    desc: "Top remedies and prescribing patterns",
-    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Microscope, { className: "w-5 h-5" }),
-    color: "bg-purple-500/10 text-purple-400 border-purple-500/20"
-  }
-];
-function ChartDefs() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("defs", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("linearGradient", { id: "gradTeal", x1: "0", y1: "0", x2: "0", y2: "1", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "5%", stopColor: CHART_TEAL, stopOpacity: 0.35 }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("stop", { offset: "95%", stopColor: CHART_TEAL, stopOpacity: 0 })
-  ] }) });
-}
-function ReportsPage() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-8", "data-ocid": "reports-page", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      PageHeader,
-      {
-        title: "Reports & Analytics",
-        description: "Patient growth, revenue trends, and downloadable insights.",
-        breadcrumb: [{ label: "Dashboard", href: "/" }, { label: "Reports" }],
-        action: {
-          label: "Download Report",
-          icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Download, { className: "w-4 h-4" }),
-          onClick: () => ue.success("Report generated! PDF download starting…", {
-            description: "Your full analytics report is being prepared."
-          })
-        }
-      }
-    ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 lg:grid-cols-4 gap-4", children: statsData.map((s2, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-      motion.div,
-      {
-        initial: { opacity: 0, y: 16 },
-        animate: { opacity: 1, y: 0 },
-        transition: { delay: i * 0.08 },
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          StatCard,
-          {
-            title: s2.title,
-            value: s2.value,
-            change: s2.change,
-            icon: s2.icon,
-            color: s2.color
-          }
-        )
-      },
-      s2.title
-    )) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-5", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          initial: { opacity: 0, x: -20 },
-          whileInView: { opacity: 1, x: 0 },
-          viewport: { once: true },
-          transition: { duration: 0.5 },
-          className: "glass-card p-5",
-          "data-ocid": "chart-patient-growth",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-2 rounded-lg bg-primary/10 border border-primary/20", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Users, { className: "w-4 h-4 text-primary" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-semibold text-foreground font-display", children: "Patient Growth" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Monthly active patients — last 12 months" })
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 220, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              AreaChart,
-              {
-                data: patientData,
-                margin: { top: 4, right: 8, left: -20, bottom: 0 },
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(ChartDefs, {}),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    CartesianGrid,
-                    {
-                      strokeDasharray: "3 3",
-                      stroke: "rgba(255,255,255,0.06)",
-                      vertical: false
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    XAxis,
-                    {
-                      dataKey: "month",
-                      tick: { fill: "oklch(0.6 0 0)", fontSize: 10 },
-                      axisLine: false,
-                      tickLine: false
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    YAxis,
-                    {
-                      tick: { fill: "oklch(0.6 0 0)", fontSize: 10 },
-                      axisLine: false,
-                      tickLine: false
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { content: /* @__PURE__ */ jsxRuntimeExports.jsx(CustomTooltip, {}) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    Area,
-                    {
-                      type: "monotone",
-                      dataKey: "patients",
-                      name: "Patients",
-                      stroke: CHART_TEAL,
-                      strokeWidth: 2.5,
-                      fill: "url(#gradTeal)",
-                      dot: false,
-                      activeDot: { r: 4, fill: CHART_TEAL, stroke: "transparent" }
-                    }
-                  )
-                ]
-              }
-            ) })
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          initial: { opacity: 0, x: 20 },
-          whileInView: { opacity: 1, x: 0 },
-          viewport: { once: true },
-          transition: { duration: 0.5 },
-          className: "glass-card p-5",
-          "data-ocid": "chart-revenue",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-2 rounded-lg bg-green-500/10 border border-green-500/20", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ChartColumn, { className: "w-4 h-4 text-green-400" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-semibold text-foreground font-display", children: "Revenue Breakdown" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Consultations vs. medicines — last 12 months" })
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 220, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              BarChart,
-              {
-                data: revenueData,
-                margin: { top: 4, right: 8, left: -20, bottom: 0 },
-                barSize: 10,
-                barCategoryGap: "28%",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    CartesianGrid,
-                    {
-                      strokeDasharray: "3 3",
-                      stroke: "rgba(255,255,255,0.06)",
-                      vertical: false
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    XAxis,
-                    {
-                      dataKey: "month",
-                      tick: { fill: "oklch(0.6 0 0)", fontSize: 10 },
-                      axisLine: false,
-                      tickLine: false
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    YAxis,
-                    {
-                      tick: { fill: "oklch(0.6 0 0)", fontSize: 10 },
-                      axisLine: false,
-                      tickLine: false,
-                      tickFormatter: (v2) => v2 >= 1e3 ? `₹${v2 / 1e3}k` : `₹${v2}`
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { content: /* @__PURE__ */ jsxRuntimeExports.jsx(CustomTooltip, {}) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    Legend,
-                    {
-                      wrapperStyle: { fontSize: "11px", color: "oklch(0.6 0 0)" }
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    Bar,
-                    {
-                      dataKey: "consultations",
-                      name: "Consultations",
-                      fill: CHART_TEAL,
-                      radius: [3, 3, 0, 0]
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    Bar,
-                    {
-                      dataKey: "medicines",
-                      name: "Medicines",
-                      fill: CHART_GREEN,
-                      radius: [3, 3, 0, 0]
-                    }
-                  )
-                ]
-              }
-            ) })
-          ]
-        }
-      )
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-5", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          initial: { opacity: 0, y: 20 },
-          whileInView: { opacity: 1, y: 0 },
-          viewport: { once: true },
-          transition: { duration: 0.45 },
-          className: "glass-card p-5",
-          "data-ocid": "chart-appointment-status",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-2 rounded-lg bg-amber-500/10 border border-amber-500/20", children: /* @__PURE__ */ jsxRuntimeExports.jsx(FileChartPie, { className: "w-4 h-4 text-amber-400" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-semibold text-foreground font-display", children: "Appointment Status" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Distribution across all appointment states" })
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-6", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "55%", height: 200, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(PieChart, { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Pie,
-                  {
-                    data: appointmentPieData,
-                    cx: "50%",
-                    cy: "50%",
-                    innerRadius: 55,
-                    outerRadius: 80,
-                    paddingAngle: 3,
-                    dataKey: "value",
-                    stroke: "transparent",
-                    children: appointmentPieData.map((entry, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      Cell,
-                      {
-                        fill: PIE_COLORS[i % PIE_COLORS.length]
-                      },
-                      entry.name
-                    ))
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { content: /* @__PURE__ */ jsxRuntimeExports.jsx(CustomTooltip, {}) })
-              ] }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-2.5 flex-1", children: [
-                appointmentPieData.map((entry, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    "span",
-                    {
-                      className: "w-2.5 h-2.5 rounded-full shrink-0",
-                      style: { background: PIE_COLORS[i % PIE_COLORS.length] }
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground flex-1", children: entry.name }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-semibold text-foreground tabular-nums", children: entry.value })
-                ] }, entry.name)),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-1 pt-2 border-t border-white/10", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground flex-1 font-medium", children: "Total" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-foreground tabular-nums", children: appointmentPieData.reduce((s2, d2) => s2 + d2.value, 0) })
-                ] }) })
-              ] })
-            ] })
-          ]
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          initial: { opacity: 0, y: 20 },
-          whileInView: { opacity: 1, y: 0 },
-          viewport: { once: true },
-          transition: { duration: 0.45, delay: 0.1 },
-          className: "glass-card p-5",
-          "data-ocid": "chart-top-remedies",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-2 rounded-lg bg-purple-500/10 border border-purple-500/20", children: /* @__PURE__ */ jsxRuntimeExports.jsx(FileChartColumnIncreasing, { className: "w-4 h-4 text-purple-400" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-semibold text-foreground font-display", children: "Top Remedies Prescribed" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Most frequently prescribed homeopathic remedies" })
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 200, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              BarChart,
-              {
-                layout: "vertical",
-                data: topRemedies,
-                margin: { top: 0, right: 20, left: 20, bottom: 0 },
-                barSize: 12,
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    CartesianGrid,
-                    {
-                      strokeDasharray: "3 3",
-                      stroke: "rgba(255,255,255,0.06)",
-                      horizontal: false
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    XAxis,
-                    {
-                      type: "number",
-                      tick: { fill: "oklch(0.6 0 0)", fontSize: 10 },
-                      axisLine: false,
-                      tickLine: false
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    YAxis,
-                    {
-                      type: "category",
-                      dataKey: "name",
-                      tick: { fill: "oklch(0.6 0 0)", fontSize: 11 },
-                      axisLine: false,
-                      tickLine: false,
-                      width: 75
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { content: /* @__PURE__ */ jsxRuntimeExports.jsx(CustomTooltip, {}) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Bar, { dataKey: "count", name: "Prescriptions", radius: [0, 4, 4, 0], children: topRemedies.map((remedy, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    Cell,
-                    {
-                      fill: `oklch(0.65 0.${14 + i * 2} ${190 - i * 8})`
-                    },
-                    remedy.name
-                  )) })
-                ]
-              }
-            ) })
-          ]
-        }
-      )
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      motion.div,
-      {
-        initial: { opacity: 0, y: 24 },
-        whileInView: { opacity: 1, y: 0 },
-        viewport: { once: true },
-        transition: { duration: 0.5 },
-        className: "glass-card p-6",
-        "data-ocid": "download-reports-section",
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-5", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-2 rounded-lg bg-primary/10 border border-primary/20", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Download, { className: "w-4 h-4 text-primary" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-semibold text-foreground font-display", children: "Download Reports" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Export clinic data as PDF reports" })
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4", children: reportCards.map((rc, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            motion.div,
-            {
-              initial: { opacity: 0, scale: 0.97 },
-              whileInView: { opacity: 1, scale: 1 },
-              viewport: { once: true },
-              transition: { delay: i * 0.07 },
-              whileHover: { y: -3 },
-              className: "glass rounded-xl p-4 flex flex-col gap-3 cursor-pointer group",
-              "data-ocid": `report-card-${rc.id}`,
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `p-2.5 rounded-xl border self-start ${rc.color}`, children: rc.icon }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-semibold text-foreground", children: rc.label }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: rc.desc })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  Button$1,
-                  {
-                    size: "sm",
-                    variant: "outline",
-                    className: "w-full flex items-center gap-1.5 text-xs opacity-80 group-hover:opacity-100 transition-smooth",
-                    onClick: () => ue.success(`Generating ${rc.label}…`, {
-                      description: "Your report will download in a moment."
-                    }),
-                    "data-ocid": `download-btn-${rc.id}`,
-                    children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(Download, { className: "w-3 h-3" }),
-                      "Download PDF"
-                    ]
-                  }
-                )
-              ]
-            },
-            rc.id
-          )) })
-        ]
-      }
-    )
-  ] });
-}
-var SWITCH_NAME = "Switch";
-var [createSwitchContext] = createContextScope$1(SWITCH_NAME);
-var [SwitchProvider, useSwitchContext] = createSwitchContext(SWITCH_NAME);
-var Switch$1 = reactExports.forwardRef(
-  (props, forwardedRef) => {
-    const {
-      __scopeSwitch,
-      name,
-      checked: checkedProp,
-      defaultChecked,
-      required,
-      disabled,
-      value = "on",
-      onCheckedChange,
-      form,
-      ...switchProps
-    } = props;
-    const [button, setButton] = reactExports.useState(null);
-    const composedRefs = useComposedRefs$1(forwardedRef, (node) => setButton(node));
-    const hasConsumerStoppedPropagationRef = reactExports.useRef(false);
-    const isFormControl = button ? form || !!button.closest("form") : true;
-    const [checked, setChecked] = useControllableState({
-      prop: checkedProp,
-      defaultProp: defaultChecked ?? false,
-      onChange: onCheckedChange,
-      caller: SWITCH_NAME
-    });
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(SwitchProvider, { scope: __scopeSwitch, checked, disabled, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        Primitive$1.button,
-        {
-          type: "button",
-          role: "switch",
-          "aria-checked": checked,
-          "aria-required": required,
-          "data-state": getState(checked),
-          "data-disabled": disabled ? "" : void 0,
-          disabled,
-          value,
-          ...switchProps,
-          ref: composedRefs,
-          onClick: composeEventHandlers(props.onClick, (event) => {
-            setChecked((prevChecked) => !prevChecked);
-            if (isFormControl) {
-              hasConsumerStoppedPropagationRef.current = event.isPropagationStopped();
-              if (!hasConsumerStoppedPropagationRef.current) event.stopPropagation();
-            }
-          })
-        }
-      ),
-      isFormControl && /* @__PURE__ */ jsxRuntimeExports.jsx(
-        SwitchBubbleInput,
-        {
-          control: button,
-          bubbles: !hasConsumerStoppedPropagationRef.current,
-          name,
-          value,
-          checked,
-          required,
-          disabled,
-          form,
-          style: { transform: "translateX(-100%)" }
-        }
-      )
-    ] });
-  }
-);
-Switch$1.displayName = SWITCH_NAME;
-var THUMB_NAME = "SwitchThumb";
-var SwitchThumb = reactExports.forwardRef(
-  (props, forwardedRef) => {
-    const { __scopeSwitch, ...thumbProps } = props;
-    const context = useSwitchContext(THUMB_NAME, __scopeSwitch);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Primitive$1.span,
-      {
-        "data-state": getState(context.checked),
-        "data-disabled": context.disabled ? "" : void 0,
-        ...thumbProps,
-        ref: forwardedRef
-      }
-    );
-  }
-);
-SwitchThumb.displayName = THUMB_NAME;
-var BUBBLE_INPUT_NAME = "SwitchBubbleInput";
-var SwitchBubbleInput = reactExports.forwardRef(
-  ({
-    __scopeSwitch,
-    control,
-    checked,
-    bubbles = true,
-    ...props
-  }, forwardedRef) => {
-    const ref = reactExports.useRef(null);
-    const composedRefs = useComposedRefs$1(ref, forwardedRef);
-    const prevChecked = usePrevious(checked);
-    const controlSize = useSize(control);
-    reactExports.useEffect(() => {
-      const input = ref.current;
-      if (!input) return;
-      const inputProto = window.HTMLInputElement.prototype;
-      const descriptor = Object.getOwnPropertyDescriptor(
-        inputProto,
-        "checked"
-      );
-      const setChecked = descriptor.set;
-      if (prevChecked !== checked && setChecked) {
-        const event = new Event("click", { bubbles });
-        setChecked.call(input, checked);
-        input.dispatchEvent(event);
-      }
-    }, [prevChecked, checked, bubbles]);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "input",
-      {
-        type: "checkbox",
-        "aria-hidden": true,
-        defaultChecked: checked,
-        ...props,
-        tabIndex: -1,
-        ref: composedRefs,
-        style: {
-          ...props.style,
-          ...controlSize,
-          position: "absolute",
-          pointerEvents: "none",
-          opacity: 0,
-          margin: 0
-        }
-      }
-    );
-  }
-);
-SwitchBubbleInput.displayName = BUBBLE_INPUT_NAME;
-function getState(checked) {
-  return checked ? "checked" : "unchecked";
-}
-var Root = Switch$1;
-var Thumb = SwitchThumb;
-function Switch({
+var Root = Separator$1;
+function Separator({
   className,
+  orientation = "horizontal",
+  decorative = true,
   ...props
 }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     Root,
     {
-      "data-slot": "switch",
+      "data-slot": "separator",
+      decorative,
+      orientation,
       className: cn(
-        "peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent shadow-xs transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50",
+        "bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px",
         className
       ),
-      ...props,
-      children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-        Thumb,
-        {
-          "data-slot": "switch-thumb",
-          className: cn(
-            "bg-background dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"
-          )
-        }
-      )
+      ...props
     }
   );
 }
 const Route2 = createRoute({
-  getParentRoute: () => Route$k,
+  getParentRoute: () => Route$i,
   path: "/settings",
   component: SettingsPage
 });
@@ -120051,6 +115524,35 @@ const stagger = (i) => ({
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.3, delay: i * 0.06 }
 });
+function ClinicNameHeader() {
+  const [clinicName, setClinicName] = reactExports.useState("My Clinic");
+  reactExports.useEffect(() => {
+    const user = getCurrentUser();
+    if (user && user.clinicIds.length > 0) {
+      const clinics = getUserClinics(user.id);
+      if (clinics.length > 0) {
+        setClinicName(clinics[0].name);
+      }
+    }
+  }, []);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      initial: { opacity: 0, y: -8 },
+      animate: { opacity: 1, y: 0 },
+      transition: { duration: 0.4 },
+      className: "glass-card p-5 flex items-center gap-4 border-l-4 border-l-primary",
+      "data-ocid": "settings.clinic_name_header",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-12 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Building2, { className: "w-6 h-6 text-primary" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium text-muted-foreground uppercase tracking-wide", children: "Current Clinic" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-xl font-display font-bold text-foreground truncate", children: clinicName })
+        ] })
+      ]
+    }
+  );
+}
 function ClinicProfileTab() {
   const [form, setForm] = reactExports.useState({
     name: "HomeoPath Wellness Clinic",
@@ -120277,7 +115779,6 @@ function DoctorProfileTab() {
 }
 function AppearanceTab() {
   const { theme, toggleTheme, accentColor, setAccentColor } = useAppStore();
-  const [fontSize, setFontSize] = reactExports.useState("medium");
   const handleAccentChange = (id2) => {
     var _a2;
     const palette = ACCENT_COLOR_MAP[id2];
@@ -120398,24 +115899,6 @@ function AppearanceTab() {
         c2.id
       )) })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-display font-semibold text-foreground mb-4", children: "Font Size" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-3 flex-wrap", children: ["small", "medium", "large"].map((size2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "button",
-        {
-          type: "button",
-          onClick: () => setFontSize(size2),
-          className: cn(
-            "px-5 py-2 rounded-lg border text-sm font-medium capitalize transition-smooth",
-            fontSize === size2 ? "border-primary bg-primary/10 text-primary" : "border-border/40 text-muted-foreground hover:border-border"
-          ),
-          "data-ocid": `font-size-${size2}`,
-          children: size2 === "small" ? "Small" : size2 === "medium" ? "Medium" : "Large"
-        },
-        size2
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-2", children: "Affects body text across the application." })
-    ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-end", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
       Button$1,
       {
@@ -120430,216 +115913,207 @@ function AppearanceTab() {
     ) })
   ] });
 }
-const NOTIF_PREFS = [
+const MESSAGE_TEMPLATES = [
   {
-    id: "appointment-reminders",
-    label: "Appointment Reminders",
-    description: "Get notified 1 hour before appointments",
-    defaultOn: true
+    id: "welcome",
+    label: "Welcome Message",
+    description: "Sent when a patient registers",
+    placeholder: "Welcome to {clinic_name}, {patient_name}! We're delighted to have you. Your registration is complete and we look forward to serving you."
   },
   {
-    id: "billing-alerts",
-    label: "Billing Alerts",
-    description: "Notify on payment received or overdue invoices",
-    defaultOn: true
+    id: "thankyou",
+    label: "Thank You for Visiting",
+    description: "Sent after a visit is completed",
+    placeholder: "Dear {patient_name}, thank you for visiting {clinic_name} today. We hope you feel better soon. If you have any questions, please don't hesitate to reach out."
   },
   {
-    id: "system-updates",
-    label: "System Updates",
-    description: "Product announcements and feature releases",
-    defaultOn: true
+    id: "booking",
+    label: "Booking Message",
+    description: "Sent when an appointment is booked",
+    placeholder: "Hi {patient_name}, your appointment at {clinic_name} has been booked for {date} with {doctor_name}. Please arrive 10 minutes early."
   },
   {
-    id: "new-patient",
-    label: "New Patient Registration",
-    description: "Alert when a new patient profile is created",
-    defaultOn: false
+    id: "case-taking-reminder",
+    label: "Case Taking Reminder",
+    description: "Reminder for case taking",
+    placeholder: "Reminder: {patient_name}, please complete your case taking form before your visit on {date} at {clinic_name}."
   },
   {
-    id: "daily-summary",
-    label: "Daily Summary Email",
-    description: "Morning digest of the day's schedule and stats",
-    defaultOn: false
+    id: "booking-reminder",
+    label: "Booking Reminder Before Date",
+    description: "Reminder sent before appointment date",
+    placeholder: "Hi {patient_name}, this is a friendly reminder about your upcoming appointment at {clinic_name} on {date} with {doctor_name}. We look forward to seeing you!"
+  },
+  {
+    id: "first-followup",
+    label: "First Follow Up",
+    description: "First followup after a missed/overdue visit",
+    placeholder: "Dear {patient_name}, we noticed you missed your scheduled visit on {date} at {clinic_name}. Please contact us to reschedule at your earliest convenience."
+  },
+  {
+    id: "second-followup",
+    label: "Second Follow Up",
+    description: "Second followup for overdue visits",
+    placeholder: "Hi {patient_name}, this is our second reminder regarding your missed appointment on {date} at {clinic_name}. Your health is important to us — please book a new slot."
+  },
+  {
+    id: "third-followup",
+    label: "Third Follow Up",
+    description: "Third followup for very overdue visits",
+    placeholder: "Dear {patient_name}, we are concerned as we haven't seen you since {date}. Please visit {clinic_name} as soon as possible or call us to discuss your care plan."
+  },
+  {
+    id: "cancel-manual",
+    label: "Cancel / Manual Message",
+    description: "Manual cancellation message",
+    placeholder: "Hi {patient_name}, your appointment at {clinic_name} scheduled for {date} with {doctor_name} has been cancelled. Please contact us to reschedule."
   }
 ];
-function NotificationsTab() {
-  const [prefs, setPrefs] = reactExports.useState(
-    Object.fromEntries(NOTIF_PREFS.map((p2) => [p2.id, p2.defaultOn]))
-  );
-  const save = () => ue.success("Notification preferences saved!");
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { ...fadeIn, className: "space-y-6", "data-ocid": "notifications-tab", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-6 space-y-1", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-sm font-display font-semibold text-foreground mb-4 flex items-center gap-2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Bell, { className: "w-4 h-4 text-primary" }),
-        " Notification Preferences"
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "divide-y divide-border/40", children: NOTIF_PREFS.map((pref, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          ...stagger(i),
-          className: "flex items-center justify-between py-4 gap-4",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-foreground", children: pref.label }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: pref.description })
+const PLACEHOLDER_VARIABLES = [
+  "{patient_name}",
+  "{clinic_name}",
+  "{date}",
+  "{doctor_name}",
+  "{time}"
+];
+function AutoMessagesTab() {
+  const [messages, setMessages] = reactExports.useState(() => {
+    const initial = {};
+    for (const m2 of MESSAGE_TEMPLATES) {
+      initial[m2.id] = m2.placeholder;
+    }
+    return initial;
+  });
+  const [saved, setSaved] = reactExports.useState({});
+  const updateMessage = (id2, text) => {
+    setMessages((prev) => ({ ...prev, [id2]: text }));
+    setSaved((prev) => ({ ...prev, [id2]: false }));
+  };
+  const saveAll = () => {
+    const allSaved = {};
+    for (const m2 of MESSAGE_TEMPLATES) {
+      allSaved[m2.id] = true;
+    }
+    setSaved(allSaved);
+    ue.success("All message templates saved!");
+  };
+  const insertVariable = (id2, variable) => {
+    const textarea = document.getElementById(
+      `msg-${id2}`
+    );
+    if (!textarea) return;
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const current = messages[id2] || "";
+    const newText = current.substring(0, start) + variable + current.substring(end);
+    setMessages((prev) => ({ ...prev, [id2]: newText }));
+    setSaved((prev) => ({ ...prev, [id2]: false }));
+    setTimeout(() => {
+      textarea.focus();
+      textarea.setSelectionRange(
+        start + variable.length,
+        start + variable.length
+      );
+    }, 0);
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { ...fadeIn, className: "space-y-6", "data-ocid": "auto-messages-tab", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-6", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-between mb-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-sm font-display font-semibold text-foreground flex items-center gap-2", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(MessageSquareText, { className: "w-4 h-4 text-primary" }),
+      " Auto Message Templates"
+    ] }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mb-5", children: "Customize the messages sent automatically to patients. Use the placeholder variables below each field." }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-5", children: MESSAGE_TEMPLATES.map((tmpl, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion.div,
+      {
+        ...stagger(i),
+        className: "space-y-2",
+        "data-ocid": `auto-msg-${tmpl.id}`,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Label$1,
+                {
+                  htmlFor: `msg-${tmpl.id}`,
+                  className: "text-sm font-medium text-foreground",
+                  children: tmpl.label
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: tmpl.description })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(
-              Switch,
+            saved[tmpl.id] && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-medium text-green-500 flex items-center gap-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "w-3 h-3" }),
+              " Saved"
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Textarea,
+            {
+              id: `msg-${tmpl.id}`,
+              value: messages[tmpl.id] || "",
+              onChange: (e3) => updateMessage(tmpl.id, e3.target.value),
+              rows: 3,
+              className: "resize-none bg-background/50 border-border/60 focus:border-primary/60 text-sm",
+              "data-ocid": `auto-msg-input-${tmpl.id}`
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-1.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-muted-foreground uppercase tracking-wide mr-1", children: "Variables:" }),
+            PLACEHOLDER_VARIABLES.map((v2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
               {
-                checked: prefs[pref.id],
-                onCheckedChange: (v2) => setPrefs((p2) => ({ ...p2, [pref.id]: v2 })),
-                className: "data-[state=checked]:bg-primary shrink-0",
-                "data-ocid": `notif-switch-${pref.id}`
-              }
-            )
-          ]
-        },
-        pref.id
-      )) })
-    ] }),
+                type: "button",
+                onClick: () => insertVariable(tmpl.id, v2),
+                className: "text-[10px] px-2 py-0.5 rounded-md bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-smooth font-mono",
+                "data-ocid": `auto-msg-var-${tmpl.id}-${v2.replace(/[{}]/g, "")}`,
+                children: v2
+              },
+              v2
+            ))
+          ] })
+        ]
+      },
+      tmpl.id
+    )) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Separator, { className: "my-5" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-end", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
       Button$1,
       {
-        onClick: save,
+        onClick: saveAll,
         className: "gap-2",
-        "data-ocid": "notifications-save-btn",
+        "data-ocid": "auto-messages-save-all-btn",
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Save, { className: "w-4 h-4" }),
-          " Save Preferences"
+          " Save All Messages"
         ]
       }
     ) })
-  ] });
+  ] }) });
 }
-function LanguageTab() {
-  const { language, setLanguage } = useAppStore();
-  const [currency, setCurrency] = reactExports.useState("INR");
-  const [dateFormat, setDateFormat] = reactExports.useState("DD/MM/YYYY");
-  const [timezone, setTimezone] = reactExports.useState("Asia/Kolkata");
-  const handleLanguage = (code) => {
-    setLanguage(code);
-    const found2 = LANGUAGES$1.find((l2) => l2.code === code);
-    ue.success(`Language changed to ${(found2 == null ? void 0 : found2.label) ?? code}`);
-  };
-  const save = () => ue.success("Regional settings saved!");
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { ...fadeIn, className: "space-y-6", "data-ocid": "language-tab", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-sm font-display font-semibold text-foreground mb-4 flex items-center gap-2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { className: "w-4 h-4 text-primary" }),
-        " Language"
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-3", children: LANGUAGES$1.map((lang, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.button,
-        {
-          type: "button",
-          ...stagger(i),
-          whileHover: { scale: 1.03 },
-          whileTap: { scale: 0.97 },
-          onClick: () => handleLanguage(lang.code),
-          className: cn(
-            "relative flex flex-col items-center gap-2 p-4 rounded-xl border-2 text-center transition-smooth",
-            language === lang.code ? "border-primary bg-primary/10 shadow-elevated" : "border-border/40 bg-background/40 hover:border-border"
-          ),
-          "data-ocid": `lang-${lang.code}`,
-          children: [
-            language === lang.code && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute top-2 right-2 w-4 h-4 rounded-full bg-primary flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "w-2.5 h-2.5 text-primary-foreground" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-2xl", children: lang.flag }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-semibold text-foreground uppercase tracking-wide", children: lang.code }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground", children: lang.label })
-          ]
-        },
-        lang.code
-      )) })
+function SecurityTab() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { ...fadeIn, className: "space-y-6", "data-ocid": "security-tab", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-6", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-sm font-display font-semibold text-foreground mb-4 flex items-center gap-2", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: "w-4 h-4 text-primary" }),
+      " Security Settings"
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-display font-semibold text-foreground mb-4", children: "Regional Preferences" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-6", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs font-medium text-muted-foreground uppercase tracking-wide", children: "Currency" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col gap-2", children: [
-            { code: "INR", symbol: "₹", label: "Indian Rupee" },
-            { code: "USD", symbol: "$", label: "US Dollar" },
-            { code: "EUR", symbol: "€", label: "Euro" }
-          ].map((c2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "button",
-            {
-              type: "button",
-              onClick: () => setCurrency(c2.code),
-              className: cn(
-                "flex items-center gap-2 px-3 py-2 rounded-lg border text-sm transition-smooth text-left",
-                currency === c2.code ? "border-primary bg-primary/10 text-primary" : "border-border/40 text-muted-foreground hover:border-border"
-              ),
-              "data-ocid": `currency-${c2.code.toLowerCase()}`,
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-bold", children: c2.symbol }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
-                  c2.code,
-                  " — ",
-                  c2.label
-                ] }),
-                currency === c2.code && /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "w-3 h-3 ml-auto" })
-              ]
-            },
-            c2.code
-          )) })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { className: "text-xs font-medium text-muted-foreground uppercase tracking-wide", children: "Date Format" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col gap-2", children: ["DD/MM/YYYY", "MM/DD/YYYY", "YYYY-MM-DD"].map((fmt) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "button",
-            {
-              type: "button",
-              onClick: () => setDateFormat(fmt),
-              className: cn(
-                "flex items-center justify-between px-3 py-2 rounded-lg border text-sm font-mono transition-smooth",
-                dateFormat === fmt ? "border-primary bg-primary/10 text-primary" : "border-border/40 text-muted-foreground hover:border-border"
-              ),
-              "data-ocid": `date-fmt-${fmt.replace(/\//g, "-")}`,
-              children: [
-                fmt,
-                dateFormat === fmt && /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "w-3 h-3" })
-              ]
-            },
-            fmt
-          )) })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Label$1,
-            {
-              htmlFor: "timezone",
-              className: "text-xs font-medium text-muted-foreground uppercase tracking-wide",
-              children: "Timezone"
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "select",
-            {
-              id: "timezone",
-              value: timezone,
-              onChange: (e3) => setTimezone(e3.target.value),
-              className: "w-full px-3 py-2 rounded-lg border border-border/60 bg-background/50 text-sm text-foreground focus:outline-none focus:border-primary/60 transition-smooth",
-              "data-ocid": "timezone-select",
-              children: [
-                ["Asia/Kolkata", "IST — India (UTC+5:30)"],
-                ["America/New_York", "EST — New York (UTC-5)"],
-                ["America/Los_Angeles", "PST — Los Angeles (UTC-8)"],
-                ["Europe/London", "GMT — London (UTC+0)"],
-                ["Europe/Paris", "CET — Paris (UTC+1)"],
-                ["Asia/Dubai", "GST — Dubai (UTC+4)"],
-                ["Asia/Singapore", "SGT — Singapore (UTC+8)"],
-                ["Australia/Sydney", "AEDT — Sydney (UTC+11)"]
-              ].map(([val, label]) => /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: val, children: label }, val))
-            }
-          )
-        ] })
-      ] })
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Security settings will be available here soon." })
+  ] }) });
+}
+function BillingTab() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { ...fadeIn, className: "space-y-6", "data-ocid": "billing-tab", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-6", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-sm font-display font-semibold text-foreground mb-4 flex items-center gap-2", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CreditCard, { className: "w-4 h-4 text-primary" }),
+      " Billing Settings"
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-end", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Button$1, { onClick: save, className: "gap-2", "data-ocid": "language-save-btn", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Save, { className: "w-4 h-4" }),
-      " Save Regional Settings"
-    ] }) })
-  ] });
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Billing settings will be available here soon." })
+  ] }) });
+}
+function AboutTab() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { ...fadeIn, className: "space-y-6", "data-ocid": "about-tab", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-6", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-display font-semibold text-foreground mb-4", children: "About HomeoPath CRM" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "HomeoPath CRM — A professional clinic management solution for homeopathic practitioners worldwide." }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-2", children: "Version 1.0.0" })
+  ] }) });
 }
 function SettingsPage() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", "data-ocid": "settings-page", children: [
@@ -120651,6 +116125,7 @@ function SettingsPage() {
         breadcrumb: [{ label: "Dashboard", href: "/" }, { label: "Settings" }]
       }
     ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ClinicNameHeader, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs(
       Tabs,
       {
@@ -120662,8 +116137,14 @@ function SettingsPage() {
             { value: "clinic", icon: Building2, label: "Clinic Profile" },
             { value: "doctor", icon: User, label: "Doctor Profile" },
             { value: "appearance", icon: Palette, label: "Appearance" },
-            { value: "notifications", icon: Bell, label: "Notifications" },
-            { value: "language", icon: Globe, label: "Language & Region" }
+            {
+              value: "auto-messages",
+              icon: MessageSquareText,
+              label: "Auto Messages"
+            },
+            { value: "security", icon: Shield, label: "Security" },
+            { value: "billing", icon: CreditCard, label: "Billing" },
+            { value: "about", icon: Globe, label: "About" }
           ].map(({ value, icon: Icon2, label }) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
             TabsTrigger,
             {
@@ -120681,43 +116162,41 @@ function SettingsPage() {
           /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "clinic", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ClinicProfileTab, {}) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "doctor", children: /* @__PURE__ */ jsxRuntimeExports.jsx(DoctorProfileTab, {}) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "appearance", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AppearanceTab, {}) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "notifications", children: /* @__PURE__ */ jsxRuntimeExports.jsx(NotificationsTab, {}) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "language", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LanguageTab, {}) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "auto-messages", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AutoMessagesTab, {}) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "security", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SecurityTab, {}) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "billing", children: /* @__PURE__ */ jsxRuntimeExports.jsx(BillingTab, {}) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "about", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AboutTab, {}) })
         ]
       }
     )
   ] });
 }
-const rootRoute = Route$k;
-const indexRoute = Route$g;
-const patientsRoute = Route$e;
-const patientsIndexRoute = Route$d;
-const patientsPatientIdRoute = Route$c;
-const appointmentsRoute = Route$i;
-const prescriptionsRoute = Route$b;
-const aiAssistantRoute = Route$j;
-const billingRoute = Route$h;
-const reportsRoute = Route$1;
-const loginRoute = Route$f;
+const rootRoute = Route$i;
+const indexRoute = Route$e;
+const patientsRoute = Route$c;
+const patientsIndexRoute = Route$b;
+const patientsPatientIdRoute = Route$a;
+const appointmentsRoute = Route$g;
+const aiAssistantRoute = Route$h;
+const billingRoute = Route$f;
+const loginRoute = Route$d;
 const settingsRoute = Route2;
-const proRoute = Route$a;
-const proIndexRoute = Route$7;
-const proCaseRepositoryRoute = Route$9;
-const proCaseTemplatesRoute = Route$8;
-const proMateriaMedicaRoute = Route$6;
-const proPatientTimelineRoute = Route$5;
-const proRemedyComparisonRoute = Route$4;
-const proRemedyFinderRoute = Route$3;
-const proVoiceRecorderRoute = Route$2;
+const proRoute = Route$9;
+const proIndexRoute = Route$6;
+const proCaseRepositoryRoute = Route$8;
+const proCaseTemplatesRoute = Route$7;
+const proMateriaMedicaRoute = Route$5;
+const proPatientTimelineRoute = Route$4;
+const proRemedyComparisonRoute = Route$3;
+const proRemedyFinderRoute = Route$2;
+const proVoiceRecorderRoute = Route$1;
 const routeTree = rootRoute.addChildren([
   loginRoute,
   indexRoute,
   patientsRoute.addChildren([patientsIndexRoute, patientsPatientIdRoute]),
   appointmentsRoute,
-  prescriptionsRoute,
   aiAssistantRoute,
   billingRoute,
-  reportsRoute,
   settingsRoute,
   proRoute.addChildren([
     proIndexRoute,

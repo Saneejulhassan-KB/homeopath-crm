@@ -5,10 +5,10 @@ export const ROUTES = {
   DASHBOARD: "/",
   PATIENTS: "/patients",
   APPOINTMENTS: "/appointments",
-  PRESCRIPTIONS: "/prescriptions",
+
   AI_ASSISTANT: "/ai-assistant",
   BILLING: "/billing",
-  REPORTS: "/reports",
+
   SETTINGS: "/settings",
   STAFF: "/staff",
   REGISTER: "/register",
@@ -65,12 +65,6 @@ export const NAV_ITEMS = [
     roles: ["main-admin", "doctor", "receptionist", "nurse"] as const,
   },
   {
-    path: ROUTES.PRESCRIPTIONS,
-    label: "Prescriptions",
-    icon: "Pill",
-    roles: ["main-admin", "doctor", "pharmacist", "nurse", "billing"] as const,
-  },
-  {
     path: ROUTES.AI_ASSISTANT,
     label: "AI Assistant",
     icon: "Brain",
@@ -81,12 +75,6 @@ export const NAV_ITEMS = [
     label: "Billing",
     icon: "CreditCard",
     roles: ["main-admin", "billing"] as const,
-  },
-  {
-    path: ROUTES.REPORTS,
-    label: "Reports",
-    icon: "BarChart3",
-    roles: ["main-admin", "doctor", "billing"] as const,
   },
   {
     path: ROUTES.SETTINGS,
