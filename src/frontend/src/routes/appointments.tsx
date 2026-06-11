@@ -15,12 +15,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { StatusBadge } from "@/components/ui/status-badge";
 import { Textarea } from "@/components/ui/textarea";
 import { patients } from "@/data/patients";
 import { useAppointments } from "@/hooks/useAppointments";
 import { cn } from "@/lib/utils";
-import type { Appointment, AppointmentStatus, AppointmentType } from "@/types";
+import type {
+  AmountStatus,
+  Appointment,
+  AppointmentStatus,
+  AppointmentType,
+  VisitMode,
+} from "@/types";
 import { formatDate, formatTime, getInitials } from "@/utils/formatters";
 import { createRoute } from "@tanstack/react-router";
 import {
@@ -58,19 +63,54 @@ export const Route = createRoute({
 });
 
 // ── Status dot colors ────────────────────────────────────────────────
-const STATUS_DOT: Record<AppointmentStatus, string> = {
-  confirmed: "bg-teal-400",
+// display map: 'confirmed' is treated as 'pending' in badge display
+type DisplayStatus = "pending" | "completed" | "cancelled";
+
+const DISPLAY_STATUS_STYLE: Record<DisplayStatus, string> = {
+  pending: "bg-yellow-500/15 text-yellow-500 border border-yellow-500/25",
+  completed: "bg-zinc-500/15 text-zinc-400 border border-zinc-500/25",
+  cancelled: "bg-red-500/15 text-red-400 border border-red-500/25",
+};
+
+const DISPLAY_STATUS_DOT: Record<DisplayStatus, string> = {
   pending: "bg-yellow-400",
   completed: "bg-zinc-400",
   cancelled: "bg-red-400",
 };
 
+// Calendar dot colours — covers all 4 raw AppointmentStatus values
+const CALENDAR_DOT: Record<AppointmentStatus, string> = {
+  confirmed: "bg-emerald-400",
+  pending: "bg-yellow-400",
+  completed: "bg-zinc-400",
+  cancelled: "bg-red-400",
+};
+
+function toDisplayStatus(s: AppointmentStatus): DisplayStatus {
+  if (s === "confirmed") return "pending";
+  return s as DisplayStatus;
+}
+
+const AMOUNT_STATUS_STYLE: Record<AmountStatus, string> = {
+  pending: "bg-amber-500/15 text-amber-500 border border-amber-500/25",
+  paid: "bg-emerald-500/15 text-emerald-500 border border-emerald-500/25",
+};
+
+function formatCurrency(amount: number): string {
+  return `\u20b9${amount.toLocaleString("en-IN")}`;
+}
+
 // ── Type labels ───────────────────────────────────────────────────────
 const TYPE_LABELS: Record<AppointmentType, string> = {
   consultation: "Consultation",
   "follow-up": "Follow-up",
-  emergency: "Emergency",
-  online: "Online",
+  "case-taking": "Case Taking",
+};
+
+// ── Visit mode colors ─────────────────────────────────────────────────
+const VISIT_MODE_STYLE: Record<VisitMode, string> = {
+  OP: "bg-blue-500/15 text-blue-400 border border-blue-500/20",
+  Online: "bg-violet-500/15 text-violet-400 border border-violet-500/20",
 };
 
 // ── CALENDAR ──────────────────────────────────────────────────────────
@@ -201,7 +241,10 @@ function AppointmentCalendar({
                   {dotStatuses.map((s) => (
                     <span
                       key={s}
-                      className={cn("w-1.5 h-1.5 rounded-full", STATUS_DOT[s])}
+                      className={cn(
+                        "w-1.5 h-1.5 rounded-full",
+                        CALENDAR_DOT[s],
+                      )}
                     />
                   ))}
                 </div>
@@ -225,7 +268,7 @@ function AppointmentCalendar({
             key={s}
             className="flex items-center gap-1.5 text-xs text-muted-foreground"
           >
-            <span className={cn("w-2 h-2 rounded-full", STATUS_DOT[s])} />
+            <span className={cn("w-2 h-2 rounded-full", CALENDAR_DOT[s])} />
             {label}
           </div>
         ))}
@@ -240,9 +283,9 @@ interface BookForm {
   date: string;
   time: string;
   type: AppointmentType;
+  visitMode: VisitMode;
   doctor: string;
   notes: string;
-  status: AppointmentStatus;
 }
 
 const DEFAULT_BOOK: BookForm = {
@@ -250,9 +293,9 @@ const DEFAULT_BOOK: BookForm = {
   date: format(new Date(), "yyyy-MM-dd"),
   time: "09:00",
   type: "consultation",
+  visitMode: "OP",
   doctor: "Dr. Meera Joshi",
   notes: "",
-  status: "confirmed",
 };
 
 interface BookModalProps {
@@ -272,9 +315,30 @@ function BookAppointmentModal({
     ...DEFAULT_BOOK,
     date: initialDate ?? DEFAULT_BOOK.date,
   });
+  const [patientSearch, setPatientSearch] = useState("");
+  const [patientDropdownOpen, setPatientDropdownOpen] = useState(false);
 
   const set = <K extends keyof BookForm>(key: K, value: BookForm[K]) =>
     setForm((prev) => ({ ...prev, [key]: value }));
+
+  const filteredPatients = useMemo(() => {
+    const q = patientSearch.toLowerCase().trim();
+    if (!q) return patients.slice(0, 8);
+    return patients.filter(
+      (p) =>
+        p.name.toLowerCase().includes(q) ||
+        p.registrationId.toLowerCase().includes(q) ||
+        p.phone.includes(q),
+    );
+  }, [patientSearch]);
+
+  const selectedPatient = patients.find((p) => p.id === form.patientId);
+
+  function handlePatientSelect(patientId: string, patientName: string) {
+    set("patientId", patientId);
+    setPatientSearch(patientName);
+    setPatientDropdownOpen(false);
+  }
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -284,10 +348,17 @@ function BookAppointmentModal({
     }
     onSubmit(form);
     setForm({ ...DEFAULT_BOOK, date: initialDate ?? DEFAULT_BOOK.date });
+    setPatientSearch("");
+  }
+
+  function handleClose() {
+    setPatientSearch("");
+    setPatientDropdownOpen(false);
+    onClose();
   }
 
   return (
-    <Dialog open={open} onOpenChange={(o) => !o && onClose()}>
+    <Dialog open={open} onOpenChange={(o) => !o && handleClose()}>
       <DialogContent
         className="max-w-lg glass border-white/10 dark:border-white/10"
         data-ocid="book-appt-modal"
@@ -298,29 +369,69 @@ function BookAppointmentModal({
           </DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-2">
+          {/* Patient smart search */}
           <div className="space-y-1.5">
-            <Label>Patient</Label>
-            <Select
-              value={form.patientId}
-              onValueChange={(v) => set("patientId", v)}
-            >
-              <SelectTrigger data-ocid="book-patient-select">
-                <SelectValue placeholder="Select patient…" />
-              </SelectTrigger>
-              <SelectContent>
-                {patients.map((p) => (
-                  <SelectItem key={p.id} value={p.id}>
-                    {p.name} — {p.age}y {p.gender}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <Label htmlFor="patient-search">Patient</Label>
+            <div className="relative">
+              <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground pointer-events-none" />
+              <Input
+                id="patient-search"
+                placeholder="Search by name, Reg ID, or phone…"
+                value={patientSearch}
+                onChange={(e) => {
+                  setPatientSearch(e.target.value);
+                  setPatientDropdownOpen(true);
+                  if (!e.target.value) set("patientId", "");
+                }}
+                onFocus={() => setPatientDropdownOpen(true)}
+                onBlur={() =>
+                  setTimeout(() => setPatientDropdownOpen(false), 150)
+                }
+                autoComplete="off"
+                className="pl-8"
+                data-ocid="book-patient-search"
+              />
+              {selectedPatient && patientSearch === selectedPatient.name && (
+                <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] text-muted-foreground bg-primary/10 text-primary px-1.5 py-0.5 rounded font-medium">
+                  {selectedPatient.registrationId}
+                </span>
+              )}
+              {patientDropdownOpen && filteredPatients.length > 0 && (
+                <div className="absolute top-full left-0 right-0 z-50 mt-1 rounded-lg border border-border/60 bg-card shadow-lg overflow-hidden">
+                  <ul className="max-h-48 overflow-y-auto py-1">
+                    {filteredPatients.map((p) => (
+                      <li key={p.id}>
+                        <button
+                          type="button"
+                          className="w-full flex items-center gap-3 px-3 py-2 hover:bg-muted/50 transition-colors text-left"
+                          onMouseDown={() => handlePatientSelect(p.id, p.name)}
+                          data-ocid={`book-patient-option-${p.id}`}
+                        >
+                          <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center text-primary text-[10px] font-bold shrink-0">
+                            {getInitials(p.name)}
+                          </div>
+                          <div className="min-w-0">
+                            <p className="text-sm font-medium text-foreground truncate">
+                              {p.name}
+                            </p>
+                            <p className="text-xs text-muted-foreground">
+                              {p.registrationId} · {p.phone}
+                            </p>
+                          </div>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1.5">
-              <Label>Date</Label>
+              <Label htmlFor="book-date">Date</Label>
               <Input
+                id="book-date"
                 type="date"
                 value={form.date}
                 onChange={(e) => set("date", e.target.value)}
@@ -328,8 +439,9 @@ function BookAppointmentModal({
               />
             </div>
             <div className="space-y-1.5">
-              <Label>Time</Label>
+              <Label htmlFor="book-time">Time</Label>
               <Input
+                id="book-time"
                 type="time"
                 value={form.time}
                 onChange={(e) => set("time", e.target.value)}
@@ -351,8 +463,7 @@ function BookAppointmentModal({
                 <SelectContent>
                   <SelectItem value="consultation">Consultation</SelectItem>
                   <SelectItem value="follow-up">Follow-up</SelectItem>
-                  <SelectItem value="emergency">Emergency</SelectItem>
-                  <SelectItem value="online">Online</SelectItem>
+                  <SelectItem value="case-taking">Case Taking</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -377,25 +488,37 @@ function BookAppointmentModal({
             </div>
           </div>
 
+          {/* OP / Online toggle */}
           <div className="space-y-1.5">
-            <Label>Status</Label>
-            <Select
-              value={form.status}
-              onValueChange={(v) => set("status", v as AppointmentStatus)}
-            >
-              <SelectTrigger data-ocid="book-status-select">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="confirmed">Confirmed</SelectItem>
-                <SelectItem value="pending">Pending</SelectItem>
-              </SelectContent>
-            </Select>
+            <span className="text-sm font-medium leading-none text-foreground">
+              Visit Mode
+            </span>
+            <div className="flex gap-2 mt-1" data-ocid="book-visit-mode-toggle">
+              {(["OP", "Online"] as VisitMode[]).map((mode) => (
+                <button
+                  key={mode}
+                  type="button"
+                  onClick={() => set("visitMode", mode)}
+                  className={cn(
+                    "flex-1 py-2 rounded-lg text-sm font-medium border transition-all duration-200",
+                    form.visitMode === mode
+                      ? mode === "OP"
+                        ? "bg-blue-500/20 border-blue-500/40 text-blue-400 shadow-sm"
+                        : "bg-violet-500/20 border-violet-500/40 text-violet-400 shadow-sm"
+                      : "bg-muted/30 border-border/40 text-muted-foreground hover:bg-muted/50",
+                  )}
+                  data-ocid={`book-visit-mode-${mode.toLowerCase()}`}
+                >
+                  {mode === "OP" ? "🏥 OP (In-person)" : "💻 Online"}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="space-y-1.5">
-            <Label>Notes</Label>
+            <Label htmlFor="book-notes">Notes</Label>
             <Textarea
+              id="book-notes"
               placeholder="Case notes, reason for visit…"
               value={form.notes}
               onChange={(e) => set("notes", e.target.value)}
@@ -405,7 +528,7 @@ function BookAppointmentModal({
           </div>
 
           <div className="flex justify-end gap-2 pt-1">
-            <Button type="button" variant="ghost" onClick={onClose}>
+            <Button type="button" variant="ghost" onClick={handleClose}>
               Cancel
             </Button>
             <Button type="submit" data-ocid="book-submit-btn">
@@ -484,7 +607,25 @@ function AppointmentDetailModal({
           {/* Status */}
           <div className="flex items-center gap-2">
             <span className="text-xs text-muted-foreground">Status:</span>
-            <StatusBadge status={appointment.status} />
+            {(() => {
+              const ds = toDisplayStatus(appointment.status);
+              return (
+                <span
+                  className={cn(
+                    "inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full capitalize",
+                    DISPLAY_STATUS_STYLE[ds],
+                  )}
+                >
+                  <span
+                    className={cn(
+                      "w-1.5 h-1.5 rounded-full shrink-0",
+                      DISPLAY_STATUS_DOT[ds],
+                    )}
+                  />
+                  {ds}
+                </span>
+              );
+            })()}
           </div>
 
           {/* Notes */}
@@ -650,7 +791,8 @@ function AppointmentsPage() {
       date: form.date,
       time: form.time,
       type: form.type,
-      status: form.status,
+      visitMode: form.visitMode,
+      status: "confirmed",
       doctor: form.doctor,
       notes: form.notes,
     });
@@ -739,11 +881,14 @@ function AppointmentsPage() {
               <tr className="border-b border-border/50 bg-muted/20">
                 {[
                   "Date & Time",
-                  "Patient",
+                  "Name",
                   "Type",
+                  "OP/Online",
                   "Doctor",
                   "Status",
                   "Actions",
+                  "Amount",
+                  "Amount Status",
                 ].map((col) => (
                   <th
                     key={col}
@@ -759,19 +904,29 @@ function AppointmentsPage() {
                 {isLoading ? (
                   (["r1", "r2", "r3", "r4", "r5"] as const).map((rowKey) => (
                     <tr key={rowKey} className="border-b border-border/30">
-                      {(["dt", "pt", "tp", "dr", "st", "ac"] as const).map(
-                        (col) => (
-                          <td key={col} className="px-4 py-3">
-                            <div className="h-4 bg-muted/40 rounded animate-pulse" />
-                          </td>
-                        ),
-                      )}
+                      {(
+                        [
+                          "dt",
+                          "pt",
+                          "tp",
+                          "vm",
+                          "dr",
+                          "st",
+                          "ac",
+                          "am",
+                          "as",
+                        ] as const
+                      ).map((col) => (
+                        <td key={col} className="px-4 py-3">
+                          <div className="h-4 bg-muted/40 rounded animate-pulse" />
+                        </td>
+                      ))}
                     </tr>
                   ))
                 ) : filteredAppointments.length === 0 ? (
                   <tr>
                     <td
-                      colSpan={6}
+                      colSpan={9}
                       className="py-16 text-center"
                       data-ocid="appt-empty-state"
                     >
@@ -816,8 +971,18 @@ function AppointmentsPage() {
                         </div>
                       </td>
                       <td className="px-4 py-3 whitespace-nowrap">
-                        <span className="text-xs text-muted-foreground capitalize">
-                          {TYPE_LABELS[appt.type]}
+                        <span className="text-xs text-muted-foreground">
+                          {TYPE_LABELS[appt.type] ?? appt.type}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 whitespace-nowrap">
+                        <span
+                          className={cn(
+                            "text-[10px] font-medium px-1.5 py-0.5 rounded-full",
+                            VISIT_MODE_STYLE[appt.visitMode ?? "OP"],
+                          )}
+                        >
+                          {appt.visitMode ?? "OP"}
                         </span>
                       </td>
                       <td className="px-4 py-3 whitespace-nowrap">
@@ -826,7 +991,25 @@ function AppointmentsPage() {
                         </span>
                       </td>
                       <td className="px-4 py-3">
-                        <StatusBadge status={appt.status} />
+                        {(() => {
+                          const ds = toDisplayStatus(appt.status);
+                          return (
+                            <span
+                              className={cn(
+                                "inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full capitalize",
+                                DISPLAY_STATUS_STYLE[ds],
+                              )}
+                            >
+                              <span
+                                className={cn(
+                                  "w-1.5 h-1.5 rounded-full shrink-0",
+                                  DISPLAY_STATUS_DOT[ds],
+                                )}
+                              />
+                              {ds}
+                            </span>
+                          );
+                        })()}
                       </td>
                       <td className="px-4 py-3">
                         <div className="flex items-center gap-1 opacity-50 group-hover:opacity-100 transition-smooth">
@@ -840,33 +1023,50 @@ function AppointmentsPage() {
                           >
                             <Eye className="h-3.5 w-3.5" />
                           </Button>
-                          {appt.status !== "cancelled" &&
-                            appt.status !== "completed" && (
-                              <Button
-                                variant="ghost"
-                                size="icon"
-                                className="h-7 w-7"
-                                onClick={() => setRescheduleAppt(appt)}
-                                title="Reschedule"
-                                data-ocid={`appt-edit-${appt.id}`}
-                              >
-                                <Pencil className="h-3.5 w-3.5" />
-                              </Button>
-                            )}
-                          {appt.status !== "cancelled" &&
-                            appt.status !== "completed" && (
-                              <Button
-                                variant="ghost"
-                                size="icon"
-                                className="h-7 w-7 text-destructive hover:text-destructive"
-                                onClick={() => handleCancel(appt.id)}
-                                title="Cancel"
-                                data-ocid={`appt-cancel-${appt.id}`}
-                              >
-                                <X className="h-3.5 w-3.5" />
-                              </Button>
-                            )}
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-7 w-7"
+                            onClick={() => setRescheduleAppt(appt)}
+                            title="Edit / Reschedule"
+                            data-ocid={`appt-edit-${appt.id}`}
+                          >
+                            <Pencil className="h-3.5 w-3.5" />
+                          </Button>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-7 w-7 text-destructive hover:text-destructive"
+                            onClick={() => handleCancel(appt.id)}
+                            title="Cancel"
+                            data-ocid={`appt-cancel-${appt.id}`}
+                          >
+                            <X className="h-3.5 w-3.5" />
+                          </Button>
                         </div>
+                      </td>
+                      <td className="px-4 py-3 whitespace-nowrap">
+                        <span className="text-xs font-medium text-foreground">
+                          {appt.amount != null
+                            ? formatCurrency(appt.amount)
+                            : "—"}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 whitespace-nowrap">
+                        {appt.amountStatus != null ? (
+                          <span
+                            className={cn(
+                              "inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full capitalize",
+                              AMOUNT_STATUS_STYLE[appt.amountStatus],
+                            )}
+                          >
+                            {appt.amountStatus}
+                          </span>
+                        ) : (
+                          <span className="text-xs text-muted-foreground">
+                            —
+                          </span>
+                        )}
                       </td>
                     </motion.tr>
                   ))

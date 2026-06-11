@@ -184,6 +184,7 @@ const DEMO_PAST_VISITS: VisitEntry[] = [
       },
     ],
     visitType: "OP" as const,
+    nextVisitDate: "2026-06-01",
   },
   {
     id: "visit-demo-2",
@@ -217,6 +218,7 @@ const DEMO_PAST_VISITS: VisitEntry[] = [
       },
     ],
     visitType: "OP" as const,
+    nextVisitDate: "2026-06-20",
   },
   {
     id: "visit-demo-3",
@@ -1930,30 +1932,94 @@ function PatientDetailPage() {
   const [showNextVisitModal, setShowNextVisitModal] = useState(false);
   const [nextVisitDate, setNextVisitDate] = useState<string | null>(null);
   const [tempNextVisitDate, setTempNextVisitDate] = useState<string>("");
-  // Reminder popup: always show on page load (demo mode)
+  // Reminder popups: upcoming (green) and overdue (amber)
   const [showReminderPopup, setShowReminderPopup] = useState(false);
-  const [reminderDate, setReminderDate] = useState<string>("2026-06-20");
+  const [reminderDate, setReminderDate] = useState<string>("");
+  // reminderType removed — popupQueue handles sequencing
+  const [showOverduePopup, setShowOverduePopup] = useState(false);
+  const [overdueDate, setOverdueDate] = useState<string>("");
+  const [popupQueue, setPopupQueue] = useState<("upcoming" | "overdue")[]>([]);
+  const [currentPopupIndex, setCurrentPopupIndex] = useState(0);
 
   const patient = patients.find((p) => p.id === patientId);
 
-  // On mount: always show the reminder popup (demo mode)
+  // On mount: check all visits for nextVisitDate and queue appropriate popup(s)
   useEffect(() => {
-    // Check for a real nextVisitDate in demo visits first
-    const mostRecent = DEMO_PAST_VISITS[0];
-    if (mostRecent?.nextVisitDate) {
-      setReminderDate(mostRecent.nextVisitDate);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    let upcomingDate = "";
+    let overdueDateStr = "";
+
+    for (const visit of DEMO_PAST_VISITS) {
+      if (!visit.nextVisitDate) continue;
+      const d = new Date(`${visit.nextVisitDate}T00:00:00`);
+      if (d < today) {
+        overdueDateStr = visit.nextVisitDate;
+      } else {
+        if (!upcomingDate || d < new Date(`${upcomingDate}T00:00:00`)) {
+          upcomingDate = visit.nextVisitDate;
+        }
+      }
     }
-    // Show popup after a short delay for better UX
-    const timer = setTimeout(() => setShowReminderPopup(true), 600);
-    return () => clearTimeout(timer);
+
+    const queue: ("upcoming" | "overdue")[] = [];
+    if (overdueDateStr) {
+      setOverdueDate(overdueDateStr);
+      queue.push("overdue");
+    }
+    if (upcomingDate) {
+      setReminderDate(upcomingDate);
+      // setReminderType removed — popupQueue handles sequencing
+      queue.push("upcoming");
+    }
+
+    if (queue.length > 0) {
+      setPopupQueue(queue);
+      setCurrentPopupIndex(0);
+      const timer = setTimeout(() => {
+        if (queue[0] === "overdue") setShowOverduePopup(true);
+        else setShowReminderPopup(true);
+      }, 600);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
-  // Auto-dismiss reminder after 5 seconds
+  // Auto-dismiss upcoming reminder after 5 seconds, then show next popup in queue
   useEffect(() => {
     if (!showReminderPopup) return;
-    const autoTimer = setTimeout(() => setShowReminderPopup(false), 5000);
+    const autoTimer = setTimeout(() => {
+      setShowReminderPopup(false);
+      // Show next popup in queue after a short delay
+      if (currentPopupIndex < popupQueue.length - 1) {
+        const nextIndex = currentPopupIndex + 1;
+        setCurrentPopupIndex(nextIndex);
+        setTimeout(() => {
+          if (popupQueue[nextIndex] === "overdue") setShowOverduePopup(true);
+          else setShowReminderPopup(true);
+        }, 400);
+      }
+    }, 5000);
     return () => clearTimeout(autoTimer);
-  }, [showReminderPopup]);
+  }, [showReminderPopup, popupQueue, currentPopupIndex]);
+
+  // Auto-dismiss overdue reminder after 5 seconds, then show next popup in queue
+  useEffect(() => {
+    if (!showOverduePopup) return;
+    const autoTimer = setTimeout(() => {
+      setShowOverduePopup(false);
+      // Show next popup in queue after a short delay
+      if (currentPopupIndex < popupQueue.length - 1) {
+        const nextIndex = currentPopupIndex + 1;
+        setCurrentPopupIndex(nextIndex);
+        setTimeout(() => {
+          if (popupQueue[nextIndex] === "overdue") setShowOverduePopup(true);
+          else setShowReminderPopup(true);
+        }, 400);
+      }
+    }, 5000);
+    return () => clearTimeout(autoTimer);
+  }, [showOverduePopup, popupQueue, currentPopupIndex]);
 
   if (isLoading) {
     return (
@@ -2005,7 +2071,7 @@ function PatientDetailPage() {
       className="space-y-6"
       data-ocid="patient-detail-page"
     >
-      {/* ─── Next Visit Reminder Popup Modal (Demo: always shows on open) ─── */}
+      {/* ─── Upcoming Visit Reminder Popup (Green) ─── */}
       <AnimatePresence>
         {showReminderPopup && (
           <motion.div
@@ -2149,6 +2215,162 @@ function PatientDetailPage() {
                     type="button"
                     onClick={() => setShowReminderPopup(false)}
                     data-ocid="patient-detail.reminder_dismiss_button"
+                    className="flex-1 px-4 py-2.5 rounded-xl text-sm font-medium text-white/50 border border-white/10 hover:bg-white/5 hover:text-white/70 transition-all duration-200"
+                  >
+                    Dismiss
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ─── Overdue Follow-up Reminder Popup (Amber/Orange) ─── */}
+      <AnimatePresence>
+        {showOverduePopup && (
+          <motion.div
+            key="overdue-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-md"
+            data-ocid="patient-detail.overdue_overlay"
+            onClick={() => setShowOverduePopup(false)}
+          >
+            <motion.div
+              key="overdue-modal"
+              initial={{ opacity: 0, scale: 0.88, y: 24 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 16 }}
+              transition={{ type: "spring", stiffness: 340, damping: 28 }}
+              className="relative w-full max-w-sm mx-4 rounded-2xl overflow-hidden shadow-2xl"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(16,18,27,0.97) 0%, rgba(20,24,38,0.97) 100%)",
+                border: "1px solid rgba(251,146,60,0.22)",
+                boxShadow:
+                  "0 0 0 1px rgba(251,146,60,0.12), 0 24px 64px -12px rgba(0,0,0,0.7), 0 0 80px -20px rgba(251,146,60,0.15)",
+              }}
+              onClick={(e) => e.stopPropagation()}
+              data-ocid="patient-detail.overdue_dialog"
+            >
+              {/* Decorative top glow */}
+              <div
+                className="absolute inset-x-0 top-0 h-px"
+                style={{
+                  background:
+                    "linear-gradient(90deg, transparent, rgba(251,146,60,0.6), transparent)",
+                }}
+              />
+              {/* Auto-dismiss progress bar */}
+              <motion.div
+                className="absolute top-0 left-0 h-0.5 bg-orange-400/70"
+                initial={{ width: "100%" }}
+                animate={{ width: "0%" }}
+                transition={{ duration: 5, ease: "linear" }}
+              />
+
+              <div className="p-6">
+                {/* Header */}
+                <div className="flex items-start gap-4 mb-5">
+                  <div
+                    className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, rgba(251,146,60,0.25), rgba(234,88,12,0.15))",
+                      border: "1px solid rgba(251,146,60,0.3)",
+                      boxShadow: "0 4px 16px rgba(251,146,60,0.15)",
+                    }}
+                  >
+                    <Bell className="w-6 h-6 text-orange-400" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[11px] font-semibold uppercase tracking-widest text-orange-400/70 mb-0.5">
+                      Follow-up Reminder
+                    </p>
+                    <h3 className="text-base font-bold text-white leading-tight">
+                      {patient.name}
+                    </h3>
+                    <p className="text-xs text-white/50 mt-0.5">
+                      Scheduled date is already over
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    aria-label="Close overdue reminder"
+                    onClick={() => setShowOverduePopup(false)}
+                    data-ocid="patient-detail.overdue_close_button"
+                    className="p-1.5 rounded-lg text-white/30 hover:text-white/70 hover:bg-white/10 transition-colors shrink-0 -mt-0.5 -mr-1"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+
+                {/* Date card */}
+                <div
+                  className="flex items-center gap-3 p-4 rounded-xl mb-5"
+                  style={{
+                    background: "rgba(251,146,60,0.07)",
+                    border: "1px solid rgba(251,146,60,0.18)",
+                  }}
+                >
+                  <Calendar className="w-5 h-5 text-orange-400 shrink-0" />
+                  <div>
+                    <p className="text-xs text-orange-400/70 font-medium mb-0.5">
+                      Overdue Date
+                    </p>
+                    <p className="text-sm font-bold text-orange-300">
+                      {new Date(`${overdueDate}T00:00:00`).toLocaleDateString(
+                        "en-US",
+                        {
+                          weekday: "long",
+                          month: "long",
+                          day: "numeric",
+                          year: "numeric",
+                        },
+                      )}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Message */}
+                <p className="text-sm text-white/60 leading-relaxed mb-5">
+                  Follow-up reminder:{" "}
+                  <span className="text-white font-semibold">
+                    {patient.name}
+                  </span>{" "}
+                  was scheduled on{" "}
+                  <span className="text-orange-400 font-semibold">
+                    {new Date(`${overdueDate}T00:00:00`).toLocaleDateString(
+                      "en-US",
+                      { month: "short", day: "numeric", year: "numeric" },
+                    )}
+                  </span>{" "}
+                  but has not visited yet. Please contact the patient to
+                  reschedule.
+                </p>
+
+                {/* Actions */}
+                <div className="flex gap-2.5">
+                  <button
+                    type="button"
+                    onClick={() => setShowOverduePopup(false)}
+                    data-ocid="patient-detail.overdue_ok_button"
+                    className="flex-1 px-4 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, rgb(234,88,12), rgb(194,65,12))",
+                      boxShadow: "0 4px 16px rgba(234,88,12,0.3)",
+                    }}
+                  >
+                    OK, Got It
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setShowOverduePopup(false)}
+                    data-ocid="patient-detail.overdue_dismiss_button"
                     className="flex-1 px-4 py-2.5 rounded-xl text-sm font-medium text-white/50 border border-white/10 hover:bg-white/5 hover:text-white/70 transition-all duration-200"
                   >
                     Dismiss

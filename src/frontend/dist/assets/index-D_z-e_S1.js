@@ -46849,34 +46849,6 @@ function SelectScrollDownButton({
     }
   );
 }
-const statusLabels = {
-  confirmed: "Confirmed",
-  pending: "Pending",
-  completed: "Completed",
-  cancelled: "Cancelled",
-  paid: "Paid",
-  overdue: "Overdue",
-  active: "Active",
-  inactive: "Inactive",
-  stopped: "Stopped"
-};
-function StatusBadge({ status, className }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    "span",
-    {
-      className: cn(
-        "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border",
-        STATUS_COLORS[status],
-        className
-      ),
-      "data-ocid": `status-badge-${status}`,
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1.5 h-1.5 rounded-full bg-current mr-1.5 opacity-70" }),
-        statusLabels[status]
-      ]
-    }
-  );
-}
 const patients = [
   {
     id: "p001",
@@ -47157,9 +47129,12 @@ const appointments = [
     date: "2026-04-14",
     time: "09:00",
     type: "follow-up",
+    visitMode: "OP",
     status: "confirmed",
     doctor: "Dr. Meera Joshi",
-    notes: "Review Belladonna response, discuss potency change"
+    notes: "Review Belladonna response, discuss potency change",
+    amount: 450,
+    amountStatus: "paid"
   },
   {
     id: "a002",
@@ -47168,9 +47143,12 @@ const appointments = [
     date: "2026-04-14",
     time: "10:00",
     type: "consultation",
+    visitMode: "OP",
     status: "confirmed",
     doctor: "Dr. Meera Joshi",
-    notes: "Initial case taking for urticaria protocol"
+    notes: "Initial case taking for urticaria protocol",
+    amount: 800,
+    amountStatus: "pending"
   },
   {
     id: "a003",
@@ -47179,9 +47157,12 @@ const appointments = [
     date: "2026-04-14",
     time: "11:00",
     type: "follow-up",
+    visitMode: "OP",
     status: "pending",
     doctor: "Dr. Meera Joshi",
-    notes: "Monthly follow-up for PCOS management"
+    notes: "Monthly follow-up for PCOS management",
+    amount: 350,
+    amountStatus: "pending"
   },
   {
     id: "a004",
@@ -47190,9 +47171,12 @@ const appointments = [
     date: "2026-04-14",
     time: "12:00",
     type: "consultation",
+    visitMode: "OP",
     status: "confirmed",
     doctor: "Dr. Anand Verma",
-    notes: "Parent consultation — ADHD behavior report from school"
+    notes: "Parent consultation — ADHD behavior report from school",
+    amount: 700,
+    amountStatus: "paid"
   },
   {
     id: "a005",
@@ -47201,9 +47185,12 @@ const appointments = [
     date: "2026-04-14",
     time: "14:00",
     type: "follow-up",
+    visitMode: "OP",
     status: "confirmed",
     doctor: "Dr. Meera Joshi",
-    notes: "Hot flush frequency reduced — assess next remedy"
+    notes: "Hot flush frequency reduced — assess next remedy",
+    amount: 500,
+    amountStatus: "pending"
   },
   {
     id: "a006",
@@ -47212,9 +47199,12 @@ const appointments = [
     date: "2026-04-14",
     time: "15:00",
     type: "follow-up",
+    visitMode: "OP",
     status: "completed",
     doctor: "Dr. Anand Verma",
-    notes: "Blood sugar levels reviewed — good improvement"
+    notes: "Blood sugar levels reviewed — good improvement",
+    amount: 400,
+    amountStatus: "paid"
   },
   {
     id: "a007",
@@ -47222,10 +47212,13 @@ const appointments = [
     patientName: "Sarah Thompson",
     date: "2026-04-15",
     time: "09:30",
-    type: "online",
+    type: "follow-up",
+    visitMode: "Online",
     status: "confirmed",
     doctor: "Dr. Meera Joshi",
-    notes: "Video consultation — pain diary review"
+    notes: "Video consultation — pain diary review",
+    amount: 600,
+    amountStatus: "paid"
   },
   {
     id: "a008",
@@ -47233,10 +47226,13 @@ const appointments = [
     patientName: "Amelia Johnson",
     date: "2026-04-15",
     time: "10:30",
-    type: "online",
+    type: "consultation",
+    visitMode: "Online",
     status: "confirmed",
     doctor: "Dr. Meera Joshi",
-    notes: "Thyroid panel review and remedy reassessment"
+    notes: "Thyroid panel review and remedy reassessment",
+    amount: 950,
+    amountStatus: "pending"
   },
   {
     id: "a009",
@@ -47244,10 +47240,13 @@ const appointments = [
     patientName: "Fatima Al-Zahra",
     date: "2026-04-15",
     time: "11:30",
-    type: "online",
+    type: "follow-up",
+    visitMode: "Online",
     status: "pending",
     doctor: "Dr. Anand Verma",
-    notes: "Pain scale assessment — 3-month fibromyalgia follow-up"
+    notes: "Pain scale assessment — 3-month fibromyalgia follow-up",
+    amount: 420,
+    amountStatus: "pending"
   },
   {
     id: "a010",
@@ -47255,10 +47254,13 @@ const appointments = [
     patientName: "Mohammed Al-Rashid",
     date: "2026-04-15",
     time: "14:00",
-    type: "online",
+    type: "follow-up",
+    visitMode: "Online",
     status: "confirmed",
     doctor: "Dr. Meera Joshi",
-    notes: "BP readings discussed, stress management review"
+    notes: "BP readings discussed, stress management review",
+    amount: 380,
+    amountStatus: "paid"
   },
   {
     id: "a011",
@@ -47267,9 +47269,12 @@ const appointments = [
     date: "2026-04-16",
     time: "09:00",
     type: "follow-up",
+    visitMode: "OP",
     status: "confirmed",
     doctor: "Dr. Anand Verma",
-    notes: "Skin photo comparison — acne lesion count"
+    notes: "Skin photo comparison — acne lesion count",
+    amount: 320,
+    amountStatus: "pending"
   },
   {
     id: "a012",
@@ -47278,9 +47283,12 @@ const appointments = [
     date: "2026-04-16",
     time: "10:00",
     type: "consultation",
+    visitMode: "OP",
     status: "pending",
     doctor: "Dr. Meera Joshi",
-    notes: "Detailed joint symptom mapping with repertory"
+    notes: "Detailed joint symptom mapping with repertory",
+    amount: 1200,
+    amountStatus: "pending"
   },
   {
     id: "a013",
@@ -47288,10 +47296,13 @@ const appointments = [
     patientName: "Hans Mueller",
     date: "2026-04-16",
     time: "11:00",
-    type: "online",
+    type: "case-taking",
+    visitMode: "Online",
     status: "confirmed",
     doctor: "Dr. Anand Verma",
-    notes: "Post-remedy assessment — prostate symptoms"
+    notes: "Post-remedy assessment — prostate symptoms",
+    amount: 1500,
+    amountStatus: "paid"
   },
   {
     id: "a014",
@@ -47300,9 +47311,12 @@ const appointments = [
     date: "2026-04-10",
     time: "09:00",
     type: "follow-up",
+    visitMode: "OP",
     status: "completed",
     doctor: "Dr. Meera Joshi",
-    notes: "Excellent response to Natrum Muriaticum 1M"
+    notes: "Excellent response to Natrum Muriaticum 1M",
+    amount: 450,
+    amountStatus: "paid"
   },
   {
     id: "a015",
@@ -47311,9 +47325,12 @@ const appointments = [
     date: "2026-04-10",
     time: "11:00",
     type: "follow-up",
+    visitMode: "OP",
     status: "completed",
     doctor: "Dr. Meera Joshi",
-    notes: "Rash recurrence after dietary triggers"
+    notes: "Rash recurrence after dietary triggers",
+    amount: 350,
+    amountStatus: "paid"
   },
   {
     id: "a016",
@@ -47322,9 +47339,12 @@ const appointments = [
     date: "2026-04-08",
     time: "14:00",
     type: "consultation",
+    visitMode: "OP",
     status: "cancelled",
     doctor: "Dr. Anand Verma",
-    notes: "Patient requested rescheduling — travel"
+    notes: "Patient requested rescheduling — travel",
+    amount: 700,
+    amountStatus: "pending"
   },
   {
     id: "a017",
@@ -47332,10 +47352,13 @@ const appointments = [
     patientName: "Isabella Rossi",
     date: "2026-04-11",
     time: "10:00",
-    type: "online",
+    type: "follow-up",
+    visitMode: "Online",
     status: "completed",
     doctor: "Dr. Meera Joshi",
-    notes: "IBS symptoms stable — continue Lycopodium protocol"
+    notes: "IBS symptoms stable — continue Lycopodium protocol",
+    amount: 500,
+    amountStatus: "paid"
   },
   {
     id: "a018",
@@ -47343,10 +47366,13 @@ const appointments = [
     patientName: "Kavitha Reddy",
     date: "2026-04-12",
     time: "09:00",
-    type: "consultation",
+    type: "case-taking",
+    visitMode: "OP",
     status: "completed",
     doctor: "Dr. Meera Joshi",
-    notes: "Hormone panel reviewed, Pulsatilla response noted"
+    notes: "Hormone panel reviewed, Pulsatilla response noted",
+    amount: 1100,
+    amountStatus: "paid"
   },
   {
     id: "a019",
@@ -47354,10 +47380,13 @@ const appointments = [
     patientName: "Vijay Krishnamurthy",
     date: "2026-04-13",
     time: "11:00",
-    type: "emergency",
+    type: "consultation",
+    visitMode: "OP",
     status: "completed",
     doctor: "Dr. Anand Verma",
-    notes: "Sudden glucose spike — antidotal management"
+    notes: "Sudden glucose spike — antidotal management",
+    amount: 750,
+    amountStatus: "paid"
   },
   {
     id: "a020",
@@ -47366,9 +47395,12 @@ const appointments = [
     date: "2026-04-17",
     time: "16:00",
     type: "follow-up",
+    visitMode: "OP",
     status: "pending",
     doctor: "Dr. Anand Verma",
-    notes: "Teacher feedback form collected"
+    notes: "Teacher feedback form collected",
+    amount: 280,
+    amountStatus: "pending"
   }
 ];
 function useAppointments() {
@@ -47420,7 +47452,7 @@ function formatDate$2(dateStr) {
     year: "numeric"
   });
 }
-function formatCurrency(amount, currency = "₹") {
+function formatCurrency$1(amount, currency = "₹") {
   return `${currency}${amount.toLocaleString("en-IN")}`;
 }
 function getInitials$1(name) {
@@ -49171,17 +49203,41 @@ const Route$i = createRoute({
   path: "/appointments",
   component: AppointmentsPage
 });
-const STATUS_DOT = {
-  confirmed: "bg-teal-400",
+const DISPLAY_STATUS_STYLE = {
+  pending: "bg-yellow-500/15 text-yellow-500 border border-yellow-500/25",
+  completed: "bg-zinc-500/15 text-zinc-400 border border-zinc-500/25",
+  cancelled: "bg-red-500/15 text-red-400 border border-red-500/25"
+};
+const DISPLAY_STATUS_DOT = {
   pending: "bg-yellow-400",
   completed: "bg-zinc-400",
   cancelled: "bg-red-400"
 };
+const CALENDAR_DOT = {
+  confirmed: "bg-emerald-400",
+  pending: "bg-yellow-400",
+  completed: "bg-zinc-400",
+  cancelled: "bg-red-400"
+};
+function toDisplayStatus(s2) {
+  if (s2 === "confirmed") return "pending";
+  return s2;
+}
+const AMOUNT_STATUS_STYLE = {
+  pending: "bg-amber-500/15 text-amber-500 border border-amber-500/25",
+  paid: "bg-emerald-500/15 text-emerald-500 border border-emerald-500/25"
+};
+function formatCurrency(amount) {
+  return `₹${amount.toLocaleString("en-IN")}`;
+}
 const TYPE_LABELS = {
   consultation: "Consultation",
   "follow-up": "Follow-up",
-  emergency: "Emergency",
-  online: "Online"
+  "case-taking": "Case Taking"
+};
+const VISIT_MODE_STYLE = {
+  OP: "bg-blue-500/15 text-blue-400 border border-blue-500/20",
+  Online: "bg-violet-500/15 text-violet-400 border border-violet-500/20"
 };
 function AppointmentCalendar({
   currentMonth,
@@ -49287,7 +49343,10 @@ function AppointmentCalendar({
                 dotStatuses.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-0.5 mt-1", children: dotStatuses.map((s2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "span",
                   {
-                    className: cn("w-1.5 h-1.5 rounded-full", STATUS_DOT[s2])
+                    className: cn(
+                      "w-1.5 h-1.5 rounded-full",
+                      CALENDAR_DOT[s2]
+                    )
                   },
                   s2
                 )) })
@@ -49306,7 +49365,7 @@ function AppointmentCalendar({
           {
             className: "flex items-center gap-1.5 text-xs text-muted-foreground",
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: cn("w-2 h-2 rounded-full", STATUS_DOT[s2]) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: cn("w-2 h-2 rounded-full", CALENDAR_DOT[s2]) }),
               label
             ]
           },
@@ -49321,9 +49380,9 @@ const DEFAULT_BOOK = {
   date: format$2(/* @__PURE__ */ new Date(), "yyyy-MM-dd"),
   time: "09:00",
   type: "consultation",
+  visitMode: "OP",
   doctor: "Dr. Meera Joshi",
-  notes: "",
-  status: "confirmed"
+  notes: ""
 };
 function BookAppointmentModal({
   open,
@@ -49335,7 +49394,22 @@ function BookAppointmentModal({
     ...DEFAULT_BOOK,
     date: initialDate ?? DEFAULT_BOOK.date
   });
+  const [patientSearch, setPatientSearch] = reactExports.useState("");
+  const [patientDropdownOpen, setPatientDropdownOpen] = reactExports.useState(false);
   const set = (key, value) => setForm((prev) => ({ ...prev, [key]: value }));
+  const filteredPatients = reactExports.useMemo(() => {
+    const q2 = patientSearch.toLowerCase().trim();
+    if (!q2) return patients.slice(0, 8);
+    return patients.filter(
+      (p2) => p2.name.toLowerCase().includes(q2) || p2.registrationId.toLowerCase().includes(q2) || p2.phone.includes(q2)
+    );
+  }, [patientSearch]);
+  const selectedPatient = patients.find((p2) => p2.id === form.patientId);
+  function handlePatientSelect(patientId, patientName) {
+    set("patientId", patientId);
+    setPatientSearch(patientName);
+    setPatientDropdownOpen(false);
+  }
   function handleSubmit(e3) {
     e3.preventDefault();
     if (!form.patientId) {
@@ -49344,8 +49418,14 @@ function BookAppointmentModal({
     }
     onSubmit(form);
     setForm({ ...DEFAULT_BOOK, date: initialDate ?? DEFAULT_BOOK.date });
+    setPatientSearch("");
   }
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Dialog, { open, onOpenChange: (o) => !o && onClose(), children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+  function handleClose() {
+    setPatientSearch("");
+    setPatientDropdownOpen(false);
+    onClose();
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Dialog, { open, onOpenChange: (o) => !o && handleClose(), children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
     DialogContent,
     {
       className: "max-w-lg glass border-white/10 dark:border-white/10",
@@ -49354,31 +49434,57 @@ function BookAppointmentModal({
         /* @__PURE__ */ jsxRuntimeExports.jsx(DialogHeader, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(DialogTitle, { className: "font-display text-lg", children: "Book Appointment" }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleSubmit, className: "space-y-4 mt-2", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { children: "Patient" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              Select$1,
-              {
-                value: form.patientId,
-                onValueChange: (v2) => set("patientId", v2),
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(SelectTrigger, { "data-ocid": "book-patient-select", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SelectValue, { placeholder: "Select patient…" }) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContent, { children: patients.map((p2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(SelectItem, { value: p2.id, children: [
-                    p2.name,
-                    " — ",
-                    p2.age,
-                    "y ",
-                    p2.gender
-                  ] }, p2.id)) })
-                ]
-              }
-            )
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-3", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { children: "Date" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { htmlFor: "patient-search", children: "Patient" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { className: "absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground pointer-events-none" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 Input,
                 {
+                  id: "patient-search",
+                  placeholder: "Search by name, Reg ID, or phone…",
+                  value: patientSearch,
+                  onChange: (e3) => {
+                    setPatientSearch(e3.target.value);
+                    setPatientDropdownOpen(true);
+                    if (!e3.target.value) set("patientId", "");
+                  },
+                  onFocus: () => setPatientDropdownOpen(true),
+                  onBlur: () => setTimeout(() => setPatientDropdownOpen(false), 150),
+                  autoComplete: "off",
+                  className: "pl-8",
+                  "data-ocid": "book-patient-search"
+                }
+              ),
+              selectedPatient && patientSearch === selectedPatient.name && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] text-muted-foreground bg-primary/10 text-primary px-1.5 py-0.5 rounded font-medium", children: selectedPatient.registrationId }),
+              patientDropdownOpen && filteredPatients.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-full left-0 right-0 z-50 mt-1 rounded-lg border border-border/60 bg-card shadow-lg overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "max-h-48 overflow-y-auto py-1", children: filteredPatients.map((p2) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  type: "button",
+                  className: "w-full flex items-center gap-3 px-3 py-2 hover:bg-muted/50 transition-colors text-left",
+                  onMouseDown: () => handlePatientSelect(p2.id, p2.name),
+                  "data-ocid": `book-patient-option-${p2.id}`,
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center text-primary text-[10px] font-bold shrink-0", children: getInitials$1(p2.name) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-foreground truncate", children: p2.name }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground", children: [
+                        p2.registrationId,
+                        " · ",
+                        p2.phone
+                      ] })
+                    ] })
+                  ]
+                }
+              ) }, p2.id)) }) })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { htmlFor: "book-date", children: "Date" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Input,
+                {
+                  id: "book-date",
                   type: "date",
                   value: form.date,
                   onChange: (e3) => set("date", e3.target.value),
@@ -49387,10 +49493,11 @@ function BookAppointmentModal({
               )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { children: "Time" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { htmlFor: "book-time", children: "Time" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(
                 Input,
                 {
+                  id: "book-time",
                   type: "time",
                   value: form.time,
                   onChange: (e3) => set("time", e3.target.value),
@@ -49412,8 +49519,7 @@ function BookAppointmentModal({
                     /* @__PURE__ */ jsxRuntimeExports.jsxs(SelectContent, { children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: "consultation", children: "Consultation" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: "follow-up", children: "Follow-up" }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: "emergency", children: "Emergency" }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: "online", children: "Online" })
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: "case-taking", children: "Case Taking" })
                     ] })
                   ]
                 }
@@ -49438,27 +49544,28 @@ function BookAppointmentModal({
             ] })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { children: "Status" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              Select$1,
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-medium leading-none text-foreground", children: "Visit Mode" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-2 mt-1", "data-ocid": "book-visit-mode-toggle", children: ["OP", "Online"].map((mode) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
               {
-                value: form.status,
-                onValueChange: (v2) => set("status", v2),
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(SelectTrigger, { "data-ocid": "book-status-select", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SelectValue, {}) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs(SelectContent, { children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: "confirmed", children: "Confirmed" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: "pending", children: "Pending" })
-                  ] })
-                ]
-              }
-            )
+                type: "button",
+                onClick: () => set("visitMode", mode),
+                className: cn(
+                  "flex-1 py-2 rounded-lg text-sm font-medium border transition-all duration-200",
+                  form.visitMode === mode ? mode === "OP" ? "bg-blue-500/20 border-blue-500/40 text-blue-400 shadow-sm" : "bg-violet-500/20 border-violet-500/40 text-violet-400 shadow-sm" : "bg-muted/30 border-border/40 text-muted-foreground hover:bg-muted/50"
+                ),
+                "data-ocid": `book-visit-mode-${mode.toLowerCase()}`,
+                children: mode === "OP" ? "🏥 OP (In-person)" : "💻 Online"
+              },
+              mode
+            )) })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { children: "Notes" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Label$1, { htmlFor: "book-notes", children: "Notes" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               Textarea,
               {
+                id: "book-notes",
                 placeholder: "Case notes, reason for visit…",
                 value: form.notes,
                 onChange: (e3) => set("notes", e3.target.value),
@@ -49468,7 +49575,7 @@ function BookAppointmentModal({
             )
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-end gap-2 pt-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Button$1, { type: "button", variant: "ghost", onClick: onClose, children: "Cancel" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Button$1, { type: "button", variant: "ghost", onClick: handleClose, children: "Cancel" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx(Button$1, { type: "submit", "data-ocid": "book-submit-btn", children: "Book Appointment" })
           ] })
         ] })
@@ -49517,7 +49624,30 @@ function AppointmentDetailModal({
           ] }, label)) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground", children: "Status:" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(StatusBadge, { status: appointment.status })
+            (() => {
+              const ds = toDisplayStatus(appointment.status);
+              return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "span",
+                {
+                  className: cn(
+                    "inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full capitalize",
+                    DISPLAY_STATUS_STYLE[ds]
+                  ),
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        className: cn(
+                          "w-1.5 h-1.5 rounded-full shrink-0",
+                          DISPLAY_STATUS_DOT[ds]
+                        )
+                      }
+                    ),
+                    ds
+                  ]
+                }
+              );
+            })()
           ] }),
           appointment.notes && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Notes" }),
@@ -49651,7 +49781,8 @@ function AppointmentsPage() {
       date: form.date,
       time: form.time,
       type: form.type,
-      status: form.status,
+      visitMode: form.visitMode,
+      status: "confirmed",
       doctor: form.doctor,
       notes: form.notes
     });
@@ -49735,11 +49866,14 @@ function AppointmentsPage() {
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-sm", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { className: "border-b border-border/50 bg-muted/20", children: [
               "Date & Time",
-              "Patient",
+              "Name",
               "Type",
+              "OP/Online",
               "Doctor",
               "Status",
-              "Actions"
+              "Actions",
+              "Amount",
+              "Amount Status"
             ].map((col) => /* @__PURE__ */ jsxRuntimeExports.jsx(
               "th",
               {
@@ -49748,12 +49882,20 @@ function AppointmentsPage() {
               },
               col
             )) }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { mode: "popLayout", children: /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: isLoading ? ["r1", "r2", "r3", "r4", "r5"].map((rowKey) => /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { className: "border-b border-border/30", children: ["dt", "pt", "tp", "dr", "st", "ac"].map(
-              (col) => /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-4 py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-4 bg-muted/40 rounded animate-pulse" }) }, col)
-            ) }, rowKey)) : filteredAppointments.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { mode: "popLayout", children: /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: isLoading ? ["r1", "r2", "r3", "r4", "r5"].map((rowKey) => /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { className: "border-b border-border/30", children: [
+              "dt",
+              "pt",
+              "tp",
+              "vm",
+              "dr",
+              "st",
+              "ac",
+              "am",
+              "as"
+            ].map((col) => /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-4 py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-4 bg-muted/40 rounded animate-pulse" }) }, col)) }, rowKey)) : filteredAppointments.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "td",
               {
-                colSpan: 6,
+                colSpan: 9,
                 className: "py-16 text-center",
                 "data-ocid": "appt-empty-state",
                 children: [
@@ -49780,9 +49922,42 @@ function AppointmentsPage() {
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-7 h-7 rounded-full bg-primary/15 flex items-center justify-center text-primary text-[10px] font-bold shrink-0", children: getInitials$1(appt.patientName) }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium text-foreground text-xs truncate max-w-[130px]", children: appt.patientName })
                   ] }) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-4 py-3 whitespace-nowrap", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground capitalize", children: TYPE_LABELS[appt.type] }) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-4 py-3 whitespace-nowrap", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground", children: TYPE_LABELS[appt.type] ?? appt.type }) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-4 py-3 whitespace-nowrap", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "span",
+                    {
+                      className: cn(
+                        "text-[10px] font-medium px-1.5 py-0.5 rounded-full",
+                        VISIT_MODE_STYLE[appt.visitMode ?? "OP"]
+                      ),
+                      children: appt.visitMode ?? "OP"
+                    }
+                  ) }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-4 py-3 whitespace-nowrap", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-foreground", children: appt.doctor }) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-4 py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(StatusBadge, { status: appt.status }) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-4 py-3", children: (() => {
+                    const ds = toDisplayStatus(appt.status);
+                    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "span",
+                      {
+                        className: cn(
+                          "inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full capitalize",
+                          DISPLAY_STATUS_STYLE[ds]
+                        ),
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "span",
+                            {
+                              className: cn(
+                                "w-1.5 h-1.5 rounded-full shrink-0",
+                                DISPLAY_STATUS_DOT[ds]
+                              )
+                            }
+                          ),
+                          ds
+                        ]
+                      }
+                    );
+                  })() }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-4 py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 opacity-50 group-hover:opacity-100 transition-smooth", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
                       Button$1,
@@ -49796,19 +49971,19 @@ function AppointmentsPage() {
                         children: /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { className: "h-3.5 w-3.5" })
                       }
                     ),
-                    appt.status !== "cancelled" && appt.status !== "completed" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
                       Button$1,
                       {
                         variant: "ghost",
                         size: "icon",
                         className: "h-7 w-7",
                         onClick: () => setRescheduleAppt(appt),
-                        title: "Reschedule",
+                        title: "Edit / Reschedule",
                         "data-ocid": `appt-edit-${appt.id}`,
                         children: /* @__PURE__ */ jsxRuntimeExports.jsx(Pencil, { className: "h-3.5 w-3.5" })
                       }
                     ),
-                    appt.status !== "cancelled" && appt.status !== "completed" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
                       Button$1,
                       {
                         variant: "ghost",
@@ -49820,7 +49995,18 @@ function AppointmentsPage() {
                         children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-3.5 w-3.5" })
                       }
                     )
-                  ] }) })
+                  ] }) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-4 py-3 whitespace-nowrap", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium text-foreground", children: appt.amount != null ? formatCurrency(appt.amount) : "—" }) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-4 py-3 whitespace-nowrap", children: appt.amountStatus != null ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "span",
+                    {
+                      className: cn(
+                        "inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full capitalize",
+                        AMOUNT_STATUS_STYLE[appt.amountStatus]
+                      ),
+                      children: appt.amountStatus
+                    }
+                  ) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground", children: "—" }) })
                 ]
               },
               appt.id
@@ -49856,6 +50042,34 @@ function AppointmentsPage() {
       }
     )
   ] });
+}
+const statusLabels = {
+  confirmed: "Confirmed",
+  pending: "Pending",
+  completed: "Completed",
+  cancelled: "Cancelled",
+  paid: "Paid",
+  overdue: "Overdue",
+  active: "Active",
+  inactive: "Inactive",
+  stopped: "Stopped"
+};
+function StatusBadge({ status, className }) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "span",
+    {
+      className: cn(
+        "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border",
+        STATUS_COLORS[status],
+        className
+      ),
+      "data-ocid": `status-badge-${status}`,
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1.5 h-1.5 rounded-full bg-current mr-1.5 opacity-70" }),
+        statusLabels[status]
+      ]
+    }
+  );
 }
 var TABS_NAME = "Tabs";
 var [createTabsContext] = createContextScope$1(TABS_NAME, [
@@ -50586,22 +50800,22 @@ function InvoiceModal({
               /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: invoice.items.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "border-b border-white/5", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 text-foreground", children: item.description }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 text-center text-muted-foreground", children: item.quantity }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 text-right text-muted-foreground", children: formatCurrency(item.unitPrice) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 text-right font-medium text-foreground", children: formatCurrency(item.total) })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 text-right text-muted-foreground", children: formatCurrency$1(item.unitPrice) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 text-right font-medium text-foreground", children: formatCurrency$1(item.total) })
               ] }, item.description)) })
             ] }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-6 border-b border-white/10", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-xs ml-auto space-y-2 text-sm", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-muted-foreground", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Subtotal" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: formatCurrency(subtotal) })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: formatCurrency$1(subtotal) })
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-muted-foreground", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "GST (18%)" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: formatCurrency(tax) })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: formatCurrency$1(tax) })
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between font-bold text-lg text-foreground border-t border-white/10 pt-2 mt-2", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Total" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-primary", children: formatCurrency(total) })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-primary", children: formatCurrency$1(total) })
               ] })
             ] }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between p-6", children: [
@@ -50645,19 +50859,19 @@ function InvoicesTab() {
   const summaryCards = [
     {
       label: "Total Outstanding",
-      value: formatCurrency(outstanding),
+      value: formatCurrency$1(outstanding),
       icon: /* @__PURE__ */ jsxRuntimeExports.jsx(TrendingUp, { className: "w-4 h-4" }),
       color: "bg-amber-500/10 text-amber-400 border-amber-500/20"
     },
     {
       label: "Collected This Month",
-      value: formatCurrency(collected),
+      value: formatCurrency$1(collected),
       icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-4 h-4" }),
       color: "bg-green-500/10 text-green-400 border-green-500/20"
     },
     {
       label: "Overdue Invoices",
-      value: `${overdueCount} invoices · ${formatCurrency(overdue)}`,
+      value: `${overdueCount} invoices · ${formatCurrency$1(overdue)}`,
       icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "w-4 h-4" }),
       color: "bg-destructive/10 text-destructive border-destructive/20"
     }
@@ -50743,7 +50957,7 @@ function InvoicesTab() {
                   ] }) }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 font-medium text-foreground", children: inv.patientName }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 text-muted-foreground hidden md:table-cell", children: formatDate$2(inv.date) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 text-right font-semibold tabular-nums", children: formatCurrency(inv.amount) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 text-right font-semibold tabular-nums", children: formatCurrency$1(inv.amount) }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(StatusBadge, { status: inv.status }) }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-end gap-2", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -50804,7 +51018,7 @@ function PaymentHistoryTab() {
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-3 rounded-xl bg-green-500/10 border border-green-500/20", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CreditCard, { className: "w-5 h-5 text-green-400" }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Total Payments — April 2026" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl font-display font-bold text-foreground", children: formatCurrency(totalThisMonth) })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl font-display font-bold text-foreground", children: formatCurrency$1(totalThisMonth) })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "ml-auto text-right hidden sm:block", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Transactions" }),
@@ -50890,7 +51104,7 @@ function PaymentHistoryTab() {
                   "INV-",
                   inv.id.replace("inv", "").padStart(3, "0")
                 ] }) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 text-right font-semibold tabular-nums", children: formatCurrency(inv.amount) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 text-right font-semibold tabular-nums", children: formatCurrency$1(inv.amount) }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 text-center hidden md:table-cell", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "span",
                   {
@@ -51004,7 +51218,7 @@ function SubscriptionPlansTab() {
               )
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-baseline gap-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-3xl font-display font-bold text-foreground", children: formatCurrency(plan.price) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-3xl font-display font-bold text-foreground", children: formatCurrency$1(plan.price) }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground", children: "/month" })
             ] })
           ] }),
@@ -102374,7 +102588,8 @@ const DEMO_PAST_VISITS = [
         isDemo: true
       }
     ],
-    visitType: "OP"
+    visitType: "OP",
+    nextVisitDate: "2026-06-01"
   },
   {
     id: "visit-demo-2",
@@ -102404,7 +102619,8 @@ const DEMO_PAST_VISITS = [
         isDemo: true
       }
     ],
-    visitType: "OP"
+    visitType: "OP",
+    nextVisitDate: "2026-06-20"
   },
   {
     id: "visit-demo-3",
@@ -103636,7 +103852,7 @@ function OverviewTab({ patient }) {
             StatPill,
             {
               label: "Consult Fee",
-              value: formatCurrency(patient.consultationFee)
+              value: formatCurrency$1(patient.consultationFee)
             }
           )
         ] }),
@@ -103932,21 +104148,77 @@ function PatientDetailPage() {
   const [nextVisitDate, setNextVisitDate] = reactExports.useState(null);
   const [tempNextVisitDate, setTempNextVisitDate] = reactExports.useState("");
   const [showReminderPopup, setShowReminderPopup] = reactExports.useState(false);
-  const [reminderDate, setReminderDate] = reactExports.useState("2026-06-20");
+  const [reminderDate, setReminderDate] = reactExports.useState("");
+  const [showOverduePopup, setShowOverduePopup] = reactExports.useState(false);
+  const [overdueDate, setOverdueDate] = reactExports.useState("");
+  const [popupQueue, setPopupQueue] = reactExports.useState([]);
+  const [currentPopupIndex, setCurrentPopupIndex] = reactExports.useState(0);
   const patient = patients2.find((p2) => p2.id === patientId);
   reactExports.useEffect(() => {
-    const mostRecent = DEMO_PAST_VISITS[0];
-    if (mostRecent == null ? void 0 : mostRecent.nextVisitDate) {
-      setReminderDate(mostRecent.nextVisitDate);
+    const today = /* @__PURE__ */ new Date();
+    today.setHours(0, 0, 0, 0);
+    let upcomingDate = "";
+    let overdueDateStr = "";
+    for (const visit of DEMO_PAST_VISITS) {
+      if (!visit.nextVisitDate) continue;
+      const d2 = /* @__PURE__ */ new Date(`${visit.nextVisitDate}T00:00:00`);
+      if (d2 < today) {
+        overdueDateStr = visit.nextVisitDate;
+      } else {
+        if (!upcomingDate || d2 < /* @__PURE__ */ new Date(`${upcomingDate}T00:00:00`)) {
+          upcomingDate = visit.nextVisitDate;
+        }
+      }
     }
-    const timer = setTimeout(() => setShowReminderPopup(true), 600);
-    return () => clearTimeout(timer);
+    const queue = [];
+    if (overdueDateStr) {
+      setOverdueDate(overdueDateStr);
+      queue.push("overdue");
+    }
+    if (upcomingDate) {
+      setReminderDate(upcomingDate);
+      queue.push("upcoming");
+    }
+    if (queue.length > 0) {
+      setPopupQueue(queue);
+      setCurrentPopupIndex(0);
+      const timer = setTimeout(() => {
+        if (queue[0] === "overdue") setShowOverduePopup(true);
+        else setShowReminderPopup(true);
+      }, 600);
+      return () => clearTimeout(timer);
+    }
   }, []);
   reactExports.useEffect(() => {
     if (!showReminderPopup) return;
-    const autoTimer = setTimeout(() => setShowReminderPopup(false), 5e3);
+    const autoTimer = setTimeout(() => {
+      setShowReminderPopup(false);
+      if (currentPopupIndex < popupQueue.length - 1) {
+        const nextIndex = currentPopupIndex + 1;
+        setCurrentPopupIndex(nextIndex);
+        setTimeout(() => {
+          if (popupQueue[nextIndex] === "overdue") setShowOverduePopup(true);
+          else setShowReminderPopup(true);
+        }, 400);
+      }
+    }, 5e3);
     return () => clearTimeout(autoTimer);
-  }, [showReminderPopup]);
+  }, [showReminderPopup, popupQueue, currentPopupIndex]);
+  reactExports.useEffect(() => {
+    if (!showOverduePopup) return;
+    const autoTimer = setTimeout(() => {
+      setShowOverduePopup(false);
+      if (currentPopupIndex < popupQueue.length - 1) {
+        const nextIndex = currentPopupIndex + 1;
+        setCurrentPopupIndex(nextIndex);
+        setTimeout(() => {
+          if (popupQueue[nextIndex] === "overdue") setShowOverduePopup(true);
+          else setShowReminderPopup(true);
+        }, 400);
+      }
+    }, 5e3);
+    return () => clearTimeout(autoTimer);
+  }, [showOverduePopup, popupQueue, currentPopupIndex]);
   if (isLoading) {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", "data-ocid": "patient-detail-loading", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-8 w-48 rounded-lg glass animate-pulse" }),
@@ -104140,6 +104412,154 @@ function PatientDetailPage() {
             )
           },
           "reminder-overlay"
+        ) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: showOverduePopup && /* @__PURE__ */ jsxRuntimeExports.jsx(
+          motion.div,
+          {
+            initial: { opacity: 0 },
+            animate: { opacity: 1 },
+            exit: { opacity: 0 },
+            transition: { duration: 0.2 },
+            className: "fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-md",
+            "data-ocid": "patient-detail.overdue_overlay",
+            onClick: () => setShowOverduePopup(false),
+            children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              motion.div,
+              {
+                initial: { opacity: 0, scale: 0.88, y: 24 },
+                animate: { opacity: 1, scale: 1, y: 0 },
+                exit: { opacity: 0, scale: 0.92, y: 16 },
+                transition: { type: "spring", stiffness: 340, damping: 28 },
+                className: "relative w-full max-w-sm mx-4 rounded-2xl overflow-hidden shadow-2xl",
+                style: {
+                  background: "linear-gradient(135deg, rgba(16,18,27,0.97) 0%, rgba(20,24,38,0.97) 100%)",
+                  border: "1px solid rgba(251,146,60,0.22)",
+                  boxShadow: "0 0 0 1px rgba(251,146,60,0.12), 0 24px 64px -12px rgba(0,0,0,0.7), 0 0 80px -20px rgba(251,146,60,0.15)"
+                },
+                onClick: (e3) => e3.stopPropagation(),
+                "data-ocid": "patient-detail.overdue_dialog",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      className: "absolute inset-x-0 top-0 h-px",
+                      style: {
+                        background: "linear-gradient(90deg, transparent, rgba(251,146,60,0.6), transparent)"
+                      }
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    motion.div,
+                    {
+                      className: "absolute top-0 left-0 h-0.5 bg-orange-400/70",
+                      initial: { width: "100%" },
+                      animate: { width: "0%" },
+                      transition: { duration: 5, ease: "linear" }
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-4 mb-5", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "w-12 h-12 rounded-2xl flex items-center justify-center shrink-0",
+                          style: {
+                            background: "linear-gradient(135deg, rgba(251,146,60,0.25), rgba(234,88,12,0.15))",
+                            border: "1px solid rgba(251,146,60,0.3)",
+                            boxShadow: "0 4px 16px rgba(251,146,60,0.15)"
+                          },
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(Bell, { className: "w-6 h-6 text-orange-400" })
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-semibold uppercase tracking-widest text-orange-400/70 mb-0.5", children: "Follow-up Reminder" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base font-bold text-white leading-tight", children: patient.name }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-white/50 mt-0.5", children: "Scheduled date is already over" })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "button",
+                        {
+                          type: "button",
+                          "aria-label": "Close overdue reminder",
+                          onClick: () => setShowOverduePopup(false),
+                          "data-ocid": "patient-detail.overdue_close_button",
+                          className: "p-1.5 rounded-lg text-white/30 hover:text-white/70 hover:bg-white/10 transition-colors shrink-0 -mt-0.5 -mr-1",
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "w-4 h-4" })
+                        }
+                      )
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        className: "flex items-center gap-3 p-4 rounded-xl mb-5",
+                        style: {
+                          background: "rgba(251,146,60,0.07)",
+                          border: "1px solid rgba(251,146,60,0.18)"
+                        },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-5 h-5 text-orange-400 shrink-0" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-orange-400/70 font-medium mb-0.5", children: "Overdue Date" }),
+                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-bold text-orange-300", children: (/* @__PURE__ */ new Date(`${overdueDate}T00:00:00`)).toLocaleDateString(
+                              "en-US",
+                              {
+                                weekday: "long",
+                                month: "long",
+                                day: "numeric",
+                                year: "numeric"
+                              }
+                            ) })
+                          ] })
+                        ]
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-white/60 leading-relaxed mb-5", children: [
+                      "Follow-up reminder:",
+                      " ",
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-white font-semibold", children: patient.name }),
+                      " ",
+                      "was scheduled on",
+                      " ",
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-orange-400 font-semibold", children: (/* @__PURE__ */ new Date(`${overdueDate}T00:00:00`)).toLocaleDateString(
+                        "en-US",
+                        { month: "short", day: "numeric", year: "numeric" }
+                      ) }),
+                      " ",
+                      "but has not visited yet. Please contact the patient to reschedule."
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-2.5", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "button",
+                        {
+                          type: "button",
+                          onClick: () => setShowOverduePopup(false),
+                          "data-ocid": "patient-detail.overdue_ok_button",
+                          className: "flex-1 px-4 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200",
+                          style: {
+                            background: "linear-gradient(135deg, rgb(234,88,12), rgb(194,65,12))",
+                            boxShadow: "0 4px 16px rgba(234,88,12,0.3)"
+                          },
+                          children: "OK, Got It"
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "button",
+                        {
+                          type: "button",
+                          onClick: () => setShowOverduePopup(false),
+                          "data-ocid": "patient-detail.overdue_dismiss_button",
+                          className: "flex-1 px-4 py-2.5 rounded-xl text-sm font-medium text-white/50 border border-white/10 hover:bg-white/5 hover:text-white/70 transition-all duration-200",
+                          children: "Dismiss"
+                        }
+                      )
+                    ] })
+                  ] })
+                ]
+              },
+              "overdue-modal"
+            )
+          },
+          "overdue-overlay"
         ) }),
         showNextVisitModal && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-8 w-full max-w-md mx-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-6", children: [

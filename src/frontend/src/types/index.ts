@@ -44,11 +44,9 @@ export interface RolePermissions {
   [module: string]: ModuleAccess;
 }
 export type Language = "en" | "hi" | "es" | "fr";
-export type AppointmentType =
-  | "consultation"
-  | "follow-up"
-  | "emergency"
-  | "online";
+export type AppointmentType = "consultation" | "follow-up" | "case-taking";
+
+export type VisitMode = "OP" | "Online";
 
 export interface Patient {
   id: string;
@@ -70,6 +68,8 @@ export interface Patient {
   avatar?: string;
 }
 
+export type AmountStatus = "pending" | "paid";
+
 export interface Appointment {
   id: string;
   patientId: string;
@@ -77,9 +77,12 @@ export interface Appointment {
   date: string;
   time: string;
   type: AppointmentType;
+  visitMode: VisitMode;
   status: AppointmentStatus;
   doctor: string;
   notes: string;
+  amount?: number;
+  amountStatus?: AmountStatus;
 }
 
 export interface Prescription {
