@@ -25723,7 +25723,7 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1M = [
+const __iconNode$1P = [
   [
     "path",
     {
@@ -25732,7 +25732,41 @@ const __iconNode$1M = [
     }
   ]
 ];
-const Activity = createLucideIcon("activity", __iconNode$1M);
+const Activity = createLucideIcon("activity", __iconNode$1P);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1O = [
+  ["rect", { width: "20", height: "5", x: "2", y: "3", rx: "1", key: "1wp1u1" }],
+  ["path", { d: "M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8", key: "1s80jp" }],
+  ["path", { d: "M10 12h4", key: "a56b0p" }]
+];
+const Archive = createLucideIcon("archive", __iconNode$1O);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1N = [
+  ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
+  ["path", { d: "M19 12H5", key: "x3x0zl" }]
+];
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$1N);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1M = [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
+];
+const ArrowRight = createLucideIcon("arrow-right", __iconNode$1M);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -25740,40 +25774,6 @@ const Activity = createLucideIcon("activity", __iconNode$1M);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1L = [
-  ["rect", { width: "20", height: "5", x: "2", y: "3", rx: "1", key: "1wp1u1" }],
-  ["path", { d: "M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8", key: "1s80jp" }],
-  ["path", { d: "M10 12h4", key: "a56b0p" }]
-];
-const Archive = createLucideIcon("archive", __iconNode$1L);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1K = [
-  ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
-  ["path", { d: "M19 12H5", key: "x3x0zl" }]
-];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$1K);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1J = [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
-];
-const ArrowRight = createLucideIcon("arrow-right", __iconNode$1J);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1I = [
   ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
   [
     "path",
@@ -25790,14 +25790,33 @@ const __iconNode$1I = [
     }
   ]
 ];
-const Atom = createLucideIcon("atom", __iconNode$1I);
+const Atom = createLucideIcon("atom", __iconNode$1L);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1H = [
+const __iconNode$1K = [
+  ["path", { d: "M10.268 21a2 2 0 0 0 3.464 0", key: "vwvbt9" }],
+  ["path", { d: "M22 8c0-2.3-.8-4.3-2-6", key: "5bb3ad" }],
+  [
+    "path",
+    {
+      d: "M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326",
+      key: "11g9vi"
+    }
+  ],
+  ["path", { d: "M4 2C2.8 3.7 2 5.7 2 8", key: "tap9e0" }]
+];
+const BellRing = createLucideIcon("bell-ring", __iconNode$1K);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1J = [
   ["path", { d: "M10.268 21a2 2 0 0 0 3.464 0", key: "vwvbt9" }],
   [
     "path",
@@ -25807,27 +25826,27 @@ const __iconNode$1H = [
     }
   ]
 ];
-const Bell = createLucideIcon("bell", __iconNode$1H);
+const Bell = createLucideIcon("bell", __iconNode$1J);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1G = [
+const __iconNode$1I = [
   [
     "path",
     { d: "M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8", key: "mg9rjx" }
   ]
 ];
-const Bold$1 = createLucideIcon("bold", __iconNode$1G);
+const Bold$1 = createLucideIcon("bold", __iconNode$1I);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1F = [
+const __iconNode$1H = [
   [
     "path",
     {
@@ -25836,14 +25855,14 @@ const __iconNode$1F = [
     }
   ]
 ];
-const Bone = createLucideIcon("bone", __iconNode$1F);
+const Bone = createLucideIcon("bone", __iconNode$1H);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1E = [
+const __iconNode$1G = [
   ["path", { d: "M12 7v14", key: "1akyts" }],
   [
     "path",
@@ -25853,14 +25872,14 @@ const __iconNode$1E = [
     }
   ]
 ];
-const BookOpen = createLucideIcon("book-open", __iconNode$1E);
+const BookOpen = createLucideIcon("book-open", __iconNode$1G);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1D = [
+const __iconNode$1F = [
   ["path", { d: "M12 8V4H8", key: "hb8ula" }],
   ["rect", { width: "16", height: "12", x: "4", y: "8", rx: "2", key: "enze0r" }],
   ["path", { d: "M2 14h2", key: "vft8re" }],
@@ -25868,14 +25887,14 @@ const __iconNode$1D = [
   ["path", { d: "M15 13v2", key: "1xurst" }],
   ["path", { d: "M9 13v2", key: "rq6x2g" }]
 ];
-const Bot = createLucideIcon("bot", __iconNode$1D);
+const Bot = createLucideIcon("bot", __iconNode$1F);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1C = [
+const __iconNode$1E = [
   [
     "path",
     {
@@ -25898,14 +25917,14 @@ const __iconNode$1C = [
   ["path", { d: "M6 18a4 4 0 0 1-1.967-.516", key: "2e4loj" }],
   ["path", { d: "M19.967 17.484A4 4 0 0 1 18 18", key: "159ez6" }]
 ];
-const Brain = createLucideIcon("brain", __iconNode$1C);
+const Brain = createLucideIcon("brain", __iconNode$1E);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1B = [
+const __iconNode$1D = [
   ["path", { d: "M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z", key: "1b4qmf" }],
   ["path", { d: "M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2", key: "i71pzd" }],
   ["path", { d: "M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2", key: "10jefs" }],
@@ -25914,28 +25933,28 @@ const __iconNode$1B = [
   ["path", { d: "M10 14h4", key: "kelpxr" }],
   ["path", { d: "M10 18h4", key: "1ulq68" }]
 ];
-const Building2 = createLucideIcon("building-2", __iconNode$1B);
+const Building2 = createLucideIcon("building-2", __iconNode$1D);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1A = [
+const __iconNode$1C = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M3 10h18", key: "8toen8" }],
   ["path", { d: "m9 16 2 2 4-4", key: "19s6y9" }]
 ];
-const CalendarCheck = createLucideIcon("calendar-check", __iconNode$1A);
+const CalendarCheck = createLucideIcon("calendar-check", __iconNode$1C);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1z = [
+const __iconNode$1B = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
@@ -25947,27 +25966,27 @@ const __iconNode$1z = [
   ["path", { d: "M12 18h.01", key: "mhygvu" }],
   ["path", { d: "M16 18h.01", key: "kzsmim" }]
 ];
-const CalendarDays = createLucideIcon("calendar-days", __iconNode$1z);
+const CalendarDays = createLucideIcon("calendar-days", __iconNode$1B);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1y = [
+const __iconNode$1A = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M3 10h18", key: "8toen8" }]
 ];
-const Calendar = createLucideIcon("calendar", __iconNode$1y);
+const Calendar = createLucideIcon("calendar", __iconNode$1A);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1x = [
+const __iconNode$1z = [
   [
     "path",
     {
@@ -25977,60 +25996,82 @@ const __iconNode$1x = [
   ],
   ["circle", { cx: "12", cy: "13", r: "3", key: "1vg3eu" }]
 ];
-const Camera = createLucideIcon("camera", __iconNode$1x);
+const Camera = createLucideIcon("camera", __iconNode$1z);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1w = [
+const __iconNode$1y = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M18 17V9", key: "2bz60n" }],
   ["path", { d: "M13 17V5", key: "1frdt8" }],
   ["path", { d: "M8 17v-3", key: "17ska0" }]
 ];
-const ChartColumn = createLucideIcon("chart-column", __iconNode$1w);
+const ChartColumn = createLucideIcon("chart-column", __iconNode$1y);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1v = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-const Check = createLucideIcon("check", __iconNode$1v);
+const __iconNode$1x = [
+  ["path", { d: "M18 6 7 17l-5-5", key: "116fxf" }],
+  ["path", { d: "m22 10-7.5 7.5L13 16", key: "ke71qq" }]
+];
+const CheckCheck = createLucideIcon("check-check", __iconNode$1x);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1u = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$1u);
+const __iconNode$1w = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+const Check = createLucideIcon("check", __iconNode$1w);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1t = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$1t);
+const __iconNode$1v = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$1v);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1s = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$1s);
+const __iconNode$1u = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$1u);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1r = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
-const ChevronUp = createLucideIcon("chevron-up", __iconNode$1r);
+const __iconNode$1t = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$1t);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1s = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+const ChevronUp = createLucideIcon("chevron-up", __iconNode$1s);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1r = [
+  ["path", { d: "m7 15 5 5 5-5", key: "1hf1tw" }],
+  ["path", { d: "m7 9 5-5 5 5", key: "sgt6xg" }]
+];
+const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$1r);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26038,10 +26079,11 @@ const ChevronUp = createLucideIcon("chevron-up", __iconNode$1r);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1q = [
-  ["path", { d: "m7 15 5 5 5-5", key: "1hf1tw" }],
-  ["path", { d: "m7 9 5-5 5 5", key: "sgt6xg" }]
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
 ];
-const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$1q);
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$1q);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26049,11 +26091,10 @@ const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$1q);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1p = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+  ["path", { d: "M21.801 10A10 10 0 1 1 17 3.335", key: "yps3ct" }],
+  ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
 ];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$1p);
+const CircleCheckBig = createLucideIcon("circle-check-big", __iconNode$1p);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26061,10 +26102,10 @@ const CircleAlert = createLucideIcon("circle-alert", __iconNode$1p);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1o = [
-  ["path", { d: "M21.801 10A10 10 0 1 1 17 3.335", key: "yps3ct" }],
-  ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
 ];
-const CircleCheckBig = createLucideIcon("circle-check-big", __iconNode$1o);
+const CircleCheck = createLucideIcon("circle-check", __iconNode$1o);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26072,10 +26113,17 @@ const CircleCheckBig = createLucideIcon("circle-check-big", __iconNode$1o);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1n = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+  ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
+  [
+    "path",
+    {
+      d: "M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2",
+      key: "116196"
+    }
+  ],
+  ["path", { d: "m9 14 2 2 4-4", key: "df797q" }]
 ];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$1n);
+const ClipboardCheck = createLucideIcon("clipboard-check", __iconNode$1n);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26091,9 +26139,12 @@ const __iconNode$1m = [
       key: "116196"
     }
   ],
-  ["path", { d: "m9 14 2 2 4-4", key: "df797q" }]
+  ["path", { d: "M12 11h4", key: "1jrz19" }],
+  ["path", { d: "M12 16h4", key: "n85exb" }],
+  ["path", { d: "M8 11h.01", key: "1dfujw" }],
+  ["path", { d: "M8 16h.01", key: "18s6g9" }]
 ];
-const ClipboardCheck = createLucideIcon("clipboard-check", __iconNode$1m);
+const ClipboardList = createLucideIcon("clipboard-list", __iconNode$1m);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26101,20 +26152,10 @@ const ClipboardCheck = createLucideIcon("clipboard-check", __iconNode$1m);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1l = [
-  ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
-  [
-    "path",
-    {
-      d: "M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2",
-      key: "116196"
-    }
-  ],
-  ["path", { d: "M12 11h4", key: "1jrz19" }],
-  ["path", { d: "M12 16h4", key: "n85exb" }],
-  ["path", { d: "M8 11h.01", key: "1dfujw" }],
-  ["path", { d: "M8 16h.01", key: "18s6g9" }]
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
 ];
-const ClipboardList = createLucideIcon("clipboard-list", __iconNode$1l);
+const Clock = createLucideIcon("clock", __iconNode$1l);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26122,10 +26163,10 @@ const ClipboardList = createLucideIcon("clipboard-list", __iconNode$1l);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1k = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
+  ["rect", { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2", key: "17jyea" }],
+  ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
 ];
-const Clock = createLucideIcon("clock", __iconNode$1k);
+const Copy = createLucideIcon("copy", __iconNode$1k);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26133,10 +26174,10 @@ const Clock = createLucideIcon("clock", __iconNode$1k);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1j = [
-  ["rect", { width: "14", height: "14", x: "8", y: "8", rx: "2", ry: "2", key: "17jyea" }],
-  ["path", { d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2", key: "zix9uf" }]
+  ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "2", key: "ynyp8z" }],
+  ["line", { x1: "2", x2: "22", y1: "10", y2: "10", key: "1b3vmo" }]
 ];
-const Copy = createLucideIcon("copy", __iconNode$1j);
+const CreditCard = createLucideIcon("credit-card", __iconNode$1j);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26144,17 +26185,6 @@ const Copy = createLucideIcon("copy", __iconNode$1j);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1i = [
-  ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "2", key: "ynyp8z" }],
-  ["line", { x1: "2", x2: "22", y1: "10", y2: "10", key: "1b3vmo" }]
-];
-const CreditCard = createLucideIcon("credit-card", __iconNode$1i);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1h = [
   [
     "path",
     {
@@ -26164,7 +26194,18 @@ const __iconNode$1h = [
   ],
   ["path", { d: "M5 21h14", key: "11awu3" }]
 ];
-const Crown = createLucideIcon("crown", __iconNode$1h);
+const Crown = createLucideIcon("crown", __iconNode$1i);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1h = [
+  ["line", { x1: "12", x2: "12", y1: "2", y2: "22", key: "7eqyqh" }],
+  ["path", { d: "M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6", key: "1b0p4s" }]
+];
+const DollarSign = createLucideIcon("dollar-sign", __iconNode$1h);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26172,10 +26213,11 @@ const Crown = createLucideIcon("crown", __iconNode$1h);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1g = [
-  ["line", { x1: "12", x2: "12", y1: "2", y2: "22", key: "7eqyqh" }],
-  ["path", { d: "M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6", key: "1b0p4s" }]
+  ["path", { d: "M12 15V3", key: "m9g1x1" }],
+  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
+  ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
 ];
-const DollarSign = createLucideIcon("dollar-sign", __iconNode$1g);
+const Download = createLucideIcon("download", __iconNode$1g);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26183,18 +26225,6 @@ const DollarSign = createLucideIcon("dollar-sign", __iconNode$1g);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1f = [
-  ["path", { d: "M12 15V3", key: "m9g1x1" }],
-  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
-  ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
-];
-const Download = createLucideIcon("download", __iconNode$1f);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1e = [
   [
     "path",
     {
@@ -26210,14 +26240,14 @@ const __iconNode$1e = [
     }
   ]
 ];
-const Droplets = createLucideIcon("droplets", __iconNode$1e);
+const Droplets = createLucideIcon("droplets", __iconNode$1f);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1d = [
+const __iconNode$1e = [
   [
     "path",
     {
@@ -26235,14 +26265,14 @@ const __iconNode$1d = [
   ],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
 ];
-const EyeOff = createLucideIcon("eye-off", __iconNode$1d);
+const EyeOff = createLucideIcon("eye-off", __iconNode$1e);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1c = [
+const __iconNode$1d = [
   [
     "path",
     {
@@ -26252,7 +26282,21 @@ const __iconNode$1c = [
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Eye = createLucideIcon("eye", __iconNode$1c);
+const Eye = createLucideIcon("eye", __iconNode$1d);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1c = [
+  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  ["path", { d: "M8 18v-2", key: "qcmpov" }],
+  ["path", { d: "M12 18v-4", key: "q1q25u" }],
+  ["path", { d: "M16 18v-6", key: "15y0np" }]
+];
+const FileChartColumnIncreasing = createLucideIcon("file-chart-column-increasing", __iconNode$1c);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26260,20 +26304,6 @@ const Eye = createLucideIcon("eye", __iconNode$1c);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1b = [
-  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
-  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
-  ["path", { d: "M8 18v-2", key: "qcmpov" }],
-  ["path", { d: "M12 18v-4", key: "q1q25u" }],
-  ["path", { d: "M16 18v-6", key: "15y0np" }]
-];
-const FileChartColumnIncreasing = createLucideIcon("file-chart-column-increasing", __iconNode$1b);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1a = [
   ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
   ["path", { d: "M16 22h2a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3.5", key: "13ddob" }],
   ["path", { d: "M4.017 11.512a6 6 0 1 0 8.466 8.475", key: "s6vs5t" }],
@@ -26285,7 +26315,20 @@ const __iconNode$1a = [
     }
   ]
 ];
-const FileChartPie = createLucideIcon("file-chart-pie", __iconNode$1a);
+const FileChartPie = createLucideIcon("file-chart-pie", __iconNode$1b);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1a = [
+  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  ["path", { d: "M9 15h6", key: "cctwl0" }],
+  ["path", { d: "M12 18v-6", key: "17g6i2" }]
+];
+const FilePlus = createLucideIcon("file-plus", __iconNode$1a);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26295,10 +26338,11 @@ const FileChartPie = createLucideIcon("file-chart-pie", __iconNode$1a);
 const __iconNode$19 = [
   ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
   ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
-  ["path", { d: "M9 15h6", key: "cctwl0" }],
-  ["path", { d: "M12 18v-6", key: "17g6i2" }]
+  ["path", { d: "M10 9H8", key: "b1mrlr" }],
+  ["path", { d: "M16 13H8", key: "t4e002" }],
+  ["path", { d: "M16 17H8", key: "z1uh3a" }]
 ];
-const FilePlus = createLucideIcon("file-plus", __iconNode$19);
+const FileText = createLucideIcon("file-text", __iconNode$19);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26306,20 +26350,6 @@ const FilePlus = createLucideIcon("file-plus", __iconNode$19);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$18 = [
-  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
-  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
-  ["path", { d: "M10 9H8", key: "b1mrlr" }],
-  ["path", { d: "M16 13H8", key: "t4e002" }],
-  ["path", { d: "M16 17H8", key: "z1uh3a" }]
-];
-const FileText = createLucideIcon("file-text", __iconNode$18);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$17 = [
   [
     "path",
     {
@@ -26330,14 +26360,14 @@ const __iconNode$17 = [
   ["path", { d: "M6.453 15h11.094", key: "3shlmq" }],
   ["path", { d: "M8.5 2h7", key: "csnxdl" }]
 ];
-const FlaskConical = createLucideIcon("flask-conical", __iconNode$17);
+const FlaskConical = createLucideIcon("flask-conical", __iconNode$18);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$16 = [
+const __iconNode$17 = [
   [
     "path",
     {
@@ -26346,7 +26376,20 @@ const __iconNode$16 = [
     }
   ]
 ];
-const Funnel = createLucideIcon("funnel", __iconNode$16);
+const Funnel = createLucideIcon("funnel", __iconNode$17);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$16 = [
+  ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }],
+  ["circle", { cx: "6", cy: "6", r: "3", key: "1lh9wr" }],
+  ["path", { d: "M13 6h3a2 2 0 0 1 2 2v7", key: "1yeb86" }],
+  ["path", { d: "M11 18H8a2 2 0 0 1-2-2V9", key: "19pyzm" }]
+];
+const GitCompare = createLucideIcon("git-compare", __iconNode$16);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26354,12 +26397,11 @@ const Funnel = createLucideIcon("funnel", __iconNode$16);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$15 = [
-  ["circle", { cx: "18", cy: "18", r: "3", key: "1xkwt0" }],
-  ["circle", { cx: "6", cy: "6", r: "3", key: "1lh9wr" }],
-  ["path", { d: "M13 6h3a2 2 0 0 1 2 2v7", key: "1yeb86" }],
-  ["path", { d: "M11 18H8a2 2 0 0 1-2-2V9", key: "19pyzm" }]
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }]
 ];
-const GitCompare = createLucideIcon("git-compare", __iconNode$15);
+const Globe = createLucideIcon("globe", __iconNode$15);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26367,11 +26409,13 @@ const GitCompare = createLucideIcon("git-compare", __iconNode$15);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$14 = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
-  ["path", { d: "M2 12h20", key: "9i4pu4" }]
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["path", { d: "M3 9h18", key: "1pudct" }],
+  ["path", { d: "M3 15h18", key: "5xshup" }],
+  ["path", { d: "M9 3v18", key: "fh3hqa" }],
+  ["path", { d: "M15 3v18", key: "14nvp0" }]
 ];
-const Globe = createLucideIcon("globe", __iconNode$14);
+const Grid3x3 = createLucideIcon("grid-3x3", __iconNode$14);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26379,13 +26423,16 @@ const Globe = createLucideIcon("globe", __iconNode$14);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$13 = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
-  ["path", { d: "M3 9h18", key: "1pudct" }],
-  ["path", { d: "M3 15h18", key: "5xshup" }],
-  ["path", { d: "M9 3v18", key: "fh3hqa" }],
-  ["path", { d: "M15 3v18", key: "14nvp0" }]
+  [
+    "path",
+    {
+      d: "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
+      key: "c3ymky"
+    }
+  ],
+  ["path", { d: "M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27", key: "1uw2ng" }]
 ];
-const Grid3x3 = createLucideIcon("grid-3x3", __iconNode$13);
+const HeartPulse = createLucideIcon("heart-pulse", __iconNode$13);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26399,10 +26446,9 @@ const __iconNode$12 = [
       d: "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
       key: "c3ymky"
     }
-  ],
-  ["path", { d: "M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27", key: "1uw2ng" }]
+  ]
 ];
-const HeartPulse = createLucideIcon("heart-pulse", __iconNode$12);
+const Heart = createLucideIcon("heart", __iconNode$12);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26410,15 +26456,13 @@ const HeartPulse = createLucideIcon("heart-pulse", __iconNode$12);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$11 = [
-  [
-    "path",
-    {
-      d: "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
-      key: "c3ymky"
-    }
-  ]
+  ["path", { d: "M6 3h12", key: "ggurg9" }],
+  ["path", { d: "M6 8h12", key: "6g4wlu" }],
+  ["path", { d: "m6 13 8.5 8", key: "u1kupk" }],
+  ["path", { d: "M6 13h3", key: "wdp6ag" }],
+  ["path", { d: "M9 13c6.667 0 6.667-10 0-10", key: "1nkvk2" }]
 ];
-const Heart = createLucideIcon("heart", __iconNode$11);
+const IndianRupee = createLucideIcon("indian-rupee", __iconNode$11);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26426,13 +26470,11 @@ const Heart = createLucideIcon("heart", __iconNode$11);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$10 = [
-  ["path", { d: "M6 3h12", key: "ggurg9" }],
-  ["path", { d: "M6 8h12", key: "6g4wlu" }],
-  ["path", { d: "m6 13 8.5 8", key: "u1kupk" }],
-  ["path", { d: "M6 13h3", key: "wdp6ag" }],
-  ["path", { d: "M9 13c6.667 0 6.667-10 0-10", key: "1nkvk2" }]
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 16v-4", key: "1dtifu" }],
+  ["path", { d: "M12 8h.01", key: "e9boi3" }]
 ];
-const IndianRupee = createLucideIcon("indian-rupee", __iconNode$10);
+const Info = createLucideIcon("info", __iconNode$10);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26440,11 +26482,11 @@ const IndianRupee = createLucideIcon("indian-rupee", __iconNode$10);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$$ = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 16v-4", key: "1dtifu" }],
-  ["path", { d: "M12 8h.01", key: "e9boi3" }]
+  ["line", { x1: "19", x2: "10", y1: "4", y2: "4", key: "15jd3p" }],
+  ["line", { x1: "14", x2: "5", y1: "20", y2: "20", key: "bu0au3" }],
+  ["line", { x1: "15", x2: "9", y1: "4", y2: "20", key: "uljnxc" }]
 ];
-const Info = createLucideIcon("info", __iconNode$$);
+const Italic$1 = createLucideIcon("italic", __iconNode$$);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26452,18 +26494,6 @@ const Info = createLucideIcon("info", __iconNode$$);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$_ = [
-  ["line", { x1: "19", x2: "10", y1: "4", y2: "4", key: "15jd3p" }],
-  ["line", { x1: "14", x2: "5", y1: "20", y2: "20", key: "bu0au3" }],
-  ["line", { x1: "15", x2: "9", y1: "4", y2: "20", key: "uljnxc" }]
-];
-const Italic$1 = createLucideIcon("italic", __iconNode$_);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$Z = [
   [
     "path",
     {
@@ -26486,7 +26516,20 @@ const __iconNode$Z = [
     }
   ]
 ];
-const Layers = createLucideIcon("layers", __iconNode$Z);
+const Layers = createLucideIcon("layers", __iconNode$_);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$Z = [
+  ["rect", { width: "7", height: "9", x: "3", y: "3", rx: "1", key: "10lvy0" }],
+  ["rect", { width: "7", height: "5", x: "14", y: "3", rx: "1", key: "16une8" }],
+  ["rect", { width: "7", height: "9", x: "14", y: "12", rx: "1", key: "1hutg5" }],
+  ["rect", { width: "7", height: "5", x: "3", y: "16", rx: "1", key: "ldoo1y" }]
+];
+const LayoutDashboard = createLucideIcon("layout-dashboard", __iconNode$Z);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26494,12 +26537,12 @@ const Layers = createLucideIcon("layers", __iconNode$Z);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$Y = [
-  ["rect", { width: "7", height: "9", x: "3", y: "3", rx: "1", key: "10lvy0" }],
-  ["rect", { width: "7", height: "5", x: "14", y: "3", rx: "1", key: "16une8" }],
-  ["rect", { width: "7", height: "9", x: "14", y: "12", rx: "1", key: "1hutg5" }],
-  ["rect", { width: "7", height: "5", x: "3", y: "16", rx: "1", key: "ldoo1y" }]
+  ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
+  ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
+  ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }],
+  ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }]
 ];
-const LayoutDashboard = createLucideIcon("layout-dashboard", __iconNode$Y);
+const LayoutGrid = createLucideIcon("layout-grid", __iconNode$Y);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26507,19 +26550,6 @@ const LayoutDashboard = createLucideIcon("layout-dashboard", __iconNode$Y);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$X = [
-  ["rect", { width: "7", height: "7", x: "3", y: "3", rx: "1", key: "1g98yp" }],
-  ["rect", { width: "7", height: "7", x: "14", y: "3", rx: "1", key: "6d4xhi" }],
-  ["rect", { width: "7", height: "7", x: "14", y: "14", rx: "1", key: "nxv5o0" }],
-  ["rect", { width: "7", height: "7", x: "3", y: "14", rx: "1", key: "1bb6yr" }]
-];
-const LayoutGrid = createLucideIcon("layout-grid", __iconNode$X);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$W = [
   [
     "path",
     {
@@ -26529,14 +26559,14 @@ const __iconNode$W = [
   ],
   ["path", { d: "M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12", key: "mt58a7" }]
 ];
-const Leaf$1 = createLucideIcon("leaf", __iconNode$W);
+const Leaf$1 = createLucideIcon("leaf", __iconNode$X);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$V = [
+const __iconNode$W = [
   ["path", { d: "M10 12h11", key: "6m4ad9" }],
   ["path", { d: "M10 18h11", key: "11hvi2" }],
   ["path", { d: "M10 6h11", key: "c7qv1k" }],
@@ -26544,14 +26574,14 @@ const __iconNode$V = [
   ["path", { d: "M4 6h1v4", key: "cnovpq" }],
   ["path", { d: "M6 18H4c0-1 2-2 2-3s-1-1.5-2-1", key: "m9a95d" }]
 ];
-const ListOrdered = createLucideIcon("list-ordered", __iconNode$V);
+const ListOrdered = createLucideIcon("list-ordered", __iconNode$W);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$U = [
+const __iconNode$V = [
   ["path", { d: "M3 12h.01", key: "nlz23k" }],
   ["path", { d: "M3 18h.01", key: "1tta3j" }],
   ["path", { d: "M3 6h.01", key: "1rqtza" }],
@@ -26559,15 +26589,26 @@ const __iconNode$U = [
   ["path", { d: "M8 18h13", key: "1lx6n3" }],
   ["path", { d: "M8 6h13", key: "ik3vkj" }]
 ];
-const List$1 = createLucideIcon("list", __iconNode$U);
+const List$1 = createLucideIcon("list", __iconNode$V);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$T = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("loader-circle", __iconNode$T);
+const __iconNode$U = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("loader-circle", __iconNode$U);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$T = [
+  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
+  ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
+];
+const Lock = createLucideIcon("lock", __iconNode$T);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26575,10 +26616,11 @@ const LoaderCircle = createLucideIcon("loader-circle", __iconNode$T);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$S = [
-  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
-  ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
+  ["path", { d: "m10 17 5-5-5-5", key: "1bsop3" }],
+  ["path", { d: "M15 12H3", key: "6jk70r" }],
+  ["path", { d: "M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4", key: "u53s6r" }]
 ];
-const Lock = createLucideIcon("lock", __iconNode$S);
+const LogIn = createLucideIcon("log-in", __iconNode$S);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26586,11 +26628,11 @@ const Lock = createLucideIcon("lock", __iconNode$S);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$R = [
-  ["path", { d: "m10 17 5-5-5-5", key: "1bsop3" }],
-  ["path", { d: "M15 12H3", key: "6jk70r" }],
-  ["path", { d: "M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4", key: "u53s6r" }]
+  ["path", { d: "m16 17 5-5-5-5", key: "1bji2h" }],
+  ["path", { d: "M21 12H9", key: "dn1m92" }],
+  ["path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1uf3rs" }]
 ];
-const LogIn = createLucideIcon("log-in", __iconNode$R);
+const LogOut = createLucideIcon("log-out", __iconNode$R);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26598,11 +26640,10 @@ const LogIn = createLucideIcon("log-in", __iconNode$R);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$Q = [
-  ["path", { d: "m16 17 5-5-5-5", key: "1bji2h" }],
-  ["path", { d: "M21 12H9", key: "dn1m92" }],
-  ["path", { d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4", key: "1uf3rs" }]
+  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
+  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
 ];
-const LogOut = createLucideIcon("log-out", __iconNode$Q);
+const Mail = createLucideIcon("mail", __iconNode$Q);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26610,17 +26651,6 @@ const LogOut = createLucideIcon("log-out", __iconNode$Q);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$P = [
-  ["path", { d: "m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7", key: "132q7q" }],
-  ["rect", { x: "2", y: "4", width: "20", height: "16", rx: "2", key: "izxlao" }]
-];
-const Mail = createLucideIcon("mail", __iconNode$P);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$O = [
   [
     "path",
     {
@@ -26630,7 +26660,19 @@ const __iconNode$O = [
   ],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
 ];
-const MapPin = createLucideIcon("map-pin", __iconNode$O);
+const MapPin = createLucideIcon("map-pin", __iconNode$P);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$O = [
+  ["path", { d: "M4 12h16", key: "1lakjw" }],
+  ["path", { d: "M4 18h16", key: "19g7jn" }],
+  ["path", { d: "M4 6h16", key: "1o0s65" }]
+];
+const Menu$1 = createLucideIcon("menu", __iconNode$O);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26638,11 +26680,9 @@ const MapPin = createLucideIcon("map-pin", __iconNode$O);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$N = [
-  ["path", { d: "M4 12h16", key: "1lakjw" }],
-  ["path", { d: "M4 18h16", key: "19g7jn" }],
-  ["path", { d: "M4 6h16", key: "1o0s65" }]
+  ["path", { d: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z", key: "1lielz" }]
 ];
-const Menu$1 = createLucideIcon("menu", __iconNode$N);
+const MessageSquare = createLucideIcon("message-square", __iconNode$N);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -101183,308 +101223,6 @@ function RichTextEditor({
     }
   );
 }
-const prescriptions = [
-  {
-    id: "rx001",
-    patientId: "p001",
-    patientName: "Arjun Sharma",
-    date: "2026-04-05",
-    remedy: "Natrum Muriaticum",
-    potency: "1M",
-    dosage: "2 pills",
-    frequency: "Single dose",
-    duration: "4 weeks",
-    caseNotes: "Classic Nat-Mur picture — grief held inward, migraines with zigzag aura, worse from consolation. Thirst for large quantities of water. Craving for salty foods.",
-    symptoms: [
-      "Migraine with visual aura",
-      "Grief suppressed",
-      "Craving salt",
-      "Thirst increased",
-      "Consolation aggravates"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx002",
-    patientId: "p002",
-    patientName: "Priya Nair",
-    date: "2026-04-08",
-    remedy: "Apis Mellifica",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "TDS (thrice daily)",
-    duration: "2 weeks",
-    caseNotes: "Urticaria with burning-stinging sensation, better cold application. Puffiness of eyelids. Absence of thirst. Worse heat and pressure.",
-    symptoms: [
-      "Urticaria with stinging",
-      "Better cold",
-      "Absence of thirst",
-      "Puffiness",
-      "Worse heat"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx003",
-    patientId: "p003",
-    patientName: "Mohammed Al-Rashid",
-    date: "2026-03-28",
-    remedy: "Aurum Metallicum",
-    potency: "200C",
-    dosage: "2 pills",
-    frequency: "Weekly",
-    duration: "8 weeks",
-    caseNotes: "Hypertension with anticipatory anxiety. Perfectionist personality, guilt-ridden. Heart feels heavy. Worse at night, better motion.",
-    symptoms: [
-      "Hypertension",
-      "Anticipatory anxiety",
-      "Depression",
-      "Insomnia",
-      "Guilt complex"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx004",
-    patientId: "p004",
-    patientName: "Sarah Thompson",
-    date: "2026-04-01",
-    remedy: "Sepia",
-    potency: "200C",
-    dosage: "2 pills",
-    frequency: "Weekly",
-    duration: "6 weeks",
-    caseNotes: "Endometriosis with bearing-down sensation. Indifference to loved ones during pain. Worse standing, better vigorous exercise. Chilly patient, craves sour.",
-    symptoms: [
-      "Dysmenorrhea",
-      "Bearing-down sensation",
-      "Indifference",
-      "Worse standing",
-      "Craving sour"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx005",
-    patientId: "p005",
-    patientName: "Rahul Gupta",
-    date: "2026-04-09",
-    remedy: "Stramonium",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "BD (twice daily)",
-    duration: "4 weeks",
-    caseNotes: "ADHD with restlessness, violent behavior. Fear of darkness. Night terrors. Loquacity. Tonsillitis with membrane formation. Thirstless.",
-    symptoms: [
-      "ADHD",
-      "Restlessness",
-      "Fear of dark",
-      "Night terrors",
-      "Tonsillitis"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx006",
-    patientId: "p006",
-    patientName: "Elena Kozlov",
-    date: "2026-03-15",
-    remedy: "Rhus Toxicodendron",
-    potency: "200C",
-    dosage: "2 pills",
-    frequency: "Every 3 days",
-    duration: "6 weeks",
-    caseNotes: "Rheumatoid arthritis — initial stiffness on first motion, better continued motion. Worse cold damp. Restless — must keep moving. Red triangular tip of tongue.",
-    symptoms: [
-      "Joint stiffness",
-      "Better continued motion",
-      "Worse cold damp",
-      "Restlessness",
-      "Initial motion aggravation"
-    ],
-    status: "completed"
-  },
-  {
-    id: "rx007",
-    patientId: "p007",
-    patientName: "Vijay Krishnamurthy",
-    date: "2026-04-07",
-    remedy: "Syzygium Jambolanum",
-    potency: "Q (Mother Tincture)",
-    dosage: "10 drops in water",
-    frequency: "BD (twice daily)",
-    duration: "3 months",
-    caseNotes: "Diabetic neuropathy with burning pains in extremities. Strong anti-diabetic action at Q potency. Complement: Uranium Nitricum 3X for polydipsia.",
-    symptoms: [
-      "Hyperglycemia",
-      "Burning extremities",
-      "Polydipsia",
-      "Polyuria",
-      "Fatigue"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx008",
-    patientId: "p008",
-    patientName: "Amelia Johnson",
-    date: "2026-04-02",
-    remedy: "Thyroidinum",
-    potency: "3X",
-    dosage: "4 pills",
-    frequency: "TDS (thrice daily)",
-    duration: "2 months",
-    caseNotes: "Hashimoto hypothyroid — goitrous tendency, obesity, hair loss, mental dullness. Supports thyroid gland organopathically. Combined with Calc Carb 200C weekly.",
-    symptoms: [
-      "Hypothyroidism",
-      "Hair loss",
-      "Weight gain",
-      "Mental dullness",
-      "Cold sensitivity"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx009",
-    patientId: "p009",
-    patientName: "Kavitha Reddy",
-    date: "2026-04-10",
-    remedy: "Pulsatilla",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "OD (once daily)",
-    duration: "4 weeks",
-    caseNotes: "PCOS with delayed, scanty, clotted menses. Mild, yielding, weeping disposition. Worse warmth, better fresh air. Thirstless. Changeable symptoms.",
-    symptoms: [
-      "Irregular menses",
-      "PCOS",
-      "Weeping disposition",
-      "Thirstless",
-      "Worse heat"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx010",
-    patientId: "p010",
-    patientName: "Hans Mueller",
-    date: "2026-03-22",
-    remedy: "Sabal Serrulata",
-    potency: "Q (Mother Tincture)",
-    dosage: "15 drops in water",
-    frequency: "BD (twice daily)",
-    duration: "3 months",
-    caseNotes: "BPH with weak stream, dribbling, frequency. Cold sensation in genitals. Specific remedy for prostate. Adjunct: Thuja 200C for UTI prevention.",
-    symptoms: [
-      "BPH symptoms",
-      "Weak urinary stream",
-      "Frequency",
-      "Dribbling",
-      "Cold genitals"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx011",
-    patientId: "p011",
-    patientName: "Sunita Patel",
-    date: "2026-04-06",
-    remedy: "Lachesis",
-    potency: "200C",
-    dosage: "2 pills",
-    frequency: "Weekly",
-    duration: "8 weeks",
-    caseNotes: "Menopausal — hot flushes predominantly left-sided, worse on waking, worse tight clothing. Loquacious, jealous, suspicious. Excellent Lachesis constitutional.",
-    symptoms: [
-      "Hot flushes",
-      "Worse tight clothing",
-      "Worse on waking",
-      "Left-sided",
-      "Loquacity"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx012",
-    patientId: "p013",
-    patientName: "Fatima Al-Zahra",
-    date: "2026-04-03",
-    remedy: "Arnica Montana",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "TDS (thrice daily)",
-    duration: "3 weeks",
-    caseNotes: 'Fibromyalgia with bruised, sore sensation throughout body. Worse slightest touch. Bed feels too hard. Says "nothing is wrong" despite evident pain.',
-    symptoms: [
-      "Fibromyalgia",
-      "Bruised soreness",
-      "Worse touch",
-      "Bed too hard",
-      "Denies illness"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx013",
-    patientId: "p014",
-    patientName: "Rajan Menon",
-    date: "2026-04-04",
-    remedy: "Sulphur",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "OD (once daily)",
-    duration: "4 weeks",
-    caseNotes: "Acne — oily skin, pustular, worse exam stress. Untidy in habit, philosophical. Burning heat of eruptions. Worse washing. Sinking feeling at 11am.",
-    symptoms: [
-      "Acne vulgaris",
-      "Oily skin",
-      "Worse stress",
-      "Burning eruptions",
-      "11am hunger"
-    ],
-    status: "active"
-  },
-  {
-    id: "rx014",
-    patientId: "p015",
-    patientName: "Isabella Rossi",
-    date: "2026-03-18",
-    remedy: "Lycopodium",
-    potency: "200C",
-    dosage: "2 pills",
-    frequency: "Weekly",
-    duration: "6 weeks",
-    caseNotes: "IBS — alternating bowel habit, bloating worse 4-8pm, rumbling flatulence. Anticipatory anxiety. Craving sweets. Right-sided complaints. Intellectual but cowardly.",
-    symptoms: [
-      "IBS",
-      "Bloating 4-8pm",
-      "Flatulence",
-      "Alternating bowels",
-      "Craving sweets"
-    ],
-    status: "stopped"
-  },
-  {
-    id: "rx015",
-    patientId: "p001",
-    patientName: "Arjun Sharma",
-    date: "2026-02-10",
-    remedy: "Belladonna",
-    potency: "30C",
-    dosage: "4 pills",
-    frequency: "TDS (thrice daily)",
-    duration: "2 weeks",
-    caseNotes: "Acute migraine management — sudden, violent, throbbing headache. Face hot and red. Dilated pupils. Worse light, noise, jarring. Better in dark quiet room.",
-    symptoms: [
-      "Acute migraine",
-      "Throbbing headache",
-      "Face red and hot",
-      "Worse light",
-      "Worse noise"
-    ],
-    status: "completed"
-  }
-];
 function usePatients() {
   const [patients$1, setPatients] = reactExports.useState([]);
   const [isLoading, setIsLoading] = reactExports.useState(true);
@@ -102708,11 +102446,13 @@ function CaseTakingTab({
   patient,
   nextVisitDate,
   onVisitSaved,
-  onOpenScheduleModal
+  onOpenScheduleModal,
+  medicine,
+  onMedicineChange,
+  onMedicineSaved
 }) {
   const [symptoms, setSymptoms] = reactExports.useState("");
   const [investigation, setInvestigation] = reactExports.useState("");
-  const [medicine, setMedicine] = reactExports.useState("");
   const [isRecording, setIsRecording] = reactExports.useState(false);
   const [showDiagnosis, setShowDiagnosis] = reactExports.useState(false);
   const [diagnoses, setDiagnoses] = reactExports.useState([]);
@@ -102734,70 +102474,6 @@ function CaseTakingTab({
       isDemo: true
     }
   ]);
-  const [consultationFee, setConsultationFee] = reactExports.useState("");
-  const [medicineRegular, setMedicineRegular] = reactExports.useState("");
-  const [extraMedicine, setExtraMedicine] = reactExports.useState("");
-  const [registrationFee, setRegistrationFee] = reactExports.useState("");
-  const [dueAmount, setDueAmount] = reactExports.useState("");
-  const [feeHistory, setFeeHistory] = reactExports.useState([
-    {
-      id: "fee-demo-1",
-      date: "2026-05-10T10:30:00",
-      consultationFee: 500,
-      medicineRegular: 300,
-      extraMedicine: 150,
-      registrationFee: 200,
-      totalAmount: 1150,
-      dueAmount: 200,
-      confirmedToPharmacist: true
-    },
-    {
-      id: "fee-demo-2",
-      date: "2026-03-22T14:15:00",
-      consultationFee: 500,
-      medicineRegular: 250,
-      extraMedicine: 0,
-      registrationFee: 0,
-      totalAmount: 750,
-      dueAmount: 0,
-      confirmedToPharmacist: false
-    }
-  ]);
-  const totalAmount = (Number.parseFloat(consultationFee) || 0) + (Number.parseFloat(medicineRegular) || 0) + (Number.parseFloat(extraMedicine) || 0) + (Number.parseFloat(registrationFee) || 0);
-  const handleSaveFee = () => {
-    if (totalAmount === 0) {
-      ue.error("Please enter at least one fee amount before saving.");
-      return;
-    }
-    const newFee = {
-      id: `fee-${Date.now()}`,
-      date: (/* @__PURE__ */ new Date()).toISOString(),
-      consultationFee: Number.parseFloat(consultationFee) || 0,
-      medicineRegular: Number.parseFloat(medicineRegular) || 0,
-      extraMedicine: Number.parseFloat(extraMedicine) || 0,
-      registrationFee: Number.parseFloat(registrationFee) || 0,
-      totalAmount,
-      dueAmount: Number.parseFloat(dueAmount) || 0,
-      confirmedToPharmacist: false
-    };
-    setFeeHistory((prev) => [newFee, ...prev]);
-    setConsultationFee("");
-    setMedicineRegular("");
-    setExtraMedicine("");
-    setRegistrationFee("");
-    setDueAmount("");
-    ue.success("Fee structure saved successfully!");
-  };
-  const handleConfirmToPharmacist = (feeId) => {
-    setFeeHistory(
-      (prev) => prev.map(
-        (f2) => f2.id === feeId ? { ...f2, confirmedToPharmacist: true } : f2
-      )
-    );
-    ue.success("Fee confirmed and sent to pharmacist!", {
-      description: "The pharmacist has been notified of the fee details."
-    });
-  };
   const [visitHistory, setVisitHistory] = reactExports.useState(DEMO_PAST_VISITS);
   const [expandedVisits, setExpandedVisits] = reactExports.useState(
     /* @__PURE__ */ new Set(["visit-demo-1"])
@@ -102865,7 +102541,7 @@ function CaseTakingTab({
   const resetForm = () => {
     setSymptoms("");
     setInvestigation("");
-    setMedicine("");
+    onMedicineChange("");
     setLabFiles([
       { name: "Blood_Report.pdf", type: "lab", size: "1.2 MB", isDemo: true },
       { name: "X-Ray.jpg", type: "lab", size: "3.4 MB", isDemo: true }
@@ -102891,7 +102567,7 @@ function CaseTakingTab({
   const handleEditVisit = (visit) => {
     setSymptoms(visit.symptoms);
     setInvestigation(visit.investigation);
-    setMedicine(visit.medicine);
+    onMedicineChange(visit.medicine);
     setVisitType(visit.visitType ?? "OP");
     setEditingVisitId(visit.id);
     setShowDiagnosis(false);
@@ -102934,6 +102610,7 @@ function CaseTakingTab({
       };
       setVisitHistory((prev) => [newVisit, ...prev]);
       onVisitSaved(nextVisitDate);
+      onMedicineSaved(medicine);
       resetForm();
       ue.success("Visit saved successfully!");
     }
@@ -103171,7 +102848,7 @@ function CaseTakingTab({
                       RichTextEditor,
                       {
                         value: medicine,
-                        onChange: setMedicine,
+                        onChange: onMedicineChange,
                         placeholder: "Enter remedy, potency, dosage, and instructions…",
                         "data-ocid": "case-taking.medicine_input"
                       }
@@ -103341,228 +103018,6 @@ function CaseTakingTab({
               ]
             }
           )
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5 space-y-5", "data-ocid": "fee-structure.panel", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2.5", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-8 h-8 rounded-lg bg-emerald-500/15 border border-emerald-400/25 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(IndianRupee, { className: "w-4 h-4 text-emerald-400" }) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-semibold font-display text-foreground text-sm", children: "Fee Structure" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-muted-foreground", children: "Enter billing details for this visit" })
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4", children: [
-            {
-              label: "Consultation Fee",
-              value: consultationFee,
-              setter: setConsultationFee,
-              ocid: "fee-structure.consultation_input",
-              color: "text-blue-400"
-            },
-            {
-              label: "Medicine (Regular)",
-              value: medicineRegular,
-              setter: setMedicineRegular,
-              ocid: "fee-structure.medicine_regular_input",
-              color: "text-violet-400"
-            },
-            {
-              label: "Extra Medicine",
-              value: extraMedicine,
-              setter: setExtraMedicine,
-              ocid: "fee-structure.extra_medicine_input",
-              color: "text-amber-400"
-            },
-            {
-              label: "One-Time Registration",
-              value: registrationFee,
-              setter: setRegistrationFee,
-              ocid: "fee-structure.registration_input",
-              color: "text-cyan-400"
-            }
-          ].map(({ label, value, setter, ocid, color: color2 }) => {
-            const inputId = ocid.replace(/[./]/g, "-");
-            return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "label",
-                {
-                  htmlFor: inputId,
-                  className: `text-[11px] font-medium uppercase tracking-wide ${color2}`,
-                  children: label
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute left-3 top-1/2 -translate-y-1/2 text-sm font-medium text-muted-foreground select-none", children: "₹" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "input",
-                  {
-                    id: inputId,
-                    type: "number",
-                    min: "0",
-                    step: "1",
-                    value,
-                    onChange: (e3) => setter(e3.target.value),
-                    placeholder: "0",
-                    "data-ocid": ocid,
-                    className: "w-full pl-7 pr-3 py-2.5 rounded-lg bg-white/5 border border-white/15 focus:border-primary/50 focus:ring-2 focus:ring-primary/15 outline-none text-sm text-foreground placeholder:text-muted-foreground/50 transition-all duration-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                  }
-                )
-              ] })
-            ] }, label);
-          }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-medium uppercase tracking-wide text-emerald-400", children: "Total Amount" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute left-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-emerald-400 select-none", children: "₹" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "div",
-                  {
-                    "data-ocid": "fee-structure.total_amount",
-                    className: "w-full pl-7 pr-3 py-2.5 rounded-lg bg-emerald-500/8 border border-emerald-400/25 text-sm font-semibold text-emerald-400 select-none cursor-default",
-                    children: totalAmount.toLocaleString("en-IN")
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-emerald-400/60 font-medium", children: "AUTO" })
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "label",
-                {
-                  htmlFor: "fee-due-amount",
-                  className: "text-[11px] font-medium uppercase tracking-wide text-rose-400",
-                  children: "Due Amount"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute left-3 top-1/2 -translate-y-1/2 text-sm font-medium text-muted-foreground select-none", children: "₹" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "input",
-                  {
-                    id: "fee-due-amount",
-                    type: "number",
-                    min: "0",
-                    step: "1",
-                    value: dueAmount,
-                    onChange: (e3) => setDueAmount(e3.target.value),
-                    placeholder: "0",
-                    "data-ocid": "fee-structure.due_amount_input",
-                    className: "w-full pl-7 pr-3 py-2.5 rounded-lg bg-rose-500/8 border border-rose-400/25 focus:border-rose-400/50 focus:ring-2 focus:ring-rose-400/15 outline-none text-sm text-foreground placeholder:text-muted-foreground/50 transition-all duration-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                  }
-                )
-              ] })
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-1 border-t border-white/10", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              Button$1,
-              {
-                type: "button",
-                variant: "outline",
-                onClick: handleSaveFee,
-                className: "flex items-center gap-2 px-5",
-                "data-ocid": "fee-structure.save_button",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Save, { className: "w-4 h-4" }),
-                  "Save Fee"
-                ]
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              Button$1,
-              {
-                type: "button",
-                onClick: () => {
-                  if (feeHistory.length === 0) {
-                    ue.error("Save fee details first before confirming.");
-                    return;
-                  }
-                  const latestUnconfirmed = feeHistory.find(
-                    (f2) => !f2.confirmedToPharmacist
-                  );
-                  if (!latestUnconfirmed) {
-                    ue.info("All saved fees have already been confirmed.");
-                    return;
-                  }
-                  handleConfirmToPharmacist(latestUnconfirmed.id);
-                },
-                className: "flex items-center gap-2 px-5 bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-500 shadow-md shadow-emerald-900/20",
-                "data-ocid": "fee-structure.confirm_pharmacist_button",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Pill, { className: "w-4 h-4" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "w-3.5 h-3.5" }),
-                  "Confirm & Send to Pharmacist"
-                ]
-              }
-            )
-          ] }),
-          feeHistory.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2.5 pt-1", "data-ocid": "fee-structure.history", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-medium uppercase tracking-wide text-muted-foreground", children: "Fee History" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2", children: feeHistory.map((fee, idx) => {
-              const feeDate = new Date(fee.date);
-              return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                motion.div,
-                {
-                  initial: { opacity: 0, y: -6 },
-                  animate: { opacity: 1, y: 0 },
-                  transition: { delay: idx * 0.05, duration: 0.25 },
-                  className: `flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-xl border transition-colors duration-200 ${fee.confirmedToPharmacist ? "bg-emerald-500/8 border-emerald-400/25" : "bg-white/5 border-white/10"}`,
-                  "data-ocid": `fee-structure.history_item.${idx + 1}`,
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3 min-w-0", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-mono text-primary shrink-0", children: [
-                        feeDate.toLocaleDateString("en-IN", {
-                          day: "2-digit",
-                          month: "short",
-                          year: "numeric"
-                        }),
-                        " ",
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: feeDate.toLocaleTimeString("en-IN", {
-                          hour: "2-digit",
-                          minute: "2-digit"
-                        }) })
-                      ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 flex-wrap", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs text-foreground font-medium", children: [
-                          "Total:",
-                          " ",
-                          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-emerald-400 font-semibold", children: [
-                            "₹",
-                            fee.totalAmount.toLocaleString("en-IN")
-                          ] })
-                        ] }),
-                        fee.dueAmount > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs text-foreground", children: [
-                          "Due:",
-                          " ",
-                          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-rose-400 font-semibold", children: [
-                            "₹",
-                            fee.dueAmount.toLocaleString("en-IN")
-                          ] })
-                        ] })
-                      ] })
-                    ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2 shrink-0", children: fee.confirmedToPharmacist ? /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-3 h-3" }),
-                      "Sent to Pharmacist"
-                    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                      "button",
-                      {
-                        type: "button",
-                        onClick: () => handleConfirmToPharmacist(fee.id),
-                        "data-ocid": `fee-structure.confirm_button.${idx + 1}`,
-                        className: "inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/20 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-400/40 transition-all duration-200",
-                        children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "w-3 h-3" }),
-                          "Confirm"
-                        ]
-                      }
-                    ) })
-                  ]
-                },
-                fee.id
-              );
-            }) })
-          ] })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-end gap-3", children: [
           editingVisitId && /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -103767,37 +103222,806 @@ function CaseTakingTab({
     }
   );
 }
-const CASE_HISTORY = {
-  p001: [
+function FeeStructureTab({
+  lastSavedMedicine
+}) {
+  const [consultationFee, setConsultationFee] = reactExports.useState("");
+  const [medicineRegular, setMedicineRegular] = reactExports.useState("");
+  const [extraMedicine, setExtraMedicine] = reactExports.useState("");
+  const [registrationFee, setRegistrationFee] = reactExports.useState("");
+  const [dueAmount, setDueAmount] = reactExports.useState("");
+  const [confirmedByDoctor, setConfirmedByDoctor] = reactExports.useState(false);
+  const [feeHistory, setFeeHistory] = reactExports.useState([
     {
-      date: "2026-04-05",
-      note: "Follow-up: Natrum Muriaticum 1M prescribed. Patient reports reduced migraine frequency from 6x/month to 2x/month. Visual aura still present but less intense. Continue same remedy.",
-      doctor: "Dr. Meera Joshi"
+      id: "fee-demo-1",
+      date: "2026-05-10T10:30:00",
+      consultationFee: 500,
+      medicineRegular: 300,
+      extraMedicine: 150,
+      registrationFee: 200,
+      totalAmount: 1150,
+      dueAmount: 200,
+      confirmedToPharmacist: true
     },
     {
-      date: "2026-02-10",
-      note: "Initial consultation. Classic Nat-Mur constitutional picture confirmed. Grief suppressed after loss in 2024. Strong desire for salt, thirst for large quantities. Belladonna 30C for acute management.",
-      doctor: "Dr. Meera Joshi"
-    },
-    {
-      date: "2025-11-20",
-      note: "Previous clinic records transferred. Patient had tried Allopathic treatment with partial relief. Decided to switch to homeopathy exclusively.",
-      doctor: "Dr. Anand Verma"
+      id: "fee-demo-2",
+      date: "2026-03-22T14:15:00",
+      consultationFee: 500,
+      medicineRegular: 250,
+      extraMedicine: 0,
+      registrationFee: 0,
+      totalAmount: 750,
+      dueAmount: 0,
+      confirmedToPharmacist: false
     }
-  ],
-  p002: [
-    {
-      date: "2026-04-08",
-      note: "Urticaria case — Apis Mellifica 30C prescribed. Burning-stinging wheals, better cold application, thirstless. Avoid heat triggers, dietary dairy restriction advised.",
-      doctor: "Dr. Meera Joshi"
-    },
-    {
-      date: "2026-03-01",
-      note: "Seasonal allergic rhinitis flare. Allium Cepa 30C given for acute phase. Watery discharge, burning eyes, sneezing on waking.",
-      doctor: "Dr. Meera Joshi"
+  ]);
+  const totalAmount = (Number.parseFloat(consultationFee) || 0) + (Number.parseFloat(medicineRegular) || 0) + (Number.parseFloat(extraMedicine) || 0) + (Number.parseFloat(registrationFee) || 0);
+  const handleSaveFee = () => {
+    if (totalAmount === 0) {
+      ue.error("Please enter at least one fee amount before saving.");
+      return;
     }
-  ]
+    const newFee = {
+      id: `fee-${Date.now()}`,
+      date: (/* @__PURE__ */ new Date()).toISOString(),
+      consultationFee: Number.parseFloat(consultationFee) || 0,
+      medicineRegular: Number.parseFloat(medicineRegular) || 0,
+      extraMedicine: Number.parseFloat(extraMedicine) || 0,
+      registrationFee: Number.parseFloat(registrationFee) || 0,
+      totalAmount,
+      dueAmount: Number.parseFloat(dueAmount) || 0,
+      confirmedToPharmacist: false,
+      medicine: lastSavedMedicine || void 0
+    };
+    setFeeHistory((prev) => [newFee, ...prev]);
+    setConsultationFee("");
+    setMedicineRegular("");
+    setExtraMedicine("");
+    setRegistrationFee("");
+    setDueAmount("");
+    setConfirmedByDoctor(false);
+    ue.success("Fee structure saved successfully!");
+  };
+  const handleConfirmToPharmacist = (feeId) => {
+    setFeeHistory(
+      (prev) => prev.map(
+        (f2) => f2.id === feeId ? { ...f2, confirmedToPharmacist: true } : f2
+      )
+    );
+    ue.success("Fee confirmed and sent to pharmacist!", {
+      description: "The pharmacist has been notified of the fee details."
+    });
+  };
+  const handleConfirmByDoctor = () => {
+    setConfirmedByDoctor(true);
+    ue.success("Confirmed by Doctor!", {
+      description: "The fee structure has been reviewed and confirmed by the doctor."
+    });
+  };
+  const lastSavedMedicineText = lastSavedMedicine.replace(/<[^>]*>/g, "").trim();
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      initial: { opacity: 0, y: 10 },
+      animate: { opacity: 1, y: 0 },
+      transition: { duration: 0.3 },
+      className: "space-y-6",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "glass-card p-5 space-y-3",
+            "data-ocid": "fee-structure.medicines_panel",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-8 h-8 rounded-lg bg-green-500/15 border border-green-400/25 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Pill, { className: "w-4 h-4 text-green-400" }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-semibold font-display text-foreground text-sm", children: "Medicines for Pharmacist" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-muted-foreground", children: "Current medicines added by the doctor in Case Taking" })
+                ] })
+              ] }),
+              lastSavedMedicineText ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-xl bg-green-500/5 border border-green-400/20", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-medium uppercase tracking-wide text-green-400 mb-2", children: "Medicine from Doctor" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  HtmlContent,
+                  {
+                    html: lastSavedMedicine,
+                    className: "prose prose-sm max-w-none dark:prose-invert text-sm leading-relaxed text-foreground"
+                  }
+                )
+              ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "p-6 rounded-xl bg-white/3 border border-white/10 flex flex-col items-center gap-2 text-center",
+                  "data-ocid": "fee-structure.medicines_empty",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Pill, { className: "w-8 h-8 text-muted-foreground/40" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-muted-foreground", children: [
+                      "No medicines added yet. Go to",
+                      " ",
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-primary font-medium", children: "Case Taking" }),
+                      " tab to add medicines."
+                    ] })
+                  ]
+                }
+              )
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5 space-y-5", "data-ocid": "fee-structure.panel", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-8 h-8 rounded-lg bg-emerald-500/15 border border-emerald-400/25 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(IndianRupee, { className: "w-4 h-4 text-emerald-400" }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-semibold font-display text-foreground text-sm", children: "Fee Structure" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-muted-foreground", children: "Enter billing details for this visit" })
+            ] }),
+            confirmedByDoctor && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "ml-auto inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-400", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-3 h-3" }),
+              "Confirmed by Doctor"
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4", children: [
+            {
+              label: "Consultation Fee",
+              value: consultationFee,
+              setter: setConsultationFee,
+              ocid: "fee-structure.consultation_input",
+              color: "text-blue-400"
+            },
+            {
+              label: "Medicine (Regular)",
+              value: medicineRegular,
+              setter: setMedicineRegular,
+              ocid: "fee-structure.medicine_regular_input",
+              color: "text-violet-400"
+            },
+            {
+              label: "Extra Medicine",
+              value: extraMedicine,
+              setter: setExtraMedicine,
+              ocid: "fee-structure.extra_medicine_input",
+              color: "text-amber-400"
+            },
+            {
+              label: "One-Time Registration",
+              value: registrationFee,
+              setter: setRegistrationFee,
+              ocid: "fee-structure.registration_input",
+              color: "text-cyan-400"
+            }
+          ].map(({ label, value, setter, ocid, color: color2 }) => {
+            const inputId = ocid.replace(/[./]/g, "-");
+            return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "label",
+                {
+                  htmlFor: inputId,
+                  className: `text-[11px] font-medium uppercase tracking-wide ${color2}`,
+                  children: label
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute left-3 top-1/2 -translate-y-1/2 text-sm font-medium text-muted-foreground select-none", children: "₹" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "input",
+                  {
+                    id: inputId,
+                    type: "number",
+                    min: "0",
+                    step: "1",
+                    value,
+                    onChange: (e3) => setter(e3.target.value),
+                    placeholder: "0",
+                    "data-ocid": ocid,
+                    className: "w-full pl-7 pr-3 py-2.5 rounded-lg bg-white/5 border border-white/15 focus:border-primary/50 focus:ring-2 focus:ring-primary/15 outline-none text-sm text-foreground placeholder:text-muted-foreground/50 transition-all duration-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                  }
+                )
+              ] })
+            ] }, label);
+          }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-medium uppercase tracking-wide text-emerald-400", children: "Total Amount" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute left-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-emerald-400 select-none", children: "₹" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    "data-ocid": "fee-structure.total_amount",
+                    className: "w-full pl-7 pr-3 py-2.5 rounded-lg bg-emerald-500/8 border border-emerald-400/25 text-sm font-semibold text-emerald-400 select-none cursor-default",
+                    children: totalAmount.toLocaleString("en-IN")
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-emerald-400/60 font-medium", children: "AUTO" })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "label",
+                {
+                  htmlFor: "fee-due-amount",
+                  className: "text-[11px] font-medium uppercase tracking-wide text-rose-400",
+                  children: "Due Amount"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute left-3 top-1/2 -translate-y-1/2 text-sm font-medium text-muted-foreground select-none", children: "₹" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "input",
+                  {
+                    id: "fee-due-amount",
+                    type: "number",
+                    min: "0",
+                    step: "1",
+                    value: dueAmount,
+                    onChange: (e3) => setDueAmount(e3.target.value),
+                    placeholder: "0",
+                    "data-ocid": "fee-structure.due_amount_input",
+                    className: "w-full pl-7 pr-3 py-2.5 rounded-lg bg-rose-500/8 border border-rose-400/25 focus:border-rose-400/50 focus:ring-2 focus:ring-rose-400/15 outline-none text-sm text-foreground placeholder:text-muted-foreground/50 transition-all duration-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                  }
+                )
+              ] })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-1 border-t border-white/10", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              Button$1,
+              {
+                type: "button",
+                variant: "outline",
+                onClick: handleSaveFee,
+                className: "flex items-center gap-2 px-5",
+                "data-ocid": "fee-structure.save_button",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Save, { className: "w-4 h-4" }),
+                  "Save Fee"
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              Button$1,
+              {
+                type: "button",
+                onClick: handleConfirmByDoctor,
+                disabled: confirmedByDoctor,
+                className: "flex items-center gap-2 px-5 bg-blue-600 hover:bg-blue-500 text-white border-blue-500 shadow-md shadow-blue-900/20 disabled:opacity-60 disabled:cursor-not-allowed",
+                "data-ocid": "fee-structure.confirm_doctor_button",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-4 h-4" }),
+                  confirmedByDoctor ? "Confirmed by Doctor" : "Confirm by Doctor"
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              Button$1,
+              {
+                type: "button",
+                onClick: () => {
+                  if (feeHistory.length === 0) {
+                    ue.error("Save fee details first before confirming.");
+                    return;
+                  }
+                  const latestUnconfirmed = feeHistory.find(
+                    (f2) => !f2.confirmedToPharmacist
+                  );
+                  if (!latestUnconfirmed) {
+                    ue.info("All saved fees have already been confirmed.");
+                    return;
+                  }
+                  handleConfirmToPharmacist(latestUnconfirmed.id);
+                },
+                className: "flex items-center gap-2 px-5 bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-500 shadow-md shadow-emerald-900/20",
+                "data-ocid": "fee-structure.confirm_pharmacist_button",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Pill, { className: "w-4 h-4" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "w-3.5 h-3.5" }),
+                  "Confirm & Send to Pharmacist"
+                ]
+              }
+            )
+          ] }),
+          feeHistory.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2.5 pt-1", "data-ocid": "fee-structure.history", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-medium uppercase tracking-wide text-muted-foreground", children: "Fee History" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2", children: feeHistory.map((fee, idx) => {
+              const feeDate = new Date(fee.date);
+              return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                motion.div,
+                {
+                  initial: { opacity: 0, y: -6 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { delay: idx * 0.05, duration: 0.25 },
+                  className: `flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-xl border transition-colors duration-200 ${fee.confirmedToPharmacist ? "bg-emerald-500/8 border-emerald-400/25" : "bg-white/5 border-white/10"}`,
+                  "data-ocid": `fee-structure.history_item.${idx + 1}`,
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-1.5 min-w-0", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-mono text-primary shrink-0", children: [
+                          feeDate.toLocaleDateString("en-IN", {
+                            day: "2-digit",
+                            month: "short",
+                            year: "numeric"
+                          }),
+                          " ",
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: feeDate.toLocaleTimeString("en-IN", {
+                            hour: "2-digit",
+                            minute: "2-digit"
+                          }) })
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 flex-wrap", children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs text-foreground font-medium", children: [
+                            "Total:",
+                            " ",
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-emerald-400 font-semibold", children: [
+                              "₹",
+                              fee.totalAmount.toLocaleString("en-IN")
+                            ] })
+                          ] }),
+                          fee.dueAmount > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs text-foreground", children: [
+                            "Due:",
+                            " ",
+                            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-rose-400 font-semibold", children: [
+                              "₹",
+                              fee.dueAmount.toLocaleString("en-IN")
+                            ] })
+                          ] })
+                        ] })
+                      ] }),
+                      fee.medicine && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-1 p-2 rounded-lg bg-green-500/5 border border-green-400/15", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] font-medium uppercase tracking-wide text-green-400 mb-1", children: "Medicine from Doctor" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          HtmlContent,
+                          {
+                            html: fee.medicine,
+                            className: "prose prose-sm max-w-none dark:prose-invert text-xs leading-relaxed text-foreground"
+                          }
+                        )
+                      ] })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2 shrink-0", children: fee.confirmedToPharmacist ? /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-400", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-3 h-3" }),
+                      "Sent to Pharmacist"
+                    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "button",
+                      {
+                        type: "button",
+                        onClick: () => handleConfirmToPharmacist(fee.id),
+                        "data-ocid": `fee-structure.confirm_button.${idx + 1}`,
+                        className: "inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/20 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-400/40 transition-all duration-200",
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "w-3 h-3" }),
+                          "Confirm"
+                        ]
+                      }
+                    ) })
+                  ]
+                },
+                fee.id
+              );
+            }) })
+          ] })
+        ] })
+      ]
+    }
+  );
+}
+const AUTO_MESSAGE_LABELS = {
+  welcome: "Welcome Message",
+  thank_you: "Thank You for Visiting",
+  booking: "Booking Confirmation",
+  case_taking_reminder: "Case Taking Reminder",
+  booking_reminder: "Booking Reminder",
+  followup_1: "First Follow-up",
+  followup_2: "Second Follow-up",
+  followup_3: "Third Follow-up (Overdue)",
+  manual_cancel: "Manual Cancel Message"
 };
+const AUTO_MESSAGE_COLORS = {
+  welcome: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300 border-emerald-200/60 dark:border-emerald-700/40",
+  thank_you: "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 border-blue-200/60 dark:border-blue-700/40",
+  booking: "bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300 border-violet-200/60 dark:border-violet-700/40",
+  case_taking_reminder: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300 border-amber-200/60 dark:border-amber-700/40",
+  booking_reminder: "bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300 border-sky-200/60 dark:border-sky-700/40",
+  followup_1: "bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300 border-orange-200/60 dark:border-orange-700/40",
+  followup_2: "bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300 border-rose-200/60 dark:border-rose-700/40",
+  followup_3: "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300 border-red-200/60 dark:border-red-700/40",
+  manual_cancel: "bg-slate-100 text-slate-700 dark:bg-slate-900/40 dark:text-slate-300 border-slate-200/60 dark:border-slate-700/40"
+};
+const AUTO_MESSAGE_ICONS = {
+  welcome: BellRing,
+  thank_you: CheckCheck,
+  booking: Calendar,
+  case_taking_reminder: Stethoscope,
+  booking_reminder: Clock,
+  followup_1: MessageSquare,
+  followup_2: MessageSquare,
+  followup_3: CircleAlert,
+  manual_cancel: X
+};
+const DEMO_AUTO_MESSAGES = [
+  {
+    id: "msg-1",
+    type: "welcome",
+    label: "Welcome Message",
+    date: "2026-01-08T09:05:00",
+    status: "Sent",
+    preview: "Welcome to HomeoPath Clinic! 🌿 We're glad to have you as our patient. Our team is here to provide you with the best homeopathic care. Feel free to reach us anytime."
+  },
+  {
+    id: "msg-2",
+    type: "booking",
+    label: "Booking Confirmation",
+    date: "2026-01-07T18:30:00",
+    status: "Sent",
+    preview: "Your appointment is confirmed for 8 Jan 2026 at 9:00 AM with Dr. Priya Nair. Please arrive 10 minutes early."
+  },
+  {
+    id: "msg-3",
+    type: "thank_you",
+    label: "Thank You for Visiting",
+    date: "2026-01-08T11:45:00",
+    status: "Sent",
+    preview: "Thank you for visiting HomeoPath Clinic today! 🙏 We hope you're feeling better soon. Your next visit is scheduled. Take care and follow the prescription."
+  },
+  {
+    id: "msg-4",
+    type: "case_taking_reminder",
+    label: "Case Taking Reminder",
+    date: "2026-03-20T10:00:00",
+    status: "Sent",
+    preview: "Reminder: Your case taking session with Dr. Priya Nair is on 22 Mar 2026 at 2:15 PM. Please note down all your symptoms and medical history before the visit."
+  },
+  {
+    id: "msg-5",
+    type: "booking",
+    label: "Booking Confirmation",
+    date: "2026-03-20T10:01:00",
+    status: "Sent",
+    preview: "Appointment confirmed for 22 Mar 2026 at 2:15 PM with Dr. Priya Nair (Case Taking). HomeoPath Clinic."
+  },
+  {
+    id: "msg-6",
+    type: "booking_reminder",
+    label: "Booking Reminder (Before Date)",
+    date: "2026-03-21T09:00:00",
+    status: "Sent",
+    preview: "⏰ Reminder: You have an appointment tomorrow (22 Mar 2026) at 2:15 PM with Dr. Priya Nair. Please be on time. Location: HomeoPath Clinic, Main Branch."
+  },
+  {
+    id: "msg-7",
+    type: "thank_you",
+    label: "Thank You for Visiting",
+    date: "2026-03-22T16:00:00",
+    status: "Sent",
+    preview: "Thank you for your visit on 22 Mar 2026! 🌿 Your treatment plan has been updated. Please follow the prescribed remedies regularly and contact us for any concerns."
+  },
+  {
+    id: "msg-8",
+    type: "booking",
+    label: "Booking Confirmation",
+    date: "2026-05-08T11:00:00",
+    status: "Sent",
+    preview: "Appointment confirmed for 10 May 2026 at 10:30 AM with Dr. Priya Nair (Follow Up). HomeoPath Clinic."
+  },
+  {
+    id: "msg-9",
+    type: "booking_reminder",
+    label: "Booking Reminder (Before Date)",
+    date: "2026-05-09T09:00:00",
+    status: "Sent",
+    preview: "⏰ Reminder: You have an appointment tomorrow (10 May 2026) at 10:30 AM. Please bring your previous prescription and lab reports."
+  },
+  {
+    id: "msg-10",
+    type: "thank_you",
+    label: "Thank You for Visiting",
+    date: "2026-05-10T12:30:00",
+    status: "Sent",
+    preview: "Thank you for your visit today! 🙏 Your next appointment has been scheduled for 1 Jun 2026. Continue your current remedies and stay hydrated."
+  },
+  {
+    id: "msg-11",
+    type: "followup_1",
+    label: "First Follow-up Reminder",
+    date: "2026-06-08T10:00:00",
+    status: "Sent",
+    preview: "Hi! This is a gentle reminder that your scheduled visit on 1 Jun 2026 has passed. 🌿 We'd love to see you for your follow-up. Please book your next appointment at your earliest convenience."
+  },
+  {
+    id: "msg-12",
+    type: "followup_2",
+    label: "Second Follow-up Reminder",
+    date: "2026-06-15T10:00:00",
+    status: "Sent",
+    preview: "This is your 2nd follow-up reminder from HomeoPath Clinic. You missed your scheduled visit on 1 Jun 2026. Please call us to reschedule your appointment."
+  },
+  {
+    id: "msg-13",
+    type: "followup_3",
+    label: "Third Follow-up (Overdue)",
+    date: "2026-06-22T10:00:00",
+    status: "Sent",
+    preview: "⚠️ URGENT: You have missed 3 follow-up reminders since 1 Jun 2026. Your treatment continuity may be affected. Please contact HomeoPath Clinic immediately to resume your care plan."
+  },
+  {
+    id: "msg-14",
+    type: "manual_cancel",
+    label: "Manual Cancel Message",
+    date: "2026-06-23T14:00:00",
+    status: "Sent",
+    preview: "Your appointment scheduled at HomeoPath Clinic has been cancelled as per your request. We're sorry to see you go. Please contact us to reschedule at any time."
+  },
+  {
+    id: "msg-15",
+    type: "booking",
+    label: "Booking Confirmation",
+    date: "2026-06-28T09:30:00",
+    status: "Pending",
+    preview: "Appointment confirmation for your upcoming visit on 5 Jul 2026 at 10:00 AM. HomeoPath Clinic — awaiting your confirmation."
+  }
+];
+function AutoMessageHistoryTab() {
+  const [filter2, setFilter] = reactExports.useState("all");
+  const [masterEnabled, setMasterEnabled] = reactExports.useState(true);
+  const [categoryEnabled, setCategoryEnabled] = reactExports.useState(() => {
+    const keys2 = Object.keys(AUTO_MESSAGE_LABELS);
+    const init = {};
+    for (const key of keys2) init[key] = true;
+    return init;
+  });
+  const toggleCategory = (type) => {
+    setCategoryEnabled((prev) => ({ ...prev, [type]: !prev[type] }));
+  };
+  const filtered = DEMO_AUTO_MESSAGES.filter((m2) => {
+    return filter2 === "all" || m2.type === filter2;
+  });
+  const statusCounts = {
+    Sent: DEMO_AUTO_MESSAGES.filter((m2) => m2.status === "Sent").length,
+    Pending: DEMO_AUTO_MESSAGES.filter((m2) => m2.status === "Pending").length,
+    Failed: DEMO_AUTO_MESSAGES.filter((m2) => m2.status === "Failed").length
+  };
+  const formatMsgDate = (dateStr) => {
+    const d2 = new Date(dateStr);
+    return d2.toLocaleString("en-US", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+  };
+  const statusStyles = {
+    Sent: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300 border border-emerald-200/50 dark:border-emerald-700/50",
+    Pending: "bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300 border border-amber-200/50 dark:border-amber-700/50",
+    Failed: "bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-300 border border-red-200/50 dark:border-red-700/50"
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      initial: { opacity: 0, y: 10 },
+      animate: { opacity: 1, y: 0 },
+      transition: { duration: 0.3 },
+      className: "space-y-4",
+      "data-ocid": "auto-message-history-tab",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-4 flex items-center justify-between gap-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: `w-10 h-10 rounded-xl flex items-center justify-center ${masterEnabled ? "bg-emerald-100 dark:bg-emerald-900/40" : "bg-muted"}`,
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  BellRing,
+                  {
+                    className: `w-5 h-5 ${masterEnabled ? "text-emerald-600" : "text-muted-foreground"}`
+                  }
+                )
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-semibold text-foreground font-display", children: "Auto Messages" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: masterEnabled ? "Auto messages are active for this patient via WhatsApp" : "All auto messages are paused for this patient" })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              type: "button",
+              onClick: () => setMasterEnabled((v2) => !v2),
+              "data-ocid": "auto-message.master_toggle",
+              className: `relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${masterEnabled ? "bg-emerald-500 border-emerald-500" : "bg-muted border-border"}`,
+              "aria-label": masterEnabled ? "Disable all auto messages" : "Enable all auto messages",
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "span",
+                {
+                  className: `pointer-events-none inline-block h-4 w-4 mt-0.5 rounded-full bg-white shadow-md transform transition-transform duration-200 ${masterEnabled ? "translate-x-5" : "translate-x-0"}`
+                }
+              )
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-4 space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-xs font-semibold text-muted-foreground uppercase tracking-wide", children: "Message Categories" }),
+            !masterEnabled && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs text-amber-500 font-medium flex items-center gap-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "w-3 h-3" }),
+              "Master toggle is OFF"
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 gap-2", children: Object.keys(AUTO_MESSAGE_LABELS).map(
+            (type) => {
+              const Icon2 = AUTO_MESSAGE_ICONS[type];
+              const isOn = masterEnabled && categoryEnabled[type];
+              const categoryIsOn = categoryEnabled[type];
+              return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: `flex items-center justify-between px-3 py-2.5 rounded-xl border transition-colors ${isOn ? "border-border bg-muted/30" : "border-border/50 bg-muted/10 opacity-60"}`,
+                  "data-ocid": `auto-message-category.${type}`,
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2.5 min-w-0", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: `w-7 h-7 rounded-lg border flex items-center justify-center shrink-0 ${isOn ? AUTO_MESSAGE_COLORS[type] : "bg-muted text-muted-foreground border-border"}`,
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: "w-3.5 h-3.5" })
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium text-foreground truncate", children: AUTO_MESSAGE_LABELS[type] })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        type: "button",
+                        onClick: () => toggleCategory(type),
+                        disabled: !masterEnabled,
+                        "data-ocid": `auto-message-category.${type}.toggle`,
+                        "aria-label": `${categoryIsOn ? "Disable" : "Enable"} ${AUTO_MESSAGE_LABELS[type]}`,
+                        className: `relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 transition-colors duration-200 disabled:cursor-not-allowed ${categoryIsOn ? "bg-primary border-primary" : "bg-muted border-border"}`,
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "span",
+                          {
+                            className: `pointer-events-none inline-block h-3 w-3 mt-0.5 rounded-full bg-white shadow transform transition-transform duration-200 ${categoryIsOn ? "translate-x-4" : "translate-x-0"}`
+                          }
+                        )
+                      }
+                    )
+                  ]
+                },
+                type
+              );
+            }
+          ) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-4 text-center", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl font-bold font-display text-foreground", children: DEMO_AUTO_MESSAGES.length }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-muted-foreground mt-0.5", children: "Total Messages" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-4 text-center", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl font-bold font-display text-emerald-500", children: statusCounts.Sent }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-muted-foreground mt-0.5", children: "Delivered" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-4 text-center", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl font-bold font-display text-amber-500", children: statusCounts.Pending }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-muted-foreground mt-0.5", children: "Pending" })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "glass-card p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium text-muted-foreground uppercase tracking-wide shrink-0", children: "Type:" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap gap-1.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                onClick: () => setFilter("all"),
+                className: `px-2.5 py-1 rounded-lg text-xs font-medium transition-colors border ${filter2 === "all" ? "bg-primary text-primary-foreground border-primary" : "bg-muted/50 text-muted-foreground border-border hover:bg-muted"}`,
+                "data-ocid": "auto-msg-filter.all",
+                children: "All"
+              }
+            ),
+            Object.keys(AUTO_MESSAGE_LABELS).map(
+              (type) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => setFilter(type),
+                  className: `px-2.5 py-1 rounded-lg text-xs font-medium transition-colors border ${filter2 === type ? "bg-primary text-primary-foreground border-primary" : "bg-muted/50 text-muted-foreground border-border hover:bg-muted"}`,
+                  "data-ocid": `auto-msg-filter.${type}`,
+                  children: AUTO_MESSAGE_LABELS[type]
+                },
+                type
+              )
+            )
+          ] })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card overflow-hidden", "data-ocid": "auto-message-list", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-5 py-3.5 border-b border-white/10 flex items-center justify-between", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(MessageSquare, { className: "w-4 h-4 text-primary" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-semibold font-display text-foreground text-sm", children: "Message History" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs text-muted-foreground", children: [
+              filtered.length,
+              " messages"
+            ] })
+          ] }),
+          filtered.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "p-10 text-center",
+              "data-ocid": "auto-message-list.empty_state",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(MessageSquare, { className: "w-10 h-10 text-muted-foreground/30 mx-auto mb-3" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "No messages for the selected filter" })
+              ]
+            }
+          ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "divide-y divide-white/5 max-h-[600px] overflow-y-auto", children: filtered.map((msg, index2) => {
+            const Icon2 = AUTO_MESSAGE_ICONS[msg.type];
+            return /* @__PURE__ */ jsxRuntimeExports.jsx(
+              motion.div,
+              {
+                initial: { opacity: 0, x: -8 },
+                animate: { opacity: 1, x: 0 },
+                transition: { duration: 0.2, delay: index2 * 0.04 },
+                className: "p-4 hover:bg-white/5 transition-colors",
+                "data-ocid": `auto-message-list.item.${index2 + 1}`,
+                children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      className: `w-9 h-9 rounded-xl border flex items-center justify-center shrink-0 mt-0.5 ${AUTO_MESSAGE_COLORS[msg.type]}`,
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: "w-4 h-4" })
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-2 mb-1", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-semibold text-foreground font-display", children: AUTO_MESSAGE_LABELS[msg.type] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                        "span",
+                        {
+                          className: `inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold ${statusStyles[msg.status]}`,
+                          children: [
+                            msg.status === "Sent" && /* @__PURE__ */ jsxRuntimeExports.jsx(CheckCheck, { className: "w-2.5 h-2.5" }),
+                            msg.status === "Pending" && /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "w-2.5 h-2.5" }),
+                            msg.status === "Failed" && /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "w-2.5 h-2.5" }),
+                            msg.status
+                          ]
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "svg",
+                          {
+                            viewBox: "0 0 24 24",
+                            role: "img",
+                            "aria-label": "WhatsApp",
+                            className: "w-2.5 h-2.5 fill-current",
+                            xmlns: "http://www.w3.org/2000/svg",
+                            children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("title", { children: "WhatsApp" }),
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" })
+                            ]
+                          }
+                        ),
+                        "WhatsApp"
+                      ] })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5 mb-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { className: "w-3 h-3 text-muted-foreground/60" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground", children: formatMsgDate(msg.date) })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "rounded-xl bg-muted/30 border border-white/5 px-3.5 py-2.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground leading-relaxed line-clamp-3", children: msg.preview }) })
+                  ] })
+                ] })
+              },
+              msg.id
+            );
+          }) })
+        ] })
+      ]
+    }
+  );
+}
 function InfoChip({
   icon: Icon2,
   label,
@@ -103810,281 +104034,6 @@ function InfoChip({
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground font-medium break-all", children: value })
     ] })
   ] });
-}
-function StatPill({
-  label,
-  value,
-  accent = false
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    "div",
-    {
-      className: `glass-card px-4 py-3 text-center ${accent ? "border-primary/30" : ""}`,
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "p",
-          {
-            className: `text-xl font-bold font-display ${accent ? "text-primary" : "text-foreground"}`,
-            children: value
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: label })
-      ]
-    }
-  );
-}
-function OverviewTab({ patient }) {
-  const patientAppts = appointments.filter((a2) => a2.patientId === patient.id);
-  const patientRx = prescriptions.filter((p2) => p2.patientId === patient.id);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    motion.div,
-    {
-      initial: { opacity: 0, y: 10 },
-      animate: { opacity: 1, y: 0 },
-      transition: { duration: 0.3 },
-      className: "space-y-5",
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-3", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StatPill, { label: "Total Visits", value: patient.totalVisits, accent: true }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StatPill, { label: "Appointments", value: patientAppts.length }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(StatPill, { label: "Prescriptions", value: patientRx.length }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            StatPill,
-            {
-              label: "Consult Fee",
-              value: formatCurrency$1(patient.consultationFee)
-            }
-          )
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5 space-y-3", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-3", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Stethoscope, { className: "w-4 h-4 text-primary" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-semibold font-display text-foreground", children: "Chief Complaint" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground leading-relaxed", children: patient.chiefComplaint })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid sm:grid-cols-2 gap-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5 space-y-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-3", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(User, { className: "w-4 h-4 text-primary" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-semibold font-display text-foreground", children: "Personal Info" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                InfoChip,
-                {
-                  icon: User,
-                  label: "Blood Group",
-                  value: patient.bloodGroup
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(InfoChip, { icon: Mail, label: "Email", value: patient.email }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(InfoChip, { icon: Phone, label: "Phone", value: patient.phone }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                InfoChip,
-                {
-                  icon: MapPin,
-                  label: "Address",
-                  value: patient.address || "—"
-                }
-              )
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5 space-y-3", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-3", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-4 h-4 text-primary" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-semibold font-display text-foreground", children: "Recent Activity" })
-            ] }),
-            patientAppts.slice(0, 4).map((appt) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-w-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground font-medium", children: formatDate$2(appt.date) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground truncate", children: appt.notes })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                StatusBadge,
-                {
-                  status: appt.status,
-                  className: "shrink-0 text-[10px]"
-                }
-              )
-            ] }, appt.id)),
-            patientAppts.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "No appointments recorded." })
-          ] })
-        ] })
-      ]
-    }
-  );
-}
-function CaseHistoryTab({ patient }) {
-  const history2 = CASE_HISTORY[patient.id] ?? [];
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    motion.div,
-    {
-      initial: { opacity: 0, y: 10 },
-      animate: { opacity: 1, y: 0 },
-      transition: { duration: 0.3 },
-      className: "space-y-4",
-      children: history2.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "div",
-        {
-          className: "glass-card p-12 flex flex-col items-center justify-center text-center gap-3",
-          "data-ocid": "case-history-empty",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(FileText, { className: "w-10 h-10 text-muted-foreground/50" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground text-sm", children: "No case history recorded yet." })
-          ]
-        }
-      ) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute left-5 top-0 bottom-0 w-px bg-border" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-5 pl-12", children: history2.map((entry, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          motion.div,
-          {
-            initial: { opacity: 0, x: -10 },
-            animate: { opacity: 1, x: 0 },
-            transition: { delay: i * 0.1, duration: 0.3 },
-            className: "relative",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -left-[2.1rem] top-3 w-3 h-3 rounded-full bg-primary border-2 border-background" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-4 space-y-2", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between gap-2 flex-wrap", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-semibold text-primary font-mono", children: formatDate$2(entry.date) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground", children: entry.doctor })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground leading-relaxed", children: entry.note })
-              ] })
-            ]
-          },
-          `case-${entry.date}-${i}`
-        )) })
-      ] })
-    }
-  );
-}
-function PrescriptionsTab({ patient }) {
-  const patientRx = prescriptions.filter((p2) => p2.patientId === patient.id);
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    motion.div,
-    {
-      initial: { opacity: 0, y: 10 },
-      animate: { opacity: 1, y: 0 },
-      transition: { duration: 0.3 },
-      className: "space-y-4",
-      children: patientRx.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "div",
-        {
-          className: "glass-card p-12 flex flex-col items-center justify-center text-center gap-3",
-          "data-ocid": "prescriptions-empty",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Pill, { className: "w-10 h-10 text-muted-foreground/50" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground text-sm", children: "No prescriptions recorded yet." })
-          ]
-        }
-      ) : patientRx.map((rx, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          initial: { opacity: 0, y: 8 },
-          animate: { opacity: 1, y: 0 },
-          transition: { delay: i * 0.08, duration: 0.3 },
-          className: "glass-card p-5 space-y-3",
-          "data-ocid": "prescription-card",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-between gap-3 flex-wrap", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-semibold text-foreground font-display", children: rx.remedy }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground font-mono mt-0.5", children: [
-                  rx.potency,
-                  " · ",
-                  rx.dosage,
-                  " · ",
-                  rx.frequency
-                ] })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 shrink-0", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(StatusBadge, { status: rx.status }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground", children: formatDate$2(rx.date) })
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-1.5", children: rx.symptoms.map((sym) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "span",
-              {
-                className: "inline-flex items-center px-2 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-[11px] font-medium",
-                children: sym
-              },
-              sym
-            )) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground leading-relaxed border-t border-white/10 pt-3", children: rx.caseNotes }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground", children: [
-              "Duration:",
-              " ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-foreground font-medium", children: rx.duration })
-            ] })
-          ]
-        },
-        rx.id
-      ))
-    }
-  );
-}
-function AppointmentsTab({ patient }) {
-  const patientAppts = appointments.filter((a2) => a2.patientId === patient.id);
-  const typeIcon = {
-    consultation: "🩺",
-    "follow-up": "🔄",
-    emergency: "🚨",
-    online: "💻"
-  };
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    motion.div,
-    {
-      initial: { opacity: 0, y: 10 },
-      animate: { opacity: 1, y: 0 },
-      transition: { duration: 0.3 },
-      className: "space-y-3",
-      children: patientAppts.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        "div",
-        {
-          className: "glass-card p-12 flex flex-col items-center justify-center text-center gap-3",
-          "data-ocid": "appointments-empty",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-10 h-10 text-muted-foreground/50" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground text-sm", children: "No appointments scheduled." })
-          ]
-        }
-      ) : patientAppts.map((appt, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          initial: { opacity: 0, x: -8 },
-          animate: { opacity: 1, x: 0 },
-          transition: { delay: i * 0.07, duration: 0.3 },
-          className: "glass-card p-4 flex items-start gap-4",
-          "data-ocid": "appointment-card",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-lg shrink-0", children: typeIcon[appt.type] ?? "📅" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between gap-2 flex-wrap", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-medium text-foreground capitalize", children: appt.type.replace("-", " ") }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(StatusBadge, { status: appt.status })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 text-xs text-muted-foreground mt-1", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-3 h-3" }),
-                  formatDate$2(appt.date)
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { className: "w-3 h-3" }),
-                  formatTime(appt.time)
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: appt.doctor })
-              ] }),
-              appt.notes && /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-1.5 truncate", children: appt.notes })
-            ] })
-          ]
-        },
-        appt.id
-      ))
-    }
-  );
 }
 function NotesTab({ patient }) {
   const storageKey2 = `patient-notes-${patient.id}`;
@@ -104146,6 +104095,8 @@ function PatientDetailPage() {
   const [editOpen, setEditOpen] = reactExports.useState(false);
   const [showNextVisitModal, setShowNextVisitModal] = reactExports.useState(false);
   const [nextVisitDate, setNextVisitDate] = reactExports.useState(null);
+  const [sharedMedicine, setSharedMedicine] = reactExports.useState("");
+  const [lastSavedMedicine, setLastSavedMedicine] = reactExports.useState("");
   const [tempNextVisitDate, setTempNextVisitDate] = reactExports.useState("");
   const [showReminderPopup, setShowReminderPopup] = reactExports.useState(false);
   const [reminderDate, setReminderDate] = reactExports.useState("");
@@ -104747,6 +104698,11 @@ function PatientDetailPage() {
                     }
                   )
                 ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-3 flex items-center gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-primary/10 border border-primary/20", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(User, { className: "w-4 h-4 text-primary" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium text-muted-foreground", children: "Total Visits:" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-bold text-primary", children: patient.totalVisits })
+                ] }) }),
                 patient.chiefComplaint && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 p-3 rounded-xl bg-primary/5 border border-primary/15", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-medium uppercase tracking-wide text-primary/70 mb-1", children: "Chief Complaint" }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-foreground leading-relaxed", children: patient.chiefComplaint })
@@ -104775,37 +104731,10 @@ function PatientDetailPage() {
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   TabsTrigger,
                   {
-                    value: "overview",
+                    value: "fee-structure",
                     className: "text-xs sm:text-sm",
-                    "data-ocid": "tab-overview",
-                    children: "Overview"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  TabsTrigger,
-                  {
-                    value: "case-history",
-                    className: "text-xs sm:text-sm",
-                    "data-ocid": "tab-case-history",
-                    children: "Case History"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  TabsTrigger,
-                  {
-                    value: "prescriptions",
-                    className: "text-xs sm:text-sm",
-                    "data-ocid": "tab-prescriptions",
-                    children: "Prescriptions"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  TabsTrigger,
-                  {
-                    value: "appointments",
-                    className: "text-xs sm:text-sm",
-                    "data-ocid": "tab-appointments",
-                    children: "Appointments"
+                    "data-ocid": "tab-fee-structure",
+                    children: "Fee Structure"
                   }
                 ),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -104815,6 +104744,18 @@ function PatientDetailPage() {
                     className: "text-xs sm:text-sm",
                     "data-ocid": "tab-notes",
                     children: "Notes"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  TabsTrigger,
+                  {
+                    value: "auto-messages",
+                    className: "text-xs sm:text-sm flex items-center gap-1.5",
+                    "data-ocid": "tab-auto-messages",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(MessageSquare, { className: "w-3.5 h-3.5" }),
+                      "Auto Messages"
+                    ]
                   }
                 )
               ] }),
@@ -104831,14 +104772,15 @@ function PatientDetailPage() {
                     onOpenScheduleModal: () => {
                       setTempNextVisitDate(nextVisitDate ?? "");
                       setShowNextVisitModal(true);
-                    }
+                    },
+                    medicine: sharedMedicine,
+                    onMedicineChange: setSharedMedicine,
+                    onMedicineSaved: setLastSavedMedicine
                   }
                 ) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "overview", children: /* @__PURE__ */ jsxRuntimeExports.jsx(OverviewTab, { patient }) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "case-history", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CaseHistoryTab, { patient }) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "prescriptions", children: /* @__PURE__ */ jsxRuntimeExports.jsx(PrescriptionsTab, { patient }) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "appointments", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AppointmentsTab, { patient }) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "notes", children: /* @__PURE__ */ jsxRuntimeExports.jsx(NotesTab, { patient }) })
+                /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "fee-structure", children: /* @__PURE__ */ jsxRuntimeExports.jsx(FeeStructureTab, { lastSavedMedicine }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "notes", children: /* @__PURE__ */ jsxRuntimeExports.jsx(NotesTab, { patient }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "auto-messages", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AutoMessageHistoryTab, {}) })
               ] })
             ] })
           }
@@ -106053,6 +105995,308 @@ function TableCell({ className, ...props }) {
     }
   );
 }
+const prescriptions = [
+  {
+    id: "rx001",
+    patientId: "p001",
+    patientName: "Arjun Sharma",
+    date: "2026-04-05",
+    remedy: "Natrum Muriaticum",
+    potency: "1M",
+    dosage: "2 pills",
+    frequency: "Single dose",
+    duration: "4 weeks",
+    caseNotes: "Classic Nat-Mur picture — grief held inward, migraines with zigzag aura, worse from consolation. Thirst for large quantities of water. Craving for salty foods.",
+    symptoms: [
+      "Migraine with visual aura",
+      "Grief suppressed",
+      "Craving salt",
+      "Thirst increased",
+      "Consolation aggravates"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx002",
+    patientId: "p002",
+    patientName: "Priya Nair",
+    date: "2026-04-08",
+    remedy: "Apis Mellifica",
+    potency: "30C",
+    dosage: "4 pills",
+    frequency: "TDS (thrice daily)",
+    duration: "2 weeks",
+    caseNotes: "Urticaria with burning-stinging sensation, better cold application. Puffiness of eyelids. Absence of thirst. Worse heat and pressure.",
+    symptoms: [
+      "Urticaria with stinging",
+      "Better cold",
+      "Absence of thirst",
+      "Puffiness",
+      "Worse heat"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx003",
+    patientId: "p003",
+    patientName: "Mohammed Al-Rashid",
+    date: "2026-03-28",
+    remedy: "Aurum Metallicum",
+    potency: "200C",
+    dosage: "2 pills",
+    frequency: "Weekly",
+    duration: "8 weeks",
+    caseNotes: "Hypertension with anticipatory anxiety. Perfectionist personality, guilt-ridden. Heart feels heavy. Worse at night, better motion.",
+    symptoms: [
+      "Hypertension",
+      "Anticipatory anxiety",
+      "Depression",
+      "Insomnia",
+      "Guilt complex"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx004",
+    patientId: "p004",
+    patientName: "Sarah Thompson",
+    date: "2026-04-01",
+    remedy: "Sepia",
+    potency: "200C",
+    dosage: "2 pills",
+    frequency: "Weekly",
+    duration: "6 weeks",
+    caseNotes: "Endometriosis with bearing-down sensation. Indifference to loved ones during pain. Worse standing, better vigorous exercise. Chilly patient, craves sour.",
+    symptoms: [
+      "Dysmenorrhea",
+      "Bearing-down sensation",
+      "Indifference",
+      "Worse standing",
+      "Craving sour"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx005",
+    patientId: "p005",
+    patientName: "Rahul Gupta",
+    date: "2026-04-09",
+    remedy: "Stramonium",
+    potency: "30C",
+    dosage: "4 pills",
+    frequency: "BD (twice daily)",
+    duration: "4 weeks",
+    caseNotes: "ADHD with restlessness, violent behavior. Fear of darkness. Night terrors. Loquacity. Tonsillitis with membrane formation. Thirstless.",
+    symptoms: [
+      "ADHD",
+      "Restlessness",
+      "Fear of dark",
+      "Night terrors",
+      "Tonsillitis"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx006",
+    patientId: "p006",
+    patientName: "Elena Kozlov",
+    date: "2026-03-15",
+    remedy: "Rhus Toxicodendron",
+    potency: "200C",
+    dosage: "2 pills",
+    frequency: "Every 3 days",
+    duration: "6 weeks",
+    caseNotes: "Rheumatoid arthritis — initial stiffness on first motion, better continued motion. Worse cold damp. Restless — must keep moving. Red triangular tip of tongue.",
+    symptoms: [
+      "Joint stiffness",
+      "Better continued motion",
+      "Worse cold damp",
+      "Restlessness",
+      "Initial motion aggravation"
+    ],
+    status: "completed"
+  },
+  {
+    id: "rx007",
+    patientId: "p007",
+    patientName: "Vijay Krishnamurthy",
+    date: "2026-04-07",
+    remedy: "Syzygium Jambolanum",
+    potency: "Q (Mother Tincture)",
+    dosage: "10 drops in water",
+    frequency: "BD (twice daily)",
+    duration: "3 months",
+    caseNotes: "Diabetic neuropathy with burning pains in extremities. Strong anti-diabetic action at Q potency. Complement: Uranium Nitricum 3X for polydipsia.",
+    symptoms: [
+      "Hyperglycemia",
+      "Burning extremities",
+      "Polydipsia",
+      "Polyuria",
+      "Fatigue"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx008",
+    patientId: "p008",
+    patientName: "Amelia Johnson",
+    date: "2026-04-02",
+    remedy: "Thyroidinum",
+    potency: "3X",
+    dosage: "4 pills",
+    frequency: "TDS (thrice daily)",
+    duration: "2 months",
+    caseNotes: "Hashimoto hypothyroid — goitrous tendency, obesity, hair loss, mental dullness. Supports thyroid gland organopathically. Combined with Calc Carb 200C weekly.",
+    symptoms: [
+      "Hypothyroidism",
+      "Hair loss",
+      "Weight gain",
+      "Mental dullness",
+      "Cold sensitivity"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx009",
+    patientId: "p009",
+    patientName: "Kavitha Reddy",
+    date: "2026-04-10",
+    remedy: "Pulsatilla",
+    potency: "30C",
+    dosage: "4 pills",
+    frequency: "OD (once daily)",
+    duration: "4 weeks",
+    caseNotes: "PCOS with delayed, scanty, clotted menses. Mild, yielding, weeping disposition. Worse warmth, better fresh air. Thirstless. Changeable symptoms.",
+    symptoms: [
+      "Irregular menses",
+      "PCOS",
+      "Weeping disposition",
+      "Thirstless",
+      "Worse heat"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx010",
+    patientId: "p010",
+    patientName: "Hans Mueller",
+    date: "2026-03-22",
+    remedy: "Sabal Serrulata",
+    potency: "Q (Mother Tincture)",
+    dosage: "15 drops in water",
+    frequency: "BD (twice daily)",
+    duration: "3 months",
+    caseNotes: "BPH with weak stream, dribbling, frequency. Cold sensation in genitals. Specific remedy for prostate. Adjunct: Thuja 200C for UTI prevention.",
+    symptoms: [
+      "BPH symptoms",
+      "Weak urinary stream",
+      "Frequency",
+      "Dribbling",
+      "Cold genitals"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx011",
+    patientId: "p011",
+    patientName: "Sunita Patel",
+    date: "2026-04-06",
+    remedy: "Lachesis",
+    potency: "200C",
+    dosage: "2 pills",
+    frequency: "Weekly",
+    duration: "8 weeks",
+    caseNotes: "Menopausal — hot flushes predominantly left-sided, worse on waking, worse tight clothing. Loquacious, jealous, suspicious. Excellent Lachesis constitutional.",
+    symptoms: [
+      "Hot flushes",
+      "Worse tight clothing",
+      "Worse on waking",
+      "Left-sided",
+      "Loquacity"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx012",
+    patientId: "p013",
+    patientName: "Fatima Al-Zahra",
+    date: "2026-04-03",
+    remedy: "Arnica Montana",
+    potency: "30C",
+    dosage: "4 pills",
+    frequency: "TDS (thrice daily)",
+    duration: "3 weeks",
+    caseNotes: 'Fibromyalgia with bruised, sore sensation throughout body. Worse slightest touch. Bed feels too hard. Says "nothing is wrong" despite evident pain.',
+    symptoms: [
+      "Fibromyalgia",
+      "Bruised soreness",
+      "Worse touch",
+      "Bed too hard",
+      "Denies illness"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx013",
+    patientId: "p014",
+    patientName: "Rajan Menon",
+    date: "2026-04-04",
+    remedy: "Sulphur",
+    potency: "30C",
+    dosage: "4 pills",
+    frequency: "OD (once daily)",
+    duration: "4 weeks",
+    caseNotes: "Acne — oily skin, pustular, worse exam stress. Untidy in habit, philosophical. Burning heat of eruptions. Worse washing. Sinking feeling at 11am.",
+    symptoms: [
+      "Acne vulgaris",
+      "Oily skin",
+      "Worse stress",
+      "Burning eruptions",
+      "11am hunger"
+    ],
+    status: "active"
+  },
+  {
+    id: "rx014",
+    patientId: "p015",
+    patientName: "Isabella Rossi",
+    date: "2026-03-18",
+    remedy: "Lycopodium",
+    potency: "200C",
+    dosage: "2 pills",
+    frequency: "Weekly",
+    duration: "6 weeks",
+    caseNotes: "IBS — alternating bowel habit, bloating worse 4-8pm, rumbling flatulence. Anticipatory anxiety. Craving sweets. Right-sided complaints. Intellectual but cowardly.",
+    symptoms: [
+      "IBS",
+      "Bloating 4-8pm",
+      "Flatulence",
+      "Alternating bowels",
+      "Craving sweets"
+    ],
+    status: "stopped"
+  },
+  {
+    id: "rx015",
+    patientId: "p001",
+    patientName: "Arjun Sharma",
+    date: "2026-02-10",
+    remedy: "Belladonna",
+    potency: "30C",
+    dosage: "4 pills",
+    frequency: "TDS (thrice daily)",
+    duration: "2 weeks",
+    caseNotes: "Acute migraine management — sudden, violent, throbbing headache. Face hot and red. Dilated pupils. Worse light, noise, jarring. Better in dark quiet room.",
+    symptoms: [
+      "Acute migraine",
+      "Throbbing headache",
+      "Face red and hot",
+      "Worse light",
+      "Worse noise"
+    ],
+    status: "completed"
+  }
+];
 const remedies = [
   {
     id: "r001",
