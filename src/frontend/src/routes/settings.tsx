@@ -9,7 +9,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { useAppStore } from "@/store";
 import { ACCENT_COLORS, ACCENT_COLOR_MAP } from "@/utils/accentColors";
-import { getCurrentUser, getUserClinics } from "@/utils/auth";
+import {
+  type Clinic,
+  getUserClinics as _getUserClinics,
+  getCurrentUser,
+} from "@/utils/auth";
 import { createRoute } from "@tanstack/react-router";
 import {
   Building2,
@@ -27,7 +31,7 @@ import {
   User,
 } from "lucide-react";
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { Route as rootRoute } from "./__root";
 
@@ -49,20 +53,46 @@ const stagger = (i: number) => ({
   transition: { duration: 0.3, delay: i * 0.06 },
 });
 
+// ─── Clinic Switcher Row ──────────────────────────────────────────
+function ClinicSwitcherRow({
+  clinics,
+  selectedId,
+  onSelect,
+}: {
+  clinics: Clinic[];
+  selectedId: string;
+  onSelect: (id: string) => void;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -6 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35 }}
+      className="flex flex-wrap items-center gap-2"
+      data-ocid="settings.clinic_switcher"
+    >
+      {clinics.map((c) => (
+        <button
+          key={c.id}
+          type="button"
+          onClick={() => onSelect(c.id)}
+          className={cn(
+            "text-xs px-3 py-1.5 rounded-full border transition-all whitespace-nowrap",
+            selectedId === c.id
+              ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30 shadow-sm"
+              : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground",
+          )}
+          data-ocid={`settings.clinic_tab.${c.id}`}
+        >
+          {c.name}
+        </button>
+      ))}
+    </motion.div>
+  );
+}
+
 // ─── Clinic Name Header ───────────────────────────────────────────
-function ClinicNameHeader() {
-  const [clinicName, setClinicName] = useState("My Clinic");
-
-  useEffect(() => {
-    const user = getCurrentUser();
-    if (user && user.clinicIds.length > 0) {
-      const clinics = getUserClinics(user.id);
-      if (clinics.length > 0) {
-        setClinicName(clinics[0].name);
-      }
-    }
-  }, []);
-
+function ClinicNameHeader({ clinicName }: { clinicName: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: -8 }}
@@ -87,8 +117,13 @@ function ClinicNameHeader() {
 }
 
 // ─── Clinic Profile ───────────────────────────────────────────────
-function ClinicProfileTab() {
-  const [form, setForm] = useState({
+function ClinicProfileTab({
+  clinicId,
+  clinic,
+}: { clinicId: string; clinic?: Clinic }) {
+  const storageKey = `hcrm_clinic_profile_${clinicId}`;
+
+  const defaultForm = {
     name: "HomeoPath Wellness Clinic",
     regNumber: "REG-2012-HOM-04891",
     address: "42 Green Valley Road, Sector 18",
@@ -99,17 +134,47 @@ function ClinicProfileTab() {
     email: "info@homeopathwellness.com",
     website: "www.homeopathwellness.com",
     workingHours: "Mon–Sat  9:00 AM – 7:00 PM",
+  };
+
+  const [form, setForm] = useState(() => {
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (raw) return { ...defaultForm, ...JSON.parse(raw) };
+    } catch {
+      /* ignore */
+    }
+    return defaultForm;
   });
+
+  // Pre-fill from actual clinic data if available
+  useEffect(() => {
+    if (clinic) {
+      setForm((prev) => ({
+        ...prev,
+        name: clinic.name || prev.name,
+        address: clinic.address || prev.address,
+        city: clinic.city || prev.city,
+        state: clinic.state || prev.state,
+        country: clinic.country || prev.country,
+        phone: clinic.phone || prev.phone,
+        email: clinic.email || prev.email,
+        regNumber: clinic.registrationNumber || prev.regNumber,
+      }));
+    }
+  }, [clinic]);
 
   const set =
     (k: keyof typeof form) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setForm((p) => ({ ...p, [k]: e.target.value }));
 
-  const save = () => toast.success("Clinic profile updated!");
+  const save = () => {
+    localStorage.setItem(storageKey, JSON.stringify(form));
+    toast.success("Clinic profile updated!");
+  };
 
   const fields: {
-    key: keyof typeof form;
+    key: Extract<keyof typeof form, string>;
     label: string;
     span?: boolean;
     type?: "textarea";
@@ -212,8 +277,10 @@ function ClinicProfileTab() {
 }
 
 // ─── Doctor Profile ───────────────────────────────────────────────
-function DoctorProfileTab() {
-  const [form, setForm] = useState({
+function DoctorProfileTab({ clinicId }: { clinicId: string }) {
+  const storageKey = `hcrm_doctor_profile_${clinicId}`;
+
+  const defaultForm = {
     fullName: "Dr. Rahul Sharma",
     qualifications: "BHMS, MD (Homeopathy)",
     specialization: "Classical Homeopathy, Pediatric Cases",
@@ -221,6 +288,16 @@ function DoctorProfileTab() {
     licenseNumber: "MH-HOM-20140892",
     consultationFee: "800",
     bio: "Dr. Rahul Sharma is a dedicated classical homeopath with over 12 years of clinical experience. He specialises in chronic disease management, pediatric cases, and constitutional prescribing.",
+  };
+
+  const [form, setForm] = useState(() => {
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (raw) return { ...defaultForm, ...JSON.parse(raw) };
+    } catch {
+      /* ignore */
+    }
+    return defaultForm;
   });
 
   const set =
@@ -228,7 +305,10 @@ function DoctorProfileTab() {
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setForm((p) => ({ ...p, [k]: e.target.value }));
 
-  const save = () => toast.success("Doctor profile updated!");
+  const save = () => {
+    localStorage.setItem(storageKey, JSON.stringify(form));
+    toast.success("Doctor profile updated!");
+  };
 
   return (
     <motion.div
@@ -292,7 +372,7 @@ function DoctorProfileTab() {
               { key: "consultationFee", label: "Consultation Fee (₹)" },
               { key: "bio", label: "Bio", span: true, type: "textarea" },
             ] as {
-              key: keyof typeof form;
+              key: Extract<keyof typeof form, string>;
               label: string;
               span?: boolean;
               type?: string;
@@ -342,8 +422,9 @@ function DoctorProfileTab() {
 }
 
 // ─── Appearance ───────────────────────────────────────────────────
-function AppearanceTab() {
+function AppearanceTab({ clinicId }: { clinicId: string }) {
   const { theme, toggleTheme, accentColor, setAccentColor } = useAppStore();
+  const storageKey = `hcrm_settings_appearance_${clinicId}`;
 
   const handleAccentChange = (id: string) => {
     const palette = ACCENT_COLOR_MAP[id];
@@ -365,12 +446,16 @@ function AppearanceTab() {
       root.style.setProperty("--chart-1", primary);
     }
     setAccentColor(id);
+    localStorage.setItem(storageKey, id);
     toast.success(
       `Theme colour changed to ${ACCENT_COLORS.find((c) => c.id === id)?.label ?? id}`,
     );
   };
 
-  const apply = () => toast.success("Appearance settings saved!");
+  const apply = () => {
+    localStorage.setItem(storageKey, accentColor);
+    toast.success("Appearance settings saved!");
+  };
 
   return (
     <motion.div {...fadeIn} className="space-y-6" data-ocid="appearance-tab">
@@ -601,8 +686,16 @@ const PLACEHOLDER_VARIABLES = [
   "{time}",
 ];
 
-function AutoMessagesTab() {
+function AutoMessagesTab({ clinicId }: { clinicId: string }) {
+  const storageKey = `hcrm_auto_messages_${clinicId}`;
+
   const [messages, setMessages] = useState<Record<string, string>>(() => {
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (raw) return JSON.parse(raw);
+    } catch {
+      /* ignore */
+    }
     const initial: Record<string, string> = {};
     for (const m of MESSAGE_TEMPLATES) {
       initial[m.id] = m.placeholder;
@@ -618,6 +711,7 @@ function AutoMessagesTab() {
   };
 
   const saveAll = () => {
+    localStorage.setItem(storageKey, JSON.stringify(messages));
     const allSaved: Record<string, boolean> = {};
     for (const m of MESSAGE_TEMPLATES) {
       allSaved[m.id] = true;
@@ -731,7 +825,7 @@ function AutoMessagesTab() {
 }
 
 // ─── Security (placeholder) ─────────────────────────────────────
-function SecurityTab() {
+function SecurityTab({ clinicId: _clinicId }: { clinicId: string }) {
   return (
     <motion.div {...fadeIn} className="space-y-6" data-ocid="security-tab">
       <div className="glass-card p-6">
@@ -747,7 +841,7 @@ function SecurityTab() {
 }
 
 // ─── Billing (placeholder) ────────────────────────────────────────
-function BillingTab() {
+function BillingTab({ clinicId: _clinicId }: { clinicId: string }) {
   return (
     <motion.div {...fadeIn} className="space-y-6" data-ocid="billing-tab">
       <div className="glass-card p-6">
@@ -763,7 +857,7 @@ function BillingTab() {
 }
 
 // ─── About (placeholder) ──────────────────────────────────────────
-function AboutTab() {
+function AboutTab({ clinicId: _clinicId }: { clinicId: string }) {
   return (
     <motion.div {...fadeIn} className="space-y-6" data-ocid="about-tab">
       <div className="glass-card p-6">
@@ -782,6 +876,16 @@ function AboutTab() {
 
 // ─── Main Page ────────────────────────────────────────────────────
 function SettingsPage() {
+  const [selectedClinicId, setSelectedClinicId] = useState<string>(() => {
+    const user = getCurrentUser();
+    const clinics = user ? _getUserClinics(user.id) : [];
+    return clinics[0]?.id || "";
+  });
+
+  const currentUser = getCurrentUser();
+  const clinics = currentUser ? _getUserClinics(currentUser.id) : [];
+  const selectedClinic = clinics.find((c) => c.id === selectedClinicId);
+
   return (
     <div className="space-y-6" data-ocid="settings-page">
       <PageHeader
@@ -790,7 +894,13 @@ function SettingsPage() {
         breadcrumb={[{ label: "Dashboard", href: "/" }, { label: "Settings" }]}
       />
 
-      <ClinicNameHeader />
+      <ClinicNameHeader clinicName={selectedClinic?.name || ""} />
+
+      <ClinicSwitcherRow
+        clinics={clinics}
+        selectedId={selectedClinicId}
+        onSelect={setSelectedClinicId}
+      />
 
       <Tabs
         defaultValue="clinic"
@@ -825,25 +935,28 @@ function SettingsPage() {
         </TabsList>
 
         <TabsContent value="clinic">
-          <ClinicProfileTab />
+          <ClinicProfileTab
+            clinicId={selectedClinicId}
+            clinic={selectedClinic}
+          />
         </TabsContent>
         <TabsContent value="doctor">
-          <DoctorProfileTab />
+          <DoctorProfileTab clinicId={selectedClinicId} />
         </TabsContent>
         <TabsContent value="appearance">
-          <AppearanceTab />
+          <AppearanceTab clinicId={selectedClinicId} />
         </TabsContent>
         <TabsContent value="auto-messages">
-          <AutoMessagesTab />
+          <AutoMessagesTab clinicId={selectedClinicId} />
         </TabsContent>
         <TabsContent value="security">
-          <SecurityTab />
+          <SecurityTab clinicId={selectedClinicId} />
         </TabsContent>
         <TabsContent value="billing">
-          <BillingTab />
+          <BillingTab clinicId={selectedClinicId} />
         </TabsContent>
         <TabsContent value="about">
-          <AboutTab />
+          <AboutTab clinicId={selectedClinicId} />
         </TabsContent>
       </Tabs>
     </div>

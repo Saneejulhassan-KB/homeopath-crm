@@ -115524,17 +115524,37 @@ const stagger = (i) => ({
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.3, delay: i * 0.06 }
 });
-function ClinicNameHeader() {
-  const [clinicName, setClinicName] = reactExports.useState("My Clinic");
-  reactExports.useEffect(() => {
-    const user = getCurrentUser();
-    if (user && user.clinicIds.length > 0) {
-      const clinics = getUserClinics(user.id);
-      if (clinics.length > 0) {
-        setClinicName(clinics[0].name);
-      }
+function ClinicSwitcherRow({
+  clinics,
+  selectedId,
+  onSelect
+}) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    motion.div,
+    {
+      initial: { opacity: 0, y: -6 },
+      animate: { opacity: 1, y: 0 },
+      transition: { duration: 0.35 },
+      className: "flex flex-wrap items-center gap-2",
+      "data-ocid": "settings.clinic_switcher",
+      children: clinics.map((c2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "button",
+        {
+          type: "button",
+          onClick: () => onSelect(c2.id),
+          className: cn(
+            "text-xs px-3 py-1.5 rounded-full border transition-all whitespace-nowrap",
+            selectedId === c2.id ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30 shadow-sm" : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground"
+          ),
+          "data-ocid": `settings.clinic_tab.${c2.id}`,
+          children: c2.name
+        },
+        c2.id
+      ))
     }
-  }, []);
+  );
+}
+function ClinicNameHeader({ clinicName }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     motion.div,
     {
@@ -115553,8 +115573,12 @@ function ClinicNameHeader() {
     }
   );
 }
-function ClinicProfileTab() {
-  const [form, setForm] = reactExports.useState({
+function ClinicProfileTab({
+  clinicId,
+  clinic
+}) {
+  const storageKey2 = `hcrm_clinic_profile_${clinicId}`;
+  const defaultForm2 = {
     name: "HomeoPath Wellness Clinic",
     regNumber: "REG-2012-HOM-04891",
     address: "42 Green Valley Road, Sector 18",
@@ -115565,9 +115589,35 @@ function ClinicProfileTab() {
     email: "info@homeopathwellness.com",
     website: "www.homeopathwellness.com",
     workingHours: "Mon–Sat  9:00 AM – 7:00 PM"
+  };
+  const [form, setForm] = reactExports.useState(() => {
+    try {
+      const raw = localStorage.getItem(storageKey2);
+      if (raw) return { ...defaultForm2, ...JSON.parse(raw) };
+    } catch {
+    }
+    return defaultForm2;
   });
+  reactExports.useEffect(() => {
+    if (clinic) {
+      setForm((prev) => ({
+        ...prev,
+        name: clinic.name || prev.name,
+        address: clinic.address || prev.address,
+        city: clinic.city || prev.city,
+        state: clinic.state || prev.state,
+        country: clinic.country || prev.country,
+        phone: clinic.phone || prev.phone,
+        email: clinic.email || prev.email,
+        regNumber: clinic.registrationNumber || prev.regNumber
+      }));
+    }
+  }, [clinic]);
   const set = (k2) => (e3) => setForm((p2) => ({ ...p2, [k2]: e3.target.value }));
-  const save = () => ue.success("Clinic profile updated!");
+  const save = () => {
+    localStorage.setItem(storageKey2, JSON.stringify(form));
+    ue.success("Clinic profile updated!");
+  };
   const fields = [
     { key: "name", label: "Clinic Name", span: true },
     { key: "regNumber", label: "Registration Number" },
@@ -115665,8 +115715,9 @@ function ClinicProfileTab() {
     }
   );
 }
-function DoctorProfileTab() {
-  const [form, setForm] = reactExports.useState({
+function DoctorProfileTab({ clinicId }) {
+  const storageKey2 = `hcrm_doctor_profile_${clinicId}`;
+  const defaultForm2 = {
     fullName: "Dr. Rahul Sharma",
     qualifications: "BHMS, MD (Homeopathy)",
     specialization: "Classical Homeopathy, Pediatric Cases",
@@ -115674,9 +115725,20 @@ function DoctorProfileTab() {
     licenseNumber: "MH-HOM-20140892",
     consultationFee: "800",
     bio: "Dr. Rahul Sharma is a dedicated classical homeopath with over 12 years of clinical experience. He specialises in chronic disease management, pediatric cases, and constitutional prescribing."
+  };
+  const [form, setForm] = reactExports.useState(() => {
+    try {
+      const raw = localStorage.getItem(storageKey2);
+      if (raw) return { ...defaultForm2, ...JSON.parse(raw) };
+    } catch {
+    }
+    return defaultForm2;
   });
   const set = (k2) => (e3) => setForm((p2) => ({ ...p2, [k2]: e3.target.value }));
-  const save = () => ue.success("Doctor profile updated!");
+  const save = () => {
+    localStorage.setItem(storageKey2, JSON.stringify(form));
+    ue.success("Doctor profile updated!");
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     motion.div,
     {
@@ -115777,8 +115839,9 @@ function DoctorProfileTab() {
     }
   );
 }
-function AppearanceTab() {
+function AppearanceTab({ clinicId }) {
   const { theme, toggleTheme, accentColor, setAccentColor } = useAppStore();
+  const storageKey2 = `hcrm_settings_appearance_${clinicId}`;
   const handleAccentChange = (id2) => {
     var _a2;
     const palette = ACCENT_COLOR_MAP[id2];
@@ -115797,11 +115860,15 @@ function AppearanceTab() {
       root2.style.setProperty("--chart-1", primary);
     }
     setAccentColor(id2);
+    localStorage.setItem(storageKey2, id2);
     ue.success(
       `Theme colour changed to ${((_a2 = ACCENT_COLORS.find((c2) => c2.id === id2)) == null ? void 0 : _a2.label) ?? id2}`
     );
   };
-  const apply2 = () => ue.success("Appearance settings saved!");
+  const apply2 = () => {
+    localStorage.setItem(storageKey2, accentColor);
+    ue.success("Appearance settings saved!");
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { ...fadeIn, className: "space-y-6", "data-ocid": "appearance-tab", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-6", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-sm font-display font-semibold text-foreground mb-4 flex items-center gap-2", children: [
@@ -115976,8 +116043,14 @@ const PLACEHOLDER_VARIABLES = [
   "{doctor_name}",
   "{time}"
 ];
-function AutoMessagesTab() {
+function AutoMessagesTab({ clinicId }) {
+  const storageKey2 = `hcrm_auto_messages_${clinicId}`;
   const [messages, setMessages] = reactExports.useState(() => {
+    try {
+      const raw = localStorage.getItem(storageKey2);
+      if (raw) return JSON.parse(raw);
+    } catch {
+    }
     const initial = {};
     for (const m2 of MESSAGE_TEMPLATES) {
       initial[m2.id] = m2.placeholder;
@@ -115990,6 +116063,7 @@ function AutoMessagesTab() {
     setSaved((prev) => ({ ...prev, [id2]: false }));
   };
   const saveAll = () => {
+    localStorage.setItem(storageKey2, JSON.stringify(messages));
     const allSaved = {};
     for (const m2 of MESSAGE_TEMPLATES) {
       allSaved[m2.id] = true;
@@ -116090,7 +116164,7 @@ function AutoMessagesTab() {
     ) })
   ] }) });
 }
-function SecurityTab() {
+function SecurityTab({ clinicId: _clinicId }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { ...fadeIn, className: "space-y-6", "data-ocid": "security-tab", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-6", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-sm font-display font-semibold text-foreground mb-4 flex items-center gap-2", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: "w-4 h-4 text-primary" }),
@@ -116099,7 +116173,7 @@ function SecurityTab() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Security settings will be available here soon." })
   ] }) });
 }
-function BillingTab() {
+function BillingTab({ clinicId: _clinicId }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { ...fadeIn, className: "space-y-6", "data-ocid": "billing-tab", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-6", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-sm font-display font-semibold text-foreground mb-4 flex items-center gap-2", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(CreditCard, { className: "w-4 h-4 text-primary" }),
@@ -116108,7 +116182,7 @@ function BillingTab() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Billing settings will be available here soon." })
   ] }) });
 }
-function AboutTab() {
+function AboutTab({ clinicId: _clinicId }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { ...fadeIn, className: "space-y-6", "data-ocid": "about-tab", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-6", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-display font-semibold text-foreground mb-4", children: "About HomeoPath CRM" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "HomeoPath CRM — A professional clinic management solution for homeopathic practitioners worldwide." }),
@@ -116116,6 +116190,15 @@ function AboutTab() {
   ] }) });
 }
 function SettingsPage() {
+  const [selectedClinicId, setSelectedClinicId] = reactExports.useState(() => {
+    var _a2;
+    const user = getCurrentUser();
+    const clinics2 = user ? getUserClinics(user.id) : [];
+    return ((_a2 = clinics2[0]) == null ? void 0 : _a2.id) || "";
+  });
+  const currentUser = getCurrentUser();
+  const clinics = currentUser ? getUserClinics(currentUser.id) : [];
+  const selectedClinic = clinics.find((c2) => c2.id === selectedClinicId);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", "data-ocid": "settings-page", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
       PageHeader,
@@ -116125,7 +116208,15 @@ function SettingsPage() {
         breadcrumb: [{ label: "Dashboard", href: "/" }, { label: "Settings" }]
       }
     ),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ClinicNameHeader, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ClinicNameHeader, { clinicName: (selectedClinic == null ? void 0 : selectedClinic.name) || "" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ClinicSwitcherRow,
+      {
+        clinics,
+        selectedId: selectedClinicId,
+        onSelect: setSelectedClinicId
+      }
+    ),
     /* @__PURE__ */ jsxRuntimeExports.jsxs(
       Tabs,
       {
@@ -116159,13 +116250,19 @@ function SettingsPage() {
             },
             value
           )) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "clinic", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ClinicProfileTab, {}) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "doctor", children: /* @__PURE__ */ jsxRuntimeExports.jsx(DoctorProfileTab, {}) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "appearance", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AppearanceTab, {}) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "auto-messages", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AutoMessagesTab, {}) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "security", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SecurityTab, {}) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "billing", children: /* @__PURE__ */ jsxRuntimeExports.jsx(BillingTab, {}) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "about", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AboutTab, {}) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "clinic", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            ClinicProfileTab,
+            {
+              clinicId: selectedClinicId,
+              clinic: selectedClinic
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "doctor", children: /* @__PURE__ */ jsxRuntimeExports.jsx(DoctorProfileTab, { clinicId: selectedClinicId }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "appearance", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AppearanceTab, { clinicId: selectedClinicId }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "auto-messages", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AutoMessagesTab, { clinicId: selectedClinicId }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "security", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SecurityTab, { clinicId: selectedClinicId }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "billing", children: /* @__PURE__ */ jsxRuntimeExports.jsx(BillingTab, { clinicId: selectedClinicId }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "about", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AboutTab, { clinicId: selectedClinicId }) })
         ]
       }
     )
