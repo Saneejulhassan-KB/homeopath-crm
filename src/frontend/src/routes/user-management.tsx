@@ -3,12 +3,10 @@ import { Route as rootRoute } from "./__root";
 
 export const Route = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/pro",
-  component: ProLayout,
+  path: "/user-management",
+  component: UserManagementLayout,
 });
 
-function ProLayout() {
-  // This is the layout shell for all /pro/* routes.
-  // Renders <Outlet /> so child routes (index, voice-recorder, etc.) can mount.
+function UserManagementLayout() {
   return <Outlet />;
 }

@@ -10,16 +10,8 @@ export const ROUTES = {
   BILLING: "/billing",
 
   SETTINGS: "/settings",
-  STAFF: "/staff",
+  USER_MANAGEMENT: "/user-management",
   REGISTER: "/register",
-  PRO: "/pro",
-  PRO_VOICE: "/pro/voice-recorder",
-  PRO_REMEDY_FINDER: "/pro/remedy-finder",
-  PRO_TEMPLATES: "/pro/case-templates",
-  PRO_TIMELINE: "/pro/patient-timeline",
-  PRO_COMPARISON: "/pro/remedy-comparison",
-  PRO_REPOSITORY: "/pro/case-repository",
-  PRO_MATERIA_MEDICA: "/pro/materia-medica",
 } as const;
 
 export const LANGUAGES = [
@@ -90,16 +82,10 @@ export const NAV_ITEMS = [
     ] as const,
   },
   {
-    path: ROUTES.STAFF,
-    label: "Staff",
+    path: ROUTES.USER_MANAGEMENT,
+    label: "User Management",
     icon: "UserCog",
     roles: ["main-admin"] as const,
-  },
-  {
-    path: ROUTES.PRO,
-    label: "Pro Features",
-    icon: "Crown",
-    roles: ["main-admin", "doctor"] as const,
   },
 ] as const;
 

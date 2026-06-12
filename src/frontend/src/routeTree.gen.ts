@@ -13,16 +13,11 @@ import { Route as loginImport } from "./routes/login";
 import { Route as patientsImport } from "./routes/patients";
 import { Route as patientsPatientIdImport } from "./routes/patients.$patientId";
 import { Route as patientsIndexImport } from "./routes/patients.index";
-import { Route as proImport } from "./routes/pro";
-import { Route as proCaseRepositoryImport } from "./routes/pro.case-repository";
-import { Route as proCaseTemplatesImport } from "./routes/pro.case-templates";
-import { Route as proIndexImport } from "./routes/pro.index";
-import { Route as proMateriaMedicaImport } from "./routes/pro.materia-medica";
-import { Route as proPatientTimelineImport } from "./routes/pro.patient-timeline";
-import { Route as proRemedyComparisonImport } from "./routes/pro.remedy-comparison";
-import { Route as proRemedyFinderImport } from "./routes/pro.remedy-finder";
-import { Route as proVoiceRecorderImport } from "./routes/pro.voice-recorder";
 import { Route as settingsImport } from "./routes/settings";
+import { Route as userManagementImport } from "./routes/user-management";
+import { Route as userManagementUserIdImport } from "./routes/user-management.$userId";
+import { Route as userManagementIndexImport } from "./routes/user-management.index";
+import { Route as userManagementRolesRoleIdImport } from "./routes/user-management.roles.$roleId";
 
 const rootRoute = rootImport;
 const indexRoute = indexImport;
@@ -34,15 +29,10 @@ const aiAssistantRoute = aiAssistantImport;
 const billingRoute = billingImport;
 const loginRoute = loginImport;
 const settingsRoute = settingsImport;
-const proRoute = proImport;
-const proIndexRoute = proIndexImport;
-const proCaseRepositoryRoute = proCaseRepositoryImport;
-const proCaseTemplatesRoute = proCaseTemplatesImport;
-const proMateriaMedicaRoute = proMateriaMedicaImport;
-const proPatientTimelineRoute = proPatientTimelineImport;
-const proRemedyComparisonRoute = proRemedyComparisonImport;
-const proRemedyFinderRoute = proRemedyFinderImport;
-const proVoiceRecorderRoute = proVoiceRecorderImport;
+const userManagementRoute = userManagementImport;
+const userManagementIndexRoute = userManagementIndexImport;
+const userManagementUserIdRoute = userManagementUserIdImport;
+const userManagementRolesRoleIdRoute = userManagementRolesRoleIdImport;
 
 export const routeTree = rootRoute.addChildren([
   loginRoute,
@@ -52,15 +42,10 @@ export const routeTree = rootRoute.addChildren([
   aiAssistantRoute,
   billingRoute,
   settingsRoute,
-  proRoute.addChildren([
-    proIndexRoute,
-    proCaseRepositoryRoute,
-    proCaseTemplatesRoute,
-    proMateriaMedicaRoute,
-    proPatientTimelineRoute,
-    proRemedyComparisonRoute,
-    proRemedyFinderRoute,
-    proVoiceRecorderRoute,
+  userManagementRoute.addChildren([
+    userManagementIndexRoute,
+    userManagementUserIdRoute,
+    userManagementRolesRoleIdRoute,
   ]),
 ]);
 
@@ -124,75 +109,40 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof settingsImport;
       parentRoute: typeof rootImport;
     };
+    "/user-management": {
+      id: "/user-management";
+      path: "/user-management";
+      fullPath: "/user-management";
+      preLoaderRoute: typeof userManagementImport;
+      parentRoute: typeof rootImport;
+    };
+    "/user-management/": {
+      id: "/user-management/";
+      path: "/";
+      fullPath: "/user-management/";
+      preLoaderRoute: typeof userManagementIndexImport;
+      parentRoute: typeof userManagementImport;
+    };
+    "/user-management/$userId": {
+      id: "/user-management/$userId";
+      path: "$userId";
+      fullPath: "/user-management/$userId";
+      preLoaderRoute: typeof userManagementUserIdImport;
+      parentRoute: typeof userManagementImport;
+    };
+    "/user-management/roles/$roleId": {
+      id: "/user-management/roles/$roleId";
+      path: "roles/$roleId";
+      fullPath: "/user-management/roles/$roleId";
+      preLoaderRoute: typeof userManagementRolesRoleIdImport;
+      parentRoute: typeof userManagementImport;
+    };
     "/login": {
       id: "/login";
       path: "/login";
       fullPath: "/login";
       preLoaderRoute: typeof loginImport;
       parentRoute: typeof rootImport;
-    };
-    "/pro": {
-      id: "/pro";
-      path: "/pro";
-      fullPath: "/pro";
-      preLoaderRoute: typeof proImport;
-      parentRoute: typeof rootImport;
-    };
-    "/pro/": {
-      id: "/pro/";
-      path: "/";
-      fullPath: "/pro/";
-      preLoaderRoute: typeof proIndexImport;
-      parentRoute: typeof proImport;
-    };
-    "/pro/case-repository": {
-      id: "/pro/case-repository";
-      path: "case-repository";
-      fullPath: "/pro/case-repository";
-      preLoaderRoute: typeof proCaseRepositoryImport;
-      parentRoute: typeof proImport;
-    };
-    "/pro/case-templates": {
-      id: "/pro/case-templates";
-      path: "case-templates";
-      fullPath: "/pro/case-templates";
-      preLoaderRoute: typeof proCaseTemplatesImport;
-      parentRoute: typeof proImport;
-    };
-    "/pro/materia-medica": {
-      id: "/pro/materia-medica";
-      path: "materia-medica";
-      fullPath: "/pro/materia-medica";
-      preLoaderRoute: typeof proMateriaMedicaImport;
-      parentRoute: typeof proImport;
-    };
-    "/pro/patient-timeline": {
-      id: "/pro/patient-timeline";
-      path: "patient-timeline";
-      fullPath: "/pro/patient-timeline";
-      preLoaderRoute: typeof proPatientTimelineImport;
-      parentRoute: typeof proImport;
-    };
-    "/pro/remedy-comparison": {
-      id: "/pro/remedy-comparison";
-      path: "remedy-comparison";
-      fullPath: "/pro/remedy-comparison";
-      preLoaderRoute: typeof proRemedyComparisonImport;
-      parentRoute: typeof proImport;
-    };
-    "/pro/remedy-finder": {
-      id: "/pro/remedy-finder";
-      path: "remedy-finder";
-      fullPath: "/pro/remedy-finder";
-      preLoaderRoute: typeof proRemedyFinderImport;
-      parentRoute: typeof proImport;
-    };
-    "/pro/voice-recorder": {
-      id: "/pro/voice-recorder";
-      path: "voice-recorder";
-      fullPath: "/pro/voice-recorder";
-      preLoaderRoute: typeof proVoiceRecorderImport;
-      parentRoute: typeof proImport;
     };
   }
 }

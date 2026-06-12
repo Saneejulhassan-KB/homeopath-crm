@@ -121,7 +121,6 @@ export const ROLE_PERMISSIONS: Record<RoleId, RolePermissions> = {
     billing: "view-only",
     settings: "full",
     "ai-assistant": "full",
-    pro: "full",
   },
   doctor: {
     dashboard: "filtered",
@@ -130,7 +129,6 @@ export const ROLE_PERMISSIONS: Record<RoleId, RolePermissions> = {
     billing: "none",
     settings: "view-only",
     "ai-assistant": "full",
-    pro: "full",
   },
   receptionist: {
     dashboard: "filtered",
@@ -139,7 +137,6 @@ export const ROLE_PERMISSIONS: Record<RoleId, RolePermissions> = {
     billing: "none",
     settings: "view-only",
     "ai-assistant": "none",
-    pro: "none",
   },
   pharmacist: {
     dashboard: "filtered",
@@ -148,7 +145,6 @@ export const ROLE_PERMISSIONS: Record<RoleId, RolePermissions> = {
     billing: "none",
     settings: "view-only",
     "ai-assistant": "none",
-    pro: "none",
   },
   nurse: {
     dashboard: "filtered",
@@ -157,7 +153,6 @@ export const ROLE_PERMISSIONS: Record<RoleId, RolePermissions> = {
     billing: "none",
     settings: "view-only",
     "ai-assistant": "none",
-    pro: "none",
   },
   billing: {
     dashboard: "filtered",
@@ -166,7 +161,6 @@ export const ROLE_PERMISSIONS: Record<RoleId, RolePermissions> = {
     billing: "full",
     settings: "view-only",
     "ai-assistant": "none",
-    pro: "none",
   },
 };
 

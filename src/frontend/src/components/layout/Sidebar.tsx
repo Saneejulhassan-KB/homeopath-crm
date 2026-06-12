@@ -19,29 +19,20 @@ const COLOR_HEX: Record<string, string> = {
 };
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import {
-  Activity,
-  Archive,
   BarChart3,
-  BookOpen,
   Brain,
   Calendar,
   CalendarCheck,
-  ChevronDown,
   ChevronLeft,
   ChevronRight,
   CreditCard,
-  Crown,
-  FileText,
   FlaskConical,
-  GitCompare,
   HeartPulse,
   LayoutDashboard,
   Leaf,
   LogOut,
-  Mic2,
   Pill,
   Receipt,
-  Search,
   Settings,
   Shield,
   Stethoscope,
@@ -63,14 +54,6 @@ const ICON_MAP: Record<string, LucideIcon> = {
   CreditCard,
   BarChart3,
   Settings,
-  Crown,
-  Mic2,
-  Search,
-  FileText,
-  Activity,
-  GitCompare,
-  Archive,
-  BookOpen,
 };
 
 const ROLE_ICON_MAP: Record<string, LucideIcon> = {
@@ -95,16 +78,6 @@ interface NavItem {
   badge?: number;
 }
 
-const proSubItems: NavItem[] = [
-  { path: ROUTES.PRO_VOICE, label: "Voice Recorder", Icon: Mic2 },
-  { path: ROUTES.PRO_REMEDY_FINDER, label: "Remedy Finder", Icon: Search },
-  { path: ROUTES.PRO_TEMPLATES, label: "Case Templates", Icon: FileText },
-  { path: ROUTES.PRO_TIMELINE, label: "Patient Timeline", Icon: Activity },
-  { path: ROUTES.PRO_COMPARISON, label: "Remedy Comparison", Icon: GitCompare },
-  { path: ROUTES.PRO_REPOSITORY, label: "Case Repository", Icon: Archive },
-  { path: ROUTES.PRO_MATERIA_MEDICA, label: "Materia Medica", Icon: BookOpen },
-];
-
 // Silence unused-import warnings for ROLE_CONFIGS (used via ROLE_ICON_MAP indirectly)
 void ROLE_CONFIGS;
 
@@ -121,17 +94,12 @@ export function Sidebar({ mobile = false, onClose }: SidebarProps) {
   const currentPath = routerState.location.pathname;
   const collapsed = !mobile && !sidebarOpen;
 
-  const isProActive =
-    currentPath === ROUTES.PRO || currentPath.startsWith("/pro/");
-
-  const [proExpanded, setProExpanded] = useState(isProActive);
-
   const roleConfig = currentRole ? getRoleConfig(currentRole) : null;
   const RoleIcon = roleConfig
     ? (ROLE_ICON_MAP[roleConfig.icon] ?? Shield)
     : Shield;
 
-  // Filter nav to only items the current role can access (exclude Pro hub — shown separately)
+  // Filter nav to only items the current role can access
   const visibleNavItems: NavItem[] = currentRole
     ? (
         NAV_ITEMS as unknown as {
@@ -141,10 +109,7 @@ export function Sidebar({ mobile = false, onClose }: SidebarProps) {
           roles: readonly string[];
         }[]
       )
-        .filter(
-          (item) =>
-            item.label !== "Pro Features" && item.roles.includes(currentRole),
-        )
+        .filter((item) => item.roles.includes(currentRole))
         .map((item) => ({
           path: item.path,
           label: item.label,
@@ -152,8 +117,6 @@ export function Sidebar({ mobile = false, onClose }: SidebarProps) {
           badge: navBadges[item.path],
         }))
     : [];
-
-  const showPro = currentRole === "main-admin" || currentRole === "doctor";
 
   function handleLogout() {
     const { logout } = useAppStore.getState();
@@ -285,154 +248,6 @@ export function Sidebar({ mobile = false, onClose }: SidebarProps) {
             }
             return item;
           })}
-
-          {/* Pro Features separator — only admin/doctor */}
-          {showPro && !collapsed && (
-            <div className="pt-3 pb-1 px-1">
-              <div className="flex items-center gap-2">
-                <div className="h-px flex-1 bg-white/8" />
-                <span className="text-[10px] font-semibold uppercase tracking-widest text-[var(--premium,hsl(60_80%_60%))] opacity-80">
-                  Pro
-                </span>
-                <div className="h-px flex-1 bg-white/8" />
-              </div>
-            </div>
-          )}
-          {showPro && collapsed && (
-            <div className="pt-3 pb-1 px-0 border-t border-white/8 mx-2" />
-          )}
-
-          {/* Pro Features hub link with expandable sub-items — only admin/doctor */}
-          {showPro &&
-            (() => {
-              const proItem = (
-                <div key="pro-section">
-                  {/* Pro Hub link + expand toggle */}
-                  <div className="flex items-center">
-                    <Link
-                      to={ROUTES.PRO}
-                      onClick={onClose}
-                      className={cn(
-                        "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 group relative border flex-1 min-w-0",
-                        isProActive
-                          ? "bg-[hsl(60_70%_55%/15%)] text-[var(--premium,hsl(60_80%_60%))] border-[hsl(60_70%_55%/35%)] shadow-sm"
-                          : "text-[var(--premium,hsl(60_80%_60%))] border-transparent hover:bg-[hsl(60_70%_55%/10%)]",
-                        collapsed && "justify-center px-0",
-                      )}
-                      data-ocid="nav-pro-features"
-                    >
-                      <Crown className="w-5 h-5 shrink-0 text-[var(--premium,hsl(60_80%_60%))]" />
-                      <AnimatePresence>
-                        {!collapsed && (
-                          <motion.span
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="flex-1 truncate font-semibold"
-                          >
-                            Pro Features
-                          </motion.span>
-                        )}
-                      </AnimatePresence>
-                      {!collapsed && (
-                        <span className="ml-auto text-[9px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full bg-[hsl(60_70%_55%/20%)] text-[var(--premium,hsl(60_80%_60%))] border border-[hsl(60_70%_55%/30%)] shrink-0">
-                          Pro
-                        </span>
-                      )}
-                      {collapsed && (
-                        <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-[var(--premium,hsl(60_80%_60%))]" />
-                      )}
-                    </Link>
-
-                    {/* Expand/collapse chevron */}
-                    {!collapsed && (
-                      <button
-                        type="button"
-                        onClick={() => setProExpanded((v) => !v)}
-                        className="ml-1 p-1.5 rounded-md text-[var(--premium,hsl(60_80%_60%))] hover:bg-[hsl(60_70%_55%/10%)] transition-colors shrink-0"
-                        aria-label={
-                          proExpanded ? "Collapse pro menu" : "Expand pro menu"
-                        }
-                        data-ocid="pro-expand-toggle"
-                      >
-                        <motion.div
-                          animate={{ rotate: proExpanded ? 180 : 0 }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <ChevronDown className="w-3.5 h-3.5" />
-                        </motion.div>
-                      </button>
-                    )}
-                  </div>
-
-                  {/* Sub-items */}
-                  <AnimatePresence>
-                    {!collapsed && proExpanded && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.22, ease: [0.4, 0, 0.2, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pl-4 mt-1 space-y-0.5 border-l border-[hsl(60_70%_55%/20%)] ml-4">
-                          {proSubItems.map(({ path, label, Icon }) => {
-                            const isSubActive = currentPath === path;
-                            return (
-                              <Link
-                                key={path}
-                                to={path}
-                                onClick={onClose}
-                                className={cn(
-                                  "flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-xs font-medium transition-all duration-150 group",
-                                  isSubActive
-                                    ? "bg-[hsl(60_70%_55%/15%)] text-[var(--premium,hsl(60_80%_60%))]"
-                                    : "text-muted-foreground hover:text-[var(--premium,hsl(60_80%_60%))] hover:bg-[hsl(60_70%_55%/8%)]",
-                                )}
-                                data-ocid={`nav-pro-${label.toLowerCase().replace(/\s+/g, "-")}`}
-                              >
-                                <Icon className="w-3.5 h-3.5 shrink-0" />
-                                <span className="truncate">{label}</span>
-                                {isSubActive && (
-                                  <span className="ml-auto w-1.5 h-1.5 rounded-full bg-[var(--premium,hsl(60_80%_60%))] shrink-0" />
-                                )}
-                              </Link>
-                            );
-                          })}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-
-              if (collapsed) {
-                return (
-                  <Tooltip key={ROUTES.PRO}>
-                    <TooltipTrigger asChild>
-                      <Link
-                        to={ROUTES.PRO}
-                        onClick={onClose}
-                        className={cn(
-                          "flex items-center justify-center gap-3 px-0 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 group relative border",
-                          isProActive
-                            ? "bg-[hsl(60_70%_55%/15%)] text-[var(--premium,hsl(60_80%_60%))] border-[hsl(60_70%_55%/35%)] shadow-sm"
-                            : "text-[var(--premium,hsl(60_80%_60%))] border-transparent hover:bg-[hsl(60_70%_55%/10%)]",
-                        )}
-                        data-ocid="nav-pro-features-collapsed"
-                      >
-                        <Crown className="w-5 h-5 shrink-0 text-[var(--premium,hsl(60_80%_60%))]" />
-                        <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-[var(--premium,hsl(60_80%_60%))]" />
-                      </Link>
-                    </TooltipTrigger>
-                    <TooltipContent side="right" className="text-xs">
-                      Pro Features
-                    </TooltipContent>
-                  </Tooltip>
-                );
-              }
-              return proItem;
-            })()}
         </nav>
 
         {/* User section */}
