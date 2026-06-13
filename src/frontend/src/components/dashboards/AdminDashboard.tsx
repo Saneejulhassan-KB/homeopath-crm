@@ -795,7 +795,7 @@ export function AdminDashboard() {
       {/* Stat Cards — Second Row */}
       <motion.div
         variants={itemVariants}
-        className="grid grid-cols-1 sm:grid-cols-3 gap-4"
+        className="grid grid-cols-1 sm:grid-cols-2 gap-4"
       >
         <StatCard
           title="Total Patients"
@@ -819,23 +819,6 @@ export function AdminDashboard() {
             <p className="text-xs text-amber-400 mt-1">
               Needs follow-up this week
             </p>
-          </div>
-        </div>
-        <div
-          className="glass-card p-5 flex items-center gap-4"
-          data-ocid="admin-waiting-patients"
-        >
-          <div className="p-3 rounded-xl bg-primary/15 border border-primary/20">
-            <Activity className="w-6 h-6 text-primary" />
-          </div>
-          <div>
-            <p className="text-3xl font-bold font-display text-foreground">
-              18
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Waiting Patients Today
-            </p>
-            <p className="text-xs text-primary mt-1">Average wait ~12 min</p>
           </div>
         </div>
       </motion.div>

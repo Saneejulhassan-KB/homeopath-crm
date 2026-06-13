@@ -23,12 +23,14 @@ const COLOR_HEX: Record<string, string> = {
   pink: "#EC4899",
   cyan: "#06B6D4",
 };
+import { appointments } from "@/data/appointments";
 import { useNavigate, useRouterState } from "@tanstack/react-router";
 import {
   Bell,
   CalendarCheck,
   Check,
   ChevronDown,
+  Clock,
   FlaskConical,
   Globe,
   HeartPulse,
@@ -91,6 +93,11 @@ export function Topbar({
   const pageTitle = PAGE_TITLES[currentPath] ?? "HomeoPath CRM";
   const unreadCount = notifications.filter((n) => !n.read).length;
 
+  // Pending appointments count (treat confirmed as pending too)
+  const pendingCount = appointments.filter(
+    (a) => a.status === "pending" || a.status === "confirmed",
+  ).length;
+
   const [notifOpen, setNotifOpen] = useState(false);
 
   const roleConfig = currentRole ? getRoleConfig(currentRole) : null;
@@ -149,6 +156,23 @@ export function Topbar({
       </div>
 
       <div className="ml-auto flex items-center gap-1">
+        {/* Waiting Patients */}
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => navigate({ to: "/waiting-patients" })}
+          className="relative"
+          aria-label="Waiting patients"
+          data-ocid="topbar-waiting-patients"
+        >
+          <Clock className="w-5 h-5" />
+          {pendingCount > 0 && (
+            <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] flex items-center justify-center text-[10px] font-bold bg-primary text-primary-foreground rounded-full px-1">
+              {pendingCount}
+            </span>
+          )}
+        </Button>
+
         {/* Notifications */}
         <div className="relative" data-ocid="topbar-notifications">
           <Button

@@ -27,7 +27,7 @@ import type {
   VisitMode,
 } from "@/types";
 import { formatDate, formatTime, getInitials } from "@/utils/formatters";
-import { createRoute } from "@tanstack/react-router";
+import { createRoute, useNavigate } from "@tanstack/react-router";
 import {
   addMonths,
   eachDayOfInterval,
@@ -755,8 +755,10 @@ function AppointmentsPage() {
   const [currentMonth, setCurrentMonth] = useState(new Date(2026, 3, 1)); // April 2026
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [search, setSearch] = useState("");
+  const [doctorFilter, setDoctorFilter] = useState<string>("all");
   const [showBook, setShowBook] = useState(false);
   const [detailAppt, setDetailAppt] = useState<Appointment | null>(null);
+  const navigate = useNavigate();
   const [rescheduleAppt, setRescheduleAppt] = useState<Appointment | null>(
     null,
   );
@@ -775,12 +777,15 @@ function AppointmentsPage() {
       const q = search.toLowerCase();
       list = list.filter((a) => a.patientName.toLowerCase().includes(q));
     }
+    if (doctorFilter !== "all") {
+      list = list.filter((a) => a.doctor === doctorFilter);
+    }
     return list.sort((a, b) => {
       const d = a.date.localeCompare(b.date);
       if (d !== 0) return d;
       return a.time.localeCompare(b.time);
     });
-  }, [appointments, selectedDate, search]);
+  }, [appointments, selectedDate, search, doctorFilter]);
 
   function handleBook(form: BookForm) {
     const patient = patients.find((p) => p.id === form.patientId);
@@ -862,15 +867,38 @@ function AppointmentsPage() {
               </button>
             )}
           </div>
-          <div className="relative w-full sm:w-56">
-            <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
-            <Input
-              placeholder="Search by patient…"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="pl-8 h-8 text-xs"
-              data-ocid="appt-search-input"
-            />
+          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <div className="relative w-full sm:w-56">
+              <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
+              <Input
+                placeholder="Search by patient…"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="pl-8 h-8 text-xs"
+                data-ocid="appt-search-input"
+              />
+            </div>
+            <Select
+              value={doctorFilter}
+              onValueChange={(v) => setDoctorFilter(v)}
+            >
+              <SelectTrigger
+                className="h-8 text-xs w-full sm:w-44"
+                data-ocid="appt-doctor-filter"
+              >
+                <SelectValue placeholder="All Doctors" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Doctors</SelectItem>
+                {Array.from(new Set(appointments.map((a) => a.doctor))).map(
+                  (doc) => (
+                    <SelectItem key={doc} value={doc}>
+                      {doc}
+                    </SelectItem>
+                  ),
+                )}
+              </SelectContent>
+            </Select>
           </div>
         </div>
 
@@ -949,8 +977,10 @@ function AppointmentsPage() {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: 8 }}
                       transition={{ duration: 0.2, delay: idx * 0.03 }}
-                      className="border-b border-border/30 hover:bg-white/5 dark:hover:bg-white/3 transition-smooth group"
-                      data-ocid={`appt-row-${appt.id}`}
+                      className="border-b border-border/30 hover:bg-white/5 dark:hover:bg-white/3 transition-smooth group cursor-pointer"
+                      onClick={() =>
+                        navigate({ to: `/patients/${appt.patientId}` })
+                      }
                     >
                       <td className="px-4 py-3 whitespace-nowrap">
                         <div className="font-medium text-foreground text-xs">
@@ -1017,7 +1047,10 @@ function AppointmentsPage() {
                             variant="ghost"
                             size="icon"
                             className="h-7 w-7"
-                            onClick={() => setDetailAppt(appt)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setDetailAppt(appt);
+                            }}
                             title="View details"
                             data-ocid={`appt-view-${appt.id}`}
                           >
@@ -1027,7 +1060,10 @@ function AppointmentsPage() {
                             variant="ghost"
                             size="icon"
                             className="h-7 w-7"
-                            onClick={() => setRescheduleAppt(appt)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setRescheduleAppt(appt);
+                            }}
                             title="Edit / Reschedule"
                             data-ocid={`appt-edit-${appt.id}`}
                           >
@@ -1037,7 +1073,10 @@ function AppointmentsPage() {
                             variant="ghost"
                             size="icon"
                             className="h-7 w-7 text-destructive hover:text-destructive"
-                            onClick={() => handleCancel(appt.id)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleCancel(appt.id);
+                            }}
                             title="Cancel"
                             data-ocid={`appt-cancel-${appt.id}`}
                           >

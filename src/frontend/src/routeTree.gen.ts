@@ -18,6 +18,7 @@ import { Route as userManagementImport } from "./routes/user-management";
 import { Route as userManagementUserIdImport } from "./routes/user-management.$userId";
 import { Route as userManagementIndexImport } from "./routes/user-management.index";
 import { Route as userManagementRolesRoleIdImport } from "./routes/user-management.roles.$roleId";
+import { Route as waitingPatientsImport } from "./routes/waiting-patients";
 
 const rootRoute = rootImport;
 const indexRoute = indexImport;
@@ -33,6 +34,7 @@ const userManagementRoute = userManagementImport;
 const userManagementIndexRoute = userManagementIndexImport;
 const userManagementUserIdRoute = userManagementUserIdImport;
 const userManagementRolesRoleIdRoute = userManagementRolesRoleIdImport;
+const waitingPatientsRoute = waitingPatientsImport;
 
 export const routeTree = rootRoute.addChildren([
   loginRoute,
@@ -47,6 +49,7 @@ export const routeTree = rootRoute.addChildren([
     userManagementUserIdRoute,
     userManagementRolesRoleIdRoute,
   ]),
+  waitingPatientsRoute,
 ]);
 
 export type Router = ReturnType<typeof createRouter<typeof routeTree>>;
@@ -136,6 +139,13 @@ declare module "@tanstack/react-router" {
       fullPath: "/user-management/roles/$roleId";
       preLoaderRoute: typeof userManagementRolesRoleIdImport;
       parentRoute: typeof userManagementImport;
+    };
+    "/waiting-patients": {
+      id: "/waiting-patients";
+      path: "/waiting-patients";
+      fullPath: "/waiting-patients";
+      preLoaderRoute: typeof waitingPatientsImport;
+      parentRoute: typeof rootImport;
     };
     "/login": {
       id: "/login";
