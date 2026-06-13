@@ -55,6 +55,8 @@ import {
 } from "recharts";
 import { toast } from "sonner";
 import "react-day-picker/style.css";
+import { PermissionLock } from "@/components/dashboards/PermissionLock";
+import type { RoleId } from "@/types";
 import { GlassTooltip, containerVariants, itemVariants } from "./shared";
 
 const REVENUE_DATA = {
@@ -379,7 +381,11 @@ function computeFilteredStats(range: { from: Date; to: Date }) {
   };
 }
 
-export function AdminDashboard() {
+interface AdminDashboardProps {
+  roleId?: RoleId;
+}
+
+export function AdminDashboard({ roleId = "main-admin" }: AdminDashboardProps) {
   const [clinics, setClinics] = useState<Clinic[]>([]);
   const [activeIdx, setActiveIdx] = useState(0);
   const [addOpen, setAddOpen] = useState(false);
@@ -535,7 +541,7 @@ export function AdminDashboard() {
     >
       <motion.div variants={itemVariants}>
         <PageHeader
-          title="Admin Dashboard"
+          title={roleId === "main-admin" ? "Admin Dashboard" : "Dashboard"}
           description="Clinic-wide overview — all operations at a glance."
           breadcrumb={[{ label: "Dashboard" }]}
         />
@@ -751,45 +757,61 @@ export function AdminDashboard() {
         variants={itemVariants}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
       >
-        <StatCard
-          title="Total Appointments"
-          value={filteredStats?.appointments ?? stats.appts}
-          change={5}
-          icon={<Calendar className="w-5 h-5" />}
-          color="purple"
-        />
-        <StatCard
-          title="Total Visitors"
-          value={filteredStats?.visitors ?? 1580}
-          change={12}
-          icon={<Users className="w-5 h-5" />}
-          color="teal"
-        />
-        <StatCard
-          title="Cases Taken"
-          value={filteredStats?.casesTaken ?? 312}
-          change={8}
-          icon={<Activity className="w-5 h-5" />}
-          color="amber"
-        />
-        <StatCard
-          title="Total Revenue"
-          value={
-            filteredStats
-              ? `₹${filteredStats.revenue.toLocaleString("en-IN")}`
-              : stats.revenue
-          }
-          change={8}
-          icon={<DollarSign className="w-5 h-5" />}
-          color="green"
-        />
-        <StatCard
-          title="New Registrations"
-          value={filteredStats?.newRegistrations ?? 0}
-          change={3}
-          icon={<UserPlus className="w-5 h-5" />}
-          color="rose"
-        />
+        <PermissionLock
+          roleId={roleId}
+          permission="dashboard.total_appointments"
+        >
+          <StatCard
+            title="Total Appointments"
+            value={filteredStats?.appointments ?? stats.appts}
+            change={5}
+            icon={<Calendar className="w-5 h-5" />}
+            color="purple"
+          />
+        </PermissionLock>
+        <PermissionLock roleId={roleId} permission="dashboard.total_visitors">
+          <StatCard
+            title="Total Visitors"
+            value={filteredStats?.visitors ?? 1580}
+            change={12}
+            icon={<Users className="w-5 h-5" />}
+            color="teal"
+          />
+        </PermissionLock>
+        <PermissionLock roleId={roleId} permission="dashboard.case_taken">
+          <StatCard
+            title="Cases Taken"
+            value={filteredStats?.casesTaken ?? 312}
+            change={8}
+            icon={<Activity className="w-5 h-5" />}
+            color="amber"
+          />
+        </PermissionLock>
+        <PermissionLock roleId={roleId} permission="dashboard.total_revenue">
+          <StatCard
+            title="Total Revenue"
+            value={
+              filteredStats
+                ? `₹${filteredStats.revenue.toLocaleString("en-IN")}`
+                : stats.revenue
+            }
+            change={8}
+            icon={<DollarSign className="w-5 h-5" />}
+            color="green"
+          />
+        </PermissionLock>
+        <PermissionLock
+          roleId={roleId}
+          permission="dashboard.new_registrations"
+        >
+          <StatCard
+            title="New Registrations"
+            value={filteredStats?.newRegistrations ?? 0}
+            change={3}
+            icon={<UserPlus className="w-5 h-5" />}
+            color="rose"
+          />
+        </PermissionLock>
       </motion.div>
 
       {/* Stat Cards — Second Row */}
@@ -797,30 +819,34 @@ export function AdminDashboard() {
         variants={itemVariants}
         className="grid grid-cols-1 sm:grid-cols-2 gap-4"
       >
-        <StatCard
-          title="Total Patients"
-          value={stats.patients}
-          change={12}
-          icon={<Users className="w-5 h-5" />}
-          color="teal"
-        />
-        <div
-          className="glass-card p-5 flex items-center gap-4"
-          data-ocid="admin-pending-cases"
-        >
-          <div className="p-3 rounded-xl bg-amber-500/15 border border-amber-500/20">
-            <AlertCircle className="w-6 h-6 text-amber-400" />
+        <PermissionLock roleId={roleId} permission="dashboard.total_patients">
+          <StatCard
+            title="Total Patients"
+            value={stats.patients}
+            change={12}
+            icon={<Users className="w-5 h-5" />}
+            color="teal"
+          />
+        </PermissionLock>
+        <PermissionLock roleId={roleId} permission="dashboard.pending_cases">
+          <div
+            className="glass-card p-5 flex items-center gap-4"
+            data-ocid="admin-pending-cases"
+          >
+            <div className="p-3 rounded-xl bg-amber-500/15 border border-amber-500/20">
+              <AlertCircle className="w-6 h-6 text-amber-400" />
+            </div>
+            <div>
+              <p className="text-3xl font-bold font-display text-foreground">
+                23
+              </p>
+              <p className="text-sm text-muted-foreground">Pending Cases</p>
+              <p className="text-xs text-amber-400 mt-1">
+                Needs follow-up this week
+              </p>
+            </div>
           </div>
-          <div>
-            <p className="text-3xl font-bold font-display text-foreground">
-              23
-            </p>
-            <p className="text-sm text-muted-foreground">Pending Cases</p>
-            <p className="text-xs text-amber-400 mt-1">
-              Needs follow-up this week
-            </p>
-          </div>
-        </div>
+        </PermissionLock>
       </motion.div>
 
       {/* Charts */}
@@ -828,229 +854,241 @@ export function AdminDashboard() {
         variants={itemVariants}
         className="grid grid-cols-1 lg:grid-cols-2 gap-4"
       >
-        <div className="glass-card p-5" data-ocid="admin-revenue-chart">
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h3 className="font-display font-semibold text-foreground">
-                Revenue Trend
-              </h3>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                {revenuePeriod === "3 Months"
-                  ? "Last 3 months"
-                  : revenuePeriod === "1 Year"
-                    ? "Last 12 months"
-                    : "Last 6 months"}
-              </p>
+        <PermissionLock roleId={roleId} permission="dashboard.total_revenue">
+          <div className="glass-card p-5" data-ocid="admin-revenue-chart">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="font-display font-semibold text-foreground">
+                  Revenue Trend
+                </h3>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  {revenuePeriod === "3 Months"
+                    ? "Last 3 months"
+                    : revenuePeriod === "1 Year"
+                      ? "Last 12 months"
+                      : "Last 6 months"}
+                </p>
+              </div>
+              <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
+                +43%
+              </span>
             </div>
-            <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
-              +43%
-            </span>
-          </div>
-          <div className="flex gap-2 mb-4">
-            {(["3 Months", "6 Months", "1 Year"] as const).map((p) => (
-              <button
-                key={p}
-                type="button"
-                onClick={() => setRevenuePeriod(p)}
-                className={`text-xs px-2.5 py-1 rounded-full border transition-all ${
-                  revenuePeriod === p
-                    ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30"
-                    : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground"
-                }`}
-                data-ocid={`admin.revenue_toggle.${p.toLowerCase().replace(" ", "_")}`}
-              >
-                {p}
-              </button>
-            ))}
-          </div>
-          <ResponsiveContainer width="100%" height={240}>
-            <LineChart
-              data={REVENUE_DATA[revenuePeriod]}
-              margin={{ top: 5, right: 10, left: -10, bottom: 5 }}
-            >
-              <CartesianGrid
-                strokeDasharray="3 3"
-                stroke="rgba(255,255,255,0.06)"
-              />
-              <XAxis
-                dataKey="label"
-                tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
-                axisLine={{ stroke: "rgba(255,255,255,0.08)" }}
-                tickLine={false}
-              />
-              <YAxis
-                tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }}
-                axisLine={false}
-                tickLine={false}
-                tickFormatter={(v: number) => `₹${(v / 1000).toFixed(0)}k`}
-              />
-              <Tooltip content={<GlassTooltip />} />
-              <Line
-                type="monotone"
-                dataKey="revenue"
-                name="Revenue"
-                stroke="oklch(0.65 0.18 150)"
-                strokeWidth={2.5}
-                dot={{ fill: "oklch(0.65 0.18 150)", r: 3, strokeWidth: 0 }}
-                activeDot={{
-                  r: 5,
-                  fill: "oklch(0.65 0.18 150)",
-                  strokeWidth: 0,
-                }}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-        <div className="glass-card p-5" data-ocid="admin-appt-chart">
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h3 className="font-display font-semibold text-foreground">
-                Appointment Volume
-              </h3>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                {apptPeriod === "Daily"
-                  ? "Today"
-                  : apptPeriod === "Weekly"
-                    ? "This week"
-                    : apptPeriod === "Monthly"
-                      ? "This month"
-                      : "This year"}
-              </p>
-            </div>
-            <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
-              {apptPeriod}
-            </span>
-          </div>
-          <div className="flex gap-2 mb-4">
-            {(["Daily", "Weekly", "Monthly", "Yearly"] as const).map((p) => (
-              <button
-                key={p}
-                type="button"
-                onClick={() => setApptPeriod(p)}
-                className={`text-xs px-2.5 py-1 rounded-full border transition-all ${
-                  apptPeriod === p
-                    ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30"
-                    : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground"
-                }`}
-                data-ocid={`admin.appt_toggle.${p.toLowerCase()}`}
-              >
-                {p}
-              </button>
-            ))}
-          </div>
-          <ResponsiveContainer width="100%" height={240}>
-            <BarChart
-              data={APPT_DATA[apptPeriod]}
-              margin={{ top: 5, right: 10, left: -20, bottom: 5 }}
-            >
-              <CartesianGrid
-                strokeDasharray="3 3"
-                stroke="rgba(255,255,255,0.06)"
-              />
-              <XAxis
-                dataKey="label"
-                tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
-                axisLine={{ stroke: "rgba(255,255,255,0.08)" }}
-                tickLine={false}
-              />
-              <YAxis
-                tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
-                axisLine={false}
-                tickLine={false}
-              />
-              <Tooltip content={<GlassTooltip />} />
-              <Bar
-                dataKey="appointments"
-                name="Appointments"
-                fill="oklch(0.65 0.18 190)"
-                radius={[4, 4, 0, 0]}
-              />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      </motion.div>
-
-      {/* Doctor Performance Table */}
-      <motion.div variants={itemVariants}>
-        <div className="glass-card p-5" data-ocid="admin-doctor-table">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="font-display font-semibold text-foreground">
-              Doctor Performance
-            </h3>
-            <div className="flex gap-2">
-              {(["Today", "Week", "Month", "Year"] as const).map((p) => (
+            <div className="flex gap-2 mb-4">
+              {(["3 Months", "6 Months", "1 Year"] as const).map((p) => (
                 <button
                   key={p}
                   type="button"
-                  onClick={() => setDoctorPeriod(p)}
+                  onClick={() => setRevenuePeriod(p)}
                   className={`text-xs px-2.5 py-1 rounded-full border transition-all ${
-                    doctorPeriod === p
+                    revenuePeriod === p
                       ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30"
                       : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground"
                   }`}
-                  data-ocid={`admin.doctor_toggle.${p.toLowerCase()}`}
+                  data-ocid={`admin.revenue_toggle.${p.toLowerCase().replace(" ", "_")}`}
                 >
                   {p}
                 </button>
               ))}
             </div>
+            <ResponsiveContainer width="100%" height={240}>
+              <LineChart
+                data={REVENUE_DATA[revenuePeriod]}
+                margin={{ top: 5, right: 10, left: -10, bottom: 5 }}
+              >
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  stroke="rgba(255,255,255,0.06)"
+                />
+                <XAxis
+                  dataKey="label"
+                  tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
+                  axisLine={{ stroke: "rgba(255,255,255,0.08)" }}
+                  tickLine={false}
+                />
+                <YAxis
+                  tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }}
+                  axisLine={false}
+                  tickLine={false}
+                  tickFormatter={(v: number) => `₹${(v / 1000).toFixed(0)}k`}
+                />
+                <Tooltip content={<GlassTooltip />} />
+                <Line
+                  type="monotone"
+                  dataKey="revenue"
+                  name="Revenue"
+                  stroke="oklch(0.65 0.18 150)"
+                  strokeWidth={2.5}
+                  dot={{ fill: "oklch(0.65 0.18 150)", r: 3, strokeWidth: 0 }}
+                  activeDot={{
+                    r: 5,
+                    fill: "oklch(0.65 0.18 150)",
+                    strokeWidth: 0,
+                  }}
+                />
+              </LineChart>
+            </ResponsiveContainer>
           </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-white/10">
-                  {[
-                    "Doctor Name",
-                    doctorPeriod === "Today"
-                      ? "Patients Today"
-                      : doctorPeriod === "Week"
-                        ? "Patients This Week"
-                        : doctorPeriod === "Month"
-                          ? "Patients This Month"
-                          : "Patients This Year",
-                    "Cases Open",
-                    "Avg Rating",
-                  ].map((h) => (
-                    <th
-                      key={h}
-                      className="text-left text-xs font-semibold text-muted-foreground py-2 pr-4 last:pr-0"
-                    >
-                      {h}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {DOCTOR_PERFORMANCE_DATA[doctorPeriod].map((row, i) => (
-                  <tr
-                    key={row.name}
-                    className="border-b border-white/5 hover:bg-white/[0.03] transition-colors"
-                    data-ocid={`admin-doctor.item.${i + 1}`}
+        </PermissionLock>
+        <PermissionLock
+          roleId={roleId}
+          permission="dashboard.total_appointments"
+        >
+          <div className="glass-card p-5" data-ocid="admin-appt-chart">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="font-display font-semibold text-foreground">
+                  Appointment Volume
+                </h3>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  {apptPeriod === "Daily"
+                    ? "Today"
+                    : apptPeriod === "Weekly"
+                      ? "This week"
+                      : apptPeriod === "Monthly"
+                        ? "This month"
+                        : "This year"}
+                </p>
+              </div>
+              <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                {apptPeriod}
+              </span>
+            </div>
+            <div className="flex gap-2 mb-4">
+              {(["Daily", "Weekly", "Monthly", "Yearly"] as const).map((p) => (
+                <button
+                  key={p}
+                  type="button"
+                  onClick={() => setApptPeriod(p)}
+                  className={`text-xs px-2.5 py-1 rounded-full border transition-all ${
+                    apptPeriod === p
+                      ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30"
+                      : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground"
+                  }`}
+                  data-ocid={`admin.appt_toggle.${p.toLowerCase()}`}
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
+            <ResponsiveContainer width="100%" height={240}>
+              <BarChart
+                data={APPT_DATA[apptPeriod]}
+                margin={{ top: 5, right: 10, left: -20, bottom: 5 }}
+              >
+                <CartesianGrid
+                  strokeDasharray="3 3"
+                  stroke="rgba(255,255,255,0.06)"
+                />
+                <XAxis
+                  dataKey="label"
+                  tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
+                  axisLine={{ stroke: "rgba(255,255,255,0.08)" }}
+                  tickLine={false}
+                />
+                <YAxis
+                  tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
+                  axisLine={false}
+                  tickLine={false}
+                />
+                <Tooltip content={<GlassTooltip />} />
+                <Bar
+                  dataKey="appointments"
+                  name="Appointments"
+                  fill="oklch(0.65 0.18 190)"
+                  radius={[4, 4, 0, 0]}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </PermissionLock>
+      </motion.div>
+
+      {/* Doctor Performance Table */}
+      <motion.div variants={itemVariants}>
+        <PermissionLock
+          roleId={roleId}
+          permission="dashboard.doctor_performance"
+        >
+          <div className="glass-card p-5" data-ocid="admin-doctor-table">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-display font-semibold text-foreground">
+                Doctor Performance
+              </h3>
+              <div className="flex gap-2">
+                {(["Today", "Week", "Month", "Year"] as const).map((p) => (
+                  <button
+                    key={p}
+                    type="button"
+                    onClick={() => setDoctorPeriod(p)}
+                    className={`text-xs px-2.5 py-1 rounded-full border transition-all ${
+                      doctorPeriod === p
+                        ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30"
+                        : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground"
+                    }`}
+                    data-ocid={`admin.doctor_toggle.${p.toLowerCase()}`}
                   >
-                    <td className="py-3 pr-4 font-medium text-foreground">
-                      {row.name}
-                    </td>
-                    <td className="py-3 pr-4 text-muted-foreground tabular-nums">
-                      {row.patients}
-                    </td>
-                    <td className="py-3 pr-4">
-                      <span
-                        className={`text-xs font-medium px-2 py-0.5 rounded-full ${row.openCases > 3 ? "bg-amber-500/15 text-amber-400" : "bg-green-500/15 text-green-400"}`}
-                      >
-                        {row.openCases}
-                      </span>
-                    </td>
-                    <td className="py-3 text-right">
-                      <span className="text-xs font-bold text-primary">
-                        ⭐ {row.rating}
-                      </span>
-                    </td>
-                  </tr>
+                    {p}
+                  </button>
                 ))}
-              </tbody>
-            </table>
+              </div>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    {[
+                      "Doctor Name",
+                      doctorPeriod === "Today"
+                        ? "Patients Today"
+                        : doctorPeriod === "Week"
+                          ? "Patients This Week"
+                          : doctorPeriod === "Month"
+                            ? "Patients This Month"
+                            : "Patients This Year",
+                      "Cases Open",
+                      "Avg Rating",
+                    ].map((h) => (
+                      <th
+                        key={h}
+                        className="text-left text-xs font-semibold text-muted-foreground py-2 pr-4 last:pr-0"
+                      >
+                        {h}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {DOCTOR_PERFORMANCE_DATA[doctorPeriod].map((row, i) => (
+                    <tr
+                      key={row.name}
+                      className="border-b border-white/5 hover:bg-white/[0.03] transition-colors"
+                      data-ocid={`admin-doctor.item.${i + 1}`}
+                    >
+                      <td className="py-3 pr-4 font-medium text-foreground">
+                        {row.name}
+                      </td>
+                      <td className="py-3 pr-4 text-muted-foreground tabular-nums">
+                        {row.patients}
+                      </td>
+                      <td className="py-3 pr-4">
+                        <span
+                          className={`text-xs font-medium px-2 py-0.5 rounded-full ${row.openCases > 3 ? "bg-amber-500/15 text-amber-400" : "bg-green-500/15 text-green-400"}`}
+                        >
+                          {row.openCases}
+                        </span>
+                      </td>
+                      <td className="py-3 text-right">
+                        <span className="text-xs font-bold text-primary">
+                          ⭐ {row.rating}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+        </PermissionLock>
       </motion.div>
 
       {/* Add Clinic Modal */}

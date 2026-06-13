@@ -1,3 +1,4 @@
+import type { DashboardPermissionKey } from "@/components/dashboards/PermissionLock";
 import type { Role, RoleConfig, RoleId, RolePermissions } from "../types";
 
 export const ROLE_CONFIGS: RoleConfig[] = [
@@ -122,4 +123,67 @@ export function hasModuleAccess(roleId: RoleId, module: string): boolean {
 
 export function getRoleConfig(roleId: RoleId): RoleConfig | undefined {
   return ROLE_CONFIGS.find((r) => r.id === roleId);
+}
+
+// ─── Dashboard permissions ───────────────────────────────────────────────────
+
+const LS_KEY = (roleId: string) => `role_perms_${roleId}`;
+
+export const DEFAULT_DASHBOARD_PERMISSIONS: Record<
+  RoleId,
+  DashboardPermissionKey[]
+> = {
+  "main-admin": [
+    "dashboard.view_all",
+    "dashboard.total_appointments",
+    "dashboard.total_visitors",
+    "dashboard.case_taken",
+    "dashboard.total_revenue",
+    "dashboard.new_registrations",
+    "dashboard.total_patients",
+    "dashboard.pending_cases",
+    "dashboard.doctor_performance",
+  ],
+  doctor: [
+    "dashboard.view_all",
+    "dashboard.total_appointments",
+    "dashboard.total_visitors",
+    "dashboard.case_taken",
+    "dashboard.total_revenue",
+    "dashboard.new_registrations",
+    "dashboard.total_patients",
+    "dashboard.pending_cases",
+    "dashboard.doctor_performance",
+  ],
+  receptionist: [
+    "dashboard.view_all",
+    "dashboard.total_appointments",
+    "dashboard.total_visitors",
+    "dashboard.new_registrations",
+    "dashboard.total_patients",
+    "dashboard.pending_cases",
+  ],
+  pharmacist: [
+    "dashboard.view_all",
+    "dashboard.total_patients",
+    "dashboard.pending_cases",
+  ],
+};
+
+function loadSavedPermissions(roleId: RoleId): string[] | null {
+  try {
+    const raw = localStorage.getItem(LS_KEY(roleId));
+    return raw ? (JSON.parse(raw) as string[]) : null;
+  } catch {
+    return null;
+  }
+}
+
+export function hasDashboardPermission(
+  roleId: RoleId,
+  permission: DashboardPermissionKey,
+): boolean {
+  const saved = loadSavedPermissions(roleId);
+  const perms = saved ?? DEFAULT_DASHBOARD_PERMISSIONS[roleId] ?? [];
+  return perms.includes(permission);
 }
