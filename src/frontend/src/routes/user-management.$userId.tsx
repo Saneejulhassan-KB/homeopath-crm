@@ -138,8 +138,6 @@ function getRoleBadgeStyle(role: string) {
     Pharmacist: "bg-amber-500/15 text-amber-300 border-amber-400/40",
     Admin: "bg-violet-500/15 text-violet-300 border-violet-400/40",
     Cashier: "bg-emerald-500/15 text-emerald-300 border-emerald-400/40",
-    "Nurse/Compounder": "bg-rose-500/15 text-rose-300 border-rose-400/40",
-    "Billing Staff": "bg-cyan-500/15 text-cyan-300 border-cyan-400/40",
   };
   return map[role] ?? "bg-primary/15 text-primary border-primary/40";
 }

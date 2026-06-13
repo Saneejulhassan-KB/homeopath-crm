@@ -229,30 +229,6 @@ const ROLES_TABLE = [
     isMainAdmin: false,
   },
   {
-    id: "nurse",
-    name: "Nurse / Compounder",
-    description: "Vital recording, treatment assistance & patient care support",
-    accessLevel: "Clinical Support Access",
-    color: "rose",
-    isMainAdmin: false,
-  },
-  {
-    id: "billing",
-    name: "Billing Staff",
-    description: "Invoice generation, payment collection & financial reports",
-    accessLevel: "Billing Access",
-    color: "cyan",
-    isMainAdmin: false,
-  },
-  {
-    id: "cashier",
-    name: "Cashier",
-    description: "Cash handling, daily collections & receipt management",
-    accessLevel: "Limited Billing Access",
-    color: "emerald",
-    isMainAdmin: false,
-  },
-  {
     id: "admin",
     name: "Admin",
     description: "Administrative tasks, reporting & staff coordination",
@@ -595,17 +571,13 @@ function UserManagementPage() {
                         <SelectValue placeholder="Select role" />
                       </SelectTrigger>
                       <SelectContent className="glass border-white/10 bg-card/95">
-                        {[
-                          "Admin",
-                          "Cashier",
-                          "Pharmacist",
-                          "Doctor",
-                          "Receptionist",
-                        ].map((r) => (
-                          <SelectItem key={r} value={r}>
-                            {r}
-                          </SelectItem>
-                        ))}
+                        {["Admin", "Pharmacist", "Doctor", "Receptionist"].map(
+                          (r) => (
+                            <SelectItem key={r} value={r}>
+                              {r}
+                            </SelectItem>
+                          ),
+                        )}
                       </SelectContent>
                     </Select>
                   </FormField>
@@ -929,9 +901,6 @@ function UserManagementPage() {
                         "doctor",
                         "receptionist",
                         "pharmacist",
-                        "cashier",
-                        "nurse",
-                        "billing",
                       ].includes(role.id);
 
                     return (

@@ -36,22 +36,6 @@ export const ROLE_CONFIGS: RoleConfig[] = [
     description:
       "Remedy dispensing, inventory management & prescription review",
   },
-  {
-    id: "nurse",
-    displayName: "Nurse / Compounder",
-    icon: "HeartPulse",
-    color: "rose",
-    gradient: "from-rose-500/20 to-pink-600/10",
-    description: "Vital recording, treatment assistance & patient care support",
-  },
-  {
-    id: "billing",
-    displayName: "Billing Staff",
-    icon: "Receipt",
-    color: "cyan",
-    gradient: "from-cyan-500/20 to-teal-600/10",
-    description: "Invoice generation, payment collection & financial reports",
-  },
 ];
 
 // Maps RoleId → display Role string used in the store
@@ -60,8 +44,6 @@ export const ROLE_DISPLAY_MAP: Record<RoleId, Role> = {
   doctor: "Doctor",
   receptionist: "Receptionist",
   pharmacist: "Pharmacist",
-  nurse: "Nurse/Compounder",
-  billing: "Billing Staff",
 };
 
 // Tailwind class sets per color token
@@ -97,20 +79,6 @@ export const ROLE_COLOR_MAP: Record<
     bg: "bg-amber-500/15",
     ring: "ring-amber-400/40",
   },
-  rose: {
-    border: "border-rose-400/60",
-    glow: "shadow-rose-500/30",
-    text: "text-rose-300",
-    bg: "bg-rose-500/15",
-    ring: "ring-rose-400/40",
-  },
-  cyan: {
-    border: "border-cyan-400/60",
-    glow: "shadow-cyan-500/30",
-    text: "text-cyan-300",
-    bg: "bg-cyan-500/15",
-    ring: "ring-cyan-400/40",
-  },
 };
 
 export const ROLE_PERMISSIONS: Record<RoleId, RolePermissions> = {
@@ -143,22 +111,6 @@ export const ROLE_PERMISSIONS: Record<RoleId, RolePermissions> = {
     patients: "none",
     appointments: "none",
     billing: "none",
-    settings: "view-only",
-    "ai-assistant": "none",
-  },
-  nurse: {
-    dashboard: "filtered",
-    patients: "none",
-    appointments: "none",
-    billing: "none",
-    settings: "view-only",
-    "ai-assistant": "none",
-  },
-  billing: {
-    dashboard: "filtered",
-    patients: "none",
-    appointments: "none",
-    billing: "full",
     settings: "view-only",
     "ai-assistant": "none",
   },

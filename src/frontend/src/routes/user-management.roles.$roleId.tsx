@@ -63,24 +63,6 @@ const ROLE_META: Record<
       "Remedy dispensing, inventory management & prescription review",
     isBuiltIn: true,
   },
-  cashier: {
-    name: "Cashier",
-    color: "emerald",
-    description: "Cash handling, daily collections & receipt management",
-    isBuiltIn: true,
-  },
-  nurse: {
-    name: "Nurse / Compounder",
-    color: "rose",
-    description: "Vital recording, treatment assistance & patient care support",
-    isBuiltIn: true,
-  },
-  billing: {
-    name: "Billing Staff",
-    color: "cyan",
-    description: "Invoice generation, payment collection & financial reports",
-    isBuiltIn: true,
-  },
 };
 
 // ─── Permissions definition ───────────────────────────────────────────────────
@@ -251,36 +233,6 @@ const DEFAULT_PERMISSIONS: Record<string, string[]> = {
     "billing.invoice",
     "billing.payment_history",
     "settings.view_all",
-  ],
-  cashier: [
-    "dashboard.view_all",
-    "dashboard.total_revenue",
-    "patient_list.view",
-    "billing.invoice",
-    "billing.payment_history",
-    "billing.subscription_plan",
-    "settings.view_all",
-    "settings.billing",
-  ],
-  nurse: [
-    "dashboard.view_all",
-    "dashboard.total_patients",
-    "dashboard.pending_cases",
-    "patient_list.view",
-    "patient_detail.all",
-    "appointments.view_all",
-    "settings.view_all",
-  ],
-  billing: [
-    "dashboard.view_all",
-    "dashboard.total_revenue",
-    "dashboard.new_registrations",
-    "patient_list.view",
-    "billing.invoice",
-    "billing.payment_history",
-    "billing.subscription_plan",
-    "settings.view_all",
-    "settings.billing",
   ],
 };
 

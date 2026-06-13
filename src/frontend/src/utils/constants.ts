@@ -5,6 +5,7 @@ export const ROUTES = {
   DASHBOARD: "/",
   PATIENTS: "/patients",
   APPOINTMENTS: "/appointments",
+  PHARMACY: "/pharmacy",
 
   AI_ASSISTANT: "/ai-assistant",
   BILLING: "/billing",
@@ -26,8 +27,6 @@ export const ROLES = [
   "doctor",
   "receptionist",
   "pharmacist",
-  "nurse",
-  "billing",
 ] as const;
 
 export const NAV_ITEMS = [
@@ -35,14 +34,7 @@ export const NAV_ITEMS = [
     path: ROUTES.DASHBOARD,
     label: "Dashboard",
     icon: "LayoutDashboard",
-    roles: [
-      "main-admin",
-      "doctor",
-      "receptionist",
-      "pharmacist",
-      "nurse",
-      "billing",
-    ] as const,
+    roles: ["main-admin", "doctor", "receptionist", "pharmacist"] as const,
   },
   {
     path: ROUTES.PATIENTS,
@@ -54,7 +46,13 @@ export const NAV_ITEMS = [
     path: ROUTES.APPOINTMENTS,
     label: "Appointments",
     icon: "Calendar",
-    roles: ["main-admin", "doctor", "receptionist", "nurse"] as const,
+    roles: ["main-admin", "doctor", "receptionist"] as const,
+  },
+  {
+    path: ROUTES.PHARMACY,
+    label: "Pharmacy",
+    icon: "FlaskConical",
+    roles: ["main-admin", "receptionist", "pharmacist"] as const,
   },
   {
     path: ROUTES.AI_ASSISTANT,
@@ -66,20 +64,13 @@ export const NAV_ITEMS = [
     path: ROUTES.BILLING,
     label: "Billing",
     icon: "CreditCard",
-    roles: ["main-admin", "billing"] as const,
+    roles: ["main-admin"] as const,
   },
   {
     path: ROUTES.SETTINGS,
     label: "Settings",
     icon: "Settings",
-    roles: [
-      "main-admin",
-      "doctor",
-      "receptionist",
-      "pharmacist",
-      "nurse",
-      "billing",
-    ] as const,
+    roles: ["main-admin", "doctor", "receptionist", "pharmacist"] as const,
   },
   {
     path: ROUTES.USER_MANAGEMENT,

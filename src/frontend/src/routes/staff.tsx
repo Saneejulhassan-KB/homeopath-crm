@@ -54,8 +54,6 @@ const ROLE_OPTIONS: { id: RoleId; label: string }[] = [
   { id: "doctor", label: "Doctor" },
   { id: "receptionist", label: "Receptionist" },
   { id: "pharmacist", label: "Pharmacist" },
-  { id: "nurse", label: "Nurse / Compounder" },
-  { id: "billing", label: "Billing Staff" },
 ];
 
 const TABS = [

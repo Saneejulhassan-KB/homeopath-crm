@@ -1,7 +1,5 @@
 import { AdminDashboard } from "@/components/dashboards/AdminDashboard";
-import { BillingDashboard } from "@/components/dashboards/BillingDashboard";
 import { DoctorDashboard } from "@/components/dashboards/DoctorDashboard";
-import { NurseDashboard } from "@/components/dashboards/NurseDashboard";
 import { PharmacistDashboard } from "@/components/dashboards/PharmacistDashboard";
 import { ReceptionistDashboard } from "@/components/dashboards/ReceptionistDashboard";
 import { useAppStore } from "@/store";
@@ -23,8 +21,6 @@ function DashboardPage() {
   if (currentRole === "doctor") return <DoctorDashboard />;
   if (currentRole === "receptionist") return <ReceptionistDashboard />;
   if (currentRole === "pharmacist") return <PharmacistDashboard />;
-  if (currentRole === "nurse") return <NurseDashboard />;
-  if (currentRole === "billing") return <BillingDashboard />;
 
   return <AdminDashboard />;
 }

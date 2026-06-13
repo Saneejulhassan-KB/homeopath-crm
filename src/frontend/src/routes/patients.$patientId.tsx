@@ -14,6 +14,7 @@ import {
   BellRing,
   Brain,
   Calendar,
+  Check,
   CheckCheck,
   CheckCircle2,
   ChevronDown,
@@ -44,6 +45,7 @@ import {
 import { AnimatePresence, motion } from "motion/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
+import { usePharmacyStore } from "../store/pharmacyStore";
 import { Route as patientsRoute } from "./patients";
 import { PatientModal } from "./patients.index";
 
@@ -1192,15 +1194,26 @@ function CaseTakingTab({
 
 function FeeStructureTab({
   lastSavedMedicine,
+  patientId,
+  patientName,
+  patientRegId,
+  doctorName,
 }: {
   lastSavedMedicine: string;
+  patientId?: string;
+  patientName?: string;
+  patientRegId?: string;
+  doctorName?: string;
 }) {
+  const { addToQueue } = usePharmacyStore();
   const [consultationFee, setConsultationFee] = useState("");
   const [medicineRegular, setMedicineRegular] = useState("");
   const [extraMedicine, setExtraMedicine] = useState("");
   const [registrationFee, setRegistrationFee] = useState("");
   const [dueAmount, setDueAmount] = useState("");
   const [confirmedByDoctor, setConfirmedByDoctor] = useState(false);
+  const [showReceiptModal, setShowReceiptModal] = useState(false);
+  const [sentToPharmacist, setSentToPharmacist] = useState(false);
   const [feeHistory, setFeeHistory] = useState<FeeEntry[]>([
     {
       id: "fee-demo-1",
@@ -1265,16 +1278,36 @@ function FeeStructureTab({
         f.id === feeId ? { ...f, confirmedToPharmacist: true } : f,
       ),
     );
+    setSentToPharmacist(true);
+    addToQueue({
+      patientId: patientId || "unknown",
+      patientName: patientName || "Unknown Patient",
+      patientRegId: patientRegId || "N/A",
+      doctorName: doctorName || "Dr. Priya Sharma",
+      date: new Date().toISOString(),
+      medicines: lastSavedMedicine || "",
+      consultationFee: Number(consultationFee) || 0,
+      medicineFee: Number(medicineRegular) || 0,
+      extraMedicineFee: Number(extraMedicine) || 0,
+      registrationFee: Number(registrationFee) || 0,
+      totalAmount: totalAmount || 0,
+      dueAmount: Number(dueAmount) || 0,
+    });
     toast.success("Fee confirmed and sent to pharmacist!", {
       description: "The pharmacist has been notified of the fee details.",
     });
   };
 
   const handleConfirmByDoctor = () => {
+    if (totalAmount === 0) {
+      toast.error("Please enter fee amounts before confirming.");
+      return;
+    }
     setConfirmedByDoctor(true);
+    setShowReceiptModal(true);
     toast.success("Confirmed by Doctor!", {
       description:
-        "The fee structure has been reviewed and confirmed by the doctor.",
+        "Payment received. The fee structure has been confirmed by the doctor.",
     });
   };
 
@@ -1481,40 +1514,162 @@ function FeeStructureTab({
             <Save className="w-4 h-4" />
             Save Fee
           </Button>
-          <Button
-            type="button"
-            onClick={handleConfirmByDoctor}
-            disabled={confirmedByDoctor}
-            className="flex items-center gap-2 px-5 bg-blue-600 hover:bg-blue-500 text-white border-blue-500 shadow-md shadow-blue-900/20 disabled:opacity-60 disabled:cursor-not-allowed"
-            data-ocid="fee-structure.confirm_doctor_button"
-          >
-            <CheckCircle2 className="w-4 h-4" />
-            {confirmedByDoctor ? "Confirmed by Doctor" : "Confirm by Doctor"}
-          </Button>
-          <Button
-            type="button"
-            onClick={() => {
-              if (feeHistory.length === 0) {
-                toast.error("Save fee details first before confirming.");
-                return;
-              }
-              const latestUnconfirmed = feeHistory.find(
-                (f) => !f.confirmedToPharmacist,
-              );
-              if (!latestUnconfirmed) {
-                toast.info("All saved fees have already been confirmed.");
-                return;
-              }
-              handleConfirmToPharmacist(latestUnconfirmed.id);
-            }}
-            className="flex items-center gap-2 px-5 bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-500 shadow-md shadow-emerald-900/20"
-            data-ocid="fee-structure.confirm_pharmacist_button"
-          >
-            <Pill className="w-4 h-4" />
-            <Send className="w-3.5 h-3.5" />
-            Confirm &amp; Send to Pharmacist
-          </Button>
+
+          {/* Confirm by Doctor */}
+          <div className="flex items-center gap-2">
+            <Button
+              type="button"
+              onClick={handleConfirmByDoctor}
+              disabled={confirmedByDoctor}
+              className="flex items-center gap-2 px-5 bg-blue-600 hover:bg-blue-500 text-white border-blue-500 shadow-md shadow-blue-900/20 disabled:opacity-60 disabled:cursor-not-allowed"
+              data-ocid="fee-structure.confirm_doctor_button"
+            >
+              {confirmedByDoctor ? (
+                <Check className="w-4 h-4" />
+              ) : (
+                <CheckCircle2 className="w-4 h-4" />
+              )}
+              {confirmedByDoctor ? "Payment Done" : "Confirm by Doctor"}
+            </Button>
+            {confirmedByDoctor && (
+              <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-green-500/20 border border-green-400/40 text-green-400">
+                <Check className="w-3 h-3" /> Paid ✓
+              </span>
+            )}
+          </div>
+
+          {/* Confirm & Send to Pharmacist */}
+          <div className="flex items-center gap-2">
+            <Button
+              type="button"
+              disabled={sentToPharmacist}
+              onClick={() => {
+                if (feeHistory.length === 0) {
+                  toast.error("Save fee details first before confirming.");
+                  return;
+                }
+                const latestUnconfirmed = feeHistory.find(
+                  (f) => !f.confirmedToPharmacist,
+                );
+                if (!latestUnconfirmed) {
+                  toast.info("All saved fees have already been confirmed.");
+                  return;
+                }
+                handleConfirmToPharmacist(latestUnconfirmed.id);
+              }}
+              className="flex items-center gap-2 px-5 bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-500 shadow-md shadow-emerald-900/20 disabled:opacity-60 disabled:cursor-not-allowed"
+              data-ocid="fee-structure.confirm_pharmacist_button"
+            >
+              <Pill className="w-4 h-4" />
+              <Send className="w-3.5 h-3.5" />
+              {sentToPharmacist
+                ? "Sent to Pharmacist"
+                : "Confirm & Send to Pharmacist"}
+            </Button>
+            {sentToPharmacist && (
+              <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-400">
+                <Check className="w-3 h-3" /> Sent ✓
+              </span>
+            )}
+          </div>
         </div>
+
+        {/* Receipt Modal — shown when doctor confirms payment */}
+        {showReceiptModal && (
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-card border border-border rounded-2xl shadow-2xl max-w-md w-full p-6"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-green-500/15 border border-green-400/30 flex items-center justify-center">
+                  <Check className="w-5 h-5 text-green-400" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg text-foreground">
+                    Payment Received
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    by Doctor —{" "}
+                    {new Date().toLocaleDateString("en-IN", {
+                      day: "2-digit",
+                      month: "short",
+                      year: "numeric",
+                    })}
+                  </p>
+                </div>
+              </div>
+              <div className="space-y-2 border-t border-border pt-4">
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">
+                    Consultation Fee
+                  </span>
+                  <span className="font-medium text-foreground">
+                    ₹{Number(consultationFee) || 0}
+                  </span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">
+                    Medicine (Regular)
+                  </span>
+                  <span className="font-medium text-foreground">
+                    ₹{Number(medicineRegular) || 0}
+                  </span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">Extra Medicine</span>
+                  <span className="font-medium text-foreground">
+                    ₹{Number(extraMedicine) || 0}
+                  </span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">
+                    Registration Fee
+                  </span>
+                  <span className="font-medium text-foreground">
+                    ₹{Number(registrationFee) || 0}
+                  </span>
+                </div>
+                <div className="flex justify-between text-sm font-bold border-t border-border pt-2 mt-2">
+                  <span className="text-foreground">Total Amount</span>
+                  <span className="text-green-400">
+                    ₹{totalAmount.toLocaleString("en-IN")}
+                  </span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-muted-foreground">Due Amount</span>
+                  <span className="font-medium text-amber-400">
+                    ₹{Number(dueAmount) || 0}
+                  </span>
+                </div>
+              </div>
+              {patientName && (
+                <div className="mt-3 pt-3 border-t border-border flex items-center justify-between text-xs text-muted-foreground">
+                  <span>
+                    Patient:{" "}
+                    <span className="text-foreground font-medium">
+                      {patientName}
+                    </span>
+                  </span>
+                  {patientRegId && (
+                    <span className="font-mono bg-muted/50 px-2 py-0.5 rounded">
+                      {patientRegId}
+                    </span>
+                  )}
+                </div>
+              )}
+              <button
+                type="button"
+                onClick={() => setShowReceiptModal(false)}
+                className="mt-5 w-full bg-green-500 hover:bg-green-600 text-white rounded-xl py-2.5 font-semibold text-sm transition-colors"
+                data-ocid="fee-structure.receipt_done_button"
+              >
+                Done
+              </button>
+            </motion.div>
+          </div>
+        )}
 
         {/* Fee history */}
         {feeHistory.length > 0 && (
@@ -2958,7 +3113,13 @@ function PatientDetailPage() {
               />
             </TabsContent>
             <TabsContent value="fee-structure">
-              <FeeStructureTab lastSavedMedicine={lastSavedMedicine} />
+              <FeeStructureTab
+                lastSavedMedicine={lastSavedMedicine}
+                patientId={patient?.id}
+                patientName={patient?.name}
+                patientRegId={patient?.registrationId}
+                doctorName="Dr. Priya Sharma"
+              />
             </TabsContent>
             <TabsContent value="notes">
               <NotesTab patient={patient} />

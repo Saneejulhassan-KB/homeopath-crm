@@ -22981,7 +22981,7 @@ const Link = reactExports.forwardRef(
 function isCtrlEvent(e3) {
   return !!(e3.metaKey || e3.altKey || e3.ctrlKey || e3.shiftKey);
 }
-let Route$f = class Route extends BaseRoute {
+let Route$g = class Route extends BaseRoute {
   /**
    * @deprecated Use the `createRoute` function instead.
    */
@@ -23033,7 +23033,7 @@ let Route$f = class Route extends BaseRoute {
   }
 };
 function createRoute(options) {
-  return new Route$f(options);
+  return new Route$g(options);
 }
 class RootRoute extends BaseRootRoute {
   /**
@@ -25723,7 +25723,7 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1y = [
+const __iconNode$1x = [
   [
     "path",
     {
@@ -25732,18 +25732,7 @@ const __iconNode$1y = [
     }
   ]
 ];
-const Activity = createLucideIcon("activity", __iconNode$1y);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1x = [
-  ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
-  ["path", { d: "M19 12H5", key: "x3x0zl" }]
-];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$1x);
+const Activity = createLucideIcon("activity", __iconNode$1x);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -25751,11 +25740,10 @@ const ArrowLeft = createLucideIcon("arrow-left", __iconNode$1x);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1w = [
-  ["rect", { width: "20", height: "12", x: "2", y: "6", rx: "2", key: "9lu3g6" }],
-  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
-  ["path", { d: "M6 12h.01M18 12h.01", key: "113zkx" }]
+  ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
+  ["path", { d: "M19 12H5", key: "x3x0zl" }]
 ];
-const Banknote = createLucideIcon("banknote", __iconNode$1w);
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$1w);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -25763,6 +25751,18 @@ const Banknote = createLucideIcon("banknote", __iconNode$1w);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1v = [
+  ["rect", { width: "20", height: "12", x: "2", y: "6", rx: "2", key: "9lu3g6" }],
+  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
+  ["path", { d: "M6 12h.01M18 12h.01", key: "113zkx" }]
+];
+const Banknote = createLucideIcon("banknote", __iconNode$1v);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1u = [
   ["path", { d: "M10.268 21a2 2 0 0 0 3.464 0", key: "vwvbt9" }],
   ["path", { d: "M22 8c0-2.3-.8-4.3-2-6", key: "5bb3ad" }],
   [
@@ -25774,14 +25774,14 @@ const __iconNode$1v = [
   ],
   ["path", { d: "M4 2C2.8 3.7 2 5.7 2 8", key: "tap9e0" }]
 ];
-const BellRing = createLucideIcon("bell-ring", __iconNode$1v);
+const BellRing = createLucideIcon("bell-ring", __iconNode$1u);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1u = [
+const __iconNode$1t = [
   ["path", { d: "M10.268 21a2 2 0 0 0 3.464 0", key: "vwvbt9" }],
   [
     "path",
@@ -25791,20 +25791,7 @@ const __iconNode$1u = [
     }
   ]
 ];
-const Bell = createLucideIcon("bell", __iconNode$1u);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1t = [
-  [
-    "path",
-    { d: "M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8", key: "mg9rjx" }
-  ]
-];
-const Bold$1 = createLucideIcon("bold", __iconNode$1t);
+const Bell = createLucideIcon("bell", __iconNode$1t);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -25812,6 +25799,19 @@ const Bold$1 = createLucideIcon("bold", __iconNode$1t);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1s = [
+  [
+    "path",
+    { d: "M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8", key: "mg9rjx" }
+  ]
+];
+const Bold$1 = createLucideIcon("bold", __iconNode$1s);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1r = [
   ["path", { d: "M12 7v14", key: "1akyts" }],
   [
     "path",
@@ -25821,22 +25821,7 @@ const __iconNode$1s = [
     }
   ]
 ];
-const BookOpen = createLucideIcon("book-open", __iconNode$1s);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1r = [
-  ["path", { d: "M12 8V4H8", key: "hb8ula" }],
-  ["rect", { width: "16", height: "12", x: "4", y: "8", rx: "2", key: "enze0r" }],
-  ["path", { d: "M2 14h2", key: "vft8re" }],
-  ["path", { d: "M20 14h2", key: "4cs60a" }],
-  ["path", { d: "M15 13v2", key: "1xurst" }],
-  ["path", { d: "M9 13v2", key: "rq6x2g" }]
-];
-const Bot = createLucideIcon("bot", __iconNode$1r);
+const BookOpen = createLucideIcon("book-open", __iconNode$1r);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -25844,6 +25829,21 @@ const Bot = createLucideIcon("bot", __iconNode$1r);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1q = [
+  ["path", { d: "M12 8V4H8", key: "hb8ula" }],
+  ["rect", { width: "16", height: "12", x: "4", y: "8", rx: "2", key: "enze0r" }],
+  ["path", { d: "M2 14h2", key: "vft8re" }],
+  ["path", { d: "M20 14h2", key: "4cs60a" }],
+  ["path", { d: "M15 13v2", key: "1xurst" }],
+  ["path", { d: "M9 13v2", key: "rq6x2g" }]
+];
+const Bot = createLucideIcon("bot", __iconNode$1q);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1p = [
   [
     "path",
     {
@@ -25866,14 +25866,14 @@ const __iconNode$1q = [
   ["path", { d: "M6 18a4 4 0 0 1-1.967-.516", key: "2e4loj" }],
   ["path", { d: "M19.967 17.484A4 4 0 0 1 18 18", key: "159ez6" }]
 ];
-const Brain = createLucideIcon("brain", __iconNode$1q);
+const Brain = createLucideIcon("brain", __iconNode$1p);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1p = [
+const __iconNode$1o = [
   ["path", { d: "M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z", key: "1b4qmf" }],
   ["path", { d: "M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2", key: "i71pzd" }],
   ["path", { d: "M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2", key: "10jefs" }],
@@ -25882,21 +25882,7 @@ const __iconNode$1p = [
   ["path", { d: "M10 14h4", key: "kelpxr" }],
   ["path", { d: "M10 18h4", key: "1ulq68" }]
 ];
-const Building2 = createLucideIcon("building-2", __iconNode$1p);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1o = [
-  ["path", { d: "M8 2v4", key: "1cmpym" }],
-  ["path", { d: "M16 2v4", key: "4m81vk" }],
-  ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
-  ["path", { d: "M3 10h18", key: "8toen8" }],
-  ["path", { d: "m9 16 2 2 4-4", key: "19s6y9" }]
-];
-const CalendarCheck = createLucideIcon("calendar-check", __iconNode$1o);
+const Building2 = createLucideIcon("building-2", __iconNode$1o);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -25908,14 +25894,9 @@ const __iconNode$1n = [
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M3 10h18", key: "8toen8" }],
-  ["path", { d: "M8 14h.01", key: "6423bh" }],
-  ["path", { d: "M12 14h.01", key: "1etili" }],
-  ["path", { d: "M16 14h.01", key: "1gbofw" }],
-  ["path", { d: "M8 18h.01", key: "lrp35t" }],
-  ["path", { d: "M12 18h.01", key: "mhygvu" }],
-  ["path", { d: "M16 18h.01", key: "kzsmim" }]
+  ["path", { d: "m9 16 2 2 4-4", key: "19s6y9" }]
 ];
-const CalendarDays = createLucideIcon("calendar-days", __iconNode$1n);
+const CalendarCheck = createLucideIcon("calendar-check", __iconNode$1n);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -25926,9 +25907,15 @@ const __iconNode$1m = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
-  ["path", { d: "M3 10h18", key: "8toen8" }]
+  ["path", { d: "M3 10h18", key: "8toen8" }],
+  ["path", { d: "M8 14h.01", key: "6423bh" }],
+  ["path", { d: "M12 14h.01", key: "1etili" }],
+  ["path", { d: "M16 14h.01", key: "1gbofw" }],
+  ["path", { d: "M8 18h.01", key: "lrp35t" }],
+  ["path", { d: "M12 18h.01", key: "mhygvu" }],
+  ["path", { d: "M16 18h.01", key: "kzsmim" }]
 ];
-const Calendar = createLucideIcon("calendar", __iconNode$1m);
+const CalendarDays = createLucideIcon("calendar-days", __iconNode$1m);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -25936,6 +25923,19 @@ const Calendar = createLucideIcon("calendar", __iconNode$1m);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1l = [
+  ["path", { d: "M8 2v4", key: "1cmpym" }],
+  ["path", { d: "M16 2v4", key: "4m81vk" }],
+  ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
+  ["path", { d: "M3 10h18", key: "8toen8" }]
+];
+const Calendar = createLucideIcon("calendar", __iconNode$1l);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1k = [
   [
     "path",
     {
@@ -25945,20 +25945,7 @@ const __iconNode$1l = [
   ],
   ["circle", { cx: "12", cy: "13", r: "3", key: "1vg3eu" }]
 ];
-const Camera = createLucideIcon("camera", __iconNode$1l);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1k = [
-  ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
-  ["path", { d: "M18 17V9", key: "2bz60n" }],
-  ["path", { d: "M13 17V5", key: "1frdt8" }],
-  ["path", { d: "M8 17v-3", key: "17ska0" }]
-];
-const ChartColumn = createLucideIcon("chart-column", __iconNode$1k);
+const Camera = createLucideIcon("camera", __iconNode$1k);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -25966,61 +25953,63 @@ const ChartColumn = createLucideIcon("chart-column", __iconNode$1k);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1j = [
+  ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
+  ["path", { d: "M18 17V9", key: "2bz60n" }],
+  ["path", { d: "M13 17V5", key: "1frdt8" }],
+  ["path", { d: "M8 17v-3", key: "17ska0" }]
+];
+const ChartColumn = createLucideIcon("chart-column", __iconNode$1j);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1i = [
   ["path", { d: "M18 6 7 17l-5-5", key: "116fxf" }],
   ["path", { d: "m22 10-7.5 7.5L13 16", key: "ke71qq" }]
 ];
-const CheckCheck = createLucideIcon("check-check", __iconNode$1j);
+const CheckCheck = createLucideIcon("check-check", __iconNode$1i);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1i = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-const Check = createLucideIcon("check", __iconNode$1i);
+const __iconNode$1h = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+const Check = createLucideIcon("check", __iconNode$1h);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1h = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$1h);
+const __iconNode$1g = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$1g);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1g = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$1g);
+const __iconNode$1f = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$1f);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1f = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$1f);
+const __iconNode$1e = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$1e);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1e = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
-const ChevronUp = createLucideIcon("chevron-up", __iconNode$1e);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1d = [
-  ["path", { d: "m7 15 5 5 5-5", key: "1hf1tw" }],
-  ["path", { d: "m7 9 5-5 5 5", key: "sgt6xg" }]
-];
-const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$1d);
+const __iconNode$1d = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+const ChevronUp = createLucideIcon("chevron-up", __iconNode$1d);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26028,11 +26017,10 @@ const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$1d);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1c = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+  ["path", { d: "m7 15 5 5 5-5", key: "1hf1tw" }],
+  ["path", { d: "m7 9 5-5 5 5", key: "sgt6xg" }]
 ];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$1c);
+const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$1c);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26040,10 +26028,11 @@ const CircleAlert = createLucideIcon("circle-alert", __iconNode$1c);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1b = [
-  ["path", { d: "M21.801 10A10 10 0 1 1 17 3.335", key: "yps3ct" }],
-  ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
 ];
-const CircleCheckBig = createLucideIcon("circle-check-big", __iconNode$1b);
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$1b);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26051,10 +26040,10 @@ const CircleCheckBig = createLucideIcon("circle-check-big", __iconNode$1b);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1a = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+  ["path", { d: "M21.801 10A10 10 0 1 1 17 3.335", key: "yps3ct" }],
+  ["path", { d: "m9 11 3 3L22 4", key: "1pflzl" }]
 ];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$1a);
+const CircleCheckBig = createLucideIcon("circle-check-big", __iconNode$1a);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26063,10 +26052,9 @@ const CircleCheck = createLucideIcon("circle-check", __iconNode$1a);
  */
 const __iconNode$19 = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
-  ["path", { d: "m9 9 6 6", key: "z0biqf" }]
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
 ];
-const CircleX = createLucideIcon("circle-x", __iconNode$19);
+const CircleCheck = createLucideIcon("circle-check", __iconNode$19);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26074,6 +26062,18 @@ const CircleX = createLucideIcon("circle-x", __iconNode$19);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$18 = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
+  ["path", { d: "m9 9 6 6", key: "z0biqf" }]
+];
+const CircleX = createLucideIcon("circle-x", __iconNode$18);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$17 = [
   ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
   [
     "path",
@@ -26087,18 +26087,7 @@ const __iconNode$18 = [
   ["path", { d: "M8 11h.01", key: "1dfujw" }],
   ["path", { d: "M8 16h.01", key: "18s6g9" }]
 ];
-const ClipboardList = createLucideIcon("clipboard-list", __iconNode$18);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$17 = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
-];
-const Clock = createLucideIcon("clock", __iconNode$17);
+const ClipboardList = createLucideIcon("clipboard-list", __iconNode$17);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26106,10 +26095,10 @@ const Clock = createLucideIcon("clock", __iconNode$17);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$16 = [
-  ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "2", key: "ynyp8z" }],
-  ["line", { x1: "2", x2: "22", y1: "10", y2: "10", key: "1b3vmo" }]
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
 ];
-const CreditCard = createLucideIcon("credit-card", __iconNode$16);
+const Clock = createLucideIcon("clock", __iconNode$16);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26117,10 +26106,10 @@ const CreditCard = createLucideIcon("credit-card", __iconNode$16);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$15 = [
-  ["line", { x1: "12", x2: "12", y1: "2", y2: "22", key: "7eqyqh" }],
-  ["path", { d: "M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6", key: "1b0p4s" }]
+  ["rect", { width: "20", height: "14", x: "2", y: "5", rx: "2", key: "ynyp8z" }],
+  ["line", { x1: "2", x2: "22", y1: "10", y2: "10", key: "1b3vmo" }]
 ];
-const DollarSign = createLucideIcon("dollar-sign", __iconNode$15);
+const CreditCard = createLucideIcon("credit-card", __iconNode$15);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26128,11 +26117,10 @@ const DollarSign = createLucideIcon("dollar-sign", __iconNode$15);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$14 = [
-  ["path", { d: "M12 15V3", key: "m9g1x1" }],
-  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
-  ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
+  ["line", { x1: "12", x2: "12", y1: "2", y2: "22", key: "7eqyqh" }],
+  ["path", { d: "M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6", key: "1b0p4s" }]
 ];
-const Download = createLucideIcon("download", __iconNode$14);
+const DollarSign = createLucideIcon("dollar-sign", __iconNode$14);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26140,6 +26128,18 @@ const Download = createLucideIcon("download", __iconNode$14);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$13 = [
+  ["path", { d: "M12 15V3", key: "m9g1x1" }],
+  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
+  ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
+];
+const Download = createLucideIcon("download", __iconNode$13);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$12 = [
   [
     "path",
     {
@@ -26155,14 +26155,14 @@ const __iconNode$13 = [
     }
   ]
 ];
-const Droplets = createLucideIcon("droplets", __iconNode$13);
+const Droplets = createLucideIcon("droplets", __iconNode$12);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$12 = [
+const __iconNode$11 = [
   [
     "path",
     {
@@ -26180,14 +26180,14 @@ const __iconNode$12 = [
   ],
   ["path", { d: "m2 2 20 20", key: "1ooewy" }]
 ];
-const EyeOff = createLucideIcon("eye-off", __iconNode$12);
+const EyeOff = createLucideIcon("eye-off", __iconNode$11);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$11 = [
+const __iconNode$10 = [
   [
     "path",
     {
@@ -26197,20 +26197,7 @@ const __iconNode$11 = [
   ],
   ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
 ];
-const Eye = createLucideIcon("eye", __iconNode$11);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$10 = [
-  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
-  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
-  ["path", { d: "M9 15h6", key: "cctwl0" }],
-  ["path", { d: "M12 18v-6", key: "17g6i2" }]
-];
-const FilePlus = createLucideIcon("file-plus", __iconNode$10);
+const Eye = createLucideIcon("eye", __iconNode$10);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26220,11 +26207,10 @@ const FilePlus = createLucideIcon("file-plus", __iconNode$10);
 const __iconNode$$ = [
   ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
   ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
-  ["path", { d: "M10 9H8", key: "b1mrlr" }],
-  ["path", { d: "M16 13H8", key: "t4e002" }],
-  ["path", { d: "M16 17H8", key: "z1uh3a" }]
+  ["path", { d: "M9 15h6", key: "cctwl0" }],
+  ["path", { d: "M12 18v-6", key: "17g6i2" }]
 ];
-const FileText = createLucideIcon("file-text", __iconNode$$);
+const FilePlus = createLucideIcon("file-plus", __iconNode$$);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26232,6 +26218,20 @@ const FileText = createLucideIcon("file-text", __iconNode$$);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$_ = [
+  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  ["path", { d: "M10 9H8", key: "b1mrlr" }],
+  ["path", { d: "M16 13H8", key: "t4e002" }],
+  ["path", { d: "M16 17H8", key: "z1uh3a" }]
+];
+const FileText = createLucideIcon("file-text", __iconNode$_);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$Z = [
   [
     "path",
     {
@@ -26242,19 +26242,7 @@ const __iconNode$_ = [
   ["path", { d: "M6.453 15h11.094", key: "3shlmq" }],
   ["path", { d: "M8.5 2h7", key: "csnxdl" }]
 ];
-const FlaskConical = createLucideIcon("flask-conical", __iconNode$_);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$Z = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
-  ["path", { d: "M2 12h20", key: "9i4pu4" }]
-];
-const Globe = createLucideIcon("globe", __iconNode$Z);
+const FlaskConical = createLucideIcon("flask-conical", __iconNode$Z);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26262,16 +26250,11 @@ const Globe = createLucideIcon("globe", __iconNode$Z);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$Y = [
-  [
-    "path",
-    {
-      d: "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
-      key: "c3ymky"
-    }
-  ],
-  ["path", { d: "M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27", key: "1uw2ng" }]
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }]
 ];
-const HeartPulse = createLucideIcon("heart-pulse", __iconNode$Y);
+const Globe = createLucideIcon("globe", __iconNode$Y);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -41427,6 +41410,7 @@ const ROUTES = {
   DASHBOARD: "/",
   PATIENTS: "/patients",
   APPOINTMENTS: "/appointments",
+  PHARMACY: "/pharmacy",
   AI_ASSISTANT: "/ai-assistant",
   BILLING: "/billing",
   SETTINGS: "/settings",
@@ -41443,14 +41427,7 @@ const NAV_ITEMS = [
     path: ROUTES.DASHBOARD,
     label: "Dashboard",
     icon: "LayoutDashboard",
-    roles: [
-      "main-admin",
-      "doctor",
-      "receptionist",
-      "pharmacist",
-      "nurse",
-      "billing"
-    ]
+    roles: ["main-admin", "doctor", "receptionist", "pharmacist"]
   },
   {
     path: ROUTES.PATIENTS,
@@ -41462,7 +41439,13 @@ const NAV_ITEMS = [
     path: ROUTES.APPOINTMENTS,
     label: "Appointments",
     icon: "Calendar",
-    roles: ["main-admin", "doctor", "receptionist", "nurse"]
+    roles: ["main-admin", "doctor", "receptionist"]
+  },
+  {
+    path: ROUTES.PHARMACY,
+    label: "Pharmacy",
+    icon: "FlaskConical",
+    roles: ["main-admin", "receptionist", "pharmacist"]
   },
   {
     path: ROUTES.AI_ASSISTANT,
@@ -41474,20 +41457,13 @@ const NAV_ITEMS = [
     path: ROUTES.BILLING,
     label: "Billing",
     icon: "CreditCard",
-    roles: ["main-admin", "billing"]
+    roles: ["main-admin"]
   },
   {
     path: ROUTES.SETTINGS,
     label: "Settings",
     icon: "Settings",
-    roles: [
-      "main-admin",
-      "doctor",
-      "receptionist",
-      "pharmacist",
-      "nurse",
-      "billing"
-    ]
+    roles: ["main-admin", "doctor", "receptionist", "pharmacist"]
   },
   {
     path: ROUTES.USER_MANAGEMENT,
@@ -41539,22 +41515,6 @@ const ROLE_CONFIGS = [
     color: "amber",
     gradient: "from-amber-500/20 to-orange-600/10",
     description: "Remedy dispensing, inventory management & prescription review"
-  },
-  {
-    id: "nurse",
-    displayName: "Nurse / Compounder",
-    icon: "HeartPulse",
-    color: "rose",
-    gradient: "from-rose-500/20 to-pink-600/10",
-    description: "Vital recording, treatment assistance & patient care support"
-  },
-  {
-    id: "billing",
-    displayName: "Billing Staff",
-    icon: "Receipt",
-    color: "cyan",
-    gradient: "from-cyan-500/20 to-teal-600/10",
-    description: "Invoice generation, payment collection & financial reports"
   }
 ];
 const ROLE_COLOR_MAP = {
@@ -41585,20 +41545,6 @@ const ROLE_COLOR_MAP = {
     text: "text-amber-300",
     bg: "bg-amber-500/15",
     ring: "ring-amber-400/40"
-  },
-  rose: {
-    border: "border-rose-400/60",
-    glow: "shadow-rose-500/30",
-    text: "text-rose-300",
-    bg: "bg-rose-500/15",
-    ring: "ring-rose-400/40"
-  },
-  cyan: {
-    border: "border-cyan-400/60",
-    glow: "shadow-cyan-500/30",
-    text: "text-cyan-300",
-    bg: "bg-cyan-500/15",
-    ring: "ring-cyan-400/40"
   }
 };
 function getRoleConfig(roleId) {
@@ -41617,6 +41563,7 @@ const ICON_MAP = {
   Users,
   UserCog,
   Calendar,
+  FlaskConical,
   Pill,
   Brain,
   CreditCard,
@@ -41627,9 +41574,7 @@ const ROLE_ICON_MAP$1 = {
   Shield,
   Stethoscope,
   CalendarCheck,
-  FlaskConical,
-  HeartPulse,
-  Receipt
+  FlaskConical
 };
 const navBadges = {
   "/patients": 3,
@@ -43576,9 +43521,7 @@ const ROLE_ICON_MAP = {
   Shield,
   Stethoscope,
   CalendarCheck,
-  FlaskConical,
-  HeartPulse,
-  Receipt
+  FlaskConical
 };
 const PAGE_TITLES = {
   "/": "Dashboard",
@@ -44048,7 +43991,7 @@ function Layout({ children }) {
     )
   ] });
 }
-const Route$e = createRootRoute({
+const Route$f = createRootRoute({
   component: RootComponent
 });
 function RootComponent() {
@@ -44834,8 +44777,8 @@ function Textarea({ className, ...props }) {
     }
   );
 }
-const Route$d = createRoute({
-  getParentRoute: () => Route$e,
+const Route$e = createRoute({
+  getParentRoute: () => Route$f,
   path: "/ai-assistant",
   component: AIAssistantPage
 });
@@ -47071,7 +47014,7 @@ function useAppointments() {
     getTodaysAppointments
   };
 }
-function formatDate(dateStr) {
+function formatDate$1(dateStr) {
   const date2 = new Date(dateStr);
   return date2.toLocaleDateString("en-IN", {
     day: "2-digit",
@@ -47099,7 +47042,7 @@ function relativeTime(dateStr) {
   if (diffDays === 0) return "Today";
   if (diffDays === 1) return "Yesterday";
   if (diffDays < 7) return `${diffDays} days ago`;
-  return formatDate(dateStr);
+  return formatDate$1(dateStr);
 }
 function toDate$1(argument) {
   const argStr = Object.prototype.toString.call(argument);
@@ -48821,8 +48764,8 @@ function subMonths(date2, amount) {
 function subYears(date2, amount) {
   return addYears$1(date2, -1);
 }
-const Route$c = createRoute({
-  getParentRoute: () => Route$e,
+const Route$d = createRoute({
+  getParentRoute: () => Route$f,
   path: "/appointments",
   component: AppointmentsPage
 });
@@ -49237,7 +49180,7 @@ function AppointmentDetailModal({
             ] })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3 text-sm", children: [
-            ["Date", formatDate(appointment.date)],
+            ["Date", formatDate$1(appointment.date)],
             ["Time", formatTime(appointment.time)],
             ["Type", TYPE_LABELS$1[appointment.type]],
             ["Doctor", appointment.doctor]
@@ -49568,7 +49511,7 @@ function AppointmentsPage() {
                 onClick: () => navigate({ to: `/patients/${appt.patientId}` }),
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { className: "px-4 py-3 whitespace-nowrap", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-medium text-foreground text-xs", children: formatDate(appt.date) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-medium text-foreground text-xs", children: formatDate$1(appt.date) }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-muted-foreground", children: formatTime(appt.time) })
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-4 py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
@@ -50364,8 +50307,8 @@ const invoices = [
     paymentMethod: "Cash"
   }
 ];
-const Route$b = createRoute({
-  getParentRoute: () => Route$e,
+const Route$c = createRoute({
+  getParentRoute: () => Route$f,
   path: "/billing",
   component: BillingPage
 });
@@ -50445,7 +50388,7 @@ function InvoiceModal({
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-right", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground uppercase tracking-wide mb-1", children: "Invoice Date" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-semibold text-foreground", children: formatDate(invoice.date) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-semibold text-foreground", children: formatDate$1(invoice.date) }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground", children: [
                   "Payment: ",
                   invoice.paymentMethod
@@ -50618,7 +50561,7 @@ function InvoicesTab() {
                     inv.id.replace("inv", "").padStart(3, "0")
                   ] }) }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 font-medium text-foreground", children: inv.patientName }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 text-muted-foreground hidden md:table-cell", children: formatDate(inv.date) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 text-muted-foreground hidden md:table-cell", children: formatDate$1(inv.date) }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 text-right font-semibold tabular-nums", children: formatCurrency$2(inv.amount) }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(StatusBadge$1, { status: inv.status }) }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-end gap-2", children: [
@@ -50760,7 +50703,7 @@ function PaymentHistoryTab() {
               className: "border-b border-white/5 hover:bg-white/5 transition-smooth",
               "data-ocid": `payment-row-${inv.id}`,
               children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 text-muted-foreground text-xs", children: formatDate(inv.date) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 text-muted-foreground text-xs", children: formatDate$1(inv.date) }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 font-medium text-foreground", children: inv.patientName }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-5 py-4 hidden sm:table-cell", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-mono text-xs text-primary", children: [
                   "INV-",
@@ -76943,7 +76886,7 @@ function generateDummyData() {
   return { dummyAppts: dummyAppts2, dummyPatients: dummyPatients2 };
 }
 const { dummyAppts, dummyPatients } = generateDummyData();
-const DATE_FILTER_OPTIONS$5 = [
+const DATE_FILTER_OPTIONS$3 = [
   "Custom Range",
   "Next 30 Days",
   "Next 7 Days",
@@ -77001,7 +76944,7 @@ function getDateRangeForFilter$2(option) {
       return null;
   }
 }
-function formatDateRangeLabel$3(range3) {
+function formatDateRangeLabel$2(range3) {
   if (format$2(range3.from, "yyyy-MM-dd") === format$2(range3.to, "yyyy-MM-dd")) {
     return format$2(range3.from, "MMM d, yyyy");
   }
@@ -77139,7 +77082,7 @@ function AdminDashboard() {
   }, [customRange]);
   const filterButtonLabel = (() => {
     if (selectedFilter === "Custom Range" && (customRange == null ? void 0 : customRange.from) && (customRange == null ? void 0 : customRange.to)) {
-      return formatDateRangeLabel$3({
+      return formatDateRangeLabel$2({
         from: customRange.from,
         to: customRange.to
       });
@@ -77226,7 +77169,7 @@ function AdminDashboard() {
                         width: showCustomCalendar ? "auto" : "14rem"
                       },
                       children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col", style: { minWidth: "14rem" }, children: DATE_FILTER_OPTIONS$5.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col", style: { minWidth: "14rem" }, children: DATE_FILTER_OPTIONS$3.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
                           "button",
                           {
                             type: "button",
@@ -77761,1003 +77704,6 @@ function AdminDashboard() {
     }
   );
 }
-const DATE_FILTER_OPTIONS$4 = [
-  "Custom Range",
-  "Next 30 Days",
-  "Next 7 Days",
-  "Tomorrow",
-  "Today",
-  "Yesterday",
-  "Last 7 Days",
-  "Last 30 Days",
-  "This Month",
-  "Last Month",
-  "This Month Last Year",
-  "This Year Last Year"
-];
-function formatDateRangeLabel$2(range3) {
-  if (format$2(range3.from, "yyyy-MM-dd") === format$2(range3.to, "yyyy-MM-dd")) {
-    return format$2(range3.from, "MMM d, yyyy");
-  }
-  return `${format$2(range3.from, "MMM d")} – ${format$2(range3.to, "MMM d, yyyy")}`;
-}
-const REVENUE_TREND = {
-  "3M": [
-    { label: "Apr", collected: 228e3, expected: 26e4 },
-    { label: "May", collected: 251e3, expected: 27e4 },
-    { label: "Jun", collected: 284500, expected: 29e4 }
-  ],
-  "6M": [
-    { label: "Jan", collected: 196e3, expected: 22e4 },
-    { label: "Feb", collected: 238e3, expected: 25e4 },
-    { label: "Mar", collected: 251e3, expected: 265e3 },
-    { label: "Apr", collected: 228e3, expected: 26e4 },
-    { label: "May", collected: 271e3, expected: 28e4 },
-    { label: "Jun", collected: 284500, expected: 29e4 }
-  ],
-  "1Y": [
-    { label: "Jul", collected: 172e3, expected: 19e4 },
-    { label: "Aug", collected: 185e3, expected: 2e5 },
-    { label: "Sep", collected: 194e3, expected: 21e4 },
-    { label: "Oct", collected: 208e3, expected: 22e4 },
-    { label: "Nov", collected: 182e3, expected: 215e3 },
-    { label: "Dec", collected: 214e3, expected: 23e4 },
-    { label: "Jan", collected: 196e3, expected: 22e4 },
-    { label: "Feb", collected: 238e3, expected: 25e4 },
-    { label: "Mar", collected: 251e3, expected: 265e3 },
-    { label: "Apr", collected: 228e3, expected: 26e4 },
-    { label: "May", collected: 271e3, expected: 28e4 },
-    { label: "Jun", collected: 284500, expected: 29e4 }
-  ]
-};
-const PAYMENT_STATUS = {
-  Daily: [
-    { label: "9 AM", paid: 4, pending: 2, overdue: 1 },
-    { label: "10 AM", paid: 6, pending: 3, overdue: 0 },
-    { label: "11 AM", paid: 5, pending: 1, overdue: 2 },
-    { label: "12 PM", paid: 7, pending: 2, overdue: 1 },
-    { label: "2 PM", paid: 3, pending: 4, overdue: 1 },
-    { label: "3 PM", paid: 8, pending: 1, overdue: 0 },
-    { label: "4 PM", paid: 5, pending: 2, overdue: 1 }
-  ],
-  Weekly: [
-    { label: "Mon", paid: 18, pending: 6, overdue: 3 },
-    { label: "Tue", paid: 24, pending: 4, overdue: 2 },
-    { label: "Wed", paid: 21, pending: 7, overdue: 4 },
-    { label: "Thu", paid: 29, pending: 3, overdue: 1 },
-    { label: "Fri", paid: 31, pending: 5, overdue: 2 },
-    { label: "Sat", paid: 15, pending: 8, overdue: 3 }
-  ],
-  Monthly: [
-    { label: "Week 1", paid: 84, pending: 22, overdue: 8 },
-    { label: "Week 2", paid: 97, pending: 18, overdue: 6 },
-    { label: "Week 3", paid: 112, pending: 14, overdue: 9 },
-    { label: "Week 4", paid: 88, pending: 26, overdue: 11 }
-  ]
-};
-const ALL_INVOICES = [
-  {
-    id: "INV-2401",
-    patient: "Priya Sharma",
-    amount: 3200,
-    dueDate: "Jun 2",
-    daysOverdue: 10,
-    status: "Overdue",
-    isoDate: "2026-06-02"
-  },
-  {
-    id: "INV-2402",
-    patient: "Hans Mueller",
-    amount: 2800,
-    dueDate: "Jun 5",
-    daysOverdue: 7,
-    status: "Overdue",
-    isoDate: "2026-06-05"
-  },
-  {
-    id: "INV-2403",
-    patient: "Fatima Al-Zahra",
-    amount: 4500,
-    dueDate: "Jun 8",
-    daysOverdue: 4,
-    status: "Pending",
-    isoDate: "2026-06-08"
-  },
-  {
-    id: "INV-2404",
-    patient: "Ravi Krishnan",
-    amount: 1900,
-    dueDate: "Jun 9",
-    daysOverdue: 3,
-    status: "Pending",
-    isoDate: "2026-06-09"
-  },
-  {
-    id: "INV-2405",
-    patient: "Isabella Rossi",
-    amount: 5600,
-    dueDate: "Jun 10",
-    daysOverdue: 2,
-    status: "Partially Paid",
-    isoDate: "2026-06-10"
-  },
-  {
-    id: "INV-2406",
-    patient: "Aditya Gupta",
-    amount: 3600,
-    dueDate: "Jun 11",
-    daysOverdue: 1,
-    status: "Overdue",
-    isoDate: "2026-06-11"
-  },
-  {
-    id: "INV-2407",
-    patient: "Sunita Verma",
-    amount: 2200,
-    dueDate: "Jun 12",
-    daysOverdue: 0,
-    status: "Pending",
-    isoDate: "2026-06-12"
-  },
-  {
-    id: "INV-2408",
-    patient: "Meera Iyer",
-    amount: 4100,
-    dueDate: "Jun 12",
-    daysOverdue: 0,
-    status: "Pending",
-    isoDate: "2026-06-12"
-  },
-  {
-    id: "INV-2409",
-    patient: "Chen Wei",
-    amount: 2750,
-    dueDate: "Jun 13",
-    daysOverdue: 0,
-    status: "Partially Paid",
-    isoDate: "2026-06-13"
-  },
-  {
-    id: "INV-2410",
-    patient: "Nadia Okonkwo",
-    amount: 3300,
-    dueDate: "Jun 14",
-    daysOverdue: 0,
-    status: "Pending",
-    isoDate: "2026-06-14"
-  }
-];
-const OVERDUE_ACCOUNTS = [
-  {
-    id: 1,
-    patient: "Sunita Verma",
-    totalDue: 7400,
-    daysOverdue: 42,
-    lastPayment: "Apr 1, 2026",
-    urgency: "critical"
-  },
-  {
-    id: 2,
-    patient: "Hans Mueller",
-    totalDue: 3200,
-    daysOverdue: 34,
-    lastPayment: "May 8, 2026",
-    urgency: "high"
-  },
-  {
-    id: 3,
-    patient: "Ravi Krishnan",
-    totalDue: 1900,
-    daysOverdue: 39,
-    lastPayment: "Apr 4, 2026",
-    urgency: "high"
-  },
-  {
-    id: 4,
-    patient: "Meera Iyer",
-    totalDue: 5100,
-    daysOverdue: 51,
-    lastPayment: "Mar 22, 2026",
-    urgency: "critical"
-  },
-  {
-    id: 5,
-    patient: "Rahul Das",
-    totalDue: 2600,
-    daysOverdue: 33,
-    lastPayment: "May 10, 2026",
-    urgency: "medium"
-  },
-  {
-    id: 6,
-    patient: "Ananya Singh",
-    totalDue: 4800,
-    daysOverdue: 38,
-    lastPayment: "May 5, 2026",
-    urgency: "high"
-  }
-];
-const statusBadge = {
-  Overdue: "bg-rose-500/15 text-rose-400 border-rose-500/25",
-  Pending: "bg-amber-500/15 text-amber-400 border-amber-500/25",
-  "Partially Paid": "bg-blue-500/15 text-blue-400 border-blue-500/25"
-};
-const urgencyBadge = {
-  critical: "bg-rose-500/15 text-rose-400 border-rose-500/25",
-  high: "bg-orange-500/15 text-orange-400 border-orange-500/25",
-  medium: "bg-amber-500/15 text-amber-400 border-amber-500/25"
-};
-const urgencyLabel = {
-  critical: "Critical",
-  high: "High",
-  medium: "Medium"
-};
-const BASE_STATS = {
-  Today: {
-    collected: 48200,
-    unpaid: 23,
-    overdue: 12800,
-    renewals: 5,
-    newInvoices: 8
-  },
-  Yesterday: {
-    collected: 39800,
-    unpaid: 19,
-    overdue: 11200,
-    renewals: 3,
-    newInvoices: 6
-  },
-  "Last 7 Days": {
-    collected: 192500,
-    unpaid: 64,
-    overdue: 38400,
-    renewals: 14,
-    newInvoices: 42
-  },
-  "Last 30 Days": {
-    collected: 814e3,
-    unpaid: 187,
-    overdue: 96200,
-    renewals: 38,
-    newInvoices: 151
-  },
-  "This Month": {
-    collected: 284500,
-    unpaid: 74,
-    overdue: 42800,
-    renewals: 18,
-    newInvoices: 68
-  },
-  "Last Month": {
-    collected: 251e3,
-    unpaid: 61,
-    overdue: 36100,
-    renewals: 12,
-    newInvoices: 57
-  }
-};
-function getStatsForFilter(filter2) {
-  return BASE_STATS[filter2] ?? BASE_STATS.Today;
-}
-function PeriodBtn({
-  options,
-  value,
-  onChange,
-  prefix: prefix2
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-1.5 flex-wrap", children: options.map((p2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-    "button",
-    {
-      type: "button",
-      onClick: () => onChange(p2),
-      className: `text-xs px-2.5 py-1 rounded-full border transition-all ${value === p2 ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30" : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground"}`,
-      "data-ocid": `${prefix2}.${p2.toLowerCase().replace(/\s+/g, "_")}`,
-      children: p2
-    },
-    p2
-  )) });
-}
-function BillingDashboard() {
-  const [revenuePeriod, setRevenuePeriod] = reactExports.useState("6M");
-  const [paymentPeriod, setPaymentPeriod] = reactExports.useState("Weekly");
-  const [invoicePeriod, setInvoicePeriod] = reactExports.useState("All");
-  const [dateFilterOpen, setDateFilterOpen] = reactExports.useState(false);
-  const [selectedFilter, setSelectedFilter] = reactExports.useState("Today");
-  const [customRange, setCustomRange] = reactExports.useState();
-  const [showCustomCalendar, setShowCustomCalendar] = reactExports.useState(false);
-  const dateFilterRef = reactExports.useRef(null);
-  const isDragging2 = reactExports.useRef(false);
-  const dragStart = reactExports.useRef(null);
-  const [markedPaid, setMarkedPaid] = reactExports.useState(/* @__PURE__ */ new Set());
-  const [remindSent, setRemindSent] = reactExports.useState(/* @__PURE__ */ new Set());
-  reactExports.useEffect(() => {
-    function handleClickOutside(e3) {
-      if (dateFilterRef.current && !dateFilterRef.current.contains(e3.target)) {
-        setDateFilterOpen(false);
-        setShowCustomCalendar(false);
-      }
-    }
-    if (dateFilterOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => document.removeEventListener("mousedown", handleClickOutside);
-    }
-  }, [dateFilterOpen]);
-  reactExports.useEffect(() => {
-    function handleMouseUp() {
-      if (isDragging2.current) {
-        isDragging2.current = false;
-        dragStart.current = null;
-        if ((customRange == null ? void 0 : customRange.from) && (customRange == null ? void 0 : customRange.to)) {
-          setSelectedFilter("Custom Range");
-          setDateFilterOpen(false);
-          setShowCustomCalendar(false);
-        }
-      }
-    }
-    document.addEventListener("mouseup", handleMouseUp);
-    return () => document.removeEventListener("mouseup", handleMouseUp);
-  }, [customRange]);
-  const stats = getStatsForFilter(selectedFilter);
-  const filterButtonLabel = (() => {
-    if (selectedFilter === "Custom Range" && (customRange == null ? void 0 : customRange.from) && (customRange == null ? void 0 : customRange.to)) {
-      return formatDateRangeLabel$2({
-        from: customRange.from,
-        to: customRange.to
-      });
-    }
-    return selectedFilter;
-  })();
-  const showClearFilter = selectedFilter !== "Today" || Boolean(customRange);
-  const now2 = /* @__PURE__ */ new Date();
-  const filteredInvoices = ALL_INVOICES.filter((inv) => {
-    if (invoicePeriod === "Today") {
-      const d2 = parseISO(inv.isoDate);
-      return isWithinInterval(d2, {
-        start: startOfDay$1(now2),
-        end: endOfDay(now2)
-      });
-    }
-    if (invoicePeriod === "This Week") {
-      const d2 = parseISO(inv.isoDate);
-      return isWithinInterval(d2, {
-        start: startOfDay$1(subDays(now2, 6)),
-        end: endOfDay(now2)
-      });
-    }
-    return true;
-  });
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    motion.div,
-    {
-      className: "space-y-6",
-      initial: "hidden",
-      animate: "visible",
-      variants: containerVariants,
-      "data-ocid": "billing-dashboard",
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          PageHeader,
-          {
-            title: "Billing Dashboard",
-            description: "Track collections, unpaid invoices, overdue accounts, and revenue trends.",
-            breadcrumb: [{ label: "Dashboard" }]
-          }
-        ) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          motion.div,
-          {
-            variants: itemVariants,
-            className: "flex items-center justify-end gap-2 flex-wrap",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", ref: dateFilterRef, children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  "button",
-                  {
-                    type: "button",
-                    onClick: () => {
-                      setDateFilterOpen((v2) => !v2);
-                      setShowCustomCalendar(false);
-                    },
-                    className: "flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border border-white/15 text-muted-foreground hover:text-foreground hover:border-white/30 transition-all",
-                    "data-ocid": "billing.date_filter_button",
-                    children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(CalendarDays, { className: "w-3.5 h-3.5" }),
-                      filterButtonLabel
-                    ]
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: dateFilterOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  motion.div,
-                  {
-                    initial: { opacity: 0, y: -4, scale: 0.98 },
-                    animate: { opacity: 1, y: 0, scale: 1 },
-                    exit: { opacity: 0, y: -4, scale: 0.98 },
-                    transition: { duration: 0.15 },
-                    className: "absolute right-0 mt-2 rounded-xl border border-white/15 bg-card/95 backdrop-blur-xl shadow-2xl z-50 overflow-hidden",
-                    style: {
-                      display: "flex",
-                      flexDirection: "row",
-                      width: showCustomCalendar ? "auto" : "14rem"
-                    },
-                    children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col", style: { minWidth: "14rem" }, children: DATE_FILTER_OPTIONS$4.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        "button",
-                        {
-                          type: "button",
-                          onClick: () => {
-                            if (opt === "Custom Range") {
-                              setShowCustomCalendar(true);
-                            } else {
-                              setSelectedFilter(opt);
-                              setDateFilterOpen(false);
-                              setShowCustomCalendar(false);
-                            }
-                          },
-                          className: `w-full text-left px-4 py-2 text-xs transition-colors ${selectedFilter === opt && !showCustomCalendar ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-white/5 hover:text-foreground"}`,
-                          "data-ocid": `billing.date_filter.${opt.toLowerCase().replace(/\s+/g, "_")}`,
-                          children: opt
-                        },
-                        opt
-                      )) }),
-                      showCustomCalendar && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                        motion.div,
-                        {
-                          initial: { opacity: 0 },
-                          animate: { opacity: 1 },
-                          className: "p-3 border-l border-white/10",
-                          children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-2", children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium text-foreground", children: "Select Range" }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                "button",
-                                {
-                                  type: "button",
-                                  onClick: () => setShowCustomCalendar(false),
-                                  className: "text-muted-foreground hover:text-foreground text-xs",
-                                  children: "Close"
-                                }
-                              )
-                            ] }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx(
-                              "div",
-                              {
-                                onMouseDown: (e3) => {
-                                  const dayBtn = e3.target.closest(
-                                    "[data-day]"
-                                  );
-                                  if (dayBtn) {
-                                    const dayAttr = dayBtn.getAttribute("data-day");
-                                    if (dayAttr) {
-                                      const day = new Date(dayAttr);
-                                      isDragging2.current = true;
-                                      dragStart.current = day;
-                                      setCustomRange({ from: day, to: day });
-                                    }
-                                  }
-                                },
-                                onMouseMove: (e3) => {
-                                  if (!isDragging2.current || !dragStart.current) return;
-                                  const dayBtn = e3.target.closest(
-                                    "[data-day]"
-                                  );
-                                  if (dayBtn) {
-                                    const dayAttr = dayBtn.getAttribute("data-day");
-                                    if (dayAttr) {
-                                      const end = new Date(dayAttr);
-                                      const start = dragStart.current;
-                                      setCustomRange(
-                                        start <= end ? { from: start, to: end } : { from: end, to: start }
-                                      );
-                                    }
-                                  }
-                                },
-                                children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                  DayPicker,
-                                  {
-                                    mode: "range",
-                                    selected: customRange,
-                                    onSelect: (range3) => {
-                                      setCustomRange(range3);
-                                      if ((range3 == null ? void 0 : range3.from) && (range3 == null ? void 0 : range3.to)) {
-                                        setSelectedFilter("Custom Range");
-                                        setDateFilterOpen(false);
-                                        setShowCustomCalendar(false);
-                                      }
-                                    },
-                                    numberOfMonths: 2,
-                                    className: "rdp-custom"
-                                  }
-                                )
-                              }
-                            )
-                          ]
-                        }
-                      )
-                    ]
-                  }
-                ) })
-              ] }),
-              showClearFilter && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "button",
-                {
-                  type: "button",
-                  onClick: () => {
-                    setSelectedFilter("Today");
-                    setCustomRange(void 0);
-                    setDateFilterOpen(false);
-                    setShowCustomCalendar(false);
-                  },
-                  className: "flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-full border border-red-400/20 text-red-400/80 hover:text-red-400 hover:border-red-400/40 hover:bg-red-400/10 transition-all",
-                  "data-ocid": "billing.clear_filter_button",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "w-3 h-3" }),
-                    " Clear Filter"
-                  ]
-                }
-              )
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          motion.div,
-          {
-            variants: itemVariants,
-            className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                StatCard,
-                {
-                  title: "Total Collected",
-                  value: `₹${stats.collected.toLocaleString("en-IN")}`,
-                  change: 14,
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CreditCard, { className: "w-5 h-5" }),
-                  color: "green"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                StatCard,
-                {
-                  title: "Unpaid Invoices",
-                  value: stats.unpaid,
-                  change: -3,
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FileText, { className: "w-5 h-5" }),
-                  color: "amber"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                StatCard,
-                {
-                  title: "Overdue Amount",
-                  value: `₹${stats.overdue.toLocaleString("en-IN")}`,
-                  change: -8,
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "w-5 h-5" }),
-                  color: "rose"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                StatCard,
-                {
-                  title: "Renewals Due",
-                  value: stats.renewals,
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-5 h-5" }),
-                  color: "purple"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                StatCard,
-                {
-                  title: "New Invoices Today",
-                  value: stats.newInvoices,
-                  change: 5,
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DollarSign, { className: "w-5 h-5" }),
-                  color: "teal"
-                }
-              )
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          motion.div,
-          {
-            variants: itemVariants,
-            className: "grid grid-cols-1 lg:grid-cols-5 gap-4",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "lg:col-span-3 glass-card p-5",
-                  "data-ocid": "billing-revenue-chart",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-between mb-4", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Revenue Collection Trend" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: "Collected vs Expected" })
-                      ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        PeriodBtn,
-                        {
-                          options: ["3M", "6M", "1Y"],
-                          value: revenuePeriod,
-                          onChange: setRevenuePeriod,
-                          prefix: "billing.revenue_toggle"
-                        }
-                      )
-                    ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 240, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                      LineChart,
-                      {
-                        data: REVENUE_TREND[revenuePeriod],
-                        margin: { top: 5, right: 10, left: -10, bottom: 5 },
-                        children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            CartesianGrid,
-                            {
-                              strokeDasharray: "3 3",
-                              stroke: "rgba(255,255,255,0.06)"
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            XAxis,
-                            {
-                              dataKey: "label",
-                              tick: { fontSize: 11, fill: "hsl(var(--muted-foreground))" },
-                              axisLine: { stroke: "rgba(255,255,255,0.08)" },
-                              tickLine: false
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            YAxis,
-                            {
-                              tick: { fontSize: 10, fill: "hsl(var(--muted-foreground))" },
-                              axisLine: false,
-                              tickLine: false,
-                              tickFormatter: (v2) => `₹${(v2 / 1e3).toFixed(0)}k`
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { content: /* @__PURE__ */ jsxRuntimeExports.jsx(GlassTooltip, {}) }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            Legend,
-                            {
-                              wrapperStyle: { fontSize: 11 },
-                              formatter: (value) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: value })
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            Line,
-                            {
-                              type: "monotone",
-                              dataKey: "collected",
-                              name: "Collected",
-                              stroke: "oklch(0.65 0.18 150)",
-                              strokeWidth: 2.5,
-                              dot: { fill: "oklch(0.65 0.18 150)", r: 3, strokeWidth: 0 },
-                              activeDot: {
-                                r: 5,
-                                fill: "oklch(0.65 0.18 150)",
-                                strokeWidth: 0
-                              }
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            Line,
-                            {
-                              type: "monotone",
-                              dataKey: "expected",
-                              name: "Expected",
-                              stroke: "oklch(0.65 0.18 260)",
-                              strokeWidth: 2,
-                              strokeDasharray: "4 3",
-                              dot: false,
-                              activeDot: {
-                                r: 4,
-                                fill: "oklch(0.65 0.18 260)",
-                                strokeWidth: 0
-                              }
-                            }
-                          )
-                        ]
-                      }
-                    ) })
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "lg:col-span-2 glass-card p-5",
-                  "data-ocid": "billing-payment-chart",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-between mb-4", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Payment Status" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: "Paid / Pending / Overdue" })
-                      ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        PeriodBtn,
-                        {
-                          options: ["Daily", "Weekly", "Monthly"],
-                          value: paymentPeriod,
-                          onChange: setPaymentPeriod,
-                          prefix: "billing.payment_toggle"
-                        }
-                      )
-                    ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 240, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                      BarChart,
-                      {
-                        data: PAYMENT_STATUS[paymentPeriod],
-                        margin: { top: 5, right: 5, left: -20, bottom: 5 },
-                        children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            CartesianGrid,
-                            {
-                              strokeDasharray: "3 3",
-                              stroke: "rgba(255,255,255,0.06)"
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            XAxis,
-                            {
-                              dataKey: "label",
-                              tick: { fontSize: 11, fill: "hsl(var(--muted-foreground))" },
-                              axisLine: { stroke: "rgba(255,255,255,0.08)" },
-                              tickLine: false
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            YAxis,
-                            {
-                              tick: { fontSize: 10, fill: "hsl(var(--muted-foreground))" },
-                              axisLine: false,
-                              tickLine: false
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { content: /* @__PURE__ */ jsxRuntimeExports.jsx(GlassTooltip, {}) }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            Legend,
-                            {
-                              wrapperStyle: { fontSize: 11 },
-                              formatter: (value) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: value })
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            Bar,
-                            {
-                              dataKey: "paid",
-                              name: "Paid",
-                              fill: "oklch(0.65 0.18 150)",
-                              radius: [3, 3, 0, 0],
-                              stackId: "a"
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            Bar,
-                            {
-                              dataKey: "pending",
-                              name: "Pending",
-                              fill: "oklch(0.72 0.15 80)",
-                              radius: [0, 0, 0, 0],
-                              stackId: "a"
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            Bar,
-                            {
-                              dataKey: "overdue",
-                              name: "Overdue",
-                              fill: "oklch(0.62 0.22 20)",
-                              radius: [3, 3, 0, 0],
-                              stackId: "a"
-                            }
-                          )
-                        ]
-                      }
-                    ) })
-                  ]
-                }
-              )
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          motion.div,
-          {
-            variants: itemVariants,
-            className: "grid grid-cols-1 lg:grid-cols-5 gap-4",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "lg:col-span-3 glass-card p-5",
-                  "data-ocid": "billing-invoices-table",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Unpaid Invoices" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-muted-foreground mt-0.5", children: [
-                          filteredInvoices.length,
-                          " invoices"
-                        ] })
-                      ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx(
-                          PeriodBtn,
-                          {
-                            options: ["Today", "This Week", "All"],
-                            value: invoicePeriod,
-                            onChange: setInvoicePeriod,
-                            prefix: "billing.invoice_toggle"
-                          }
-                        ),
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-medium px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20", children: [
-                          "₹",
-                          ALL_INVOICES.reduce((s2, i) => s2 + i.amount, 0).toLocaleString(
-                            "en-IN"
-                          )
-                        ] })
-                      ] })
-                    ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "overflow-x-auto", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-sm", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { className: "border-b border-white/10", children: [
-                          "Invoice #",
-                          "Patient Name",
-                          "Amount",
-                          "Due Date",
-                          "Days Overdue",
-                          "Status",
-                          "Action"
-                        ].map((h2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                          "th",
-                          {
-                            className: "text-left text-xs font-semibold text-muted-foreground py-2 pr-3 last:pr-0",
-                            children: h2
-                          },
-                          h2
-                        )) }) }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: filteredInvoices.map((row, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                          "tr",
-                          {
-                            className: `border-b border-white/5 transition-colors ${markedPaid.has(row.id) ? "opacity-40" : "hover:bg-white/[0.03]"}`,
-                            "data-ocid": `billing-invoice.item.${i + 1}`,
-                            children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-2.5 pr-3 text-xs font-mono text-muted-foreground", children: row.id }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-2.5 pr-3 font-medium text-foreground text-xs", children: row.patient }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { className: "py-2.5 pr-3 text-xs font-bold text-foreground tabular-nums", children: [
-                                "₹",
-                                row.amount.toLocaleString("en-IN")
-                              ] }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-2.5 pr-3 text-xs text-muted-foreground", children: row.dueDate }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-2.5 pr-3 text-xs tabular-nums", children: row.daysOverdue > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-rose-400 font-medium", children: [
-                                row.daysOverdue,
-                                "d"
-                              ] }) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: "—" }) }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-2.5 pr-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                "span",
-                                {
-                                  className: `text-xs font-medium px-2 py-0.5 rounded-full border whitespace-nowrap ${statusBadge[row.status]}`,
-                                  children: row.status
-                                }
-                              ) }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-2.5", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5", children: [
-                                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                  "button",
-                                  {
-                                    type: "button",
-                                    title: "Mark as Paid",
-                                    disabled: markedPaid.has(row.id),
-                                    onClick: () => setMarkedPaid((s2) => /* @__PURE__ */ new Set([...s2, row.id])),
-                                    className: "p-1 rounded-lg text-green-400 hover:bg-green-400/10 transition-colors disabled:opacity-30",
-                                    "data-ocid": `billing-invoice.mark_paid.${i + 1}`,
-                                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-3.5 h-3.5" })
-                                  }
-                                ),
-                                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                  "button",
-                                  {
-                                    type: "button",
-                                    title: "Send Reminder",
-                                    onClick: () => setRemindSent((s2) => /* @__PURE__ */ new Set([...s2, row.id])),
-                                    className: `p-1 rounded-lg transition-colors ${remindSent.has(row.id) ? "text-primary opacity-50" : "text-amber-400 hover:bg-amber-400/10"}`,
-                                    "data-ocid": `billing-invoice.remind.${i + 1}`,
-                                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(Bell, { className: "w-3.5 h-3.5" })
-                                  }
-                                ),
-                                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                  "button",
-                                  {
-                                    type: "button",
-                                    title: "View",
-                                    className: "p-1 rounded-lg text-muted-foreground hover:text-foreground hover:bg-white/5 transition-colors",
-                                    "data-ocid": `billing-invoice.view.${i + 1}`,
-                                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(Eye, { className: "w-3.5 h-3.5" })
-                                  }
-                                )
-                              ] }) })
-                            ]
-                          },
-                          row.id
-                        )) })
-                      ] }),
-                      filteredInvoices.length === 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        "div",
-                        {
-                          className: "py-10 text-center text-sm text-muted-foreground",
-                          "data-ocid": "billing-invoices.empty_state",
-                          children: "No invoices for the selected period."
-                        }
-                      )
-                    ] })
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "lg:col-span-2 glass-card p-5",
-                  "data-ocid": "billing-overdue-accounts",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-4", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "w-4 h-4 text-rose-400" }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Overdue Accounts" }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "ml-auto text-xs font-medium px-2 py-0.5 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20", children: [
-                        OVERDUE_ACCOUNTS.length,
-                        " patients"
-                      ] })
-                    ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2.5", children: OVERDUE_ACCOUNTS.map((acc, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                      "div",
-                      {
-                        className: "p-3 rounded-xl bg-rose-500/5 border border-rose-500/10 hover:bg-rose-500/10 transition-smooth",
-                        "data-ocid": `billing-overdue.item.${i + 1}`,
-                        children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-between gap-2 mb-1.5", children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-semibold text-foreground truncate flex-1", children: acc.patient }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx(
-                              "span",
-                              {
-                                className: `text-[10px] font-medium px-1.5 py-0.5 rounded-full border shrink-0 ${urgencyBadge[acc.urgency]}`,
-                                children: urgencyLabel[acc.urgency]
-                              }
-                            )
-                          ] }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm font-bold text-rose-400 tabular-nums", children: [
-                                "₹",
-                                acc.totalDue.toLocaleString("en-IN")
-                              ] }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-[10px] text-muted-foreground mt-0.5", children: [
-                                acc.daysOverdue,
-                                "d overdue · Last: ",
-                                acc.lastPayment
-                              ] })
-                            ] }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx(
-                              Button$1,
-                              {
-                                size: "sm",
-                                variant: "ghost",
-                                className: "h-6 text-[10px] px-2 text-rose-400 hover:text-rose-300 hover:bg-rose-400/10 border border-rose-400/20",
-                                "data-ocid": `billing-overdue.contact.${i + 1}`,
-                                children: "Contact"
-                              }
-                            )
-                          ] })
-                        ]
-                      },
-                      acc.id
-                    )) })
-                  ]
-                }
-              )
-            ]
-          }
-        )
-      ]
-    }
-  );
-}
 const VISIT_TREND_DATA = {
   "3M": [
     { label: "Feb", visits: 54 },
@@ -79082,7 +78028,7 @@ const RECENT_CASES_DATA = {
     }
   ]
 };
-const DATE_FILTER_OPTIONS$3 = [
+const DATE_FILTER_OPTIONS$2 = [
   "Custom Range",
   "Next 30 Days",
   "Next 7 Days",
@@ -79313,7 +78259,7 @@ function DoctorDashboard() {
                         width: showCustomCalendar ? "auto" : "14rem"
                       },
                       children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col", style: { minWidth: "14rem" }, children: DATE_FILTER_OPTIONS$3.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col", style: { minWidth: "14rem" }, children: DATE_FILTER_OPTIONS$2.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
                           "button",
                           {
                             type: "button",
@@ -79751,958 +78697,6 @@ function DoctorDashboard() {
                   ]
                 }
               )
-            ]
-          }
-        )
-      ]
-    }
-  );
-}
-const DATE_FILTER_OPTIONS$2 = [
-  "Custom Range",
-  "Next 30 Days",
-  "Next 7 Days",
-  "Tomorrow",
-  "Today",
-  "Yesterday",
-  "Last 7 Days",
-  "Last 30 Days",
-  "This Month",
-  "Last Month",
-  "This Month Last Year",
-  "This Year Last Year"
-];
-const STATS_BY_FILTER = {
-  Today: { prep: 18, completed: 11, pending: 7, stock: 4, medicines: 23 },
-  Yesterday: { prep: 16, completed: 14, pending: 2, stock: 2, medicines: 20 },
-  Tomorrow: { prep: 20, completed: 0, pending: 20, stock: 5, medicines: 0 },
-  "Last 7 Days": {
-    prep: 98,
-    completed: 72,
-    pending: 26,
-    stock: 18,
-    medicines: 140
-  },
-  "Last 30 Days": {
-    prep: 420,
-    completed: 310,
-    pending: 110,
-    stock: 64,
-    medicines: 590
-  },
-  "Next 7 Days": {
-    prep: 22,
-    completed: 0,
-    pending: 22,
-    stock: 6,
-    medicines: 0
-  },
-  "Next 30 Days": {
-    prep: 80,
-    completed: 0,
-    pending: 80,
-    stock: 20,
-    medicines: 0
-  },
-  "This Month": {
-    prep: 385,
-    completed: 290,
-    pending: 95,
-    stock: 58,
-    medicines: 540
-  },
-  "Last Month": {
-    prep: 398,
-    completed: 305,
-    pending: 93,
-    stock: 61,
-    medicines: 556
-  },
-  "This Month Last Year": {
-    prep: 360,
-    completed: 280,
-    pending: 80,
-    stock: 50,
-    medicines: 490
-  },
-  "This Year Last Year": {
-    prep: 4320,
-    completed: 3350,
-    pending: 970,
-    stock: 640,
-    medicines: 6200
-  },
-  "Custom Range": {
-    prep: 55,
-    completed: 42,
-    pending: 13,
-    stock: 12,
-    medicines: 78
-  }
-};
-const TASK_TREND_DATA = {
-  "This Week": [
-    { label: "Mon", assigned: 18, completed: 15 },
-    { label: "Tue", assigned: 20, completed: 18 },
-    { label: "Wed", assigned: 22, completed: 19 },
-    { label: "Thu", assigned: 17, completed: 14 },
-    { label: "Fri", assigned: 21, completed: 17 },
-    { label: "Sat", assigned: 12, completed: 11 },
-    { label: "Sun", assigned: 8, completed: 7 }
-  ],
-  "This Month": [
-    { label: "Week 1", assigned: 85, completed: 72 },
-    { label: "Week 2", assigned: 92, completed: 80 },
-    { label: "Week 3", assigned: 88, completed: 75 },
-    { label: "Week 4", assigned: 95, completed: 83 }
-  ],
-  "3M": [
-    { label: "Feb", assigned: 340, completed: 298 },
-    { label: "Mar", assigned: 372, completed: 325 },
-    { label: "Apr", assigned: 395, completed: 351 }
-  ]
-};
-const REMEDY_CATEGORY_DATA = {
-  Daily: [
-    { label: "Dilutions", count: 8 },
-    { label: "Tinctures", count: 5 },
-    { label: "Biochemics", count: 6 },
-    { label: "Triturations", count: 4 }
-  ],
-  Weekly: [
-    { label: "Dilutions", count: 52 },
-    { label: "Tinctures", count: 38 },
-    { label: "Biochemics", count: 45 },
-    { label: "Triturations", count: 29 }
-  ],
-  Monthly: [
-    { label: "Dilutions", count: 210 },
-    { label: "Tinctures", count: 158 },
-    { label: "Biochemics", count: 185 },
-    { label: "Triturations", count: 122 }
-  ]
-};
-const ALL_PREP_TASKS = [
-  {
-    task: "Prepare Arnica 30C",
-    patient: "Aarav Mehta",
-    doctor: "Dr. Anjali Sharma",
-    remedy: "Arnica Montana 30C",
-    priority: "Urgent",
-    status: "In Progress"
-  },
-  {
-    task: "Prepare Belladonna 200C",
-    patient: "Sneha Iyer",
-    doctor: "Dr. Rohan Mehta",
-    remedy: "Belladonna 200C",
-    priority: "Normal",
-    status: "Pending"
-  },
-  {
-    task: "Prepare Nux Vomica 1M",
-    patient: "Ravi Kumar",
-    doctor: "Dr. Vikram Patel",
-    remedy: "Nux Vomica 1M",
-    priority: "Urgent",
-    status: "Pending"
-  },
-  {
-    task: "Prepare Pulsatilla 30C",
-    patient: "Meena Pillai",
-    doctor: "Dr. Anjali Sharma",
-    remedy: "Pulsatilla 30C",
-    priority: "Normal",
-    status: "Completed"
-  },
-  {
-    task: "Prepare Sulphur 200C",
-    patient: "Arjun Bhat",
-    doctor: "Dr. Priya Nair",
-    remedy: "Sulphur 200C",
-    priority: "Normal",
-    status: "Completed"
-  },
-  {
-    task: "Prepare Calc Carb 1M",
-    patient: "Divya Sharma",
-    doctor: "Dr. Rohan Mehta",
-    remedy: "Calcarea Carbonica 1M",
-    priority: "Urgent",
-    status: "In Progress"
-  },
-  {
-    task: "Prepare Lycopodium 30C",
-    patient: "Suresh Nair",
-    doctor: "Dr. Priya Nair",
-    remedy: "Lycopodium 30C",
-    priority: "Normal",
-    status: "Pending"
-  },
-  {
-    task: "Prepare Natrum Mur 200C",
-    patient: "Kavitha Reddy",
-    doctor: "Dr. Vikram Patel",
-    remedy: "Natrum Muriaticum 200C",
-    priority: "Normal",
-    status: "Pending"
-  },
-  {
-    task: "Prepare Phosphorus 30C",
-    patient: "Mohan Krishnan",
-    doctor: "Dr. Anjali Sharma",
-    remedy: "Phosphorus 30C",
-    priority: "Urgent",
-    status: "Pending"
-  },
-  {
-    task: "Prepare Rhus Tox 1M",
-    patient: "Lakshmi Menon",
-    doctor: "Dr. Rohan Mehta",
-    remedy: "Rhus Toxicodendron 1M",
-    priority: "Normal",
-    status: "Completed"
-  }
-];
-const TOMORROW_TASKS = [
-  {
-    task: "Prepare Aconite 30C",
-    patient: "Vijay Shetty",
-    doctor: "Dr. Anjali Sharma",
-    remedy: "Aconitum Napellus 30C",
-    priority: "Urgent",
-    status: "Pending"
-  },
-  {
-    task: "Prepare Bryonia 200C",
-    patient: "Anjali Nayak",
-    doctor: "Dr. Priya Nair",
-    remedy: "Bryonia Alba 200C",
-    priority: "Normal",
-    status: "Pending"
-  },
-  {
-    task: "Prepare Ignatia 1M",
-    patient: "Prasad Rao",
-    doctor: "Dr. Vikram Patel",
-    remedy: "Ignatia Amara 1M",
-    priority: "Normal",
-    status: "Pending"
-  },
-  {
-    task: "Prepare Sepia 30C",
-    patient: "Uma Devi",
-    doctor: "Dr. Rohan Mehta",
-    remedy: "Sepia 30C",
-    priority: "Normal",
-    status: "Pending"
-  },
-  {
-    task: "Prepare Mercurius 200C",
-    patient: "Kishore Babu",
-    doctor: "Dr. Anjali Sharma",
-    remedy: "Mercurius Sol 200C",
-    priority: "Urgent",
-    status: "Pending"
-  }
-];
-const THIS_WEEK_TASKS = [
-  ...ALL_PREP_TASKS.slice(0, 8),
-  ...TOMORROW_TASKS
-];
-const STOCK_CATEGORIES = [
-  {
-    label: "Dilutions",
-    count: 186,
-    usageToday: 8,
-    max: 250,
-    icon: "💧",
-    color: "bg-sky-500/15 border-sky-500/20",
-    text: "text-sky-400",
-    bar: "bg-sky-400"
-  },
-  {
-    label: "Tinctures",
-    count: 94,
-    usageToday: 5,
-    max: 150,
-    icon: "🌿",
-    color: "bg-green-500/15 border-green-500/20",
-    text: "text-green-400",
-    bar: "bg-green-400"
-  },
-  {
-    label: "Biochemics",
-    count: 62,
-    usageToday: 6,
-    max: 120,
-    icon: "⚗️",
-    color: "bg-amber-500/15 border-amber-500/20",
-    text: "text-amber-400",
-    bar: "bg-amber-400"
-  },
-  {
-    label: "Triturations",
-    count: 38,
-    usageToday: 4,
-    max: 80,
-    icon: "🔬",
-    color: "bg-purple-500/15 border-purple-500/20",
-    text: "text-purple-400",
-    bar: "bg-purple-400"
-  }
-];
-const taskStatusStyle = {
-  Pending: "bg-amber-500/15 text-amber-400 border-amber-500/25",
-  "In Progress": "bg-blue-500/15 text-blue-400 border-blue-500/25",
-  Completed: "bg-green-500/15 text-green-400 border-green-500/25"
-};
-const priorityStyle = {
-  Urgent: "bg-rose-500/15 text-rose-400 border-rose-500/25",
-  Normal: "bg-muted/40 text-muted-foreground border-border/50"
-};
-function PeriodToggle({
-  options,
-  value,
-  onChange,
-  prefix: prefix2
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex gap-1.5", children: options.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-    "button",
-    {
-      type: "button",
-      onClick: () => onChange(opt),
-      className: `text-xs px-2.5 py-1 rounded-full border transition-all ${value === opt ? "bg-primary/20 text-primary border-primary/40 ring-1 ring-primary/30" : "bg-white/5 border-white/10 text-muted-foreground hover:border-white/25 hover:text-foreground"}`,
-      "data-ocid": `${prefix2}.${opt.toLowerCase().replace(/\s+/g, "_")}`,
-      children: opt
-    },
-    opt
-  )) });
-}
-function NurseDashboard() {
-  const { accentColor } = useAppStore();
-  const palette = ACCENT_COLOR_MAP[accentColor] ?? ACCENT_COLOR_MAP.teal;
-  const chartColor1 = `oklch(${palette.primary})`;
-  const chartColor2 = `oklch(${palette.light})`;
-  const [dateFilterOpen, setDateFilterOpen] = reactExports.useState(false);
-  const [selectedFilter, setSelectedFilter] = reactExports.useState("Today");
-  const [customRange, setCustomRange] = reactExports.useState(
-    void 0
-  );
-  const [showCustomCalendar, setShowCustomCalendar] = reactExports.useState(false);
-  const dateFilterRef = reactExports.useRef(null);
-  const isDragging2 = reactExports.useRef(false);
-  const dragStart = reactExports.useRef(null);
-  const [taskTrendPeriod, setTaskTrendPeriod] = reactExports.useState("This Week");
-  const [remedyCatPeriod, setRemedyCatPeriod] = reactExports.useState("Daily");
-  const [queuePeriod, setQueuePeriod] = reactExports.useState("Today");
-  const [taskStatuses, setTaskStatuses] = reactExports.useState(
-    Object.fromEntries(ALL_PREP_TASKS.map((t2, i) => [i, t2.status]))
-  );
-  const activeStats = STATS_BY_FILTER[selectedFilter] ?? STATS_BY_FILTER.Today;
-  const filterButtonLabel = (() => {
-    if (selectedFilter === "Custom Range" && (customRange == null ? void 0 : customRange.from) && (customRange == null ? void 0 : customRange.to)) {
-      return `${customRange.from.toLocaleDateString("en-IN", { day: "numeric", month: "short" })} – ${customRange.to.toLocaleDateString("en-IN", { day: "numeric", month: "short" })}`;
-    }
-    return selectedFilter;
-  })();
-  const queueRows = queuePeriod === "Today" ? ALL_PREP_TASKS : queuePeriod === "Tomorrow" ? TOMORROW_TASKS : THIS_WEEK_TASKS;
-  reactExports.useEffect(() => {
-    function handleClickOutside(e3) {
-      if (dateFilterRef.current && !dateFilterRef.current.contains(e3.target)) {
-        setDateFilterOpen(false);
-        setShowCustomCalendar(false);
-      }
-    }
-    if (dateFilterOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => document.removeEventListener("mousedown", handleClickOutside);
-    }
-  }, [dateFilterOpen]);
-  reactExports.useEffect(() => {
-    function handleMouseUp() {
-      if (isDragging2.current) {
-        isDragging2.current = false;
-        dragStart.current = null;
-        if ((customRange == null ? void 0 : customRange.from) && (customRange == null ? void 0 : customRange.to)) {
-          setSelectedFilter("Custom Range");
-          setDateFilterOpen(false);
-          setShowCustomCalendar(false);
-        }
-      }
-    }
-    document.addEventListener("mouseup", handleMouseUp);
-    return () => document.removeEventListener("mouseup", handleMouseUp);
-  }, [customRange]);
-  function advanceStatus(idx) {
-    setTaskStatuses((prev) => {
-      const cur = prev[idx];
-      const next = cur === "Pending" ? "In Progress" : cur === "In Progress" ? "Completed" : "Completed";
-      return { ...prev, [idx]: next };
-    });
-  }
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    motion.div,
-    {
-      className: "space-y-6",
-      initial: "hidden",
-      animate: "visible",
-      variants: containerVariants,
-      "data-ocid": "nurse-dashboard",
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(motion.div, { variants: itemVariants, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          PageHeader,
-          {
-            title: "Nurse / Compounder",
-            description: "Manage remedy preparations, stock tracking, and task queue.",
-            breadcrumb: [{ label: "Dashboard" }]
-          }
-        ) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          motion.div,
-          {
-            variants: itemVariants,
-            className: "flex items-center justify-end gap-2 flex-wrap",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", ref: dateFilterRef, children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  "button",
-                  {
-                    type: "button",
-                    onClick: () => {
-                      setDateFilterOpen((v2) => !v2);
-                      setShowCustomCalendar(false);
-                    },
-                    className: "flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border border-white/15 text-muted-foreground hover:text-foreground hover:border-white/30 transition-all",
-                    "data-ocid": "nurse.date_filter_button",
-                    children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(CalendarDays, { className: "w-3.5 h-3.5" }),
-                      filterButtonLabel
-                    ]
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: dateFilterOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  motion.div,
-                  {
-                    initial: { opacity: 0, y: -4, scale: 0.98 },
-                    animate: { opacity: 1, y: 0, scale: 1 },
-                    exit: { opacity: 0, y: -4, scale: 0.98 },
-                    transition: { duration: 0.15 },
-                    className: "absolute right-0 mt-2 rounded-xl border border-white/15 bg-card/95 backdrop-blur-xl shadow-2xl z-50 overflow-hidden",
-                    style: {
-                      display: "flex",
-                      flexDirection: "row",
-                      width: showCustomCalendar ? "auto" : "14rem"
-                    },
-                    children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col", style: { minWidth: "14rem" }, children: DATE_FILTER_OPTIONS$2.map((opt) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        "button",
-                        {
-                          type: "button",
-                          onClick: () => {
-                            if (opt === "Custom Range") {
-                              setShowCustomCalendar(true);
-                            } else {
-                              setSelectedFilter(opt);
-                              setDateFilterOpen(false);
-                              setShowCustomCalendar(false);
-                            }
-                          },
-                          className: `w-full text-left px-4 py-2 text-xs transition-colors ${selectedFilter === opt && !showCustomCalendar ? "bg-primary/10 text-primary" : "text-muted-foreground hover:bg-white/5 hover:text-foreground"}`,
-                          "data-ocid": `nurse.date_filter.option.${opt.toLowerCase().replace(/\s+/g, "_")}`,
-                          children: opt
-                        },
-                        opt
-                      )) }),
-                      showCustomCalendar && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                        motion.div,
-                        {
-                          initial: { opacity: 0 },
-                          animate: { opacity: 1 },
-                          className: "p-3 border-l border-white/10",
-                          children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-2", children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium text-foreground", children: "Select Range" }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                "button",
-                                {
-                                  type: "button",
-                                  onClick: () => setShowCustomCalendar(false),
-                                  className: "text-muted-foreground hover:text-foreground text-xs",
-                                  children: "Close"
-                                }
-                              )
-                            ] }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx(
-                              "div",
-                              {
-                                onMouseDown: (e3) => {
-                                  const dayBtn = e3.target.closest(
-                                    "[data-day]"
-                                  );
-                                  if (dayBtn) {
-                                    const dayAttr = dayBtn.getAttribute("data-day");
-                                    if (dayAttr) {
-                                      const d2 = new Date(dayAttr);
-                                      isDragging2.current = true;
-                                      dragStart.current = d2;
-                                      setCustomRange({ from: d2, to: d2 });
-                                    }
-                                  }
-                                },
-                                onMouseMove: (e3) => {
-                                  if (!isDragging2.current || !dragStart.current) return;
-                                  const dayBtn = e3.target.closest(
-                                    "[data-day]"
-                                  );
-                                  if (dayBtn) {
-                                    const dayAttr = dayBtn.getAttribute("data-day");
-                                    if (dayAttr) {
-                                      const end = new Date(dayAttr);
-                                      const start = dragStart.current;
-                                      setCustomRange(
-                                        start <= end ? { from: start, to: end } : { from: end, to: start }
-                                      );
-                                    }
-                                  }
-                                },
-                                children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                  DayPicker,
-                                  {
-                                    mode: "range",
-                                    selected: customRange,
-                                    onSelect: (range3) => {
-                                      setCustomRange(range3);
-                                      if ((range3 == null ? void 0 : range3.from) && (range3 == null ? void 0 : range3.to)) {
-                                        setSelectedFilter("Custom Range");
-                                        setDateFilterOpen(false);
-                                        setShowCustomCalendar(false);
-                                      }
-                                    },
-                                    numberOfMonths: 2
-                                  }
-                                )
-                              }
-                            )
-                          ]
-                        }
-                      )
-                    ]
-                  }
-                ) })
-              ] }),
-              (selectedFilter !== "Today" || customRange) && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "button",
-                {
-                  type: "button",
-                  onClick: () => {
-                    setSelectedFilter("Today");
-                    setCustomRange(void 0);
-                    setDateFilterOpen(false);
-                    setShowCustomCalendar(false);
-                  },
-                  className: "flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-full border border-red-400/20 text-red-400/80 hover:text-red-400 hover:border-red-400/40 hover:bg-red-400/10 transition-all",
-                  "data-ocid": "nurse.clear_filter_button",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "w-3 h-3" }),
-                    " Clear Filter"
-                  ]
-                }
-              )
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          motion.div,
-          {
-            variants: itemVariants,
-            className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                StatCard,
-                {
-                  title: "Prep Tasks Today",
-                  value: activeStats.prep,
-                  change: 5,
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(ClipboardList, { className: "w-5 h-5" }),
-                  color: "teal"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                StatCard,
-                {
-                  title: "Completed Tasks",
-                  value: activeStats.completed,
-                  change: 15,
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(SquareCheckBig, { className: "w-5 h-5" }),
-                  color: "green"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                StatCard,
-                {
-                  title: "Pending Remedies",
-                  value: activeStats.pending,
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Leaf$1, { className: "w-5 h-5" }),
-                  color: "amber"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                StatCard,
-                {
-                  title: "Stock Requests",
-                  value: activeStats.stock,
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Package, { className: "w-5 h-5" }),
-                  color: "purple"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                StatCard,
-                {
-                  title: "Medicines Prepared",
-                  value: activeStats.medicines,
-                  change: 8,
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FlaskConical, { className: "w-5 h-5" }),
-                  color: "rose"
-                }
-              )
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          motion.div,
-          {
-            variants: itemVariants,
-            className: "grid grid-cols-1 lg:grid-cols-5 gap-4",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "lg:col-span-3 glass-card p-5",
-                  "data-ocid": "nurse-task-trend-chart",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-1", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Task Completion Trend" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: "Assigned vs Completed" })
-                      ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-medium px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20", children: taskTrendPeriod })
-                    ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      PeriodToggle,
-                      {
-                        options: ["This Week", "This Month", "3M"],
-                        value: taskTrendPeriod,
-                        onChange: (v2) => setTaskTrendPeriod(v2),
-                        prefix: "nurse.task_trend"
-                      }
-                    ) }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 220, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                      LineChart,
-                      {
-                        data: TASK_TREND_DATA[taskTrendPeriod],
-                        margin: { top: 5, right: 10, left: -10, bottom: 5 },
-                        children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            CartesianGrid,
-                            {
-                              strokeDasharray: "3 3",
-                              stroke: "rgba(255,255,255,0.06)"
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            XAxis,
-                            {
-                              dataKey: "label",
-                              tick: { fontSize: 11, fill: "hsl(var(--muted-foreground))" },
-                              axisLine: { stroke: "rgba(255,255,255,0.08)" },
-                              tickLine: false
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            YAxis,
-                            {
-                              tick: { fontSize: 10, fill: "hsl(var(--muted-foreground))" },
-                              axisLine: false,
-                              tickLine: false
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { content: /* @__PURE__ */ jsxRuntimeExports.jsx(GlassTooltip, {}) }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            Line,
-                            {
-                              type: "monotone",
-                              dataKey: "assigned",
-                              name: "Assigned",
-                              stroke: chartColor2,
-                              strokeWidth: 2,
-                              strokeDasharray: "4 2",
-                              dot: { fill: chartColor2, r: 3, strokeWidth: 0 },
-                              activeDot: { r: 5, fill: chartColor2, strokeWidth: 0 }
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            Line,
-                            {
-                              type: "monotone",
-                              dataKey: "completed",
-                              name: "Completed",
-                              stroke: chartColor1,
-                              strokeWidth: 2.5,
-                              dot: { fill: chartColor1, r: 3, strokeWidth: 0 },
-                              activeDot: { r: 5, fill: chartColor1, strokeWidth: 0 }
-                            }
-                          )
-                        ]
-                      }
-                    ) }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 mt-2", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1.5 text-xs text-muted-foreground", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx(
-                          "span",
-                          {
-                            className: "w-5 h-0.5 rounded",
-                            style: {
-                              background: chartColor2,
-                              opacity: 0.7,
-                              display: "inline-block"
-                            }
-                          }
-                        ),
-                        "Assigned"
-                      ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1.5 text-xs text-muted-foreground", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx(
-                          "span",
-                          {
-                            className: "w-5 h-0.5 rounded",
-                            style: { background: chartColor1, display: "inline-block" }
-                          }
-                        ),
-                        "Completed"
-                      ] })
-                    ] })
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "lg:col-span-2 glass-card p-5",
-                  "data-ocid": "nurse-remedy-category-chart",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-between mb-1", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Remedy Prep by Category" }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: "Count prepared" })
-                    ] }) }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      PeriodToggle,
-                      {
-                        options: ["Daily", "Weekly", "Monthly"],
-                        value: remedyCatPeriod,
-                        onChange: (v2) => setRemedyCatPeriod(v2),
-                        prefix: "nurse.remedy_cat"
-                      }
-                    ) }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(ResponsiveContainer, { width: "100%", height: 220, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                      BarChart,
-                      {
-                        data: REMEDY_CATEGORY_DATA[remedyCatPeriod],
-                        margin: { top: 5, right: 10, left: -20, bottom: 5 },
-                        children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            CartesianGrid,
-                            {
-                              strokeDasharray: "3 3",
-                              stroke: "rgba(255,255,255,0.06)"
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            XAxis,
-                            {
-                              dataKey: "label",
-                              tick: { fontSize: 10, fill: "hsl(var(--muted-foreground))" },
-                              axisLine: { stroke: "rgba(255,255,255,0.08)" },
-                              tickLine: false
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            YAxis,
-                            {
-                              tick: { fontSize: 10, fill: "hsl(var(--muted-foreground))" },
-                              axisLine: false,
-                              tickLine: false
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { content: /* @__PURE__ */ jsxRuntimeExports.jsx(GlassTooltip, {}) }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            Bar,
-                            {
-                              dataKey: "count",
-                              name: "Remedies",
-                              fill: chartColor1,
-                              radius: [4, 4, 0, 0]
-                            }
-                          )
-                        ]
-                      }
-                    ) })
-                  ]
-                }
-              )
-            ]
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          motion.div,
-          {
-            variants: itemVariants,
-            className: "grid grid-cols-1 lg:grid-cols-3 gap-4",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "div",
-                {
-                  className: "lg:col-span-2 glass-card p-5",
-                  "data-ocid": "nurse-prep-queue",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-1", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Today's Preparation Queue" }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs text-muted-foreground bg-muted/30 px-2.5 py-1 rounded-full border border-border/50", children: [
-                        queueRows.length,
-                        " tasks"
-                      ] })
-                    ] }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      PeriodToggle,
-                      {
-                        options: ["Today", "Tomorrow", "This Week"],
-                        value: queuePeriod,
-                        onChange: (v2) => setQueuePeriod(v2),
-                        prefix: "nurse.queue"
-                      }
-                    ) }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-sm", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("tr", { className: "border-b border-white/10", children: [
-                        "Task",
-                        "Patient",
-                        "Doctor",
-                        "Remedy",
-                        "Priority",
-                        "Status",
-                        "Action"
-                      ].map((h2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        "th",
-                        {
-                          className: "text-left text-xs font-semibold text-muted-foreground py-2 pr-3 last:pr-0 whitespace-nowrap",
-                          children: h2
-                        },
-                        h2
-                      )) }) }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { children: queueRows.map((row, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                        "tr",
-                        {
-                          className: "border-b border-white/5 hover:bg-white/[0.03] transition-colors",
-                          "data-ocid": `nurse-prep.item.${i + 1}`,
-                          children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-3 font-medium text-foreground text-xs whitespace-nowrap", children: row.task }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-3 text-xs text-muted-foreground whitespace-nowrap", children: row.patient }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-3 text-xs text-muted-foreground whitespace-nowrap", children: row.doctor }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-3 text-xs text-foreground/80 whitespace-nowrap", children: row.remedy }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                              "span",
-                              {
-                                className: `text-xs font-medium px-2 py-0.5 rounded-full border whitespace-nowrap ${priorityStyle[row.priority]}`,
-                                children: row.priority
-                              }
-                            ) }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3 pr-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                              "span",
-                              {
-                                className: `text-xs font-medium px-2 py-0.5 rounded-full border whitespace-nowrap ${taskStatusStyle[taskStatuses[ALL_PREP_TASKS.indexOf(row)] ?? row.status]}`,
-                                children: taskStatuses[ALL_PREP_TASKS.indexOf(row)] ?? row.status
-                              }
-                            ) }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-3", children: (taskStatuses[ALL_PREP_TASKS.indexOf(row)] ?? row.status) !== "Completed" ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                              "button",
-                              {
-                                type: "button",
-                                onClick: () => advanceStatus(ALL_PREP_TASKS.indexOf(row)),
-                                className: "text-xs px-2.5 py-1 rounded-lg bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-smooth whitespace-nowrap",
-                                "data-ocid": `nurse-prep.action.${i + 1}`,
-                                children: (taskStatuses[ALL_PREP_TASKS.indexOf(row)] ?? row.status) === "Pending" ? "Start" : "Complete"
-                              }
-                            ) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-green-400 font-medium", children: "✓ Done" }) })
-                          ]
-                        },
-                        `${row.task}-${i}`
-                      )) })
-                    ] }) })
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "glass-card p-5", "data-ocid": "nurse-stock-levels", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-semibold text-foreground", children: "Stock Levels" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground mt-0.5", children: "by Category" })
-                  ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-4 h-4 text-primary" })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-4", children: STOCK_CATEGORIES.map((cat, i) => {
-                  const pct = Math.round(cat.count / cat.max * 100);
-                  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                    "div",
-                    {
-                      "data-ocid": `nurse-stock-cat.item.${i + 1}`,
-                      children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-2", children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            "div",
-                            {
-                              className: `w-8 h-8 rounded-lg border flex items-center justify-center text-base shrink-0 ${cat.color}`,
-                              children: cat.icon
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 min-w-0", children: [
-                            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-semibold text-foreground", children: cat.label }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                "span",
-                                {
-                                  className: `text-sm font-bold tabular-nums ${cat.text}`,
-                                  children: cat.count
-                                }
-                              )
-                            ] }),
-                            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mt-0.5", children: [
-                              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs text-muted-foreground", children: [
-                                "Used today: ",
-                                cat.usageToday
-                              ] }),
-                              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs text-muted-foreground", children: [
-                                pct,
-                                "%"
-                              ] })
-                            ] })
-                          ] })
-                        ] }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-1.5 rounded-full bg-white/10 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                          "div",
-                          {
-                            className: `h-full rounded-full transition-all duration-500 ${cat.bar}`,
-                            style: { width: `${pct}%` }
-                          }
-                        ) })
-                      ]
-                    },
-                    cat.label
-                  );
-                }) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-4 pt-3 border-t border-white/10", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: "Total stock items" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-2xl font-bold font-display text-foreground mt-0.5 tabular-nums", children: STOCK_CATEGORIES.reduce((s2, c2) => s2 + c2.count, 0) })
-                ] })
-              ] })
             ]
           }
         )
@@ -82587,8 +80581,8 @@ function ReceptionistDashboard() {
     }
   );
 }
-const Route$a = createRoute({
-  getParentRoute: () => Route$e,
+const Route$b = createRoute({
+  getParentRoute: () => Route$f,
   path: "/",
   component: DashboardPage
 });
@@ -82599,12 +80593,10 @@ function DashboardPage() {
   if (currentRole === "doctor") return /* @__PURE__ */ jsxRuntimeExports.jsx(DoctorDashboard, {});
   if (currentRole === "receptionist") return /* @__PURE__ */ jsxRuntimeExports.jsx(ReceptionistDashboard, {});
   if (currentRole === "pharmacist") return /* @__PURE__ */ jsxRuntimeExports.jsx(PharmacistDashboard, {});
-  if (currentRole === "nurse") return /* @__PURE__ */ jsxRuntimeExports.jsx(NurseDashboard, {});
-  if (currentRole === "billing") return /* @__PURE__ */ jsxRuntimeExports.jsx(BillingDashboard, {});
   return /* @__PURE__ */ jsxRuntimeExports.jsx(AdminDashboard, {});
 }
-const Route$9 = createRoute({
-  getParentRoute: () => Route$e,
+const Route$a = createRoute({
+  getParentRoute: () => Route$f,
   path: "/login",
   component: LoginPage
 });
@@ -82829,8 +80821,8 @@ function LoginPage() {
     }
   );
 }
-const Route$8 = createRoute({
-  getParentRoute: () => Route$e,
+const Route$9 = createRoute({
+  getParentRoute: () => Route$f,
   path: "/patients",
   component: PatientsLayout
 });
@@ -101836,6 +99828,87 @@ function usePatients() {
     getPatientById
   };
 }
+const STORAGE_KEY = "hcrm_pharmacy_queue";
+const DEMO_ENTRIES = [
+  {
+    id: "pq-demo-1",
+    patientId: "p-001",
+    patientName: "Arjun Mehta",
+    patientRegId: "HOM-0001",
+    doctorName: "Dr. Priya Sharma",
+    date: new Date(Date.now() - 2 * 60 * 60 * 1e3).toISOString(),
+    medicines: "<p><strong>Nux Vomica 30C</strong> — 3 doses daily after meals<br/><strong>Sulphur 200C</strong> — 1 dose weekly</p>",
+    consultationFee: 500,
+    medicineFee: 350,
+    extraMedicineFee: 100,
+    registrationFee: 200,
+    totalAmount: 1150,
+    dueAmount: 300,
+    status: "pending"
+  },
+  {
+    id: "pq-demo-2",
+    patientId: "p-002",
+    patientName: "Kavya Nair",
+    patientRegId: "HOM-0002",
+    doctorName: "Dr. Rajan Pillai",
+    date: new Date(Date.now() - 45 * 60 * 1e3).toISOString(),
+    medicines: "<p><strong>Arsenicum Album 30C</strong> — 2 doses daily<br/><strong>Pulsatilla 200C</strong> — 1 dose at night</p>",
+    consultationFee: 500,
+    medicineFee: 280,
+    extraMedicineFee: 0,
+    registrationFee: 0,
+    totalAmount: 780,
+    dueAmount: 0,
+    status: "pending"
+  }
+];
+function loadQueue() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch {
+  }
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(DEMO_ENTRIES));
+  return DEMO_ENTRIES;
+}
+function persistQueue(queue) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(queue));
+}
+const usePharmacyStore = create((set, get3) => ({
+  queue: loadQueue(),
+  addToQueue: (entry) => {
+    const newEntry = {
+      ...entry,
+      id: `pq-${Date.now()}`,
+      status: "pending"
+    };
+    set((state) => {
+      const updated = [newEntry, ...state.queue];
+      persistQueue(updated);
+      return { queue: updated };
+    });
+  },
+  confirmEntry: (id2, dueAmount, nextVisit) => {
+    set((state) => {
+      const updated = state.queue.map(
+        (e3) => e3.id === id2 ? { ...e3, status: "confirmed", dueAmount, nextVisit } : e3
+      );
+      persistQueue(updated);
+      return { queue: updated };
+    });
+  },
+  removeEntry: (id2) => {
+    set((state) => {
+      const updated = state.queue.filter((e3) => e3.id !== id2);
+      persistQueue(updated);
+      return { queue: updated };
+    });
+  },
+  getPendingCount: () => {
+    return get3().queue.filter((e3) => e3.status === "pending").length;
+  }
+}));
 function Skeleton({ className, ...props }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "div",
@@ -102112,8 +100185,8 @@ function DataTable({
     )
   ] });
 }
-const Route$7 = createRoute({
-  getParentRoute: () => Route$8,
+const Route$8 = createRoute({
+  getParentRoute: () => Route$9,
   path: "/",
   component: PatientsPage
 });
@@ -102487,7 +100560,7 @@ function ViewPatientModal({
           {
             icon: /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-3.5 h-3.5" }),
             label: "Last Visit",
-            value: formatDate(patient.lastVisit)
+            value: formatDate$1(patient.lastVisit)
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -102605,7 +100678,7 @@ function PatientsPage() {
       key: "lastVisit",
       header: "Last Visit",
       sortable: true,
-      cell: (row) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm text-muted-foreground", children: formatDate(row.lastVisit) })
+      cell: (row) => /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm text-muted-foreground", children: formatDate$1(row.lastVisit) })
     },
     {
       key: "totalVisits",
@@ -102814,8 +100887,8 @@ function PatientsPage() {
     }
   );
 }
-const Route$6 = createRoute({
-  getParentRoute: () => Route$8,
+const Route$7 = createRoute({
+  getParentRoute: () => Route$9,
   path: "$patientId",
   component: PatientDetailPage
 });
@@ -103198,9 +101271,9 @@ function CaseTakingTab({
       return next;
     });
   };
-  const stripHtml = (html) => html.replace(/<[^>]*>/g, "");
-  const hasKeywords = stripHtml(symptoms).trim().length > 0;
-  const highlightedNodes = hasKeywords ? highlightSymptoms(stripHtml(symptoms)) : [];
+  const stripHtml2 = (html) => html.replace(/<[^>]*>/g, "");
+  const hasKeywords = stripHtml2(symptoms).trim().length > 0;
+  const highlightedNodes = hasKeywords ? highlightSymptoms(stripHtml2(symptoms)) : [];
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     motion.div,
     {
@@ -103798,14 +101871,21 @@ function CaseTakingTab({
   );
 }
 function FeeStructureTab({
-  lastSavedMedicine
+  lastSavedMedicine,
+  patientId,
+  patientName,
+  patientRegId,
+  doctorName
 }) {
+  const { addToQueue } = usePharmacyStore();
   const [consultationFee, setConsultationFee] = reactExports.useState("");
   const [medicineRegular, setMedicineRegular] = reactExports.useState("");
   const [extraMedicine, setExtraMedicine] = reactExports.useState("");
   const [registrationFee, setRegistrationFee] = reactExports.useState("");
   const [dueAmount, setDueAmount] = reactExports.useState("");
   const [confirmedByDoctor, setConfirmedByDoctor] = reactExports.useState(false);
+  const [showReceiptModal, setShowReceiptModal] = reactExports.useState(false);
+  const [sentToPharmacist, setSentToPharmacist] = reactExports.useState(false);
   const [feeHistory, setFeeHistory] = reactExports.useState([
     {
       id: "fee-demo-1",
@@ -103863,14 +101943,34 @@ function FeeStructureTab({
         (f2) => f2.id === feeId ? { ...f2, confirmedToPharmacist: true } : f2
       )
     );
+    setSentToPharmacist(true);
+    addToQueue({
+      patientId: patientId || "unknown",
+      patientName: patientName || "Unknown Patient",
+      patientRegId: patientRegId || "N/A",
+      doctorName: doctorName || "Dr. Priya Sharma",
+      date: (/* @__PURE__ */ new Date()).toISOString(),
+      medicines: lastSavedMedicine || "",
+      consultationFee: Number(consultationFee) || 0,
+      medicineFee: Number(medicineRegular) || 0,
+      extraMedicineFee: Number(extraMedicine) || 0,
+      registrationFee: Number(registrationFee) || 0,
+      totalAmount: totalAmount || 0,
+      dueAmount: Number(dueAmount) || 0
+    });
     ue.success("Fee confirmed and sent to pharmacist!", {
       description: "The pharmacist has been notified of the fee details."
     });
   };
   const handleConfirmByDoctor = () => {
+    if (totalAmount === 0) {
+      ue.error("Please enter fee amounts before confirming.");
+      return;
+    }
     setConfirmedByDoctor(true);
+    setShowReceiptModal(true);
     ue.success("Confirmed by Doctor!", {
-      description: "The fee structure has been reviewed and confirmed by the doctor."
+      description: "Payment received. The fee structure has been confirmed by the doctor."
     });
   };
   const lastSavedMedicineText = lastSavedMedicine.replace(/<[^>]*>/g, "").trim();
@@ -104053,48 +102153,148 @@ function FeeStructureTab({
                 ]
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              Button$1,
-              {
-                type: "button",
-                onClick: handleConfirmByDoctor,
-                disabled: confirmedByDoctor,
-                className: "flex items-center gap-2 px-5 bg-blue-600 hover:bg-blue-500 text-white border-blue-500 shadow-md shadow-blue-900/20 disabled:opacity-60 disabled:cursor-not-allowed",
-                "data-ocid": "fee-structure.confirm_doctor_button",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-4 h-4" }),
-                  confirmedByDoctor ? "Confirmed by Doctor" : "Confirm by Doctor"
-                ]
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              Button$1,
-              {
-                type: "button",
-                onClick: () => {
-                  if (feeHistory.length === 0) {
-                    ue.error("Save fee details first before confirming.");
-                    return;
-                  }
-                  const latestUnconfirmed = feeHistory.find(
-                    (f2) => !f2.confirmedToPharmacist
-                  );
-                  if (!latestUnconfirmed) {
-                    ue.info("All saved fees have already been confirmed.");
-                    return;
-                  }
-                  handleConfirmToPharmacist(latestUnconfirmed.id);
-                },
-                className: "flex items-center gap-2 px-5 bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-500 shadow-md shadow-emerald-900/20",
-                "data-ocid": "fee-structure.confirm_pharmacist_button",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Pill, { className: "w-4 h-4" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "w-3.5 h-3.5" }),
-                  "Confirm & Send to Pharmacist"
-                ]
-              }
-            )
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                Button$1,
+                {
+                  type: "button",
+                  onClick: handleConfirmByDoctor,
+                  disabled: confirmedByDoctor,
+                  className: "flex items-center gap-2 px-5 bg-blue-600 hover:bg-blue-500 text-white border-blue-500 shadow-md shadow-blue-900/20 disabled:opacity-60 disabled:cursor-not-allowed",
+                  "data-ocid": "fee-structure.confirm_doctor_button",
+                  children: [
+                    confirmedByDoctor ? /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "w-4 h-4" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-4 h-4" }),
+                    confirmedByDoctor ? "Payment Done" : "Confirm by Doctor"
+                  ]
+                }
+              ),
+              confirmedByDoctor && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-green-500/20 border border-green-400/40 text-green-400", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "w-3 h-3" }),
+                " Paid ✓"
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                Button$1,
+                {
+                  type: "button",
+                  disabled: sentToPharmacist,
+                  onClick: () => {
+                    if (feeHistory.length === 0) {
+                      ue.error("Save fee details first before confirming.");
+                      return;
+                    }
+                    const latestUnconfirmed = feeHistory.find(
+                      (f2) => !f2.confirmedToPharmacist
+                    );
+                    if (!latestUnconfirmed) {
+                      ue.info("All saved fees have already been confirmed.");
+                      return;
+                    }
+                    handleConfirmToPharmacist(latestUnconfirmed.id);
+                  },
+                  className: "flex items-center gap-2 px-5 bg-emerald-600 hover:bg-emerald-500 text-white border-emerald-500 shadow-md shadow-emerald-900/20 disabled:opacity-60 disabled:cursor-not-allowed",
+                  "data-ocid": "fee-structure.confirm_pharmacist_button",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Pill, { className: "w-4 h-4" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "w-3.5 h-3.5" }),
+                    sentToPharmacist ? "Sent to Pharmacist" : "Confirm & Send to Pharmacist"
+                  ]
+                }
+              ),
+              sentToPharmacist && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-400", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "w-3 h-3" }),
+                " Sent ✓"
+              ] })
+            ] })
           ] }),
+          showReceiptModal && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              initial: { opacity: 0, scale: 0.92 },
+              animate: { opacity: 1, scale: 1 },
+              className: "bg-card border border-border rounded-2xl shadow-2xl max-w-md w-full p-6",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-10 h-10 rounded-full bg-green-500/15 border border-green-400/30 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "w-5 h-5 text-green-400" }) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-bold text-lg text-foreground", children: "Payment Received" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-muted-foreground", children: [
+                      "by Doctor —",
+                      " ",
+                      (/* @__PURE__ */ new Date()).toLocaleDateString("en-IN", {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric"
+                      })
+                    ] })
+                  ] })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2 border-t border-border pt-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-sm", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: "Consultation Fee" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-medium text-foreground", children: [
+                      "₹",
+                      Number(consultationFee) || 0
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-sm", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: "Medicine (Regular)" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-medium text-foreground", children: [
+                      "₹",
+                      Number(medicineRegular) || 0
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-sm", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: "Extra Medicine" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-medium text-foreground", children: [
+                      "₹",
+                      Number(extraMedicine) || 0
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-sm", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: "Registration Fee" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-medium text-foreground", children: [
+                      "₹",
+                      Number(registrationFee) || 0
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-sm font-bold border-t border-border pt-2 mt-2", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-foreground", children: "Total Amount" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-green-400", children: [
+                      "₹",
+                      totalAmount.toLocaleString("en-IN")
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-sm", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground", children: "Due Amount" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-medium text-amber-400", children: [
+                      "₹",
+                      Number(dueAmount) || 0
+                    ] })
+                  ] })
+                ] }),
+                patientName && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 pt-3 border-t border-border flex items-center justify-between text-xs text-muted-foreground", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+                    "Patient:",
+                    " ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-foreground font-medium", children: patientName })
+                  ] }),
+                  patientRegId && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono bg-muted/50 px-2 py-0.5 rounded", children: patientRegId })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    type: "button",
+                    onClick: () => setShowReceiptModal(false),
+                    className: "mt-5 w-full bg-green-500 hover:bg-green-600 text-white rounded-xl py-2.5 font-semibold text-sm transition-colors",
+                    "data-ocid": "fee-structure.receipt_done_button",
+                    children: "Done"
+                  }
+                )
+              ]
+            }
+          ) }),
           feeHistory.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2.5 pt-1", "data-ocid": "fee-structure.history", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] font-medium uppercase tracking-wide text-muted-foreground", children: "Fee History" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2", children: feeHistory.map((fee, idx) => {
@@ -105269,7 +103469,7 @@ function PatientDetailPage() {
                     {
                       icon: Calendar,
                       label: "Last Visit",
-                      value: `${formatDate(patient.lastVisit)} (${relativeTime(patient.lastVisit)})`
+                      value: `${formatDate$1(patient.lastVisit)} (${relativeTime(patient.lastVisit)})`
                     }
                   )
                 ] }),
@@ -105353,7 +103553,16 @@ function PatientDetailPage() {
                     onMedicineSaved: setLastSavedMedicine
                   }
                 ) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "fee-structure", children: /* @__PURE__ */ jsxRuntimeExports.jsx(FeeStructureTab, { lastSavedMedicine }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "fee-structure", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  FeeStructureTab,
+                  {
+                    lastSavedMedicine,
+                    patientId: patient == null ? void 0 : patient.id,
+                    patientName: patient == null ? void 0 : patient.name,
+                    patientRegId: patient == null ? void 0 : patient.registrationId,
+                    doctorName: "Dr. Priya Sharma"
+                  }
+                ) }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "notes", children: /* @__PURE__ */ jsxRuntimeExports.jsx(NotesTab, { patient }) }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(TabsContent, { value: "auto-messages", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AutoMessageHistoryTab, {}) })
               ] })
@@ -105373,6 +103582,297 @@ function PatientDetailPage() {
       ]
     }
   );
+}
+const Route$6 = createRoute({
+  getParentRoute: () => Route$f,
+  path: "/pharmacy",
+  component: PharmacyPage
+});
+function stripHtml(html) {
+  return html.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+}
+function formatDate(iso) {
+  const d2 = new Date(iso);
+  return d2.toLocaleDateString("en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+}
+function PharmacyPage() {
+  const { queue, confirmEntry, getPendingCount } = usePharmacyStore();
+  const [expandedId, setExpandedId] = reactExports.useState(null);
+  const [localDue, setLocalDue] = reactExports.useState({});
+  const [localNextVisit, setLocalNextVisit] = reactExports.useState(
+    {}
+  );
+  const [toasts, setToasts] = reactExports.useState([]);
+  const pendingQueue = queue.filter((e3) => e3.status === "pending");
+  const pendingCount = getPendingCount();
+  function addToast(message2, type = "success") {
+    const id2 = Date.now();
+    setToasts((prev) => [...prev, { id: id2, message: message2, type }]);
+    setTimeout(() => {
+      setToasts((prev) => prev.filter((t2) => t2.id !== id2));
+    }, 3e3);
+  }
+  function handleToggleExpand(id2, dueAmount) {
+    if (expandedId === id2) {
+      setExpandedId(null);
+    } else {
+      setExpandedId(id2);
+      setLocalDue((prev) => ({ ...prev, [id2]: prev[id2] ?? dueAmount }));
+      setLocalNextVisit((prev) => ({ ...prev, [id2]: prev[id2] ?? "" }));
+    }
+  }
+  function handleConfirm(id2, patientName) {
+    const due = localDue[id2] ?? 0;
+    const nextVisit = localNextVisit[id2] ?? void 0;
+    confirmEntry(id2, due, nextVisit || void 0);
+    setExpandedId(null);
+    addToast(`Payment confirmed for ${patientName}`, "success");
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "min-h-screen p-6 bg-background", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed top-4 right-4 z-50 flex flex-col gap-2 pointer-events-none", children: toasts.map((t2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: `pointer-events-auto flex items-center gap-2 px-4 py-3 rounded-xl shadow-lg border text-sm font-medium transition-all animate-in slide-in-from-right-5 ${t2.type === "success" ? "bg-emerald-50 border-emerald-200 text-emerald-800 dark:bg-emerald-900/40 dark:border-emerald-700 dark:text-emerald-200" : "bg-red-50 border-red-200 text-red-800 dark:bg-red-900/40 dark:border-red-700 dark:text-red-200"}`,
+        "data-ocid": "pharmacy.toast",
+        children: [
+          t2.type === "success" ? /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "h-4 w-4 shrink-0" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "h-4 w-4 shrink-0" }),
+          t2.message
+        ]
+      },
+      t2.id
+    )) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-8", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-1", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 border border-primary/20", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Pill, { className: "h-5 w-5 text-primary" }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-2xl font-bold text-foreground font-display", children: "Pharmacy Queue" }),
+          pendingCount > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "span",
+            {
+              className: "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300",
+              "data-ocid": "pharmacy.pending-badge",
+              children: [
+                pendingCount,
+                " pending"
+              ]
+            }
+          )
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-muted-foreground text-sm ml-[52px]", children: "Manage prescriptions and payments sent by doctors" })
+    ] }),
+    pendingQueue.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: "flex flex-col items-center justify-center py-24 bg-white/5 dark:bg-white/5 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 dark:border-white/10",
+        "data-ocid": "pharmacy.empty_state",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-center w-16 h-16 rounded-2xl bg-muted mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsx(FlaskConical, { className: "h-8 w-8 text-muted-foreground" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-semibold text-foreground mb-1", children: "No pending pharmacy requests" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground", children: "Prescriptions sent by doctors will appear here" })
+        ]
+      }
+    ) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-4 max-w-4xl", "data-ocid": "pharmacy.queue-list", children: pendingQueue.map((entry, idx) => {
+      const isExpanded = expandedId === entry.id;
+      const medicineText = stripHtml(entry.medicines);
+      const medicinePreview = medicineText.length > 80 ? `${medicineText.slice(0, 80)}…` : medicineText;
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "div",
+        {
+          className: "bg-white/10 dark:bg-white/5 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 dark:border-white/10 overflow-hidden",
+          "data-ocid": `pharmacy.item.${idx + 1}`,
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-start justify-between gap-3 mb-3", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start gap-3", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-center w-9 h-9 rounded-xl bg-primary/10 border border-primary/20 shrink-0 mt-0.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx(User, { className: "h-4 w-4 text-primary" }) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-semibold text-base text-foreground", children: entry.patientName }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-2 mt-0.5", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground font-mono", children: entry.patientRegId }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground/40 text-xs", children: "·" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-muted-foreground", children: entry.doctorName }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-muted-foreground/40 text-xs", children: "·" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1 text-xs text-muted-foreground", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { className: "h-3 w-3" }),
+                        formatDate(entry.date)
+                      ] })
+                    ] })
+                  ] })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-1 bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300 rounded-full px-2.5 py-0.5 text-xs font-semibold", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(IndianRupee, { className: "h-3 w-3" }),
+                  entry.totalAmount.toLocaleString("en-IN")
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center justify-between gap-3", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm italic text-muted-foreground flex-1 min-w-0 truncate", children: medicinePreview || "No medicines specified" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    type: "button",
+                    onClick: () => handleToggleExpand(entry.id, entry.dueAmount),
+                    className: "flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors shrink-0",
+                    "data-ocid": `pharmacy.process-button.${idx + 1}`,
+                    children: isExpanded ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronUp, { className: "h-4 w-4" }),
+                      "Close"
+                    ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronDown, { className: "h-4 w-4" }),
+                      "Process"
+                    ] })
+                  }
+                )
+              ] })
+            ] }),
+            isExpanded && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border-t border-white/20 dark:border-white/10 bg-black/5 dark:bg-black/20 px-5 py-5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("h4", { className: "text-sm font-semibold text-foreground mb-4 flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(IndianRupee, { className: "h-4 w-4 text-primary" }),
+                "Fee Breakdown"
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-4 p-3 rounded-xl bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-medium text-muted-foreground uppercase tracking-wide mb-2", children: "Prescribed Medicines" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    className: "text-sm text-foreground prose prose-sm dark:prose-invert max-w-none",
+                    dangerouslySetInnerHTML: {
+                      __html: entry.medicines || "<p>No medicines specified</p>"
+                    }
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4", children: [
+                { label: "Consultation", value: entry.consultationFee },
+                {
+                  label: "Medicine (Regular)",
+                  value: entry.medicineFee
+                },
+                {
+                  label: "Extra Medicine",
+                  value: entry.extraMedicineFee
+                },
+                { label: "Registration", value: entry.registrationFee }
+              ].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "bg-white/10 dark:bg-white/5 rounded-xl px-3 py-3 border border-white/20 dark:border-white/10",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] text-muted-foreground uppercase tracking-wide mb-1", children: item.label }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm font-semibold text-foreground", children: [
+                      "₹",
+                      item.value.toLocaleString("en-IN")
+                    ] })
+                  ]
+                },
+                item.label
+              )) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 mb-5 px-3 py-2.5 rounded-xl bg-primary/10 border border-primary/20", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(IndianRupee, { className: "h-4 w-4 text-primary" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-medium text-foreground", children: "Total Amount:" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-base font-bold text-primary ml-auto", children: [
+                  "₹",
+                  entry.totalAmount.toLocaleString("en-IN")
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "label",
+                    {
+                      htmlFor: `due-${entry.id}`,
+                      className: "block text-xs font-medium text-muted-foreground mb-1.5 uppercase tracking-wide",
+                      children: "Due Amount (₹)"
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(IndianRupee, { className: "absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "input",
+                      {
+                        id: `due-${entry.id}`,
+                        type: "number",
+                        min: 0,
+                        value: localDue[entry.id] ?? entry.dueAmount,
+                        onChange: (e3) => setLocalDue((prev) => ({
+                          ...prev,
+                          [entry.id]: Number(e3.target.value)
+                        })),
+                        className: "w-full pl-8 pr-3 py-2 text-sm rounded-lg bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50",
+                        "data-ocid": `pharmacy.due-amount-input.${idx + 1}`
+                      }
+                    )
+                  ] })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "label",
+                    {
+                      htmlFor: `next-visit-${entry.id}`,
+                      className: "block text-xs font-medium text-muted-foreground mb-1.5 uppercase tracking-wide",
+                      children: "Schedule Next Visit"
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground pointer-events-none" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "input",
+                      {
+                        id: `next-visit-${entry.id}`,
+                        type: "date",
+                        value: localNextVisit[entry.id] ?? "",
+                        onChange: (e3) => setLocalNextVisit((prev) => ({
+                          ...prev,
+                          [entry.id]: e3.target.value
+                        })),
+                        className: "w-full pl-8 pr-3 py-2 text-sm rounded-lg bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50",
+                        "data-ocid": `pharmacy.next-visit-input.${idx + 1}`
+                      }
+                    )
+                  ] })
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "button",
+                  {
+                    type: "button",
+                    onClick: () => handleConfirm(entry.id, entry.patientName),
+                    className: "flex items-center gap-2 px-5 py-2 text-sm font-semibold rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white transition-colors shadow-sm",
+                    "data-ocid": `pharmacy.confirm-button.${idx + 1}`,
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "h-4 w-4" }),
+                      "Confirm Payment"
+                    ]
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "button",
+                  {
+                    type: "button",
+                    onClick: () => setExpandedId(null),
+                    className: "flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-muted text-muted-foreground hover:bg-muted/80 transition-colors",
+                    "data-ocid": `pharmacy.cancel-button.${idx + 1}`,
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "h-4 w-4" }),
+                      "Cancel"
+                    ]
+                  }
+                )
+              ] })
+            ] })
+          ]
+        },
+        entry.id
+      );
+    }) })
+  ] });
 }
 var NAME = "Separator";
 var DEFAULT_ORIENTATION = "horizontal";
@@ -105418,7 +103918,7 @@ function Separator({
   );
 }
 const Route$5 = createRoute({
-  getParentRoute: () => Route$e,
+  getParentRoute: () => Route$f,
   path: "/settings",
   component: SettingsPage
 });
@@ -106177,7 +104677,7 @@ function SettingsPage() {
   ] });
 }
 const Route$4 = createRoute({
-  getParentRoute: () => Route$e,
+  getParentRoute: () => Route$f,
   path: "/user-management",
   component: UserManagementLayout
 });
@@ -106291,9 +104791,7 @@ function getRoleBadgeStyle(role) {
     Receptionist: "bg-emerald-500/15 text-emerald-300 border-emerald-400/40",
     Pharmacist: "bg-amber-500/15 text-amber-300 border-amber-400/40",
     Admin: "bg-violet-500/15 text-violet-300 border-violet-400/40",
-    Cashier: "bg-emerald-500/15 text-emerald-300 border-emerald-400/40",
-    "Nurse/Compounder": "bg-rose-500/15 text-rose-300 border-rose-400/40",
-    "Billing Staff": "bg-cyan-500/15 text-cyan-300 border-cyan-400/40"
+    Cashier: "bg-emerald-500/15 text-emerald-300 border-emerald-400/40"
   };
   return map3[role] ?? "bg-primary/15 text-primary border-primary/40";
 }
@@ -106823,30 +105321,6 @@ const ROLES_TABLE = [
     isMainAdmin: false
   },
   {
-    id: "nurse",
-    name: "Nurse / Compounder",
-    description: "Vital recording, treatment assistance & patient care support",
-    accessLevel: "Clinical Support Access",
-    color: "rose",
-    isMainAdmin: false
-  },
-  {
-    id: "billing",
-    name: "Billing Staff",
-    description: "Invoice generation, payment collection & financial reports",
-    accessLevel: "Billing Access",
-    color: "cyan",
-    isMainAdmin: false
-  },
-  {
-    id: "cashier",
-    name: "Cashier",
-    description: "Cash handling, daily collections & receipt management",
-    accessLevel: "Limited Billing Access",
-    color: "emerald",
-    isMainAdmin: false
-  },
-  {
     id: "admin",
     name: "Admin",
     description: "Administrative tasks, reporting & staff coordination",
@@ -107141,13 +105615,9 @@ function UserManagementPage() {
                             children: /* @__PURE__ */ jsxRuntimeExports.jsx(SelectValue, { placeholder: "Select role" })
                           }
                         ),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContent, { className: "glass border-white/10 bg-card/95", children: [
-                          "Admin",
-                          "Cashier",
-                          "Pharmacist",
-                          "Doctor",
-                          "Receptionist"
-                        ].map((r2) => /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: r2, children: r2 }, r2)) })
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(SelectContent, { className: "glass border-white/10 bg-card/95", children: ["Admin", "Pharmacist", "Doctor", "Receptionist"].map(
+                          (r2) => /* @__PURE__ */ jsxRuntimeExports.jsx(SelectItem, { value: r2, children: r2 }, r2)
+                        ) })
                       ]
                     }
                   ) })
@@ -107432,10 +105902,7 @@ function UserManagementPage() {
                   "admin",
                   "doctor",
                   "receptionist",
-                  "pharmacist",
-                  "cashier",
-                  "nurse",
-                  "billing"
+                  "pharmacist"
                 ].includes(role.id);
                 return /* @__PURE__ */ jsxRuntimeExports.jsxs(
                   "tr",
@@ -107915,24 +106382,6 @@ const ROLE_META = {
     color: "amber",
     description: "Remedy dispensing, inventory management & prescription review",
     isBuiltIn: true
-  },
-  cashier: {
-    name: "Cashier",
-    color: "emerald",
-    description: "Cash handling, daily collections & receipt management",
-    isBuiltIn: true
-  },
-  nurse: {
-    name: "Nurse / Compounder",
-    color: "rose",
-    description: "Vital recording, treatment assistance & patient care support",
-    isBuiltIn: true
-  },
-  billing: {
-    name: "Billing Staff",
-    color: "cyan",
-    description: "Invoice generation, payment collection & financial reports",
-    isBuiltIn: true
   }
 };
 const MODULES = [
@@ -108085,36 +106534,6 @@ const DEFAULT_PERMISSIONS = {
     "billing.invoice",
     "billing.payment_history",
     "settings.view_all"
-  ],
-  cashier: [
-    "dashboard.view_all",
-    "dashboard.total_revenue",
-    "patient_list.view",
-    "billing.invoice",
-    "billing.payment_history",
-    "billing.subscription_plan",
-    "settings.view_all",
-    "settings.billing"
-  ],
-  nurse: [
-    "dashboard.view_all",
-    "dashboard.total_patients",
-    "dashboard.pending_cases",
-    "patient_list.view",
-    "patient_detail.all",
-    "appointments.view_all",
-    "settings.view_all"
-  ],
-  billing: [
-    "dashboard.view_all",
-    "dashboard.total_revenue",
-    "dashboard.new_registrations",
-    "patient_list.view",
-    "billing.invoice",
-    "billing.payment_history",
-    "billing.subscription_plan",
-    "settings.view_all",
-    "settings.billing"
   ]
 };
 const LS_KEY = (roleId) => `role_perms_${roleId}`;
@@ -108350,7 +106769,7 @@ function RolePermissionsEditor() {
   );
 }
 const Route2 = createRoute({
-  getParentRoute: () => Route$e,
+  getParentRoute: () => Route$f,
   path: "/waiting-patients",
   component: WaitingPatientsPage
 });
@@ -108517,7 +106936,7 @@ function WaitingPatientsPage() {
                 "data-ocid": `waiting-patient-row-${appt.id}`,
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { className: "px-4 py-3 whitespace-nowrap", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-medium text-foreground text-xs", children: formatDate(appt.date) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-medium text-foreground text-xs", children: formatDate$1(appt.date) }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-muted-foreground", children: formatTime(appt.time) })
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "px-4 py-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
@@ -108683,20 +107102,21 @@ function WaitingPatientsPage() {
     )
   ] });
 }
-const rootRoute = Route$e;
-const indexRoute = Route$a;
-const patientsRoute = Route$8;
-const patientsIndexRoute = Route$7;
-const patientsPatientIdRoute = Route$6;
-const appointmentsRoute = Route$c;
-const aiAssistantRoute = Route$d;
-const billingRoute = Route$b;
-const loginRoute = Route$9;
+const rootRoute = Route$f;
+const indexRoute = Route$b;
+const patientsRoute = Route$9;
+const patientsIndexRoute = Route$8;
+const patientsPatientIdRoute = Route$7;
+const appointmentsRoute = Route$d;
+const aiAssistantRoute = Route$e;
+const billingRoute = Route$c;
+const loginRoute = Route$a;
 const settingsRoute = Route$5;
 const userManagementRoute = Route$4;
 const userManagementIndexRoute = Route$2;
 const userManagementUserIdRoute = Route$3;
 const userManagementRolesRoleIdRoute = Route$1;
+const pharmacyRoute = Route$6;
 const waitingPatientsRoute = Route2;
 const routeTree = rootRoute.addChildren([
   loginRoute,
@@ -108711,6 +107131,7 @@ const routeTree = rootRoute.addChildren([
     userManagementUserIdRoute,
     userManagementRolesRoleIdRoute
   ]),
+  pharmacyRoute,
   waitingPatientsRoute
 ]);
 const router = createRouter({ routeTree });

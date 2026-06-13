@@ -13,21 +13,9 @@ export type NotificationType =
   | "system"
   | "alert";
 export type { AuthUser, Clinic } from "@/utils/auth";
-export type Role =
-  | "Main Admin"
-  | "Doctor"
-  | "Receptionist"
-  | "Pharmacist"
-  | "Nurse/Compounder"
-  | "Billing Staff";
+export type Role = "Main Admin" | "Doctor" | "Receptionist" | "Pharmacist";
 
-export type RoleId =
-  | "main-admin"
-  | "doctor"
-  | "receptionist"
-  | "pharmacist"
-  | "nurse"
-  | "billing";
+export type RoleId = "main-admin" | "doctor" | "receptionist" | "pharmacist";
 
 export interface RoleConfig {
   id: RoleId;

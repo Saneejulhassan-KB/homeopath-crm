@@ -13,6 +13,7 @@ import { Route as loginImport } from "./routes/login";
 import { Route as patientsImport } from "./routes/patients";
 import { Route as patientsPatientIdImport } from "./routes/patients.$patientId";
 import { Route as patientsIndexImport } from "./routes/patients.index";
+import { Route as pharmacyImport } from "./routes/pharmacy";
 import { Route as settingsImport } from "./routes/settings";
 import { Route as userManagementImport } from "./routes/user-management";
 import { Route as userManagementUserIdImport } from "./routes/user-management.$userId";
@@ -34,6 +35,7 @@ const userManagementRoute = userManagementImport;
 const userManagementIndexRoute = userManagementIndexImport;
 const userManagementUserIdRoute = userManagementUserIdImport;
 const userManagementRolesRoleIdRoute = userManagementRolesRoleIdImport;
+const pharmacyRoute = pharmacyImport;
 const waitingPatientsRoute = waitingPatientsImport;
 
 export const routeTree = rootRoute.addChildren([
@@ -49,6 +51,7 @@ export const routeTree = rootRoute.addChildren([
     userManagementUserIdRoute,
     userManagementRolesRoleIdRoute,
   ]),
+  pharmacyRoute,
   waitingPatientsRoute,
 ]);
 
@@ -139,6 +142,13 @@ declare module "@tanstack/react-router" {
       fullPath: "/user-management/roles/$roleId";
       preLoaderRoute: typeof userManagementRolesRoleIdImport;
       parentRoute: typeof userManagementImport;
+    };
+    "/pharmacy": {
+      id: "/pharmacy";
+      path: "/pharmacy";
+      fullPath: "/pharmacy";
+      preLoaderRoute: typeof pharmacyImport;
+      parentRoute: typeof rootImport;
     };
     "/waiting-patients": {
       id: "/waiting-patients";

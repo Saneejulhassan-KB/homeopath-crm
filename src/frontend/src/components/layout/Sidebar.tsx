@@ -27,12 +27,10 @@ import {
   ChevronRight,
   CreditCard,
   FlaskConical,
-  HeartPulse,
   LayoutDashboard,
   Leaf,
   LogOut,
   Pill,
-  Receipt,
   Settings,
   Shield,
   Stethoscope,
@@ -49,6 +47,7 @@ const ICON_MAP: Record<string, LucideIcon> = {
   Users,
   UserCog,
   Calendar,
+  FlaskConical,
   Pill,
   Brain,
   CreditCard,
@@ -61,8 +60,6 @@ const ROLE_ICON_MAP: Record<string, LucideIcon> = {
   Stethoscope,
   CalendarCheck,
   FlaskConical,
-  HeartPulse,
-  Receipt,
 };
 
 const navBadges: Record<string, number> = {

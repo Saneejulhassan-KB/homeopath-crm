@@ -33,11 +33,9 @@ import {
   Clock,
   FlaskConical,
   Globe,
-  HeartPulse,
   LogOut,
   Menu,
   Moon,
-  Receipt,
   Search,
   Shield,
   Stethoscope,
@@ -53,8 +51,6 @@ const ROLE_ICON_MAP: Record<string, LucideIcon> = {
   Stethoscope,
   CalendarCheck,
   FlaskConical,
-  HeartPulse,
-  Receipt,
 };
 
 const PAGE_TITLES: Record<string, string> = {
