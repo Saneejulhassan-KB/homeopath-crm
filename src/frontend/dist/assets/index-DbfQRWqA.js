@@ -22993,7 +22993,7 @@ const Link = reactExports.forwardRef(
 function isCtrlEvent(e3) {
   return !!(e3.metaKey || e3.altKey || e3.ctrlKey || e3.shiftKey);
 }
-let Route$g = class Route extends BaseRoute {
+let Route$h = class Route extends BaseRoute {
   /**
    * @deprecated Use the `createRoute` function instead.
    */
@@ -23045,7 +23045,7 @@ let Route$g = class Route extends BaseRoute {
   }
 };
 function createRoute(options) {
-  return new Route$g(options);
+  return new Route$h(options);
 }
 class RootRoute extends BaseRootRoute {
   /**
@@ -25735,7 +25735,7 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1t = [
+const __iconNode$1v = [
   [
     "path",
     {
@@ -25744,7 +25744,30 @@ const __iconNode$1t = [
     }
   ]
 ];
-const Activity = createLucideIcon("activity", __iconNode$1t);
+const Activity = createLucideIcon("activity", __iconNode$1v);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1u = [
+  ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
+  ["path", { d: "M19 12H5", key: "x3x0zl" }]
+];
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$1u);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$1t = [
+  ["rect", { width: "20", height: "12", x: "2", y: "6", rx: "2", key: "9lu3g6" }],
+  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
+  ["path", { d: "M6 12h.01M18 12h.01", key: "113zkx" }]
+];
+const Banknote = createLucideIcon("banknote", __iconNode$1t);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -25752,29 +25775,6 @@ const Activity = createLucideIcon("activity", __iconNode$1t);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$1s = [
-  ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
-  ["path", { d: "M19 12H5", key: "x3x0zl" }]
-];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$1s);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1r = [
-  ["rect", { width: "20", height: "12", x: "2", y: "6", rx: "2", key: "9lu3g6" }],
-  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
-  ["path", { d: "M6 12h.01M18 12h.01", key: "113zkx" }]
-];
-const Banknote = createLucideIcon("banknote", __iconNode$1r);
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$1q = [
   ["path", { d: "M10.268 21a2 2 0 0 0 3.464 0", key: "vwvbt9" }],
   ["path", { d: "M22 8c0-2.3-.8-4.3-2-6", key: "5bb3ad" }],
   [
@@ -25786,14 +25786,14 @@ const __iconNode$1q = [
   ],
   ["path", { d: "M4 2C2.8 3.7 2 5.7 2 8", key: "tap9e0" }]
 ];
-const BellRing = createLucideIcon("bell-ring", __iconNode$1q);
+const BellRing = createLucideIcon("bell-ring", __iconNode$1s);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1p = [
+const __iconNode$1r = [
   ["path", { d: "M10.268 21a2 2 0 0 0 3.464 0", key: "vwvbt9" }],
   [
     "path",
@@ -25803,27 +25803,27 @@ const __iconNode$1p = [
     }
   ]
 ];
-const Bell = createLucideIcon("bell", __iconNode$1p);
+const Bell = createLucideIcon("bell", __iconNode$1r);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1o = [
+const __iconNode$1q = [
   [
     "path",
     { d: "M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8", key: "mg9rjx" }
   ]
 ];
-const Bold$1 = createLucideIcon("bold", __iconNode$1o);
+const Bold$1 = createLucideIcon("bold", __iconNode$1q);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1n = [
+const __iconNode$1p = [
   ["path", { d: "M12 7v14", key: "1akyts" }],
   [
     "path",
@@ -25833,14 +25833,14 @@ const __iconNode$1n = [
     }
   ]
 ];
-const BookOpen = createLucideIcon("book-open", __iconNode$1n);
+const BookOpen = createLucideIcon("book-open", __iconNode$1p);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1m = [
+const __iconNode$1o = [
   ["path", { d: "M12 8V4H8", key: "hb8ula" }],
   ["rect", { width: "16", height: "12", x: "4", y: "8", rx: "2", key: "enze0r" }],
   ["path", { d: "M2 14h2", key: "vft8re" }],
@@ -25848,14 +25848,14 @@ const __iconNode$1m = [
   ["path", { d: "M15 13v2", key: "1xurst" }],
   ["path", { d: "M9 13v2", key: "rq6x2g" }]
 ];
-const Bot = createLucideIcon("bot", __iconNode$1m);
+const Bot = createLucideIcon("bot", __iconNode$1o);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1l = [
+const __iconNode$1n = [
   [
     "path",
     {
@@ -25878,25 +25878,25 @@ const __iconNode$1l = [
   ["path", { d: "M6 18a4 4 0 0 1-1.967-.516", key: "2e4loj" }],
   ["path", { d: "M19.967 17.484A4 4 0 0 1 18 18", key: "159ez6" }]
 ];
-const Brain = createLucideIcon("brain", __iconNode$1l);
+const Brain = createLucideIcon("brain", __iconNode$1n);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1k = [
+const __iconNode$1m = [
   ["path", { d: "M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16", key: "jecpp" }],
   ["rect", { width: "20", height: "14", x: "2", y: "6", rx: "2", key: "i6l2r4" }]
 ];
-const Briefcase = createLucideIcon("briefcase", __iconNode$1k);
+const Briefcase = createLucideIcon("briefcase", __iconNode$1m);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1j = [
+const __iconNode$1l = [
   ["path", { d: "M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z", key: "1b4qmf" }],
   ["path", { d: "M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2", key: "i71pzd" }],
   ["path", { d: "M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2", key: "10jefs" }],
@@ -25905,28 +25905,28 @@ const __iconNode$1j = [
   ["path", { d: "M10 14h4", key: "kelpxr" }],
   ["path", { d: "M10 18h4", key: "1ulq68" }]
 ];
-const Building2 = createLucideIcon("building-2", __iconNode$1j);
+const Building2 = createLucideIcon("building-2", __iconNode$1l);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1i = [
+const __iconNode$1k = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M3 10h18", key: "8toen8" }],
   ["path", { d: "m9 16 2 2 4-4", key: "19s6y9" }]
 ];
-const CalendarCheck = createLucideIcon("calendar-check", __iconNode$1i);
+const CalendarCheck = createLucideIcon("calendar-check", __iconNode$1k);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1h = [
+const __iconNode$1j = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
@@ -25938,27 +25938,27 @@ const __iconNode$1h = [
   ["path", { d: "M12 18h.01", key: "mhygvu" }],
   ["path", { d: "M16 18h.01", key: "kzsmim" }]
 ];
-const CalendarDays = createLucideIcon("calendar-days", __iconNode$1h);
+const CalendarDays = createLucideIcon("calendar-days", __iconNode$1j);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1g = [
+const __iconNode$1i = [
   ["path", { d: "M8 2v4", key: "1cmpym" }],
   ["path", { d: "M16 2v4", key: "4m81vk" }],
   ["rect", { width: "18", height: "18", x: "3", y: "4", rx: "2", key: "1hopcy" }],
   ["path", { d: "M3 10h18", key: "8toen8" }]
 ];
-const Calendar = createLucideIcon("calendar", __iconNode$1g);
+const Calendar = createLucideIcon("calendar", __iconNode$1i);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1f = [
+const __iconNode$1h = [
   [
     "path",
     {
@@ -25968,71 +25968,94 @@ const __iconNode$1f = [
   ],
   ["circle", { cx: "12", cy: "13", r: "3", key: "1vg3eu" }]
 ];
-const Camera = createLucideIcon("camera", __iconNode$1f);
+const Camera = createLucideIcon("camera", __iconNode$1h);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1e = [
+const __iconNode$1g = [
   ["path", { d: "M3 3v16a2 2 0 0 0 2 2h16", key: "c24i48" }],
   ["path", { d: "M18 17V9", key: "2bz60n" }],
   ["path", { d: "M13 17V5", key: "1frdt8" }],
   ["path", { d: "M8 17v-3", key: "17ska0" }]
 ];
-const ChartColumn = createLucideIcon("chart-column", __iconNode$1e);
+const ChartColumn = createLucideIcon("chart-column", __iconNode$1g);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1d = [
+const __iconNode$1f = [
   ["path", { d: "M18 6 7 17l-5-5", key: "116fxf" }],
   ["path", { d: "m22 10-7.5 7.5L13 16", key: "ke71qq" }]
 ];
-const CheckCheck = createLucideIcon("check-check", __iconNode$1d);
+const CheckCheck = createLucideIcon("check-check", __iconNode$1f);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1c = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
-const Check = createLucideIcon("check", __iconNode$1c);
+const __iconNode$1e = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+const Check = createLucideIcon("check", __iconNode$1e);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1b = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
-const ChevronDown = createLucideIcon("chevron-down", __iconNode$1b);
+const __iconNode$1d = [["path", { d: "m6 9 6 6 6-6", key: "qrunsl" }]];
+const ChevronDown = createLucideIcon("chevron-down", __iconNode$1d);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$1a = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
-const ChevronLeft = createLucideIcon("chevron-left", __iconNode$1a);
+const __iconNode$1c = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+const ChevronLeft = createLucideIcon("chevron-left", __iconNode$1c);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$19 = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
-const ChevronRight = createLucideIcon("chevron-right", __iconNode$19);
+const __iconNode$1b = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+const ChevronRight = createLucideIcon("chevron-right", __iconNode$1b);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$18 = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
-const ChevronUp = createLucideIcon("chevron-up", __iconNode$18);
+const __iconNode$1a = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+const ChevronUp = createLucideIcon("chevron-up", __iconNode$1a);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$19 = [
+  ["path", { d: "m7 15 5 5 5-5", key: "1hf1tw" }],
+  ["path", { d: "m7 9 5-5 5 5", key: "sgt6xg" }]
+];
+const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$19);
+/**
+ * @license lucide-react v0.511.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$18 = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
+  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+];
+const CircleAlert = createLucideIcon("circle-alert", __iconNode$18);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26040,10 +26063,10 @@ const ChevronUp = createLucideIcon("chevron-up", __iconNode$18);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$17 = [
-  ["path", { d: "m7 15 5 5 5-5", key: "1hf1tw" }],
-  ["path", { d: "m7 9 5-5 5 5", key: "sgt6xg" }]
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
 ];
-const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$17);
+const CircleCheck = createLucideIcon("circle-check", __iconNode$17);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26052,10 +26075,10 @@ const ChevronsUpDown = createLucideIcon("chevrons-up-down", __iconNode$17);
  */
 const __iconNode$16 = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+  ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }],
+  ["path", { d: "M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662", key: "154egf" }]
 ];
-const CircleAlert = createLucideIcon("circle-alert", __iconNode$16);
+const CircleUser = createLucideIcon("circle-user", __iconNode$16);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26064,9 +26087,10 @@ const CircleAlert = createLucideIcon("circle-alert", __iconNode$16);
  */
 const __iconNode$15 = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+  ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
+  ["path", { d: "m9 9 6 6", key: "z0biqf" }]
 ];
-const CircleCheck = createLucideIcon("circle-check", __iconNode$15);
+const CircleX = createLucideIcon("circle-x", __iconNode$15);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -26074,11 +26098,20 @@ const CircleCheck = createLucideIcon("circle-check", __iconNode$15);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$14 = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
-  ["path", { d: "m9 9 6 6", key: "z0biqf" }]
+  ["rect", { width: "8", height: "4", x: "8", y: "2", rx: "1", ry: "1", key: "tgr4d6" }],
+  [
+    "path",
+    {
+      d: "M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2",
+      key: "116196"
+    }
+  ],
+  ["path", { d: "M12 11h4", key: "1jrz19" }],
+  ["path", { d: "M12 16h4", key: "n85exb" }],
+  ["path", { d: "M8 11h.01", key: "1dfujw" }],
+  ["path", { d: "M8 16h.01", key: "18s6g9" }]
 ];
-const CircleX = createLucideIcon("circle-x", __iconNode$14);
+const ClipboardList = createLucideIcon("clipboard-list", __iconNode$14);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -30213,11 +30246,11 @@ function createRenderBatcher(scheduleNextBatch, allowKeepAlive) {
     isProcessing: false
   };
   const flagRunNextFrame = () => runNextFrame = true;
-  const steps = stepsOrder.reduce((acc, key) => {
+  const steps2 = stepsOrder.reduce((acc, key) => {
     acc[key] = createRenderStep(flagRunNextFrame);
     return acc;
   }, {});
-  const { setup, read, resolveKeyframes, preUpdate, update, preRender, render, postRender } = steps;
+  const { setup, read, resolveKeyframes, preUpdate, update, preRender, render, postRender } = steps2;
   const processBatch = () => {
     const useManualTiming = MotionGlobalConfig.useManualTiming;
     const timestamp = useManualTiming ? state.timestamp : performance.now();
@@ -30249,7 +30282,7 @@ function createRenderBatcher(scheduleNextBatch, allowKeepAlive) {
     }
   };
   const schedule = stepsOrder.reduce((acc, key) => {
-    const step = steps[key];
+    const step = steps2[key];
     acc[key] = (process2, keepAlive = false, immediate = false) => {
       if (!runNextFrame)
         wake();
@@ -30259,10 +30292,10 @@ function createRenderBatcher(scheduleNextBatch, allowKeepAlive) {
   }, {});
   const cancel = (process2) => {
     for (let i = 0; i < stepsOrder.length; i++) {
-      steps[stepsOrder[i]].cancel(process2);
+      steps2[stepsOrder[i]].cancel(process2);
     }
   };
-  return { schedule, cancel, state, steps };
+  return { schedule, cancel, state, steps: steps2 };
 }
 const { schedule: frame, cancel: cancelFrame, state: frameData, steps: frameSteps } = /* @__PURE__ */ createRenderBatcher(typeof requestAnimationFrame !== "undefined" ? requestAnimationFrame : noop$4, true);
 let now$2;
@@ -33082,7 +33115,7 @@ function resolveElements(elementOrSelector, scope, selectorCache) {
     return [elementOrSelector];
   } else if (typeof elementOrSelector === "string") {
     let root2 = document;
-    const elements = (selectorCache == null ? void 0 : selectorCache[elementOrSelector]) ?? root2.querySelectorAll(elementOrSelector);
+    const elements = root2.querySelectorAll(elementOrSelector);
     return elements ? Array.from(elements) : [];
   }
   return Array.from(elementOrSelector).filter((element) => element != null);
@@ -36366,12 +36399,12 @@ function getInitializedFeatureDefinitions() {
   initFeatureDefinitions();
   return getFeatureDefinitions();
 }
-function loadFeatures(features) {
+function loadFeatures(features2) {
   const featureDefinitions2 = getInitializedFeatureDefinitions();
-  for (const key in features) {
+  for (const key in features2) {
     featureDefinitions2[key] = {
       ...featureDefinitions2[key],
-      ...features[key]
+      ...features2[key]
     };
   }
   setFeatureDefinitions(featureDefinitions2);
@@ -38043,6 +38076,57 @@ const featureBundle = {
   ...layout
 };
 const motion = /* @__PURE__ */ createMotionProxy(featureBundle, createDomVisualElement);
+const thresholds = {
+  some: 0,
+  all: 1
+};
+function inView(elementOrSelector, onStart, { root: root2, margin: rootMargin, amount = "some" } = {}) {
+  const elements = resolveElements(elementOrSelector);
+  const activeIntersections = /* @__PURE__ */ new WeakMap();
+  const onIntersectionChange = (entries) => {
+    entries.forEach((entry) => {
+      const onEnd = activeIntersections.get(entry.target);
+      if (entry.isIntersecting === Boolean(onEnd))
+        return;
+      if (entry.isIntersecting) {
+        const newOnEnd = onStart(entry.target, entry);
+        if (typeof newOnEnd === "function") {
+          activeIntersections.set(entry.target, newOnEnd);
+        } else {
+          observer2.unobserve(entry.target);
+        }
+      } else if (typeof onEnd === "function") {
+        onEnd(entry);
+        activeIntersections.delete(entry.target);
+      }
+    });
+  };
+  const observer2 = new IntersectionObserver(onIntersectionChange, {
+    root: root2,
+    rootMargin,
+    threshold: typeof amount === "number" ? amount : thresholds[amount]
+  });
+  elements.forEach((element) => observer2.observe(element));
+  return () => observer2.disconnect();
+}
+function useInView(ref, { root: root2, margin, amount, once = false, initial = false } = {}) {
+  const [isInView, setInView] = reactExports.useState(initial);
+  reactExports.useEffect(() => {
+    if (!ref.current || once && isInView)
+      return;
+    const onEnter = () => {
+      setInView(true);
+      return once ? void 0 : () => setInView(false);
+    };
+    const options = {
+      root: root2 && root2.current || void 0,
+      margin,
+      amount
+    };
+    return inView(ref.current, onEnter, options);
+  }, [root2, ref, margin, once, amount]);
+  return isInView;
+}
 var M$1 = (e3, i, s2, u2, m2, a2, l2, h2) => {
   let d2 = document.documentElement, w = ["light", "dark"];
   function p2(n2) {
@@ -43988,12 +44072,12 @@ function Layout({ children }) {
     )
   ] });
 }
-const Route$f = createRootRoute({
+const Route$g = createRootRoute({
   component: RootComponent
 });
 function RootComponent() {
   const location2 = useRouterState({ select: (s2) => s2.location });
-  const isStandalonePage = location2.pathname === "/login" || location2.pathname === "/register";
+  const isStandalonePage = location2.pathname === "/login" || location2.pathname === "/register" || location2.pathname === "/landing";
   if (isStandalonePage) {
     return /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {});
   }
@@ -44774,8 +44858,8 @@ function Textarea({ className, ...props }) {
     }
   );
 }
-const Route$e = createRoute({
-  getParentRoute: () => Route$f,
+const Route$f = createRoute({
+  getParentRoute: () => Route$g,
   path: "/ai-assistant",
   component: AIAssistantPage
 });
@@ -48996,8 +49080,8 @@ function subMonths(date2, amount) {
 function subYears(date2, amount) {
   return addYears$1(date2, -1);
 }
-const Route$d = createRoute({
-  getParentRoute: () => Route$f,
+const Route$e = createRoute({
+  getParentRoute: () => Route$g,
   path: "/appointments",
   component: AppointmentsPage
 });
@@ -50888,8 +50972,8 @@ const invoices = [
     paymentMethod: "Cash"
   }
 ];
-const Route$c = createRoute({
-  getParentRoute: () => Route$f,
+const Route$d = createRoute({
+  getParentRoute: () => Route$g,
   path: "/billing",
   component: BillingPage
 });
@@ -51308,7 +51392,7 @@ function PaymentHistoryTab() {
     )
   ] });
 }
-const plans = [
+const plans$1 = [
   {
     id: "basic",
     name: "Basic",
@@ -51371,7 +51455,7 @@ function SubscriptionPlansTab() {
       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-primary font-semibold", children: "Professional" }),
       " plan. Upgrade or downgrade anytime."
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-5", children: plans.map((plan, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-5", children: plans$1.map((plan, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
       motion.div,
       {
         initial: { opacity: 0, y: 20 },
@@ -62979,21 +63063,21 @@ function radial() {
   return linearish(scale2);
 }
 function quantile() {
-  var domain = [], range3 = [], thresholds = [], unknown;
+  var domain = [], range3 = [], thresholds2 = [], unknown;
   function rescale() {
     var i = 0, n2 = Math.max(1, range3.length);
-    thresholds = new Array(n2 - 1);
-    while (++i < n2) thresholds[i - 1] = quantileSorted(domain, i / n2);
+    thresholds2 = new Array(n2 - 1);
+    while (++i < n2) thresholds2[i - 1] = quantileSorted(domain, i / n2);
     return scale2;
   }
   function scale2(x2) {
-    return x2 == null || isNaN(x2 = +x2) ? unknown : range3[bisectRight(thresholds, x2)];
+    return x2 == null || isNaN(x2 = +x2) ? unknown : range3[bisectRight(thresholds2, x2)];
   }
   scale2.invertExtent = function(y2) {
     var i = range3.indexOf(y2);
     return i < 0 ? [NaN, NaN] : [
-      i > 0 ? thresholds[i - 1] : domain[0],
-      i < thresholds.length ? thresholds[i] : domain[domain.length - 1]
+      i > 0 ? thresholds2[i - 1] : domain[0],
+      i < thresholds2.length ? thresholds2[i] : domain[domain.length - 1]
     ];
   };
   scale2.domain = function(_2) {
@@ -63010,7 +63094,7 @@ function quantile() {
     return arguments.length ? (unknown = _2, scale2) : unknown;
   };
   scale2.quantiles = function() {
-    return thresholds.slice();
+    return thresholds2.slice();
   };
   scale2.copy = function() {
     return quantile().domain(domain).range(range3).unknown(unknown);
@@ -68979,7 +69063,7 @@ var needContinue = function needContinue2(_ref) {
   var from2 = _ref.from, to = _ref.to;
   return from2 !== to;
 };
-var calStepperVals = function calStepperVals2(easing, preVals, steps) {
+var calStepperVals = function calStepperVals2(easing, preVals, steps2) {
   var nextStepVals = mapObject(function(key, val) {
     if (needContinue(val)) {
       var _easing = easing(val.from, val.to, val.velocity), _easing2 = _slicedToArray$4(_easing, 2), newX = _easing2[0], newV = _easing2[1];
@@ -68990,18 +69074,18 @@ var calStepperVals = function calStepperVals2(easing, preVals, steps) {
     }
     return val;
   }, preVals);
-  if (steps < 1) {
+  if (steps2 < 1) {
     return mapObject(function(key, val) {
       if (needContinue(val)) {
         return _objectSpread$j(_objectSpread$j({}, val), {}, {
-          velocity: alpha(val.velocity, nextStepVals[key].velocity, steps),
-          from: alpha(val.from, nextStepVals[key].from, steps)
+          velocity: alpha(val.velocity, nextStepVals[key].velocity, steps2),
+          from: alpha(val.from, nextStepVals[key].from, steps2)
         });
       }
       return val;
     }, preVals);
   }
-  return calStepperVals2(easing, nextStepVals, steps - 1);
+  return calStepperVals2(easing, nextStepVals, steps2 - 1);
 };
 const configUpdate = function(from2, to, easing, duration, render) {
   var interKeys = getIntersectionKeys(from2, to);
@@ -69034,8 +69118,8 @@ const configUpdate = function(from2, to, easing, duration, render) {
       preTime = now2;
     }
     var deltaTime = now2 - preTime;
-    var steps = deltaTime / easing.dt;
-    stepperStyle = calStepperVals(easing, stepperStyle, steps);
+    var steps2 = deltaTime / easing.dt;
+    stepperStyle = calStepperVals(easing, stepperStyle, steps2);
     render(_objectSpread$j(_objectSpread$j(_objectSpread$j({}, from2), to), getCurrStyle()));
     preTime = now2;
     if (!shouldStopAnimation()) {
@@ -69259,7 +69343,7 @@ var Animate = /* @__PURE__ */ function(_PureComponent) {
     var _this;
     _classCallCheck$c(this, Animate2);
     _this = _super.call(this, props, context);
-    var _this$props = _this.props, isActive2 = _this$props.isActive, attributeName = _this$props.attributeName, from2 = _this$props.from, to = _this$props.to, steps = _this$props.steps, children = _this$props.children, duration = _this$props.duration;
+    var _this$props = _this.props, isActive2 = _this$props.isActive, attributeName = _this$props.attributeName, from2 = _this$props.from, to = _this$props.to, steps2 = _this$props.steps, children = _this$props.children, duration = _this$props.duration;
     _this.handleStyleChange = _this.handleStyleChange.bind(_assertThisInitialized$a(_this));
     _this.changeStyle = _this.changeStyle.bind(_assertThisInitialized$a(_this));
     if (!isActive2 || duration <= 0) {
@@ -69273,9 +69357,9 @@ var Animate = /* @__PURE__ */ function(_PureComponent) {
       }
       return _possibleConstructorReturn$a(_this);
     }
-    if (steps && steps.length) {
+    if (steps2 && steps2.length) {
       _this.state = {
-        style: steps[0].style
+        style: steps2[0].style
       };
     } else if (from2) {
       if (typeof children === "function") {
@@ -69395,14 +69479,14 @@ var Animate = /* @__PURE__ */ function(_PureComponent) {
     key: "runStepAnimation",
     value: function runStepAnimation(props) {
       var _this3 = this;
-      var steps = props.steps, begin = props.begin, onAnimationStart2 = props.onAnimationStart;
-      var _steps$ = steps[0], initialStyle = _steps$.style, _steps$$duration = _steps$.duration, initialTime = _steps$$duration === void 0 ? 0 : _steps$$duration;
+      var steps2 = props.steps, begin = props.begin, onAnimationStart2 = props.onAnimationStart;
+      var _steps$ = steps2[0], initialStyle = _steps$.style, _steps$$duration = _steps$.duration, initialTime = _steps$$duration === void 0 ? 0 : _steps$$duration;
       var addStyle = function addStyle2(sequence, nextItem, index2) {
         if (index2 === 0) {
           return sequence;
         }
         var duration = nextItem.duration, _nextItem$easing = nextItem.easing, easing = _nextItem$easing === void 0 ? "ease" : _nextItem$easing, style2 = nextItem.style, nextProperties = nextItem.properties, onAnimationEnd2 = nextItem.onAnimationEnd;
-        var preItem = index2 > 0 ? steps[index2 - 1] : nextItem;
+        var preItem = index2 > 0 ? steps2[index2 - 1] : nextItem;
         var properties = nextProperties || Object.keys(style2);
         if (typeof easing === "function" || easing === "spring") {
           return [].concat(_toConsumableArray$3(sequence), [_this3.runJSAnimation.bind(_this3, {
@@ -69418,7 +69502,7 @@ var Animate = /* @__PURE__ */ function(_PureComponent) {
         });
         return [].concat(_toConsumableArray$3(sequence), [newStyle, duration, onAnimationEnd2]).filter(identity2);
       };
-      return this.manager.start([onAnimationStart2].concat(_toConsumableArray$3(steps.reduce(addStyle, [initialStyle, Math.max(initialTime, begin)])), [props.onAnimationEnd]));
+      return this.manager.start([onAnimationStart2].concat(_toConsumableArray$3(steps2.reduce(addStyle, [initialStyle, Math.max(initialTime, begin)])), [props.onAnimationEnd]));
     }
   }, {
     key: "runAnimation",
@@ -69426,14 +69510,14 @@ var Animate = /* @__PURE__ */ function(_PureComponent) {
       if (!this.manager) {
         this.manager = createAnimateManager();
       }
-      var begin = props.begin, duration = props.duration, attributeName = props.attributeName, propsTo = props.to, easing = props.easing, onAnimationStart2 = props.onAnimationStart, onAnimationEnd2 = props.onAnimationEnd, steps = props.steps, children = props.children;
+      var begin = props.begin, duration = props.duration, attributeName = props.attributeName, propsTo = props.to, easing = props.easing, onAnimationStart2 = props.onAnimationStart, onAnimationEnd2 = props.onAnimationEnd, steps2 = props.steps, children = props.children;
       var manager = this.manager;
       this.unSubscribe = manager.subscribe(this.handleStyleChange);
       if (typeof easing === "function" || typeof children === "function" || easing === "spring") {
         this.runJSAnimation(props);
         return;
       }
-      if (steps.length > 1) {
+      if (steps2.length > 1) {
         this.runStepAnimation(props);
         return;
       }
@@ -71870,7 +71954,7 @@ function _toPrimitive$c(t2, r2) {
 var formatAxisMap = function formatAxisMap2(props, axisMap, offset2, axisType, chartName) {
   var width = props.width, height = props.height, layout2 = props.layout, children = props.children;
   var ids = Object.keys(axisMap);
-  var steps = {
+  var steps2 = {
     left: offset2.left,
     leftMirror: offset2.left,
     right: width - offset2.right,
@@ -71927,10 +72011,10 @@ var formatAxisMap = function formatAxisMap2(props, axisMap, offset2, axisType, c
     if (axisType === "xAxis") {
       needSpace = orientation === "top" && !mirror || orientation === "bottom" && mirror;
       x2 = offset2.left;
-      y2 = steps[offsetKey] - needSpace * axis.height;
+      y2 = steps2[offsetKey] - needSpace * axis.height;
     } else if (axisType === "yAxis") {
       needSpace = orientation === "left" && !mirror || orientation === "right" && mirror;
-      x2 = steps[offsetKey] - needSpace * axis.width;
+      x2 = steps2[offsetKey] - needSpace * axis.width;
       y2 = offset2.top;
     }
     var finalAxis = _objectSpread$9(_objectSpread$9(_objectSpread$9({}, axis), ticks2), {}, {
@@ -71943,9 +72027,9 @@ var formatAxisMap = function formatAxisMap2(props, axisMap, offset2, axisType, c
     });
     finalAxis.bandSize = getBandSizeOfAxis(finalAxis, ticks2);
     if (!axis.hide && axisType === "xAxis") {
-      steps[offsetKey] += (needSpace ? -1 : 1) * finalAxis.height;
+      steps2[offsetKey] += (needSpace ? -1 : 1) * finalAxis.height;
     } else if (!axis.hide) {
-      steps[offsetKey] += (needSpace ? -1 : 1) * finalAxis.width;
+      steps2[offsetKey] += (needSpace ? -1 : 1) * finalAxis.width;
     }
     return _objectSpread$9(_objectSpread$9({}, result), {}, _defineProperty$c({}, id2, finalAxis));
   }, {});
@@ -78331,18 +78415,940 @@ function AdminDashboard({ roleId = "main-admin" }) {
     }
   );
 }
-const Route$b = createRoute({
-  getParentRoute: () => Route$f,
+const Route$c = createRoute({
+  getParentRoute: () => Route$g,
   path: "/",
   component: DashboardPage
 });
 function DashboardPage() {
   const currentRole = useAppStore((s2) => s2.currentRole);
-  if (currentRole === null) return /* @__PURE__ */ jsxRuntimeExports.jsx(Navigate, { to: "/login" });
+  if (currentRole === null) return /* @__PURE__ */ jsxRuntimeExports.jsx(Navigate, { to: "/landing" });
   return /* @__PURE__ */ jsxRuntimeExports.jsx(AdminDashboard, { roleId: currentRole });
 }
+const Route$b = createRoute({
+  getParentRoute: () => Route$g,
+  path: "/landing",
+  component: LandingPage
+});
+function useCounter(target, duration = 2e3, started = false) {
+  const [count2, setCount] = reactExports.useState(0);
+  reactExports.useEffect(() => {
+    if (!started) return;
+    let startTime = null;
+    const animate = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress2 = Math.min((timestamp - startTime) / duration, 1);
+      const eased = 1 - (1 - progress2) ** 3;
+      setCount(Math.floor(eased * target));
+      if (progress2 < 1) requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
+  }, [target, duration, started]);
+  return count2;
+}
+function AnimatedStatValue({
+  value,
+  suffix: suffix2,
+  started
+}) {
+  const count2 = useCounter(value, 2e3, started);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+    count2.toLocaleString(),
+    suffix2
+  ] });
+}
+function FadeInSection({
+  children,
+  className = "",
+  delay: delay2 = 0,
+  direction = "up"
+}) {
+  const ref = reactExports.useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const yOffset = direction === "up" ? 40 : 0;
+  const xOffset = direction === "left" ? -40 : direction === "right" ? 40 : 0;
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    motion.div,
+    {
+      ref,
+      initial: { opacity: 0, y: yOffset, x: xOffset },
+      animate: isInView ? { opacity: 1, y: 0, x: 0 } : {},
+      transition: { duration: 0.6, delay: delay2, ease: [0.22, 1, 0.36, 1] },
+      className,
+      children
+    }
+  );
+}
+const features = [
+  {
+    icon: CircleUser,
+    title: "Patient Management",
+    desc: "Complete patient profiles, visit history, and case records in one place.",
+    color: "text-teal-600",
+    bg: "bg-teal-50"
+  },
+  {
+    icon: Calendar,
+    title: "Smart Appointments",
+    desc: "Book, track, and manage appointments with real-time status updates.",
+    color: "text-violet-600",
+    bg: "bg-violet-50"
+  },
+  {
+    icon: ClipboardList,
+    title: "Case Taking",
+    desc: "Voice-to-text case notes, symptom tracking, and diagnosis assistance.",
+    color: "text-blue-600",
+    bg: "bg-blue-50"
+  },
+  {
+    icon: Pill,
+    title: "Pharmacy & Billing",
+    desc: "Prescription fulfillment, fee management, and payment tracking.",
+    color: "text-emerald-600",
+    bg: "bg-emerald-50"
+  },
+  {
+    icon: Shield,
+    title: "Role-Based Access",
+    desc: "Admin, Doctor, Receptionist, Pharmacist — each with tailored dashboards.",
+    color: "text-orange-600",
+    bg: "bg-orange-50"
+  },
+  {
+    icon: ChartColumn,
+    title: "Analytics Dashboard",
+    desc: "Real-time insights on appointments, revenue, and patient trends.",
+    color: "text-pink-600",
+    bg: "bg-pink-50"
+  }
+];
+const steps = [
+  {
+    num: "01",
+    title: "Register Your Clinic",
+    desc: "Set up your clinic profile, add your specializations, and configure your workflow preferences in minutes.",
+    icon: Globe
+  },
+  {
+    num: "02",
+    title: "Add Your Team",
+    desc: "Invite doctors, receptionists, and pharmacists. Each role gets a personalized dashboard with the right access.",
+    icon: CircleUser
+  },
+  {
+    num: "03",
+    title: "Start Managing",
+    desc: "Begin booking appointments, taking cases, managing prescriptions, and tracking revenue — all from day one.",
+    icon: Zap
+  }
+];
+const testimonials = [
+  {
+    name: "Dr. Anjali Sharma",
+    location: "Mumbai",
+    text: "HomeoPath CRM has transformed how I manage my clinic. The case-taking feature is exceptional — it understands homeopathic workflows like no other system.",
+    initials: "AS",
+    color: "bg-teal-500",
+    stars: 5
+  },
+  {
+    name: "Dr. Rajesh Patel",
+    location: "Delhi",
+    text: "The role-based access means my receptionist and pharmacist each have exactly what they need. No confusion, no clutter. It's incredibly well thought out.",
+    initials: "RP",
+    color: "bg-violet-500",
+    stars: 5
+  },
+  {
+    name: "Dr. Priya Nair",
+    location: "Bangalore",
+    text: "Finally a CRM that understands homeopathy. The remedy tracking, patient timeline, and auto-message features are invaluable for my practice.",
+    initials: "PN",
+    color: "bg-emerald-500",
+    stars: 5
+  }
+];
+const plans = [
+  {
+    name: "Starter",
+    price: "Free",
+    period: "",
+    features: [
+      "1 Doctor account",
+      "Up to 100 patients",
+      "Basic appointment booking",
+      "Patient profiles & case notes",
+      "Email support"
+    ],
+    cta: "Get Started Free",
+    href: "/register",
+    popular: false
+  },
+  {
+    name: "Professional",
+    price: "₹2,999",
+    period: "/mo",
+    features: [
+      "Up to 5 Doctors",
+      "Unlimited patients",
+      "All features included",
+      "Role-based access control",
+      "Pharmacy & billing module",
+      "WhatsApp auto-messages",
+      "Priority support"
+    ],
+    cta: "Start Free Trial",
+    href: "/register",
+    popular: true
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    period: "",
+    features: [
+      "Unlimited doctors & staff",
+      "Multi-clinic management",
+      "Custom integrations",
+      "Dedicated account manager",
+      "SLA guarantee",
+      "On-premise option"
+    ],
+    cta: "Contact Us",
+    href: "/register",
+    popular: false
+  }
+];
+const statItems = [
+  { value: 1e4, suffix: "+", label: "Clinics Worldwide" },
+  { value: 5e5, suffix: "+", label: "Patients Managed" },
+  { value: 98, suffix: "%", label: "Satisfaction Rate" },
+  { value: 24, suffix: "/7", label: "Support Available" }
+];
+const navLinks = ["features", "about", "pricing", "contact"];
+function LandingPage() {
+  const [menuOpen, setMenuOpen] = reactExports.useState(false);
+  const [scrolled, setScrolled] = reactExports.useState(false);
+  const statsRef = reactExports.useRef(null);
+  const statsInView = useInView(statsRef, { once: true, margin: "-100px" });
+  reactExports.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const scrollTo = (id2) => {
+    var _a2;
+    (_a2 = document.getElementById(id2)) == null ? void 0 : _a2.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/20 text-foreground font-body",
+      "data-ocid": "landing.page",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "header",
+          {
+            className: `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/85 backdrop-blur-xl border-b border-border/60 shadow-sm" : "bg-transparent"}`,
+            "data-ocid": "landing.navbar",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between h-16", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "a",
+                  {
+                    href: "/landing",
+                    className: "flex items-center gap-2.5 group",
+                    "data-ocid": "landing.logo_link",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-9 h-9 rounded-xl bg-gradient-to-br from-teal-500 to-violet-600 flex items-center justify-center shadow-lg shadow-teal-500/25 group-hover:shadow-teal-500/40 transition-shadow", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Leaf$1, { className: "w-5 h-5 text-white" }) }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-lg font-bold font-display text-foreground tracking-tight", children: [
+                        "HomeoPath ",
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-teal-600", children: "CRM" })
+                      ] })
+                    ]
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hidden md:flex items-center gap-1", children: navLinks.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    type: "button",
+                    onClick: () => scrollTo(item),
+                    className: "px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground capitalize rounded-lg hover:bg-black/5 transition-all duration-200",
+                    "data-ocid": `landing.nav_${item}`,
+                    children: item.charAt(0).toUpperCase() + item.slice(1)
+                  },
+                  item
+                )) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden md:flex items-center gap-3", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "a",
+                    {
+                      href: "/login",
+                      className: "px-4 py-2 text-sm font-semibold text-foreground border border-border rounded-lg hover:bg-black/5 transition-all duration-200",
+                      "data-ocid": "landing.signin_button",
+                      children: "Sign In"
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "a",
+                    {
+                      href: "/register",
+                      className: "px-5 py-2 text-sm font-semibold text-white bg-gradient-to-r from-teal-500 to-violet-600 rounded-lg hover:opacity-90 shadow-md shadow-teal-500/20 transition-all duration-200 hover:-translate-y-px",
+                      "data-ocid": "landing.get_started_button",
+                      children: "Get Started"
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    type: "button",
+                    className: "md:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-black/5 transition-colors",
+                    onClick: () => setMenuOpen((v2) => !v2),
+                    "aria-label": "Toggle menu",
+                    "data-ocid": "landing.mobile_menu_button",
+                    children: menuOpen ? /* @__PURE__ */ jsxRuntimeExports.jsx(X, { className: "w-5 h-5" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Menu$1, { className: "w-5 h-5" })
+                  }
+                )
+              ] }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: menuOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                motion.div,
+                {
+                  initial: { opacity: 0, height: 0 },
+                  animate: { opacity: 1, height: "auto" },
+                  exit: { opacity: 0, height: 0 },
+                  transition: { duration: 0.2 },
+                  className: "md:hidden bg-white/95 backdrop-blur-xl border-b border-border overflow-hidden",
+                  "data-ocid": "landing.mobile_menu",
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-4 py-4 space-y-1", children: [
+                    navLinks.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        type: "button",
+                        onClick: () => scrollTo(item),
+                        className: "w-full text-left px-4 py-2.5 text-sm font-medium text-foreground capitalize rounded-lg hover:bg-black/5 transition-colors",
+                        children: item.charAt(0).toUpperCase() + item.slice(1)
+                      },
+                      item
+                    )),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-3 flex flex-col gap-2 border-t border-border", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "a",
+                        {
+                          href: "/login",
+                          className: "w-full text-center px-4 py-2.5 text-sm font-semibold border border-border rounded-lg hover:bg-black/5 transition-colors",
+                          children: "Sign In"
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "a",
+                        {
+                          href: "/register",
+                          className: "w-full text-center px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-teal-500 to-violet-600 rounded-lg",
+                          children: "Get Started Free"
+                        }
+                      )
+                    ] })
+                  ] })
+                }
+              ) })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "relative min-h-screen flex items-center justify-center overflow-hidden pt-16", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 pointer-events-none overflow-hidden", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-[-8%] left-[10%] w-[700px] h-[700px] rounded-full bg-teal-400/10 blur-[140px]" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-[0%] right-[5%] w-[500px] h-[500px] rounded-full bg-violet-400/12 blur-[120px]" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-[45%] left-[-5%] w-80 h-80 rounded-full bg-indigo-300/10 blur-[100px]" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid lg:grid-cols-2 gap-16 items-center", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                motion.div,
+                {
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { duration: 0.5, delay: 0.1 },
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-700 text-sm font-semibold mb-6", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-teal-500 animate-pulse" }),
+                    "Trusted by 10,000+ Clinics Worldwide"
+                  ] })
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                motion.h1,
+                {
+                  className: "text-5xl md:text-6xl lg:text-7xl font-extrabold font-display leading-[1.05] tracking-tight mb-6",
+                  initial: { opacity: 0, y: 30 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { duration: 0.6, delay: 0.2 },
+                  children: [
+                    "The Complete",
+                    " ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "span",
+                      {
+                        style: {
+                          background: "linear-gradient(135deg, oklch(0.62 0.15 180), oklch(0.65 0.18 290))",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text"
+                        },
+                        children: "CRM"
+                      }
+                    ),
+                    " ",
+                    "for Homeopathy Clinics"
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                motion.p,
+                {
+                  className: "text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl",
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { duration: 0.5, delay: 0.35 },
+                  children: "Streamline patient management, appointments, prescriptions, and billing — built specifically for the unique workflows of homeopathic practice."
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                motion.div,
+                {
+                  className: "flex flex-wrap gap-4 mb-10",
+                  initial: { opacity: 0, y: 20 },
+                  animate: { opacity: 1, y: 0 },
+                  transition: { duration: 0.5, delay: 0.45 },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "a",
+                      {
+                        href: "/register",
+                        className: "inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold text-white bg-gradient-to-r from-teal-500 to-violet-600 rounded-xl shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 hover:-translate-y-0.5 transition-all duration-200",
+                        "data-ocid": "landing.hero_cta_primary",
+                        children: [
+                          "Start Free Trial ",
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "w-4 h-4" })
+                        ]
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        type: "button",
+                        onClick: () => scrollTo("features"),
+                        className: "inline-flex items-center gap-2 px-7 py-3.5 text-base font-semibold text-foreground border border-border bg-white/80 rounded-xl hover:bg-white hover:border-teal-300 transition-all duration-200",
+                        "data-ocid": "landing.hero_cta_secondary",
+                        children: "Explore Features"
+                      }
+                    )
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                motion.div,
+                {
+                  className: "flex flex-wrap items-center gap-6",
+                  initial: { opacity: 0 },
+                  animate: { opacity: 1 },
+                  transition: { duration: 0.5, delay: 0.6 },
+                  children: ["10,000+ Clinics", "99.9% Uptime", "HIPAA Compliant"].map(
+                    (badge) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        className: "flex items-center gap-2 text-sm text-muted-foreground",
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-5 h-5 rounded-full bg-teal-100 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Check, { className: "w-3 h-3 text-teal-600" }) }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium", children: badge })
+                        ]
+                      },
+                      badge
+                    )
+                  )
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              motion.div,
+              {
+                className: "relative hidden lg:block",
+                initial: { opacity: 0, scale: 0.92, y: 30 },
+                animate: { opacity: 1, scale: 1, y: 0 },
+                transition: {
+                  duration: 0.8,
+                  delay: 0.3,
+                  ease: [0.22, 1, 0.36, 1]
+                },
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-br from-teal-400/20 to-violet-400/20 rounded-3xl blur-3xl scale-105" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative bg-white/90 backdrop-blur-xl border border-white/80 rounded-3xl shadow-2xl shadow-slate-200/80 overflow-hidden", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between px-6 py-4 border-b border-slate-100/80 bg-gradient-to-r from-slate-50 to-white", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-7 h-7 rounded-lg bg-gradient-to-br from-teal-500 to-violet-600 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Leaf$1, { className: "w-4 h-4 text-white" }) }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-bold font-display text-foreground", children: "HomeoPath CRM" })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-1.5", children: ["bg-red-400", "bg-yellow-400", "bg-green-400"].map(
+                        (c2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "div",
+                          {
+                            className: `w-2.5 h-2.5 rounded-full ${c2}`
+                          },
+                          c2
+                        )
+                      ) })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-6 grid grid-cols-2 gap-4", children: [
+                      {
+                        label: "Total Patients",
+                        value: "1,284",
+                        change: "+12%",
+                        color: "text-teal-600",
+                        bg: "bg-teal-50",
+                        border: "border-teal-100"
+                      },
+                      {
+                        label: "Appointments Today",
+                        value: "47",
+                        change: "+8%",
+                        color: "text-violet-600",
+                        bg: "bg-violet-50",
+                        border: "border-violet-100"
+                      },
+                      {
+                        label: "Revenue (₹)",
+                        value: "84,200",
+                        change: "+23%",
+                        color: "text-emerald-600",
+                        bg: "bg-emerald-50",
+                        border: "border-emerald-100"
+                      },
+                      {
+                        label: "Cases Taken",
+                        value: "23",
+                        change: "+5%",
+                        color: "text-blue-600",
+                        bg: "bg-blue-50",
+                        border: "border-blue-100"
+                      }
+                    ].map((stat) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        className: `${stat.bg} border ${stat.border} rounded-2xl p-4`,
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground font-medium mb-1.5", children: stat.label }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "p",
+                            {
+                              className: `text-2xl font-bold font-display ${stat.color}`,
+                              children: stat.value
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-block mt-1 text-xs text-emerald-600 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full font-semibold", children: [
+                            stat.change,
+                            " this month"
+                          ] })
+                        ]
+                      },
+                      stat.label
+                    )) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "px-6 pb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-slate-50/80 border border-slate-100 rounded-2xl p-4", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-3", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-semibold text-foreground", children: "Appointment Trend" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-teal-600 font-semibold", children: "This Week" })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-end gap-1.5 h-12", children: [
+                        { d: "Mon", h: 40, idx: 0 },
+                        { d: "Tue", h: 65, idx: 1 },
+                        { d: "Wed", h: 50, idx: 2 },
+                        { d: "Thu", h: 80, idx: 3 },
+                        { d: "Fri", h: 70, idx: 4 },
+                        { d: "Sat", h: 90, idx: 5 },
+                        { d: "Sun", h: 75, idx: 6 }
+                      ].map((bar) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "flex-1 rounded-sm",
+                          style: {
+                            height: `${bar.h}%`,
+                            background: "linear-gradient(to top, oklch(0.62 0.15 180), oklch(0.70 0.14 165))",
+                            opacity: 0.5 + bar.idx * 0.08
+                          }
+                        },
+                        bar.d
+                      )) }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-between mt-1.5", children: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map(
+                        (d2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "span",
+                          {
+                            className: "flex-1 text-center text-[10px] text-muted-foreground",
+                            children: d2
+                          },
+                          d2
+                        )
+                      ) })
+                    ] }) })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    motion.div,
+                    {
+                      className: "absolute -bottom-4 -left-6 bg-white border border-emerald-200 rounded-2xl px-4 py-3 shadow-lg flex items-center gap-3",
+                      initial: { opacity: 0, x: -20 },
+                      animate: { opacity: 1, x: 0 },
+                      transition: { delay: 0.9, duration: 0.5 },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CircleUser, { className: "w-4 h-4 text-emerald-600" }) }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-bold text-foreground", children: "New Patient" }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-muted-foreground", children: "Registered · just now" })
+                        ] })
+                      ]
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    motion.div,
+                    {
+                      className: "absolute -top-4 -right-4 bg-white border border-violet-200 rounded-2xl px-4 py-3 shadow-lg",
+                      initial: { opacity: 0, x: 20 },
+                      animate: { opacity: 1, x: 0 },
+                      transition: { delay: 1, duration: 0.5 },
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-bold text-foreground", children: "\\u20b984,200" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-violet-600 font-semibold", children: "\\u2191 23% revenue" })
+                      ]
+                    }
+                  )
+                ]
+              }
+            )
+          ] }) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "features", className: "py-24 bg-white/60 backdrop-blur-sm", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(FadeInSection, { className: "text-center mb-16", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-block px-4 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-700 text-sm font-semibold mb-4", children: "Powerful Features" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-bold font-display tracking-tight text-foreground mb-4", children: "Everything Your Clinic Needs" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-lg text-muted-foreground max-w-2xl mx-auto", children: "A complete suite of tools designed for the modern homeopathy practice — from patient intake to prescription management." })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid md:grid-cols-2 lg:grid-cols-3 gap-6", children: features.map((feat, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(FadeInSection, { delay: i * 0.08, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              className: "group bg-white/80 backdrop-blur-md border border-border rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default",
+              whileHover: { scale: 1.01 },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    className: `w-12 h-12 rounded-xl ${feat.bg} flex items-center justify-center mb-4`,
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(feat.icon, { className: `w-6 h-6 ${feat.color}` })
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-bold font-display text-foreground mb-2", children: feat.title }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground leading-relaxed", children: feat.desc })
+              ]
+            }
+          ) }, feat.title)) })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "about", className: "py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(FadeInSection, { className: "text-center mb-16", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-block px-4 py-1.5 rounded-full bg-violet-50 border border-violet-200 text-violet-700 text-sm font-semibold mb-4", children: "How It Works" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-bold font-display tracking-tight text-foreground mb-4", children: "Built for Homeopathy Clinics" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative grid md:grid-cols-3 gap-8 mb-16", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hidden md:block absolute top-12 left-[calc(16.67%+2rem)] right-[calc(16.67%+2rem)] h-px bg-gradient-to-r from-teal-300 via-violet-300 to-emerald-300 z-0" }),
+            steps.map((step, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(FadeInSection, { delay: i * 0.15, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex flex-col items-center text-center", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 mb-6", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-24 h-24 rounded-2xl bg-white border border-border shadow-md flex flex-col items-center justify-center gap-1", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(step.icon, { className: "w-7 h-7 text-teal-600" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-muted-foreground", children: step.num })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -top-2 -right-2 w-7 h-7 rounded-full bg-gradient-to-br from-teal-500 to-violet-600 flex items-center justify-center shadow-sm", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-white", children: i + 1 }) })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold font-display text-foreground mb-3", children: step.title }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground leading-relaxed", children: step.desc })
+            ] }) }, step.title))
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(FadeInSection, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative bg-gradient-to-r from-teal-500/5 via-violet-500/5 to-indigo-500/5 border border-teal-200/60 rounded-3xl px-8 py-10 text-center backdrop-blur-md", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-violet-600 flex items-center justify-center mx-auto mb-5 shadow-md", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Leaf$1, { className: "w-5 h-5 text-white" }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xl md:text-2xl font-medium font-display text-foreground leading-relaxed max-w-3xl mx-auto", children: [
+              "“Designed specifically for the unique workflows of homeopathic practice — from constitutional case taking to",
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "span",
+                {
+                  style: {
+                    background: "linear-gradient(135deg, oklch(0.62 0.15 180), oklch(0.65 0.18 290))",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text"
+                  },
+                  children: "multi-potency prescriptions."
+                }
+              ),
+              "”"
+            ] })
+          ] }) })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "py-20 bg-gradient-to-r from-teal-600 via-violet-600 to-indigo-600 relative overflow-hidden", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "absolute inset-0 opacity-[0.08]",
+              style: {
+                backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
+                backgroundSize: "28px 28px"
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              ref: statsRef,
+              className: "relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12", children: statItems.map((stat, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                motion.div,
+                {
+                  initial: { opacity: 0, y: 30 },
+                  animate: statsInView ? { opacity: 1, y: 0 } : {},
+                  transition: { delay: i * 0.1, duration: 0.6 },
+                  className: "text-center",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-4xl md:text-5xl font-bold font-display text-white mb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      AnimatedStatValue,
+                      {
+                        value: stat.value,
+                        suffix: stat.suffix,
+                        started: statsInView
+                      }
+                    ) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm text-white/70 font-medium", children: stat.label })
+                  ]
+                },
+                stat.label
+              )) })
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-24 bg-white/60", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(FadeInSection, { className: "text-center mb-16", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-block px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-semibold mb-4", children: "Testimonials" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-bold font-display tracking-tight text-foreground mb-4", children: "Trusted by Homeopaths Worldwide" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid md:grid-cols-3 gap-6", children: testimonials.map((t2, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(FadeInSection, { delay: i * 0.1, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-white/90 backdrop-blur-md border border-border rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow h-full flex flex-col", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex mb-3", children: [1, 2, 3, 4, 5].slice(0, t2.stars).map((n2) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+              Star,
+              {
+                className: "w-4 h-4 text-amber-400 fill-amber-400"
+              },
+              n2
+            )) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-muted-foreground leading-relaxed mb-6 flex-1", children: [
+              "“",
+              t2.text,
+              "”"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: `w-10 h-10 rounded-full ${t2.color} flex items-center justify-center text-white text-sm font-bold flex-shrink-0`,
+                  children: t2.initials
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-bold text-foreground", children: t2.name }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-muted-foreground", children: t2.location })
+              ] })
+            ] })
+          ] }) }, t2.name)) })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("section", { id: "pricing", className: "py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(FadeInSection, { className: "text-center mb-16", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-block px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-sm font-semibold mb-4", children: "Pricing" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-4xl md:text-5xl font-bold font-display tracking-tight text-foreground mb-4", children: "Simple, Transparent Pricing" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-lg text-muted-foreground", children: "Start free. Scale as your clinic grows." })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid md:grid-cols-3 gap-6 items-start", children: plans.map((plan, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(FadeInSection, { delay: i * 0.1, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: `relative rounded-2xl p-7 border transition-all duration-300 ${plan.popular ? "bg-gradient-to-br from-teal-600 via-violet-600 to-indigo-600 border-transparent shadow-2xl shadow-violet-300/30 scale-105" : "bg-white/80 backdrop-blur-md border-border shadow-sm hover:shadow-md"}`,
+              children: [
+                plan.popular && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -top-4 left-1/2 -translate-x-1/2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-4 py-1.5 bg-amber-400 text-amber-900 text-xs font-bold rounded-full shadow-lg", children: "\\u2b50 Most Popular" }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mb-6", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "h3",
+                    {
+                      className: `text-lg font-bold font-display mb-2 ${plan.popular ? "text-white" : "text-foreground"}`,
+                      children: plan.name
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "div",
+                    {
+                      className: `flex items-baseline gap-1 ${plan.popular ? "text-white" : "text-foreground"}`,
+                      children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-4xl font-extrabold font-display", children: plan.price }),
+                        plan.period && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm opacity-70", children: plan.period })
+                      ]
+                    }
+                  )
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-3 mb-8", children: plan.features.map((f2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-start gap-2.5", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "div",
+                    {
+                      className: `w-5 h-5 rounded-full flex items-center justify-center mt-px flex-shrink-0 ${plan.popular ? "bg-white/20" : "bg-teal-50"}`,
+                      children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        Check,
+                        {
+                          className: `w-3 h-3 ${plan.popular ? "text-white" : "text-teal-600"}`
+                        }
+                      )
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "span",
+                    {
+                      className: `text-sm ${plan.popular ? "text-white/90" : "text-muted-foreground"}`,
+                      children: f2
+                    }
+                  )
+                ] }, f2)) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "a",
+                  {
+                    href: plan.href,
+                    className: `block w-full text-center py-3 rounded-xl font-semibold text-sm transition-all duration-200 ${plan.popular ? "bg-white text-violet-700 hover:bg-white/90 shadow-lg" : "border border-teal-500 text-teal-700 hover:bg-teal-50"}`,
+                    "data-ocid": `landing.pricing_cta.${i + 1}`,
+                    children: plan.cta
+                  }
+                )
+              ]
+            }
+          ) }, plan.name)) })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "py-24", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8", children: /* @__PURE__ */ jsxRuntimeExports.jsx(FadeInSection, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative bg-gradient-to-br from-teal-50 via-violet-50 to-indigo-50 border border-teal-200/60 rounded-3xl px-8 py-16 md:py-20 text-center overflow-hidden", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-0 left-0 w-64 h-64 bg-teal-400/10 rounded-full blur-3xl" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-0 right-0 w-64 h-64 bg-violet-400/10 rounded-full blur-3xl" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-4xl md:text-5xl font-extrabold font-display text-foreground mb-4", children: [
+              "Ready to Transform",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "span",
+                {
+                  style: {
+                    background: "linear-gradient(135deg, oklch(0.62 0.15 180), oklch(0.65 0.18 290))",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text"
+                  },
+                  children: "Your Clinic?"
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-lg text-muted-foreground mb-10 max-w-xl mx-auto", children: "Join thousands of homeopaths who trust HomeoPath CRM to run their practice efficiently." }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap justify-center gap-4", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "a",
+                {
+                  href: "/register",
+                  className: "inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-teal-500 to-violet-600 rounded-xl shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-all duration-200",
+                  "data-ocid": "landing.cta_banner_primary",
+                  children: [
+                    "Get Started Free ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { className: "w-4 h-4" })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => scrollTo("pricing"),
+                  className: "inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-foreground border border-border bg-white rounded-xl hover:border-teal-300 transition-all duration-200",
+                  "data-ocid": "landing.cta_banner_secondary",
+                  children: "See Pricing"
+                }
+              )
+            ] })
+          ] })
+        ] }) }) }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "footer",
+          {
+            id: "contact",
+            className: "bg-white/80 backdrop-blur-md border-t border-border",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-5 gap-10 mb-12", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-1", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2.5 mb-4", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-8 h-8 rounded-lg bg-gradient-to-br from-teal-500 to-violet-600 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Leaf$1, { className: "w-4 h-4 text-white" }) }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-base font-bold font-display", children: [
+                      "HomeoPath ",
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-teal-600", children: "CRM" })
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-muted-foreground leading-relaxed", children: "Professional clinic management for homeopathy practitioners worldwide." })
+                ] }),
+                [
+                  {
+                    title: "Product",
+                    links: ["Features", "Pricing", "Updates", "Roadmap"]
+                  },
+                  {
+                    title: "Company",
+                    links: ["About", "Blog", "Careers", "Press"]
+                  },
+                  {
+                    title: "Support",
+                    links: ["Help Center", "Documentation", "Community", "Contact"]
+                  },
+                  {
+                    title: "Legal",
+                    links: ["Privacy", "Terms", "Cookies", "Compliance"]
+                  }
+                ].map((col) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-sm font-bold text-foreground mb-4", children: col.title }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2.5", children: col.links.map((link) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "a",
+                    {
+                      href: "/contact",
+                      className: "text-sm text-muted-foreground hover:text-teal-600 transition-colors",
+                      children: link
+                    }
+                  ) }, link)) })
+                ] }, col.title))
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-muted-foreground", children: [
+                  "© ",
+                  (/* @__PURE__ */ new Date()).getFullYear(),
+                  " HomeoPath CRM. All rights reserved."
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-muted-foreground", children: [
+                  "Built with love using",
+                  " ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "a",
+                    {
+                      href: `https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(typeof window !== "undefined" ? window.location.hostname : "")}`,
+                      className: "text-teal-600 hover:text-teal-700 font-medium transition-colors",
+                      target: "_blank",
+                      rel: "noreferrer",
+                      children: "caffeine.ai"
+                    }
+                  )
+                ] })
+              ] })
+            ] })
+          }
+        )
+      ]
+    }
+  );
+}
 const Route$a = createRoute({
-  getParentRoute: () => Route$f,
+  getParentRoute: () => Route$g,
   path: "/login",
   component: LoginPage
 });
@@ -78568,7 +79574,7 @@ function LoginPage() {
   );
 }
 const Route$9 = createRoute({
-  getParentRoute: () => Route$f,
+  getParentRoute: () => Route$g,
   path: "/patients",
   component: PatientsLayout
 });
@@ -83693,13 +84699,13 @@ class Transform {
       if (mark.isInSet(node.marks))
         this.step(new RemoveNodeMarkStep(pos, mark));
     } else {
-      let set = node.marks, found2, steps = [];
+      let set = node.marks, found2, steps2 = [];
       while (found2 = mark.isInSet(set)) {
-        steps.push(new RemoveNodeMarkStep(pos, found2));
+        steps2.push(new RemoveNodeMarkStep(pos, found2));
         set = found2.removeFromSet(set);
       }
-      for (let i = steps.length - 1; i >= 0; i--)
-        this.step(steps[i]);
+      for (let i = steps2.length - 1; i >= 0; i--)
+        this.step(steps2[i]);
     }
     return this;
   }
@@ -101489,7 +102495,7 @@ function PatientDetailPage() {
   );
 }
 const Route$6 = createRoute({
-  getParentRoute: () => Route$f,
+  getParentRoute: () => Route$g,
   path: "/pharmacy",
   component: PharmacyPage
 });
@@ -101823,7 +102829,7 @@ function Separator({
   );
 }
 const Route$5 = createRoute({
-  getParentRoute: () => Route$f,
+  getParentRoute: () => Route$g,
   path: "/settings",
   component: SettingsPage
 });
@@ -102582,7 +103588,7 @@ function SettingsPage() {
   ] });
 }
 const Route$4 = createRoute({
-  getParentRoute: () => Route$f,
+  getParentRoute: () => Route$g,
   path: "/user-management",
   component: UserManagementLayout
 });
@@ -104674,7 +105680,7 @@ function RolePermissionsEditor() {
   );
 }
 const Route2 = createRoute({
-  getParentRoute: () => Route$f,
+  getParentRoute: () => Route$g,
   path: "/waiting-patients",
   component: WaitingPatientsPage
 });
@@ -105007,14 +106013,15 @@ function WaitingPatientsPage() {
     )
   ] });
 }
-const rootRoute = Route$f;
-const indexRoute = Route$b;
+const rootRoute = Route$g;
+const indexRoute = Route$c;
+const landingRoute = Route$b;
 const patientsRoute = Route$9;
 const patientsIndexRoute = Route$8;
 const patientsPatientIdRoute = Route$7;
-const appointmentsRoute = Route$d;
-const aiAssistantRoute = Route$e;
-const billingRoute = Route$c;
+const appointmentsRoute = Route$e;
+const aiAssistantRoute = Route$f;
+const billingRoute = Route$d;
 const loginRoute = Route$a;
 const settingsRoute = Route$5;
 const userManagementRoute = Route$4;
@@ -105025,6 +106032,7 @@ const pharmacyRoute = Route$6;
 const waitingPatientsRoute = Route2;
 const routeTree = rootRoute.addChildren([
   loginRoute,
+  landingRoute,
   indexRoute,
   patientsRoute.addChildren([patientsIndexRoute, patientsPatientIdRoute]),
   appointmentsRoute,

@@ -12,7 +12,7 @@ export const Route = createRoute({
 function DashboardPage() {
   const currentRole = useAppStore((s) => s.currentRole);
 
-  if (currentRole === null) return <Navigate to="/login" />;
+  if (currentRole === null) return <Navigate to="/landing" />;
 
   return <AdminDashboard roleId={currentRole} />;
 }

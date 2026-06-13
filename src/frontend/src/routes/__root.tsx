@@ -12,7 +12,9 @@ export const Route = createRootRoute({
 function RootComponent() {
   const location = useRouterState({ select: (s) => s.location });
   const isStandalonePage =
-    location.pathname === "/login" || location.pathname === "/register";
+    location.pathname === "/login" ||
+    location.pathname === "/register" ||
+    location.pathname === "/landing";
 
   if (isStandalonePage) {
     return <Outlet />;
