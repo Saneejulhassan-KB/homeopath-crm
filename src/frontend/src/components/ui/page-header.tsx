@@ -11,7 +11,14 @@ interface PageHeaderProps {
     label: string;
     onClick: () => void;
     icon?: ReactNode;
+    variant?: "default" | "outline" | "ghost" | "secondary" | "destructive";
   };
+  actions?: {
+    label: string;
+    onClick: () => void;
+    icon?: ReactNode;
+    variant?: "default" | "outline" | "ghost" | "secondary" | "destructive";
+  }[];
   className?: string;
 }
 
@@ -20,6 +27,7 @@ export function PageHeader({
   description,
   breadcrumb,
   action,
+  actions,
   className,
 }: PageHeaderProps) {
   return (
@@ -56,16 +64,30 @@ export function PageHeader({
           </p>
         )}
       </div>
-      {action && (
-        <Button
-          onClick={action.onClick}
-          className="flex items-center gap-2 shrink-0"
-          data-ocid="page-header-action"
-        >
-          {action.icon}
-          {action.label}
-        </Button>
-      )}
+      <div className="flex items-center gap-2 shrink-0">
+        {actions?.map((a) => (
+          <Button
+            key={a.label}
+            variant={a.variant ?? "default"}
+            onClick={a.onClick}
+            className="flex items-center gap-2"
+            data-ocid={`page-header-action-${a.label}`}
+          >
+            {a.icon}
+            {a.label}
+          </Button>
+        ))}
+        {action && (
+          <Button
+            onClick={action.onClick}
+            className="flex items-center gap-2"
+            data-ocid="page-header-action"
+          >
+            {action.icon}
+            {action.label}
+          </Button>
+        )}
+      </div>
     </motion.div>
   );
 }

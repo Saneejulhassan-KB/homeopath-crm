@@ -367,7 +367,7 @@ function WaitingPatientsPage() {
         onOpenChange={(o) => !o && setRescheduleAppt(null)}
       >
         <DialogContent
-          className="max-w-sm glass border-white/10"
+          className="max-w-sm glass"
           data-ocid="waiting-reschedule-modal"
         >
           <DialogHeader>

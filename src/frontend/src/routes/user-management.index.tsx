@@ -1000,7 +1000,7 @@ function UserManagementPage() {
       {/* Add Role Dialog */}
       <Dialog open={showAddRole} onOpenChange={setShowAddRole}>
         <DialogContent
-          className="glass border-white/10 bg-card/95 backdrop-blur-xl max-w-sm"
+          className="glass bg-card/95 backdrop-blur-xl max-w-sm"
           data-ocid="user-management.add_role_dialog"
         >
           <DialogHeader>
@@ -1060,7 +1060,7 @@ function UserManagementPage() {
       {/* Delete Role Dialog */}
       <Dialog open={!!deleteRoleId} onOpenChange={() => setDeleteRoleId(null)}>
         <DialogContent
-          className="glass border-white/10 bg-card/95 backdrop-blur-xl max-w-sm"
+          className="glass bg-card/95 backdrop-blur-xl max-w-sm"
           data-ocid="user-management.delete_role_dialog"
         >
           <DialogHeader>
@@ -1099,7 +1099,7 @@ function UserManagementPage() {
       {/* Delete User Confirm Dialog */}
       <Dialog open={!!deleteId} onOpenChange={() => setDeleteId(null)}>
         <DialogContent
-          className="glass border-white/10 bg-card/95 backdrop-blur-xl max-w-sm"
+          className="glass bg-card/95 backdrop-blur-xl max-w-sm"
           data-ocid="user-management.delete_dialog"
         >
           <DialogHeader>

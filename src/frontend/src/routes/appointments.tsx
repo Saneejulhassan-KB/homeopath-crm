@@ -18,6 +18,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { patients } from "@/data/patients";
 import { useAppointments } from "@/hooks/useAppointments";
+import { usePatients } from "@/hooks/usePatients";
 import { cn } from "@/lib/utils";
 import type {
   AmountStatus,
@@ -49,6 +50,7 @@ import {
   Pencil,
   Plus,
   Search,
+  UserPlus,
   X,
 } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
@@ -359,10 +361,7 @@ function BookAppointmentModal({
 
   return (
     <Dialog open={open} onOpenChange={(o) => !o && handleClose()}>
-      <DialogContent
-        className="max-w-lg glass border-white/10 dark:border-white/10"
-        data-ocid="book-appt-modal"
-      >
+      <DialogContent className="max-w-lg glass" data-ocid="book-appt-modal">
         <DialogHeader>
           <DialogTitle className="font-display text-lg">
             Book Appointment
@@ -560,10 +559,7 @@ function AppointmentDetailModal({
 
   return (
     <Dialog open={!!appointment} onOpenChange={(o) => !o && onClose()}>
-      <DialogContent
-        className="max-w-lg glass border-white/10 dark:border-white/10"
-        data-ocid="appt-detail-modal"
-      >
+      <DialogContent className="max-w-lg glass" data-ocid="appt-detail-modal">
         <DialogHeader>
           <DialogTitle className="font-display text-lg">
             Appointment Details
@@ -705,10 +701,7 @@ function RescheduleModal({
 
   return (
     <Dialog open={!!appointment} onOpenChange={(o) => !o && onClose()}>
-      <DialogContent
-        className="max-w-sm glass border-white/10"
-        data-ocid="reschedule-modal"
-      >
+      <DialogContent className="max-w-sm glass" data-ocid="reschedule-modal">
         <DialogHeader>
           <DialogTitle className="font-display">
             Reschedule Appointment
@@ -747,16 +740,364 @@ function RescheduleModal({
   );
 }
 
+// ── NEW REGISTRATION MODAL ────────────────────────────────────────────
+interface RegistrationForm {
+  fullName: string;
+  dob: string;
+  gender: "Male" | "Female" | "Other";
+  address: string;
+  phone: string;
+  whatsapp: string;
+  email: string;
+  maritalStatus: "Single" | "Married" | "Divorced" | "Others";
+  occupation: string;
+  note: string;
+  referralSource: "Social Media" | "Friends" | "Website" | "Others";
+  emergencyContact: {
+    name: string;
+    whatsapp: string;
+    mobile: string;
+    relationship: string;
+  };
+}
+
+const DEFAULT_REGISTRATION: RegistrationForm = {
+  fullName: "",
+  dob: "",
+  gender: "Male",
+  address: "",
+  phone: "",
+  whatsapp: "",
+  email: "",
+  maritalStatus: "Single",
+  occupation: "",
+  note: "",
+  referralSource: "Social Media",
+  emergencyContact: {
+    name: "",
+    whatsapp: "",
+    mobile: "",
+    relationship: "",
+  },
+};
+
+interface NewRegistrationModalProps {
+  open: boolean;
+  onClose: () => void;
+  onSubmit: (data: RegistrationForm) => void;
+}
+
+function NewRegistrationModal({
+  open,
+  onClose,
+  onSubmit,
+}: NewRegistrationModalProps) {
+  const [form, setForm] = useState<RegistrationForm>(DEFAULT_REGISTRATION);
+
+  const set = <K extends keyof RegistrationForm>(
+    key: K,
+    value: RegistrationForm[K],
+  ) => setForm((prev) => ({ ...prev, [key]: value }));
+
+  const setEmergency = <K extends keyof RegistrationForm["emergencyContact"]>(
+    key: K,
+    value: RegistrationForm["emergencyContact"][K],
+  ) =>
+    setForm((prev) => ({
+      ...prev,
+      emergencyContact: { ...prev.emergencyContact, [key]: value },
+    }));
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!form.fullName.trim()) {
+      toast.error("Full name is required");
+      return;
+    }
+    if (!form.phone.trim()) {
+      toast.error("Phone number is required");
+      return;
+    }
+    onSubmit(form);
+    setForm(DEFAULT_REGISTRATION);
+  }
+
+  function handleClose() {
+    setForm(DEFAULT_REGISTRATION);
+    onClose();
+  }
+
+  return (
+    <Dialog open={open} onOpenChange={(o) => !o && handleClose()}>
+      <DialogContent
+        className="max-w-2xl glass max-h-[90vh] overflow-y-auto"
+        data-ocid="new-registration-modal"
+      >
+        <DialogHeader>
+          <DialogTitle className="font-display text-lg flex items-center gap-2">
+            <UserPlus className="h-5 w-5 text-primary" />
+            New Patient Registration
+          </DialogTitle>
+        </DialogHeader>
+        <form onSubmit={handleSubmit} className="space-y-5 mt-2">
+          {/* Personal Details */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+              Personal Details
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="space-y-1.5">
+                <Label htmlFor="reg-fullname">
+                  Full Name <span className="text-destructive">*</span>
+                </Label>
+                <Input
+                  id="reg-fullname"
+                  placeholder="Enter full name"
+                  value={form.fullName}
+                  onChange={(e) => set("fullName", e.target.value)}
+                  data-ocid="reg-fullname-input"
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="reg-dob">Date of Birth</Label>
+                <Input
+                  id="reg-dob"
+                  type="date"
+                  value={form.dob}
+                  onChange={(e) => set("dob", e.target.value)}
+                  data-ocid="reg-dob-input"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="space-y-1.5">
+                <Label>Gender</Label>
+                <Select
+                  value={form.gender}
+                  onValueChange={(v) =>
+                    set("gender", v as RegistrationForm["gender"])
+                  }
+                >
+                  <SelectTrigger data-ocid="reg-gender-select">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="Male">Male</SelectItem>
+                    <SelectItem value="Female">Female</SelectItem>
+                    <SelectItem value="Other">Other</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-1.5">
+                <Label>Status</Label>
+                <Select
+                  value={form.maritalStatus}
+                  onValueChange={(v) =>
+                    set("maritalStatus", v as RegistrationForm["maritalStatus"])
+                  }
+                >
+                  <SelectTrigger data-ocid="reg-status-select">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="Single">Single</SelectItem>
+                    <SelectItem value="Married">Married</SelectItem>
+                    <SelectItem value="Divorced">Divorced</SelectItem>
+                    <SelectItem value="Others">Others</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+
+            <div className="space-y-1.5">
+              <Label htmlFor="reg-address">Address</Label>
+              <Textarea
+                id="reg-address"
+                placeholder="Enter full address"
+                value={form.address}
+                onChange={(e) => set("address", e.target.value)}
+                rows={2}
+                data-ocid="reg-address-input"
+              />
+            </div>
+          </div>
+
+          {/* Contact Details */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+              Contact Details
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="space-y-1.5">
+                <Label htmlFor="reg-phone">
+                  Phone Number <span className="text-destructive">*</span>
+                </Label>
+                <Input
+                  id="reg-phone"
+                  type="tel"
+                  placeholder="+91 98765 43210"
+                  value={form.phone}
+                  onChange={(e) => set("phone", e.target.value)}
+                  data-ocid="reg-phone-input"
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="reg-whatsapp">WhatsApp Number</Label>
+                <Input
+                  id="reg-whatsapp"
+                  type="tel"
+                  placeholder="+91 98765 43210"
+                  value={form.whatsapp}
+                  onChange={(e) => set("whatsapp", e.target.value)}
+                  data-ocid="reg-whatsapp-input"
+                />
+              </div>
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="reg-email">Email</Label>
+              <Input
+                id="reg-email"
+                type="email"
+                placeholder="patient@example.com"
+                value={form.email}
+                onChange={(e) => set("email", e.target.value)}
+                data-ocid="reg-email-input"
+              />
+            </div>
+          </div>
+
+          {/* Additional Info */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+              Additional Information
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="space-y-1.5">
+                <Label htmlFor="reg-occupation">Occupation</Label>
+                <Input
+                  id="reg-occupation"
+                  placeholder="e.g. Teacher, Engineer"
+                  value={form.occupation}
+                  onChange={(e) => set("occupation", e.target.value)}
+                  data-ocid="reg-occupation-input"
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label>How did you hear about us?</Label>
+                <Select
+                  value={form.referralSource}
+                  onValueChange={(v) =>
+                    set(
+                      "referralSource",
+                      v as RegistrationForm["referralSource"],
+                    )
+                  }
+                >
+                  <SelectTrigger data-ocid="reg-referral-select">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="Social Media">Social Media</SelectItem>
+                    <SelectItem value="Friends">Friends</SelectItem>
+                    <SelectItem value="Website">Website</SelectItem>
+                    <SelectItem value="Others">Others</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="reg-note">Note / Problem Description</Label>
+              <Textarea
+                id="reg-note"
+                placeholder="Describe the patient's problem or any notes..."
+                value={form.note}
+                onChange={(e) => set("note", e.target.value)}
+                rows={3}
+                data-ocid="reg-note-input"
+              />
+            </div>
+          </div>
+
+          {/* Emergency Contact */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+              Emergency Contact
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="space-y-1.5">
+                <Label htmlFor="reg-ec-name">Contact Name</Label>
+                <Input
+                  id="reg-ec-name"
+                  placeholder="Emergency contact name"
+                  value={form.emergencyContact.name}
+                  onChange={(e) => setEmergency("name", e.target.value)}
+                  data-ocid="reg-ec-name-input"
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="reg-ec-relationship">Relationship</Label>
+                <Input
+                  id="reg-ec-relationship"
+                  placeholder="e.g. Father, Spouse"
+                  value={form.emergencyContact.relationship}
+                  onChange={(e) => setEmergency("relationship", e.target.value)}
+                  data-ocid="reg-ec-relationship-input"
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="space-y-1.5">
+                <Label htmlFor="reg-ec-mobile">Mobile Number</Label>
+                <Input
+                  id="reg-ec-mobile"
+                  type="tel"
+                  placeholder="+91 98765 43210"
+                  value={form.emergencyContact.mobile}
+                  onChange={(e) => setEmergency("mobile", e.target.value)}
+                  data-ocid="reg-ec-mobile-input"
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="reg-ec-whatsapp">WhatsApp Number</Label>
+                <Input
+                  id="reg-ec-whatsapp"
+                  type="tel"
+                  placeholder="+91 98765 43210"
+                  value={form.emergencyContact.whatsapp}
+                  onChange={(e) => setEmergency("whatsapp", e.target.value)}
+                  data-ocid="reg-ec-whatsapp-input"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex justify-end gap-2 pt-2">
+            <Button type="button" variant="ghost" onClick={handleClose}>
+              Cancel
+            </Button>
+            <Button type="submit" data-ocid="reg-submit-btn">
+              Register Patient
+            </Button>
+          </div>
+        </form>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
 // ── MAIN PAGE ─────────────────────────────────────────────────────────
 function AppointmentsPage() {
   const { appointments, isLoading, addAppointment, updateAppointment } =
     useAppointments();
+  const { addPatient } = usePatients();
 
   const [currentMonth, setCurrentMonth] = useState(new Date(2026, 3, 1)); // April 2026
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [search, setSearch] = useState("");
   const [doctorFilter, setDoctorFilter] = useState<string>("all");
   const [showBook, setShowBook] = useState(false);
+  const [showRegistration, setShowRegistration] = useState(false);
   const [detailAppt, setDetailAppt] = useState<Appointment | null>(null);
   const navigate = useNavigate();
   const [rescheduleAppt, setRescheduleAppt] = useState<Appointment | null>(
@@ -819,11 +1160,20 @@ function AppointmentsPage() {
           { label: "Dashboard", href: "/" },
           { label: "Appointments" },
         ]}
-        action={{
-          label: "Book Appointment",
-          icon: <Plus className="h-4 w-4" />,
-          onClick: () => setShowBook(true),
-        }}
+        actions={[
+          {
+            label: "New Registration",
+            icon: <UserPlus className="h-4 w-4" />,
+            onClick: () => setShowRegistration(true),
+            variant: "outline" as const,
+          },
+          {
+            label: "Book Appointment",
+            icon: <Plus className="h-4 w-4" />,
+            onClick: () => setShowBook(true),
+            variant: "default" as const,
+          },
+        ]}
       />
 
       {/* Calendar */}
@@ -1137,6 +1487,46 @@ function AppointmentsPage() {
         appointment={rescheduleAppt}
         onClose={() => setRescheduleAppt(null)}
         onSave={(id, updates) => updateAppointment(id, updates)}
+      />
+
+      <NewRegistrationModal
+        open={showRegistration}
+        onClose={() => setShowRegistration(false)}
+        onSubmit={(data) => {
+          const regId = `REG-${String(Math.floor(Math.random() * 9000) + 1000)}`;
+          const age = data.dob
+            ? Math.floor(
+                (Date.now() - new Date(data.dob).getTime()) /
+                  (365.25 * 24 * 60 * 60 * 1000),
+              )
+            : 30;
+          addPatient({
+            registrationId: regId,
+            name: data.fullName,
+            age,
+            gender: data.gender,
+            email: data.email,
+            phone: data.phone,
+            place: data.address.split(",").pop()?.trim() ?? "",
+            address: data.address,
+            bloodGroup: "O+",
+            chiefComplaint: data.note || "",
+            lastVisit: format(new Date(), "yyyy-MM-dd"),
+            createdAt: format(new Date(), "yyyy-MM-dd"),
+            status: "active",
+            totalVisits: 0,
+            consultationFee: 800,
+            dob: data.dob,
+            whatsapp: data.whatsapp,
+            maritalStatus: data.maritalStatus,
+            occupation: data.occupation,
+            note: data.note,
+            referralSource: data.referralSource,
+            emergencyContact: data.emergencyContact,
+          });
+          toast.success(`Patient registered successfully! ID: ${regId}`);
+          setShowRegistration(false);
+        }}
       />
     </div>
   );

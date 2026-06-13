@@ -24,15 +24,19 @@ import { formatDate, getInitials } from "@/utils/formatters";
 import { createRoute, useNavigate } from "@tanstack/react-router";
 import {
   Activity,
+  Briefcase,
   Calendar,
   Droplets,
   Eye,
+  HeartPulse,
   Mail,
   MapPin,
+  MessageSquare,
   Pencil,
   Phone,
   Trash2,
   User,
+  Users,
   X,
 } from "lucide-react";
 import { motion } from "motion/react";
@@ -169,7 +173,7 @@ export function PatientModal({
 
   return (
     <Dialog open={open} onOpenChange={(o) => !o && onClose()}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto glass-card border-white/20">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto glass-card">
         <DialogHeader>
           <DialogTitle className="font-display text-xl">
             {mode === "add" ? "Add New Patient" : "Edit Patient"}
@@ -350,7 +354,7 @@ export function PatientModal({
               type="button"
               variant="outline"
               onClick={onClose}
-              className="glass border-white/20"
+              className="glass"
               data-ocid="patient-form-cancel"
             >
               Cancel
@@ -408,9 +412,16 @@ function ViewPatientModal({
   patient: Patient | null;
 }) {
   if (!patient) return null;
+
+  const SectionTitle = ({ children }: { children: React.ReactNode }) => (
+    <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2.5 mt-1">
+      {children}
+    </h3>
+  );
+
   return (
     <Dialog open={open} onOpenChange={(o) => !o && onClose()}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto glass-card border-white/20 p-0">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto glass-card p-0">
         {/* Header with avatar */}
         <div className="relative flex items-center gap-4 px-6 pt-6 pb-4 border-b border-white/10">
           <div className="w-14 h-14 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center text-lg font-bold text-primary shrink-0 shadow-lg">
@@ -432,6 +443,13 @@ function ViewPatientModal({
                   {patient.bloodGroup}
                 </span>
               )}
+              {patient.status && (
+                <span
+                  className={`text-xs font-semibold px-2 py-0.5 rounded-md border ${patient.status === "active" ? "text-emerald-400 bg-emerald-500/10 border-emerald-500/20" : "text-muted-foreground bg-white/5 border-white/10"}`}
+                >
+                  {patient.status}
+                </span>
+              )}
             </div>
           </div>
           <button
@@ -445,73 +463,160 @@ function ViewPatientModal({
           </button>
         </div>
 
-        {/* Detail grid */}
-        <div className="px-6 py-5 space-y-4">
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-            <DetailField
-              icon={<Phone className="w-3.5 h-3.5" />}
-              label="Phone"
-              value={patient.phone}
-            />
-            <DetailField
-              icon={<Mail className="w-3.5 h-3.5" />}
-              label="Email"
-              value={patient.email}
-            />
-            <DetailField
-              icon={<MapPin className="w-3.5 h-3.5" />}
-              label="Place"
-              value={patient.place}
-            />
-            <DetailField
-              icon={<Calendar className="w-3.5 h-3.5" />}
-              label="Last Visit"
-              value={formatDate(patient.lastVisit)}
-            />
-            <DetailField
-              icon={<Activity className="w-3.5 h-3.5" />}
-              label="Total Visits"
-              value={patient.totalVisits}
-              accent
-            />
-            <DetailField
-              icon={<Droplets className="w-3.5 h-3.5" />}
-              label="Blood Group"
-              value={patient.bloodGroup}
-            />
-            <DetailField
-              icon={<User className="w-3.5 h-3.5" />}
-              label="Age"
-              value={`${patient.age} years`}
-            />
-            <DetailField
-              icon={<User className="w-3.5 h-3.5" />}
-              label="Gender"
-              value={patient.gender}
-            />
+        {/* Detail sections */}
+        <div className="px-6 py-5 space-y-5">
+          {/* Personal Info */}
+          <div>
+            <SectionTitle>Personal Info</SectionTitle>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+              <DetailField
+                icon={<User className="w-3.5 h-3.5" />}
+                label="Full Name"
+                value={patient.name}
+                accent
+              />
+              <DetailField
+                icon={<User className="w-3.5 h-3.5" />}
+                label="Age"
+                value={`${patient.age} years`}
+              />
+              <DetailField
+                icon={<User className="w-3.5 h-3.5" />}
+                label="Gender"
+                value={patient.gender}
+              />
+              <DetailField
+                icon={<Calendar className="w-3.5 h-3.5" />}
+                label="Date of Birth"
+                value={patient.dob ? formatDate(patient.dob) : undefined}
+              />
+              <DetailField
+                icon={<Droplets className="w-3.5 h-3.5" />}
+                label="Blood Group"
+                value={patient.bloodGroup}
+              />
+              <DetailField
+                icon={<HeartPulse className="w-3.5 h-3.5" />}
+                label="Marital Status"
+                value={patient.maritalStatus}
+              />
+              <DetailField
+                icon={<Briefcase className="w-3.5 h-3.5" />}
+                label="Occupation"
+                value={patient.occupation}
+              />
+              <DetailField
+                icon={<Activity className="w-3.5 h-3.5" />}
+                label="Total Visits"
+                value={patient.totalVisits}
+                accent
+              />
+            </div>
           </div>
 
-          {/* Address */}
-          {patient.address && (
-            <div className="p-3 rounded-xl bg-white/5 border border-white/10">
-              <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-1">
-                Address
-              </p>
-              <p className="text-sm text-foreground">{patient.address}</p>
+          {/* Contact Details */}
+          <div>
+            <SectionTitle>Contact Details</SectionTitle>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+              <DetailField
+                icon={<Phone className="w-3.5 h-3.5" />}
+                label="Phone"
+                value={patient.phone}
+              />
+              <DetailField
+                icon={<MessageSquare className="w-3.5 h-3.5" />}
+                label="WhatsApp"
+                value={patient.whatsapp}
+              />
+              <DetailField
+                icon={<Mail className="w-3.5 h-3.5" />}
+                label="Email"
+                value={patient.email}
+              />
+              <DetailField
+                icon={<MapPin className="w-3.5 h-3.5" />}
+                label="Place"
+                value={patient.place}
+              />
+              <DetailField
+                icon={<Calendar className="w-3.5 h-3.5" />}
+                label="Last Visit"
+                value={formatDate(patient.lastVisit)}
+              />
+            </div>
+            {patient.address && (
+              <div className="mt-2.5 p-3 rounded-xl bg-white/5 border border-white/10">
+                <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-1">
+                  Address
+                </p>
+                <p className="text-sm text-foreground">{patient.address}</p>
+              </div>
+            )}
+          </div>
+
+          {/* Emergency Contact */}
+          {patient.emergencyContact && (
+            <div>
+              <SectionTitle>Emergency Contact</SectionTitle>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                <DetailField
+                  icon={<Users className="w-3.5 h-3.5" />}
+                  label="Contact Name"
+                  value={patient.emergencyContact.name}
+                  accent
+                />
+                <DetailField
+                  icon={<Phone className="w-3.5 h-3.5" />}
+                  label="Mobile"
+                  value={patient.emergencyContact.mobile}
+                />
+                <DetailField
+                  icon={<MessageSquare className="w-3.5 h-3.5" />}
+                  label="WhatsApp"
+                  value={patient.emergencyContact.whatsapp}
+                />
+                <DetailField
+                  icon={<User className="w-3.5 h-3.5" />}
+                  label="Relationship"
+                  value={patient.emergencyContact.relationship}
+                />
+              </div>
             </div>
           )}
 
-          {/* Chief Complaint */}
-          {patient.chiefComplaint && (
-            <div className="p-3 rounded-xl bg-primary/5 border border-primary/15">
-              <p className="text-[11px] font-medium uppercase tracking-wide text-primary/70 mb-1">
-                Chief Complaint
-              </p>
-              <p className="text-sm text-foreground leading-relaxed">
-                {patient.chiefComplaint}
-              </p>
-            </div>
-          )}
+          {/* Notes & Referral */}
+          <div className="space-y-3">
+            {patient.note && (
+              <div className="p-3 rounded-xl bg-white/5 border border-white/10">
+                <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-1">
+                  Note
+                </p>
+                <p className="text-sm text-foreground leading-relaxed">
+                  {patient.note}
+                </p>
+              </div>
+            )}
+            {patient.referralSource && (
+              <div className="p-3 rounded-xl bg-white/5 border border-white/10">
+                <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-1">
+                  How did you hear about us?
+                </p>
+                <p className="text-sm text-foreground">
+                  {patient.referralSource}
+                </p>
+              </div>
+            )}
+            {patient.chiefComplaint && (
+              <div className="p-3 rounded-xl bg-primary/5 border border-primary/15">
+                <p className="text-[11px] font-medium uppercase tracking-wide text-primary/70 mb-1">
+                  Chief Complaint
+                </p>
+                <p className="text-sm text-foreground leading-relaxed">
+                  {patient.chiefComplaint}
+                </p>
+              </div>
+            )}
+          </div>
 
           {/* Footer actions */}
           <div className="flex justify-end gap-2 pt-1">
@@ -773,7 +878,7 @@ function PatientsPage() {
         open={deleteDialogOpen}
         onOpenChange={(o) => !o && setDeleteDialogOpen(false)}
       >
-        <DialogContent className="max-w-sm glass-card border-white/20">
+        <DialogContent className="max-w-sm glass-card">
           <DialogHeader>
             <DialogTitle className="font-display text-lg">
               Remove Patient
@@ -791,7 +896,7 @@ function PatientsPage() {
               type="button"
               variant="outline"
               onClick={() => setDeleteDialogOpen(false)}
-              className="glass border-white/20"
+              className="glass"
               data-ocid="patients.delete-dialog.cancel_button"
             >
               Cancel

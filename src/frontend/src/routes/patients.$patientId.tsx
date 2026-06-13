@@ -2318,24 +2318,6 @@ function AutoMessageHistoryTab() {
   );
 }
 
-function InfoChip({
-  icon: Icon,
-  label,
-  value,
-}: { icon: React.ElementType; label: string; value: string }) {
-  return (
-    <div className="flex items-start gap-2.5 min-w-0">
-      <Icon className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-      <div className="min-w-0">
-        <p className="text-xs text-muted-foreground leading-none mb-0.5">
-          {label}
-        </p>
-        <p className="text-sm text-foreground font-medium break-all">{value}</p>
-      </div>
-    </div>
-  );
-}
-
 function NotesTab({ patient }: { patient: Patient }) {
   const storageKey = `patient-notes-${patient.id}`;
   const [note, setNote] = useState(
@@ -2521,7 +2503,7 @@ function PatientDetailPage() {
         <Button
           onClick={() => navigate({ to: "/patients" })}
           variant="outline"
-          className="glass border-white/20"
+          className="glass"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Patients
@@ -2620,7 +2602,7 @@ function PatientDetailPage() {
                     aria-label="Close reminder"
                     onClick={() => setShowReminderPopup(false)}
                     data-ocid="patient-detail.reminder_close_button"
-                    className="p-1.5 rounded-lg text-white/30 hover:text-white/70 hover:bg-white/10 transition-colors shrink-0 -mt-0.5 -mr-1"
+                    className="p-1.5 rounded-lg text-foreground/60 hover:text-white/70 hover:bg-white/10 transition-colors shrink-0 -mt-0.5 -mr-1"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -2688,7 +2670,7 @@ function PatientDetailPage() {
                     type="button"
                     onClick={() => setShowReminderPopup(false)}
                     data-ocid="patient-detail.reminder_dismiss_button"
-                    className="flex-1 px-4 py-2.5 rounded-xl text-sm font-medium text-white/50 border border-white/10 hover:bg-white/5 hover:text-white/70 transition-all duration-200"
+                    className="flex-1 px-4 py-2.5 rounded-xl text-sm font-medium text-muted-foreground border border-border hover:bg-muted hover:text-foreground transition-all duration-200"
                   >
                     Dismiss
                   </button>
@@ -2775,7 +2757,7 @@ function PatientDetailPage() {
                     aria-label="Close overdue reminder"
                     onClick={() => setShowOverduePopup(false)}
                     data-ocid="patient-detail.overdue_close_button"
-                    className="p-1.5 rounded-lg text-white/30 hover:text-white/70 hover:bg-white/10 transition-colors shrink-0 -mt-0.5 -mr-1"
+                    className="p-1.5 rounded-lg text-foreground/60 hover:text-white/70 hover:bg-white/10 transition-colors shrink-0 -mt-0.5 -mr-1"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -2844,7 +2826,7 @@ function PatientDetailPage() {
                     type="button"
                     onClick={() => setShowOverduePopup(false)}
                     data-ocid="patient-detail.overdue_dismiss_button"
-                    className="flex-1 px-4 py-2.5 rounded-xl text-sm font-medium text-white/50 border border-white/10 hover:bg-white/5 hover:text-white/70 transition-all duration-200"
+                    className="flex-1 px-4 py-2.5 rounded-xl text-sm font-medium text-muted-foreground border border-border hover:bg-muted hover:text-foreground transition-all duration-200"
                   >
                     Dismiss
                   </button>
@@ -2957,102 +2939,333 @@ function PatientDetailPage() {
         </Button>
       </div>
 
-      {/* Profile Header */}
+      {/* Profile Header / About Section */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.05 }}
-        className="glass-card p-6"
+        className="space-y-5"
         data-ocid="patient-profile-header"
       >
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
-          {/* Large Avatar */}
-          <div className="w-20 h-20 rounded-2xl bg-primary/20 border-2 border-primary/30 flex items-center justify-center text-2xl font-bold text-primary font-display shrink-0">
-            {getInitials(patient.name)}
-          </div>
-
-          <div className="flex-1 min-w-0">
-            <div className="flex items-start justify-between gap-2 flex-wrap">
-              <div>
-                <h1 className="text-2xl font-display font-bold text-foreground">
-                  {patient.name}
-                </h1>
-                <div className="flex items-center gap-2 mt-1 flex-wrap">
-                  <span className="text-xs font-mono font-semibold text-primary/80 bg-primary/10 px-2 py-0.5 rounded-md border border-primary/20">
-                    {patient.registrationId}
-                  </span>
-                  <span className="text-sm text-muted-foreground">
-                    {patient.age} yrs · {patient.gender} · {patient.bloodGroup}
+        {/* Top identity card */}
+        <div className="glass-card p-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            <div className="w-20 h-20 rounded-2xl bg-primary/20 border-2 border-primary/30 flex items-center justify-center text-2xl font-bold text-primary font-display shrink-0">
+              {getInitials(patient.name)}
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-start justify-between gap-2 flex-wrap">
+                <div>
+                  <h1 className="text-2xl font-display font-bold text-foreground">
+                    {patient.name}
+                  </h1>
+                  <div className="flex items-center gap-2 mt-1 flex-wrap">
+                    <span className="text-xs font-mono font-semibold text-primary/80 bg-primary/10 px-2 py-0.5 rounded-md border border-primary/20">
+                      {patient.registrationId}
+                    </span>
+                    <span className="text-sm text-muted-foreground">
+                      {patient.age} yrs · {patient.gender} ·{" "}
+                      {patient.bloodGroup}
+                    </span>
+                  </div>
+                </div>
+                <StatusBadge status={patient.status} />
+              </div>
+              {nextVisitDate && (
+                <div className="mt-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-sm font-medium">
+                    <Calendar className="w-4 h-4" />
+                    Next Visit:{" "}
+                    {new Date(`${nextVisitDate}T00:00:00`).toLocaleDateString(
+                      "en-US",
+                      { month: "short", day: "numeric", year: "numeric" },
+                    )}
                   </span>
                 </div>
-              </div>
-              <StatusBadge status={patient.status} />
+              )}
             </div>
-            {nextVisitDate && (
-              <div className="mt-2">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-sm font-medium">
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    role="img"
-                    aria-label="Calendar"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                  Next Visit:{" "}
-                  {new Date(`${nextVisitDate}T00:00:00`).toLocaleDateString(
-                    "en-US",
-                    { month: "short", day: "numeric", year: "numeric" },
-                  )}
-                </span>
-              </div>
-            )}
-
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
-              <InfoChip icon={Phone} label="Phone" value={patient.phone} />
-              <InfoChip icon={Mail} label="Email" value={patient.email} />
-              <InfoChip
-                icon={MapPin}
-                label="Place"
-                value={patient.place || "—"}
-              />
-              <InfoChip
-                icon={Calendar}
-                label="Last Visit"
-                value={`${formatDate(patient.lastVisit)} (${relativeTime(patient.lastVisit)})`}
-              />
-            </div>
-            {/* Total Visits */}
-            <div className="mt-3 flex items-center gap-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-primary/10 border border-primary/20">
-                <User className="w-4 h-4 text-primary" />
-                <span className="text-xs font-medium text-muted-foreground">
-                  Total Visits:
-                </span>
-                <span className="text-sm font-bold text-primary">
-                  {patient.totalVisits}
-                </span>
-              </div>
-            </div>
-            {patient.chiefComplaint && (
-              <div className="mt-3 p-3 rounded-xl bg-primary/5 border border-primary/15">
-                <p className="text-[11px] font-medium uppercase tracking-wide text-primary/70 mb-1">
-                  Chief Complaint
-                </p>
-                <p className="text-sm text-foreground leading-relaxed">
-                  {patient.chiefComplaint}
-                </p>
-              </div>
-            )}
           </div>
         </div>
+
+        {/* Detailed info grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          {/* Personal Information */}
+          <div className="glass-card p-5">
+            <h3 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
+              <User className="w-4 h-4 text-primary" />
+              Personal Information
+            </h3>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                  Full Name
+                </p>
+                <p className="text-sm font-medium text-foreground">
+                  {patient.name}
+                </p>
+              </div>
+              <div>
+                <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                  Registration ID
+                </p>
+                <p className="text-sm font-medium text-foreground font-mono">
+                  {patient.registrationId}
+                </p>
+              </div>
+              <div>
+                <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                  Age
+                </p>
+                <p className="text-sm font-medium text-foreground">
+                  {patient.age} years
+                </p>
+              </div>
+              <div>
+                <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                  Gender
+                </p>
+                <p className="text-sm font-medium text-foreground">
+                  {patient.gender}
+                </p>
+              </div>
+              <div>
+                <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                  Blood Group
+                </p>
+                <p className="text-sm font-medium text-foreground">
+                  {patient.bloodGroup}
+                </p>
+              </div>
+              <div>
+                <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                  Status
+                </p>
+                <p className="text-sm font-medium text-foreground">
+                  {patient.status}
+                </p>
+              </div>
+              {patient.dob && (
+                <div>
+                  <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                    Date of Birth
+                  </p>
+                  <p className="text-sm font-medium text-foreground">
+                    {patient.dob}
+                  </p>
+                </div>
+              )}
+              {patient.maritalStatus && (
+                <div>
+                  <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                    Marital Status
+                  </p>
+                  <p className="text-sm font-medium text-foreground">
+                    {patient.maritalStatus}
+                  </p>
+                </div>
+              )}
+              {patient.occupation && (
+                <div className="col-span-2">
+                  <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                    Occupation
+                  </p>
+                  <p className="text-sm font-medium text-foreground">
+                    {patient.occupation}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Contact Details */}
+          <div className="glass-card p-5">
+            <h3 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
+              <Phone className="w-4 h-4 text-primary" />
+              Contact Details
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                  Phone
+                </p>
+                <p className="text-sm font-medium text-foreground">
+                  {patient.phone}
+                </p>
+              </div>
+              {patient.whatsapp && (
+                <div>
+                  <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                    WhatsApp
+                  </p>
+                  <p className="text-sm font-medium text-foreground">
+                    {patient.whatsapp}
+                  </p>
+                </div>
+              )}
+              <div>
+                <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                  Email
+                </p>
+                <p className="text-sm font-medium text-foreground">
+                  {patient.email}
+                </p>
+              </div>
+              <div>
+                <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                  Place
+                </p>
+                <p className="text-sm font-medium text-foreground">
+                  {patient.place || "—"}
+                </p>
+              </div>
+              {patient.address && (
+                <div className="sm:col-span-2">
+                  <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                    Address
+                  </p>
+                  <p className="text-sm font-medium text-foreground">
+                    {patient.address}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Emergency Contact */}
+          {patient.emergencyContact && (
+            <div className="glass-card p-5">
+              <h3 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
+                <Phone className="w-4 h-4 text-red-400" />
+                Emergency Contact
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                    Contact Name
+                  </p>
+                  <p className="text-sm font-medium text-foreground">
+                    {patient.emergencyContact.name}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                    Relationship
+                  </p>
+                  <p className="text-sm font-medium text-foreground">
+                    {patient.emergencyContact.relationship}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                    Mobile
+                  </p>
+                  <p className="text-sm font-medium text-foreground">
+                    {patient.emergencyContact.mobile}
+                  </p>
+                </div>
+                {patient.emergencyContact.whatsapp && (
+                  <div>
+                    <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                      WhatsApp
+                    </p>
+                    <p className="text-sm font-medium text-foreground">
+                      {patient.emergencyContact.whatsapp}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Visit Summary */}
+          <div className="glass-card p-5">
+            <h3 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
+              <Calendar className="w-4 h-4 text-primary" />
+              Visit Summary
+            </h3>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                  Last Visit
+                </p>
+                <p className="text-sm font-medium text-foreground">
+                  {formatDate(patient.lastVisit)}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {relativeTime(patient.lastVisit)}
+                </p>
+              </div>
+              <div>
+                <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                  Total Visits
+                </p>
+                <p className="text-sm font-bold text-primary">
+                  {patient.totalVisits}
+                </p>
+              </div>
+              {nextVisitDate && (
+                <div className="col-span-2">
+                  <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                    Next Scheduled Visit
+                  </p>
+                  <p className="text-sm font-medium text-foreground">
+                    {new Date(`${nextVisitDate}T00:00:00`).toLocaleDateString(
+                      "en-US",
+                      {
+                        weekday: "long",
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                      },
+                    )}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Notes & Referral */}
+        {(patient.chiefComplaint || patient.note || patient.referralSource) && (
+          <div className="glass-card p-5">
+            <h3 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
+              <MessageSquare className="w-4 h-4 text-primary" />
+              Notes &amp; Referral
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {patient.chiefComplaint && (
+                <div>
+                  <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                    Chief Complaint
+                  </p>
+                  <p className="text-sm text-foreground leading-relaxed">
+                    {patient.chiefComplaint}
+                  </p>
+                </div>
+              )}
+              {patient.note && (
+                <div>
+                  <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                    Note
+                  </p>
+                  <p className="text-sm text-foreground leading-relaxed">
+                    {patient.note}
+                  </p>
+                </div>
+              )}
+              {patient.referralSource && (
+                <div>
+                  <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground mb-0.5">
+                    How did you hear about us?
+                  </p>
+                  <p className="text-sm font-medium text-foreground">
+                    {patient.referralSource}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </motion.div>
 
       {/* Tabs */}

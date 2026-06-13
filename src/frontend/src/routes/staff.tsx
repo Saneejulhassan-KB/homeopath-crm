@@ -512,7 +512,7 @@ function StaffPage() {
       {/* Credentials Modal */}
       <Dialog open={!!credsModal} onOpenChange={() => setCredsModal(null)}>
         <DialogContent
-          className="glass border-white/10 bg-card/95 backdrop-blur-xl"
+          className="glass bg-card/95 backdrop-blur-xl"
           data-ocid="staff.creds.dialog"
         >
           <DialogHeader>

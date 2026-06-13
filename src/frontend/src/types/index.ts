@@ -36,6 +36,13 @@ export type AppointmentType = "consultation" | "follow-up" | "case-taking";
 
 export type VisitMode = "OP" | "Online";
 
+export interface EmergencyContact {
+  name: string;
+  whatsapp: string;
+  mobile: string;
+  relationship: string;
+}
+
 export interface Patient {
   id: string;
   registrationId: string;
@@ -54,6 +61,13 @@ export interface Patient {
   totalVisits: number;
   consultationFee: number;
   avatar?: string;
+  dob?: string;
+  whatsapp?: string;
+  maritalStatus?: "Single" | "Married" | "Divorced" | "Others";
+  occupation?: string;
+  note?: string;
+  referralSource?: "Social Media" | "Friends" | "Website" | "Others";
+  emergencyContact?: EmergencyContact;
 }
 
 export type AmountStatus = "pending" | "paid";
