@@ -4,13 +4,17 @@ import { createRoute, useNavigate, useParams } from "@tanstack/react-router";
 import {
   ArrowLeft,
   CheckSquare,
+  LayoutDashboard,
   RotateCcw,
   Save,
   Shield,
   Square,
+  Stethoscope,
+  UserCog,
+  Users,
 } from "lucide-react";
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { Route as userManagementRoute } from "./user-management";
 
@@ -89,7 +93,7 @@ interface Permission {
 interface Module {
   id: string;
   label: string;
-  icon: string;
+  icon: React.ReactNode;
   permissions: Permission[];
 }
 
@@ -97,75 +101,85 @@ const MODULES: Module[] = [
   {
     id: "dashboard",
     label: "Dashboard",
-    icon: "📊",
+    icon: <LayoutDashboard className="w-4 h-4" />,
     permissions: [
-      { id: "dashboard.view", label: "View Dashboard" },
-      { id: "dashboard.revenue", label: "View Revenue Stats" },
-      { id: "dashboard.doctor_performance", label: "View Doctor Performance" },
-      { id: "dashboard.date_filter", label: "Use Date Filter" },
+      { id: "dashboard.view_all", label: "View all dashboard" },
+      { id: "dashboard.total_appointments", label: "Total appointments" },
+      { id: "dashboard.total_visitors", label: "Total visitors" },
+      { id: "dashboard.case_taken", label: "Case taken" },
+      { id: "dashboard.total_revenue", label: "Total revenue" },
+      { id: "dashboard.new_registrations", label: "New registrations" },
+      { id: "dashboard.total_patients", label: "Total patients" },
+      { id: "dashboard.pending_cases", label: "Pending cases" },
+      { id: "dashboard.doctor_performance", label: "Doctor performance" },
     ],
   },
   {
-    id: "patients",
-    label: "Patient Management",
-    icon: "🏥",
+    id: "patient-list",
+    label: "Patient List Page",
+    icon: <Users className="w-4 h-4" />,
     permissions: [
-      { id: "patients.view_list", label: "View Patient List" },
-      { id: "patients.add", label: "Add Patient" },
-      { id: "patients.edit", label: "Edit Patient" },
-      { id: "patients.delete", label: "Delete Patient" },
-      { id: "patients.view_detail", label: "View Patient Detail" },
-      { id: "patients.case_taking", label: "Access Case Taking" },
-      { id: "patients.fee_structure", label: "Access Fee Structure" },
-      { id: "patients.auto_messages", label: "View Auto Messages" },
+      { id: "patient_list.view", label: "View patient list" },
+      { id: "patient_list.edit", label: "Edit patient" },
+      { id: "patient_list.delete", label: "Delete patient" },
+    ],
+  },
+  {
+    id: "patient-detail",
+    label: "Patient Detail Page",
+    icon: <Stethoscope className="w-4 h-4" />,
+    permissions: [
+      { id: "patient_detail.all", label: "All patient detail page" },
+      { id: "patient_detail.hide_fee", label: "Hide fee structure" },
+      { id: "patient_detail.hide_auto_msg", label: "Hide auto message tab" },
+    ],
+  },
+  {
+    id: "pharmacy",
+    label: "Pharmacy Page",
+    icon: <span className="text-sm">💊</span>,
+    permissions: [
+      { id: "pharmacy.fee_structure", label: "Fee structure" },
+      { id: "pharmacy.medicine", label: "Medicine" },
     ],
   },
   {
     id: "appointments",
-    label: "Appointments",
-    icon: "📅",
+    label: "Appointments Page",
+    icon: <span className="text-sm">📅</span>,
     permissions: [
-      { id: "appointments.view", label: "View Appointments" },
-      { id: "appointments.book", label: "Book Appointment" },
-      { id: "appointments.edit", label: "Edit Appointment" },
-      { id: "appointments.cancel", label: "Cancel Appointment" },
+      { id: "appointments.view_all", label: "View all appointment page" },
+      { id: "appointments.book", label: "Access book appointment button" },
     ],
   },
   {
     id: "billing",
-    label: "Billing",
-    icon: "💳",
+    label: "Billing Page",
+    icon: <span className="text-sm">💳</span>,
     permissions: [
-      { id: "billing.view", label: "View Billing" },
-      { id: "billing.create", label: "Create Invoice" },
-      { id: "billing.edit", label: "Edit Invoice" },
-      { id: "billing.delete", label: "Delete Invoice" },
+      { id: "billing.invoice", label: "Invoice" },
+      { id: "billing.payment_history", label: "Payment history" },
+      { id: "billing.subscription_plan", label: "Subscription plan" },
     ],
   },
   {
-    id: "ai",
-    label: "AI Assistant",
-    icon: "🤖",
-    permissions: [{ id: "ai.access", label: "Access AI Assistant" }],
-  },
-  {
     id: "settings",
-    label: "Settings",
-    icon: "⚙️",
+    label: "Settings Page",
+    icon: <span className="text-sm">⚙️</span>,
     permissions: [
-      { id: "settings.view", label: "View Settings" },
-      { id: "settings.clinic_profile", label: "Edit Clinic Profile" },
-      { id: "settings.doctor_profile", label: "Edit Doctor Profile" },
-      { id: "settings.appearance", label: "Edit Appearance" },
-      { id: "settings.auto_messages", label: "Edit Auto Messages" },
-      { id: "settings.security", label: "Edit Security" },
-      { id: "settings.billing", label: "View Billing Settings" },
+      { id: "settings.view_all", label: "View all settings" },
+      { id: "settings.clinic_profile", label: "Edit clinic profile" },
+      { id: "settings.doctor_profile", label: "Edit doctor profile" },
+      { id: "settings.appearance", label: "Edit appearance" },
+      { id: "settings.auto_messages", label: "Edit auto messages" },
+      { id: "settings.security", label: "Edit security" },
+      { id: "settings.billing", label: "View billing settings" },
     ],
   },
   {
     id: "user-management",
-    label: "User Management",
-    icon: "👥",
+    label: "User Management Page",
+    icon: <UserCog className="w-4 h-4" />,
     permissions: [
       { id: "um.view_users", label: "View Users" },
       { id: "um.add_user", label: "Add User" },
@@ -185,61 +199,87 @@ const DEFAULT_PERMISSIONS: Record<string, string[]> = {
   "main-admin": ALL_PERMS,
   admin: ALL_PERMS,
   doctor: [
-    "dashboard.view",
+    "dashboard.view_all",
+    "dashboard.total_appointments",
+    "dashboard.total_visitors",
+    "dashboard.case_taken",
+    "dashboard.total_revenue",
+    "dashboard.new_registrations",
+    "dashboard.total_patients",
+    "dashboard.pending_cases",
     "dashboard.doctor_performance",
-    "patients.view_list",
-    "patients.view_detail",
-    "patients.case_taking",
-    "patients.fee_structure",
-    "patients.auto_messages",
-    "appointments.view",
+    "patient_list.view",
+    "patient_list.edit",
+    "patient_detail.all",
+    "patient_detail.hide_fee",
+    "patient_detail.hide_auto_msg",
+    "appointments.view_all",
     "appointments.book",
-    "appointments.edit",
-    "ai.access",
-    "settings.view",
+    "billing.invoice",
+    "billing.payment_history",
+    "settings.view_all",
+    "settings.doctor_profile",
+    "settings.appearance",
+    "settings.auto_messages",
+    "settings.security",
   ],
   receptionist: [
-    "dashboard.view",
-    "patients.view_list",
-    "patients.add",
-    "patients.edit",
-    "patients.view_detail",
-    "appointments.view",
+    "dashboard.view_all",
+    "dashboard.total_appointments",
+    "dashboard.total_visitors",
+    "dashboard.new_registrations",
+    "dashboard.total_patients",
+    "dashboard.pending_cases",
+    "patient_list.view",
+    "patient_list.edit",
+    "patient_detail.all",
+    "pharmacy.fee_structure",
+    "pharmacy.medicine",
+    "appointments.view_all",
     "appointments.book",
-    "appointments.edit",
-    "appointments.cancel",
-    "settings.view",
+    "billing.invoice",
+    "settings.view_all",
   ],
   pharmacist: [
-    "dashboard.view",
-    "patients.view_detail",
-    "patients.fee_structure",
-    "billing.view",
-    "billing.create",
-    "settings.view",
+    "dashboard.view_all",
+    "dashboard.total_patients",
+    "dashboard.pending_cases",
+    "patient_list.view",
+    "patient_detail.all",
+    "pharmacy.fee_structure",
+    "pharmacy.medicine",
+    "billing.invoice",
+    "billing.payment_history",
+    "settings.view_all",
   ],
   cashier: [
-    "dashboard.view",
-    "billing.view",
-    "billing.create",
-    "billing.edit",
-    "settings.view",
+    "dashboard.view_all",
+    "dashboard.total_revenue",
+    "patient_list.view",
+    "billing.invoice",
+    "billing.payment_history",
+    "billing.subscription_plan",
+    "settings.view_all",
+    "settings.billing",
   ],
   nurse: [
-    "dashboard.view",
-    "patients.view_list",
-    "patients.view_detail",
-    "appointments.view",
-    "settings.view",
+    "dashboard.view_all",
+    "dashboard.total_patients",
+    "dashboard.pending_cases",
+    "patient_list.view",
+    "patient_detail.all",
+    "appointments.view_all",
+    "settings.view_all",
   ],
   billing: [
-    "dashboard.view",
-    "dashboard.revenue",
-    "billing.view",
-    "billing.create",
-    "billing.edit",
-    "billing.delete",
-    "settings.view",
+    "dashboard.view_all",
+    "dashboard.total_revenue",
+    "dashboard.new_registrations",
+    "patient_list.view",
+    "billing.invoice",
+    "billing.payment_history",
+    "billing.subscription_plan",
+    "settings.view_all",
     "settings.billing",
   ],
 };
@@ -311,6 +351,13 @@ function RolePermissionsEditor() {
 
   const colorSet = ROLE_COLOR_MAP[meta.color] ?? ROLE_COLOR_MAP.sky;
 
+  const visibleModules = useMemo(() => {
+    if (roleId === "receptionist" || roleId === "pharmacist") {
+      return MODULES;
+    }
+    return MODULES.filter((m) => m.id !== "pharmacy");
+  }, [roleId]);
+
   return (
     <motion.div
       className="space-y-6 p-6"
@@ -380,7 +427,7 @@ function RolePermissionsEditor() {
 
       {/* Permissions grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {MODULES.map((module) => {
+        {visibleModules.map((module) => {
           const modulePermIds = module.permissions.map((p) => p.id);
           const checkedCount = modulePermIds.filter((id) =>
             permissions.includes(id),
@@ -400,7 +447,7 @@ function RolePermissionsEditor() {
               {/* Module header */}
               <div className="flex items-center justify-between pb-2 border-b border-white/10">
                 <div className="flex items-center gap-2">
-                  <span className="text-base">{module.icon}</span>
+                  <span className="text-primary">{module.icon}</span>
                   <h3 className="font-semibold text-foreground text-sm">
                     {module.label}
                   </h3>
